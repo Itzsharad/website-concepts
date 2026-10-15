@@ -1,291 +1,692 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src * data: blob:; media-src 'self' data:; style-src 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com data:; script-src 'unsafe-inline'; connect-src 'none'; frame-src 'none'; form-action 'none'; base-uri 'none'; object-src 'none'">
 <meta name="robots" content="noindex, nofollow">
-<title>Austin Dental | Website concept</title>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Austin Dental | Dentist on West Parmer Ln, Austin, TX</title>
+<meta name="description" content="Austin Dental, a dentist at 2206 West Parmer Ln, Austin, TX 78727. Call (512) 982-4006 to book your visit.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,300;1,9..144,400&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{
-  --bg:#f7f3ec;--surface:#ffffff;--ink:#12302c;--muted:#5b6b67;
-  --accent:#1f5c53;--accent-ink:#ffffff;--gold:#b8915a;--soft:#e8efe9;
-  --radius:22px;--max:1180px;
-  --serif:"Fraunces",Georgia,serif;--sans:"Manrope",system-ui,-apple-system,sans-serif;
+  --ink:#0d1b2a;
+  --ink-2:#1b2d42;
+  --muted:#5a6878;
+  --paper:#fbfaf7;
+  --white:#ffffff;
+  --mist:#eef3f6;
+  --line:rgba(13,27,42,.1);
+  --gold:#b08d57;
+  --gold-soft:#e8dcc4;
+  --aqua:#cfe4ea;
+  --radius:22px;
+  --shadow:0 30px 60px -30px rgba(13,27,42,.25);
+  --ease:cubic-bezier(.2,.7,.1,1);
 }
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:'Manrope',system-ui,sans-serif;color:var(--ink);background:var(--paper);line-height:1.65;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+img,svg{display:block;max-width:100%}
 a{color:inherit;text-decoration:none}
-img{max-width:100%;display:block}
-.wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
-.concept{background:var(--ink);color:var(--bg);font-size:13px;text-align:center;padding:8px 16px;letter-spacing:.02em}
-.concept b{color:var(--gold);font-weight:600}
+h1,h2,h3{font-family:'Fraunces',Georgia,serif;font-weight:400;line-height:1.05;letter-spacing:-.02em}
+em{font-style:italic;color:var(--gold)}
+.wrap{width:min(1200px,100% - 48px);margin-inline:auto}
+.eyebrow{display:inline-flex;align-items:center;gap:12px;font-size:.75rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--gold)}
+.eyebrow::before{content:"";width:28px;height:1px;background:currentColor}
+section{position:relative}
+.sec{padding:clamp(80px,12vw,150px) 0}
+.sec-head{max-width:720px;margin-bottom:clamp(44px,6vw,72px)}
+.sec-head h2{font-size:clamp(2.3rem,5.5vw,4rem);margin:18px 0 18px}
+.sec-head p{color:var(--muted);font-size:1.08rem;max-width:560px}
 
-/* header */
-header{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:saturate(1.4) blur(10px);border-bottom:1px solid color-mix(in srgb,var(--ink) 8%,transparent)}
-.nav{display:flex;align-items:center;justify-content:space-between;height:76px;gap:24px}
-.brand{font-family:var(--serif);font-size:23px;font-weight:600;letter-spacing:-.01em;line-height:1.1;max-width:340px}
-.links{display:flex;gap:30px;font-size:15px;font-weight:500;color:var(--muted)}
-.links a:hover{color:var(--ink)}
-.nav-right{display:flex;align-items:center;gap:18px}
-.phone{font-weight:600;font-size:15px;white-space:nowrap}
-.btn{display:inline-flex;align-items:center;gap:10px;background:var(--accent);color:var(--accent-ink);padding:14px 26px;border-radius:999px;font-weight:600;font-size:15.5px;transition:transform .2s ease,box-shadow .2s ease;white-space:nowrap}
-.btn:hover{transform:translateY(-2px);box-shadow:0 12px 28px -12px var(--accent)}
-.btn.ghost{background:transparent;color:var(--ink);border:1.5px solid color-mix(in srgb,var(--ink) 20%,transparent)}
-.btn.ghost:hover{box-shadow:none;border-color:var(--ink)}
-.btn svg{width:18px;height:18px}
+/* Buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:16px 28px;border-radius:999px;font-weight:600;font-size:.95rem;letter-spacing:.01em;transition:transform .4s var(--ease),box-shadow .4s var(--ease),background .3s,color .3s;white-space:nowrap;position:relative;overflow:hidden}
+.btn svg{width:18px;height:18px;flex:none}
+.btn-dark{background:var(--ink);color:var(--white);box-shadow:0 14px 30px -14px rgba(13,27,42,.6)}
+.btn-dark:hover{transform:translateY(-3px);box-shadow:0 22px 40px -16px rgba(13,27,42,.6);background:var(--ink-2)}
+.btn-ghost{border:1px solid rgba(13,27,42,.22);color:var(--ink);background:rgba(255,255,255,.5)}
+.btn-ghost:hover{transform:translateY(-3px);border-color:var(--ink);background:var(--white)}
+.btn-gold{background:var(--gold);color:var(--white)}
+.btn-gold:hover{transform:translateY(-3px);background:#9c7a47}
+.btn-light{background:var(--white);color:var(--ink)}
+.btn-light:hover{transform:translateY(-3px)}
+.btn-outline-light{border:1px solid rgba(255,255,255,.35);color:var(--white)}
+.btn-outline-light:hover{transform:translateY(-3px);background:rgba(255,255,255,.08);border-color:var(--white)}
+.ulink{position:relative;display:inline-block}
+.ulink::after{content:"";position:absolute;left:0;bottom:-3px;width:100%;height:1px;background:currentColor;transform:scaleX(0);transform-origin:right;transition:transform .45s var(--ease)}
+.ulink:hover::after{transform:scaleX(1);transform-origin:left}
 
-/* hero */
-.hero{padding:72px 0 88px}
-.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:64px;align-items:center}
-.eyebrow{display:inline-flex;align-items:center;gap:10px;background:var(--surface);border:1px solid color-mix(in srgb,var(--ink) 10%,transparent);padding:8px 16px 8px 10px;border-radius:999px;font-size:14px;font-weight:600;color:var(--muted)}
-.stars{color:var(--gold);letter-spacing:1px;font-size:14px}
-.eyebrow .dot{width:26px;height:26px;border-radius:50%;background:var(--soft);display:grid;place-items:center;color:var(--accent)}
-h1{font-family:var(--serif);font-weight:500;font-size:clamp(44px,5.6vw,74px);line-height:1.02;letter-spacing:-.025em;margin:26px 0 22px}
-h1 em{font-style:italic;color:var(--accent)}
-.lead-text{font-size:19.5px;color:var(--muted);max-width:540px}
-.hero-ctas{display:flex;gap:14px;margin-top:36px;flex-wrap:wrap}
-.ticks{display:flex;gap:22px;margin-top:34px;flex-wrap:wrap;font-size:14.5px;font-weight:600;color:var(--muted)}
-.ticks span{display:flex;align-items:center;gap:8px}
-.ticks svg{width:18px;height:18px;color:var(--accent)}
-.visual{position:relative}
-.photo{aspect-ratio:4/5;border-radius:calc(var(--radius) + 10px);overflow:hidden;background:var(--soft);box-shadow:0 40px 80px -40px color-mix(in srgb,var(--ink) 55%,transparent)}
-.photo img{width:100%;height:100%;object-fit:cover}
-.quote-panel{aspect-ratio:4/5;border-radius:calc(var(--radius) + 10px);background:linear-gradient(155deg,var(--accent),color-mix(in srgb,var(--accent) 55%,var(--ink)));color:var(--accent-ink);padding:52px 46px;display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden;box-shadow:0 40px 80px -40px color-mix(in srgb,var(--ink) 60%,transparent)}
-.quote-panel:before{content:"";position:absolute;width:420px;height:420px;border-radius:50%;right:-160px;top:-160px;background:color-mix(in srgb,var(--accent-ink) 9%,transparent)}
-.quote-panel:after{content:"";position:absolute;width:260px;height:260px;border-radius:50%;left:-90px;bottom:-110px;border:1.5px solid color-mix(in srgb,var(--accent-ink) 22%,transparent)}
-.quote-mark{font-family:var(--serif);font-size:120px;line-height:.6;opacity:.35}
-.quote-panel p{font-family:var(--serif);font-size:28px;line-height:1.3;position:relative;z-index:1}
-.quote-panel .who{font-family:var(--sans);font-size:15px;opacity:.85;margin-top:22px;font-weight:600}
-.float{position:absolute;background:var(--surface);color:var(--ink);border-radius:18px;padding:16px 20px;box-shadow:0 24px 50px -24px color-mix(in srgb,var(--ink) 50%,transparent);display:flex;align-items:center;gap:14px;font-size:14px;line-height:1.35}
-.float b{font-size:22px;font-family:var(--serif);font-weight:600;display:block}
-.float.one{left:-34px;bottom:-28px}
-.float.two{right:-22px;top:44px}
-.float .badge{width:44px;height:44px;border-radius:14px;background:var(--soft);display:grid;place-items:center;color:var(--accent)}
-.float .badge svg{width:22px;height:22px}
+/* Header */
+.header{position:fixed;inset:16px 0 auto;z-index:50;transition:inset .4s var(--ease)}
+.header .bar{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:12px 14px 12px 24px;border-radius:999px;background:rgba(251,250,247,.6);backdrop-filter:blur(18px) saturate(160%);-webkit-backdrop-filter:blur(18px) saturate(160%);border:1px solid rgba(255,255,255,.7);box-shadow:0 10px 40px -20px rgba(13,27,42,.25);transition:background .4s}
+.header.scrolled .bar{background:rgba(251,250,247,.88)}
+.logo{display:flex;align-items:center;gap:12px;font-family:'Fraunces',serif;font-size:1.3rem;letter-spacing:-.01em}
+.logo-mark{width:38px;height:38px;border-radius:50%;background:var(--ink);display:grid;place-items:center;flex:none}
+.logo-mark svg{width:20px;height:20px}
+.nav{display:flex;align-items:center;gap:30px;font-size:.9rem;font-weight:500;color:var(--ink-2)}
+.head-right{display:flex;align-items:center;gap:18px}
+.head-phone{font-weight:600;font-size:.92rem}
+.header .btn{padding:12px 22px;font-size:.88rem}
+.menu-btn{display:none;width:44px;height:44px;border-radius:50%;border:1px solid var(--line);background:var(--white);cursor:pointer;place-items:center}
+.menu-btn span{display:block;width:18px;height:1.5px;background:var(--ink);position:relative;transition:.3s}
+.menu-btn span::before,.menu-btn span::after{content:"";position:absolute;left:0;width:18px;height:1.5px;background:var(--ink);transition:.3s var(--ease)}
+.menu-btn span::before{top:-6px}.menu-btn span::after{top:6px}
+.menu-open .menu-btn span{background:transparent}
+.menu-open .menu-btn span::before{top:0;transform:rotate(45deg)}
+.menu-open .menu-btn span::after{top:0;transform:rotate(-45deg)}
+.mobile-menu{position:fixed;inset:0;z-index:40;background:var(--paper);padding:120px 28px 40px;display:flex;flex-direction:column;gap:6px;opacity:0;visibility:hidden;transition:opacity .4s,visibility .4s}
+.mobile-menu a.m-link{font-family:'Fraunces',serif;font-size:2.2rem;padding:10px 0;border-bottom:1px solid var(--line);transform:translateY(16px);opacity:0;transition:transform .5s var(--ease),opacity .5s}
+.menu-open .mobile-menu{opacity:1;visibility:visible}
+.menu-open .mobile-menu a.m-link{transform:none;opacity:1}
+.menu-open .mobile-menu a.m-link:nth-child(2){transition-delay:.05s}
+.menu-open .mobile-menu a.m-link:nth-child(3){transition-delay:.1s}
+.menu-open .mobile-menu a.m-link:nth-child(4){transition-delay:.15s}
+.menu-open .mobile-menu a.m-link:nth-child(5){transition-delay:.2s}
+.mobile-menu .btn{margin-top:28px}
 
-/* trust */
-.trust{border-top:1px solid color-mix(in srgb,var(--ink) 9%,transparent);border-bottom:1px solid color-mix(in srgb,var(--ink) 9%,transparent);background:var(--surface)}
-.trust .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;padding-top:26px;padding-bottom:26px}
-.trust div{display:flex;align-items:center;gap:12px;font-weight:600;font-size:15px}
-.trust svg{width:22px;height:22px;color:var(--accent);flex:none}
+/* Hero */
+.hero{min-height:100vh;min-height:100svh;display:flex;align-items:center;padding:140px 0 90px;overflow:hidden;background:
+ radial-gradient(1000px 600px at 85% 20%,rgba(207,228,234,.75),transparent 60%),
+ radial-gradient(700px 500px at 10% 90%,rgba(232,220,196,.55),transparent 60%),
+ var(--paper)}
+.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:60px;align-items:center}
+.hero h1{font-size:clamp(3rem,8.2vw,7rem);font-weight:300;margin:26px 0 28px}
+.hero h1 .line{display:block;overflow:hidden;padding-bottom:.06em}
+.hero h1 .line span{display:inline-block;transform:translateY(110%);transition:transform 1.2s var(--ease)}
+.hero p.lead{font-size:clamp(1.05rem,1.6vw,1.22rem);color:var(--muted);max-width:520px;margin-bottom:40px}
+.hero-ctas{display:flex;flex-wrap:wrap;gap:14px}
+.hero-meta{display:flex;flex-wrap:wrap;gap:28px;margin-top:56px;padding-top:28px;border-top:1px solid var(--line);font-size:.9rem;color:var(--muted)}
+.hero-meta div{display:flex;align-items:center;gap:10px}
+.hero-meta svg{width:18px;height:18px;color:var(--gold);flex:none}
+.hero-meta strong{color:var(--ink);font-weight:600}
+.fade-in{opacity:0;transform:translateY(24px);transition:opacity 1s var(--ease),transform 1s var(--ease)}
+.loaded .hero h1 .line span{transform:none}
+.loaded .hero h1 .line:nth-child(2) span{transition-delay:.12s}
+.loaded .hero h1 .line:nth-child(3) span{transition-delay:.24s}
+.loaded .fade-in{opacity:1;transform:none}
+.loaded .d1{transition-delay:.15s}.loaded .d2{transition-delay:.45s}.loaded .d3{transition-delay:.6s}.loaded .d4{transition-delay:.75s}.loaded .d5{transition-delay:.5s}
 
-/* sections */
-section.block{padding:110px 0}
-.kicker{font-size:13px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
-h2{font-family:var(--serif);font-weight:500;font-size:clamp(34px,3.8vw,52px);line-height:1.08;letter-spacing:-.02em;margin:14px 0 18px}
-.section-head{display:flex;justify-content:space-between;align-items:end;gap:40px;margin-bottom:56px}
-.section-head p{color:var(--muted);max-width:420px}
-.services{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-.card{background:var(--surface);border-radius:var(--radius);padding:34px 32px 36px;border:1px solid color-mix(in srgb,var(--ink) 7%,transparent);transition:transform .25s ease,box-shadow .25s ease}
-.card:hover{transform:translateY(-4px);box-shadow:0 30px 60px -36px color-mix(in srgb,var(--ink) 45%,transparent)}
-.icon{width:54px;height:54px;border-radius:16px;background:var(--soft);color:var(--accent);display:grid;place-items:center;margin-bottom:24px}
-.icon svg{width:26px;height:26px}
-.card h3{font-family:var(--serif);font-weight:500;font-size:23px;margin-bottom:8px;letter-spacing:-.01em}
-.card p{color:var(--muted);font-size:16px}
+.hero-art{position:relative;aspect-ratio:4/5;width:100%;max-width:470px;justify-self:end}
+.orb{position:absolute;inset:0;border-radius:240px 240px 32px 32px;background:linear-gradient(160deg,#ffffff 0%,#e7f0f3 45%,#cfe1e7 100%);box-shadow:var(--shadow),inset 0 1px 0 #fff;overflow:hidden}
+.orb::before{content:"";position:absolute;inset:-30%;background:conic-gradient(from 200deg at 50% 50%,transparent 0 60%,rgba(255,255,255,.9) 70%,transparent 80%);animation:spin 14s linear infinite;opacity:.7}
+.orb::after{content:"";position:absolute;inset:14px;border-radius:226px 226px 22px 22px;border:1px solid rgba(176,141,87,.35)}
+.tooth{position:absolute;left:50%;top:48%;width:58%;transform:translate(-50%,-50%);filter:drop-shadow(0 30px 40px rgba(13,27,42,.18))}
+.ring{position:absolute;border-radius:50%;border:1px solid rgba(176,141,87,.4)}
+.ring.r1{width:120px;height:120px;top:-30px;right:-30px}
+.ring.r2{width:70px;height:70px;bottom:60px;left:-36px;background:var(--gold-soft);border:none}
+.float-card{position:absolute;left:-46px;bottom:56px;background:rgba(255,255,255,.82);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid #fff;border-radius:18px;padding:16px 20px;box-shadow:var(--shadow);display:flex;align-items:center;gap:14px;max-width:250px}
+.float-card .ic{width:42px;height:42px;border-radius:12px;background:var(--ink);display:grid;place-items:center;flex:none}
+.float-card .ic svg{width:20px;height:20px;color:var(--gold-soft)}
+.float-card small{display:block;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:700}
+.float-card b{font-family:'Fraunces',serif;font-weight:400;font-size:1.05rem}
+.sparkle{position:absolute;width:22px;color:var(--gold);animation:twinkle 3.5s ease-in-out infinite}
+.sparkle.s1{top:18%;right:16%}.sparkle.s2{top:30%;left:14%;width:14px;animation-delay:1.2s}.sparkle.s3{bottom:28%;right:20%;width:16px;animation-delay:2.1s}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes twinkle{0%,100%{opacity:.25;transform:scale(.8) rotate(0)}50%{opacity:1;transform:scale(1.1) rotate(20deg)}}
+.scroll-cue{position:absolute;left:50%;bottom:28px;transform:translateX(-50%);width:24px;height:40px;border:1px solid rgba(13,27,42,.3);border-radius:20px}
+.scroll-cue::after{content:"";position:absolute;left:50%;top:8px;width:3px;height:8px;margin-left:-1.5px;border-radius:2px;background:var(--ink);animation:cue 2s ease-in-out infinite}
+@keyframes cue{0%{opacity:0;transform:translateY(0)}40%{opacity:1}100%{opacity:0;transform:translateY(12px)}}
 
-.why{background:var(--ink);color:var(--bg)}
-.why .kicker{color:var(--gold)}
-.why-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:80px;align-items:start}
-.why h2{color:var(--bg)}
-.why .intro{color:color-mix(in srgb,var(--bg) 70%,transparent);font-size:18px;max-width:440px}
-.points{display:grid;gap:14px}
-.point{display:grid;grid-template-columns:62px 1fr;gap:20px;padding:30px;border-radius:var(--radius);background:color-mix(in srgb,var(--bg) 6%,transparent);border:1px solid color-mix(in srgb,var(--bg) 10%,transparent)}
-.point .num{font-family:var(--serif);font-size:34px;color:var(--gold);line-height:1}
-.point h3{font-family:var(--serif);font-weight:500;font-size:24px;margin-bottom:6px}
-.point p{color:color-mix(in srgb,var(--bg) 72%,transparent);font-size:16px}
+/* Marquee */
+.marquee{background:var(--ink);color:var(--white);padding:26px 0;overflow:hidden;white-space:nowrap}
+.marquee-track{display:inline-flex;animation:marquee 38s linear infinite}
+.marquee-track span{font-family:'Fraunces',serif;font-weight:300;font-size:clamp(1.3rem,2.4vw,1.9rem);padding:0 28px;display:inline-flex;align-items:center;gap:56px}
+.marquee-track span::after{content:"✦";color:var(--gold);font-size:.8em}
+@keyframes marquee{to{transform:translateX(-50%)}}
 
-.score{display:flex;align-items:center;gap:18px;background:var(--surface);padding:16px 24px;border-radius:18px;border:1px solid color-mix(in srgb,var(--ink) 8%,transparent)}
-.score b{font-family:var(--serif);font-size:40px;font-weight:500;line-height:1}
-.score small{display:block;color:var(--muted);font-size:14px}
-.reviews{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-.review{background:var(--surface);border-radius:var(--radius);padding:34px;display:flex;flex-direction:column;gap:22px;border:1px solid color-mix(in srgb,var(--ink) 7%,transparent)}
-.review p{font-family:var(--serif);font-size:19.5px;line-height:1.45}
-.review .by{margin-top:auto;display:flex;align-items:center;gap:12px;font-weight:600;font-size:15px}
-.avatar{width:40px;height:40px;border-radius:50%;background:var(--soft);color:var(--accent);display:grid;place-items:center;font-weight:700}
-.review .src{color:var(--muted);font-weight:500;font-size:13px;display:block}
+/* Services */
+.services{background:var(--white)}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.card{position:relative;padding:38px 32px 34px;border-radius:var(--radius);background:var(--paper);border:1px solid var(--line);transition:transform .5s var(--ease),box-shadow .5s var(--ease),border-color .5s;overflow:hidden;min-width:0}
+.card::before{content:"";position:absolute;inset:auto -40% -60% auto;width:260px;height:260px;border-radius:50%;background:radial-gradient(circle,rgba(207,228,234,.9),transparent 70%);opacity:0;transition:opacity .6s}
+.card:hover{transform:translateY(-8px);box-shadow:var(--shadow);border-color:rgba(176,141,87,.35)}
+.card:hover::before{opacity:1}
+.card .num{position:absolute;top:30px;right:30px;font-family:'Fraunces',serif;font-size:.95rem;color:var(--gold)}
+.card .icon{width:58px;height:58px;border-radius:16px;background:var(--white);border:1px solid var(--line);display:grid;place-items:center;margin-bottom:30px;position:relative;transition:background .4s,border-color .4s}
+.card .icon svg{width:28px;height:28px;color:var(--ink);transition:color .4s}
+.card:hover .icon{background:var(--ink);border-color:var(--ink)}
+.card:hover .icon svg{color:var(--gold-soft)}
+.card h3{font-size:1.6rem;margin-bottom:12px;position:relative}
+.card p{color:var(--muted);font-size:.97rem;position:relative}
+.card .more{display:inline-flex;align-items:center;gap:8px;margin-top:22px;font-weight:600;font-size:.88rem;position:relative}
+.card .more svg{width:16px;height:16px;transition:transform .4s var(--ease)}
+.card:hover .more svg{transform:translateX(5px)}
+.note{margin-top:34px;color:var(--muted);font-size:.92rem;text-align:center}
+.note a{color:var(--ink);font-weight:600}
 
-.cta-band{padding:0 0 110px}
-.cta-box{border-radius:calc(var(--radius) + 12px);background:linear-gradient(140deg,var(--accent),color-mix(in srgb,var(--accent) 60%,var(--ink)));color:var(--accent-ink);padding:76px 64px;display:grid;grid-template-columns:1.3fr 1fr;gap:40px;align-items:center;position:relative;overflow:hidden}
-.cta-box:after{content:"";position:absolute;right:-120px;bottom:-200px;width:460px;height:460px;border-radius:50%;border:1.5px solid color-mix(in srgb,var(--accent-ink) 22%,transparent)}
-.cta-box h2{color:inherit;margin:0 0 12px}
-.cta-box p{opacity:.85;font-size:18px}
-.cta-box .actions{display:flex;flex-direction:column;gap:12px;align-items:flex-start;position:relative;z-index:1}
-.cta-box .btn{background:var(--accent-ink);color:var(--accent)}
-.cta-box .btn.ghost{background:transparent;color:var(--accent-ink);border-color:color-mix(in srgb,var(--accent-ink) 40%,transparent)}
+/* About */
+.about-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(40px,7vw,100px);align-items:center}
+.about-art{position:relative;aspect-ratio:1;border-radius:var(--radius);background:linear-gradient(145deg,var(--ink) 0%,#16304a 100%);overflow:hidden;display:grid;place-items:center}
+.about-art .big{font-family:'Fraunces',serif;font-style:italic;font-weight:300;font-size:clamp(5rem,14vw,11rem);color:transparent;-webkit-text-stroke:1px rgba(232,220,196,.55);line-height:1}
+.about-art .glow{position:absolute;width:70%;height:70%;border-radius:50%;background:radial-gradient(circle,rgba(176,141,87,.35),transparent 65%);filter:blur(10px)}
+.about-art .tag{position:absolute;left:24px;bottom:24px;right:24px;display:flex;justify-content:space-between;gap:12px;color:var(--gold-soft);font-size:.78rem;letter-spacing:.18em;text-transform:uppercase;font-weight:600}
+.about-copy h2{font-size:clamp(2.3rem,5vw,3.8rem);margin:18px 0 26px}
+.about-copy p{color:var(--muted);font-size:1.06rem;margin-bottom:18px}
+.about-copy .sig{margin-top:32px;font-family:'Fraunces',serif;font-style:italic;font-size:1.4rem;color:var(--ink)}
 
-.visit{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:10px}
-.visit .card h3{font-size:20px}
-.visit a{color:var(--accent);font-weight:600}
-footer{border-top:1px solid color-mix(in srgb,var(--ink) 9%,transparent);padding:40px 0 110px;color:var(--muted);font-size:14px}
-footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+/* Why */
+.why{background:var(--mist)}
+.why-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--line);border-radius:var(--radius);overflow:hidden;border:1px solid var(--line)}
+.why-item{background:var(--white);padding:44px 40px;display:flex;gap:24px;transition:background .4s;min-width:0}
+.why-item:hover{background:var(--paper)}
+.why-item .ic{width:48px;height:48px;border-radius:50%;border:1px solid var(--gold);display:grid;place-items:center;flex:none;color:var(--gold)}
+.why-item .ic svg{width:22px;height:22px}
+.why-item h3{font-size:1.45rem;margin-bottom:10px}
+.why-item p{color:var(--muted);font-size:.97rem}
+
+/* Steps */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:26px;counter-reset:s}
+.step{position:relative;padding-top:34px;min-width:0}
+.step::before{content:"";position:absolute;top:0;left:0;right:0;height:1px;background:var(--line)}
+.step::after{content:"";position:absolute;top:0;left:0;height:1px;width:0;background:var(--gold);transition:width 1.2s var(--ease)}
+.step.in::after{width:100%}
+.step .n{font-family:'Fraunces',serif;font-size:3.6rem;font-weight:300;line-height:1;color:var(--gold);margin-bottom:20px}
+.step h3{font-size:1.4rem;margin-bottom:10px}
+.step p{color:var(--muted);font-size:.95rem}
+
+/* FAQ */
+.faq{background:var(--white)}
+.faq-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(40px,6vw,90px);align-items:start}
+.faq-grid .sec-head{position:sticky;top:120px;margin-bottom:0}
+details{border-bottom:1px solid var(--line)}
+details:first-child{border-top:1px solid var(--line)}
+summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:20px;padding:28px 0;font-family:'Fraunces',serif;font-size:clamp(1.2rem,2vw,1.45rem)}
+summary::-webkit-details-marker{display:none}
+summary .pm{width:34px;height:34px;border-radius:50%;border:1px solid var(--line);flex:none;position:relative;transition:transform .4s var(--ease),background .3s}
+summary .pm::before,summary .pm::after{content:"";position:absolute;left:50%;top:50%;width:12px;height:1.5px;background:var(--ink);transform:translate(-50%,-50%)}
+summary .pm::after{transform:translate(-50%,-50%) rotate(90deg);transition:transform .4s var(--ease)}
+details[open] summary .pm{background:var(--ink)}
+details[open] summary .pm::before,details[open] summary .pm::after{background:var(--white)}
+details[open] summary .pm::after{transform:translate(-50%,-50%) rotate(0)}
+details p{color:var(--muted);padding:0 50px 28px 0}
+details p a{color:var(--ink);font-weight:600}
+
+/* CTA band */
+.cta-band{background:var(--ink);color:var(--white);overflow:hidden;text-align:center;padding:clamp(90px,13vw,160px) 0}
+.cta-band::before,.cta-band::after{content:"";position:absolute;border-radius:50%;pointer-events:none}
+.cta-band::before{width:700px;height:700px;left:-250px;top:-300px;background:radial-gradient(circle,rgba(176,141,87,.28),transparent 65%)}
+.cta-band::after{width:600px;height:600px;right:-200px;bottom:-320px;background:radial-gradient(circle,rgba(207,228,234,.18),transparent 65%)}
+.cta-band .wrap{position:relative;z-index:1}
+.cta-band .eyebrow{justify-content:center}
+.cta-band h2{font-size:clamp(2.6rem,7vw,5.6rem);font-weight:300;margin:22px auto 22px;max-width:900px}
+.cta-band p{color:rgba(255,255,255,.72);max-width:540px;margin:0 auto 42px;font-size:1.08rem}
+.cta-band .big-phone{display:inline-block;font-family:'Fraunces',serif;font-size:clamp(1.8rem,4.5vw,3rem);color:var(--gold-soft);margin-bottom:38px}
+.cta-row{display:flex;flex-wrap:wrap;gap:14px;justify-content:center}
+
+/* Contact */
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+.info{display:grid;gap:18px}
+.info-card{display:flex;gap:22px;align-items:flex-start;padding:30px;border-radius:var(--radius);background:var(--white);border:1px solid var(--line);transition:transform .5s var(--ease),box-shadow .5s var(--ease);min-width:0}
+a.info-card:hover{transform:translateY(-5px);box-shadow:var(--shadow)}
+.info-card .ic{width:50px;height:50px;border-radius:14px;background:var(--mist);display:grid;place-items:center;flex:none}
+.info-card .ic svg{width:22px;height:22px;color:var(--ink)}
+.info-card small{display:block;font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:6px}
+.info-card b{display:block;font-family:'Fraunces',serif;font-weight:400;font-size:1.35rem;line-height:1.3;overflow-wrap:anywhere}
+.info-card span{color:var(--muted);font-size:.92rem}
+.map-card{position:relative;border-radius:var(--radius);overflow:hidden;min-height:420px;background:linear-gradient(160deg,#e9f1f4,#d7e6eb);border:1px solid var(--line);display:flex;align-items:flex-end;padding:30px;isolation:isolate}
+.map-card svg.map{position:absolute;inset:0;width:100%;height:100%;z-index:-1}
+.pin{position:absolute;left:52%;top:42%;transform:translate(-50%,-100%)}
+.pin .dot{width:54px;height:54px;border-radius:50% 50% 50% 0;transform:rotate(-45deg);background:var(--ink);display:grid;place-items:center;box-shadow:0 14px 30px -10px rgba(13,27,42,.6)}
+.pin .dot svg{transform:rotate(45deg);width:22px;height:22px;color:var(--gold-soft)}
+.pin::after{content:"";position:absolute;left:50%;top:100%;width:80px;height:80px;margin:-40px 0 0 -40px;border-radius:50%;border:1px solid var(--ink);animation:pulse 2.4s ease-out infinite;opacity:0}
+@keyframes pulse{0%{transform:scale(.3);opacity:.6}100%{transform:scale(1.4);opacity:0}}
+.map-card .map-cta{background:rgba(255,255,255,.88);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-radius:18px;padding:22px 24px;width:100%;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.map-cta b{font-family:'Fraunces',serif;font-weight:400;font-size:1.2rem;display:block}
+.map-cta span{font-size:.9rem;color:var(--muted)}
+
+/* Footer */
+.footer{background:#08121d;color:rgba(255,255,255,.7);padding:80px 0 40px}
+.foot-top{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px;padding-bottom:50px;border-bottom:1px solid rgba(255,255,255,.1)}
+.footer .logo{color:var(--white)}
+.footer .logo-mark{background:var(--gold)}
+.footer p{margin-top:18px;max-width:340px;font-size:.95rem}
+.footer h4{font-size:.75rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:18px;font-weight:700}
+.footer ul{list-style:none;display:grid;gap:10px;font-size:.95rem}
+.footer a:hover{color:var(--white)}
+.foot-bottom{padding-top:30px;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;font-size:.85rem}
+
+/* Mobile bar */
 .mobile-bar{display:none}
 
-@keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
-.hero .copy>*{animation:rise .8s cubic-bezier(.2,.7,.2,1) both}
-.hero .copy>*:nth-child(2){animation-delay:.08s}.hero .copy>*:nth-child(3){animation-delay:.16s}
-.hero .copy>*:nth-child(4){animation-delay:.24s}.hero .copy>*:nth-child(5){animation-delay:.32s}
-.visual{animation:rise 1s .2s cubic-bezier(.2,.7,.2,1) both}
+/* Reveal */
+.reveal{opacity:0;transform:translateY(40px);transition:opacity 1s var(--ease),transform 1s var(--ease)}
+.reveal.in{opacity:1;transform:none}
+.stagger>*{opacity:0;transform:translateY(40px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
+.stagger.in>*{opacity:1;transform:none}
+.stagger.in>*:nth-child(2){transition-delay:.1s}
+.stagger.in>*:nth-child(3){transition-delay:.2s}
+.stagger.in>*:nth-child(4){transition-delay:.3s}
+.stagger.in>*:nth-child(5){transition-delay:.4s}
+.stagger.in>*:nth-child(6){transition-delay:.5s}
 
-@media (max-width:980px){
-  .links{display:none}
-  .hero-grid,.why-grid,.cta-box{grid-template-columns:1fr}
-  .hero-grid{gap:56px}
-  .services,.reviews,.visit{grid-template-columns:1fr 1fr}
-  .trust .wrap{grid-template-columns:1fr 1fr}
-  .float.one{left:12px;bottom:-26px}.float.two{right:12px}
-  .visual{max-width:560px;margin-bottom:20px}
-  .section-head{flex-direction:column;align-items:flex-start}
+/* Responsive */
+@media (max-width:1040px){
+  .nav,.head-phone{display:none}
+  .menu-btn{display:grid}
+  .hero-grid{grid-template-columns:1fr;gap:70px}
+  .hero-art{justify-self:center;max-width:380px}
+  .cards{grid-template-columns:repeat(2,1fr)}
+  .steps{grid-template-columns:repeat(2,1fr);row-gap:50px}
+  .about-grid,.faq-grid,.contact-grid{grid-template-columns:1fr}
+  .faq-grid .sec-head{position:static}
+  .about-art{max-width:520px}
 }
-@media (max-width:640px){
-  body{font-size:16px}
-  .wrap{padding:0 18px}
-  .nav{height:66px}.brand{font-size:19px}
-  .phone,.nav-right .btn{display:none}
-  .hero{padding:44px 0 64px}
-  .lead-text{font-size:17.5px}
-  .hero-ctas .btn{flex:1;justify-content:center}
-  .ticks{display:none}
-  .services,.reviews,.visit,.trust .wrap{grid-template-columns:1fr}
-  section.block{padding:76px 0}
-  .quote-panel,.photo{aspect-ratio:auto;min-height:380px}.photo{aspect-ratio:4/3;min-height:0}
-  .quote-panel{padding:40px 30px 64px}.quote-panel p{font-size:23px}
-  .float{font-size:13px;padding:12px 14px}.float b{font-size:18px}
-  .float.two{display:none}
-  .cta-box{padding:52px 28px}
-  .point{grid-template-columns:44px 1fr;padding:24px}
-  .mobile-bar{display:flex;position:fixed;left:12px;right:12px;bottom:12px;z-index:30;gap:10px}
-  .mobile-bar .btn{flex:1;justify-content:center;box-shadow:0 14px 30px -14px color-mix(in srgb,var(--ink) 60%,transparent)}
-  .mobile-bar .btn.ghost{background:var(--surface)}
+@media (max-width:720px){
+  .wrap{width:min(1200px,100% - 36px)}
+  .header{inset:10px 0 auto}
+  .header .bar{padding:8px 8px 8px 16px}
+  .header .btn{display:none}
+  .logo{font-size:1.15rem}
+  .hero{padding:120px 0 70px;text-align:left}
+  .hero-ctas .btn{flex:1 1 100%}
+  .hero-meta{gap:16px;flex-direction:column;margin-top:44px}
+  .hero-art{max-width:300px}
+  .float-card{left:-14px;bottom:30px;padding:12px 16px;max-width:220px}
+  .ring.r1{right:-10px}
+  .ring.r2{left:-14px}
+  .scroll-cue{display:none}
+  .cards,.why-grid,.steps{grid-template-columns:1fr}
+  .card{padding:32px 26px 30px}
+  .why-item{padding:32px 24px;gap:18px}
+  details p{padding-right:0}
+  .info-card{padding:24px;gap:16px}
+  .map-card{min-height:360px;padding:18px}
+  .map-cta .btn{width:100%}
+  .foot-top{grid-template-columns:1fr}
+  .cta-row .btn{flex:1 1 100%}
+  .footer{padding-bottom:110px}
+  .mobile-bar{display:grid;grid-template-columns:1fr 1fr;gap:10px;position:fixed;left:12px;right:12px;bottom:12px;z-index:45;padding:8px;border-radius:999px;background:rgba(13,27,42,.92);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);box-shadow:0 20px 40px -12px rgba(13,27,42,.5);transform:translateY(140%);transition:transform .5s var(--ease)}
+  .mobile-bar.show{transform:none}
+  .mobile-bar a{display:flex;align-items:center;justify-content:center;gap:8px;padding:14px 10px;border-radius:999px;font-weight:600;font-size:.9rem;white-space:nowrap}
+  .mobile-bar a svg{width:17px;height:17px;flex:none}
+  .mobile-bar .call{background:var(--gold);color:var(--white)}
+  .mobile-bar .dir{color:var(--white);border:1px solid rgba(255,255,255,.25)}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+  .reveal,.stagger>*,.fade-in,.hero h1 .line span{opacity:1!important;transform:none!important}
 }
 </style>
 </head>
 <body>
-<div class="concept">Website concept prepared for <b>Austin Dental</b> &middot; not a live site</div>
 
-<header>
-  <div class="wrap nav">
-    <a href="#top" class="brand">Austin Dental</a>
-    <nav class="links">
-      <a href="#services">Services</a><a href="#why">Why us</a><a href="#visit">Visit</a>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-phone" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></g></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></g></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 6l6 6-6 6"/></symbol>
+    <symbol id="i-tooth" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" d="M12 5.5C10.5 4 8.6 3 6.8 3 4.2 3 3 5.2 3 7.6c0 2.2.8 3.7 1.5 5.4.8 2 1 4.4 1.6 6.4.4 1.3 1 2.6 2 2.6 1.6 0 1.6-3 2.2-5 .3-1.1.8-1.8 1.7-1.8s1.4.7 1.7 1.8c.6 2 .6 5 2.2 5 1 0 1.6-1.3 2-2.6.6-2 .8-4.4 1.6-6.4.7-1.7 1.5-3.2 1.5-5.4C21 5.2 19.8 3 17.2 3c-1.8 0-3.7 1-5.2 2.5z"/></symbol>
+    <symbol id="i-spark" viewBox="0 0 24 24"><path fill="currentColor" d="M12 0c.6 6.2 5.8 11.4 12 12-6.2.6-11.4 5.8-12 12-.6-6.2-5.8-11.4-12-12C6.2 11.4 11.4 6.2 12 0z"/></symbol>
+  </defs>
+</svg>
+
+<header class="header" id="header">
+  <div class="wrap bar">
+    <a href="#top" class="logo" aria-label="Austin Dental home">
+      <span class="logo-mark"><svg viewBox="0 0 24 24" style="color:#e8dcc4"><use href="#i-tooth"/></svg></span>
+      Austin Dental
+    </a>
+    <nav class="nav" aria-label="Main">
+      <a href="#services" class="ulink">Care</a>
+      <a href="#about" class="ulink">About</a>
+      <a href="#process" class="ulink">Your Visit</a>
+      <a href="#faq" class="ulink">FAQ</a>
+      <a href="#contact" class="ulink">Contact</a>
     </nav>
-    <div class="nav-right">
-      <a class="phone" href="tel:5129824006">(512) 982-4006</a>
-      <a class="btn" href="#visit">Book now</a>
+    <div class="head-right">
+      <a href="tel:+15129824006" class="head-phone ulink">(512) 982-4006</a>
+      <a href="tel:+15129824006" class="btn btn-dark">Book a Visit</a>
+      <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu"><span></span></button>
     </div>
   </div>
 </header>
 
+<div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+  <a href="#services" class="m-link">Care</a>
+  <a href="#about" class="m-link">About</a>
+  <a href="#process" class="m-link">Your Visit</a>
+  <a href="#faq" class="m-link">FAQ</a>
+  <a href="#contact" class="m-link">Contact</a>
+  <a href="tel:+15129824006" class="btn btn-dark"><svg><use href="#i-phone"/></svg>Call (512) 982-4006</a>
+</div>
+
 <main id="top">
+
 <section class="hero">
   <div class="wrap hero-grid">
-    <div class="copy">
-      <div class="eyebrow">
-        <span class="dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-7-4.4-7-10a4 4 0 017-2.6A4 4 0 0119 10c0 5.6-7 10-7 10z"/></svg></span>Family &amp; cosmetic dentistry
-      </div>
-      <h1>Dentistry that feels as good as <em>it looks.</em></h1>
-      <p class="lead-text">Gentle, modern care for the whole family, with same-week appointments and a team that actually takes time to listen.</p>
-      <div class="hero-ctas">
-        <a class="btn" href="#visit">Book your visit <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-        <a class="btn ghost" href="tel:5129824006">Call (512) 982-4006</a>
-      </div>
-      <div class="ticks">
-        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7"/></svg>Most insurance accepted</span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7"/></svg>New patients welcome</span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7"/></svg>Flexible payment plans</span>
-      </div>
-    </div>
-    <div class="visual">
-      
-      <div class="quote-panel"><div class="quote-mark">“</div><div><p>Gentle, modern care for the whole family, with same-week appointments and a team that actually takes time to listen.</p><div class="who">Austin Dental</div></div></div>
-      
-      
-      <div class="float two"><span class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><span><b>This week</b>New patients welcome</span></div>
-    </div>
-  </div>
-  <template id="qp"><div class="quote-panel"><div class="quote-mark">“</div><div><p>Gentle, modern care for the whole family, with same-week appointments and a team that actually takes time to listen.</p><div class="who">Austin Dental</div></div></div></template>
-</section>
-
-<div class="trust"><div class="wrap">
-  <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.2-8 9-4.6-.8-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg>Most insurance accepted</div><div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.2-8 9-4.6-.8-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg>New patients welcome</div><div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.2-8 9-4.6-.8-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg>Flexible payment plans</div><div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.2-8 9-4.6-.8-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg>Evening appointments</div>
-</div></div>
-
-<section class="block" id="services">
-  <div class="wrap">
-    <div class="section-head">
-      <div><div class="kicker">What we do</div><h2>Everything you need,<br>under one roof.</h2></div>
-      <p>From routine visits to the work that changes how you feel about your day, Austin Dental takes care of it properly.</p>
-    </div>
-    <div class="services">
-      
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3c-2.5 0-4 2-4 4.5 0 3 1.5 4.5 2 7.5.4 2.4.8 6 2.5 6 1.6 0 1.6-4.5 4.5-4.5s2.9 4.5 4.5 4.5c1.7 0 2.1-3.6 2.5-6 .5-3 2-4.5 2-7.5C21 5 19.5 3 17 3c-2 0-3 1-5 1S9 3 7 3z"/></svg></div><h3>Checkups &amp; cleanings</h3><p>Thorough, comfortable exams that keep small problems from becoming big ones.</p></div>
-      
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/><path d="M19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8z"/></svg></div><h3>Teeth whitening</h3><p>Professional whitening that brightens your smile safely in a single visit.</p></div>
-      
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 14s1.5 2.5 4 2.5 4-2.5 4-2.5"/><path d="M9 9.5h.01M15 9.5h.01"/></svg></div><h3>Invisalign &amp; aligners</h3><p>Straighten your teeth discreetly with clear aligners planned around your life.</p></div>
-      
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.2-8 9-4.6-.8-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg></div><h3>Dental implants</h3><p>Permanent, natural-looking replacements that feel and work like your own teeth.</p></div>
-      
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-7-4.4-7-10a4 4 0 017-2.6A4 4 0 0119 10c0 5.6-7 10-7 10z"/></svg></div><h3>Kids&#39; dentistry</h3><p>A calm, friendly first experience that helps children love their checkups.</p></div>
-      
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div><h3>Emergency care</h3><p>Same-day help for toothaches, chips and broken teeth when you need it most.</p></div>
-      
-    </div>
-  </div>
-</section>
-
-<section class="block why" id="why">
-  <div class="wrap why-grid">
     <div>
-      <div class="kicker">Why patients choose us</div>
-      <h2>The Austin dentist people recommend to their friends.</h2>
-      <p class="intro">it still comes down to the same three things.</p>
+      <span class="eyebrow fade-in d1">Dentist · North Austin</span>
+      <h1>
+        <span class="line"><span>A brighter</span></span>
+        <span class="line"><span>smile, <em>made</em></span></span>
+        <span class="line"><span>personal.</span></span>
+      </h1>
+      <p class="lead fade-in d2">Calm, considered dental care on West Parmer Lane. Unhurried appointments, honest conversations and a team focused on helping you feel confident every time you smile.</p>
+      <div class="hero-ctas fade-in d3">
+        <a href="tel:+15129824006" class="btn btn-dark"><svg><use href="#i-phone"/></svg>Call (512) 982-4006</a>
+        <a href="#services" class="btn btn-ghost">Explore our care<svg><use href="#i-arrow"/></svg></a>
+      </div>
+      <div class="hero-meta fade-in d4">
+        <div><svg><use href="#i-pin"/></svg><span><strong>2206 West Parmer Ln</strong>, Austin, TX 78727</span></div>
+        <div><svg><use href="#i-clock"/></svg><span>Call for <strong>appointment times</strong></span></div>
+      </div>
     </div>
-    <div class="points">
-      
-      <div class="point"><div class="num">01</div><div><h3>Comfort first</h3><p>Numbing that works, warm blankets, and no lectures. Anxious patients are welcome here.</p></div></div>
-      
-      <div class="point"><div class="num">02</div><div><h3>Modern technology</h3><p>Digital X-rays and 3D scans mean less radiation, fewer goopy impressions and faster results.</p></div></div>
-      
-      <div class="point"><div class="num">03</div><div><h3>Clear pricing</h3><p>We explain costs and insurance before treatment, so there are never any surprises.</p></div></div>
-      
+
+    <div class="hero-art fade-in d5" id="heroArt" aria-hidden="true">
+      <div class="ring r1"></div>
+      <div class="orb">
+        <svg class="sparkle s1"><use href="#i-spark"/></svg>
+        <svg class="sparkle s2"><use href="#i-spark"/></svg>
+        <svg class="sparkle s3"><use href="#i-spark"/></svg>
+        <svg class="tooth" viewBox="0 0 200 220">
+          <defs>
+            <linearGradient id="tg" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#ffffff"/>
+              <stop offset=".55" stop-color="#f6f8f9"/>
+              <stop offset="1" stop-color="#dbe7ec"/>
+            </linearGradient>
+            <linearGradient id="tgold" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0" stop-color="#d9c293"/>
+              <stop offset="1" stop-color="#b08d57"/>
+            </linearGradient>
+          </defs>
+          <path fill="url(#tg)" stroke="url(#tgold)" stroke-width="1.6" d="M100 38C88 26 72 18 56 18 32 18 20 38 20 60c0 20 7 34 13 49 7 18 9 40 15 58 4 12 10 25 19 25 15 0 15-28 20-46 3-10 7-17 13-17s10 7 13 17c5 18 5 46 20 46 9 0 15-13 19-25 6-18 8-40 15-58 6-15 13-29 13-49 0-22-12-42-36-42-16 0-32 8-44 20z"/>
+          <path fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round" opacity=".9" d="M48 44c-10 4-15 14-14 26"/>
+        </svg>
+      </div>
+      <div class="ring r2"></div>
+      <div class="float-card">
+        <span class="ic"><svg><use href="#i-tooth"/></svg></span>
+        <span><small>Now welcoming</small><b>New patients</b></span>
+      </div>
     </div>
   </div>
+  <div class="scroll-cue" aria-hidden="true"></div>
 </section>
 
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <span>Thoughtful care</span><span>Healthy smiles</span><span>North Austin</span><span>West Parmer Lane</span><span>Unhurried visits</span><span>Clear conversations</span>
+    <span>Thoughtful care</span><span>Healthy smiles</span><span>North Austin</span><span>West Parmer Lane</span><span>Unhurried visits</span><span>Clear conversations</span>
+  </div>
+</div>
 
-
-<section class="cta-band" id="book">
-  <div class="wrap"><div class="cta-box">
-    <div><h2>Ready when you are.</h2><p>Book your visit in under a minute, or give us a call and talk to a real person.</p></div>
-    <div class="actions">
-      <a class="btn" href="#visit">Book your visit</a>
-      <a class="btn ghost" href="tel:5129824006">Call (512) 982-4006</a>
-    </div>
-  </div></div>
-</section>
-
-<section class="block" id="visit" style="padding-top:0">
+<section class="sec services" id="services">
   <div class="wrap">
-    <div class="kicker">Visit us</div><h2>Come say hello.</h2>
-    <div class="visit">
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11l8-7 8 7v9a1 1 0 01-1 1h-4v-6H9v6H5a1 1 0 01-1-1z"/></svg></div><h3>Address</h3><p>2206 West Parmer Ln, Austin, TX 78727</p></div>
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div><h3>Phone</h3><p><a href="tel:5129824006">(512) 982-4006</a></p><p style="margin-top:10px">Call or message us for today's opening hours.</p></div>
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-7-4.4-7-10a4 4 0 017-2.6A4 4 0 0119 10c0 5.6-7 10-7 10z"/></svg></div><h3>New patients welcome</h3><p>Book your visit online or by phone and we'll take care of the rest.</p></div>
+    <div class="sec-head reveal">
+      <span class="eyebrow">Your care</span>
+      <h2>Dentistry, <em>done with care</em>.</h2>
+      <p>From routine visits to questions about your smile, we take time to understand what you want and explain your options clearly.</p>
+    </div>
+    <div class="cards stagger">
+      <article class="card">
+        <span class="num">01</span>
+        <div class="icon"><svg viewBox="0 0 24 24"><use href="#i-tooth"/></svg></div>
+        <h3>Check-ups &amp; Cleanings</h3>
+        <p>Regular visits that keep your teeth and gums healthy, catch small concerns early and leave your smile feeling fresh.</p>
+        <a href="tel:+15129824006" class="more">Book a visit<svg><use href="#i-arrow"/></svg></a>
+      </article>
+      <article class="card">
+        <span class="num">02</span>
+        <div class="icon"><svg viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v6c0 4.5-3 7.8-7 9-4-1.2-7-4.5-7-9V6z"/><path d="M9 12l2 2 4-4"/></g></svg></div>
+        <h3>Preventive Care</h3>
+        <p>Practical guidance for your daily routine and a plan built around your needs, so your smile stays strong for years ahead.</p>
+        <a href="tel:+15129824006" class="more">Ask us how<svg><use href="#i-arrow"/></svg></a>
+      </article>
+      <article class="card">
+        <span class="num">03</span>
+        <div class="icon"><svg viewBox="0 0 24 24"><use href="#i-spark"/></svg></div>
+        <h3>Smile Consultations</h3>
+        <p>Thinking about changing how your smile looks? Talk it through with us and get honest, no-pressure advice on what may suit you.</p>
+        <a href="tel:+15129824006" class="more">Start a conversation<svg><use href="#i-arrow"/></svg></a>
+      </article>
+    </div>
+    <p class="note reveal">Have a specific treatment in mind? <a href="tel:+15129824006" class="ulink">Call (512) 982-4006</a> and our team will let you know how we can help.</p>
+  </div>
+</section>
+
+<section class="sec" id="about">
+  <div class="wrap about-grid">
+    <div class="about-art reveal" aria-hidden="true">
+      <div class="glow"></div>
+      <span class="big">Smile</span>
+      <div class="tag"><span>Austin Dental</span><span>Austin, TX</span></div>
+    </div>
+    <div class="about-copy reveal">
+      <span class="eyebrow">About us</span>
+      <h2>Your neighborhood dentist in <em>North Austin</em>.</h2>
+      <p>Austin Dental is a dental practice on West Parmer Lane, serving patients across Austin. We believe a great dental visit should feel calm, clear and genuinely personal.</p>
+      <p>That means listening first, explaining what we see in plain language and helping you make decisions you feel good about, whether you are coming in for a routine visit or something more.</p>
+      <p class="sig">Here for healthy, confident smiles.</p>
     </div>
   </div>
 </section>
+
+<section class="sec why">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">The experience</span>
+      <h2>Why patients <em>choose</em> us.</h2>
+    </div>
+    <div class="why-grid stagger">
+      <div class="why-item">
+        <span class="ic"><svg><use href="#i-clock"/></svg></span>
+        <div><h3>Unhurried visits</h3><p>Time to ask questions and understand your care, without feeling rushed out of the chair.</p></div>
+      </div>
+      <div class="why-item">
+        <span class="ic"><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 0 1-13.5 7.8L3 21l1.2-4.5A9 9 0 1 1 21 12z"/></svg></span>
+        <div><h3>Honest guidance</h3><p>Clear explanations of your options so every decision about your smile is truly yours.</p></div>
+      </div>
+      <div class="why-item">
+        <span class="ic"><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg></span>
+        <div><h3>Comfort first</h3><p>A welcoming, calm approach designed for patients who want dental visits to feel easy.</p></div>
+      </div>
+      <div class="why-item">
+        <span class="ic"><svg><use href="#i-pin"/></svg></span>
+        <div><h3>Easy to reach</h3><p>Conveniently located on West Parmer Lane in North Austin, 78727.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="process">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Your visit</span>
+      <h2>Simple from <em>first call</em> to fresh smile.</h2>
+    </div>
+    <div class="steps">
+      <div class="step reveal"><div class="n">01</div><h3>Give us a call</h3><p>Ring (512) 982-4006 and our team will find a time that works for you.</p></div>
+      <div class="step reveal"><div class="n">02</div><h3>Meet the team</h3><p>Visit us at 2206 West Parmer Ln and tell us what matters to you about your smile.</p></div>
+      <div class="step reveal"><div class="n">03</div><h3>Understand your options</h3><p>We explain what we find in plain language and talk through next steps together.</p></div>
+      <div class="step reveal"><div class="n">04</div><h3>Smile with confidence</h3><p>Leave with a clear plan and the reassurance of knowing your smile is cared for.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec faq" id="faq">
+  <div class="wrap faq-grid">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Questions</span>
+      <h2>Good to <em>know</em>.</h2>
+      <p>Anything else on your mind? Our team is happy to help over the phone.</p>
+    </div>
+    <div class="reveal">
+      <details>
+        <summary>Where is Austin Dental located?<span class="pm"></span></summary>
+        <p>You will find us at 2206 West Parmer Ln, Austin, TX 78727. <a href="https://maps.google.com/?q=2206+West+Parmer+Ln,+Austin,+TX+78727" target="_blank" rel="noopener" class="ulink">Get directions</a>.</p>
+      </details>
+      <details>
+        <summary>How do I book an appointment?<span class="pm"></span></summary>
+        <p>The quickest way is to call us on <a href="tel:+15129824006" class="ulink">(512) 982-4006</a>. Our team will find a time that suits you.</p>
+      </details>
+      <details>
+        <summary>What are your opening hours?<span class="pm"></span></summary>
+        <p>Please call <a href="tel:+15129824006" class="ulink">(512) 982-4006</a> for current hours and appointment availability.</p>
+      </details>
+      <details>
+        <summary>Can I ask about a specific treatment?<span class="pm"></span></summary>
+        <p>Of course. Give us a call and let us know what you are looking for, and we will tell you how we can help.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="wrap reveal">
+    <span class="eyebrow">Your next visit</span>
+    <h2>Ready for a smile you <em>love</em>?</h2>
+    <p>One call is all it takes. Our team is ready to welcome you to Austin Dental.</p>
+    <a href="tel:+15129824006" class="big-phone ulink">(512) 982-4006</a>
+    <div class="cta-row">
+      <a href="tel:+15129824006" class="btn btn-gold"><svg><use href="#i-phone"/></svg>Call to book</a>
+      <a href="https://maps.google.com/?q=2206+West+Parmer+Ln,+Austin,+TX+78727" target="_blank" rel="noopener" class="btn btn-outline-light"><svg><use href="#i-pin"/></svg>Get directions</a>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="contact">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Visit us</span>
+      <h2>We look forward to <em>meeting you</em>.</h2>
+    </div>
+    <div class="contact-grid">
+      <div class="info stagger">
+        <a href="tel:+15129824006" class="info-card">
+          <span class="ic"><svg><use href="#i-phone"/></svg></span>
+          <span><small>Call us</small><b>(512) 982-4006</b><span>Tap to call and book your visit</span></span>
+        </a>
+        <a href="https://maps.google.com/?q=2206+West+Parmer+Ln,+Austin,+TX+78727" target="_blank" rel="noopener" class="info-card">
+          <span class="ic"><svg><use href="#i-pin"/></svg></span>
+          <span><small>Address</small><b>2206 West Parmer Ln<br>Austin, TX 78727</b><span>Open in Google Maps</span></span>
+        </a>
+        <div class="info-card">
+          <span class="ic"><svg><use href="#i-clock"/></svg></span>
+          <span><small>Hours</small><b>Please call for hours</b><span>Our team will confirm current availability</span></span>
+        </div>
+      </div>
+      <div class="map-card reveal">
+        <svg class="map" viewBox="0 0 600 500" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+          <g fill="none" stroke="#ffffff" stroke-linecap="round">
+            <path stroke-width="22" d="M-20 230 C150 210 300 250 620 200"/>
+            <path stroke-width="10" d="M310 -20 L300 520"/>
+            <path stroke-width="8" d="M-20 90 L620 120"/>
+            <path stroke-width="8" d="M-20 380 C200 360 400 420 620 390"/>
+            <path stroke-width="6" d="M120 -20 L160 520"/>
+            <path stroke-width="6" d="M470 -20 L450 520"/>
+          </g>
+          <g fill="#c4dae1" opacity=".8">
+            <rect x="180" y="130" width="90" height="60" rx="8"/>
+            <rect x="340" y="140" width="90" height="50" rx="8"/>
+            <rect x="180" y="270" width="80" height="70" rx="8"/>
+            <rect x="350" y="270" width="80" height="80" rx="8"/>
+            <rect x="20" y="130" width="80" height="70" rx="8"/>
+            <rect x="500" y="250" width="90" height="100" rx="8"/>
+          </g>
+          <text x="40" y="222" font-family="Manrope,sans-serif" font-size="13" font-weight="700" letter-spacing="2" fill="#5a6878">W PARMER LN</text>
+        </svg>
+        <div class="pin" aria-hidden="true"><div class="dot"><svg><use href="#i-tooth"/></svg></div></div>
+        <div class="map-cta">
+          <div><b>Austin Dental</b><span>2206 West Parmer Ln, Austin, TX 78727</span></div>
+          <a href="https://maps.google.com/?q=2206+West+Parmer+Ln,+Austin,+TX+78727" target="_blank" rel="noopener" class="btn btn-dark">Directions<svg><use href="#i-arrow"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 </main>
 
-<footer><div class="wrap">
-  <span>© 2026 Austin Dental</span>
-  <span>Concept design. Not affiliated with or endorsed by Austin Dental.</span>
-</div></footer>
+<footer class="footer">
+  <div class="wrap">
+    <div class="foot-top">
+      <div>
+        <a href="#top" class="logo"><span class="logo-mark"><svg viewBox="0 0 24 24" style="color:#fff"><use href="#i-tooth"/></svg></span>Austin Dental</a>
+        <p>Calm, considered dental care on West Parmer Lane in North Austin.</p>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="#services">Care</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#process">Your Visit</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="tel:+15129824006">(512) 982-4006</a></li>
+          <li><a href="https://maps.google.com/?q=2206+West+Parmer+Ln,+Austin,+TX+78727" target="_blank" rel="noopener">2206 West Parmer Ln<br>Austin, TX 78727</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© <span id="yr"></span> Austin Dental. All rights reserved.</span>
+      <a href="#top" class="ulink">Back to top ↑</a>
+    </div>
+  </div>
+</footer>
 
-<div class="mobile-bar">
-  <a class="btn ghost" href="tel:5129824006">Call</a>
-  <a class="btn" href="#visit">Book now</a>
-</div>
-</body>
+<nav class="mobile-bar" id="mobileBar" aria-label="Quick actions">
+  <a href="tel:+15129824006" class="call"><svg><use href="#i-phone"/></svg>Call now</a>
+  <a href="https://maps.google.com/?q=2206+West+Parmer+Ln,+Austin,+TX+78727" target="_blank" rel="noopener" class="dir"><svg><use href="#i-pin"/></svg>Directions</a>
+</nav>
+
+<script>
+(function(){
+  var body=document.body,
+      header=document.getElementById('header'),
+      bar=document.getElementById('mobileBar'),
+      art=document.getElementById('heroArt'),
+      menuBtn=document.getElementById('menuBtn'),
+      menu=document.getElementById('mobileMenu'),
+      reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  document.getElementById('yr').textContent=new Date().getFullYear();
+  requestAnimationFrame(function(){setTimeout(function(){body.classList.add('loaded')},60)});
+
+  function toggleMenu(open){
+    body.classList.toggle('menu-open',open);
+    menuBtn.setAttribute('aria-expanded',open);
+    menu.setAttribute('aria-hidden',!open);
+    body.style.overflow=open?'hidden':'';
+  }
+  menuBtn.addEventListener('click',function(){toggleMenu(!body.classList.contains('menu-open'))});
+  menu.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){toggleMenu(false)})});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')toggleMenu(false)});
+
+  var ticking=false;
+  function onScroll(){
+    var y=window.scrollY;
+    header.classList.toggle('scrolled',y>30);
+    bar.classList.toggle('show',y>window.innerHeight*.6);
+    if(!reduce&&art&&y<window.innerHeight*1.2){
+      art.style.transform='translate3d(0,'+(y*0.12)+'px,0)';
+    }
+    ticking=false;
+  }
+  window.addEventListener('scroll',function(){if(!ticking){requestAnimationFrame(onScroll);ticking=true}},{passive:true});
+  onScroll();
+
+  var els=document.querySelectorAll('.reveal,.stagger,.step');
+  if('IntersectionObserver' in window&&!reduce){
+    var io=new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target)}
+      });
+    },{threshold:.15,rootMargin:'0px 0px -40px 0px'});
+    els.forEach(function(el){io.observe(el)});
+  }else{
+    els.forEach(function(el){el.classList.add('in')});
+  }
+})();
+</script>
+<div id="lm-concept" style="position:fixed;left:12px;bottom:12px;z-index:2147483647;font:500 11px/1.3 -apple-system,BlinkMacSystemFont,Segoe UI,sans-serif;letter-spacing:.02em;background:rgba(15,15,18,.82);color:#f4f1ea;padding:7px 11px;border-radius:999px;backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);pointer-events:none;max-width:70vw">Website concept for Austin Dental by webstudio &middot; not the live site</div><p style="margin:0;padding:18px 16px 70px;text-align:center;font:12px/1.5 -apple-system,sans-serif;color:#8a8a8a;background:#0e0e10">Concept design by webstudio. Not affiliated with or endorsed by Austin Dental.</p></body>
 </html>
