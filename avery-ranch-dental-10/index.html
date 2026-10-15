@@ -1,291 +1,737 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src * data: blob:; media-src 'self' data:; style-src 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com data:; script-src 'unsafe-inline'; connect-src 'none'; frame-src 'none'; form-action 'none'; base-uri 'none'; object-src 'none'">
 <meta name="robots" content="noindex, nofollow">
-<title>Avery Ranch Dental | Website concept</title>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Avery Ranch Dental | Dentist in Austin, TX</title>
+<meta name="description" content="Avery Ranch Dental: refined, gentle dental care at 15004 Avery Ranch Boulevard, Austin, TX 78717. Call (512) 246-7645.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{
-  --bg:#f7f3ec;--surface:#ffffff;--ink:#12302c;--muted:#5b6b67;
-  --accent:#1f5c53;--accent-ink:#ffffff;--gold:#b8915a;--soft:#e8efe9;
-  --radius:22px;--max:1180px;
-  --serif:"Fraunces",Georgia,serif;--sans:"Manrope",system-ui,-apple-system,sans-serif;
+  --ink:#0d1f2a;
+  --ink-2:#163242;
+  --ink-soft:#3c5361;
+  --pearl:#fbfaf7;
+  --cream:#f4f0e8;
+  --sand:#e9e2d4;
+  --gold:#b08d57;
+  --gold-2:#d4b98a;
+  --gold-deep:#8a6a3b;
+  --line:rgba(13,31,42,.12);
+  --serif:"Cormorant Garamond",Georgia,serif;
+  --sans:"Manrope",system-ui,-apple-system,Segoe UI,sans-serif;
+  --ease:cubic-bezier(.22,1,.36,1);
+  --radius:22px;
 }
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:var(--sans);color:var(--ink);background:var(--pearl);line-height:1.65;font-size:17px;overflow-x:hidden;-webkit-font-smoothing:antialiased}
 a{color:inherit;text-decoration:none}
-img{max-width:100%;display:block}
-.wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
-.concept{background:var(--ink);color:var(--bg);font-size:13px;text-align:center;padding:8px 16px;letter-spacing:.02em}
-.concept b{color:var(--gold);font-weight:600}
+svg{display:block}
+.wrap{width:min(1200px,100% - 48px);margin-inline:auto}
+.eyebrow{display:inline-flex;align-items:center;gap:12px;font-size:12px;font-weight:600;letter-spacing:.24em;text-transform:uppercase;color:var(--gold-deep)}
+.eyebrow::before{content:"";width:34px;height:1px;background:currentColor}
+h1,h2,h3{font-family:var(--serif);font-weight:500;line-height:1.04;letter-spacing:-.01em}
+h2{font-size:clamp(40px,5.4vw,72px)}
+h2 em,h1 em{font-style:italic;color:var(--gold-deep)}
+.lead{font-size:clamp(17px,1.4vw,19px);color:var(--ink-soft);max-width:560px}
 
-/* header */
-header{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:saturate(1.4) blur(10px);border-bottom:1px solid color-mix(in srgb,var(--ink) 8%,transparent)}
-.nav{display:flex;align-items:center;justify-content:space-between;height:76px;gap:24px}
-.brand{font-family:var(--serif);font-size:23px;font-weight:600;letter-spacing:-.01em;line-height:1.1;max-width:340px}
-.links{display:flex;gap:30px;font-size:15px;font-weight:500;color:var(--muted)}
-.links a:hover{color:var(--ink)}
-.nav-right{display:flex;align-items:center;gap:18px}
-.phone{font-weight:600;font-size:15px;white-space:nowrap}
-.btn{display:inline-flex;align-items:center;gap:10px;background:var(--accent);color:var(--accent-ink);padding:14px 26px;border-radius:999px;font-weight:600;font-size:15.5px;transition:transform .2s ease,box-shadow .2s ease;white-space:nowrap}
-.btn:hover{transform:translateY(-2px);box-shadow:0 12px 28px -12px var(--accent)}
-.btn.ghost{background:transparent;color:var(--ink);border:1.5px solid color-mix(in srgb,var(--ink) 20%,transparent)}
-.btn.ghost:hover{box-shadow:none;border-color:var(--ink)}
-.btn svg{width:18px;height:18px}
+/* Buttons */
+.btn{position:relative;display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:17px 30px;border-radius:100px;font-weight:600;font-size:15px;letter-spacing:.02em;transition:transform .5s var(--ease),box-shadow .5s var(--ease),background .4s,color .4s;overflow:hidden;white-space:nowrap;text-align:center}
+.btn svg{width:18px;height:18px;flex:none;transition:transform .5s var(--ease)}
+.btn:hover svg{transform:translateX(4px)}
+.btn-gold{background:linear-gradient(135deg,var(--gold-2),var(--gold) 55%,var(--gold-deep));color:#fff;box-shadow:0 14px 34px -14px rgba(138,106,59,.7)}
+.btn-gold::after{content:"";position:absolute;inset:0;background:linear-gradient(110deg,transparent 30%,rgba(255,255,255,.45) 50%,transparent 70%);transform:translateX(-120%);transition:transform .9s var(--ease)}
+.btn-gold:hover::after{transform:translateX(120%)}
+.btn-gold:hover{transform:translateY(-3px);box-shadow:0 22px 44px -16px rgba(138,106,59,.8)}
+.btn-ghost{border:1px solid var(--line);color:var(--ink);background:rgba(255,255,255,.6);backdrop-filter:blur(6px)}
+.btn-ghost:hover{border-color:var(--ink);transform:translateY(-3px)}
+.btn-light{background:var(--pearl);color:var(--ink)}
+.btn-light:hover{transform:translateY(-3px);background:#fff}
+.btn-outline-light{border:1px solid rgba(255,255,255,.3);color:#fff}
+.btn-outline-light:hover{border-color:var(--gold-2);color:var(--gold-2);transform:translateY(-3px)}
 
-/* hero */
-.hero{padding:72px 0 88px}
-.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:64px;align-items:center}
-.eyebrow{display:inline-flex;align-items:center;gap:10px;background:var(--surface);border:1px solid color-mix(in srgb,var(--ink) 10%,transparent);padding:8px 16px 8px 10px;border-radius:999px;font-size:14px;font-weight:600;color:var(--muted)}
-.stars{color:var(--gold);letter-spacing:1px;font-size:14px}
-.eyebrow .dot{width:26px;height:26px;border-radius:50%;background:var(--soft);display:grid;place-items:center;color:var(--accent)}
-h1{font-family:var(--serif);font-weight:500;font-size:clamp(44px,5.6vw,74px);line-height:1.02;letter-spacing:-.025em;margin:26px 0 22px}
-h1 em{font-style:italic;color:var(--accent)}
-.lead-text{font-size:19.5px;color:var(--muted);max-width:540px}
-.hero-ctas{display:flex;gap:14px;margin-top:36px;flex-wrap:wrap}
-.ticks{display:flex;gap:22px;margin-top:34px;flex-wrap:wrap;font-size:14.5px;font-weight:600;color:var(--muted)}
-.ticks span{display:flex;align-items:center;gap:8px}
-.ticks svg{width:18px;height:18px;color:var(--accent)}
-.visual{position:relative}
-.photo{aspect-ratio:4/5;border-radius:calc(var(--radius) + 10px);overflow:hidden;background:var(--soft);box-shadow:0 40px 80px -40px color-mix(in srgb,var(--ink) 55%,transparent)}
-.photo img{width:100%;height:100%;object-fit:cover}
-.quote-panel{aspect-ratio:4/5;border-radius:calc(var(--radius) + 10px);background:linear-gradient(155deg,var(--accent),color-mix(in srgb,var(--accent) 55%,var(--ink)));color:var(--accent-ink);padding:52px 46px;display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden;box-shadow:0 40px 80px -40px color-mix(in srgb,var(--ink) 60%,transparent)}
-.quote-panel:before{content:"";position:absolute;width:420px;height:420px;border-radius:50%;right:-160px;top:-160px;background:color-mix(in srgb,var(--accent-ink) 9%,transparent)}
-.quote-panel:after{content:"";position:absolute;width:260px;height:260px;border-radius:50%;left:-90px;bottom:-110px;border:1.5px solid color-mix(in srgb,var(--accent-ink) 22%,transparent)}
-.quote-mark{font-family:var(--serif);font-size:120px;line-height:.6;opacity:.35}
-.quote-panel p{font-family:var(--serif);font-size:28px;line-height:1.3;position:relative;z-index:1}
-.quote-panel .who{font-family:var(--sans);font-size:15px;opacity:.85;margin-top:22px;font-weight:600}
-.float{position:absolute;background:var(--surface);color:var(--ink);border-radius:18px;padding:16px 20px;box-shadow:0 24px 50px -24px color-mix(in srgb,var(--ink) 50%,transparent);display:flex;align-items:center;gap:14px;font-size:14px;line-height:1.35}
-.float b{font-size:22px;font-family:var(--serif);font-weight:600;display:block}
-.float.one{left:-34px;bottom:-28px}
-.float.two{right:-22px;top:44px}
-.float .badge{width:44px;height:44px;border-radius:14px;background:var(--soft);display:grid;place-items:center;color:var(--accent)}
-.float .badge svg{width:22px;height:22px}
+.ulink{position:relative}
+.ulink::after{content:"";position:absolute;left:0;bottom:-3px;width:100%;height:1px;background:currentColor;transform:scaleX(0);transform-origin:right;transition:transform .5s var(--ease)}
+.ulink:hover::after{transform:scaleX(1);transform-origin:left}
 
-/* trust */
-.trust{border-top:1px solid color-mix(in srgb,var(--ink) 9%,transparent);border-bottom:1px solid color-mix(in srgb,var(--ink) 9%,transparent);background:var(--surface)}
-.trust .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;padding-top:26px;padding-bottom:26px}
-.trust div{display:flex;align-items:center;gap:12px;font-weight:600;font-size:15px}
-.trust svg{width:22px;height:22px;color:var(--accent);flex:none}
+/* Header */
+.header{position:fixed;inset:0 0 auto;z-index:50;transition:background .5s,box-shadow .5s,padding .5s;padding:22px 0}
+.header.scrolled{background:rgba(251,250,247,.78);backdrop-filter:blur(18px) saturate(1.4);-webkit-backdrop-filter:blur(18px) saturate(1.4);box-shadow:0 1px 0 var(--line);padding:12px 0}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:24px}
+.logo{display:flex;align-items:center;gap:12px;flex:none}
+.logo-mark{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;background:var(--ink);color:var(--gold-2)}
+.logo-mark svg{width:22px;height:22px}
+.logo-text{font-family:var(--serif);font-size:24px;font-weight:600;line-height:1;letter-spacing:.01em}
+.logo-text small{display:block;font-family:var(--sans);font-size:9.5px;font-weight:600;letter-spacing:.32em;text-transform:uppercase;color:var(--gold-deep);margin-top:5px}
+.menu{display:flex;gap:34px;font-size:14px;font-weight:500}
+.nav-cta{display:flex;align-items:center;gap:22px}
+.nav-phone{font-size:14px;font-weight:600;display:flex;align-items:center;gap:8px}
+.nav-phone svg{width:16px;height:16px;color:var(--gold-deep)}
+.nav .btn{padding:13px 22px;font-size:14px}
+.burger{display:none;width:46px;height:46px;border-radius:50%;border:1px solid var(--line);background:rgba(255,255,255,.7);cursor:pointer;position:relative}
+.burger span{position:absolute;left:14px;right:14px;height:1.5px;background:var(--ink);transition:transform .4s var(--ease),opacity .3s}
+.burger span:nth-child(1){top:18px}.burger span:nth-child(2){top:23px}.burger span:nth-child(3){top:28px}
+.menu-open .burger span:nth-child(1){transform:translateY(5px) rotate(45deg)}
+.menu-open .burger span:nth-child(2){opacity:0}
+.menu-open .burger span:nth-child(3){transform:translateY(-5px) rotate(-45deg)}
+.mobile-menu{position:fixed;inset:0;z-index:45;background:var(--pearl);display:flex;flex-direction:column;justify-content:center;padding:100px 32px 40px;gap:8px;opacity:0;visibility:hidden;transition:opacity .5s var(--ease),visibility .5s}
+.mobile-menu a.m-link{font-family:var(--serif);font-size:44px;line-height:1.2;transform:translateY(20px);opacity:0;transition:transform .6s var(--ease),opacity .6s}
+.menu-open .mobile-menu{opacity:1;visibility:visible}
+.menu-open .mobile-menu a.m-link{transform:none;opacity:1}
+.menu-open .mobile-menu a.m-link:nth-child(2){transition-delay:.05s}
+.menu-open .mobile-menu a.m-link:nth-child(3){transition-delay:.1s}
+.menu-open .mobile-menu a.m-link:nth-child(4){transition-delay:.15s}
+.menu-open .mobile-menu a.m-link:nth-child(5){transition-delay:.2s}
+.mobile-menu .btn{margin-top:28px;align-self:flex-start}
+.mobile-menu .m-phone{margin-top:16px;color:var(--ink-soft);font-weight:600}
 
-/* sections */
-section.block{padding:110px 0}
-.kicker{font-size:13px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
-h2{font-family:var(--serif);font-weight:500;font-size:clamp(34px,3.8vw,52px);line-height:1.08;letter-spacing:-.02em;margin:14px 0 18px}
-.section-head{display:flex;justify-content:space-between;align-items:end;gap:40px;margin-bottom:56px}
-.section-head p{color:var(--muted);max-width:420px}
-.services{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-.card{background:var(--surface);border-radius:var(--radius);padding:34px 32px 36px;border:1px solid color-mix(in srgb,var(--ink) 7%,transparent);transition:transform .25s ease,box-shadow .25s ease}
-.card:hover{transform:translateY(-4px);box-shadow:0 30px 60px -36px color-mix(in srgb,var(--ink) 45%,transparent)}
-.icon{width:54px;height:54px;border-radius:16px;background:var(--soft);color:var(--accent);display:grid;place-items:center;margin-bottom:24px}
-.icon svg{width:26px;height:26px}
-.card h3{font-family:var(--serif);font-weight:500;font-size:23px;margin-bottom:8px;letter-spacing:-.01em}
-.card p{color:var(--muted);font-size:16px}
+/* Hero */
+.hero{position:relative;min-height:100vh;min-height:100svh;display:flex;align-items:center;padding:140px 0 90px;overflow:hidden;background:
+  radial-gradient(1000px 600px at 85% 20%,rgba(212,185,138,.22),transparent 60%),
+  radial-gradient(800px 600px at 0% 100%,rgba(22,50,66,.07),transparent 60%),
+  linear-gradient(180deg,var(--pearl),var(--cream))}
+.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:60px;align-items:center;position:relative;z-index:2}
+.hero h1{font-size:clamp(52px,7.6vw,112px);margin:26px 0 28px}
+.hero h1 .line{display:block;overflow:hidden;padding-bottom:.06em}
+.hero h1 .line>span{display:inline-block}
+.hero-actions{display:flex;flex-wrap:wrap;gap:14px;margin-top:40px}
+.hero-meta{display:flex;flex-wrap:wrap;gap:28px;margin-top:54px;padding-top:28px;border-top:1px solid var(--line);font-size:14px;color:var(--ink-soft)}
+.hero-meta div{display:flex;align-items:center;gap:10px}
+.hero-meta svg{width:18px;height:18px;color:var(--gold-deep);flex:none}
+.hero-art{position:relative;aspect-ratio:1/1.08;width:100%;max-width:500px;justify-self:end}
+.orb{position:absolute;inset:0;border-radius:48% 52% 46% 54%/52% 46% 54% 48%;background:
+  radial-gradient(circle at 35% 30%,#fff 0%,#f6f1e7 35%,#e7dcc6 75%,#d8c7a5 100%);
+  box-shadow:inset -30px -40px 80px rgba(138,106,59,.18),0 60px 120px -50px rgba(13,31,42,.35);animation:morph 16s ease-in-out infinite}
+@keyframes morph{0%,100%{border-radius:48% 52% 46% 54%/52% 46% 54% 48%}50%{border-radius:54% 46% 52% 48%/46% 54% 48% 52%}}
+.ring{position:absolute;border:1px solid rgba(176,141,87,.35);border-radius:50%;inset:-6%}
+.ring.r2{inset:-14%;border-color:rgba(176,141,87,.18)}
+.ring.r3{inset:-22%;border-style:dashed;border-color:rgba(13,31,42,.08);animation:spin 80s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.tooth{position:absolute;inset:16% 20%;}
+.tooth svg{width:100%;height:100%}
+.tooth path{stroke-dasharray:1400;stroke-dashoffset:1400;animation:draw 3.2s .6s var(--ease) forwards}
+@keyframes draw{to{stroke-dashoffset:0}}
+.sparkle{position:absolute;color:var(--gold);animation:twinkle 4s ease-in-out infinite}
+.sparkle svg{width:100%;height:100%}
+.s1{width:34px;top:14%;right:16%}.s2{width:20px;top:30%;right:6%;animation-delay:1.2s}.s3{width:24px;bottom:20%;left:8%;animation-delay:2.1s}
+@keyframes twinkle{0%,100%{transform:scale(.7) rotate(0);opacity:.5}50%{transform:scale(1.1) rotate(45deg);opacity:1}}
+.hero-card{position:absolute;left:-8%;bottom:8%;background:rgba(255,255,255,.82);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid rgba(255,255,255,.9);border-radius:18px;padding:18px 22px;box-shadow:0 30px 60px -30px rgba(13,31,42,.35);display:flex;gap:14px;align-items:center;max-width:270px}
+.hero-card .ic{width:44px;height:44px;border-radius:12px;background:var(--ink);color:var(--gold-2);display:grid;place-items:center;flex:none}
+.hero-card .ic svg{width:22px;height:22px}
+.hero-card b{display:block;font-size:14px}
+.hero-card span{font-size:13px;color:var(--ink-soft);line-height:1.4;display:block}
+.scroll-cue{position:absolute;left:50%;bottom:28px;transform:translateX(-50%);z-index:2;display:flex;flex-direction:column;align-items:center;gap:10px;font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--ink-soft)}
+.scroll-cue i{width:1px;height:44px;background:linear-gradient(var(--gold),transparent);animation:cue 2.4s ease-in-out infinite;transform-origin:top}
+@keyframes cue{0%{transform:scaleY(0)}50%{transform:scaleY(1)}100%{transform:scaleY(1);opacity:0}}
 
-.why{background:var(--ink);color:var(--bg)}
-.why .kicker{color:var(--gold)}
-.why-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:80px;align-items:start}
-.why h2{color:var(--bg)}
-.why .intro{color:color-mix(in srgb,var(--bg) 70%,transparent);font-size:18px;max-width:440px}
-.points{display:grid;gap:14px}
-.point{display:grid;grid-template-columns:62px 1fr;gap:20px;padding:30px;border-radius:var(--radius);background:color-mix(in srgb,var(--bg) 6%,transparent);border:1px solid color-mix(in srgb,var(--bg) 10%,transparent)}
-.point .num{font-family:var(--serif);font-size:34px;color:var(--gold);line-height:1}
-.point h3{font-family:var(--serif);font-weight:500;font-size:24px;margin-bottom:6px}
-.point p{color:color-mix(in srgb,var(--bg) 72%,transparent);font-size:16px}
+/* Hero entrance */
+.intro{opacity:0;transform:translateY(28px)}
+.hero h1 .line>span{transform:translateY(105%)}
+.loaded .intro{opacity:1;transform:none;transition:opacity 1.1s var(--ease),transform 1.1s var(--ease)}
+.loaded .hero h1 .line>span{transform:none;transition:transform 1.2s var(--ease)}
+.loaded .hero h1 .line:nth-child(2)>span{transition-delay:.12s}
+.loaded .hero h1 .line:nth-child(3)>span{transition-delay:.24s}
+.loaded .d1{transition-delay:.05s!important}.loaded .d2{transition-delay:.45s!important}.loaded .d3{transition-delay:.6s!important}.loaded .d4{transition-delay:.75s!important}.loaded .d5{transition-delay:.35s!important}
 
-.score{display:flex;align-items:center;gap:18px;background:var(--surface);padding:16px 24px;border-radius:18px;border:1px solid color-mix(in srgb,var(--ink) 8%,transparent)}
-.score b{font-family:var(--serif);font-size:40px;font-weight:500;line-height:1}
-.score small{display:block;color:var(--muted);font-size:14px}
-.reviews{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-.review{background:var(--surface);border-radius:var(--radius);padding:34px;display:flex;flex-direction:column;gap:22px;border:1px solid color-mix(in srgb,var(--ink) 7%,transparent)}
-.review p{font-family:var(--serif);font-size:19.5px;line-height:1.45}
-.review .by{margin-top:auto;display:flex;align-items:center;gap:12px;font-weight:600;font-size:15px}
-.avatar{width:40px;height:40px;border-radius:50%;background:var(--soft);color:var(--accent);display:grid;place-items:center;font-weight:700}
-.review .src{color:var(--muted);font-weight:500;font-size:13px;display:block}
+/* Marquee */
+.marquee{background:var(--ink);color:var(--pearl);padding:26px 0;overflow:hidden;position:relative}
+.marquee-track{display:flex;width:max-content;animation:marquee 38s linear infinite}
+.marquee:hover .marquee-track{animation-play-state:paused}
+.marquee-group{display:flex;align-items:center;gap:48px;padding-right:48px}
+.marquee-group span{font-family:var(--serif);font-size:clamp(24px,2.6vw,34px);font-style:italic;white-space:nowrap}
+.marquee-group svg{width:18px;height:18px;color:var(--gold-2);flex:none}
+@keyframes marquee{to{transform:translateX(-50%)}}
 
-.cta-band{padding:0 0 110px}
-.cta-box{border-radius:calc(var(--radius) + 12px);background:linear-gradient(140deg,var(--accent),color-mix(in srgb,var(--accent) 60%,var(--ink)));color:var(--accent-ink);padding:76px 64px;display:grid;grid-template-columns:1.3fr 1fr;gap:40px;align-items:center;position:relative;overflow:hidden}
-.cta-box:after{content:"";position:absolute;right:-120px;bottom:-200px;width:460px;height:460px;border-radius:50%;border:1.5px solid color-mix(in srgb,var(--accent-ink) 22%,transparent)}
-.cta-box h2{color:inherit;margin:0 0 12px}
-.cta-box p{opacity:.85;font-size:18px}
-.cta-box .actions{display:flex;flex-direction:column;gap:12px;align-items:flex-start;position:relative;z-index:1}
-.cta-box .btn{background:var(--accent-ink);color:var(--accent)}
-.cta-box .btn.ghost{background:transparent;color:var(--accent-ink);border-color:color-mix(in srgb,var(--accent-ink) 40%,transparent)}
+/* Sections */
+section{position:relative}
+.section{padding:clamp(90px,12vw,160px) 0}
+.sec-head{display:flex;justify-content:space-between;align-items:flex-end;gap:40px;margin-bottom:70px;flex-wrap:wrap}
+.sec-head h2{margin-top:20px;max-width:720px}
+.sec-head .lead{max-width:420px}
 
-.visit{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:10px}
-.visit .card h3{font-size:20px}
-.visit a{color:var(--accent);font-weight:600}
-footer{border-top:1px solid color-mix(in srgb,var(--ink) 9%,transparent);padding:40px 0 110px;color:var(--muted);font-size:14px}
-footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
-.mobile-bar{display:none}
+/* Services */
+.services{background:var(--pearl)}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.card{position:relative;padding:40px 34px 36px;border-radius:var(--radius);background:#fff;border:1px solid var(--line);transition:transform .6s var(--ease),box-shadow .6s var(--ease),border-color .4s;overflow:hidden;display:flex;flex-direction:column;min-width:0}
+.card::before{content:"";position:absolute;inset:auto -40% -60% auto;width:280px;height:280px;border-radius:50%;background:radial-gradient(circle,rgba(212,185,138,.28),transparent 70%);opacity:0;transition:opacity .6s}
+.card:hover{transform:translateY(-8px);box-shadow:0 40px 70px -40px rgba(13,31,42,.35);border-color:rgba(176,141,87,.45)}
+.card:hover::before{opacity:1}
+.card-num{font-family:var(--serif);font-size:15px;color:var(--gold-deep);letter-spacing:.1em;font-style:italic}
+.card-ic{width:60px;height:60px;border-radius:16px;background:var(--cream);color:var(--ink);display:grid;place-items:center;margin:26px 0 28px;transition:background .5s,color .5s}
+.card-ic svg{width:28px;height:28px}
+.card:hover .card-ic{background:var(--ink);color:var(--gold-2)}
+.card h3{font-size:32px;margin-bottom:14px}
+.card p{color:var(--ink-soft);font-size:15.5px;flex:1}
+.card-link{margin-top:28px;font-size:14px;font-weight:600;display:inline-flex;align-items:center;gap:8px;color:var(--ink)}
+.card-link svg{width:16px;height:16px;transition:transform .5s var(--ease)}
+.card:hover .card-link svg{transform:translateX(5px)}
+.card.feature{grid-column:span 2;background:linear-gradient(140deg,var(--ink),var(--ink-2));color:var(--pearl);border-color:transparent}
+.card.feature p{color:rgba(251,250,247,.72)}
+.card.feature .card-ic{background:rgba(255,255,255,.08);color:var(--gold-2)}
+.card.feature .card-link{color:var(--gold-2)}
+.card.feature h3{font-size:clamp(34px,3.4vw,46px);max-width:520px}
+.card.feature .card-num{color:var(--gold-2)}
+.services-note{margin-top:34px;font-size:14px;color:var(--ink-soft);text-align:center}
+.services-note a{color:var(--ink);font-weight:600}
 
-@keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
-.hero .copy>*{animation:rise .8s cubic-bezier(.2,.7,.2,1) both}
-.hero .copy>*:nth-child(2){animation-delay:.08s}.hero .copy>*:nth-child(3){animation-delay:.16s}
-.hero .copy>*:nth-child(4){animation-delay:.24s}.hero .copy>*:nth-child(5){animation-delay:.32s}
-.visual{animation:rise 1s .2s cubic-bezier(.2,.7,.2,1) both}
+/* About */
+.about{background:var(--cream);overflow:hidden}
+.about-grid{display:grid;grid-template-columns:.95fr 1.05fr;gap:90px;align-items:center}
+.about-visual{position:relative;aspect-ratio:4/5;border-radius:240px 240px 28px 28px;background:
+  radial-gradient(120% 80% at 50% 0%,#24475a 0%,var(--ink) 70%);overflow:hidden;box-shadow:0 60px 100px -60px rgba(13,31,42,.6)}
+.about-visual svg.lines{position:absolute;inset:0;width:100%;height:100%;opacity:.5}
+.about-quote{position:absolute;left:34px;right:34px;bottom:40px;color:var(--pearl)}
+.about-quote .q{font-family:var(--serif);font-size:120px;line-height:.5;color:var(--gold-2);display:block;height:46px}
+.about-quote p{font-family:var(--serif);font-size:clamp(26px,2.6vw,34px);line-height:1.2;font-style:italic}
+.about-badge{position:absolute;top:44px;left:50%;transform:translateX(-50%);width:120px;height:120px}
+.about-badge svg{width:100%;height:100%;animation:spin 30s linear infinite}
+.about-badge .c{position:absolute;inset:0;display:grid;place-items:center;color:var(--gold-2)}
+.about-badge .c svg{width:34px;height:34px;animation:none}
+.about-copy h2{margin:20px 0 30px}
+.about-copy p{color:var(--ink-soft);margin-bottom:20px;max-width:560px}
+.about-copy p.big{font-family:var(--serif);font-size:clamp(24px,2.2vw,29px);line-height:1.35;color:var(--ink)}
+.about-points{list-style:none;margin:34px 0 40px;display:grid;gap:16px}
+.about-points li{display:flex;gap:14px;align-items:flex-start;font-weight:500}
+.about-points svg{width:22px;height:22px;flex:none;color:var(--gold-deep);margin-top:2px}
 
-@media (max-width:980px){
-  .links{display:none}
-  .hero-grid,.why-grid,.cta-box{grid-template-columns:1fr}
-  .hero-grid{gap:56px}
-  .services,.reviews,.visit{grid-template-columns:1fr 1fr}
-  .trust .wrap{grid-template-columns:1fr 1fr}
-  .float.one{left:12px;bottom:-26px}.float.two{right:12px}
-  .visual{max-width:560px;margin-bottom:20px}
-  .section-head{flex-direction:column;align-items:flex-start}
+/* Why */
+.why{background:var(--ink);color:var(--pearl);overflow:hidden}
+.why::before{content:"";position:absolute;width:900px;height:900px;right:-300px;top:-300px;border-radius:50%;background:radial-gradient(circle,rgba(212,185,138,.14),transparent 65%);pointer-events:none}
+.why .eyebrow{color:var(--gold-2)}
+.why h2 em{color:var(--gold-2)}
+.why .lead{color:rgba(251,250,247,.7)}
+.why-grid{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid rgba(255,255,255,.12)}
+.why-item{padding:44px 30px 10px 0;position:relative;min-width:0}
+.why-item+.why-item{padding-left:30px;border-left:1px solid rgba(255,255,255,.12)}
+.why-item svg{width:34px;height:34px;color:var(--gold-2);margin-bottom:26px;transition:transform .6s var(--ease)}
+.why-item:hover svg{transform:translateY(-6px) scale(1.06)}
+.why-item h3{font-size:28px;margin-bottom:12px}
+.why-item p{color:rgba(251,250,247,.66);font-size:15.5px}
+
+/* Steps */
+.steps{background:var(--pearl)}
+.steps-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;counter-reset:s;position:relative}
+.steps-grid::before{content:"";position:absolute;top:36px;left:6%;right:6%;height:1px;background:linear-gradient(90deg,transparent,var(--gold-2),transparent)}
+.step{position:relative;text-align:left;min-width:0}
+.step-dot{width:72px;height:72px;border-radius:50%;background:var(--pearl);border:1px solid rgba(176,141,87,.5);display:grid;place-items:center;font-family:var(--serif);font-size:30px;font-style:italic;color:var(--gold-deep);position:relative;z-index:1;margin-bottom:30px;transition:background .5s,color .5s,transform .6s var(--ease)}
+.step:hover .step-dot{background:var(--ink);color:var(--gold-2);transform:scale(1.06)}
+.step h3{font-size:28px;margin-bottom:10px}
+.step p{color:var(--ink-soft);font-size:15.5px}
+
+/* CTA band */
+.cta-band{padding:0 0 clamp(90px,12vw,140px);background:var(--pearl)}
+.cta-box{position:relative;border-radius:36px;overflow:hidden;padding:clamp(60px,9vw,120px) clamp(28px,7vw,100px);background:linear-gradient(135deg,var(--ink) 0%,var(--ink-2) 100%);color:var(--pearl);text-align:center}
+.cta-box::before,.cta-box::after{content:"";position:absolute;border-radius:50%;border:1px solid rgba(212,185,138,.25)}
+.cta-box::before{width:700px;height:700px;left:-260px;top:-380px}
+.cta-box::after{width:560px;height:560px;right:-220px;bottom:-320px}
+.cta-box .glow{position:absolute;inset:0;background:radial-gradient(600px 300px at 50% 0%,rgba(212,185,138,.22),transparent 70%);pointer-events:none}
+.cta-box>*{position:relative}
+.cta-box .eyebrow{color:var(--gold-2);justify-content:center}
+.cta-box .eyebrow::after{content:"";width:34px;height:1px;background:currentColor}
+.cta-box h2{margin:24px auto 22px;max-width:860px}
+.cta-box h2 em{color:var(--gold-2)}
+.cta-box p{color:rgba(251,250,247,.72);max-width:540px;margin:0 auto}
+.cta-actions{display:flex;flex-wrap:wrap;gap:14px;justify-content:center;margin-top:44px}
+
+/* Contact */
+.contact{background:var(--cream)}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:stretch}
+.contact-info h2{margin:20px 0 26px}
+.contact-list{display:grid;gap:14px;margin-top:40px}
+.c-item{display:flex;gap:18px;align-items:center;padding:22px 24px;border-radius:18px;background:#fff;border:1px solid var(--line);transition:transform .5s var(--ease),box-shadow .5s var(--ease),border-color .4s;min-width:0}
+a.c-item:hover{transform:translateY(-4px);box-shadow:0 30px 50px -30px rgba(13,31,42,.3);border-color:rgba(176,141,87,.45)}
+.c-item .ic{width:50px;height:50px;border-radius:14px;background:var(--cream);display:grid;place-items:center;flex:none;color:var(--gold-deep)}
+.c-item .ic svg{width:22px;height:22px}
+.c-item small{display:block;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-soft);font-weight:600}
+.c-item strong{display:block;font-size:17px;font-weight:600;overflow-wrap:anywhere}
+.map-card{position:relative;border-radius:28px;overflow:hidden;min-height:480px;background:var(--ink);display:flex;flex-direction:column;justify-content:flex-end;padding:40px;color:var(--pearl);box-shadow:0 60px 100px -60px rgba(13,31,42,.6)}
+.map-card svg.map{position:absolute;inset:0;width:100%;height:100%}
+.map-pin{position:absolute;top:38%;left:52%;transform:translate(-50%,-100%);color:var(--gold-2)}
+.map-pin svg{width:46px;height:46px;filter:drop-shadow(0 10px 18px rgba(0,0,0,.4))}
+.map-pin::after{content:"";position:absolute;left:50%;bottom:-6px;width:16px;height:16px;margin-left:-8px;border-radius:50%;background:rgba(212,185,138,.5);animation:pulse 2.4s ease-out infinite;z-index:-1}
+@keyframes pulse{0%{transform:scale(.6);opacity:1}100%{transform:scale(4);opacity:0}}
+.map-card .inner{position:relative;background:rgba(13,31,42,.6);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.12);border-radius:20px;padding:26px}
+.map-card h3{font-size:32px;margin-bottom:6px}
+.map-card p{color:rgba(251,250,247,.72);font-size:15px;margin-bottom:20px}
+
+/* Footer */
+footer{background:var(--ink);color:rgba(251,250,247,.7);padding:80px 0 40px;font-size:14px}
+.foot-top{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:50px;padding-bottom:50px;border-bottom:1px solid rgba(255,255,255,.1)}
+footer .logo-text{color:var(--pearl)}
+footer .logo-mark{background:rgba(255,255,255,.08)}
+footer p.tag{margin-top:22px;max-width:340px}
+footer h4{font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--gold-2);margin-bottom:18px;font-weight:600}
+footer ul{list-style:none;display:grid;gap:10px}
+footer a:hover{color:var(--pearl)}
+.foot-bottom{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;padding-top:30px;font-size:13px}
+
+/* Mobile CTA bar */
+.mbar{display:none;position:fixed;left:12px;right:12px;bottom:12px;z-index:40;gap:8px;padding:8px;border-radius:100px;background:rgba(13,31,42,.92);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);box-shadow:0 20px 40px -14px rgba(0,0,0,.5);transform:translateY(140%);transition:transform .6s var(--ease)}
+.mbar.show{transform:none}
+.mbar a{flex:1;display:flex;align-items:center;justify-content:center;gap:8px;padding:14px 10px;border-radius:100px;font-weight:600;font-size:14px;color:var(--pearl);white-space:nowrap}
+.mbar a svg{width:17px;height:17px;flex:none}
+.mbar a.gold{background:linear-gradient(135deg,var(--gold-2),var(--gold));color:#fff}
+
+/* Reveal */
+.reveal{opacity:0;transform:translateY(40px);transition:opacity 1.1s var(--ease),transform 1.1s var(--ease)}
+.reveal.in{opacity:1;transform:none}
+.reveal[data-d="1"]{transition-delay:.1s}.reveal[data-d="2"]{transition-delay:.2s}.reveal[data-d="3"]{transition-delay:.3s}
+
+/* Responsive */
+@media (max-width:1080px){
+  .menu{display:none}
+  .burger{display:block}
+  .nav-phone{display:none}
+  .hero-grid{grid-template-columns:1fr;gap:70px}
+  .hero-art{justify-self:center;max-width:420px}
+  .cards{grid-template-columns:1fr 1fr}
+  .card.feature{grid-column:span 2}
+  .about-grid{grid-template-columns:1fr;gap:60px}
+  .about-visual{max-width:480px}
+  .why-grid{grid-template-columns:1fr 1fr}
+  .why-item:nth-child(3){padding-left:0;border-left:0}
+  .why-item:nth-child(n+3){border-top:1px solid rgba(255,255,255,.12)}
+  .steps-grid{grid-template-columns:1fr 1fr;row-gap:50px}
+  .steps-grid::before{display:none}
+  .contact-grid{grid-template-columns:1fr}
+  .foot-top{grid-template-columns:1fr 1fr}
+  .foot-top>div:first-child{grid-column:span 2}
 }
 @media (max-width:640px){
   body{font-size:16px}
-  .wrap{padding:0 18px}
-  .nav{height:66px}.brand{font-size:19px}
-  .phone,.nav-right .btn{display:none}
-  .hero{padding:44px 0 64px}
-  .lead-text{font-size:17.5px}
-  .hero-ctas .btn{flex:1;justify-content:center}
-  .ticks{display:none}
-  .services,.reviews,.visit,.trust .wrap{grid-template-columns:1fr}
-  section.block{padding:76px 0}
-  .quote-panel,.photo{aspect-ratio:auto;min-height:380px}.photo{aspect-ratio:4/3;min-height:0}
-  .quote-panel{padding:40px 30px 64px}.quote-panel p{font-size:23px}
-  .float{font-size:13px;padding:12px 14px}.float b{font-size:18px}
-  .float.two{display:none}
-  .cta-box{padding:52px 28px}
-  .point{grid-template-columns:44px 1fr;padding:24px}
-  .mobile-bar{display:flex;position:fixed;left:12px;right:12px;bottom:12px;z-index:30;gap:10px}
-  .mobile-bar .btn{flex:1;justify-content:center;box-shadow:0 14px 30px -14px color-mix(in srgb,var(--ink) 60%,transparent)}
-  .mobile-bar .btn.ghost{background:var(--surface)}
+  .wrap{width:calc(100% - 40px)}
+  .nav .btn{display:none}
+  .logo-text{font-size:21px}
+  .hero{padding:120px 0 80px;min-height:auto}
+  .hero h1{font-size:clamp(46px,13vw,60px)}
+  .hero-actions .btn{flex:1 1 100%}
+  .hero-meta{gap:16px;flex-direction:column}
+  .hero-art{max-width:310px}
+  .hero-card{left:-4%;bottom:-2%;max-width:230px;padding:14px 16px}
+  .scroll-cue{display:none}
+  .cards{grid-template-columns:1fr}
+  .card.feature{grid-column:auto}
+  .card{padding:32px 26px}
+  .sec-head{margin-bottom:46px}
+  .why-grid{grid-template-columns:1fr}
+  .why-item,.why-item+.why-item{padding:36px 0 26px;border-left:0}
+  .why-item+.why-item{border-top:1px solid rgba(255,255,255,.12)}
+  .steps-grid{grid-template-columns:1fr;row-gap:40px}
+  .cta-box{border-radius:26px}
+  .cta-actions .btn{flex:1 1 100%}
+  .map-card{min-height:420px;padding:20px}
+  .foot-top{grid-template-columns:1fr}
+  .foot-top>div:first-child{grid-column:auto}
+  .mbar{display:flex}
+  footer{padding-bottom:110px}
+  .mobile-menu a.m-link{font-size:38px}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+  .intro,.reveal,.hero h1 .line>span{opacity:1!important;transform:none!important}
+  .tooth path{stroke-dashoffset:0}
 }
 </style>
 </head>
 <body>
-<div class="concept">Website concept prepared for <b>Avery Ranch Dental</b> &middot; not a live site</div>
 
-<header>
+<!-- SVG sprite -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="gGold" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#e2cb9f"/><stop offset=".55" stop-color="#b08d57"/><stop offset="1" stop-color="#8a6a3b"/></linearGradient>
+  </defs>
+  <symbol id="i-tooth" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" d="M12 5.5c-1.6-1.3-3.4-2-5-1.6C4.6 4.5 3.5 6.8 4 9.6c.4 2.1 1.3 3.4 1.8 5.6.5 2.4.8 5.3 2.3 5.3 1.7 0 1.6-4.6 3.9-4.6s2.2 4.6 3.9 4.6c1.5 0 1.8-2.9 2.3-5.3.5-2.2 1.4-3.5 1.8-5.6.5-2.8-.6-5.1-3-5.7-1.6-.4-3.4.3-5 1.6Z"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 6l6 6-6 6"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" d="M5 4h3.5l1.7 4.3-2.2 1.4a11 11 0 0 0 6.3 6.3l1.4-2.2L20 15.5V19a1.5 1.5 0 0 1-1.6 1.5A16.5 16.5 0 0 1 3.5 5.6 1.5 1.5 0 0 1 5 4Z"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.5" fill="none" stroke="currentColor" stroke-width="1.6"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5" fill="none" stroke="currentColor" stroke-width="1.6"/><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" d="M12 7.5V12l3 2"/></symbol>
+  <symbol id="i-spark" viewBox="0 0 24 24"><path fill="currentColor" d="M12 0c.6 6.4 5.6 11.4 12 12-6.4.6-11.4 5.6-12 12-.6-6.4-5.6-11.4-12-12C6.4 11.4 11.4 6.4 12 0Z"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" d="M12 3 5 6v5.5c0 4.4 3 8 7 9.5 4-1.5 7-5.1 7-9.5V6l-7-3Z"/><path fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" d="m9 12 2.2 2.2L15.5 10"/></symbol>
+  <symbol id="i-smile" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5" fill="none" stroke="currentColor" stroke-width="1.5"/><path fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" d="M8 13.5c1 1.8 2.4 2.7 4 2.7s3-.9 4-2.7M9 9.5h.01M15 9.5h.01"/></symbol>
+  <symbol id="i-family" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="8" cy="7" r="2.6"/><circle cx="16.5" cy="9" r="2"/><path d="M3.5 19.5c0-3 2-5.2 4.5-5.2s4.5 2.2 4.5 5.2M13 19.5c0-2.4 1.6-4.2 3.5-4.2s3.5 1.8 3.5 4.2"/></g></symbol>
+  <symbol id="i-repair" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 6.5a4 4 0 0 0 5 5l-8 8a2.1 2.1 0 0 1-3-3l8-8a4 4 0 0 0-2-2Z"/><path d="M4 4l4 4M6 3 3 6"/></g></symbol>
+  <symbol id="i-heart" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" d="M12 20s-7.5-4.6-7.5-10A4.3 4.3 0 0 1 12 7.4 4.3 4.3 0 0 1 19.5 10c0 5.4-7.5 10-7.5 10Z"/></symbol>
+  <symbol id="i-chat" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" d="M4 5.5h16v10H9l-5 4v-14Z"/><path fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" d="M8 10h8M8 12.8h5"/></svg></symbol>
+  <symbol id="i-leaf" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" d="M5 19c0-8 5-13 14-14 0 9-5 14-13 14M5 19l7-7"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.4"/><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" d="m8 12.3 2.6 2.6L16 9.5"/></symbol>
+</svg>
+
+<header class="header" id="header">
   <div class="wrap nav">
-    <a href="#top" class="brand">Avery Ranch Dental</a>
-    <nav class="links">
-      <a href="#services">Services</a><a href="#why">Why us</a><a href="#visit">Visit</a>
+    <a href="#top" class="logo" aria-label="Avery Ranch Dental home">
+      <span class="logo-mark"><svg><use href="#i-tooth"/></svg></span>
+      <span class="logo-text">Avery Ranch<small>Dental &middot; Austin</small></span>
+    </a>
+    <nav class="menu" aria-label="Main">
+      <a class="ulink" href="#services">Care</a>
+      <a class="ulink" href="#about">Philosophy</a>
+      <a class="ulink" href="#process">Your Visit</a>
+      <a class="ulink" href="#contact">Contact</a>
     </nav>
-    <div class="nav-right">
-      <a class="phone" href="tel:5122467645">(512) 246-7645</a>
-      <a class="btn" href="#visit">Book now</a>
+    <div class="nav-cta">
+      <a class="nav-phone ulink" href="tel:+15122467645"><svg><use href="#i-phone"/></svg>(512) 246-7645</a>
+      <a class="btn btn-gold" href="#contact">Book a Visit</a>
+      <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
     </div>
   </div>
 </header>
 
+<div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+  <a class="m-link" href="#services">Care</a>
+  <a class="m-link" href="#about">Philosophy</a>
+  <a class="m-link" href="#process">Your Visit</a>
+  <a class="m-link" href="#contact">Contact</a>
+  <a class="btn btn-gold" href="tel:+15122467645"><svg><use href="#i-phone"/></svg>Call (512) 246-7645</a>
+  <span class="m-phone">15004 Avery Ranch Blvd, Austin, TX</span>
+</div>
+
 <main id="top">
-<section class="hero">
-  <div class="wrap hero-grid">
-    <div class="copy">
-      <div class="eyebrow">
-        <span class="dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-7-4.4-7-10a4 4 0 017-2.6A4 4 0 0119 10c0 5.6-7 10-7 10z"/></svg></span>Family &amp; cosmetic dentistry
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="eyebrow intro d1">Dentistry in Northwest Austin</span>
+        <h1>
+          <span class="line"><span>A smile that</span></span>
+          <span class="line"><span>feels as good</span></span>
+          <span class="line"><span>as it <em>looks.</em></span></span>
+        </h1>
+        <p class="lead intro d2">Calm, unhurried, thoughtfully personal dental care on Avery Ranch Boulevard. Every visit is designed around your comfort, your questions and the healthy, confident smile you deserve.</p>
+        <div class="hero-actions intro d3">
+          <a class="btn btn-gold" href="tel:+15122467645"><svg><use href="#i-phone"/></svg>Call (512) 246-7645</a>
+          <a class="btn btn-ghost" href="#services">Explore Our Care<svg><use href="#i-arrow"/></svg></a>
+        </div>
+        <div class="hero-meta intro d4">
+          <div><svg><use href="#i-pin"/></svg>15004 Avery Ranch Blvd, Austin</div>
+          <div><svg><use href="#i-heart"/></svg>Gentle care for every age</div>
+        </div>
       </div>
-      <h1>Dentistry that feels as good as <em>it looks.</em></h1>
-      <p class="lead-text">Gentle, modern care for the whole family, with same-week appointments and a team that actually takes time to listen.</p>
-      <div class="hero-ctas">
-        <a class="btn" href="#visit">Book your visit <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-        <a class="btn ghost" href="tel:5122467645">Call (512) 246-7645</a>
+
+      <div class="hero-art intro d5" id="heroArt" aria-hidden="true">
+        <div class="ring r3"></div><div class="ring r2"></div><div class="ring"></div>
+        <div class="orb"></div>
+        <div class="tooth">
+          <svg viewBox="0 0 200 220" fill="none">
+            <path d="M100 42c-14-11-30-17-44-13-21 5-31 25-26 49 3 18 11 29 15 48 5 21 7 46 20 46 15 0 14-40 35-40s20 40 35 40c13 0 15-25 20-46 4-19 12-30 15-48 5-24-5-44-26-49-14-4-30 2-44 13Z" stroke="url(#gGold)" stroke-width="2.4" stroke-linejoin="round"/>
+            <path d="M62 62c6-6 14-8 22-6" stroke="url(#gGold)" stroke-width="2.4" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <span class="sparkle s1"><svg><use href="#i-spark"/></svg></span>
+        <span class="sparkle s2"><svg><use href="#i-spark"/></svg></span>
+        <span class="sparkle s3"><svg><use href="#i-spark"/></svg></span>
+        <div class="hero-card">
+          <span class="ic"><svg><use href="#i-smile"/></svg></span>
+          <div><b>Comfort comes first</b><span>Unrushed visits and clear, honest guidance.</span></div>
+        </div>
       </div>
-      <div class="ticks">
-        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7"/></svg>Most insurance accepted</span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7"/></svg>New patients welcome</span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7"/></svg>Flexible payment plans</span>
+    </div>
+    <div class="scroll-cue"><span>Scroll</span><i></i></div>
+  </section>
+
+  <!-- MARQUEE -->
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-track">
+      <div class="marquee-group">
+        <span>Gentle, personal care</span><svg><use href="#i-spark"/></svg>
+        <span>Healthy, confident smiles</span><svg><use href="#i-spark"/></svg>
+        <span>Clear, honest guidance</span><svg><use href="#i-spark"/></svg>
+        <span>Care for the whole family</span><svg><use href="#i-spark"/></svg>
+        <span>Right here in Avery Ranch</span><svg><use href="#i-spark"/></svg>
+      </div>
+      <div class="marquee-group">
+        <span>Gentle, personal care</span><svg><use href="#i-spark"/></svg>
+        <span>Healthy, confident smiles</span><svg><use href="#i-spark"/></svg>
+        <span>Clear, honest guidance</span><svg><use href="#i-spark"/></svg>
+        <span>Care for the whole family</span><svg><use href="#i-spark"/></svg>
+        <span>Right here in Avery Ranch</span><svg><use href="#i-spark"/></svg>
       </div>
     </div>
-    <div class="visual">
-      
-      <div class="quote-panel"><div class="quote-mark">“</div><div><p>Gentle, modern care for the whole family, with same-week appointments and a team that actually takes time to listen.</p><div class="who">Avery Ranch Dental</div></div></div>
-      
-      
-      <div class="float two"><span class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><span><b>This week</b>New patients welcome</span></div>
-    </div>
   </div>
-  <template id="qp"><div class="quote-panel"><div class="quote-mark">“</div><div><p>Gentle, modern care for the whole family, with same-week appointments and a team that actually takes time to listen.</p><div class="who">Avery Ranch Dental</div></div></div></template>
-</section>
 
-<div class="trust"><div class="wrap">
-  <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.2-8 9-4.6-.8-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg>Most insurance accepted</div><div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.2-8 9-4.6-.8-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg>New patients welcome</div><div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.2-8 9-4.6-.8-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg>Flexible payment plans</div><div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.2-8 9-4.6-.8-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg>Evening appointments</div>
-</div></div>
+  <!-- SERVICES -->
+  <section class="section services" id="services">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <span class="eyebrow reveal">Our Care</span>
+          <h2 class="reveal" data-d="1">Dentistry, done <em>beautifully.</em></h2>
+        </div>
+        <p class="lead reveal" data-d="2">From routine visits to restoring your confidence, every plan begins with listening, then care tailored precisely to you.</p>
+      </div>
 
-<section class="block" id="services">
-  <div class="wrap">
-    <div class="section-head">
-      <div><div class="kicker">What we do</div><h2>Everything you need,<br>under one roof.</h2></div>
-      <p>From routine visits to the work that changes how you feel about your day, Avery Ranch Dental takes care of it properly.</p>
+      <div class="cards">
+        <article class="card feature reveal">
+          <span class="card-num">01</span>
+          <span class="card-ic"><svg><use href="#i-shield"/></svg></span>
+          <h3>Preventive care that keeps you ahead of problems</h3>
+          <p>Thorough check-ups and cleanings are the foundation of a lifetime of healthy teeth. We take the time to explain what we see, so you leave informed, refreshed and confident in your next steps.</p>
+          <a class="card-link" href="#contact">Plan your visit<svg><use href="#i-arrow"/></svg></a>
+        </article>
+        <article class="card reveal" data-d="1">
+          <span class="card-num">02</span>
+          <span class="card-ic"><svg><use href="#i-family"/></svg></span>
+          <h3>Family Dentistry</h3>
+          <p>One welcoming practice for the whole household, with a gentle approach that puts nervous patients, young and grown, at ease.</p>
+          <a class="card-link" href="#contact">Ask about family care<svg><use href="#i-arrow"/></svg></a>
+        </article>
+        <article class="card reveal">
+          <span class="card-num">03</span>
+          <span class="card-ic"><svg><use href="#i-repair"/></svg></span>
+          <h3>Restorative Care</h3>
+          <p>When a tooth needs attention, we focus on restoring comfort, function and a natural look, with options explained clearly and without pressure.</p>
+          <a class="card-link" href="#contact">Discuss your options<svg><use href="#i-arrow"/></svg></a>
+        </article>
+        <article class="card reveal" data-d="1">
+          <span class="card-num">04</span>
+          <span class="card-ic"><svg><use href="#i-spark"/></svg></span>
+          <h3>Smile Confidence</h3>
+          <p>Curious about a brighter, more balanced smile? Let's talk through what's possible and what feels right for you.</p>
+          <a class="card-link" href="#contact">Start the conversation<svg><use href="#i-arrow"/></svg></a>
+        </article>
+        <article class="card reveal" data-d="2">
+          <span class="card-num">05</span>
+          <span class="card-ic"><svg><use href="#i-chat"/></svg></span>
+          <h3>Consultations</h3>
+          <p>Have a concern or a second-opinion question? Call us and we'll help you understand your next best step.</p>
+          <a class="card-link" href="tel:+15122467645">Call the practice<svg><use href="#i-arrow"/></svg></a>
+        </article>
+      </div>
+      <p class="services-note reveal">Wondering whether a specific treatment is available? <a class="ulink" href="tel:+15122467645">Call (512) 246-7645</a> and our team will be happy to help.</p>
     </div>
-    <div class="services">
-      
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3c-2.5 0-4 2-4 4.5 0 3 1.5 4.5 2 7.5.4 2.4.8 6 2.5 6 1.6 0 1.6-4.5 4.5-4.5s2.9 4.5 4.5 4.5c1.7 0 2.1-3.6 2.5-6 .5-3 2-4.5 2-7.5C21 5 19.5 3 17 3c-2 0-3 1-5 1S9 3 7 3z"/></svg></div><h3>Checkups &amp; cleanings</h3><p>Thorough, comfortable exams that keep small problems from becoming big ones.</p></div>
-      
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/><path d="M19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8z"/></svg></div><h3>Teeth whitening</h3><p>Professional whitening that brightens your smile safely in a single visit.</p></div>
-      
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 14s1.5 2.5 4 2.5 4-2.5 4-2.5"/><path d="M9 9.5h.01M15 9.5h.01"/></svg></div><h3>Invisalign &amp; aligners</h3><p>Straighten your teeth discreetly with clear aligners planned around your life.</p></div>
-      
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.2-8 9-4.6-.8-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg></div><h3>Dental implants</h3><p>Permanent, natural-looking replacements that feel and work like your own teeth.</p></div>
-      
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-7-4.4-7-10a4 4 0 017-2.6A4 4 0 0119 10c0 5.6-7 10-7 10z"/></svg></div><h3>Kids&#39; dentistry</h3><p>A calm, friendly first experience that helps children love their checkups.</p></div>
-      
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div><h3>Emergency care</h3><p>Same-day help for toothaches, chips and broken teeth when you need it most.</p></div>
-      
-    </div>
-  </div>
-</section>
+  </section>
 
-<section class="block why" id="why">
-  <div class="wrap why-grid">
-    <div>
-      <div class="kicker">Why patients choose us</div>
-      <h2>The Austin dentist people recommend to their friends.</h2>
-      <p class="intro">it still comes down to the same three things.</p>
-    </div>
-    <div class="points">
-      
-      <div class="point"><div class="num">01</div><div><h3>Comfort first</h3><p>Numbing that works, warm blankets, and no lectures. Anxious patients are welcome here.</p></div></div>
-      
-      <div class="point"><div class="num">02</div><div><h3>Modern technology</h3><p>Digital X-rays and 3D scans mean less radiation, fewer goopy impressions and faster results.</p></div></div>
-      
-      <div class="point"><div class="num">03</div><div><h3>Clear pricing</h3><p>We explain costs and insurance before treatment, so there are never any surprises.</p></div></div>
-      
-    </div>
-  </div>
-</section>
+  <!-- ABOUT -->
+  <section class="section about" id="about">
+    <div class="wrap about-grid">
+      <div class="about-visual reveal" aria-hidden="true">
+        <svg class="lines" viewBox="0 0 400 500" preserveAspectRatio="xMidYMid slice" fill="none">
+          <g stroke="#d4b98a" stroke-width=".6" opacity=".55">
+            <circle cx="200" cy="170" r="60"/><circle cx="200" cy="170" r="100"/><circle cx="200" cy="170" r="140"/><circle cx="200" cy="170" r="180"/><circle cx="200" cy="170" r="220"/><circle cx="200" cy="170" r="260"/>
+          </g>
+        </svg>
+        <div class="about-badge">
+          <svg viewBox="0 0 120 120"><defs><path id="circ" d="M60 60m-46 0a46 46 0 1 1 92 0a46 46 0 1 1-92 0"/></defs><text fill="#d4b98a" font-family="Manrope,sans-serif" font-size="9.2" font-weight="600" letter-spacing="3.4"><textPath href="#circ">AVERY RANCH &#183; DENTAL &#183; AUSTIN TX &#183;</textPath></text></svg>
+          <span class="c"><svg><use href="#i-tooth"/></svg></span>
+        </div>
+        <div class="about-quote">
+          <span class="q">&ldquo;</span>
+          <p>Great dentistry should feel personal, calm and completely on your side.</p>
+        </div>
+      </div>
 
-
-
-<section class="cta-band" id="book">
-  <div class="wrap"><div class="cta-box">
-    <div><h2>Ready when you are.</h2><p>Book your visit in under a minute, or give us a call and talk to a real person.</p></div>
-    <div class="actions">
-      <a class="btn" href="#visit">Book your visit</a>
-      <a class="btn ghost" href="tel:5122467645">Call (512) 246-7645</a>
+      <div class="about-copy">
+        <span class="eyebrow reveal">Our Philosophy</span>
+        <h2 class="reveal" data-d="1">Your neighborhood dentist, with a <em>refined</em> touch.</h2>
+        <p class="big reveal" data-d="1">Avery Ranch Dental is built on a simple idea: you should look forward to seeing your dentist.</p>
+        <p class="reveal" data-d="2">Located right on Avery Ranch Boulevard in Northwest Austin, our practice pairs attentive, genuinely gentle care with the kind of conversation that helps you feel in control of your oral health. No rushing, no confusing jargon, just thoughtful dentistry and a team that remembers you.</p>
+        <ul class="about-points">
+          <li class="reveal" data-d="1"><svg><use href="#i-check"/></svg>Time to ask questions and understand every option</li>
+          <li class="reveal" data-d="2"><svg><use href="#i-check"/></svg>A calm, comfortable experience from the moment you arrive</li>
+          <li class="reveal" data-d="3"><svg><use href="#i-check"/></svg>Convenient for families across Avery Ranch and Northwest Austin</li>
+        </ul>
+        <a class="btn btn-gold reveal" href="#contact">Plan Your First Visit<svg><use href="#i-arrow"/></svg></a>
+      </div>
     </div>
-  </div></div>
-</section>
+  </section>
 
-<section class="block" id="visit" style="padding-top:0">
-  <div class="wrap">
-    <div class="kicker">Visit us</div><h2>Come say hello.</h2>
-    <div class="visit">
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11l8-7 8 7v9a1 1 0 01-1 1h-4v-6H9v6H5a1 1 0 01-1-1z"/></svg></div><h3>Address</h3><p>15004 Avery Ranch Boulevard, Austin, TX 78717</p></div>
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div><h3>Phone</h3><p><a href="tel:5122467645">(512) 246-7645</a></p><p style="margin-top:10px">Call or message us for today's opening hours.</p></div>
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-7-4.4-7-10a4 4 0 017-2.6A4 4 0 0119 10c0 5.6-7 10-7 10z"/></svg></div><h3>New patients welcome</h3><p>Book your visit online or by phone and we'll take care of the rest.</p></div>
+  <!-- WHY -->
+  <section class="section why" id="why">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <span class="eyebrow reveal">Why Patients Choose Us</span>
+          <h2 class="reveal" data-d="1">The details make <em>the difference.</em></h2>
+        </div>
+        <p class="lead reveal" data-d="2">Exceptional care isn't only what happens in the chair. It's how you feel before, during and after every appointment.</p>
+      </div>
+      <div class="why-grid">
+        <div class="why-item reveal"><svg><use href="#i-heart"/></svg><h3>Gentle by design</h3><p>A patient, reassuring approach, ideal if dental visits have ever made you uneasy.</p></div>
+        <div class="why-item reveal" data-d="1"><svg><use href="#i-chat"/></svg><h3>Honest guidance</h3><p>Clear explanations and options presented plainly, so every decision is yours.</p></div>
+        <div class="why-item reveal" data-d="2"><svg><use href="#i-family"/></svg><h3>Whole-family care</h3><p>One trusted practice for everyone at home, from first visits onward.</p></div>
+        <div class="why-item reveal" data-d="3"><svg><use href="#i-pin"/></svg><h3>Close to home</h3><p>An easy drive on Avery Ranch Boulevard, right in Northwest Austin.</p></div>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
+
+  <!-- PROCESS -->
+  <section class="section steps" id="process">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <span class="eyebrow reveal">Your Visit</span>
+          <h2 class="reveal" data-d="1">Simple, from first call to <em>final smile.</em></h2>
+        </div>
+        <p class="lead reveal" data-d="2">Getting started is easy. Here's what to expect when you choose Avery Ranch Dental.</p>
+      </div>
+      <div class="steps-grid">
+        <div class="step reveal"><div class="step-dot">i</div><h3>Call us</h3><p>Reach our team at (512) 246-7645 to find a time that suits your schedule.</p></div>
+        <div class="step reveal" data-d="1"><div class="step-dot">ii</div><h3>Get to know you</h3><p>We listen first: your history, your concerns and your goals for your smile.</p></div>
+        <div class="step reveal" data-d="2"><div class="step-dot">iii</div><h3>A clear plan</h3><p>We explain what we find and walk you through options, at your pace.</p></div>
+        <div class="step reveal" data-d="3"><div class="step-dot">iv</div><h3>Ongoing care</h3><p>Comfortable treatment and regular visits keep your smile healthy for years.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BAND -->
+  <section class="cta-band">
+    <div class="wrap">
+      <div class="cta-box reveal">
+        <div class="glow"></div>
+        <span class="eyebrow">Your Smile Awaits</span>
+        <h2>Ready for a dentist you'll <em>actually</em> look forward to?</h2>
+        <p>Call Avery Ranch Dental today and take the first easy step toward a healthier, more confident smile.</p>
+        <div class="cta-actions">
+          <a class="btn btn-light" href="tel:+15122467645"><svg><use href="#i-phone"/></svg>Call (512) 246-7645</a>
+          <a class="btn btn-outline-light" href="https://maps.google.com/?q=15004+Avery+Ranch+Boulevard,+Austin,+TX+78717" target="_blank" rel="noopener">Get Directions<svg><use href="#i-arrow"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="section contact" id="contact">
+    <div class="wrap contact-grid">
+      <div class="contact-info">
+        <span class="eyebrow reveal">Visit Us</span>
+        <h2 class="reveal" data-d="1">We'd love to <em>meet you.</em></h2>
+        <p class="lead reveal" data-d="2">Questions about appointments, availability or your care? A friendly voice is just a phone call away.</p>
+        <div class="contact-list">
+          <a class="c-item reveal" href="tel:+15122467645">
+            <span class="ic"><svg><use href="#i-phone"/></svg></span>
+            <span><small>Call</small><strong>(512) 246-7645</strong></span>
+          </a>
+          <a class="c-item reveal" data-d="1" href="https://maps.google.com/?q=15004+Avery+Ranch+Boulevard,+Austin,+TX+78717" target="_blank" rel="noopener">
+            <span class="ic"><svg><use href="#i-pin"/></svg></span>
+            <span><small>Address</small><strong>15004 Avery Ranch Boulevard, Austin, TX 78717</strong></span>
+          </a>
+          <div class="c-item reveal" data-d="2">
+            <span class="ic"><svg><use href="#i-clock"/></svg></span>
+            <span><small>Hours</small><strong>Please call for current hours</strong></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="map-card reveal" data-d="1">
+        <svg class="map" viewBox="0 0 600 600" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+          <rect width="600" height="600" fill="#0d1f2a"/>
+          <g stroke="rgba(255,255,255,.07)" stroke-width="1" fill="none">
+            <path d="M0 80h600M0 170h600M0 260h600M0 350h600M0 440h600M0 530h600M70 0v600M170 0v600M270 0v600M370 0v600M470 0v600M560 0v600"/>
+          </g>
+          <g stroke="rgba(212,185,138,.35)" stroke-width="10" fill="none" stroke-linecap="round">
+            <path d="M-20 300C120 260 200 180 320 210s200 120 300 80"/>
+          </g>
+          <g stroke="rgba(255,255,255,.12)" stroke-width="5" fill="none" stroke-linecap="round">
+            <path d="M310 -20C300 120 330 200 310 320s20 200 0 300"/>
+            <path d="M-20 470C150 450 300 500 620 430"/>
+            <path d="M120 -20c20 140-10 300 40 620"/>
+          </g>
+          <circle cx="312" cy="225" r="120" fill="url(#mapGlow)"/>
+          <defs><radialGradient id="mapGlow"><stop offset="0" stop-color="#d4b98a" stop-opacity=".25"/><stop offset="1" stop-color="#d4b98a" stop-opacity="0"/></radialGradient></defs>
+        </svg>
+        <span class="map-pin" aria-hidden="true"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M12 22s-7.5-6.6-7.5-12.2A7.5 7.5 0 0 1 19.5 9.8C19.5 15.4 12 22 12 22Z"/><circle cx="12" cy="9.8" r="2.8" fill="#0d1f2a"/></svg></span>
+        <div class="inner">
+          <h3>Avery Ranch Dental</h3>
+          <p>15004 Avery Ranch Boulevard<br>Austin, TX 78717</p>
+          <a class="btn btn-gold" href="https://maps.google.com/?q=15004+Avery+Ranch+Boulevard,+Austin,+TX+78717" target="_blank" rel="noopener">Open in Google Maps<svg><use href="#i-arrow"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </section>
 </main>
 
-<footer><div class="wrap">
-  <span>© 2026 Avery Ranch Dental</span>
-  <span>Concept design. Not affiliated with or endorsed by Avery Ranch Dental.</span>
-</div></footer>
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <div>
+        <a href="#top" class="logo">
+          <span class="logo-mark"><svg><use href="#i-tooth"/></svg></span>
+          <span class="logo-text">Avery Ranch<small>Dental &middot; Austin</small></span>
+        </a>
+        <p class="tag">Gentle, personal dental care for Avery Ranch and Northwest Austin.</p>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <ul>
+          <li><a class="ulink" href="#services">Our Care</a></li>
+          <li><a class="ulink" href="#about">Philosophy</a></li>
+          <li><a class="ulink" href="#process">Your Visit</a></li>
+          <li><a class="ulink" href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Visit</h4>
+        <ul>
+          <li><a class="ulink" href="tel:+15122467645">(512) 246-7645</a></li>
+          <li><a class="ulink" href="https://maps.google.com/?q=15004+Avery+Ranch+Boulevard,+Austin,+TX+78717" target="_blank" rel="noopener">15004 Avery Ranch Blvd<br>Austin, TX 78717</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>&copy; <span id="yr">2026</span> Avery Ranch Dental. All rights reserved.</span>
+      <a class="ulink" href="#top">Back to top &uarr;</a>
+    </div>
+  </div>
+</footer>
 
-<div class="mobile-bar">
-  <a class="btn ghost" href="tel:5122467645">Call</a>
-  <a class="btn" href="#visit">Book now</a>
+<div class="mbar" id="mbar">
+  <a href="tel:+15122467645"><svg><use href="#i-phone"/></svg>Call Now</a>
+  <a class="gold" href="#contact"><svg><use href="#i-pin"/></svg>Visit Us</a>
 </div>
-</body>
+
+<script>
+(function(){
+  var d=document,b=d.body,h=d.getElementById('header'),bar=d.getElementById('mbar');
+  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  d.getElementById('yr').textContent=new Date().getFullYear();
+
+  requestAnimationFrame(function(){setTimeout(function(){b.classList.add('loaded')},60)});
+
+  function onScroll(){
+    var y=window.scrollY;
+    h.classList.toggle('scrolled',y>30);
+    bar.classList.toggle('show',y>window.innerHeight*.5);
+  }
+  window.addEventListener('scroll',onScroll,{passive:true});onScroll();
+
+  var burger=d.getElementById('burger'),mm=d.getElementById('mobileMenu');
+  function setMenu(open){
+    b.classList.toggle('menu-open',open);
+    burger.setAttribute('aria-expanded',open);
+    burger.setAttribute('aria-label',open?'Close menu':'Open menu');
+    mm.setAttribute('aria-hidden',!open);
+    b.style.overflow=open?'hidden':'';
+  }
+  burger.addEventListener('click',function(){setMenu(!b.classList.contains('menu-open'))});
+  mm.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){setMenu(false)})});
+  d.addEventListener('keydown',function(e){if(e.key==='Escape')setMenu(false)});
+
+  var els=d.querySelectorAll('.reveal');
+  if('IntersectionObserver' in window && !reduce){
+    var io=new IntersectionObserver(function(en){
+      en.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}});
+    },{threshold:.12,rootMargin:'0px 0px -40px 0px'});
+    els.forEach(function(el){io.observe(el)});
+  }else{els.forEach(function(el){el.classList.add('in')})}
+
+  var art=d.getElementById('heroArt');
+  if(art && !reduce){
+    var ticking=false;
+    window.addEventListener('scroll',function(){
+      if(ticking)return;ticking=true;
+      requestAnimationFrame(function(){
+        var y=window.scrollY;
+        if(y<window.innerHeight*1.2)art.style.transform='translate3d(0,'+(y*.12)+'px,0)';
+        ticking=false;
+      });
+    },{passive:true});
+  }
+})();
+</script>
+<div id="lm-concept" style="position:fixed;left:12px;bottom:12px;z-index:2147483647;font:500 11px/1.3 -apple-system,BlinkMacSystemFont,Segoe UI,sans-serif;letter-spacing:.02em;background:rgba(15,15,18,.82);color:#f4f1ea;padding:7px 11px;border-radius:999px;backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);pointer-events:none;max-width:70vw">Website concept for Avery Ranch Dental by webstudio &middot; not the live site</div><p style="margin:0;padding:18px 16px 70px;text-align:center;font:12px/1.5 -apple-system,sans-serif;color:#8a8a8a;background:#0e0e10">Concept design by webstudio. Not affiliated with or endorsed by Avery Ranch Dental.</p></body>
 </html>
