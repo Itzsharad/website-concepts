@@ -1,291 +1,648 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src * data: blob:; media-src 'self' data:; style-src 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com data:; script-src 'unsafe-inline'; connect-src 'none'; frame-src 'none'; form-action 'none'; base-uri 'none'; object-src 'none'">
 <meta name="robots" content="noindex, nofollow">
-<title>Pure Smiles Orthodontics | Website concept</title>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pure Smiles Orthodontics | Orthodontist in Southwest Austin, TX</title>
+<meta name="description" content="Pure Smiles Orthodontics: considered orthodontic care in Southwest Austin. 4301 W William Cannon Dr, Austin TX. Call (512) 215-2520 to arrange your consultation.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,300;1,9..144,400&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{
-  --bg:#f7f3ec;--surface:#ffffff;--ink:#12302c;--muted:#5b6b67;
-  --accent:#1f5c53;--accent-ink:#ffffff;--gold:#b8915a;--soft:#e8efe9;
-  --radius:22px;--max:1180px;
-  --serif:"Fraunces",Georgia,serif;--sans:"Manrope",system-ui,-apple-system,sans-serif;
+  --ink:#0f1c2e;
+  --ink-2:#1b2b42;
+  --ink-soft:#44526a;
+  --pearl:#fbfaf7;
+  --ivory:#f4f1ea;
+  --mist:#e8eef3;
+  --gold:#b08d57;
+  --gold-deep:#8a6a3b;
+  --gold-soft:#e7d7b8;
+  --line:rgba(15,28,46,.12);
+  --radius:22px;
+  --ease:cubic-bezier(.22,1,.36,1);
+  --serif:"Fraunces",Georgia,serif;
+  --sans:"Manrope",system-ui,-apple-system,sans-serif;
 }
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:var(--sans);color:var(--ink);background:var(--pearl);line-height:1.65;font-size:17px;overflow-x:hidden;-webkit-font-smoothing:antialiased}
 a{color:inherit;text-decoration:none}
-img{max-width:100%;display:block}
-.wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
-.concept{background:var(--ink);color:var(--bg);font-size:13px;text-align:center;padding:8px 16px;letter-spacing:.02em}
-.concept b{color:var(--gold);font-weight:600}
+svg{display:block}
+.wrap{width:min(1200px,100% - 48px);margin-inline:auto}
+.eyebrow{display:inline-flex;align-items:center;gap:12px;font-size:12px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--gold-deep)}
+.eyebrow::before{content:"";width:28px;height:1px;background:currentColor}
+h1,h2,h3{font-family:var(--serif);font-weight:300;line-height:1.05;letter-spacing:-.02em}
+h2{font-size:clamp(38px,5.4vw,68px);margin:18px 0 22px}
+h2 em,h1 em{font-style:italic;color:var(--gold-deep)}
+.lead{font-size:clamp(17px,1.6vw,19px);color:var(--ink-soft);max-width:560px}
+section{position:relative}
+.pad{padding:clamp(90px,12vw,150px) 0}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:17px 30px;border-radius:999px;font-weight:600;font-size:15px;letter-spacing:.02em;transition:transform .5s var(--ease),box-shadow .5s var(--ease),background .4s,color .4s;white-space:nowrap;text-align:center}
+.btn svg{width:16px;height:16px;transition:transform .4s var(--ease)}
+.btn:hover svg{transform:translateX(4px)}
+.btn-dark{background:var(--ink);color:var(--pearl);box-shadow:0 12px 30px -12px rgba(15,28,46,.55)}
+.btn-dark:hover{transform:translateY(-3px);box-shadow:0 20px 40px -14px rgba(15,28,46,.6)}
+.btn-ghost{border:1px solid var(--line);color:var(--ink);background:rgba(255,255,255,.55);backdrop-filter:blur(8px)}
+.btn-ghost:hover{border-color:var(--ink);transform:translateY(-3px)}
+.btn-gold{background:linear-gradient(135deg,#d9bf8f,var(--gold));color:var(--ink)}
+.btn-gold:hover{transform:translateY(-3px);box-shadow:0 18px 40px -14px rgba(176,141,87,.7)}
+.ulink{position:relative;display:inline-block}
+.ulink::after{content:"";position:absolute;left:0;bottom:-3px;height:1px;width:100%;background:currentColor;transform:scaleX(0);transform-origin:right;transition:transform .5s var(--ease)}
+.ulink:hover::after{transform:scaleX(1);transform-origin:left}
 
 /* header */
-header{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:saturate(1.4) blur(10px);border-bottom:1px solid color-mix(in srgb,var(--ink) 8%,transparent)}
-.nav{display:flex;align-items:center;justify-content:space-between;height:76px;gap:24px}
-.brand{font-family:var(--serif);font-size:23px;font-weight:600;letter-spacing:-.01em;line-height:1.1;max-width:340px}
-.links{display:flex;gap:30px;font-size:15px;font-weight:500;color:var(--muted)}
-.links a:hover{color:var(--ink)}
-.nav-right{display:flex;align-items:center;gap:18px}
-.phone{font-weight:600;font-size:15px;white-space:nowrap}
-.btn{display:inline-flex;align-items:center;gap:10px;background:var(--accent);color:var(--accent-ink);padding:14px 26px;border-radius:999px;font-weight:600;font-size:15.5px;transition:transform .2s ease,box-shadow .2s ease;white-space:nowrap}
-.btn:hover{transform:translateY(-2px);box-shadow:0 12px 28px -12px var(--accent)}
-.btn.ghost{background:transparent;color:var(--ink);border:1.5px solid color-mix(in srgb,var(--ink) 20%,transparent)}
-.btn.ghost:hover{box-shadow:none;border-color:var(--ink)}
-.btn svg{width:18px;height:18px}
+header{position:fixed;inset:0 0 auto;z-index:50;padding:16px 0;transition:padding .4s var(--ease)}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:12px 14px 12px 22px;border-radius:999px;border:1px solid transparent;transition:all .5s var(--ease)}
+header.scrolled{padding:10px 0}
+header.scrolled .bar{background:rgba(251,250,247,.72);backdrop-filter:blur(18px) saturate(1.4);-webkit-backdrop-filter:blur(18px) saturate(1.4);border-color:var(--line);box-shadow:0 10px 40px -20px rgba(15,28,46,.3)}
+.logo{display:flex;align-items:center;gap:12px;font-family:var(--serif);font-size:21px;letter-spacing:-.01em;line-height:1}
+.logo small{display:block;font-family:var(--sans);font-size:9.5px;letter-spacing:.32em;text-transform:uppercase;color:var(--gold-deep);margin-top:5px;font-weight:600}
+.mark{width:38px;height:38px;flex:none}
+nav ul{display:flex;gap:34px;list-style:none;font-size:14px;font-weight:500}
+.hdr-r{display:flex;align-items:center;gap:20px}
+.hdr-phone{font-size:14px;font-weight:600}
+.hdr-r .btn{padding:12px 22px;font-size:14px}
+.burger{display:none;width:46px;height:46px;border-radius:50%;border:1px solid var(--line);background:rgba(255,255,255,.6);cursor:pointer;position:relative}
+.burger span{position:absolute;left:14px;right:14px;height:1.5px;background:var(--ink);transition:transform .4s var(--ease),opacity .3s}
+.burger span:nth-child(1){top:18px}.burger span:nth-child(2){top:26px}
+.menu-open .burger span:nth-child(1){transform:translateY(4px) rotate(45deg)}
+.menu-open .burger span:nth-child(2){transform:translateY(-4px) rotate(-45deg)}
+.mobile-menu{position:fixed;inset:0;z-index:40;background:var(--pearl);display:flex;flex-direction:column;justify-content:center;padding:100px 32px 60px;opacity:0;visibility:hidden;transition:opacity .5s var(--ease),visibility .5s}
+.menu-open .mobile-menu{opacity:1;visibility:visible}
+.mobile-menu a.m{font-family:var(--serif);font-size:40px;font-weight:300;padding:8px 0;border-bottom:1px solid var(--line);transform:translateY(20px);opacity:0;transition:all .6s var(--ease)}
+.menu-open .mobile-menu a.m{transform:none;opacity:1}
+.menu-open .mobile-menu a.m:nth-child(2){transition-delay:.05s}
+.menu-open .mobile-menu a.m:nth-child(3){transition-delay:.1s}
+.menu-open .mobile-menu a.m:nth-child(4){transition-delay:.15s}
+.menu-open .mobile-menu a.m:nth-child(5){transition-delay:.2s}
+.mobile-menu .btn{margin-top:36px}
 
 /* hero */
-.hero{padding:72px 0 88px}
-.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:64px;align-items:center}
-.eyebrow{display:inline-flex;align-items:center;gap:10px;background:var(--surface);border:1px solid color-mix(in srgb,var(--ink) 10%,transparent);padding:8px 16px 8px 10px;border-radius:999px;font-size:14px;font-weight:600;color:var(--muted)}
-.stars{color:var(--gold);letter-spacing:1px;font-size:14px}
-.eyebrow .dot{width:26px;height:26px;border-radius:50%;background:var(--soft);display:grid;place-items:center;color:var(--accent)}
-h1{font-family:var(--serif);font-weight:500;font-size:clamp(44px,5.6vw,74px);line-height:1.02;letter-spacing:-.025em;margin:26px 0 22px}
-h1 em{font-style:italic;color:var(--accent)}
-.lead-text{font-size:19.5px;color:var(--muted);max-width:540px}
-.hero-ctas{display:flex;gap:14px;margin-top:36px;flex-wrap:wrap}
-.ticks{display:flex;gap:22px;margin-top:34px;flex-wrap:wrap;font-size:14.5px;font-weight:600;color:var(--muted)}
-.ticks span{display:flex;align-items:center;gap:8px}
-.ticks svg{width:18px;height:18px;color:var(--accent)}
-.visual{position:relative}
-.photo{aspect-ratio:4/5;border-radius:calc(var(--radius) + 10px);overflow:hidden;background:var(--soft);box-shadow:0 40px 80px -40px color-mix(in srgb,var(--ink) 55%,transparent)}
-.photo img{width:100%;height:100%;object-fit:cover}
-.quote-panel{aspect-ratio:4/5;border-radius:calc(var(--radius) + 10px);background:linear-gradient(155deg,var(--accent),color-mix(in srgb,var(--accent) 55%,var(--ink)));color:var(--accent-ink);padding:52px 46px;display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden;box-shadow:0 40px 80px -40px color-mix(in srgb,var(--ink) 60%,transparent)}
-.quote-panel:before{content:"";position:absolute;width:420px;height:420px;border-radius:50%;right:-160px;top:-160px;background:color-mix(in srgb,var(--accent-ink) 9%,transparent)}
-.quote-panel:after{content:"";position:absolute;width:260px;height:260px;border-radius:50%;left:-90px;bottom:-110px;border:1.5px solid color-mix(in srgb,var(--accent-ink) 22%,transparent)}
-.quote-mark{font-family:var(--serif);font-size:120px;line-height:.6;opacity:.35}
-.quote-panel p{font-family:var(--serif);font-size:28px;line-height:1.3;position:relative;z-index:1}
-.quote-panel .who{font-family:var(--sans);font-size:15px;opacity:.85;margin-top:22px;font-weight:600}
-.float{position:absolute;background:var(--surface);color:var(--ink);border-radius:18px;padding:16px 20px;box-shadow:0 24px 50px -24px color-mix(in srgb,var(--ink) 50%,transparent);display:flex;align-items:center;gap:14px;font-size:14px;line-height:1.35}
-.float b{font-size:22px;font-family:var(--serif);font-weight:600;display:block}
-.float.one{left:-34px;bottom:-28px}
-.float.two{right:-22px;top:44px}
-.float .badge{width:44px;height:44px;border-radius:14px;background:var(--soft);display:grid;place-items:center;color:var(--accent)}
-.float .badge svg{width:22px;height:22px}
+.hero{min-height:100vh;min-height:100svh;display:flex;align-items:center;padding:140px 0 90px;overflow:hidden;background:
+ radial-gradient(1100px 700px at 85% 10%,#e9f0f5 0%,transparent 60%),
+ radial-gradient(800px 600px at 10% 100%,#f3ece0 0%,transparent 60%),var(--pearl)}
+.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:60px;align-items:center}
+.hero h1{font-size:clamp(50px,8.2vw,118px);margin:26px 0 28px}
+.hero h1 .ln{display:block;overflow:hidden;padding-bottom:.06em}
+.hero h1 .ln>span{display:inline-block;transform:translateY(105%);transition:transform 1.3s var(--ease)}
+.loaded .hero h1 .ln>span{transform:none}
+.hero h1 .ln:nth-child(2)>span{transition-delay:.12s}
+.hero h1 .ln:nth-child(3)>span{transition-delay:.24s}
+.hero .fade{opacity:0;transform:translateY(24px);transition:opacity 1.1s var(--ease),transform 1.1s var(--ease)}
+.loaded .hero .fade{opacity:1;transform:none}
+.loaded .hero .d1{transition-delay:.45s}.loaded .hero .d2{transition-delay:.6s}.loaded .hero .d3{transition-delay:.75s}.loaded .hero .d4{transition-delay:.9s}
+.hero-ctas{display:flex;flex-wrap:wrap;gap:14px;margin-top:40px}
+.hero-meta{display:flex;flex-wrap:wrap;gap:28px;margin-top:56px;padding-top:28px;border-top:1px solid var(--line);font-size:14px;color:var(--ink-soft)}
+.hero-meta b{display:block;color:var(--ink);font-weight:600;font-size:15px}
+.orb-wrap{position:relative;aspect-ratio:1/1.15;will-change:transform}
+.orb{position:absolute;inset:0;border-radius:48% 48% 46% 46%/42% 42% 58% 58%;background:
+ radial-gradient(circle at 32% 26%,#fff 0%,rgba(255,255,255,0) 42%),
+ linear-gradient(160deg,#dfe8ef 0%,#c9d6e1 40%,#1b2b42 120%);box-shadow:inset -30px -40px 80px rgba(15,28,46,.25),0 60px 120px -40px rgba(15,28,46,.45);overflow:hidden}
+.orb::after{content:"";position:absolute;inset:0;background:conic-gradient(from 200deg at 60% 70%,transparent 0 60%,rgba(231,215,184,.55) 75%,transparent 90%);mix-blend-mode:soft-light}
+.orb svg{position:absolute;inset:0;width:100%;height:100%}
+.ring{position:absolute;border:1px solid rgba(176,141,87,.45);border-radius:50%;animation:spin 40s linear infinite}
+.ring.r1{inset:-6%}.ring.r2{inset:-14%;border-style:dashed;border-color:rgba(15,28,46,.12);animation-duration:70s;animation-direction:reverse}
+.ring::before{content:"";position:absolute;top:50%;left:-5px;width:9px;height:9px;border-radius:50%;background:var(--gold)}
+@keyframes spin{to{transform:rotate(360deg)}}
+.float-card{position:absolute;left:-10%;bottom:12%;background:rgba(255,255,255,.78);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid rgba(255,255,255,.9);border-radius:18px;padding:16px 20px;display:flex;align-items:center;gap:14px;box-shadow:0 20px 50px -20px rgba(15,28,46,.35);animation:bob 6s ease-in-out infinite}
+.float-card .ic{width:40px;height:40px;border-radius:50%;background:var(--ink);display:grid;place-items:center;flex:none}
+.float-card .ic svg{width:18px;height:18px}
+.float-card b{display:block;font-size:14px}
+.float-card span{font-size:12.5px;color:var(--ink-soft)}
+@keyframes bob{50%{transform:translateY(-10px)}}
+.scroll-cue{position:absolute;bottom:30px;left:50%;transform:translateX(-50%);width:1px;height:56px;background:linear-gradient(var(--line),transparent);overflow:hidden}
+.scroll-cue::after{content:"";position:absolute;top:-20px;left:0;width:1px;height:20px;background:var(--gold);animation:cue 2.4s var(--ease) infinite}
+@keyframes cue{to{top:60px}}
 
-/* trust */
-.trust{border-top:1px solid color-mix(in srgb,var(--ink) 9%,transparent);border-bottom:1px solid color-mix(in srgb,var(--ink) 9%,transparent);background:var(--surface)}
-.trust .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;padding-top:26px;padding-bottom:26px}
-.trust div{display:flex;align-items:center;gap:12px;font-weight:600;font-size:15px}
-.trust svg{width:22px;height:22px;color:var(--accent);flex:none}
+/* marquee */
+.marquee{background:var(--ink);color:var(--pearl);padding:26px 0;overflow:hidden;border-block:1px solid rgba(255,255,255,.06)}
+.track{display:flex;width:max-content;animation:mq 38s linear infinite}
+.marquee:hover .track{animation-play-state:paused}
+.track span{display:flex;align-items:center;gap:48px;padding-right:48px;font-family:var(--serif);font-size:clamp(22px,2.6vw,32px);font-weight:300;white-space:nowrap}
+.track span i{font-style:italic;color:var(--gold-soft)}
+.track svg{width:18px;height:18px;flex:none}
+@keyframes mq{to{transform:translateX(-50%)}}
 
-/* sections */
-section.block{padding:110px 0}
-.kicker{font-size:13px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
-h2{font-family:var(--serif);font-weight:500;font-size:clamp(34px,3.8vw,52px);line-height:1.08;letter-spacing:-.02em;margin:14px 0 18px}
-.section-head{display:flex;justify-content:space-between;align-items:end;gap:40px;margin-bottom:56px}
-.section-head p{color:var(--muted);max-width:420px}
-.services{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-.card{background:var(--surface);border-radius:var(--radius);padding:34px 32px 36px;border:1px solid color-mix(in srgb,var(--ink) 7%,transparent);transition:transform .25s ease,box-shadow .25s ease}
-.card:hover{transform:translateY(-4px);box-shadow:0 30px 60px -36px color-mix(in srgb,var(--ink) 45%,transparent)}
-.icon{width:54px;height:54px;border-radius:16px;background:var(--soft);color:var(--accent);display:grid;place-items:center;margin-bottom:24px}
-.icon svg{width:26px;height:26px}
-.card h3{font-family:var(--serif);font-weight:500;font-size:23px;margin-bottom:8px;letter-spacing:-.01em}
-.card p{color:var(--muted);font-size:16px}
+/* services */
+.sec-head{display:flex;justify-content:space-between;align-items:flex-end;gap:40px;flex-wrap:wrap;margin-bottom:64px}
+.sec-head .lead{max-width:440px}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.card{position:relative;background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:40px 34px 36px;overflow:hidden;transition:transform .6s var(--ease),box-shadow .6s var(--ease),border-color .4s;display:flex;flex-direction:column;min-height:360px}
+.card::before{content:"";position:absolute;inset:auto -30% -60% auto;width:280px;height:280px;border-radius:50%;background:radial-gradient(circle,rgba(231,215,184,.6),transparent 70%);opacity:0;transition:opacity .6s}
+.card:hover{transform:translateY(-8px);box-shadow:0 40px 70px -40px rgba(15,28,46,.4);border-color:rgba(176,141,87,.4)}
+.card:hover::before{opacity:1}
+.card .num{font-family:var(--serif);font-style:italic;color:var(--gold-deep);font-size:15px}
+.card .ico{width:58px;height:58px;border-radius:16px;background:var(--mist);display:grid;place-items:center;margin:26px 0 30px;transition:background .5s,transform .6s var(--ease)}
+.card:hover .ico{background:var(--ink);transform:rotate(-6deg)}
+.card .ico svg{width:28px;height:28px;stroke:var(--ink);transition:stroke .5s}
+.card:hover .ico svg{stroke:var(--gold-soft)}
+.card h3{font-size:30px;margin-bottom:14px}
+.card p{color:var(--ink-soft);font-size:15.5px;flex:1}
+.card .more{margin-top:26px;font-size:14px;font-weight:600;display:inline-flex;align-items:center;gap:8px;position:relative;z-index:1}
+.card .more svg{width:14px;height:14px;transition:transform .4s var(--ease)}
+.card:hover .more svg{transform:translateX(5px)}
+.card.feature{background:var(--ink);color:var(--pearl);border-color:var(--ink)}
+.card.feature p{color:rgba(251,250,247,.72)}
+.card.feature .ico{background:rgba(255,255,255,.08)}
+.card.feature .ico svg{stroke:var(--gold-soft)}
+.card.feature .num{color:var(--gold-soft)}
+.card.feature::before{background:radial-gradient(circle,rgba(176,141,87,.35),transparent 70%)}
 
-.why{background:var(--ink);color:var(--bg)}
-.why .kicker{color:var(--gold)}
-.why-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:80px;align-items:start}
-.why h2{color:var(--bg)}
-.why .intro{color:color-mix(in srgb,var(--bg) 70%,transparent);font-size:18px;max-width:440px}
-.points{display:grid;gap:14px}
-.point{display:grid;grid-template-columns:62px 1fr;gap:20px;padding:30px;border-radius:var(--radius);background:color-mix(in srgb,var(--bg) 6%,transparent);border:1px solid color-mix(in srgb,var(--bg) 10%,transparent)}
-.point .num{font-family:var(--serif);font-size:34px;color:var(--gold);line-height:1}
-.point h3{font-family:var(--serif);font-weight:500;font-size:24px;margin-bottom:6px}
-.point p{color:color-mix(in srgb,var(--bg) 72%,transparent);font-size:16px}
+/* about */
+.about{background:var(--ivory)}
+.about-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(40px,7vw,110px);align-items:center}
+.art{position:relative;aspect-ratio:4/5;border-radius:28px;overflow:hidden;background:linear-gradient(170deg,#1b2b42,#0f1c2e)}
+.art svg{position:absolute;inset:0;width:100%;height:100%}
+.art .tag{position:absolute;left:24px;right:24px;bottom:24px;color:var(--pearl);font-family:var(--serif);font-size:clamp(22px,2.4vw,28px);font-weight:300;line-height:1.2}
+.art .tag em{color:var(--gold-soft)}
+.about p+p{margin-top:18px}
+.about .quote{font-family:var(--serif);font-size:clamp(24px,2.6vw,32px);font-weight:300;line-height:1.3;margin:34px 0;padding-left:26px;border-left:2px solid var(--gold)}
 
-.score{display:flex;align-items:center;gap:18px;background:var(--surface);padding:16px 24px;border-radius:18px;border:1px solid color-mix(in srgb,var(--ink) 8%,transparent)}
-.score b{font-family:var(--serif);font-size:40px;font-weight:500;line-height:1}
-.score small{display:block;color:var(--muted);font-size:14px}
-.reviews{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-.review{background:var(--surface);border-radius:var(--radius);padding:34px;display:flex;flex-direction:column;gap:22px;border:1px solid color-mix(in srgb,var(--ink) 7%,transparent)}
-.review p{font-family:var(--serif);font-size:19.5px;line-height:1.45}
-.review .by{margin-top:auto;display:flex;align-items:center;gap:12px;font-weight:600;font-size:15px}
-.avatar{width:40px;height:40px;border-radius:50%;background:var(--soft);color:var(--accent);display:grid;place-items:center;font-weight:700}
-.review .src{color:var(--muted);font-weight:500;font-size:13px;display:block}
+/* why */
+.why-grid{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line)}
+.why{padding:40px 30px 10px 0;border-right:1px solid var(--line);margin-right:30px}
+.why:last-child{border-right:0;margin-right:0}
+.why svg{width:34px;height:34px;stroke:var(--gold-deep);margin-bottom:26px}
+.why h3{font-size:25px;margin-bottom:12px}
+.why p{font-size:15px;color:var(--ink-soft)}
 
-.cta-band{padding:0 0 110px}
-.cta-box{border-radius:calc(var(--radius) + 12px);background:linear-gradient(140deg,var(--accent),color-mix(in srgb,var(--accent) 60%,var(--ink)));color:var(--accent-ink);padding:76px 64px;display:grid;grid-template-columns:1.3fr 1fr;gap:40px;align-items:center;position:relative;overflow:hidden}
-.cta-box:after{content:"";position:absolute;right:-120px;bottom:-200px;width:460px;height:460px;border-radius:50%;border:1.5px solid color-mix(in srgb,var(--accent-ink) 22%,transparent)}
-.cta-box h2{color:inherit;margin:0 0 12px}
-.cta-box p{opacity:.85;font-size:18px}
-.cta-box .actions{display:flex;flex-direction:column;gap:12px;align-items:flex-start;position:relative;z-index:1}
-.cta-box .btn{background:var(--accent-ink);color:var(--accent)}
-.cta-box .btn.ghost{background:transparent;color:var(--accent-ink);border-color:color-mix(in srgb,var(--accent-ink) 40%,transparent)}
+/* steps */
+.steps-sec{background:var(--ink);color:var(--pearl);overflow:hidden}
+.steps-sec .eyebrow{color:var(--gold-soft)}
+.steps-sec h2 em{color:var(--gold-soft)}
+.steps-sec .lead{color:rgba(251,250,247,.7)}
+.steps-sec::before{content:"";position:absolute;width:900px;height:900px;right:-300px;top:-300px;border-radius:50%;background:radial-gradient(circle,rgba(176,141,87,.18),transparent 65%)}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;position:relative}
+.step{padding:34px 28px;border-radius:var(--radius);border:1px solid rgba(255,255,255,.1);background:rgba(255,255,255,.03);transition:background .5s,transform .6s var(--ease),border-color .5s}
+.step:hover{background:rgba(255,255,255,.07);transform:translateY(-6px);border-color:rgba(231,215,184,.35)}
+.step .n{font-family:var(--serif);font-size:64px;font-weight:300;line-height:1;color:transparent;-webkit-text-stroke:1px var(--gold-soft)}
+.step h3{font-size:25px;margin:26px 0 12px}
+.step p{font-size:15px;color:rgba(251,250,247,.7)}
 
-.visit{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:10px}
-.visit .card h3{font-size:20px}
-.visit a{color:var(--accent);font-weight:600}
-footer{border-top:1px solid color-mix(in srgb,var(--ink) 9%,transparent);padding:40px 0 110px;color:var(--muted);font-size:14px}
-footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
-.mobile-bar{display:none}
+/* faq */
+.faq-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(40px,7vw,100px)}
+details{border-bottom:1px solid var(--line)}
+details:first-child{border-top:1px solid var(--line)}
+summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:20px;padding:28px 0;font-family:var(--serif);font-size:clamp(20px,2.1vw,25px);font-weight:400}
+summary::-webkit-details-marker{display:none}
+summary .pl{width:36px;height:36px;border-radius:50%;border:1px solid var(--line);position:relative;flex:none;transition:transform .5s var(--ease),background .4s}
+summary .pl::before,summary .pl::after{content:"";position:absolute;left:50%;top:50%;width:12px;height:1.5px;background:var(--ink);transform:translate(-50%,-50%)}
+summary .pl::after{transform:translate(-50%,-50%) rotate(90deg);transition:transform .5s var(--ease)}
+details[open] summary .pl{background:var(--ink)}
+details[open] summary .pl::before{background:var(--pearl)}
+details[open] summary .pl::after{transform:translate(-50%,-50%) rotate(0);background:var(--pearl)}
+details .ans{padding:0 50px 28px 0;color:var(--ink-soft)}
+details .ans a{color:var(--ink);font-weight:600}
 
-@keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
-.hero .copy>*{animation:rise .8s cubic-bezier(.2,.7,.2,1) both}
-.hero .copy>*:nth-child(2){animation-delay:.08s}.hero .copy>*:nth-child(3){animation-delay:.16s}
-.hero .copy>*:nth-child(4){animation-delay:.24s}.hero .copy>*:nth-child(5){animation-delay:.32s}
-.visual{animation:rise 1s .2s cubic-bezier(.2,.7,.2,1) both}
+/* cta band */
+.cta-band{padding:0 0 clamp(90px,12vw,150px)}
+.band{position:relative;border-radius:36px;overflow:hidden;padding:clamp(60px,9vw,120px) clamp(28px,6vw,90px);background:
+ radial-gradient(700px 400px at 90% 0%,rgba(176,141,87,.38),transparent 60%),
+ radial-gradient(600px 400px at 0% 100%,rgba(201,214,225,.18),transparent 60%),var(--ink);color:var(--pearl);text-align:center}
+.band h2{font-size:clamp(40px,6.4vw,86px);max-width:900px;margin:20px auto 24px}
+.band h2 em{color:var(--gold-soft)}
+.band .eyebrow{color:var(--gold-soft)}
+.band p{color:rgba(251,250,247,.72);max-width:520px;margin:0 auto}
+.band .btns{display:flex;flex-wrap:wrap;justify-content:center;gap:14px;margin-top:40px}
+.band .btn-ghost{color:var(--pearl);border-color:rgba(255,255,255,.25);background:rgba(255,255,255,.04)}
+.band .btn-ghost:hover{border-color:var(--pearl)}
+.band svg.arc{position:absolute;left:50%;bottom:-2px;transform:translateX(-50%);width:120%;max-width:none;opacity:.5;pointer-events:none}
 
-@media (max-width:980px){
-  .links{display:none}
-  .hero-grid,.why-grid,.cta-box{grid-template-columns:1fr}
-  .hero-grid{gap:56px}
-  .services,.reviews,.visit{grid-template-columns:1fr 1fr}
-  .trust .wrap{grid-template-columns:1fr 1fr}
-  .float.one{left:12px;bottom:-26px}.float.two{right:12px}
-  .visual{max-width:560px;margin-bottom:20px}
-  .section-head{flex-direction:column;align-items:flex-start}
+/* contact */
+.contact{background:var(--ivory)}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:10px}
+.cbox{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:38px 34px;transition:transform .6s var(--ease),box-shadow .6s var(--ease)}
+.cbox:hover{transform:translateY(-6px);box-shadow:0 30px 60px -36px rgba(15,28,46,.35)}
+.cbox .lbl{font-size:12px;letter-spacing:.2em;text-transform:uppercase;font-weight:600;color:var(--gold-deep);display:flex;align-items:center;gap:10px}
+.cbox .lbl svg{width:18px;height:18px;stroke:var(--gold-deep)}
+.cbox .val{font-family:var(--serif);font-size:clamp(24px,2.8vw,34px);font-weight:300;line-height:1.2;margin:18px 0 22px;overflow-wrap:anywhere}
+.cbox p{color:var(--ink-soft);font-size:15px}
+.cbox .act{display:inline-flex;align-items:center;gap:8px;font-weight:600;font-size:14.5px;margin-top:18px}
+.map-art{grid-column:1/-1;position:relative;border-radius:var(--radius);overflow:hidden;min-height:280px;background:#e4ebf0;display:block}
+.map-art svg{position:absolute;inset:0;width:100%;height:100%}
+.pin{position:absolute;left:50%;top:50%;transform:translate(-50%,-100%);display:flex;flex-direction:column;align-items:center}
+.pin .dot{width:56px;height:56px;border-radius:50% 50% 50% 0;transform:rotate(-45deg);background:var(--ink);display:grid;place-items:center;box-shadow:0 14px 30px -10px rgba(15,28,46,.6)}
+.pin .dot svg{position:static;width:24px;height:24px;transform:rotate(45deg)}
+.pin::after{content:"";width:18px;height:6px;border-radius:50%;background:rgba(15,28,46,.25);margin-top:8px}
+.pulse{position:absolute;left:50%;top:50%;width:140px;height:140px;margin:-70px 0 0 -70px;border-radius:50%;border:1px solid var(--gold);animation:pulse 2.8s var(--ease) infinite}
+@keyframes pulse{from{transform:scale(.3);opacity:1}to{transform:scale(1.6);opacity:0}}
+.map-art .chip{position:absolute;left:20px;bottom:20px;right:20px;max-width:max-content;background:rgba(255,255,255,.9);backdrop-filter:blur(10px);padding:12px 18px;border-radius:999px;font-size:14px;font-weight:600;display:flex;align-items:center;gap:10px}
+
+/* footer */
+footer{background:var(--ink);color:rgba(251,250,247,.7);padding:80px 0 40px;font-size:14.5px}
+.foot{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px;padding-bottom:50px;border-bottom:1px solid rgba(255,255,255,.1)}
+footer .logo{color:var(--pearl)}
+footer .logo small{color:var(--gold-soft)}
+footer h4{font-family:var(--sans);font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-soft);margin-bottom:18px;font-weight:600}
+footer ul{list-style:none;display:grid;gap:10px}
+footer a:hover{color:var(--pearl)}
+.foot-bottom{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;padding-top:30px;font-size:13px}
+.big-word{font-family:var(--serif);font-weight:300;font-size:clamp(60px,15vw,220px);line-height:.9;letter-spacing:-.04em;color:transparent;-webkit-text-stroke:1px rgba(231,215,184,.25);margin-top:50px;white-space:nowrap;overflow:hidden}
+
+/* mobile call bar */
+.callbar{display:none}
+
+/* reveal */
+.rv{opacity:0;transform:translateY(40px);transition:opacity 1.1s var(--ease),transform 1.1s var(--ease)}
+.rv.in{opacity:1;transform:none}
+.rv.d1{transition-delay:.1s}.rv.d2{transition-delay:.2s}.rv.d3{transition-delay:.3s}
+
+/* responsive */
+@media (max-width:1024px){
+  nav,.hdr-phone{display:none}
+  .burger{display:block}
+  .hero-grid{grid-template-columns:1fr}
+  .orb-wrap{max-width:420px;width:80%;margin:20px auto 0}
+  .cards{grid-template-columns:1fr 1fr}
+  .about-grid,.faq-grid{grid-template-columns:1fr}
+  .art{max-width:520px;aspect-ratio:5/4}
+  .why-grid{grid-template-columns:1fr 1fr}
+  .why:nth-child(2){border-right:0;margin-right:0}
+  .steps{grid-template-columns:1fr 1fr}
+  .foot{grid-template-columns:1fr 1fr}
+  .foot>div:first-child{grid-column:1/-1}
 }
-@media (max-width:640px){
+@media (max-width:680px){
   body{font-size:16px}
-  .wrap{padding:0 18px}
-  .nav{height:66px}.brand{font-size:19px}
-  .phone,.nav-right .btn{display:none}
-  .hero{padding:44px 0 64px}
-  .lead-text{font-size:17.5px}
-  .hero-ctas .btn{flex:1;justify-content:center}
-  .ticks{display:none}
-  .services,.reviews,.visit,.trust .wrap{grid-template-columns:1fr}
-  section.block{padding:76px 0}
-  .quote-panel,.photo{aspect-ratio:auto;min-height:380px}.photo{aspect-ratio:4/3;min-height:0}
-  .quote-panel{padding:40px 30px 64px}.quote-panel p{font-size:23px}
-  .float{font-size:13px;padding:12px 14px}.float b{font-size:18px}
-  .float.two{display:none}
-  .cta-box{padding:52px 28px}
-  .point{grid-template-columns:44px 1fr;padding:24px}
-  .mobile-bar{display:flex;position:fixed;left:12px;right:12px;bottom:12px;z-index:30;gap:10px}
-  .mobile-bar .btn{flex:1;justify-content:center;box-shadow:0 14px 30px -14px color-mix(in srgb,var(--ink) 60%,transparent)}
-  .mobile-bar .btn.ghost{background:var(--surface)}
+  .wrap{width:calc(100% - 40px)}
+  header{padding:12px 0}
+  .bar{padding:10px 10px 10px 16px}
+  .hdr-r .btn{display:none}
+  .logo{font-size:18px}
+  .logo small{font-size:8.5px;letter-spacing:.26em}
+  .mark{width:34px;height:34px}
+  .hero{padding:120px 0 70px}
+  .hero-ctas .btn{flex:1 1 100%}
+  .hero-meta{gap:20px}
+  .float-card{left:-4%;bottom:6%;padding:12px 14px}
+  .scroll-cue{display:none}
+  .cards,.steps,.contact-grid,.foot{grid-template-columns:1fr}
+  .card{min-height:0;padding:34px 26px}
+  .why-grid{grid-template-columns:1fr}
+  .why{border-right:0;margin-right:0;padding:32px 0;border-bottom:1px solid var(--line)}
+  .cbox{padding:30px 24px}
+  .band{border-radius:26px}
+  .band .btns .btn{flex:1 1 100%}
+  details .ans{padding-right:0}
+  .sec-head{margin-bottom:44px}
+  .callbar{display:flex;gap:10px;position:fixed;left:12px;right:12px;bottom:12px;z-index:45;padding:8px;border-radius:999px;background:rgba(15,28,46,.92);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);box-shadow:0 20px 40px -14px rgba(15,28,46,.6);transform:translateY(130%);transition:transform .6s var(--ease)}
+  .callbar.show{transform:none}
+  .callbar a{flex:1;display:flex;align-items:center;justify-content:center;gap:8px;padding:14px 10px;border-radius:999px;font-weight:600;font-size:14.5px;color:var(--pearl)}
+  .callbar a.c{background:linear-gradient(135deg,#d9bf8f,var(--gold));color:var(--ink)}
+  .callbar svg{width:16px;height:16px}
+  footer{padding-bottom:110px}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+  .rv,.hero .fade,.hero h1 .ln>span{opacity:1!important;transform:none!important}
 }
 </style>
 </head>
 <body>
-<div class="concept">Website concept prepared for <b>Pure Smiles Orthodontics</b> &middot; not a live site</div>
 
-<header>
-  <div class="wrap nav">
-    <a href="#top" class="brand">Pure Smiles Orthodontics</a>
-    <nav class="links">
-      <a href="#services">Services</a><a href="#why">Why us</a><a href="#visit">Visit</a>
-    </nav>
-    <div class="nav-right">
-      <a class="phone" href="tel:5122152520">(512) 215-2520</a>
-      <a class="btn" href="#visit">Book now</a>
+<header id="top">
+  <div class="wrap">
+    <div class="bar">
+      <a href="#top" class="logo" aria-label="Pure Smiles Orthodontics home">
+        <svg class="mark" viewBox="0 0 40 40" fill="none" aria-hidden="true"><circle cx="20" cy="20" r="19" stroke="#b08d57"/><path d="M11 17c2.5 7.5 15.5 7.5 18 0" stroke="#0f1c2e" stroke-width="1.6" stroke-linecap="round"/><circle cx="20" cy="12" r="1.6" fill="#b08d57"/></svg>
+        <span>Pure Smiles<small>Orthodontics</small></span>
+      </a>
+      <nav aria-label="Primary"><ul>
+        <li><a class="ulink" href="#services">Care</a></li>
+        <li><a class="ulink" href="#about">Approach</a></li>
+        <li><a class="ulink" href="#process">Your Visit</a></li>
+        <li><a class="ulink" href="#contact">Contact</a></li>
+      </ul></nav>
+      <div class="hdr-r">
+        <a class="hdr-phone ulink" href="tel:+15122152520">(512) 215-2520</a>
+        <a class="btn btn-dark" href="#contact">Book a Consultation</a>
+        <button class="burger" aria-label="Open menu" aria-expanded="false"><span></span><span></span></button>
+      </div>
     </div>
   </div>
 </header>
 
-<main id="top">
+<div class="mobile-menu" aria-hidden="true">
+  <a class="m" href="#services">Care</a>
+  <a class="m" href="#about">Approach</a>
+  <a class="m" href="#process">Your Visit</a>
+  <a class="m" href="#faq">Questions</a>
+  <a class="m" href="#contact">Contact</a>
+  <a class="btn btn-dark" href="tel:+15122152520">Call (512) 215-2520</a>
+</div>
+
+<main>
 <section class="hero">
   <div class="wrap hero-grid">
-    <div class="copy">
-      <div class="eyebrow">
-        <span class="dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-7-4.4-7-10a4 4 0 017-2.6A4 4 0 0119 10c0 5.6-7 10-7 10z"/></svg></span>Family &amp; cosmetic dentistry
-      </div>
-      <h1>Dentistry that feels as good as <em>it looks.</em></h1>
-      <p class="lead-text">Gentle, modern care for the whole family, with same-week appointments and a team that actually takes time to listen.</p>
-      <div class="hero-ctas">
-        <a class="btn" href="#visit">Book your visit <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-        <a class="btn ghost" href="tel:5122152520">Call (512) 215-2520</a>
-      </div>
-      <div class="ticks">
-        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7"/></svg>Most insurance accepted</span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7"/></svg>New patients welcome</span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7"/></svg>Flexible payment plans</span>
-      </div>
-    </div>
-    <div class="visual">
-      
-      <div class="quote-panel"><div class="quote-mark">“</div><div><p>Gentle, modern care for the whole family, with same-week appointments and a team that actually takes time to listen.</p><div class="who">Pure Smiles Orthodontics</div></div></div>
-      
-      
-      <div class="float two"><span class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><span><b>This week</b>New patients welcome</span></div>
-    </div>
-  </div>
-  <template id="qp"><div class="quote-panel"><div class="quote-mark">“</div><div><p>Gentle, modern care for the whole family, with same-week appointments and a team that actually takes time to listen.</p><div class="who">Pure Smiles Orthodontics</div></div></div></template>
-</section>
-
-<div class="trust"><div class="wrap">
-  <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.2-8 9-4.6-.8-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg>Most insurance accepted</div><div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.2-8 9-4.6-.8-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg>New patients welcome</div><div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.2-8 9-4.6-.8-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg>Flexible payment plans</div><div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.2-8 9-4.6-.8-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg>Evening appointments</div>
-</div></div>
-
-<section class="block" id="services">
-  <div class="wrap">
-    <div class="section-head">
-      <div><div class="kicker">What we do</div><h2>Everything you need,<br>under one roof.</h2></div>
-      <p>From routine visits to the work that changes how you feel about your day, Pure Smiles Orthodontics takes care of it properly.</p>
-    </div>
-    <div class="services">
-      
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3c-2.5 0-4 2-4 4.5 0 3 1.5 4.5 2 7.5.4 2.4.8 6 2.5 6 1.6 0 1.6-4.5 4.5-4.5s2.9 4.5 4.5 4.5c1.7 0 2.1-3.6 2.5-6 .5-3 2-4.5 2-7.5C21 5 19.5 3 17 3c-2 0-3 1-5 1S9 3 7 3z"/></svg></div><h3>Checkups &amp; cleanings</h3><p>Thorough, comfortable exams that keep small problems from becoming big ones.</p></div>
-      
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/><path d="M19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8z"/></svg></div><h3>Teeth whitening</h3><p>Professional whitening that brightens your smile safely in a single visit.</p></div>
-      
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 14s1.5 2.5 4 2.5 4-2.5 4-2.5"/><path d="M9 9.5h.01M15 9.5h.01"/></svg></div><h3>Invisalign &amp; aligners</h3><p>Straighten your teeth discreetly with clear aligners planned around your life.</p></div>
-      
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.2-8 9-4.6-.8-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg></div><h3>Dental implants</h3><p>Permanent, natural-looking replacements that feel and work like your own teeth.</p></div>
-      
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-7-4.4-7-10a4 4 0 017-2.6A4 4 0 0119 10c0 5.6-7 10-7 10z"/></svg></div><h3>Kids&#39; dentistry</h3><p>A calm, friendly first experience that helps children love their checkups.</p></div>
-      
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div><h3>Emergency care</h3><p>Same-day help for toothaches, chips and broken teeth when you need it most.</p></div>
-      
-    </div>
-  </div>
-</section>
-
-<section class="block why" id="why">
-  <div class="wrap why-grid">
     <div>
-      <div class="kicker">Why patients choose us</div>
-      <h2>The Austin dentist people recommend to their friends.</h2>
-      <p class="intro">it still comes down to the same three things.</p>
+      <span class="eyebrow fade d1">Orthodontics · Southwest Austin</span>
+      <h1>
+        <span class="ln"><span>The smile</span></span>
+        <span class="ln"><span>you’ll want</span></span>
+        <span class="ln"><span><em>to share.</em></span></span>
+      </h1>
+      <p class="lead fade d2">Pure Smiles Orthodontics brings considered, personal orthodontic care to Southwest Austin. Straighter teeth, a healthier bite and the quiet confidence that comes with both, guided one thoughtful step at a time.</p>
+      <div class="hero-ctas fade d3">
+        <a class="btn btn-dark" href="#contact">Book a Consultation <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M2 8h12M9 3l5 5-5 5"/></svg></a>
+        <a class="btn btn-ghost" href="tel:+15122152520">Call (512) 215-2520</a>
+      </div>
+      <div class="hero-meta fade d4">
+        <div><b>4301 W William Cannon Dr</b>Austin, TX 78749</div>
+        <div><b>Dedicated to orthodontics</b>Straightening is all we do</div>
+      </div>
     </div>
-    <div class="points">
-      
-      <div class="point"><div class="num">01</div><div><h3>Comfort first</h3><p>Numbing that works, warm blankets, and no lectures. Anxious patients are welcome here.</p></div></div>
-      
-      <div class="point"><div class="num">02</div><div><h3>Modern technology</h3><p>Digital X-rays and 3D scans mean less radiation, fewer goopy impressions and faster results.</p></div></div>
-      
-      <div class="point"><div class="num">03</div><div><h3>Clear pricing</h3><p>We explain costs and insurance before treatment, so there are never any surprises.</p></div></div>
-      
+    <div class="orb-wrap fade d3" data-parallax>
+      <div class="ring r2"></div>
+      <div class="ring r1"></div>
+      <div class="orb">
+        <svg viewBox="0 0 400 460" fill="none" aria-hidden="true">
+          <path d="M70 250c40 90 220 90 260 0" stroke="rgba(255,255,255,.85)" stroke-width="2" stroke-linecap="round"/>
+          <path d="M100 262c35 52 165 52 200 0" stroke="rgba(231,215,184,.9)" stroke-width="1.2" stroke-linecap="round" stroke-dasharray="2 8"/>
+          <g fill="rgba(255,255,255,.9)">
+            <rect x="122" y="276" width="14" height="10" rx="3"/><rect x="160" y="290" width="14" height="10" rx="3"/><rect x="196" y="294" width="14" height="10" rx="3"/><rect x="232" y="290" width="14" height="10" rx="3"/><rect x="268" y="276" width="14" height="10" rx="3"/>
+          </g>
+          <circle cx="200" cy="150" r="64" stroke="rgba(255,255,255,.35)"/>
+          <circle cx="200" cy="150" r="100" stroke="rgba(255,255,255,.15)"/>
+        </svg>
+      </div>
+      <div class="float-card">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#e7d7b8" stroke-width="1.6"><path d="M5 12l4 4 10-10"/></svg></div>
+        <div><b>Personal treatment plans</b><span>Shaped around your smile</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="scroll-cue" aria-hidden="true"></div>
+</section>
+
+<div class="marquee" aria-hidden="true">
+  <div class="track">
+    <span>Considered orthodontic care <svg viewBox="0 0 20 20"><path d="M10 0l2.4 7.6L20 10l-7.6 2.4L10 20l-2.4-7.6L0 10l7.6-2.4z" fill="#b08d57"/></svg> <i>Southwest Austin</i> <svg viewBox="0 0 20 20"><path d="M10 0l2.4 7.6L20 10l-7.6 2.4L10 20l-2.4-7.6L0 10l7.6-2.4z" fill="#b08d57"/></svg> Straighter teeth <svg viewBox="0 0 20 20"><path d="M10 0l2.4 7.6L20 10l-7.6 2.4L10 20l-2.4-7.6L0 10l7.6-2.4z" fill="#b08d57"/></svg> <i>A healthier bite</i> <svg viewBox="0 0 20 20"><path d="M10 0l2.4 7.6L20 10l-7.6 2.4L10 20l-2.4-7.6L0 10l7.6-2.4z" fill="#b08d57"/></svg> W William Cannon Dr <svg viewBox="0 0 20 20"><path d="M10 0l2.4 7.6L20 10l-7.6 2.4L10 20l-2.4-7.6L0 10l7.6-2.4z" fill="#b08d57"/></svg> <i>Smiles worth sharing</i> <svg viewBox="0 0 20 20"><path d="M10 0l2.4 7.6L20 10l-7.6 2.4L10 20l-2.4-7.6L0 10l7.6-2.4z" fill="#b08d57"/></svg></span>
+    <span>Considered orthodontic care <svg viewBox="0 0 20 20"><path d="M10 0l2.4 7.6L20 10l-7.6 2.4L10 20l-2.4-7.6L0 10l7.6-2.4z" fill="#b08d57"/></svg> <i>Southwest Austin</i> <svg viewBox="0 0 20 20"><path d="M10 0l2.4 7.6L20 10l-7.6 2.4L10 20l-2.4-7.6L0 10l7.6-2.4z" fill="#b08d57"/></svg> Straighter teeth <svg viewBox="0 0 20 20"><path d="M10 0l2.4 7.6L20 10l-7.6 2.4L10 20l-2.4-7.6L0 10l7.6-2.4z" fill="#b08d57"/></svg> <i>A healthier bite</i> <svg viewBox="0 0 20 20"><path d="M10 0l2.4 7.6L20 10l-7.6 2.4L10 20l-2.4-7.6L0 10l7.6-2.4z" fill="#b08d57"/></svg> W William Cannon Dr <svg viewBox="0 0 20 20"><path d="M10 0l2.4 7.6L20 10l-7.6 2.4L10 20l-2.4-7.6L0 10l7.6-2.4z" fill="#b08d57"/></svg> <i>Smiles worth sharing</i> <svg viewBox="0 0 20 20"><path d="M10 0l2.4 7.6L20 10l-7.6 2.4L10 20l-2.4-7.6L0 10l7.6-2.4z" fill="#b08d57"/></svg></span>
+  </div>
+</div>
+
+<section class="pad" id="services">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="rv">
+        <span class="eyebrow">Orthodontic Care</span>
+        <h2>Alignment, <em>beautifully</em><br>considered.</h2>
+      </div>
+      <p class="lead rv d1">Every smile moves differently. Your care begins with understanding yours, then choosing the path that suits your teeth, your bite and your life. Call us to talk through which options are right for you.</p>
+    </div>
+    <div class="cards">
+      <article class="card rv">
+        <span class="num">01</span>
+        <div class="ico"><svg viewBox="0 0 32 32" fill="none" stroke-width="1.5" stroke-linecap="round"><circle cx="14" cy="14" r="8"/><path d="M20 20l7 7M11 14h6M14 11v6"/></svg></div>
+        <h3>Orthodontic Consultations</h3>
+        <p>An unhurried first conversation. We look closely at your teeth and bite, listen to what you hope to change, and explain what we see in plain language.</p>
+        <a class="more ulink" href="#contact">Arrange yours <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M2 8h12M9 3l5 5-5 5"/></svg></a>
+      </article>
+      <article class="card feature rv d1">
+        <span class="num">02</span>
+        <div class="ico"><svg viewBox="0 0 32 32" fill="none" stroke-width="1.5" stroke-linecap="round"><path d="M4 17c6 7 18 7 24 0"/><rect x="8" y="19" width="4" height="3" rx="1"/><rect x="14" y="21" width="4" height="3" rx="1"/><rect x="20" y="19" width="4" height="3" rx="1"/><path d="M6 10c3-3 17-3 20 0"/></svg></div>
+        <h3>Straightening &amp; Alignment</h3>
+        <p>Thoughtful orthodontic treatment to gently guide crowded, gapped or crooked teeth into place, planned around your goals and explained clearly at every stage.</p>
+        <a class="more ulink" href="#contact">Discuss options <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M2 8h12M9 3l5 5-5 5"/></svg></a>
+      </article>
+      <article class="card rv d2">
+        <span class="num">03</span>
+        <div class="ico"><svg viewBox="0 0 32 32" fill="none" stroke-width="1.5" stroke-linecap="round"><path d="M6 12h20M6 20h20"/><path d="M11 8v8M21 16v8"/></svg></div>
+        <h3>Bite Correction</h3>
+        <p>A beautiful smile should feel as good as it looks. Orthodontics can help bring your upper and lower teeth into better balance for comfort and function.</p>
+        <a class="more ulink" href="#contact">Learn more <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M2 8h12M9 3l5 5-5 5"/></svg></a>
+      </article>
     </div>
   </div>
 </section>
 
-
-
-<section class="cta-band" id="book">
-  <div class="wrap"><div class="cta-box">
-    <div><h2>Ready when you are.</h2><p>Book your visit in under a minute, or give us a call and talk to a real person.</p></div>
-    <div class="actions">
-      <a class="btn" href="#visit">Book your visit</a>
-      <a class="btn ghost" href="tel:5122152520">Call (512) 215-2520</a>
+<section class="pad about" id="about">
+  <div class="wrap about-grid">
+    <div class="art rv" aria-hidden="true">
+      <svg viewBox="0 0 400 500" fill="none" preserveAspectRatio="xMidYMid slice">
+        <defs><radialGradient id="g1" cx="70%" cy="20%" r="70%"><stop offset="0" stop-color="#b08d57" stop-opacity=".45"/><stop offset="1" stop-color="#b08d57" stop-opacity="0"/></radialGradient></defs>
+        <rect width="400" height="500" fill="url(#g1)"/>
+        <g stroke="rgba(231,215,184,.35)">
+          <circle cx="200" cy="200" r="60"/><circle cx="200" cy="200" r="100"/><circle cx="200" cy="200" r="140"/><circle cx="200" cy="200" r="180"/>
+        </g>
+        <path d="M90 210c40 80 180 80 220 0" stroke="#e7d7b8" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="200" cy="140" r="5" fill="#e7d7b8"/>
+      </svg>
+      <p class="tag">Care that feels <em>personal</em>,<br>results that feel like you.</p>
     </div>
-  </div></div>
+    <div>
+      <span class="eyebrow rv">Our Approach</span>
+      <h2 class="rv d1">A practice devoted to <em>one craft.</em></h2>
+      <p class="lead rv d2">Pure Smiles Orthodontics is focused entirely on orthodontics: the art and science of moving teeth into healthier, more harmonious positions.</p>
+      <p class="quote rv d2">“The best smiles don’t look done. They look like they were always meant to be yours.”</p>
+      <p class="rv d3" style="color:var(--ink-soft)">From your first call to your final visit, our aim is simple: make you feel informed, comfortable and genuinely looked after. Visit us on W William Cannon Drive in Southwest Austin and see what a considered approach to orthodontics feels like.</p>
+    </div>
+  </div>
 </section>
 
-<section class="block" id="visit" style="padding-top:0">
+<section class="pad" id="why">
   <div class="wrap">
-    <div class="kicker">Visit us</div><h2>Come say hello.</h2>
-    <div class="visit">
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11l8-7 8 7v9a1 1 0 01-1 1h-4v-6H9v6H5a1 1 0 01-1-1z"/></svg></div><h3>Address</h3><p>4301 W William Cannon Dr, Austin TX 78749-1417</p></div>
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div><h3>Phone</h3><p><a href="tel:5122152520">(512) 215-2520</a></p><p style="margin-top:10px">Call or message us for today's opening hours.</p></div>
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-7-4.4-7-10a4 4 0 017-2.6A4 4 0 0119 10c0 5.6-7 10-7 10z"/></svg></div><h3>New patients welcome</h3><p>Book your visit online or by phone and we'll take care of the rest.</p></div>
+    <div class="sec-head">
+      <div class="rv">
+        <span class="eyebrow">Why Pure Smiles</span>
+        <h2>Small details.<br><em>Lasting</em> difference.</h2>
+      </div>
+    </div>
+    <div class="why-grid">
+      <div class="why rv">
+        <svg viewBox="0 0 34 34" fill="none" stroke-width="1.4"><circle cx="17" cy="17" r="13"/><circle cx="17" cy="17" r="5"/></svg>
+        <h3>Specialised focus</h3>
+        <p>Orthodontics is our whole practice, not a side service. Your smile gets that undivided attention.</p>
+      </div>
+      <div class="why rv d1">
+        <svg viewBox="0 0 34 34" fill="none" stroke-width="1.4"><path d="M6 8h22v14H14l-6 5v-5H6z"/></svg>
+        <h3>Clear conversations</h3>
+        <p>We explain what we see and what we recommend, so you can decide with confidence.</p>
+      </div>
+      <div class="why rv d2">
+        <svg viewBox="0 0 34 34" fill="none" stroke-width="1.4"><path d="M17 30s-10-8-10-16a10 10 0 0120 0c0 8-10 16-10 16z"/><circle cx="17" cy="14" r="3.5"/></svg>
+        <h3>Southwest Austin</h3>
+        <p>Conveniently located at 4301 W William Cannon Dr, Austin, TX 78749.</p>
+      </div>
+      <div class="why rv d3">
+        <svg viewBox="0 0 34 34" fill="none" stroke-width="1.4"><path d="M7 18l6 6L27 10"/></svg>
+        <h3>Plans made for you</h3>
+        <p>No one-size-fits-all approach. Your treatment is shaped around your teeth and your goals.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="pad steps-sec" id="process">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="rv">
+        <span class="eyebrow">Your Visit</span>
+        <h2>Your path to a<br><em>confident</em> smile.</h2>
+      </div>
+      <p class="lead rv d1">Simple, transparent and paced around you. Here is how getting started with Pure Smiles works.</p>
+    </div>
+    <div class="steps">
+      <div class="step rv"><div class="n">01</div><h3>Call us</h3><p>Ring (512) 215-2520 and our team will find a consultation time that suits you.</p></div>
+      <div class="step rv d1"><div class="n">02</div><h3>Consultation</h3><p>We examine your smile and bite, and listen carefully to what you’d like to change.</p></div>
+      <div class="step rv d2"><div class="n">03</div><h3>Your plan</h3><p>We walk you through recommended options so you understand every step before you begin.</p></div>
+      <div class="step rv d3"><div class="n">04</div><h3>Treatment</h3><p>Your smile is guided into place with regular, attentive check-ins along the way.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="pad" id="faq">
+  <div class="wrap faq-grid">
+    <div>
+      <span class="eyebrow rv">Questions</span>
+      <h2 class="rv d1">Good to <em>know.</em></h2>
+      <p class="lead rv d2">Anything else on your mind? Our team is happy to help by phone.</p>
+    </div>
+    <div class="rv d1">
+      <details open>
+        <summary>Where are you located?<span class="pl"></span></summary>
+        <div class="ans">We’re at 4301 W William Cannon Dr, Austin, TX 78749-1417, in Southwest Austin. <a class="ulink" href="https://maps.google.com/?q=4301+W+William+Cannon+Dr,+Austin,+TX+78749-1417" target="_blank" rel="noopener">Get directions</a>.</div>
+      </details>
+      <details>
+        <summary>How do I book a consultation?<span class="pl"></span></summary>
+        <div class="ans">Simply call us on <a class="ulink" href="tel:+15122152520">(512) 215-2520</a> and we’ll arrange a time for your first visit.</div>
+      </details>
+      <details>
+        <summary>What are your opening hours?<span class="pl"></span></summary>
+        <div class="ans">Please call <a class="ulink" href="tel:+15122152520">(512) 215-2520</a> for current hours and appointment availability.</div>
+      </details>
+      <details>
+        <summary>Which treatment is right for me?<span class="pl"></span></summary>
+        <div class="ans">That depends on your teeth, your bite and your goals. Your consultation is the place to find out. We’ll talk you through the options that suit your smile.</div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="wrap">
+    <div class="band rv">
+      <span class="eyebrow">Begin today</span>
+      <h2>Your new smile starts with <em>one call.</em></h2>
+      <p>Speak with Pure Smiles Orthodontics and arrange a consultation in Southwest Austin.</p>
+      <div class="btns">
+        <a class="btn btn-gold" href="tel:+15122152520">Call (512) 215-2520 <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M2 8h12M9 3l5 5-5 5"/></svg></a>
+        <a class="btn btn-ghost" href="https://maps.google.com/?q=4301+W+William+Cannon+Dr,+Austin,+TX+78749-1417" target="_blank" rel="noopener">Get Directions</a>
+      </div>
+      <svg class="arc" viewBox="0 0 1200 200" fill="none" aria-hidden="true"><path d="M0 40c300 200 900 200 1200 0" stroke="#e7d7b8" stroke-width="1"/><path d="M100 80c260 150 740 150 1000 0" stroke="#e7d7b8" stroke-width=".6" stroke-dasharray="3 9"/></svg>
+    </div>
+  </div>
+</section>
+
+<section class="pad contact" id="contact">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="rv">
+        <span class="eyebrow">Visit Us</span>
+        <h2>We’d love to <em>meet you.</em></h2>
+      </div>
+      <p class="lead rv d1">Call to arrange your consultation, or find us on W William Cannon Drive in Southwest Austin.</p>
+    </div>
+    <div class="contact-grid">
+      <div class="cbox rv">
+        <span class="lbl"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 005 5L15 13l5 2v4a1 1 0 01-1 1A16 16 0 014 5a1 1 0 011-1z"/></svg>Call</span>
+        <a class="val ulink" href="tel:+15122152520">(512) 215-2520</a>
+        <p>Speak with our team about appointments, hours and getting started.</p>
+        <a class="act ulink" href="tel:+15122152520">Tap to call →</a>
+      </div>
+      <div class="cbox rv d1">
+        <span class="lbl"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M12 21s-7-6-7-12a7 7 0 0114 0c0 6-7 12-7 12z"/><circle cx="12" cy="9" r="2.5"/></svg>Visit</span>
+        <p class="val">4301 W William Cannon Dr<br>Austin, TX 78749-1417</p>
+        <p>Hours: please call for current opening times.</p>
+        <a class="act ulink" href="https://maps.google.com/?q=4301+W+William+Cannon+Dr,+Austin,+TX+78749-1417" target="_blank" rel="noopener">Open in Google Maps →</a>
+      </div>
+      <a class="map-art rv" href="https://maps.google.com/?q=4301+W+William+Cannon+Dr,+Austin,+TX+78749-1417" target="_blank" rel="noopener" aria-label="Open Pure Smiles Orthodontics location in Google Maps">
+        <svg viewBox="0 0 1200 320" preserveAspectRatio="xMidYMid slice" fill="none" aria-hidden="true">
+          <rect width="1200" height="320" fill="#e4ebf0"/>
+          <g stroke="#fff" stroke-width="14" stroke-linecap="round"><path d="M-20 200C300 170 700 230 1220 150"/><path d="M640 -20L560 340"/></g>
+          <g stroke="#f7f9fb" stroke-width="6"><path d="M-20 90h1240"/><path d="M200 -20v360"/><path d="M960 -20l60 360"/><path d="M380 -20l-40 360"/><path d="M-20 270h1240"/></g>
+          <path d="M-20 200C300 170 700 230 1220 150" stroke="#d9bf8f" stroke-width="3" stroke-dasharray="1 10" stroke-linecap="round"/>
+          <rect x="800" y="30" width="120" height="50" rx="10" fill="#d6e2d4"/><rect x="60" y="220" width="110" height="40" rx="10" fill="#d6e2d4"/>
+        </svg>
+        <span class="pulse"></span>
+        <div class="pin"><span class="dot"><svg viewBox="0 0 24 24" fill="none" stroke="#e7d7b8" stroke-width="1.8" stroke-linecap="round"><path d="M5 11c2 5 12 5 14 0"/></svg></span></div>
+        <span class="chip">Pure Smiles Orthodontics · W William Cannon Dr</span>
+      </a>
     </div>
   </div>
 </section>
 </main>
 
-<footer><div class="wrap">
-  <span>© 2026 Pure Smiles Orthodontics</span>
-  <span>Concept design. Not affiliated with or endorsed by Pure Smiles Orthodontics.</span>
-</div></footer>
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div>
+        <a href="#top" class="logo">
+          <svg class="mark" viewBox="0 0 40 40" fill="none" aria-hidden="true"><circle cx="20" cy="20" r="19" stroke="#b08d57"/><path d="M11 17c2.5 7.5 15.5 7.5 18 0" stroke="#fbfaf7" stroke-width="1.6" stroke-linecap="round"/><circle cx="20" cy="12" r="1.6" fill="#b08d57"/></svg>
+          <span>Pure Smiles<small>Orthodontics</small></span>
+        </a>
+        <p style="margin-top:22px;max-width:340px">Considered orthodontic care in Southwest Austin, Texas.</p>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <ul><li><a href="#services">Care</a></li><li><a href="#about">Approach</a></li><li><a href="#process">Your Visit</a></li><li><a href="#faq">Questions</a></li></ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul><li><a href="tel:+15122152520">(512) 215-2520</a></li><li><a href="https://maps.google.com/?q=4301+W+William+Cannon+Dr,+Austin,+TX+78749-1417" target="_blank" rel="noopener">4301 W William Cannon Dr<br>Austin, TX 78749-1417</a></li></ul>
+      </div>
+    </div>
+    <div class="big-word" aria-hidden="true">Pure Smiles</div>
+    <div class="foot-bottom">
+      <span>© <span id="yr"></span> Pure Smiles Orthodontics. All rights reserved.</span>
+      <a href="#top" class="ulink">Back to top ↑</a>
+    </div>
+  </div>
+</footer>
 
-<div class="mobile-bar">
-  <a class="btn ghost" href="tel:5122152520">Call</a>
-  <a class="btn" href="#visit">Book now</a>
+<div class="callbar" aria-label="Quick contact">
+  <a href="https://maps.google.com/?q=4301+W+William+Cannon+Dr,+Austin,+TX+78749-1417" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s-7-6-7-12a7 7 0 0114 0c0 6-7 12-7 12z"/><circle cx="12" cy="9" r="2.5"/></svg>Directions</a>
+  <a class="c" href="tel:+15122152520"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 005 5L15 13l5 2v4a1 1 0 01-1 1A16 16 0 014 5a1 1 0 011-1z"/></svg>Call Now</a>
 </div>
-</body>
+
+<script>
+(function(){
+  var d=document,b=d.body,hdr=d.querySelector('header'),bar=d.querySelector('.callbar');
+  d.getElementById('yr').textContent=new Date().getFullYear();
+  requestAnimationFrame(function(){setTimeout(function(){b.classList.add('loaded')},60)});
+
+  var burger=d.querySelector('.burger'),menu=d.querySelector('.mobile-menu');
+  function toggle(open){b.classList.toggle('menu-open',open);burger.setAttribute('aria-expanded',open);menu.setAttribute('aria-hidden',!open);b.style.overflow=open?'hidden':''}
+  burger.addEventListener('click',function(){toggle(!b.classList.contains('menu-open'))});
+  menu.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){toggle(false)})});
+
+  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var px=d.querySelector('[data-parallax]'),ticking=false;
+  function onScroll(){
+    var y=window.scrollY;
+    hdr.classList.toggle('scrolled',y>30);
+    if(bar)bar.classList.toggle('show',y>window.innerHeight*.6);
+    if(px&&!reduce&&y<window.innerHeight*1.2)px.style.transform='translate3d(0,'+(y*.12)+'px,0)';
+    ticking=false;
+  }
+  window.addEventListener('scroll',function(){if(!ticking){requestAnimationFrame(onScroll);ticking=true}},{passive:true});
+  onScroll();
+
+  var els=d.querySelectorAll('.rv');
+  if('IntersectionObserver' in window&&!reduce){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12,rootMargin:'0px 0px -40px 0px'});
+    els.forEach(function(el){io.observe(el)});
+  }else{els.forEach(function(el){el.classList.add('in')})}
+
+  d.querySelectorAll('details').forEach(function(x){x.addEventListener('toggle',function(){if(x.open)d.querySelectorAll('details').forEach(function(o){if(o!==x)o.open=false})})});
+})();
+</script>
+<div id="lm-concept" style="position:fixed;left:12px;bottom:12px;z-index:2147483647;font:500 11px/1.3 -apple-system,BlinkMacSystemFont,Segoe UI,sans-serif;letter-spacing:.02em;background:rgba(15,15,18,.82);color:#f4f1ea;padding:7px 11px;border-radius:999px;backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);pointer-events:none;max-width:70vw">Website concept for Pure Smiles Orthodontics by webstudio &middot; not the live site</div><p style="margin:0;padding:18px 16px 70px;text-align:center;font:12px/1.5 -apple-system,sans-serif;color:#8a8a8a;background:#0e0e10">Concept design by webstudio. Not affiliated with or endorsed by Pure Smiles Orthodontics.</p></body>
 </html>
