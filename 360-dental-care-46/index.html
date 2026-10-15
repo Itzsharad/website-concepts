@@ -1,291 +1,664 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src * data: blob:; media-src 'self' data:; style-src 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com data:; script-src 'unsafe-inline'; connect-src 'none'; frame-src 'none'; form-action 'none'; base-uri 'none'; object-src 'none'">
 <meta name="robots" content="noindex, nofollow">
-<title>360 Dental Care | Website concept</title>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>360 Dental Care | Dentist in Austin, TX</title>
+<meta name="description" content="360 Dental Care: considered, whole-smile dentistry at 3660 Stoneridge Rd B101, Austin TX 78746. Call (512) 595-3725.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,300;1,9..144,400&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{
-  --bg:#f7f3ec;--surface:#ffffff;--ink:#12302c;--muted:#5b6b67;
-  --accent:#1f5c53;--accent-ink:#ffffff;--gold:#b8915a;--soft:#e8efe9;
-  --radius:22px;--max:1180px;
-  --serif:"Fraunces",Georgia,serif;--sans:"Manrope",system-ui,-apple-system,sans-serif;
+  --ink:#0d1b2a;
+  --ink-2:#1b2d42;
+  --ink-soft:#44546a;
+  --paper:#fbfaf7;
+  --pearl:#f2efe8;
+  --line:#e4dfd4;
+  --gold:#b08d57;
+  --gold-deep:#8c6d3c;
+  --gold-soft:#e9dcc3;
+  --sky:#dfe9f0;
+  --white:#ffffff;
+  --serif:'Fraunces',Georgia,serif;
+  --sans:'Manrope',system-ui,-apple-system,sans-serif;
+  --ease:cubic-bezier(.2,.7,.1,1);
+  --r:22px;
+  --max:1240px;
 }
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:var(--sans);color:var(--ink);background:var(--paper);line-height:1.65;font-size:17px;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+img,svg{display:block;max-width:100%}
 a{color:inherit;text-decoration:none}
-img{max-width:100%;display:block}
-.wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
-.concept{background:var(--ink);color:var(--bg);font-size:13px;text-align:center;padding:8px 16px;letter-spacing:.02em}
-.concept b{color:var(--gold);font-weight:600}
+.wrap{width:100%;max-width:var(--max);margin:0 auto;padding:0 28px}
+.eyebrow{display:inline-flex;align-items:center;gap:12px;font-size:12px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--gold-deep)}
+.eyebrow::before{content:"";width:34px;height:1px;background:currentColor}
+h1,h2,h3{font-family:var(--serif);font-weight:300;line-height:1.05;letter-spacing:-.02em}
+h2{font-size:clamp(38px,5.4vw,72px)}
+h2 em,h1 em{font-style:italic;color:var(--gold-deep);font-weight:300}
+.lead{font-size:clamp(17px,1.5vw,20px);color:var(--ink-soft);max-width:560px}
 
-/* header */
-header{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:saturate(1.4) blur(10px);border-bottom:1px solid color-mix(in srgb,var(--ink) 8%,transparent)}
-.nav{display:flex;align-items:center;justify-content:space-between;height:76px;gap:24px}
-.brand{font-family:var(--serif);font-size:23px;font-weight:600;letter-spacing:-.01em;line-height:1.1;max-width:340px}
-.links{display:flex;gap:30px;font-size:15px;font-weight:500;color:var(--muted)}
-.links a:hover{color:var(--ink)}
-.nav-right{display:flex;align-items:center;gap:18px}
-.phone{font-weight:600;font-size:15px;white-space:nowrap}
-.btn{display:inline-flex;align-items:center;gap:10px;background:var(--accent);color:var(--accent-ink);padding:14px 26px;border-radius:999px;font-weight:600;font-size:15.5px;transition:transform .2s ease,box-shadow .2s ease;white-space:nowrap}
-.btn:hover{transform:translateY(-2px);box-shadow:0 12px 28px -12px var(--accent)}
-.btn.ghost{background:transparent;color:var(--ink);border:1.5px solid color-mix(in srgb,var(--ink) 20%,transparent)}
-.btn.ghost:hover{box-shadow:none;border-color:var(--ink)}
-.btn svg{width:18px;height:18px}
+/* Buttons */
+.btn{position:relative;display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:17px 30px;border-radius:100px;font-weight:600;font-size:15px;letter-spacing:.02em;transition:transform .4s var(--ease),box-shadow .4s var(--ease),background .4s,color .4s;white-space:nowrap;overflow:hidden;isolation:isolate}
+.btn svg{width:17px;height:17px;flex-shrink:0;transition:transform .4s var(--ease)}
+.btn:hover svg{transform:translateX(4px)}
+.btn-dark{background:var(--ink);color:var(--white);box-shadow:0 12px 30px -12px rgba(13,27,42,.55)}
+.btn-dark::before{content:"";position:absolute;inset:0;background:linear-gradient(120deg,var(--gold-deep),var(--gold));transform:translateY(101%);transition:transform .5s var(--ease);z-index:-1}
+.btn-dark:hover::before{transform:translateY(0)}
+.btn-dark:hover{transform:translateY(-3px);box-shadow:0 20px 40px -14px rgba(140,109,60,.6)}
+.btn-ghost{border:1px solid var(--ink);color:var(--ink);background:transparent}
+.btn-ghost:hover{background:var(--ink);color:var(--white);transform:translateY(-3px)}
+.btn-gold{background:var(--gold-soft);color:var(--ink)}
+.btn-gold:hover{background:var(--white);transform:translateY(-3px)}
+.btn-line{border:1px solid rgba(255,255,255,.4);color:var(--white)}
+.btn-line:hover{background:var(--white);color:var(--ink);transform:translateY(-3px)}
+.ulink{background:linear-gradient(currentColor,currentColor) 0 100%/0 1px no-repeat;transition:background-size .45s var(--ease);padding-bottom:2px}
+.ulink:hover{background-size:100% 1px}
 
-/* hero */
-.hero{padding:72px 0 88px}
-.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:64px;align-items:center}
-.eyebrow{display:inline-flex;align-items:center;gap:10px;background:var(--surface);border:1px solid color-mix(in srgb,var(--ink) 10%,transparent);padding:8px 16px 8px 10px;border-radius:999px;font-size:14px;font-weight:600;color:var(--muted)}
-.stars{color:var(--gold);letter-spacing:1px;font-size:14px}
-.eyebrow .dot{width:26px;height:26px;border-radius:50%;background:var(--soft);display:grid;place-items:center;color:var(--accent)}
-h1{font-family:var(--serif);font-weight:500;font-size:clamp(44px,5.6vw,74px);line-height:1.02;letter-spacing:-.025em;margin:26px 0 22px}
-h1 em{font-style:italic;color:var(--accent)}
-.lead-text{font-size:19.5px;color:var(--muted);max-width:540px}
-.hero-ctas{display:flex;gap:14px;margin-top:36px;flex-wrap:wrap}
-.ticks{display:flex;gap:22px;margin-top:34px;flex-wrap:wrap;font-size:14.5px;font-weight:600;color:var(--muted)}
-.ticks span{display:flex;align-items:center;gap:8px}
-.ticks svg{width:18px;height:18px;color:var(--accent)}
-.visual{position:relative}
-.photo{aspect-ratio:4/5;border-radius:calc(var(--radius) + 10px);overflow:hidden;background:var(--soft);box-shadow:0 40px 80px -40px color-mix(in srgb,var(--ink) 55%,transparent)}
-.photo img{width:100%;height:100%;object-fit:cover}
-.quote-panel{aspect-ratio:4/5;border-radius:calc(var(--radius) + 10px);background:linear-gradient(155deg,var(--accent),color-mix(in srgb,var(--accent) 55%,var(--ink)));color:var(--accent-ink);padding:52px 46px;display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden;box-shadow:0 40px 80px -40px color-mix(in srgb,var(--ink) 60%,transparent)}
-.quote-panel:before{content:"";position:absolute;width:420px;height:420px;border-radius:50%;right:-160px;top:-160px;background:color-mix(in srgb,var(--accent-ink) 9%,transparent)}
-.quote-panel:after{content:"";position:absolute;width:260px;height:260px;border-radius:50%;left:-90px;bottom:-110px;border:1.5px solid color-mix(in srgb,var(--accent-ink) 22%,transparent)}
-.quote-mark{font-family:var(--serif);font-size:120px;line-height:.6;opacity:.35}
-.quote-panel p{font-family:var(--serif);font-size:28px;line-height:1.3;position:relative;z-index:1}
-.quote-panel .who{font-family:var(--sans);font-size:15px;opacity:.85;margin-top:22px;font-weight:600}
-.float{position:absolute;background:var(--surface);color:var(--ink);border-radius:18px;padding:16px 20px;box-shadow:0 24px 50px -24px color-mix(in srgb,var(--ink) 50%,transparent);display:flex;align-items:center;gap:14px;font-size:14px;line-height:1.35}
-.float b{font-size:22px;font-family:var(--serif);font-weight:600;display:block}
-.float.one{left:-34px;bottom:-28px}
-.float.two{right:-22px;top:44px}
-.float .badge{width:44px;height:44px;border-radius:14px;background:var(--soft);display:grid;place-items:center;color:var(--accent)}
-.float .badge svg{width:22px;height:22px}
+/* Header */
+header{position:fixed;top:0;left:0;right:0;z-index:50;padding:16px 0;transition:padding .4s var(--ease),background .4s,box-shadow .4s,border-color .4s;border-bottom:1px solid transparent}
+header.scrolled{padding:10px 0;background:rgba(251,250,247,.78);backdrop-filter:blur(18px) saturate(160%);-webkit-backdrop-filter:blur(18px) saturate(160%);border-color:rgba(13,27,42,.07);box-shadow:0 10px 40px -24px rgba(13,27,42,.25)}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:20px}
+.logo{display:flex;align-items:center;gap:12px;font-family:var(--serif);font-size:21px;font-weight:400;letter-spacing:-.01em}
+.logo-mark{width:42px;height:42px;flex-shrink:0}
+.logo small{display:block;font-family:var(--sans);font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:var(--ink-soft);font-weight:600;margin-top:2px}
+.menu{display:flex;align-items:center;gap:34px;font-size:14px;font-weight:500}
+.menu a:not(.btn){color:var(--ink-2)}
+.nav-right{display:flex;align-items:center;gap:22px}
+.nav-phone{font-size:14px;font-weight:600;display:flex;align-items:center;gap:8px}
+.nav-phone svg{width:16px;height:16px;color:var(--gold-deep)}
+.nav .btn{padding:13px 22px;font-size:14px}
+.burger{display:none;width:46px;height:46px;border-radius:50%;border:1px solid rgba(13,27,42,.15);background:rgba(255,255,255,.6);cursor:pointer;position:relative}
+.burger span{position:absolute;left:14px;right:14px;height:1.5px;background:var(--ink);transition:transform .4s var(--ease),opacity .3s}
+.burger span:nth-child(1){top:18px}.burger span:nth-child(2){top:26px}
+.burger.open span:nth-child(1){transform:translateY(4px) rotate(45deg)}
+.burger.open span:nth-child(2){transform:translateY(-4px) rotate(-45deg)}
+.drawer{position:fixed;inset:0;z-index:45;background:var(--ink);color:var(--white);display:flex;flex-direction:column;justify-content:center;padding:100px 32px 120px;clip-path:circle(0% at calc(100% - 50px) 40px);transition:clip-path .7s var(--ease);visibility:hidden}
+.drawer.open{clip-path:circle(150% at calc(100% - 50px) 40px);visibility:visible}
+.drawer a{font-family:var(--serif);font-size:40px;font-weight:300;padding:8px 0;border-bottom:1px solid rgba(255,255,255,.1)}
+.drawer .d-phone{font-family:var(--sans);font-size:18px;color:var(--gold-soft);border:0;margin-top:30px}
+header.menu-open{background:transparent;box-shadow:none;backdrop-filter:none;-webkit-backdrop-filter:none;border-color:transparent}
+header.menu-open .logo{color:var(--white)}
+header.menu-open .logo small{color:rgba(255,255,255,.6)}
+header.menu-open .burger{background:var(--white)}
 
-/* trust */
-.trust{border-top:1px solid color-mix(in srgb,var(--ink) 9%,transparent);border-bottom:1px solid color-mix(in srgb,var(--ink) 9%,transparent);background:var(--surface)}
-.trust .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;padding-top:26px;padding-bottom:26px}
-.trust div{display:flex;align-items:center;gap:12px;font-weight:600;font-size:15px}
-.trust svg{width:22px;height:22px;color:var(--accent);flex:none}
+/* Hero */
+.hero{position:relative;min-height:100vh;min-height:100svh;display:flex;align-items:center;padding:140px 0 90px;overflow:hidden;background:radial-gradient(1200px 700px at 85% 20%,var(--sky) 0%,transparent 60%),radial-gradient(900px 600px at 0% 100%,var(--gold-soft) 0%,transparent 55%),var(--paper)}
+.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:60px;align-items:center;position:relative;z-index:2}
+.hero h1{font-size:clamp(50px,8.2vw,124px);margin:26px 0 30px}
+.hero h1 .line{display:block;overflow:hidden;padding-bottom:.06em}
+.hero h1 .line>span{display:inline-block}
+.hero-ctas{display:flex;flex-wrap:wrap;gap:14px;margin-top:40px}
+.hero-meta{display:flex;flex-wrap:wrap;gap:28px;margin-top:56px;padding-top:28px;border-top:1px solid var(--line);font-size:14px;color:var(--ink-soft)}
+.hero-meta div{display:flex;align-items:center;gap:10px}
+.hero-meta svg{width:18px;height:18px;color:var(--gold-deep);flex-shrink:0}
+.orb{position:relative;aspect-ratio:1;width:100%;max-width:500px;margin-left:auto}
+.orb-disc{position:absolute;inset:12%;border-radius:50%;background:radial-gradient(circle at 32% 28%,#ffffff 0%,#f4f1ea 38%,#dfe6ec 72%,#c9d5df 100%);box-shadow:inset -30px -40px 80px rgba(13,27,42,.10),inset 20px 30px 60px rgba(255,255,255,.9),0 60px 120px -40px rgba(13,27,42,.35)}
+.orb-ring{position:absolute;inset:0;animation:spin 40s linear infinite}
+.orb-ring text{font-family:var(--sans);font-size:12.5px;letter-spacing:.42em;font-weight:600;fill:var(--ink)}
+.orb-gold{position:absolute;inset:6%;border-radius:50%;border:1px solid var(--gold);opacity:.5}
+.orb-gold::after{content:"";position:absolute;width:12px;height:12px;border-radius:50%;background:var(--gold);top:50%;left:-6px;margin-top:-6px;box-shadow:0 0 0 6px rgba(176,141,87,.18)}
+.orb-gold-wrap{position:absolute;inset:0;animation:spin 18s linear infinite reverse}
+.orb-center{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}
+.orb-center b{font-family:var(--serif);font-weight:300;font-size:clamp(70px,10vw,140px);line-height:.9;letter-spacing:-.04em;color:var(--ink)}
+.orb-center b sup{font-size:.35em;vertical-align:top;position:relative;top:.25em;color:var(--gold-deep)}
+.orb-center span{font-size:11px;letter-spacing:.3em;text-transform:uppercase;font-weight:600;color:var(--ink-soft);margin-top:10px}
+.orb-tooth{width:46px;height:46px;color:var(--gold-deep);margin-bottom:10px}
+@keyframes spin{to{transform:rotate(360deg)}}
+.hero-bg-word{position:absolute;bottom:-.18em;left:-.04em;font-family:var(--serif);font-size:clamp(160px,30vw,440px);font-weight:300;line-height:1;color:rgba(13,27,42,.035);pointer-events:none;white-space:nowrap;z-index:1}
+.scroll-cue{position:absolute;left:50%;bottom:28px;transform:translateX(-50%);z-index:2;width:1px;height:54px;background:var(--line);overflow:hidden}
+.scroll-cue::after{content:"";position:absolute;left:0;top:-50%;width:1px;height:50%;background:var(--gold-deep);animation:cue 2.2s var(--ease) infinite}
+@keyframes cue{to{top:100%}}
 
-/* sections */
-section.block{padding:110px 0}
-.kicker{font-size:13px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
-h2{font-family:var(--serif);font-weight:500;font-size:clamp(34px,3.8vw,52px);line-height:1.08;letter-spacing:-.02em;margin:14px 0 18px}
-.section-head{display:flex;justify-content:space-between;align-items:end;gap:40px;margin-bottom:56px}
-.section-head p{color:var(--muted);max-width:420px}
-.services{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-.card{background:var(--surface);border-radius:var(--radius);padding:34px 32px 36px;border:1px solid color-mix(in srgb,var(--ink) 7%,transparent);transition:transform .25s ease,box-shadow .25s ease}
-.card:hover{transform:translateY(-4px);box-shadow:0 30px 60px -36px color-mix(in srgb,var(--ink) 45%,transparent)}
-.icon{width:54px;height:54px;border-radius:16px;background:var(--soft);color:var(--accent);display:grid;place-items:center;margin-bottom:24px}
-.icon svg{width:26px;height:26px}
-.card h3{font-family:var(--serif);font-weight:500;font-size:23px;margin-bottom:8px;letter-spacing:-.01em}
-.card p{color:var(--muted);font-size:16px}
+/* Hero entrance */
+.h-in{opacity:0;transform:translateY(28px)}
+.hero h1 .line>span.h-in{transform:translateY(105%);opacity:1}
+.loaded .h-in{opacity:1;transform:none;transition:opacity 1.1s var(--ease),transform 1.1s var(--ease);transition-delay:calc(var(--d,0) * 110ms + 150ms)}
+.orb.h-in{transform:scale(.92);opacity:0}
+.loaded .orb.h-in{transform:none;opacity:1;transition-duration:1.6s}
 
-.why{background:var(--ink);color:var(--bg)}
-.why .kicker{color:var(--gold)}
-.why-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:80px;align-items:start}
-.why h2{color:var(--bg)}
-.why .intro{color:color-mix(in srgb,var(--bg) 70%,transparent);font-size:18px;max-width:440px}
-.points{display:grid;gap:14px}
-.point{display:grid;grid-template-columns:62px 1fr;gap:20px;padding:30px;border-radius:var(--radius);background:color-mix(in srgb,var(--bg) 6%,transparent);border:1px solid color-mix(in srgb,var(--bg) 10%,transparent)}
-.point .num{font-family:var(--serif);font-size:34px;color:var(--gold);line-height:1}
-.point h3{font-family:var(--serif);font-weight:500;font-size:24px;margin-bottom:6px}
-.point p{color:color-mix(in srgb,var(--bg) 72%,transparent);font-size:16px}
+/* Marquee */
+.marquee{background:var(--ink);color:var(--white);padding:26px 0;overflow:hidden;position:relative}
+.marquee-track{display:flex;width:max-content;animation:marq 38s linear infinite}
+.marquee-track span{display:flex;align-items:center;gap:44px;padding-right:44px;font-family:var(--serif);font-size:clamp(22px,2.6vw,32px);font-weight:300;white-space:nowrap}
+.marquee-track span i{font-style:italic;color:var(--gold-soft)}
+.marquee-track svg{width:18px;height:18px;color:var(--gold)}
+@keyframes marq{to{transform:translateX(-50%)}}
+.marquee:hover .marquee-track{animation-play-state:paused}
 
-.score{display:flex;align-items:center;gap:18px;background:var(--surface);padding:16px 24px;border-radius:18px;border:1px solid color-mix(in srgb,var(--ink) 8%,transparent)}
-.score b{font-family:var(--serif);font-size:40px;font-weight:500;line-height:1}
-.score small{display:block;color:var(--muted);font-size:14px}
-.reviews{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-.review{background:var(--surface);border-radius:var(--radius);padding:34px;display:flex;flex-direction:column;gap:22px;border:1px solid color-mix(in srgb,var(--ink) 7%,transparent)}
-.review p{font-family:var(--serif);font-size:19.5px;line-height:1.45}
-.review .by{margin-top:auto;display:flex;align-items:center;gap:12px;font-weight:600;font-size:15px}
-.avatar{width:40px;height:40px;border-radius:50%;background:var(--soft);color:var(--accent);display:grid;place-items:center;font-weight:700}
-.review .src{color:var(--muted);font-weight:500;font-size:13px;display:block}
+/* Sections */
+section{position:relative}
+.sec{padding:clamp(90px,12vw,160px) 0}
+.sec-head{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:end;margin-bottom:70px}
+.sec-head h2{margin-top:20px}
 
-.cta-band{padding:0 0 110px}
-.cta-box{border-radius:calc(var(--radius) + 12px);background:linear-gradient(140deg,var(--accent),color-mix(in srgb,var(--accent) 60%,var(--ink)));color:var(--accent-ink);padding:76px 64px;display:grid;grid-template-columns:1.3fr 1fr;gap:40px;align-items:center;position:relative;overflow:hidden}
-.cta-box:after{content:"";position:absolute;right:-120px;bottom:-200px;width:460px;height:460px;border-radius:50%;border:1.5px solid color-mix(in srgb,var(--accent-ink) 22%,transparent)}
-.cta-box h2{color:inherit;margin:0 0 12px}
-.cta-box p{opacity:.85;font-size:18px}
-.cta-box .actions{display:flex;flex-direction:column;gap:12px;align-items:flex-start;position:relative;z-index:1}
-.cta-box .btn{background:var(--accent-ink);color:var(--accent)}
-.cta-box .btn.ghost{background:transparent;color:var(--accent-ink);border-color:color-mix(in srgb,var(--accent-ink) 40%,transparent)}
+/* Services */
+.services{background:var(--paper)}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.card{position:relative;background:var(--white);border:1px solid var(--line);border-radius:var(--r);padding:40px 34px 36px;transition:transform .6s var(--ease),box-shadow .6s var(--ease),border-color .4s;overflow:hidden;display:flex;flex-direction:column;min-height:380px}
+.card::before{content:"";position:absolute;inset:auto -40% -60% auto;width:300px;height:300px;border-radius:50%;background:radial-gradient(circle,var(--gold-soft),transparent 70%);opacity:0;transition:opacity .6s}
+.card:hover{transform:translateY(-10px);box-shadow:0 40px 70px -40px rgba(13,27,42,.35);border-color:var(--gold-soft)}
+.card:hover::before{opacity:.8}
+.card-ico{position:relative;width:62px;height:62px;border-radius:50%;display:grid;place-items:center;background:var(--pearl);color:var(--gold-deep);margin-bottom:34px;transition:background .5s,color .5s}
+.card:hover .card-ico{background:var(--ink);color:var(--gold-soft)}
+.card-ico svg{width:28px;height:28px}
+.card-num{position:absolute;top:34px;right:34px;font-family:var(--serif);font-style:italic;font-size:18px;color:var(--gold)}
+.card h3{position:relative;font-size:clamp(28px,2.6vw,34px);margin-bottom:14px}
+.card p{position:relative;color:var(--ink-soft);font-size:15.5px;flex:1}
+.card a{position:relative;margin-top:26px;display:inline-flex;align-items:center;gap:8px;font-weight:600;font-size:14px;color:var(--ink);align-self:flex-start}
+.card a svg{width:15px;height:15px;transition:transform .4s var(--ease)}
+.card a:hover svg{transform:translateX(4px)}
+.note{margin-top:34px;font-size:14px;color:var(--ink-soft);text-align:center}
+.note a{color:var(--ink);font-weight:600}
 
-.visit{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:10px}
-.visit .card h3{font-size:20px}
-.visit a{color:var(--accent);font-weight:600}
-footer{border-top:1px solid color-mix(in srgb,var(--ink) 9%,transparent);padding:40px 0 110px;color:var(--muted);font-size:14px}
-footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
-.mobile-bar{display:none}
+/* About */
+.about{background:var(--pearl);overflow:hidden}
+.about-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:90px;align-items:center}
+.about-art{position:relative;aspect-ratio:4/5;border-radius:240px 240px var(--r) var(--r);background:linear-gradient(165deg,var(--ink) 0%,var(--ink-2) 55%,#2a4058 100%);overflow:hidden;box-shadow:0 50px 90px -50px rgba(13,27,42,.6)}
+.about-art svg{position:absolute;inset:0;width:100%;height:100%}
+.about-art .quote{position:absolute;left:34px;right:34px;bottom:38px;color:var(--white);font-family:var(--serif);font-size:clamp(24px,2.4vw,32px);font-weight:300;line-height:1.2}
+.about-art .quote em{color:var(--gold-soft)}
+.about h2{margin:22px 0 30px}
+.about p{color:var(--ink-soft);margin-bottom:20px;max-width:560px}
+.pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:44px;border-top:1px solid var(--line)}
+.pillars div{padding:24px 18px 0 0}
+.pillars b{display:block;font-family:var(--serif);font-weight:400;font-size:22px;margin-bottom:6px}
+.pillars span{font-size:14px;color:var(--ink-soft);line-height:1.5;display:block}
 
-@keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
-.hero .copy>*{animation:rise .8s cubic-bezier(.2,.7,.2,1) both}
-.hero .copy>*:nth-child(2){animation-delay:.08s}.hero .copy>*:nth-child(3){animation-delay:.16s}
-.hero .copy>*:nth-child(4){animation-delay:.24s}.hero .copy>*:nth-child(5){animation-delay:.32s}
-.visual{animation:rise 1s .2s cubic-bezier(.2,.7,.2,1) both}
+/* Why */
+.why{background:var(--ink);color:var(--white);overflow:hidden}
+.why .eyebrow{color:var(--gold-soft)}
+.why h2 em{color:var(--gold-soft)}
+.why .lead{color:rgba(255,255,255,.72)}
+.why-list{display:grid;grid-template-columns:repeat(2,1fr);border-top:1px solid rgba(255,255,255,.12)}
+.why-item{display:grid;grid-template-columns:auto 1fr;gap:26px;padding:42px 40px 42px 0;border-bottom:1px solid rgba(255,255,255,.12);transition:background .5s}
+.why-item:nth-child(odd){border-right:1px solid rgba(255,255,255,.12)}
+.why-item:nth-child(even){padding-left:40px}
+.why-item .n{font-family:var(--serif);font-style:italic;font-size:20px;color:var(--gold);padding-top:6px}
+.why-item h3{font-size:clamp(26px,2.4vw,32px);margin-bottom:10px}
+.why-item p{color:rgba(255,255,255,.7);font-size:15.5px}
+.why-glow{position:absolute;width:700px;height:700px;border-radius:50%;right:-250px;top:-250px;background:radial-gradient(circle,rgba(176,141,87,.22),transparent 65%);pointer-events:none}
 
-@media (max-width:980px){
-  .links{display:none}
-  .hero-grid,.why-grid,.cta-box{grid-template-columns:1fr}
-  .hero-grid{gap:56px}
-  .services,.reviews,.visit{grid-template-columns:1fr 1fr}
-  .trust .wrap{grid-template-columns:1fr 1fr}
-  .float.one{left:12px;bottom:-26px}.float.two{right:12px}
-  .visual{max-width:560px;margin-bottom:20px}
-  .section-head{flex-direction:column;align-items:flex-start}
+/* Steps */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;counter-reset:s;position:relative}
+.step{position:relative;padding:34px 28px 32px;border-radius:var(--r);background:var(--white);border:1px solid var(--line);transition:transform .6s var(--ease),box-shadow .6s var(--ease)}
+.step:hover{transform:translateY(-8px);box-shadow:0 30px 60px -36px rgba(13,27,42,.35)}
+.step-n{display:flex;align-items:center;justify-content:space-between;margin-bottom:46px}
+.step-n b{font-family:var(--serif);font-weight:300;font-size:56px;line-height:1;color:var(--ink)}
+.step-n svg{width:26px;height:26px;color:var(--gold-deep)}
+.step h3{font-size:26px;margin-bottom:10px}
+.step p{font-size:15px;color:var(--ink-soft)}
+
+/* FAQ */
+.faq{background:var(--pearl)}
+.faq-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:80px;align-items:start}
+.faq h2{margin-top:20px}
+.faq-list{border-top:1px solid var(--line)}
+details{border-bottom:1px solid var(--line)}
+summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:20px;padding:28px 0;font-family:var(--serif);font-size:clamp(21px,2vw,26px);font-weight:400}
+summary::-webkit-details-marker{display:none}
+summary .pm{position:relative;width:38px;height:38px;flex-shrink:0;border-radius:50%;border:1px solid var(--ink);transition:background .4s,transform .5s var(--ease)}
+summary .pm::before,summary .pm::after{content:"";position:absolute;left:50%;top:50%;width:12px;height:1.5px;background:var(--ink);transform:translate(-50%,-50%);transition:transform .4s var(--ease),background .4s}
+summary .pm::after{transform:translate(-50%,-50%) rotate(90deg)}
+details[open] .pm{background:var(--ink);transform:rotate(180deg)}
+details[open] .pm::before,details[open] .pm::after{background:var(--white)}
+details[open] .pm::after{transform:translate(-50%,-50%) rotate(0)}
+details p{padding:0 60px 30px 0;color:var(--ink-soft)}
+details p a{color:var(--ink);font-weight:600}
+
+/* CTA band */
+.cta{padding:clamp(90px,12vw,150px) 0;background:linear-gradient(135deg,var(--ink) 0%,var(--ink-2) 60%,#253a52 100%);color:var(--white);text-align:center;overflow:hidden}
+.cta h2{font-size:clamp(44px,7vw,104px);max-width:1000px;margin:24px auto 26px}
+.cta h2 em{color:var(--gold-soft)}
+.cta p{color:rgba(255,255,255,.72);max-width:540px;margin:0 auto 44px;font-size:18px}
+.cta .eyebrow{color:var(--gold-soft)}
+.cta-btns{display:flex;flex-wrap:wrap;gap:14px;justify-content:center}
+.cta-rings{position:absolute;inset:0;pointer-events:none;opacity:.5}
+.cta .wrap{position:relative;z-index:2}
+
+/* Contact */
+.visit-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.v-card{background:var(--white);border:1px solid var(--line);border-radius:var(--r);padding:44px 40px}
+.v-card h2{font-size:clamp(36px,4.4vw,58px);margin:20px 0 34px}
+.v-row{display:grid;grid-template-columns:48px 1fr;gap:18px;padding:22px 0;border-top:1px solid var(--line)}
+.v-row:last-child{padding-bottom:0}
+.v-ico{width:48px;height:48px;border-radius:50%;background:var(--pearl);color:var(--gold-deep);display:grid;place-items:center}
+.v-ico svg{width:21px;height:21px}
+.v-row small{display:block;font-size:11px;letter-spacing:.2em;text-transform:uppercase;font-weight:700;color:var(--ink-soft);margin-bottom:4px}
+.v-row a,.v-row span{font-size:17px;font-weight:500;overflow-wrap:anywhere}
+.map-card{position:relative;border-radius:var(--r);overflow:hidden;min-height:440px;background:var(--sky);display:flex;flex-direction:column;justify-content:flex-end;padding:36px;border:1px solid var(--line)}
+.map-card svg.mapart{position:absolute;inset:0;width:100%;height:100%}
+.map-pin{position:absolute;left:50%;top:42%;transform:translate(-50%,-100%);width:52px;height:52px;color:var(--ink);animation:bob 3s ease-in-out infinite}
+.map-pin::after{content:"";position:absolute;left:50%;bottom:-10px;width:22px;height:6px;border-radius:50%;background:rgba(13,27,42,.2);transform:translateX(-50%)}
+@keyframes bob{50%{transform:translate(-50%,-112%)}}
+.map-label{position:relative;background:rgba(255,255,255,.88);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-radius:16px;padding:22px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.map-label b{font-family:var(--serif);font-weight:400;font-size:22px;display:block}
+.map-label span{font-size:14px;color:var(--ink-soft)}
+.map-label .btn{padding:14px 22px;font-size:14px}
+
+/* Footer */
+footer{background:var(--ink);color:rgba(255,255,255,.7);padding:80px 0 40px;font-size:15px}
+.f-top{display:flex;justify-content:space-between;gap:40px;flex-wrap:wrap;padding-bottom:50px;border-bottom:1px solid rgba(255,255,255,.1)}
+footer .logo{color:var(--white)}
+footer .logo small{color:rgba(255,255,255,.5)}
+.f-cols{display:flex;gap:70px;flex-wrap:wrap}
+.f-cols h4{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold-soft);font-weight:700;margin-bottom:16px}
+.f-cols a,.f-cols span{display:block;margin-bottom:8px;color:rgba(255,255,255,.82)}
+.f-cols a:hover{color:var(--white)}
+.f-big{font-family:var(--serif);font-weight:300;font-size:clamp(60px,15vw,220px);line-height:.9;color:rgba(255,255,255,.06);letter-spacing:-.04em;margin:40px 0 20px;white-space:nowrap;overflow:hidden}
+.f-bot{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;font-size:13px;color:rgba(255,255,255,.5)}
+
+/* Mobile bar */
+.mbar{display:none}
+
+/* Reveal */
+.rv{opacity:0;transform:translateY(40px);transition:opacity 1s var(--ease),transform 1s var(--ease);transition-delay:calc(var(--d,0) * 100ms)}
+.rv.in{opacity:1;transform:none}
+
+/* Responsive */
+@media (max-width:1080px){
+  .menu{display:none}
+  .burger{display:block}
+  .nav-phone span{display:none}
+  .cards{grid-template-columns:1fr 1fr}
+  .steps{grid-template-columns:1fr 1fr}
+  .about-grid{gap:56px}
+}
+@media (max-width:860px){
+  body{font-size:16px}
+  .hero{padding:120px 0 80px;min-height:auto}
+  .hero-grid{grid-template-columns:1fr;gap:50px}
+  .orb{max-width:340px;margin:0 auto}
+  .sec-head,.about-grid,.faq-grid,.visit-grid{grid-template-columns:1fr;gap:34px}
+  .sec-head{margin-bottom:46px}
+  .about-art{max-width:420px;aspect-ratio:4/4.6}
+  .why-list{grid-template-columns:1fr}
+  .why-item,.why-item:nth-child(even){padding:34px 0;border-right:0!important}
+  .scroll-cue{display:none}
 }
 @media (max-width:640px){
-  body{font-size:16px}
-  .wrap{padding:0 18px}
-  .nav{height:66px}.brand{font-size:19px}
-  .phone,.nav-right .btn{display:none}
-  .hero{padding:44px 0 64px}
-  .lead-text{font-size:17.5px}
-  .hero-ctas .btn{flex:1;justify-content:center}
-  .ticks{display:none}
-  .services,.reviews,.visit,.trust .wrap{grid-template-columns:1fr}
-  section.block{padding:76px 0}
-  .quote-panel,.photo{aspect-ratio:auto;min-height:380px}.photo{aspect-ratio:4/3;min-height:0}
-  .quote-panel{padding:40px 30px 64px}.quote-panel p{font-size:23px}
-  .float{font-size:13px;padding:12px 14px}.float b{font-size:18px}
-  .float.two{display:none}
-  .cta-box{padding:52px 28px}
-  .point{grid-template-columns:44px 1fr;padding:24px}
-  .mobile-bar{display:flex;position:fixed;left:12px;right:12px;bottom:12px;z-index:30;gap:10px}
-  .mobile-bar .btn{flex:1;justify-content:center;box-shadow:0 14px 30px -14px color-mix(in srgb,var(--ink) 60%,transparent)}
-  .mobile-bar .btn.ghost{background:var(--surface)}
+  .wrap{padding:0 20px}
+  .nav-right .btn,.nav-phone{display:none}
+  .cards,.steps{grid-template-columns:1fr}
+  .card{min-height:0;padding:34px 26px}
+  .card-num{top:28px;right:26px}
+  .hero h1{font-size:clamp(44px,13vw,64px)}
+  .hero-ctas .btn{flex:1 1 100%}
+  .hero-meta{gap:16px;flex-direction:column;margin-top:40px}
+  .pillars{grid-template-columns:1fr}
+  .pillars div{padding:18px 0;border-bottom:1px solid var(--line)}
+  .v-card{padding:34px 24px}
+  .map-card{min-height:380px;padding:20px}
+  .map-label .btn{width:100%}
+  details p{padding-right:0}
+  .cta-btns .btn{flex:1 1 100%}
+  .f-cols{gap:40px}
+  footer{padding-bottom:110px}
+  .mbar{display:flex;position:fixed;left:12px;right:12px;bottom:12px;z-index:40;gap:8px;padding:8px;border-radius:100px;background:rgba(13,27,42,.92);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);box-shadow:0 20px 40px -14px rgba(13,27,42,.5);transform:translateY(140%);transition:transform .5s var(--ease)}
+  .mbar.show{transform:none}
+  .mbar a{flex:1;display:flex;align-items:center;justify-content:center;gap:8px;padding:14px 10px;border-radius:100px;font-size:14px;font-weight:600;color:var(--white);white-space:nowrap}
+  .mbar a svg{width:16px;height:16px}
+  .mbar a.gold{background:var(--gold-soft);color:var(--ink)}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+  .rv,.h-in,.hero h1 .line>span.h-in,.orb.h-in{opacity:1!important;transform:none!important}
 }
 </style>
 </head>
 <body>
-<div class="concept">Website concept prepared for <b>360 Dental Care</b> &middot; not a live site</div>
 
-<header>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="9.5" r="2.5" fill="none" stroke="currentColor" stroke-width="1.6"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M12 7v5l3 2" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></symbol>
+    <symbol id="i-tooth" viewBox="0 0 24 24"><path d="M12 5.5C10.3 4 8.5 3.5 7 3.8 4.6 4.2 3.4 6.6 4 9.3c.4 1.8 1 3 1.3 5 .4 2.6.9 5.9 2.6 5.9 1.6 0 1.6-3.3 2.2-5 .3-.9.9-1.2 1.9-1.2s1.6.3 1.9 1.2c.6 1.7.6 5 2.2 5 1.7 0 2.2-3.3 2.6-5.9.3-2 .9-3.2 1.3-5 .6-2.7-.6-5.1-3-5.5-1.5-.3-3.3.2-5 1.7z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></symbol>
+    <symbol id="i-spark" viewBox="0 0 24 24"><path d="M12 2l1.8 6.2L20 10l-6.2 1.8L12 18l-1.8-6.2L4 10l6.2-1.8z" fill="currentColor"/></symbol>
+  </defs>
+</svg>
+
+<header id="top">
   <div class="wrap nav">
-    <a href="#top" class="brand">360 Dental Care</a>
-    <nav class="links">
-      <a href="#services">Services</a><a href="#why">Why us</a><a href="#visit">Visit</a>
+    <a href="#top" class="logo" aria-label="360 Dental Care home">
+      <svg class="logo-mark" viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="22" fill="none" stroke="#b08d57" stroke-width="1.2"/><circle cx="24" cy="24" r="16.5" fill="#0d1b2a"/><path d="M24 17.4c-1.3-1.1-2.7-1.5-3.9-1.3-1.9.3-2.8 2.2-2.3 4.3.3 1.4.8 2.4 1 3.9.3 2 .7 4.6 2 4.6 1.3 0 1.3-2.6 1.7-3.9.2-.7.7-.9 1.5-.9s1.3.2 1.5.9c.4 1.3.4 3.9 1.7 3.9 1.3 0 1.7-2.6 2-4.6.2-1.5.7-2.5 1-3.9.5-2.1-.4-4-2.3-4.3-1.2-.2-2.6.2-3.9 1.3z" fill="none" stroke="#e9dcc3" stroke-width="1.1"/><circle cx="46" cy="24" r="2" fill="#b08d57"/></svg>
+      <span>360 Dental Care<small>Austin, Texas</small></span>
+    </a>
+    <nav class="menu" aria-label="Primary">
+      <a href="#services" class="ulink">Care</a>
+      <a href="#about" class="ulink">Philosophy</a>
+      <a href="#process" class="ulink">Your Visit</a>
+      <a href="#faq" class="ulink">FAQ</a>
+      <a href="#contact" class="ulink">Contact</a>
     </nav>
     <div class="nav-right">
-      <a class="phone" href="tel:5125953725">(512) 595-3725</a>
-      <a class="btn" href="#visit">Book now</a>
+      <a href="tel:+15125953725" class="nav-phone ulink"><svg><use href="#i-phone"/></svg><span>(512) 595-3725</span></a>
+      <a href="tel:+15125953725" class="btn btn-dark">Book a Visit</a>
+      <button class="burger" aria-label="Open menu" aria-expanded="false"><span></span><span></span></button>
     </div>
   </div>
 </header>
 
-<main id="top">
+<div class="drawer" aria-hidden="true">
+  <a href="#services">Care</a>
+  <a href="#about">Philosophy</a>
+  <a href="#process">Your Visit</a>
+  <a href="#faq">FAQ</a>
+  <a href="#contact">Contact</a>
+  <a href="tel:+15125953725" class="d-phone">Call (512) 595-3725</a>
+</div>
+
+<main>
 <section class="hero">
+  <div class="hero-bg-word" aria-hidden="true">360°</div>
   <div class="wrap hero-grid">
-    <div class="copy">
-      <div class="eyebrow">
-        <span class="dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-7-4.4-7-10a4 4 0 017-2.6A4 4 0 0119 10c0 5.6-7 10-7 10z"/></svg></span>Family &amp; cosmetic dentistry
-      </div>
-      <h1>Dentistry that feels as good as <em>it looks.</em></h1>
-      <p class="lead-text">Gentle, modern care for the whole family, with same-week appointments and a team that actually takes time to listen.</p>
-      <div class="hero-ctas">
-        <a class="btn" href="#visit">Book your visit <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-        <a class="btn ghost" href="tel:5125953725">Call (512) 595-3725</a>
-      </div>
-      <div class="ticks">
-        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7"/></svg>Most insurance accepted</span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7"/></svg>New patients welcome</span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7"/></svg>Flexible payment plans</span>
-      </div>
-    </div>
-    <div class="visual">
-      
-      <div class="quote-panel"><div class="quote-mark">“</div><div><p>Gentle, modern care for the whole family, with same-week appointments and a team that actually takes time to listen.</p><div class="who">360 Dental Care</div></div></div>
-      
-      
-      <div class="float two"><span class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><span><b>This week</b>New patients welcome</span></div>
-    </div>
-  </div>
-  <template id="qp"><div class="quote-panel"><div class="quote-mark">“</div><div><p>Gentle, modern care for the whole family, with same-week appointments and a team that actually takes time to listen.</p><div class="who">360 Dental Care</div></div></div></template>
-</section>
-
-<div class="trust"><div class="wrap">
-  <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.2-8 9-4.6-.8-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg>Most insurance accepted</div><div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.2-8 9-4.6-.8-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg>New patients welcome</div><div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.2-8 9-4.6-.8-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg>Flexible payment plans</div><div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.2-8 9-4.6-.8-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg>Evening appointments</div>
-</div></div>
-
-<section class="block" id="services">
-  <div class="wrap">
-    <div class="section-head">
-      <div><div class="kicker">What we do</div><h2>Everything you need,<br>under one roof.</h2></div>
-      <p>From routine visits to the work that changes how you feel about your day, 360 Dental Care takes care of it properly.</p>
-    </div>
-    <div class="services">
-      
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3c-2.5 0-4 2-4 4.5 0 3 1.5 4.5 2 7.5.4 2.4.8 6 2.5 6 1.6 0 1.6-4.5 4.5-4.5s2.9 4.5 4.5 4.5c1.7 0 2.1-3.6 2.5-6 .5-3 2-4.5 2-7.5C21 5 19.5 3 17 3c-2 0-3 1-5 1S9 3 7 3z"/></svg></div><h3>Checkups &amp; cleanings</h3><p>Thorough, comfortable exams that keep small problems from becoming big ones.</p></div>
-      
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/><path d="M19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8z"/></svg></div><h3>Teeth whitening</h3><p>Professional whitening that brightens your smile safely in a single visit.</p></div>
-      
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 14s1.5 2.5 4 2.5 4-2.5 4-2.5"/><path d="M9 9.5h.01M15 9.5h.01"/></svg></div><h3>Invisalign &amp; aligners</h3><p>Straighten your teeth discreetly with clear aligners planned around your life.</p></div>
-      
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.2-8 9-4.6-.8-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg></div><h3>Dental implants</h3><p>Permanent, natural-looking replacements that feel and work like your own teeth.</p></div>
-      
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-7-4.4-7-10a4 4 0 017-2.6A4 4 0 0119 10c0 5.6-7 10-7 10z"/></svg></div><h3>Kids&#39; dentistry</h3><p>A calm, friendly first experience that helps children love their checkups.</p></div>
-      
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div><h3>Emergency care</h3><p>Same-day help for toothaches, chips and broken teeth when you need it most.</p></div>
-      
-    </div>
-  </div>
-</section>
-
-<section class="block why" id="why">
-  <div class="wrap why-grid">
     <div>
-      <div class="kicker">Why patients choose us</div>
-      <h2>The Austin dentist people recommend to their friends.</h2>
-      <p class="intro">it still comes down to the same three things.</p>
+      <span class="eyebrow h-in" style="--d:0">Dentistry in West Austin</span>
+      <h1>
+        <span class="line"><span class="h-in" style="--d:1">Every angle</span></span>
+        <span class="line"><span class="h-in" style="--d:2">of your smile,</span></span>
+        <span class="line"><span class="h-in" style="--d:3"><em>beautifully</em> cared for.</span></span>
+      </h1>
+      <p class="lead h-in" style="--d:4">At 360 Dental Care, we look at the whole picture: your health, your comfort and the confidence you feel when you smile. Calm, attentive dentistry, just off Stoneridge Road.</p>
+      <div class="hero-ctas h-in" style="--d:5">
+        <a href="tel:+15125953725" class="btn btn-dark">Call (512) 595-3725 <svg><use href="#i-arrow"/></svg></a>
+        <a href="#services" class="btn btn-ghost">Explore Our Care</a>
+      </div>
+      <div class="hero-meta h-in" style="--d:6">
+        <div><svg><use href="#i-pin"/></svg>3660 Stoneridge Rd B101, Austin</div>
+        <div><svg><use href="#i-clock"/></svg>Call for current hours</div>
+      </div>
     </div>
-    <div class="points">
-      
-      <div class="point"><div class="num">01</div><div><h3>Comfort first</h3><p>Numbing that works, warm blankets, and no lectures. Anxious patients are welcome here.</p></div></div>
-      
-      <div class="point"><div class="num">02</div><div><h3>Modern technology</h3><p>Digital X-rays and 3D scans mean less radiation, fewer goopy impressions and faster results.</p></div></div>
-      
-      <div class="point"><div class="num">03</div><div><h3>Clear pricing</h3><p>We explain costs and insurance before treatment, so there are never any surprises.</p></div></div>
-      
+    <div class="orb h-in" style="--d:3" aria-hidden="true" data-parallax>
+      <div class="orb-disc"></div>
+      <svg class="orb-ring" viewBox="0 0 400 400">
+        <defs><path id="circ" d="M200,200 m-185,0 a185,185 0 1,1 370,0 a185,185 0 1,1 -370,0"/></defs>
+        <text><textPath href="#circ">360 DENTAL CARE · AUSTIN, TEXAS · COMPLETE CARE · 360 DENTAL CARE · AUSTIN, TEXAS · </textPath></text>
+      </svg>
+      <div class="orb-gold-wrap"><div class="orb-gold"></div></div>
+      <div class="orb-center">
+        <svg class="orb-tooth"><use href="#i-tooth"/></svg>
+        <b>360<sup>°</sup></b>
+        <span>Complete smile care</span>
+      </div>
+    </div>
+  </div>
+  <div class="scroll-cue" aria-hidden="true"></div>
+</section>
+
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <span>Whole-smile dentistry <svg><use href="#i-spark"/></svg> <i>Unhurried</i> appointments <svg><use href="#i-spark"/></svg> West Austin <svg><use href="#i-spark"/></svg> Care that sees <i>the full circle</i> <svg><use href="#i-spark"/></svg> Stoneridge Road <svg><use href="#i-spark"/></svg></span>
+    <span>Whole-smile dentistry <svg><use href="#i-spark"/></svg> <i>Unhurried</i> appointments <svg><use href="#i-spark"/></svg> West Austin <svg><use href="#i-spark"/></svg> Care that sees <i>the full circle</i> <svg><use href="#i-spark"/></svg> Stoneridge Road <svg><use href="#i-spark"/></svg></span>
+  </div>
+</div>
+
+<section class="sec services" id="services">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <span class="eyebrow rv">Our Care</span>
+        <h2 class="rv" style="--d:1">Dentistry with the <em>full picture</em> in view.</h2>
+      </div>
+      <p class="lead rv" style="--d:2">A healthy smile is never just one tooth. We bring the same considered attention to keeping your teeth well, restoring what needs care, and helping you love the way you smile.</p>
+    </div>
+    <div class="cards">
+      <article class="card rv">
+        <span class="card-num">01</span>
+        <div class="card-ico"><svg><use href="#i-tooth"/></svg></div>
+        <h3>Checkups &amp; Prevention</h3>
+        <p>The foundation of a lifelong smile. Thoughtful exams and cleanings designed to keep small concerns from ever becoming big ones.</p>
+        <a href="#contact" class="ulink">Plan a visit <svg><use href="#i-arrow"/></svg></a>
+      </article>
+      <article class="card rv" style="--d:1">
+        <span class="card-num">02</span>
+        <div class="card-ico"><svg viewBox="0 0 24 24"><path d="M12 3a9 9 0 1 0 9 9" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M21 3v6h-6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M8.5 12.5l2.3 2.3 4.7-5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <h3>Restorative Care</h3>
+        <p>When a tooth needs attention, we explain every option clearly and work gently, so you leave feeling comfortable and whole again.</p>
+        <a href="#contact" class="ulink">Ask about treatment <svg><use href="#i-arrow"/></svg></a>
+      </article>
+      <article class="card rv" style="--d:2">
+        <span class="card-num">03</span>
+        <div class="card-ico"><svg><use href="#i-spark"/></svg></div>
+        <h3>Smile Consultations</h3>
+        <p>Thinking about a brighter, more confident smile? Sit down with us to talk through your goals and what would suit you best.</p>
+        <a href="#contact" class="ulink">Start the conversation <svg><use href="#i-arrow"/></svg></a>
+      </article>
+    </div>
+    <p class="note rv">Have a specific treatment in mind? <a href="tel:+15125953725" class="ulink">Call (512) 595-3725</a> and our team will tell you exactly how we can help.</p>
+  </div>
+</section>
+
+<section class="sec about" id="about">
+  <div class="wrap about-grid">
+    <div class="about-art rv" aria-hidden="true">
+      <svg viewBox="0 0 400 500" preserveAspectRatio="xMidYMid slice">
+        <defs>
+          <radialGradient id="ag" cx="70%" cy="25%" r="60%"><stop offset="0" stop-color="#b08d57" stop-opacity=".45"/><stop offset="1" stop-color="#b08d57" stop-opacity="0"/></radialGradient>
+        </defs>
+        <rect width="400" height="500" fill="url(#ag)"/>
+        <g fill="none" stroke="#e9dcc3" stroke-opacity=".22">
+          <circle cx="200" cy="200" r="60"/><circle cx="200" cy="200" r="100"/><circle cx="200" cy="200" r="140"/><circle cx="200" cy="200" r="180"/><circle cx="200" cy="200" r="220"/>
+        </g>
+        <circle cx="200" cy="200" r="140" fill="none" stroke="#b08d57" stroke-width="1.5" stroke-dasharray="4 10"/>
+        <circle cx="340" cy="200" r="5" fill="#b08d57"/>
+        <path d="M200 160c-9-8-19-10-27-9-13 2-19 15-16 29 2 10 5 16 7 26 2 14 5 31 14 31 9 0 9-17 12-26 2-5 5-6 10-6s8 1 10 6c3 9 3 26 12 26 9 0 12-17 14-31 2-10 5-16 7-26 3-14-3-27-16-29-8-1-18 1-27 9z" fill="none" stroke="#e9dcc3" stroke-width="1.6"/>
+      </svg>
+      <p class="quote">Care that comes <em>full circle</em>, starting with you.</p>
+    </div>
+    <div>
+      <span class="eyebrow rv">Our Philosophy</span>
+      <h2 class="rv" style="--d:1">The name is the <em>promise.</em></h2>
+      <p class="rv" style="--d:2">Three hundred and sixty degrees: the complete view. It's how we approach every visit. Rather than focusing on a single problem in isolation, we take the time to understand your whole smile, your history and what matters to you.</p>
+      <p class="rv" style="--d:3">Our practice sits in a quiet corner of West Austin on Stoneridge Road, an easy place to step out of a busy day and into calm, attentive care. Whether you're due for a routine visit or something has been on your mind, you'll be listened to, informed and never rushed.</p>
+      <div class="pillars rv" style="--d:4">
+        <div><b>Whole</b><span>We look at the complete picture of your oral health.</span></div>
+        <div><b>Honest</b><span>Clear explanations, so every choice is yours.</span></div>
+        <div><b>Gentle</b><span>Comfort considered at every step.</span></div>
+      </div>
     </div>
   </div>
 </section>
 
-
-
-<section class="cta-band" id="book">
-  <div class="wrap"><div class="cta-box">
-    <div><h2>Ready when you are.</h2><p>Book your visit in under a minute, or give us a call and talk to a real person.</p></div>
-    <div class="actions">
-      <a class="btn" href="#visit">Book your visit</a>
-      <a class="btn ghost" href="tel:5125953725">Call (512) 595-3725</a>
+<section class="sec why">
+  <div class="why-glow" aria-hidden="true"></div>
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <span class="eyebrow rv">Why 360</span>
+        <h2 class="rv" style="--d:1">An experience as <em>considered</em> as the care.</h2>
+      </div>
+      <p class="lead rv" style="--d:2">Great dentistry is about more than technique. It's about how you feel walking in, sitting down and heading home.</p>
     </div>
-  </div></div>
+    <div class="why-list">
+      <div class="why-item rv"><span class="n">i.</span><div><h3>Time to talk</h3><p>Your questions deserve real answers. We make space to listen before we recommend anything.</p></div></div>
+      <div class="why-item rv" style="--d:1"><span class="n">ii.</span><div><h3>Nothing hidden</h3><p>We walk you through what we see and why it matters, so you can decide with confidence.</p></div></div>
+      <div class="why-item rv"><span class="n">iii.</span><div><h3>Comfort, first</h3><p>A calm setting and a gentle approach for anyone who'd rather be anywhere but the dentist's chair.</p></div></div>
+      <div class="why-item rv" style="--d:1"><span class="n">iv.</span><div><h3>Easy to reach</h3><p>Located at 3660 Stoneridge Rd in West Austin, convenient whether you're coming from home or the office.</p></div></div>
+    </div>
+  </div>
 </section>
 
-<section class="block" id="visit" style="padding-top:0">
+<section class="sec" id="process">
   <div class="wrap">
-    <div class="kicker">Visit us</div><h2>Come say hello.</h2>
-    <div class="visit">
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11l8-7 8 7v9a1 1 0 01-1 1h-4v-6H9v6H5a1 1 0 01-1-1z"/></svg></div><h3>Address</h3><p>3660 Stoneridge Rd B101, Austin TX 78746</p></div>
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div><h3>Phone</h3><p><a href="tel:5125953725">(512) 595-3725</a></p><p style="margin-top:10px">Call or message us for today's opening hours.</p></div>
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-7-4.4-7-10a4 4 0 017-2.6A4 4 0 0119 10c0 5.6-7 10-7 10z"/></svg></div><h3>New patients welcome</h3><p>Book your visit online or by phone and we'll take care of the rest.</p></div>
+    <div class="sec-head">
+      <div>
+        <span class="eyebrow rv">Your Visit</span>
+        <h2 class="rv" style="--d:1">Four simple steps to a <em>healthier</em> smile.</h2>
+      </div>
+      <p class="lead rv" style="--d:2">From the first phone call to your follow-up, we keep things clear, comfortable and refreshingly simple.</p>
+    </div>
+    <div class="steps">
+      <div class="step rv"><div class="step-n"><b>01</b><svg><use href="#i-phone"/></svg></div><h3>Reach out</h3><p>Call (512) 595-3725 and our team will find a time that works for you.</p></div>
+      <div class="step rv" style="--d:1"><div class="step-n"><b>02</b><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M4 20c1.5-4 4.5-6 8-6s6.5 2 8 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></div><h3>Get to know you</h3><p>We listen to your concerns, your history and your goals for your smile.</p></div>
+      <div class="step rv" style="--d:2"><div class="step-n"><b>03</b><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M16 16l4.5 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></div><h3>The full view</h3><p>A thorough look at your oral health, explained in plain language.</p></div>
+      <div class="step rv" style="--d:3"><div class="step-n"><b>04</b><svg><use href="#i-spark"/></svg></div><h3>Your plan</h3><p>Clear options and next steps, with every decision left in your hands.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec faq" id="faq">
+  <div class="wrap faq-grid">
+    <div>
+      <span class="eyebrow rv">Good to Know</span>
+      <h2 class="rv" style="--d:1">Questions, <em>answered.</em></h2>
+    </div>
+    <div class="faq-list rv" style="--d:2">
+      <details open>
+        <summary>Where is 360 Dental Care located?<span class="pm"></span></summary>
+        <p>You'll find us at 3660 Stoneridge Rd, Suite B101, Austin, TX 78746. <a href="https://maps.google.com/?q=3660+Stoneridge+Rd+B101,+Austin,+TX+78746" target="_blank" rel="noopener" class="ulink">Get directions</a>.</p>
+      </details>
+      <details>
+        <summary>How do I book an appointment?<span class="pm"></span></summary>
+        <p>The quickest way is to call us at <a href="tel:+15125953725" class="ulink">(512) 595-3725</a>. Our team will help you find a convenient time.</p>
+      </details>
+      <details>
+        <summary>What are your hours?<span class="pm"></span></summary>
+        <p>Please call <a href="tel:+15125953725" class="ulink">(512) 595-3725</a> for our current hours and availability.</p>
+      </details>
+      <details>
+        <summary>Can I ask about a specific treatment before booking?<span class="pm"></span></summary>
+        <p>Of course. Give us a call and we'll talk through your question and how we can help.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <svg class="cta-rings" viewBox="0 0 1200 600" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+    <g fill="none" stroke="#e9dcc3" stroke-opacity=".12"><circle cx="600" cy="300" r="160"/><circle cx="600" cy="300" r="260"/><circle cx="600" cy="300" r="360"/><circle cx="600" cy="300" r="460"/><circle cx="600" cy="300" r="560"/></g>
+    <circle cx="600" cy="300" r="360" fill="none" stroke="#b08d57" stroke-opacity=".5" stroke-dasharray="3 12"/>
+  </svg>
+  <div class="wrap">
+    <span class="eyebrow rv">Your Smile, Complete</span>
+    <h2 class="rv" style="--d:1">Ready to feel <em>good</em> about the dentist again?</h2>
+    <p class="rv" style="--d:2">One call is all it takes. We'll take it from there, thoughtfully and at your pace.</p>
+    <div class="cta-btns rv" style="--d:3">
+      <a href="tel:+15125953725" class="btn btn-gold">Call (512) 595-3725 <svg><use href="#i-arrow"/></svg></a>
+      <a href="https://maps.google.com/?q=3660+Stoneridge+Rd+B101,+Austin,+TX+78746" target="_blank" rel="noopener" class="btn btn-line">Get Directions</a>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="contact">
+  <div class="wrap visit-grid">
+    <div class="v-card rv">
+      <span class="eyebrow">Visit Us</span>
+      <h2>Come see us on <em>Stoneridge.</em></h2>
+      <div class="v-row"><div class="v-ico"><svg><use href="#i-phone"/></svg></div><div><small>Phone</small><a href="tel:+15125953725" class="ulink">(512) 595-3725</a></div></div>
+      <div class="v-row"><div class="v-ico"><svg><use href="#i-pin"/></svg></div><div><small>Address</small><a href="https://maps.google.com/?q=3660+Stoneridge+Rd+B101,+Austin,+TX+78746" target="_blank" rel="noopener" class="ulink">3660 Stoneridge Rd B101<br>Austin, TX 78746</a></div></div>
+      <div class="v-row"><div class="v-ico"><svg><use href="#i-clock"/></svg></div><div><small>Hours</small><span>Please call for current hours</span></div></div>
+    </div>
+    <div class="map-card rv" style="--d:1">
+      <svg class="mapart" viewBox="0 0 600 500" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+        <rect width="600" height="500" fill="#dfe9f0"/>
+        <path d="M-20 380 C120 340 200 420 340 360 S520 300 640 330" stroke="#c7d6e1" stroke-width="40" fill="none"/>
+        <g stroke="#fff" fill="none" stroke-linecap="round">
+          <path d="M-20 150 L640 230" stroke-width="16"/>
+          <path d="M260 -20 L340 520" stroke-width="12"/>
+          <path d="M-20 300 L640 120" stroke-width="7"/>
+          <path d="M80 -20 L160 520" stroke-width="6"/>
+          <path d="M470 -20 L430 520" stroke-width="6"/>
+        </g>
+        <g fill="#eef3f6"><rect x="360" y="40" width="80" height="60" rx="8"/><rect x="100" y="210" width="90" height="50" rx="8"/><rect x="380" y="260" width="70" height="70" rx="8"/><rect x="170" y="30" width="60" height="70" rx="8"/></g>
+        <circle cx="300" cy="210" r="70" fill="#b08d57" fill-opacity=".12"/>
+        <circle cx="300" cy="210" r="36" fill="#b08d57" fill-opacity=".18"/>
+      </svg>
+      <svg class="map-pin" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22s-7.5-6.6-7.5-12.2A7.5 7.5 0 0 1 19.5 9.8C19.5 15.4 12 22 12 22z" fill="#0d1b2a"/><circle cx="12" cy="9.8" r="3" fill="#e9dcc3"/></svg>
+      <div class="map-label">
+        <div><b>360 Dental Care</b><span>3660 Stoneridge Rd B101, Austin</span></div>
+        <a href="https://maps.google.com/?q=3660+Stoneridge+Rd+B101,+Austin,+TX+78746" target="_blank" rel="noopener" class="btn btn-dark">Open in Maps <svg><use href="#i-arrow"/></svg></a>
+      </div>
     </div>
   </div>
 </section>
 </main>
 
-<footer><div class="wrap">
-  <span>© 2026 360 Dental Care</span>
-  <span>Concept design. Not affiliated with or endorsed by 360 Dental Care.</span>
-</div></footer>
+<footer>
+  <div class="wrap">
+    <div class="f-top">
+      <div>
+        <a href="#top" class="logo">
+          <svg class="logo-mark" viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="22" fill="none" stroke="#b08d57" stroke-width="1.2"/><circle cx="24" cy="24" r="16.5" fill="#1b2d42"/><path d="M24 17.4c-1.3-1.1-2.7-1.5-3.9-1.3-1.9.3-2.8 2.2-2.3 4.3.3 1.4.8 2.4 1 3.9.3 2 .7 4.6 2 4.6 1.3 0 1.3-2.6 1.7-3.9.2-.7.7-.9 1.5-.9s1.3.2 1.5.9c.4 1.3.4 3.9 1.7 3.9 1.3 0 1.7-2.6 2-4.6.2-1.5.7-2.5 1-3.9.5-2.1-.4-4-2.3-4.3-1.2-.2-2.6.2-3.9 1.3z" fill="none" stroke="#e9dcc3" stroke-width="1.1"/><circle cx="46" cy="24" r="2" fill="#b08d57"/></svg>
+          <span>360 Dental Care<small>Austin, Texas</small></span>
+        </a>
+      </div>
+      <div class="f-cols">
+        <div><h4>Explore</h4><a href="#services" class="ulink">Our Care</a><a href="#about" class="ulink">Philosophy</a><a href="#process" class="ulink">Your Visit</a><a href="#faq" class="ulink">FAQ</a></div>
+        <div><h4>Contact</h4><a href="tel:+15125953725" class="ulink">(512) 595-3725</a><a href="https://maps.google.com/?q=3660+Stoneridge+Rd+B101,+Austin,+TX+78746" target="_blank" rel="noopener" class="ulink">3660 Stoneridge Rd B101<br>Austin, TX 78746</a></div>
+      </div>
+    </div>
+    <div class="f-big" aria-hidden="true">360 Dental Care</div>
+    <div class="f-bot">
+      <span>&copy; <span id="yr">2026</span> 360 Dental Care. All rights reserved.</span>
+      <a href="#top" class="ulink">Back to top ↑</a>
+    </div>
+  </div>
+</footer>
 
-<div class="mobile-bar">
-  <a class="btn ghost" href="tel:5125953725">Call</a>
-  <a class="btn" href="#visit">Book now</a>
+<div class="mbar" aria-label="Quick actions">
+  <a href="tel:+15125953725"><svg><use href="#i-phone"/></svg>Call Now</a>
+  <a href="#contact" class="gold">Visit Us</a>
 </div>
-</body>
+
+<script>
+(function(){
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var doc = document.documentElement;
+  document.getElementById('yr').textContent = new Date().getFullYear();
+
+  requestAnimationFrame(function(){ document.body.classList.add('loaded'); });
+
+  var header = document.querySelector('header');
+  var mbar = document.querySelector('.mbar');
+  var orb = document.querySelector('[data-parallax]');
+  var ticking = false;
+  function onScroll(){
+    var y = window.scrollY;
+    header.classList.toggle('scrolled', y > 30);
+    mbar.classList.toggle('show', y > 420);
+    if (orb && !reduce && y < window.innerHeight) {
+      orb.style.translate = '0 ' + (y * 0.12) + 'px';
+    }
+    ticking = false;
+  }
+  window.addEventListener('scroll', function(){
+    if (!ticking) { requestAnimationFrame(onScroll); ticking = true; }
+  }, {passive:true});
+  onScroll();
+
+  var burger = document.querySelector('.burger');
+  var drawer = document.querySelector('.drawer');
+  function toggleMenu(open){
+    burger.classList.toggle('open', open);
+    drawer.classList.toggle('open', open);
+    header.classList.toggle('menu-open', open);
+    burger.setAttribute('aria-expanded', open);
+    drawer.setAttribute('aria-hidden', !open);
+    doc.style.overflow = open ? 'hidden' : '';
+  }
+  burger.addEventListener('click', function(){ toggleMenu(!drawer.classList.contains('open')); });
+  drawer.querySelectorAll('a').forEach(function(a){ a.addEventListener('click', function(){ toggleMenu(false); }); });
+  document.addEventListener('keydown', function(e){ if (e.key === 'Escape') toggleMenu(false); });
+
+  var items = document.querySelectorAll('.rv');
+  if (reduce || !('IntersectionObserver' in window)) {
+    items.forEach(function(el){ el.classList.add('in'); });
+  } else {
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); }
+      });
+    }, {threshold:0.12, rootMargin:'0px 0px -40px 0px'});
+    items.forEach(function(el){ io.observe(el); });
+  }
+})();
+</script>
+<div id="lm-concept" style="position:fixed;left:12px;bottom:12px;z-index:2147483647;font:500 11px/1.3 -apple-system,BlinkMacSystemFont,Segoe UI,sans-serif;letter-spacing:.02em;background:rgba(15,15,18,.82);color:#f4f1ea;padding:7px 11px;border-radius:999px;backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);pointer-events:none;max-width:70vw">Website concept for 360 Dental Care by webstudio &middot; not the live site</div><p style="margin:0;padding:18px 16px 70px;text-align:center;font:12px/1.5 -apple-system,sans-serif;color:#8a8a8a;background:#0e0e10">Concept design by webstudio. Not affiliated with or endorsed by 360 Dental Care.</p></body>
 </html>
