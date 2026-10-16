@@ -1,291 +1,598 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src * data: blob:; media-src 'self' data:; style-src 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com data:; script-src 'unsafe-inline'; connect-src 'none'; frame-src 'none'; form-action 'none'; base-uri 'none'; object-src 'none'">
 <meta name="robots" content="noindex, nofollow">
-<title>Northwest Dental Associates | Website concept</title>
+<style>html,body{max-width:100%;overflow-x:clip}</style>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Northwest Dental Associates | Family &amp; Cosmetic Dentist in Cedar Park, TX</title>
+<meta name="description" content="Northwest Dental Associates with Dr. Toai Pham, DDS: family and cosmetic dentistry in Cedar Park, TX. Call (512) 219-7484.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap" rel="stylesheet">
 <style>
 :root{
-  --bg:#f7f3ec;--surface:#ffffff;--ink:#12302c;--muted:#5b6b67;
-  --accent:#1f5c53;--accent-ink:#ffffff;--gold:#b8915a;--soft:#e8efe9;
-  --radius:22px;--max:1180px;
-  --serif:"Fraunces",Georgia,serif;--sans:"Manrope",system-ui,-apple-system,sans-serif;
+  --bg:#F7F7F5;--surface:#fff;--ink:#101828;--muted:#475467;
+  --blue:#2346D5;--blue-d:#1a35a6;--coral:#FF7A59;--coral-d:#c94a2b;
+  --sky:#c3e6ff;--mist:#c8d6e2;--sand:#F1ECE4;--cream:#FBF8F3;
+  --line:rgba(16,24,40,.1);
+  --serif:"Playfair Display",Georgia,serif;--sans:"DM Sans",system-ui,-apple-system,sans-serif;
+  --r:28px;--ease:cubic-bezier(.22,1,.36,1);
 }
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
-a{color:inherit;text-decoration:none}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:var(--sans);background:var(--bg);color:var(--ink);font-size:17px;line-height:1.65;overflow-x:hidden;-webkit-font-smoothing:antialiased}
 img{max-width:100%;display:block}
-.wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
-.concept{background:var(--ink);color:var(--bg);font-size:13px;text-align:center;padding:8px 16px;letter-spacing:.02em}
-.concept b{color:var(--gold);font-weight:600}
+a{color:inherit;text-decoration:none}
+.wrap{width:min(1240px,100% - 48px);margin-inline:auto}
+h1,h2,h3{font-family:var(--serif);font-weight:600;line-height:1.08;letter-spacing:-.015em}
+h2{font-size:clamp(2.2rem,4.6vw,3.8rem)}
+h2 em,h1 em{font-style:italic;color:var(--blue)}
+.eyebrow{display:inline-flex;align-items:center;gap:12px;font-size:.76rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--coral-d)}
+.eyebrow::before{content:"";width:28px;height:1.5px;background:currentColor}
+.lead{font-size:1.12rem;color:var(--muted);max-width:56ch}
+section{position:relative}
+.pad{padding:clamp(80px,11vw,150px) 0}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:16px 28px;border-radius:999px;font-weight:600;font-size:.98rem;transition:transform .4s var(--ease),box-shadow .4s var(--ease),background .3s;white-space:nowrap}
+.btn svg{width:18px;height:18px;flex:none}
+.btn-primary{background:var(--blue);color:#fff;box-shadow:0 10px 30px -10px rgba(35,70,213,.6)}
+.btn-primary:hover{background:var(--blue-d);transform:translateY(-3px);box-shadow:0 18px 40px -12px rgba(35,70,213,.7)}
+.btn-ghost{border:1.5px solid var(--ink);color:var(--ink)}
+.btn-ghost:hover{background:var(--ink);color:#fff;transform:translateY(-3px)}
+.btn-coral{background:var(--coral);color:var(--ink)}
+.btn-coral:hover{background:#ff8f73;transform:translateY(-3px)}
+.ulink{position:relative;font-weight:600}
+.ulink::after{content:"";position:absolute;left:0;bottom:-3px;width:100%;height:1.5px;background:currentColor;transform:scaleX(0);transform-origin:right;transition:transform .5s var(--ease)}
+.ulink:hover::after{transform:scaleX(1);transform-origin:left}
 
 /* header */
-header{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:saturate(1.4) blur(10px);border-bottom:1px solid color-mix(in srgb,var(--ink) 8%,transparent)}
-.nav{display:flex;align-items:center;justify-content:space-between;height:76px;gap:24px}
-.brand{font-family:var(--serif);font-size:23px;font-weight:600;letter-spacing:-.01em;line-height:1.1;max-width:340px}
-.links{display:flex;gap:30px;font-size:15px;font-weight:500;color:var(--muted)}
-.links a:hover{color:var(--ink)}
-.nav-right{display:flex;align-items:center;gap:18px}
-.phone{font-weight:600;font-size:15px;white-space:nowrap}
-.btn{display:inline-flex;align-items:center;gap:10px;background:var(--accent);color:var(--accent-ink);padding:14px 26px;border-radius:999px;font-weight:600;font-size:15.5px;transition:transform .2s ease,box-shadow .2s ease;white-space:nowrap}
-.btn:hover{transform:translateY(-2px);box-shadow:0 12px 28px -12px var(--accent)}
-.btn.ghost{background:transparent;color:var(--ink);border:1.5px solid color-mix(in srgb,var(--ink) 20%,transparent)}
-.btn.ghost:hover{box-shadow:none;border-color:var(--ink)}
-.btn svg{width:18px;height:18px}
+.hdr{position:fixed;inset:14px 0 auto;z-index:50;transition:inset .4s var(--ease)}
+.hdr .bar{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:10px 12px 10px 20px;border-radius:999px;background:rgba(255,255,255,.72);backdrop-filter:blur(18px) saturate(1.4);-webkit-backdrop-filter:blur(18px) saturate(1.4);border:1px solid rgba(255,255,255,.8);box-shadow:0 8px 30px -14px rgba(16,24,40,.25)}
+.brand{display:flex;align-items:center;gap:12px;min-width:0}
+.brand img{height:40px;width:auto}
+.brand span{font-family:var(--serif);font-weight:600;font-size:1.08rem;line-height:1.1}
+.brand small{display:block;font-family:var(--sans);font-size:.66rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);font-weight:500}
+.nav{display:flex;gap:30px;font-size:.94rem;font-weight:500}
+.hdr-cta{display:flex;align-items:center;gap:16px}
+.hdr-phone{font-weight:600;font-size:.94rem}
+.hdr .btn{padding:12px 22px}
+.burger{display:none;width:46px;height:46px;border-radius:50%;background:var(--ink);border:0;cursor:pointer;position:relative}
+.burger i{position:absolute;left:14px;right:14px;height:2px;background:#fff;border-radius:2px;transition:transform .4s var(--ease),top .4s var(--ease)}
+.burger i:first-child{top:18px}.burger i:last-child{top:26px}
+.menu-open .burger i:first-child{top:22px;transform:rotate(45deg)}
+.menu-open .burger i:last-child{top:22px;transform:rotate(-45deg)}
+.mmenu{position:fixed;inset:0;z-index:40;background:var(--cream);display:flex;flex-direction:column;justify-content:center;padding:100px 32px 40px;gap:8px;opacity:0;visibility:hidden;transition:opacity .4s var(--ease),visibility .4s}
+.mmenu a{font-family:var(--serif);font-size:2.4rem;line-height:1.3}
+.mmenu .btn{font-family:var(--sans);font-size:1rem;margin-top:24px;align-self:flex-start}
+.menu-open .mmenu{opacity:1;visibility:visible}
 
 /* hero */
-.hero{padding:72px 0 88px}
-.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:64px;align-items:center}
-.eyebrow{display:inline-flex;align-items:center;gap:10px;background:var(--surface);border:1px solid color-mix(in srgb,var(--ink) 10%,transparent);padding:8px 16px 8px 10px;border-radius:999px;font-size:14px;font-weight:600;color:var(--muted)}
-.stars{color:var(--gold);letter-spacing:1px;font-size:14px}
-.eyebrow .dot{width:26px;height:26px;border-radius:50%;background:var(--soft);display:grid;place-items:center;color:var(--accent)}
-h1{font-family:var(--serif);font-weight:500;font-size:clamp(44px,5.6vw,74px);line-height:1.02;letter-spacing:-.025em;margin:26px 0 22px}
-h1 em{font-style:italic;color:var(--accent)}
-.lead-text{font-size:19.5px;color:var(--muted);max-width:540px}
-.hero-ctas{display:flex;gap:14px;margin-top:36px;flex-wrap:wrap}
-.ticks{display:flex;gap:22px;margin-top:34px;flex-wrap:wrap;font-size:14.5px;font-weight:600;color:var(--muted)}
-.ticks span{display:flex;align-items:center;gap:8px}
-.ticks svg{width:18px;height:18px;color:var(--accent)}
-.visual{position:relative}
-.photo{aspect-ratio:4/5;border-radius:calc(var(--radius) + 10px);overflow:hidden;background:var(--soft);box-shadow:0 40px 80px -40px color-mix(in srgb,var(--ink) 55%,transparent)}
-.photo img{width:100%;height:100%;object-fit:cover}
-.quote-panel{aspect-ratio:4/5;border-radius:calc(var(--radius) + 10px);background:linear-gradient(155deg,var(--accent),color-mix(in srgb,var(--accent) 55%,var(--ink)));color:var(--accent-ink);padding:52px 46px;display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden;box-shadow:0 40px 80px -40px color-mix(in srgb,var(--ink) 60%,transparent)}
-.quote-panel:before{content:"";position:absolute;width:420px;height:420px;border-radius:50%;right:-160px;top:-160px;background:color-mix(in srgb,var(--accent-ink) 9%,transparent)}
-.quote-panel:after{content:"";position:absolute;width:260px;height:260px;border-radius:50%;left:-90px;bottom:-110px;border:1.5px solid color-mix(in srgb,var(--accent-ink) 22%,transparent)}
-.quote-mark{font-family:var(--serif);font-size:120px;line-height:.6;opacity:.35}
-.quote-panel p{font-family:var(--serif);font-size:28px;line-height:1.3;position:relative;z-index:1}
-.quote-panel .who{font-family:var(--sans);font-size:15px;opacity:.85;margin-top:22px;font-weight:600}
-.float{position:absolute;background:var(--surface);color:var(--ink);border-radius:18px;padding:16px 20px;box-shadow:0 24px 50px -24px color-mix(in srgb,var(--ink) 50%,transparent);display:flex;align-items:center;gap:14px;font-size:14px;line-height:1.35}
-.float b{font-size:22px;font-family:var(--serif);font-weight:600;display:block}
-.float.one{left:-34px;bottom:-28px}
-.float.two{right:-22px;top:44px}
-.float .badge{width:44px;height:44px;border-radius:14px;background:var(--soft);display:grid;place-items:center;color:var(--accent)}
-.float .badge svg{width:22px;height:22px}
+.hero{min-height:100vh;min-height:100svh;padding:140px 0 70px;background:radial-gradient(1000px 600px at 85% 10%,rgba(195,230,255,.55),transparent 60%),radial-gradient(800px 500px at 0% 100%,var(--sand),transparent 60%),var(--bg);overflow:hidden;display:flex;align-items:center}
+.hero-grid{display:grid;grid-template-columns:1.08fr .92fr;gap:clamp(40px,6vw,90px);align-items:center}
+.hero h1{font-size:clamp(2.9rem,6.6vw,6rem);margin:22px 0 26px}
+.hero h1 .ln{display:block;overflow:hidden;padding-bottom:.06em}
+.hero h1 .ln>span{display:inline-block}
+.hero .lead{margin-bottom:36px}
+.ctas{display:flex;flex-wrap:wrap;gap:14px}
+.trust{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:52px;border-top:1px solid var(--line);padding-top:26px}
+.trust div{padding-right:18px}
+.trust div+div{padding-left:18px;border-left:1px solid var(--line)}
+.trust b{display:block;font-family:var(--serif);font-size:clamp(1.6rem,2.6vw,2.2rem);font-weight:600;line-height:1.1}
+.trust span{font-size:.84rem;color:var(--muted);line-height:1.4;display:block;margin-top:6px}
 
-/* trust */
-.trust{border-top:1px solid color-mix(in srgb,var(--ink) 9%,transparent);border-bottom:1px solid color-mix(in srgb,var(--ink) 9%,transparent);background:var(--surface)}
-.trust .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;padding-top:26px;padding-bottom:26px}
-.trust div{display:flex;align-items:center;gap:12px;font-weight:600;font-size:15px}
-.trust svg{width:22px;height:22px;color:var(--accent);flex:none}
+.hero-art{position:relative;justify-self:center;width:100%;max-width:500px}
+.blob{position:absolute;border-radius:50%;filter:blur(2px);z-index:0}
+.blob.a{width:72%;aspect-ratio:1;background:var(--coral);opacity:.9;right:-14%;bottom:-6%;border-radius:58% 42% 55% 45%/48% 55% 45% 52%;animation:morph 14s ease-in-out infinite}
+.blob.b{width:46%;aspect-ratio:1;background:var(--sky);left:-14%;top:8%;border-radius:45% 55% 40% 60%/55% 45% 55% 45%;animation:morph 18s ease-in-out infinite reverse}
+@keyframes morph{50%{border-radius:42% 58% 45% 55%/58% 42% 58% 42%;transform:rotate(8deg) scale(1.04)}}
+.arch{position:relative;z-index:1;aspect-ratio:4/5.4;border-radius:999px 999px 34px 34px;overflow:hidden;background:var(--mist);box-shadow:0 40px 80px -30px rgba(16,24,40,.45);border:10px solid #fff}
+.arch img{width:100%;height:118%;object-fit:cover;object-position:center;will-change:transform}
+.arch::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(16,24,40,.35))}
+.orbit{position:absolute;z-index:2;left:-48px;bottom:12%;width:150px;height:150px;border-radius:50%;background:var(--ink);color:#fff;display:grid;place-items:center;box-shadow:0 20px 40px -15px rgba(16,24,40,.6)}
+.orbit svg.ring{position:absolute;inset:0;width:100%;height:100%;animation:spin 22s linear infinite}
+.orbit .tooth{width:42px;height:42px;color:var(--coral)}
+@keyframes spin{to{transform:rotate(360deg)}}
+.tag{position:absolute;z-index:2;right:-18px;top:14%;background:#fff;border-radius:20px;padding:14px 18px;box-shadow:0 20px 40px -18px rgba(16,24,40,.35);display:flex;gap:12px;align-items:center;max-width:230px}
+.tag i{width:40px;height:40px;border-radius:50%;background:var(--sky);display:grid;place-items:center;flex:none;color:var(--blue)}
+.tag i svg{width:20px;height:20px}
+.tag b{display:block;font-size:.92rem;line-height:1.2}
+.tag span{font-size:.78rem;color:var(--muted)}
 
-/* sections */
-section.block{padding:110px 0}
-.kicker{font-size:13px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
-h2{font-family:var(--serif);font-weight:500;font-size:clamp(34px,3.8vw,52px);line-height:1.08;letter-spacing:-.02em;margin:14px 0 18px}
-.section-head{display:flex;justify-content:space-between;align-items:end;gap:40px;margin-bottom:56px}
-.section-head p{color:var(--muted);max-width:420px}
-.services{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-.card{background:var(--surface);border-radius:var(--radius);padding:34px 32px 36px;border:1px solid color-mix(in srgb,var(--ink) 7%,transparent);transition:transform .25s ease,box-shadow .25s ease}
-.card:hover{transform:translateY(-4px);box-shadow:0 30px 60px -36px color-mix(in srgb,var(--ink) 45%,transparent)}
-.icon{width:54px;height:54px;border-radius:16px;background:var(--soft);color:var(--accent);display:grid;place-items:center;margin-bottom:24px}
-.icon svg{width:26px;height:26px}
-.card h3{font-family:var(--serif);font-weight:500;font-size:23px;margin-bottom:8px;letter-spacing:-.01em}
-.card p{color:var(--muted);font-size:16px}
+/* marquee */
+.marquee{background:var(--ink);color:#fff;padding:26px 0;overflow:hidden;transform:rotate(-1.4deg);margin:-14px -10px 0;position:relative;z-index:3}
+.track{display:flex;width:max-content;animation:scroll 38s linear infinite}
+.track span{font-family:var(--serif);font-size:clamp(1.4rem,2.6vw,2.1rem);font-style:italic;padding:0 28px;display:flex;align-items:center;gap:56px;white-space:nowrap}
+.track span::after{content:"";width:12px;height:12px;border-radius:50%;background:var(--coral);flex:none}
+@keyframes scroll{to{transform:translateX(-50%)}}
 
-.why{background:var(--ink);color:var(--bg)}
-.why .kicker{color:var(--gold)}
-.why-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:80px;align-items:start}
-.why h2{color:var(--bg)}
-.why .intro{color:color-mix(in srgb,var(--bg) 70%,transparent);font-size:18px;max-width:440px}
-.points{display:grid;gap:14px}
-.point{display:grid;grid-template-columns:62px 1fr;gap:20px;padding:30px;border-radius:var(--radius);background:color-mix(in srgb,var(--bg) 6%,transparent);border:1px solid color-mix(in srgb,var(--bg) 10%,transparent)}
-.point .num{font-family:var(--serif);font-size:34px;color:var(--gold);line-height:1}
-.point h3{font-family:var(--serif);font-weight:500;font-size:24px;margin-bottom:6px}
-.point p{color:color-mix(in srgb,var(--bg) 72%,transparent);font-size:16px}
+/* services */
+.sec-head{display:flex;justify-content:space-between;align-items:flex-end;gap:40px;margin-bottom:64px;flex-wrap:wrap}
+.sec-head h2{max-width:14ch;margin-top:18px}
+.sec-head .lead{max-width:42ch}
+.cards{display:grid;grid-template-columns:repeat(12,1fr);gap:22px}
+.card{background:var(--surface);border-radius:var(--r);padding:38px 34px;border:1px solid var(--line);position:relative;overflow:hidden;transition:transform .55s var(--ease),box-shadow .55s var(--ease);display:flex;flex-direction:column;grid-column:span 4}
+.card:hover{transform:translateY(-8px);box-shadow:0 34px 60px -30px rgba(16,24,40,.35)}
+.card.wide{grid-column:span 8;background:var(--blue);color:#fff;border:0}
+.card.wide p{color:rgba(255,255,255,.86)}
+.card.wide .ico{background:rgba(255,255,255,.14);color:#fff}
+.card.wide::after{content:"";position:absolute;right:-80px;bottom:-110px;width:320px;height:320px;border-radius:50%;border:56px solid rgba(195,230,255,.18)}
+.card.sand{background:var(--sand);border:0}
+.ico{width:58px;height:58px;border-radius:18px;background:var(--sky);color:var(--blue);display:grid;place-items:center;margin-bottom:28px}
+.ico svg{width:28px;height:28px}
+.card h3{font-size:1.75rem;margin-bottom:12px}
+.card p{color:var(--muted);font-size:.98rem}
+.card .num{position:absolute;top:30px;right:32px;font-family:var(--serif);font-style:italic;font-size:1rem;opacity:.55}
+.card .ulink{margin-top:auto;padding-top:26px;align-self:flex-start;position:relative;z-index:1}
 
-.score{display:flex;align-items:center;gap:18px;background:var(--surface);padding:16px 24px;border-radius:18px;border:1px solid color-mix(in srgb,var(--ink) 8%,transparent)}
-.score b{font-family:var(--serif);font-size:40px;font-weight:500;line-height:1}
-.score small{display:block;color:var(--muted);font-size:14px}
-.reviews{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-.review{background:var(--surface);border-radius:var(--radius);padding:34px;display:flex;flex-direction:column;gap:22px;border:1px solid color-mix(in srgb,var(--ink) 7%,transparent)}
-.review p{font-family:var(--serif);font-size:19.5px;line-height:1.45}
-.review .by{margin-top:auto;display:flex;align-items:center;gap:12px;font-weight:600;font-size:15px}
-.avatar{width:40px;height:40px;border-radius:50%;background:var(--soft);color:var(--accent);display:grid;place-items:center;font-weight:700}
-.review .src{color:var(--muted);font-weight:500;font-size:13px;display:block}
+/* about */
+.about{background:var(--cream)}
+.about-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(40px,7vw,110px);align-items:center}
+.portrait{position:relative}
+.portrait .frame{border-radius:240px 240px 30px 30px;overflow:hidden;aspect-ratio:4/5;border:10px solid #fff;box-shadow:0 40px 70px -35px rgba(16,24,40,.45);position:relative;z-index:1}
+.portrait .frame img{width:100%;height:100%;object-fit:cover;object-position:25% center}
+.portrait::before{content:"";position:absolute;inset:8% -8% -6% 10%;border-radius:240px 240px 30px 30px;background:var(--mist);z-index:0}
+.cred{position:absolute;z-index:2;right:-24px;bottom:40px;background:var(--ink);color:#fff;border-radius:22px;padding:22px 24px;max-width:240px}
+.cred b{font-family:var(--serif);font-size:2.4rem;line-height:1;display:block;color:var(--coral)}
+.cred span{font-size:.86rem;opacity:.86;display:block;margin-top:6px;line-height:1.4}
+.about h2{margin:18px 0 26px}
+.about p+p{margin-top:18px}
+.about p{color:var(--muted)}
+.facts{list-style:none;margin-top:36px;display:grid;gap:14px}
+.facts li{display:flex;gap:16px;align-items:flex-start;padding:18px 20px;background:#fff;border-radius:18px;border:1px solid var(--line)}
+.facts li i{flex:none;width:34px;height:34px;border-radius:50%;background:var(--coral);color:var(--ink);display:grid;place-items:center;font-style:normal;font-weight:700;font-size:.82rem}
+.facts li b{display:block;font-size:.98rem}
+.facts li span{font-size:.9rem;color:var(--muted)}
+.team{margin-top:28px;padding:26px 28px;border-radius:22px;background:var(--sky);color:var(--ink)}
+.team b{font-family:var(--serif);font-size:1.3rem;display:block}
+.team small{font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;font-weight:600;color:var(--blue-d)}
+.team p{color:var(--ink);font-size:.95rem;margin-top:8px}
 
-.cta-band{padding:0 0 110px}
-.cta-box{border-radius:calc(var(--radius) + 12px);background:linear-gradient(140deg,var(--accent),color-mix(in srgb,var(--accent) 60%,var(--ink)));color:var(--accent-ink);padding:76px 64px;display:grid;grid-template-columns:1.3fr 1fr;gap:40px;align-items:center;position:relative;overflow:hidden}
-.cta-box:after{content:"";position:absolute;right:-120px;bottom:-200px;width:460px;height:460px;border-radius:50%;border:1.5px solid color-mix(in srgb,var(--accent-ink) 22%,transparent)}
-.cta-box h2{color:inherit;margin:0 0 12px}
-.cta-box p{opacity:.85;font-size:18px}
-.cta-box .actions{display:flex;flex-direction:column;gap:12px;align-items:flex-start;position:relative;z-index:1}
-.cta-box .btn{background:var(--accent-ink);color:var(--accent)}
-.cta-box .btn.ghost{background:transparent;color:var(--accent-ink);border-color:color-mix(in srgb,var(--accent-ink) 40%,transparent)}
+/* giant type */
+.giant{padding:clamp(60px,9vw,120px) 0 0;overflow:hidden;background:var(--bg)}
+.giant p{font-family:var(--serif);font-size:clamp(3.4rem,13vw,13rem);line-height:.92;letter-spacing:-.03em;white-space:nowrap;font-weight:600}
+.giant .o{color:transparent;-webkit-text-stroke:1.5px var(--ink)}
+.giant em{color:var(--coral);font-style:italic}
+.giant .row2{text-align:right}
 
-.visit{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:10px}
-.visit .card h3{font-size:20px}
-.visit a{color:var(--accent);font-weight:600}
-footer{border-top:1px solid color-mix(in srgb,var(--ink) 9%,transparent);padding:40px 0 110px;color:var(--muted);font-size:14px}
-footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
-.mobile-bar{display:none}
+/* why */
+.why-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:1px solid var(--ink)}
+.why{padding:40px 30px 40px 0;border-right:1px solid var(--line);transition:background .4s}
+.why+.why{padding-left:30px}
+.why:last-child{border-right:0}
+.why .k{font-family:var(--serif);font-style:italic;color:var(--coral-d);font-size:1.05rem}
+.why h3{font-size:1.6rem;margin:18px 0 14px}
+.why p{font-size:.95rem;color:var(--muted)}
 
-@keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
-.hero .copy>*{animation:rise .8s cubic-bezier(.2,.7,.2,1) both}
-.hero .copy>*:nth-child(2){animation-delay:.08s}.hero .copy>*:nth-child(3){animation-delay:.16s}
-.hero .copy>*:nth-child(4){animation-delay:.24s}.hero .copy>*:nth-child(5){animation-delay:.32s}
-.visual{animation:rise 1s .2s cubic-bezier(.2,.7,.2,1) both}
+/* steps */
+.steps-sec{background:var(--ink);color:#fff;border-radius:48px 48px 0 0;overflow:hidden}
+.steps-sec .eyebrow{color:var(--coral)}
+.steps-sec h2 em{color:var(--sky)}
+.steps-sec .lead{color:rgba(255,255,255,.75)}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;counter-reset:s}
+.step{border-radius:var(--r);padding:34px 28px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);transition:transform .5s var(--ease),background .4s}
+.step:hover{transform:translateY(-6px);background:rgba(255,255,255,.09)}
+.step::before{counter-increment:s;content:"0" counter(s);display:grid;place-items:center;width:54px;height:54px;border-radius:50%;background:var(--coral);color:var(--ink);font-weight:700;margin-bottom:26px}
+.step h3{font-size:1.5rem;margin-bottom:10px}
+.step p{color:rgba(255,255,255,.75);font-size:.95rem}
+.step a{color:var(--sky)}
 
-@media (max-width:980px){
-  .links{display:none}
-  .hero-grid,.why-grid,.cta-box{grid-template-columns:1fr}
-  .hero-grid{gap:56px}
-  .services,.reviews,.visit{grid-template-columns:1fr 1fr}
-  .trust .wrap{grid-template-columns:1fr 1fr}
-  .float.one{left:12px;bottom:-26px}.float.two{right:12px}
-  .visual{max-width:560px;margin-bottom:20px}
-  .section-head{flex-direction:column;align-items:flex-start}
+/* faq */
+.faq-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(40px,7vw,100px)}
+.faq-grid h2{margin:18px 0 22px}
+details{border-bottom:1px solid var(--line)}
+summary{list-style:none;cursor:pointer;padding:26px 0;display:flex;justify-content:space-between;gap:20px;align-items:center;font-family:var(--serif);font-size:1.32rem;font-weight:600}
+summary::-webkit-details-marker{display:none}
+summary .pm{flex:none;width:40px;height:40px;border-radius:50%;border:1.5px solid var(--ink);position:relative;transition:background .3s,transform .4s var(--ease)}
+summary .pm::before,summary .pm::after{content:"";position:absolute;left:50%;top:50%;width:14px;height:1.5px;background:var(--ink);transform:translate(-50%,-50%)}
+summary .pm::after{transform:translate(-50%,-50%) rotate(90deg);transition:transform .4s var(--ease)}
+details[open] summary .pm{background:var(--coral);border-color:var(--coral)}
+details[open] summary .pm::after{transform:translate(-50%,-50%) rotate(0)}
+details p{padding:0 60px 26px 0;color:var(--muted)}
+
+/* cta band */
+.band{position:relative;overflow:hidden;border-radius:40px;margin:0 auto;min-height:520px;display:flex;align-items:center;color:#fff}
+.band img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.band::before{content:"";position:absolute;inset:0;background:linear-gradient(100deg,rgba(16,24,40,.92) 0%,rgba(16,24,40,.78) 45%,rgba(35,70,213,.55) 100%);z-index:1}
+.band .in{position:relative;z-index:2;padding:clamp(40px,7vw,90px);max-width:760px}
+.band h2{font-size:clamp(2.4rem,5.4vw,4.6rem);margin:18px 0 22px}
+.band h2 em{color:var(--coral)}
+.band .eyebrow{color:var(--sky)}
+.band p{color:rgba(255,255,255,.85);margin-bottom:34px;font-size:1.1rem;max-width:48ch}
+.band .btn-ghost{border-color:#fff;color:#fff}
+.band .btn-ghost:hover{background:#fff;color:var(--ink)}
+
+/* contact */
+.contact-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:22px}
+.cbox{background:#fff;border-radius:var(--r);padding:clamp(30px,4vw,50px);border:1px solid var(--line)}
+.cbox h2{font-size:clamp(2rem,4vw,3.2rem);margin:18px 0 30px}
+.crow{display:flex;gap:18px;padding:22px 0;border-top:1px solid var(--line);align-items:flex-start}
+.crow i{flex:none;width:48px;height:48px;border-radius:50%;background:var(--sky);color:var(--blue);display:grid;place-items:center}
+.crow i svg{width:22px;height:22px}
+.crow small{display:block;font-size:.74rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);font-weight:600}
+.crow b,.crow a.big{font-size:1.15rem;font-weight:600;display:block}
+.crow a.big{font-family:var(--serif);font-size:1.7rem}
+.mapcard{border-radius:var(--r);background:var(--blue);color:#fff;padding:clamp(30px,4vw,50px);display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden;min-height:420px}
+.mapcard svg.grid{position:absolute;inset:0;width:100%;height:100%;opacity:.22}
+.mapcard .pin{position:relative;width:74px;height:74px;border-radius:50% 50% 50% 0;transform:rotate(-45deg);background:var(--coral);display:grid;place-items:center;box-shadow:0 0 0 14px rgba(255,122,89,.25)}
+.mapcard .pin::after{content:"";width:22px;height:22px;border-radius:50%;background:var(--ink)}
+.mapcard h3{font-size:2rem;position:relative;margin:30px 0 10px}
+.mapcard p{position:relative;color:rgba(255,255,255,.86);margin-bottom:28px}
+.mapcard .btn{position:relative;align-self:flex-start;background:#fff;color:var(--ink)}
+.mapcard .btn:hover{background:var(--sky);transform:translateY(-3px)}
+
+/* footer */
+footer{padding:80px 0 40px;margin-top:clamp(80px,10vw,130px);background:var(--sand)}
+.fgrid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px;padding-bottom:50px;border-bottom:1px solid var(--line)}
+.fgrid h4{font-size:.74rem;letter-spacing:.2em;text-transform:uppercase;margin-bottom:18px;color:var(--muted)}
+.fgrid ul{list-style:none;display:grid;gap:10px}
+.fgrid p{color:var(--muted);max-width:36ch;margin-top:16px;font-size:.95rem}
+.fbot{display:flex;justify-content:space-between;gap:20px;padding-top:28px;font-size:.86rem;color:var(--muted);flex-wrap:wrap}
+
+/* mobile bar */
+.mbar{display:none}
+
+/* reveal */
+.rv{opacity:0;transform:translateY(40px);transition:opacity 1s var(--ease),transform 1s var(--ease)}
+.rv.in{opacity:1;transform:none}
+.d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}
+.hero .hi{opacity:0;transform:translateY(30px);animation:up 1.1s var(--ease) forwards}
+.hero h1 .ln>span{transform:translateY(110%);animation:rise 1.2s var(--ease) forwards}
+.hero h1 .ln:nth-child(2)>span{animation-delay:.12s}
+.hero h1 .ln:nth-child(3)>span{animation-delay:.24s}
+.hero .h-e{animation-delay:.05s}.hero .h-l{animation-delay:.45s}.hero .h-c{animation-delay:.6s}.hero .h-t{animation-delay:.75s}
+.hero-art{opacity:0;transform:scale(.94);animation:pop 1.4s var(--ease) .3s forwards}
+@keyframes up{to{opacity:1;transform:none}}
+@keyframes rise{to{transform:none}}
+@keyframes pop{to{opacity:1;transform:none}}
+
+@media (max-width:1080px){
+  .nav,.hdr-phone{display:none}
+  .burger{display:block}
+  .why-grid{grid-template-columns:1fr 1fr}
+  .why:nth-child(2){border-right:0}
+  .why:nth-child(3){padding-left:0}
+  .why:nth-child(n+3){border-top:1px solid var(--line)}
+  .steps{grid-template-columns:1fr 1fr}
+}
+@media (max-width:900px){
+  .hero-grid,.about-grid,.faq-grid,.contact-grid{grid-template-columns:1fr}
+  .hero{padding-top:120px}
+  .hero-art{max-width:420px;margin-top:20px}
+  .card,.card.wide{grid-column:span 12}
+  .portrait{max-width:440px;margin-inline:auto;width:100%}
+  .fgrid{grid-template-columns:1fr 1fr}
+  .fgrid>div:first-child{grid-column:1/-1}
 }
 @media (max-width:640px){
-  body{font-size:16px}
-  .wrap{padding:0 18px}
-  .nav{height:66px}.brand{font-size:19px}
-  .phone,.nav-right .btn{display:none}
-  .hero{padding:44px 0 64px}
-  .lead-text{font-size:17.5px}
-  .hero-ctas .btn{flex:1;justify-content:center}
-  .ticks{display:none}
-  .services,.reviews,.visit,.trust .wrap{grid-template-columns:1fr}
-  section.block{padding:76px 0}
-  .quote-panel,.photo{aspect-ratio:auto;min-height:380px}.photo{aspect-ratio:4/3;min-height:0}
-  .quote-panel{padding:40px 30px 64px}.quote-panel p{font-size:23px}
-  .float{font-size:13px;padding:12px 14px}.float b{font-size:18px}
-  .float.two{display:none}
-  .cta-box{padding:52px 28px}
-  .point{grid-template-columns:44px 1fr;padding:24px}
-  .mobile-bar{display:flex;position:fixed;left:12px;right:12px;bottom:12px;z-index:30;gap:10px}
-  .mobile-bar .btn{flex:1;justify-content:center;box-shadow:0 14px 30px -14px color-mix(in srgb,var(--ink) 60%,transparent)}
-  .mobile-bar .btn.ghost{background:var(--surface)}
+  body{font-size:16px;padding-bottom:76px}
+  .wrap{width:calc(100% - 36px)}
+  .hdr{inset:10px 0 auto}
+  .hdr .btn{display:none}
+  .brand img{height:34px}
+  .brand span{font-size:.98rem}
+  .hero h1{font-size:clamp(2.5rem,11.5vw,3.4rem)}
+  .ctas .btn{flex:1 1 100%}
+  .trust{grid-template-columns:1fr;gap:16px}
+  .trust div,.trust div+div{padding:0;border:0;display:flex;align-items:baseline;gap:14px}
+  .trust b{min-width:92px}
+  .trust span{margin:0}
+  .orbit{width:112px;height:112px;left:-6px;bottom:6%}
+  .orbit .tooth{width:32px;height:32px}
+  .tag{right:-4px;top:6%;padding:10px 14px;max-width:200px}
+  .blob.a{right:-6%}.blob.b{left:-6%}
+  .card{padding:30px 24px}
+  .cred{right:0;bottom:16px;max-width:200px;padding:18px}
+  .why-grid{grid-template-columns:1fr}
+  .why,.why+.why{padding:32px 0;border-right:0;border-top:1px solid var(--line)}
+  .why:first-child{border-top:0}
+  .steps{grid-template-columns:1fr}
+  .steps-sec{border-radius:32px 32px 0 0}
+  summary{font-size:1.12rem}
+  details p{padding-right:0}
+  .band{border-radius:28px;min-height:0}
+  .band .ctas .btn{flex:1 1 100%}
+  .crow a.big{font-size:1.4rem}
+  .fgrid{grid-template-columns:1fr}
+  .mbar{display:grid;grid-template-columns:1fr 1fr;gap:10px;position:fixed;left:10px;right:10px;bottom:10px;z-index:45;padding:8px;border-radius:999px;background:rgba(16,24,40,.92);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);box-shadow:0 14px 40px -12px rgba(16,24,40,.6)}
+  .mbar .btn{padding:13px 10px;font-size:.92rem}
+  .mbar .btn-ghost{border-color:rgba(255,255,255,.4);color:#fff}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+  .rv,.hero .hi,.hero-art{opacity:1;transform:none}
+  .hero h1 .ln>span{transform:none}
 }
 </style>
 </head>
 <body>
-<div class="concept">Website concept prepared for <b>Northwest Dental Associates</b> &middot; not a live site</div>
 
-<header>
-  <div class="wrap nav">
-    <a href="#top" class="brand">Northwest Dental Associates</a>
-    <nav class="links">
-      <a href="#services">Services</a><a href="#why">Why us</a><a href="#visit">Visit</a>
+<header class="hdr" id="top">
+  <div class="wrap bar">
+    <a href="#top" class="brand" aria-label="Northwest Dental Associates home">
+      <img src="img/logo.png" alt="Northwest Dental Associates logo">
+      <span>Northwest Dental<small>Associates · Cedar Park</small></span>
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <a class="ulink" href="#services">Services</a>
+      <a class="ulink" href="#about">Dr. Pham</a>
+      <a class="ulink" href="#why">Our Approach</a>
+      <a class="ulink" href="#faq">FAQ</a>
+      <a class="ulink" href="#contact">Visit</a>
     </nav>
-    <div class="nav-right">
-      <a class="phone" href="tel:5122197484">(512) 219-7484</a>
-      <a class="btn" href="#visit">Book now</a>
+    <div class="hdr-cta">
+      <a class="hdr-phone ulink" href="tel:+15122197484">(512) 219-7484</a>
+      <a class="btn btn-primary" href="#contact">Book a Visit</a>
+      <button class="burger" aria-label="Open menu" aria-expanded="false"><i></i><i></i></button>
     </div>
   </div>
 </header>
 
-<main id="top">
+<div class="mmenu" aria-hidden="true">
+  <a href="#services">Services</a>
+  <a href="#about">Dr. Pham</a>
+  <a href="#why">Our Approach</a>
+  <a href="#faq">FAQ</a>
+  <a href="#contact">Visit Us</a>
+  <a class="btn btn-primary" href="tel:+15122197484">Call (512) 219-7484</a>
+</div>
+
+<main>
 <section class="hero">
   <div class="wrap hero-grid">
-    <div class="copy">
-      <div class="eyebrow">
-        <span class="dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-7-4.4-7-10a4 4 0 017-2.6A4 4 0 0119 10c0 5.6-7 10-7 10z"/></svg></span>Family &amp; cosmetic dentistry
-      </div>
-      <h1>Dentistry that feels as good as <em>it looks.</em></h1>
-      <p class="lead-text">Gentle, modern care for the whole family, with same-week appointments and a team that actually takes time to listen.</p>
-      <div class="hero-ctas">
-        <a class="btn" href="#visit">Book your visit <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-        <a class="btn ghost" href="tel:5122197484">Call (512) 219-7484</a>
-      </div>
-      <div class="ticks">
-        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7"/></svg>Most insurance accepted</span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7"/></svg>New patients welcome</span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7"/></svg>Flexible payment plans</span>
-      </div>
-    </div>
-    <div class="visual">
-      
-      <div class="quote-panel"><div class="quote-mark">“</div><div><p>Gentle, modern care for the whole family, with same-week appointments and a team that actually takes time to listen.</p><div class="who">Northwest Dental Associates</div></div></div>
-      
-      
-      <div class="float two"><span class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><span><b>This week</b>New patients welcome</span></div>
-    </div>
-  </div>
-  <template id="qp"><div class="quote-panel"><div class="quote-mark">“</div><div><p>Gentle, modern care for the whole family, with same-week appointments and a team that actually takes time to listen.</p><div class="who">Northwest Dental Associates</div></div></div></template>
-</section>
-
-<div class="trust"><div class="wrap">
-  <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.2-8 9-4.6-.8-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg>Most insurance accepted</div><div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.2-8 9-4.6-.8-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg>New patients welcome</div><div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.2-8 9-4.6-.8-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg>Flexible payment plans</div><div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.2-8 9-4.6-.8-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg>Evening appointments</div>
-</div></div>
-
-<section class="block" id="services">
-  <div class="wrap">
-    <div class="section-head">
-      <div><div class="kicker">What we do</div><h2>Everything you need,<br>under one roof.</h2></div>
-      <p>From routine visits to the work that changes how you feel about your day, Northwest Dental Associates takes care of it properly.</p>
-    </div>
-    <div class="services">
-      
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3c-2.5 0-4 2-4 4.5 0 3 1.5 4.5 2 7.5.4 2.4.8 6 2.5 6 1.6 0 1.6-4.5 4.5-4.5s2.9 4.5 4.5 4.5c1.7 0 2.1-3.6 2.5-6 .5-3 2-4.5 2-7.5C21 5 19.5 3 17 3c-2 0-3 1-5 1S9 3 7 3z"/></svg></div><h3>Checkups &amp; cleanings</h3><p>Thorough, comfortable exams that keep small problems from becoming big ones.</p></div>
-      
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/><path d="M19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8z"/></svg></div><h3>Teeth whitening</h3><p>Professional whitening that brightens your smile safely in a single visit.</p></div>
-      
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 14s1.5 2.5 4 2.5 4-2.5 4-2.5"/><path d="M9 9.5h.01M15 9.5h.01"/></svg></div><h3>Invisalign &amp; aligners</h3><p>Straighten your teeth discreetly with clear aligners planned around your life.</p></div>
-      
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.2-8 9-4.6-.8-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg></div><h3>Dental implants</h3><p>Permanent, natural-looking replacements that feel and work like your own teeth.</p></div>
-      
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-7-4.4-7-10a4 4 0 017-2.6A4 4 0 0119 10c0 5.6-7 10-7 10z"/></svg></div><h3>Kids&#39; dentistry</h3><p>A calm, friendly first experience that helps children love their checkups.</p></div>
-      
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div><h3>Emergency care</h3><p>Same-day help for toothaches, chips and broken teeth when you need it most.</p></div>
-      
-    </div>
-  </div>
-</section>
-
-<section class="block why" id="why">
-  <div class="wrap why-grid">
     <div>
-      <div class="kicker">Why patients choose us</div>
-      <h2>The Austin dentist people recommend to their friends.</h2>
-      <p class="intro">it still comes down to the same three things.</p>
+      <span class="eyebrow hi h-e">Family &amp; Cosmetic Dentistry · Cedar Park, TX</span>
+      <h1>
+        <span class="ln"><span>A smile that</span></span>
+        <span class="ln"><span>feels like <em>you,</em></span></span>
+        <span class="ln"><span>only brighter.</span></span>
+      </h1>
+      <p class="lead hi h-l">From routine checkups to complete smile makeovers, Dr. Toai Pham and his hand-picked team deliver meticulous, comfortable dental care for your whole family, right here in Cedar Park.</p>
+      <div class="ctas hi h-c">
+        <a class="btn btn-primary" href="tel:+15122197484">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>
+          Call (512) 219-7484</a>
+        <a class="btn btn-ghost" href="#services">Explore Treatments</a>
+      </div>
+      <div class="trust hi h-t">
+        <div><b>26+ yrs</b><span>practicing dentistry in Cedar Park</span></div>
+        <div><b>UT Austin</b><span>&amp; UT Health Science Center San Antonio</span></div>
+        <div><b>All ages</b><span>family &amp; cosmetic care under one roof</span></div>
+      </div>
     </div>
-    <div class="points">
-      
-      <div class="point"><div class="num">01</div><div><h3>Comfort first</h3><p>Numbing that works, warm blankets, and no lectures. Anxious patients are welcome here.</p></div></div>
-      
-      <div class="point"><div class="num">02</div><div><h3>Modern technology</h3><p>Digital X-rays and 3D scans mean less radiation, fewer goopy impressions and faster results.</p></div></div>
-      
-      <div class="point"><div class="num">03</div><div><h3>Clear pricing</h3><p>We explain costs and insurance before treatment, so there are never any surprises.</p></div></div>
-      
+
+    <div class="hero-art">
+      <div class="blob a"></div><div class="blob b"></div>
+      <div class="arch"><img id="parallax" src="img/photo-1.jpg" alt="Northwest Dental Associates in Cedar Park" fetchpriority="high"></div>
+      <div class="tag"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-4.4-9.3-9A5.5 5.5 0 0 1 12 6a5.5 5.5 0 0 1 9.3 6c-2.3 4.6-9.3 9-9.3 9z"/></svg></i><div><b>Comfort-first care</b><span>Calm, friendly, unhurried</span></div></div>
+      <div class="orbit" aria-hidden="true">
+        <svg class="ring" viewBox="0 0 150 150"><defs><path id="c" d="M75,75 m-56,0 a56,56 0 1,1 112,0 a56,56 0 1,1 -112,0"/></defs><text font-family="DM Sans" font-size="11.5" letter-spacing="3.2" fill="#fff"><textPath href="#c">CEDAR PARK · FAMILY · COSMETIC · DENTISTRY ·</textPath></text></svg>
+        <svg class="tooth" viewBox="0 0 24 24" fill="currentColor"><path d="M7.5 2C4.5 2 3 4.3 3 7c0 2 .7 3.3 1.3 4.6.6 1.4.9 3 1.2 5.2.3 2.4.8 5.2 2.2 5.2 1.6 0 1.6-3.5 2.4-5.3.4-.9 1-1.2 1.9-1.2s1.5.3 1.9 1.2c.8 1.8.8 5.3 2.4 5.3 1.4 0 1.9-2.8 2.2-5.2.3-2.2.6-3.8 1.2-5.2C20.3 10.3 21 9 21 7c0-2.7-1.5-5-4.5-5-1.9 0-2.9 1-4.5 1S9.4 2 7.5 2z"/></svg>
+      </div>
     </div>
   </div>
 </section>
 
+<div class="marquee" aria-hidden="true">
+  <div class="track">
+    <span>Routine Checkups</span><span>Smile Makeovers</span><span>Family Dentistry</span><span>Cosmetic Dentistry</span><span>Preventive Education</span><span>Comfort-First Visits</span>
+    <span>Routine Checkups</span><span>Smile Makeovers</span><span>Family Dentistry</span><span>Cosmetic Dentistry</span><span>Preventive Education</span><span>Comfort-First Visits</span>
+  </div>
+</div>
 
-
-<section class="cta-band" id="book">
-  <div class="wrap"><div class="cta-box">
-    <div><h2>Ready when you are.</h2><p>Book your visit in under a minute, or give us a call and talk to a real person.</p></div>
-    <div class="actions">
-      <a class="btn" href="#visit">Book your visit</a>
-      <a class="btn ghost" href="tel:5122197484">Call (512) 219-7484</a>
+<section class="pad" id="services">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="rv"><span class="eyebrow">Our Treatments</span><h2>Care for every <em>smile</em> in your family.</h2></div>
+      <p class="lead rv d1">A wide variety of procedures, each tailored to your unique needs, so whether you're due for a cleaning or dreaming of a transformation, you're in the right chair.</p>
     </div>
-  </div></div>
+    <div class="cards">
+      <article class="card wide rv">
+        <span class="num">01</span>
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3l1.8 4.6L18.5 9l-4.7 1.4L12 15l-1.8-4.6L5.5 9l4.7-1.4z"/><path d="M19 15l.8 2 2 .8-2 .8-.8 2-.8-2-2-.8 2-.8z"/></svg></div>
+        <h3>Cosmetic Dentistry &amp; Smile Makeovers</h3>
+        <p>Dr. Pham creates results that change how you look and feel. Using the latest techniques in dentistry, he designs smiles that are as healthy as they are beautiful, planned with you every step of the way.</p>
+        <a class="ulink" href="#contact">Plan your smile →</a>
+      </article>
+      <article class="card sand rv d1">
+        <span class="num">02</span>
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="9" cy="7" r="3"/><circle cx="17" cy="9" r="2.4"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6M14.5 20c0-2.5 1.1-4.5 3-4.5S21 17.5 21 20"/></svg></div>
+        <h3>Family Dentistry</h3>
+        <p>One trusted Cedar Park practice for every generation, with a friendly team that makes visits comfortable and affordable.</p>
+        <a class="ulink" href="#contact">Book for the family →</a>
+      </article>
+      <article class="card rv">
+        <span class="num">03</span>
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 11l2 2 4-4"/><path d="M12 3l8 3v6c0 4.5-3.4 8.3-8 9-4.6-.7-8-4.5-8-9V6z"/></svg></div>
+        <h3>Routine Checkups</h3>
+        <p>Thorough general dental care that keeps your mouth healthy and catches small issues before they become big ones.</p>
+        <a class="ulink" href="#contact">Schedule a checkup →</a>
+      </article>
+      <article class="card rv d1">
+        <span class="num">04</span>
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2 8l10-5 10 5-10 5z"/><path d="M6 10v5c0 1.7 2.7 3 6 3s6-1.3 6-3v-5"/></svg></div>
+        <h3>Preventive Education</h3>
+        <p>Dr. Pham believes strongly in prevention, keeping you fully informed so you can stop oral health problems before they start.</p>
+        <a class="ulink" href="#faq">Learn more →</a>
+      </article>
+      <article class="card rv d2">
+        <span class="num">05</span>
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 6h16M4 12h10M4 18h7"/><circle cx="18" cy="16" r="3"/></svg></div>
+        <h3>Personal Treatment Plans</h3>
+        <p>We walk you through all your options, what we recommend and why, to build a plan that's right for you.</p>
+        <a class="ulink" href="#contact">Talk to us →</a>
+      </article>
+    </div>
+  </div>
 </section>
 
-<section class="block" id="visit" style="padding-top:0">
+<section class="pad about" id="about">
+  <div class="wrap about-grid">
+    <div class="portrait rv">
+      <div class="frame"><img src="img/photo-1.jpg" alt="Inside Northwest Dental Associates" loading="lazy"></div>
+      <div class="cred"><b>26+</b><span>years of practicing dentistry in Cedar Park</span></div>
+    </div>
+    <div>
+      <span class="eyebrow rv">Meet Your Dentist</span>
+      <h2 class="rv d1">Dr. Toai Pham, <em>DDS</em></h2>
+      <p class="rv d1">Dr. Pham is committed to excellence in dentistry, pairing the latest techniques with genuine care to give you a beautiful, healthy smile. He makes sure every patient leaves fully informed about their dental health.</p>
+      <p class="rv d2">Raised in the Houston area and a Texan for most of his life, he's also a dad of two who coaches his kids' soccer teams each year. That same patient, encouraging spirit shows up in every appointment.</p>
+      <ul class="facts">
+        <li class="rv"><i>BA</i><div><b>The University of Texas at Austin</b><span>Bachelor of Arts degree</span></div></li>
+        <li class="rv d1"><i>DDS</i><div><b>UT Health Science Center, San Antonio</b><span>Doctorate of Dental Surgery</span></div></li>
+      </ul>
+      <div class="team rv d2">
+        <small>Our Team</small>
+        <b>Patty, Registered Dental Assistant</b>
+        <p>Trained at Texas State Technical College in Waco and part of the Northwest Dental family since May 2002. Every member of our team is hand-picked to make your visit warm and welcoming.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="giant" aria-hidden="true">
+  <p class="rv">Gentle <span class="o">care,</span></p>
+  <p class="rv d1 row2"><span class="o">brilliant</span> <em>smiles.</em></p>
+</div>
+
+<section class="pad" id="why">
   <div class="wrap">
-    <div class="kicker">Visit us</div><h2>Come say hello.</h2>
-    <div class="visit">
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11l8-7 8 7v9a1 1 0 01-1 1h-4v-6H9v6H5a1 1 0 01-1-1z"/></svg></div><h3>Address</h3><p>11066 Pecan Park Boulevard, Cedar Park, TX 78613</p></div>
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div><h3>Phone</h3><p><a href="tel:5122197484">(512) 219-7484</a></p><p style="margin-top:10px">Call or message us for today's opening hours.</p></div>
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-7-4.4-7-10a4 4 0 017-2.6A4 4 0 0119 10c0 5.6-7 10-7 10z"/></svg></div><h3>New patients welcome</h3><p>Book your visit online or by phone and we'll take care of the rest.</p></div>
+    <div class="sec-head">
+      <div class="rv"><span class="eyebrow">Why Northwest</span><h2>Four promises we keep, <em>every visit.</em></h2></div>
+      <p class="lead rv d1">The first thing you'll notice when you walk in is the incredibly friendly, inviting atmosphere. Here's what sits behind it.</p>
+    </div>
+    <div class="why-grid">
+      <div class="why rv"><span class="k">i.</span><h3>Results</h3><p>Years of education and experience, combined with real attention to detail, so every treatment is delivered at the highest level.</p></div>
+      <div class="why rv d1"><span class="k">ii.</span><h3>Comfort</h3><p>Nervous about the dentist? You're not alone. We've built an office that's calm, caring and genuinely enjoyable to visit.</p></div>
+      <div class="why rv d2"><span class="k">iii.</span><h3>Trust</h3><p>An open dialogue, always. We explain what we're doing and why, and lay out every option before we begin.</p></div>
+      <div class="why rv d3"><span class="k">iv.</span><h3>Current Care</h3><p>Our dentists and hygienists keep learning through lectures, conferences and industry literature, so your options stay up to date.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="pad steps-sec">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="rv"><span class="eyebrow">How It Works</span><h2>Your path to a <em>healthier smile.</em></h2></div>
+      <p class="lead rv d1">Simple, personal and never rushed, from your first call to your final polish.</p>
+    </div>
+    <div class="steps">
+      <div class="step rv"><h3>Call us</h3><p>Ring <a class="ulink" href="tel:+15122197484">(512) 219-7484</a> with any question or to schedule your appointment.</p></div>
+      <div class="step rv d1"><h3>Get to know us</h3><p>Meet Dr. Pham and our friendly team in a relaxed, welcoming setting.</p></div>
+      <div class="step rv d2"><h3>Explore your options</h3><p>We explain what we see and every option available, so the plan fits your needs.</p></div>
+      <div class="step rv d3"><h3>Smile with confidence</h3><p>Precise, comfortable treatment, plus the know-how to keep your smile healthy.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="pad" id="faq">
+  <div class="wrap faq-grid">
+    <div>
+      <span class="eyebrow rv">Good to Know</span>
+      <h2 class="rv d1">Questions, <em>answered.</em></h2>
+      <p class="lead rv d2">Don't see yours? Our team is always happy to help, just give us a call.</p>
+      <a class="btn btn-primary rv d2" style="margin-top:28px" href="tel:+15122197484">Call (512) 219-7484</a>
+    </div>
+    <div class="rv d1">
+      <details open><summary>Do you treat the whole family?<span class="pm"></span></summary><p>Yes. Northwest Dental Associates is a Cedar Park family dentist, offering routine checkups and general dental care for patients of all ages, alongside cosmetic dentistry.</p></details>
+      <details><summary>Can you help me change how my smile looks?<span class="pm"></span></summary><p>Absolutely. Dr. Pham offers cosmetic procedures, including smile makeovers, using the latest techniques. We'll talk through your goals and options together before any work begins.</p></details>
+      <details><summary>I get anxious at the dentist. What can I expect?<span class="pm"></span></summary><p>Many patients feel the same. Our goal is an office with an atmosphere of comfort and care, and our team is committed to helping you feel at ease throughout your visit.</p></details>
+      <details><summary>Who will be treating me?<span class="pm"></span></summary><p>Dr. Toai Pham, DDS, who earned his BA at The University of Texas at Austin and his Doctorate of Dental Surgery at UT Health Science Center in San Antonio. He has practiced dentistry in Cedar Park for over 26 years.</p></details>
+      <details><summary>What are your hours?<span class="pm"></span></summary><p>Please call us at (512) 219-7484 for current office hours and appointment availability.</p></details>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="band rv">
+      <img src="img/photo-1.jpg" alt="" loading="lazy">
+      <div class="in">
+        <span class="eyebrow">Your Next Chapter</span>
+        <h2>The first step to a beautiful smile is a dentist you <em>trust.</em></h2>
+        <p>Choose a Cedar Park practice that puts your comfort, your questions and your results first. We'd love to meet you.</p>
+        <div class="ctas">
+          <a class="btn btn-coral" href="tel:+15122197484">Call (512) 219-7484</a>
+          <a class="btn btn-ghost" href="#contact">Plan Your Visit</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="pad" id="contact">
+  <div class="wrap contact-grid">
+    <div class="cbox rv">
+      <span class="eyebrow">Visit Us</span>
+      <h2>We're right here in <em>Cedar Park.</em></h2>
+      <div class="crow"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg></i><div><small>Phone</small><a class="big ulink" href="tel:+15122197484">(512) 219-7484</a></div></div>
+      <div class="crow"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s7-6.2 7-12a7 7 0 0 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg></i><div><small>Address</small><b>11066 Pecan Park Blvd, Suite 411<br>Cedar Park, TX 78613</b></div></div>
+      <div class="crow"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></i><div><small>Hours</small><b>Please call for current hours</b></div></div>
+    </div>
+    <div class="mapcard rv d1">
+      <svg class="grid" viewBox="0 0 400 400" preserveAspectRatio="none" aria-hidden="true"><g fill="none" stroke="#c3e6ff" stroke-width="1.2"><path d="M0 80 Q200 40 400 120M0 200 Q180 260 400 210M0 320 Q220 290 400 340M90 0 Q60 200 120 400M250 0 Q300 180 230 400M340 0 L380 400"/></g><g fill="none" stroke="#fff" stroke-width="5" opacity=".7"><path d="M0 150 Q200 120 400 170"/><path d="M170 0 Q200 200 160 400"/></g></svg>
+      <div class="pin" aria-hidden="true"></div>
+      <div>
+        <h3>Find us on Pecan Park Blvd</h3>
+        <p>11066 Pecan Park Blvd, Suite 411, Cedar Park, TX 78613</p>
+        <a class="btn" href="https://maps.google.com/?q=11066+Pecan+Park+Boulevard+Cedar+Park+TX+78613" target="_blank" rel="noopener">Get Directions →</a>
+      </div>
     </div>
   </div>
 </section>
 </main>
 
-<footer><div class="wrap">
-  <span>© 2026 Northwest Dental Associates</span>
-  <span>Concept design. Not affiliated with or endorsed by Northwest Dental Associates.</span>
-</div></footer>
+<footer>
+  <div class="wrap">
+    <div class="fgrid">
+      <div>
+        <a href="#top" class="brand"><img src="img/logo.png" alt="Northwest Dental Associates logo"><span>Northwest Dental<small>Associates · Cedar Park</small></span></a>
+        <p>Family and cosmetic dentistry with Dr. Toai Pham, DDS: thoughtful, comfortable care for every smile in Cedar Park.</p>
+      </div>
+      <div><h4>Explore</h4><ul><li><a class="ulink" href="#services">Services</a></li><li><a class="ulink" href="#about">Dr. Pham</a></li><li><a class="ulink" href="#why">Our Approach</a></li><li><a class="ulink" href="#faq">FAQ</a></li></ul></div>
+      <div><h4>Contact</h4><ul><li><a class="ulink" href="tel:+15122197484">(512) 219-7484</a></li><li>11066 Pecan Park Blvd, Suite 411</li><li>Cedar Park, TX 78613</li><li><a class="ulink" href="https://maps.google.com/?q=11066+Pecan+Park+Boulevard+Cedar+Park+TX+78613" target="_blank" rel="noopener">Directions</a></li></ul></div>
+    </div>
+    <div class="fbot"><span>© <span id="yr"></span> Northwest Dental Associates. All rights reserved.</span><a class="ulink" href="#top">Back to top ↑</a></div>
+  </div>
+</footer>
 
-<div class="mobile-bar">
-  <a class="btn ghost" href="tel:5122197484">Call</a>
-  <a class="btn" href="#visit">Book now</a>
+<div class="mbar">
+  <a class="btn btn-coral" href="tel:+15122197484">Call Now</a>
+  <a class="btn btn-ghost" href="#contact">Visit Us</a>
 </div>
-</body>
+
+<script>
+(function(){
+  var d=document,b=d.body;
+  d.getElementById('yr').textContent=new Date().getFullYear();
+  var burger=d.querySelector('.burger'),mm=d.querySelector('.mmenu');
+  function setMenu(open){b.classList.toggle('menu-open',open);burger.setAttribute('aria-expanded',open);mm.setAttribute('aria-hidden',!open);b.style.overflow=open?'hidden':''}
+  burger.addEventListener('click',function(){setMenu(!b.classList.contains('menu-open'))});
+  mm.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){setMenu(false)})});
+
+  var els=d.querySelectorAll('.rv');
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(en){en.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12,rootMargin:'0px 0px -40px 0px'});
+    els.forEach(function(el){io.observe(el)});
+  }else{els.forEach(function(el){el.classList.add('in')})}
+
+  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var img=d.getElementById('parallax');
+  if(!reduce&&img){
+    var tick=false;
+    window.addEventListener('scroll',function(){
+      if(tick)return;tick=true;
+      requestAnimationFrame(function(){
+        var y=Math.min(window.scrollY,900);
+        img.style.transform='translate3d(0,'+(-y*.08)+'px,0)';
+        tick=false;
+      });
+    },{passive:true});
+  }
+})();
+</script>
+<div id="lm-concept" style="position:fixed;left:12px;bottom:12px;z-index:2147483647;font:500 11px/1.3 -apple-system,BlinkMacSystemFont,Segoe UI,sans-serif;letter-spacing:.02em;background:rgba(15,15,18,.82);color:#f4f1ea;padding:7px 11px;border-radius:999px;backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);pointer-events:none;max-width:70vw">Website concept for Northwest Dental Associates by webstudio &middot; not the live site</div><p style="margin:0;padding:18px 16px 70px;text-align:center;font:12px/1.5 -apple-system,sans-serif;color:#8a8a8a;background:#0e0e10">Concept design by webstudio. Not affiliated with or endorsed by Northwest Dental Associates.</p></body>
 </html>

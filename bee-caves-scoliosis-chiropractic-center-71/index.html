@@ -1,291 +1,643 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src * data: blob:; media-src 'self' data:; style-src 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com data:; script-src 'unsafe-inline'; connect-src 'none'; frame-src 'none'; form-action 'none'; base-uri 'none'; object-src 'none'">
 <meta name="robots" content="noindex, nofollow">
-<title>Bee Caves Scoliosis &amp; Chiropractic Center | Website concept</title>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bee Caves Scoliosis &amp; Chiropractic Center | Austin, TX</title>
+<meta name="description" content="Bee Caves Scoliosis & Chiropractic Center: focused scoliosis and chiropractic care in Austin, TX. 248 Addie Roy Rd, Bldg C, Suite 102. Call (512) 327-5311.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{
-  --bg:#f5f3ee;--surface:#ffffff;--ink:#1c2a22;--muted:#5f6b63;
-  --accent:#2f5a43;--accent-ink:#ffffff;--gold:#b8955a;--soft:#e6ece6;
-  --radius:22px;--max:1180px;
-  --serif:"Fraunces",Georgia,serif;--sans:"Manrope",system-ui,-apple-system,sans-serif;
+  --ink:#0f1a1c;
+  --ink-2:#16262a;
+  --ink-3:#1f3337;
+  --bone:#f6f1e8;
+  --bone-2:#ece4d6;
+  --sand:#d9ccb4;
+  --gold:#c6a46a;
+  --gold-2:#e2c890;
+  --gold-d:#9a7a42;
+  --text:#22302f;
+  --muted:#5d6966;
+  --line:rgba(198,164,106,.28);
+  --serif:"Cormorant Garamond",Georgia,serif;
+  --sans:"Manrope",system-ui,-apple-system,sans-serif;
+  --ease:cubic-bezier(.22,1,.36,1);
+  --r:22px;
 }
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:var(--sans);color:var(--text);background:var(--bone);line-height:1.65;font-size:16.5px;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+@supports (overflow:clip){body{overflow-x:clip}}
+img,svg{display:block;max-width:100%}
 a{color:inherit;text-decoration:none}
-img{max-width:100%;display:block}
-.wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
-.concept{background:var(--ink);color:var(--bg);font-size:13px;text-align:center;padding:8px 16px;letter-spacing:.02em}
-.concept b{color:var(--gold);font-weight:600}
+::selection{background:var(--gold);color:var(--ink)}
+.wrap{width:min(1200px,100% - 48px);margin-inline:auto}
+.eyebrow{font-size:.74rem;letter-spacing:.28em;text-transform:uppercase;font-weight:600;color:var(--gold-d);display:inline-flex;align-items:center;gap:14px}
+.eyebrow::before{content:"";width:34px;height:1px;background:currentColor}
+.dark .eyebrow{color:var(--gold)}
+h1,h2,h3{font-family:var(--serif);font-weight:500;line-height:1.04;letter-spacing:-.01em;color:var(--ink)}
+h2{font-size:clamp(2.4rem,5.2vw,4.3rem)}
+h2 em,h1 em{font-style:italic;color:var(--gold-d)}
+.dark h2,.dark h3{color:var(--bone)}
+.dark h2 em{color:var(--gold-2)}
+.lead{font-size:1.1rem;color:var(--muted);max-width:56ch}
+.dark .lead{color:rgba(246,241,232,.72)}
+
+/* buttons */
+.btn{--bg:var(--gold);--fg:var(--ink);position:relative;display:inline-flex;align-items:center;justify-content:center;gap:12px;padding:17px 30px;border-radius:999px;background:var(--bg);color:var(--fg);font-weight:600;font-size:.93rem;letter-spacing:.04em;overflow:hidden;isolation:isolate;transition:transform .5s var(--ease),box-shadow .5s var(--ease);text-align:center;max-width:100%}
+.btn::after{content:"";position:absolute;inset:0;background:linear-gradient(110deg,transparent 30%,rgba(255,255,255,.45) 50%,transparent 70%);transform:translateX(-120%);transition:transform .9s var(--ease);z-index:-1}
+.btn:hover{transform:translateY(-3px);box-shadow:0 18px 40px -16px rgba(198,164,106,.7)}
+.btn:hover::after{transform:translateX(120%)}
+.btn svg{width:18px;height:18px;flex:none}
+.btn-ghost{--bg:transparent;--fg:var(--bone);border:1px solid rgba(246,241,232,.35)}
+.btn-ghost:hover{border-color:var(--gold);box-shadow:none;color:var(--gold-2)}
+.btn-dark{--bg:var(--ink);--fg:var(--bone)}
+.btn-dark:hover{box-shadow:0 18px 40px -16px rgba(15,26,28,.6)}
+.ulink{position:relative;display:inline-block}
+.ulink::after{content:"";position:absolute;left:0;bottom:-3px;height:1px;width:100%;background:currentColor;transform:scaleX(0);transform-origin:right;transition:transform .5s var(--ease)}
+.ulink:hover::after{transform:scaleX(1);transform-origin:left}
 
 /* header */
-header{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:saturate(1.4) blur(10px);border-bottom:1px solid color-mix(in srgb,var(--ink) 8%,transparent)}
-.nav{display:flex;align-items:center;justify-content:space-between;height:76px;gap:24px}
-.brand{font-family:var(--serif);font-size:23px;font-weight:600;letter-spacing:-.01em;line-height:1.1;max-width:340px}
-.links{display:flex;gap:30px;font-size:15px;font-weight:500;color:var(--muted)}
-.links a:hover{color:var(--ink)}
-.nav-right{display:flex;align-items:center;gap:18px}
-.phone{font-weight:600;font-size:15px;white-space:nowrap}
-.btn{display:inline-flex;align-items:center;gap:10px;background:var(--accent);color:var(--accent-ink);padding:14px 26px;border-radius:999px;font-weight:600;font-size:15.5px;transition:transform .2s ease,box-shadow .2s ease;white-space:nowrap}
-.btn:hover{transform:translateY(-2px);box-shadow:0 12px 28px -12px var(--accent)}
-.btn.ghost{background:transparent;color:var(--ink);border:1.5px solid color-mix(in srgb,var(--ink) 20%,transparent)}
-.btn.ghost:hover{box-shadow:none;border-color:var(--ink)}
-.btn svg{width:18px;height:18px}
+.hdr{position:fixed;inset:14px 0 auto;z-index:50;transition:inset .5s var(--ease)}
+.hdr .bar{width:min(1240px,100% - 28px);margin-inline:auto;display:flex;align-items:center;justify-content:space-between;gap:20px;padding:12px 14px 12px 22px;border-radius:999px;background:rgba(15,26,28,.42);border:1px solid rgba(246,241,232,.1);backdrop-filter:blur(18px) saturate(140%);-webkit-backdrop-filter:blur(18px) saturate(140%);transition:background .5s,box-shadow .5s}
+.hdr.scrolled .bar{background:rgba(15,26,28,.82);box-shadow:0 20px 50px -25px rgba(0,0,0,.6)}
+.logo{display:flex;align-items:center;gap:12px;color:var(--bone);min-width:0}
+.logo svg{width:38px;height:38px;flex:none}
+.logo b{display:block;font-family:var(--serif);font-weight:600;font-size:1.32rem;line-height:1;letter-spacing:.01em}
+.logo small{display:block;font-size:.6rem;letter-spacing:.24em;text-transform:uppercase;color:var(--gold-2);margin-top:4px;white-space:nowrap}
+.nav{display:flex;gap:30px;font-size:.88rem;color:rgba(246,241,232,.82)}
+.nav a:hover{color:var(--gold-2)}
+.hdr-r{display:flex;align-items:center;gap:18px}
+.hdr-phone{color:var(--bone);font-size:.9rem;font-weight:500;white-space:nowrap}
+.hdr .btn{padding:12px 22px;font-size:.84rem}
+.burger{display:none;width:46px;height:46px;border-radius:50%;border:1px solid rgba(246,241,232,.25);background:transparent;cursor:pointer;position:relative;flex:none}
+.burger span{position:absolute;left:14px;right:14px;height:1.5px;background:var(--bone);transition:transform .4s var(--ease),opacity .3s}
+.burger span:nth-child(1){top:18px}.burger span:nth-child(2){top:26px}
+.menu-open .burger span:nth-child(1){transform:translateY(4px) rotate(45deg)}
+.menu-open .burger span:nth-child(2){transform:translateY(-4px) rotate(-45deg)}
+.mmenu{position:fixed;inset:0;z-index:45;background:var(--ink);display:flex;flex-direction:column;justify-content:center;padding:100px 32px 120px;gap:8px;opacity:0;visibility:hidden;transition:opacity .5s var(--ease),visibility .5s}
+.mmenu a{font-family:var(--serif);font-size:2.4rem;color:var(--bone);transform:translateY(20px);opacity:0;transition:transform .6s var(--ease),opacity .6s}
+.mmenu a:hover{color:var(--gold-2)}
+.mmenu .mm-meta{margin-top:30px;font-size:.95rem;color:rgba(246,241,232,.7);font-family:var(--sans)}
+.menu-open .mmenu{opacity:1;visibility:visible}
+.menu-open .mmenu a{transform:none;opacity:1}
+.menu-open .mmenu a:nth-child(2){transition-delay:.05s}.menu-open .mmenu a:nth-child(3){transition-delay:.1s}.menu-open .mmenu a:nth-child(4){transition-delay:.15s}.menu-open .mmenu a:nth-child(5){transition-delay:.2s}
 
 /* hero */
-.hero{padding:72px 0 88px}
-.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:64px;align-items:center}
-.eyebrow{display:inline-flex;align-items:center;gap:10px;background:var(--surface);border:1px solid color-mix(in srgb,var(--ink) 10%,transparent);padding:8px 16px 8px 10px;border-radius:999px;font-size:14px;font-weight:600;color:var(--muted)}
-.stars{color:var(--gold);letter-spacing:1px;font-size:14px}
-.eyebrow .dot{width:26px;height:26px;border-radius:50%;background:var(--soft);display:grid;place-items:center;color:var(--accent)}
-h1{font-family:var(--serif);font-weight:500;font-size:clamp(44px,5.6vw,74px);line-height:1.02;letter-spacing:-.025em;margin:26px 0 22px}
-h1 em{font-style:italic;color:var(--accent)}
-.lead-text{font-size:19.5px;color:var(--muted);max-width:540px}
-.hero-ctas{display:flex;gap:14px;margin-top:36px;flex-wrap:wrap}
-.ticks{display:flex;gap:22px;margin-top:34px;flex-wrap:wrap;font-size:14.5px;font-weight:600;color:var(--muted)}
-.ticks span{display:flex;align-items:center;gap:8px}
-.ticks svg{width:18px;height:18px;color:var(--accent)}
-.visual{position:relative}
-.photo{aspect-ratio:4/5;border-radius:calc(var(--radius) + 10px);overflow:hidden;background:var(--soft);box-shadow:0 40px 80px -40px color-mix(in srgb,var(--ink) 55%,transparent)}
-.photo img{width:100%;height:100%;object-fit:cover}
-.quote-panel{aspect-ratio:4/5;border-radius:calc(var(--radius) + 10px);background:linear-gradient(155deg,var(--accent),color-mix(in srgb,var(--accent) 55%,var(--ink)));color:var(--accent-ink);padding:52px 46px;display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden;box-shadow:0 40px 80px -40px color-mix(in srgb,var(--ink) 60%,transparent)}
-.quote-panel:before{content:"";position:absolute;width:420px;height:420px;border-radius:50%;right:-160px;top:-160px;background:color-mix(in srgb,var(--accent-ink) 9%,transparent)}
-.quote-panel:after{content:"";position:absolute;width:260px;height:260px;border-radius:50%;left:-90px;bottom:-110px;border:1.5px solid color-mix(in srgb,var(--accent-ink) 22%,transparent)}
-.quote-mark{font-family:var(--serif);font-size:120px;line-height:.6;opacity:.35}
-.quote-panel p{font-family:var(--serif);font-size:28px;line-height:1.3;position:relative;z-index:1}
-.quote-panel .who{font-family:var(--sans);font-size:15px;opacity:.85;margin-top:22px;font-weight:600}
-.float{position:absolute;background:var(--surface);color:var(--ink);border-radius:18px;padding:16px 20px;box-shadow:0 24px 50px -24px color-mix(in srgb,var(--ink) 50%,transparent);display:flex;align-items:center;gap:14px;font-size:14px;line-height:1.35}
-.float b{font-size:22px;font-family:var(--serif);font-weight:600;display:block}
-.float.one{left:-34px;bottom:-28px}
-.float.two{right:-22px;top:44px}
-.float .badge{width:44px;height:44px;border-radius:14px;background:var(--soft);display:grid;place-items:center;color:var(--accent)}
-.float .badge svg{width:22px;height:22px}
+.hero{position:relative;min-height:100vh;min-height:100svh;background:radial-gradient(120% 90% at 78% 30%,#21393c 0%,var(--ink) 55%,#0a1214 100%);color:var(--bone);display:flex;align-items:center;overflow:hidden;padding:140px 0 110px}
+.hero::before{content:"";position:absolute;inset:0;background:radial-gradient(40% 40% at 72% 42%,rgba(198,164,106,.18),transparent 70%);pointer-events:none}
+.grain{position:absolute;inset:0;opacity:.07;pointer-events:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+.hero-grid{position:relative;display:grid;grid-template-columns:1.15fr .85fr;gap:40px;align-items:center}
+.hero h1{color:var(--bone);font-size:clamp(3rem,7.4vw,6.6rem);font-weight:400;line-height:.98;margin:26px 0 28px}
+.hero h1 em{color:var(--gold-2)}
+.hero h1 .ln{display:block;overflow:hidden;padding-bottom:.06em}
+.hero h1 .ln>span{display:inline-block;transform:translateY(105%);transition:transform 1.3s var(--ease)}
+.hero .sub{font-size:1.14rem;color:rgba(246,241,232,.74);max-width:48ch;margin-bottom:40px}
+.hero-ctas{display:flex;flex-wrap:wrap;gap:14px}
+.hero-meta{display:flex;flex-wrap:wrap;gap:12px 34px;margin-top:54px;padding-top:28px;border-top:1px solid rgba(246,241,232,.12);font-size:.86rem;color:rgba(246,241,232,.62)}
+.hero-meta span{display:flex;align-items:center;gap:10px}
+.hero-meta svg{width:16px;height:16px;color:var(--gold)}
+.hero .fx{opacity:0;transform:translateY(24px);transition:opacity 1.1s var(--ease),transform 1.1s var(--ease)}
+.loaded .hero h1 .ln>span{transform:none}
+.loaded .hero .fx{opacity:1;transform:none}
+.loaded .hero h1 .ln:nth-child(2)>span{transition-delay:.12s}
+.loaded .hero h1 .ln:nth-child(3)>span{transition-delay:.24s}
+.loaded .hero .fx.d1{transition-delay:.05s}.loaded .hero .fx.d2{transition-delay:.5s}.loaded .hero .fx.d3{transition-delay:.65s}.loaded .hero .fx.d4{transition-delay:.85s}.loaded .hero .fx.d5{transition-delay:.4s}
+.spine-wrap{position:relative;aspect-ratio:3/4.4;max-height:78vh;justify-self:center;width:100%;max-width:440px}
+.spine-wrap .ring{position:absolute;border:1px solid var(--line);border-radius:50%;inset:8% -6%;animation:spin 60s linear infinite}
+.spine-wrap .ring.r2{inset:22% 6%;border-style:dashed;animation-duration:90s;animation-direction:reverse;opacity:.6}
+.spine-wrap svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+#spinePath{stroke-dasharray:1400;stroke-dashoffset:1400;transition:stroke-dashoffset 2.6s var(--ease) .5s}
+.loaded #spinePath{stroke-dashoffset:0}
+.vert{opacity:0;transition:opacity .8s var(--ease),transform .8s var(--ease)}
+.loaded .vert{opacity:1}
+.scroll-cue{position:absolute;left:50%;bottom:30px;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:10px;font-size:.66rem;letter-spacing:.3em;text-transform:uppercase;color:rgba(246,241,232,.5)}
+.scroll-cue i{width:1px;height:46px;background:linear-gradient(var(--gold),transparent);animation:cue 2.4s var(--ease) infinite;transform-origin:top}
+@keyframes cue{0%{transform:scaleY(0)}50%{transform:scaleY(1)}100%{transform:scaleY(1);opacity:0}}
+@keyframes spin{to{transform:rotate(360deg)}}
 
-/* trust */
-.trust{border-top:1px solid color-mix(in srgb,var(--ink) 9%,transparent);border-bottom:1px solid color-mix(in srgb,var(--ink) 9%,transparent);background:var(--surface)}
-.trust .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;padding-top:26px;padding-bottom:26px}
-.trust div{display:flex;align-items:center;gap:12px;font-weight:600;font-size:15px}
-.trust svg{width:22px;height:22px;color:var(--accent);flex:none}
+/* marquee */
+.marquee{background:var(--gold);color:var(--ink);overflow:hidden;padding:20px 0;border-block:1px solid var(--gold-d)}
+.mq-track{display:flex;width:max-content;animation:mq 38s linear infinite}
+.mq-track span{display:flex;align-items:center;gap:34px;padding-right:34px;font-family:var(--serif);font-size:1.6rem;font-style:italic;white-space:nowrap}
+.mq-track span::after{content:"";width:8px;height:8px;border-radius:50%;background:var(--ink);opacity:.7}
+.marquee:hover .mq-track{animation-play-state:paused}
+@keyframes mq{to{transform:translateX(-50%)}}
 
 /* sections */
-section.block{padding:110px 0}
-.kicker{font-size:13px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
-h2{font-family:var(--serif);font-weight:500;font-size:clamp(34px,3.8vw,52px);line-height:1.08;letter-spacing:-.02em;margin:14px 0 18px}
-.section-head{display:flex;justify-content:space-between;align-items:end;gap:40px;margin-bottom:56px}
-.section-head p{color:var(--muted);max-width:420px}
-.services{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-.card{background:var(--surface);border-radius:var(--radius);padding:34px 32px 36px;border:1px solid color-mix(in srgb,var(--ink) 7%,transparent);transition:transform .25s ease,box-shadow .25s ease}
-.card:hover{transform:translateY(-4px);box-shadow:0 30px 60px -36px color-mix(in srgb,var(--ink) 45%,transparent)}
-.icon{width:54px;height:54px;border-radius:16px;background:var(--soft);color:var(--accent);display:grid;place-items:center;margin-bottom:24px}
-.icon svg{width:26px;height:26px}
-.card h3{font-family:var(--serif);font-weight:500;font-size:23px;margin-bottom:8px;letter-spacing:-.01em}
-.card p{color:var(--muted);font-size:16px}
+section{position:relative}
+.sec{padding:clamp(90px,12vw,150px) 0}
+.sec-head{display:grid;grid-template-columns:1fr 1fr;gap:30px 60px;align-items:end;margin-bottom:64px}
+.sec-head h2{margin-top:18px}
+.dark{background:var(--ink);color:var(--bone)}
 
-.why{background:var(--ink);color:var(--bg)}
-.why .kicker{color:var(--gold)}
-.why-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:80px;align-items:start}
-.why h2{color:var(--bg)}
-.why .intro{color:color-mix(in srgb,var(--bg) 70%,transparent);font-size:18px;max-width:440px}
-.points{display:grid;gap:14px}
-.point{display:grid;grid-template-columns:62px 1fr;gap:20px;padding:30px;border-radius:var(--radius);background:color-mix(in srgb,var(--bg) 6%,transparent);border:1px solid color-mix(in srgb,var(--bg) 10%,transparent)}
-.point .num{font-family:var(--serif);font-size:34px;color:var(--gold);line-height:1}
-.point h3{font-family:var(--serif);font-weight:500;font-size:24px;margin-bottom:6px}
-.point p{color:color-mix(in srgb,var(--bg) 72%,transparent);font-size:16px}
+/* services */
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.card{position:relative;background:#fffdf9;border:1px solid rgba(15,26,28,.08);border-radius:var(--r);padding:42px 34px 36px;overflow:hidden;transition:transform .6s var(--ease),box-shadow .6s var(--ease),border-color .6s;display:flex;flex-direction:column;min-width:0}
+.card::before{content:"";position:absolute;inset:auto -30% -60% auto;width:280px;height:280px;border-radius:50%;background:radial-gradient(circle,rgba(198,164,106,.22),transparent 70%);transition:transform .8s var(--ease)}
+.card:hover{transform:translateY(-8px);box-shadow:0 40px 70px -40px rgba(15,26,28,.4);border-color:var(--line)}
+.card:hover::before{transform:scale(1.4)}
+.card .num{font-family:var(--serif);font-size:.95rem;color:var(--gold-d);letter-spacing:.1em}
+.card .ico{width:62px;height:62px;border-radius:50%;display:grid;place-items:center;background:var(--ink);color:var(--gold-2);margin:26px 0 30px;transition:transform .6s var(--ease)}
+.card:hover .ico{transform:rotate(-8deg) scale(1.06)}
+.card .ico svg{width:28px;height:28px}
+.card h3{font-size:2rem;margin-bottom:14px}
+.card p{color:var(--muted);font-size:.98rem;flex:1}
+.card ul{list-style:none;margin-top:24px;padding-top:22px;border-top:1px solid rgba(15,26,28,.08);display:grid;gap:10px;font-size:.9rem;color:var(--text)}
+.card li{display:flex;gap:10px;align-items:flex-start}
+.card li::before{content:"";flex:none;width:6px;height:6px;border-radius:50%;background:var(--gold);margin-top:.6em}
+.card.feature{background:var(--ink);color:var(--bone);border-color:var(--ink)}
+.card.feature h3{color:var(--bone)}
+.card.feature p{color:rgba(246,241,232,.7)}
+.card.feature ul{border-color:rgba(246,241,232,.12);color:rgba(246,241,232,.86)}
+.card.feature .ico{background:var(--gold);color:var(--ink)}
+.card.feature .num{color:var(--gold-2)}
 
-.score{display:flex;align-items:center;gap:18px;background:var(--surface);padding:16px 24px;border-radius:18px;border:1px solid color-mix(in srgb,var(--ink) 8%,transparent)}
-.score b{font-family:var(--serif);font-size:40px;font-weight:500;line-height:1}
-.score small{display:block;color:var(--muted);font-size:14px}
-.reviews{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-.review{background:var(--surface);border-radius:var(--radius);padding:34px;display:flex;flex-direction:column;gap:22px;border:1px solid color-mix(in srgb,var(--ink) 7%,transparent)}
-.review p{font-family:var(--serif);font-size:19.5px;line-height:1.45}
-.review .by{margin-top:auto;display:flex;align-items:center;gap:12px;font-weight:600;font-size:15px}
-.avatar{width:40px;height:40px;border-radius:50%;background:var(--soft);color:var(--accent);display:grid;place-items:center;font-weight:700}
-.review .src{color:var(--muted);font-weight:500;font-size:13px;display:block}
+/* about */
+.about{background:var(--bone-2);overflow:hidden}
+.about-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:80px;align-items:center}
+.about-art{position:relative;aspect-ratio:4/5;border-radius:240px 240px var(--r) var(--r);background:linear-gradient(160deg,var(--ink-3),var(--ink) 70%);overflow:hidden;box-shadow:0 50px 90px -50px rgba(15,26,28,.7)}
+.about-art svg{position:absolute;inset:0;width:100%;height:100%}
+.about-art .tag{position:absolute;left:24px;right:24px;bottom:24px;padding:20px 22px;border-radius:16px;background:rgba(246,241,232,.08);border:1px solid rgba(246,241,232,.14);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);color:var(--bone)}
+.about-art .tag b{display:block;font-family:var(--serif);font-weight:500;font-size:1.5rem;line-height:1.1}
+.about-art .tag small{font-size:.74rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-2)}
+.about-copy h2{margin:18px 0 28px}
+.about-copy p{color:var(--muted);margin-bottom:18px;max-width:58ch}
+.about-copy .quote{font-family:var(--serif);font-style:italic;font-size:1.65rem;line-height:1.3;color:var(--ink);border-left:2px solid var(--gold);padding-left:24px;margin:34px 0}
 
-.cta-band{padding:0 0 110px}
-.cta-box{border-radius:calc(var(--radius) + 12px);background:linear-gradient(140deg,var(--accent),color-mix(in srgb,var(--accent) 60%,var(--ink)));color:var(--accent-ink);padding:76px 64px;display:grid;grid-template-columns:1.3fr 1fr;gap:40px;align-items:center;position:relative;overflow:hidden}
-.cta-box:after{content:"";position:absolute;right:-120px;bottom:-200px;width:460px;height:460px;border-radius:50%;border:1.5px solid color-mix(in srgb,var(--accent-ink) 22%,transparent)}
-.cta-box h2{color:inherit;margin:0 0 12px}
-.cta-box p{opacity:.85;font-size:18px}
-.cta-box .actions{display:flex;flex-direction:column;gap:12px;align-items:flex-start;position:relative;z-index:1}
-.cta-box .btn{background:var(--accent-ink);color:var(--accent)}
-.cta-box .btn.ghost{background:transparent;color:var(--accent-ink);border-color:color-mix(in srgb,var(--accent-ink) 40%,transparent)}
+/* why */
+.why-grid{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid rgba(246,241,232,.12)}
+.why{padding:44px 30px 10px 0;border-right:1px solid rgba(246,241,232,.12);margin-right:30px;min-width:0}
+.why:last-child{border-right:0;margin-right:0}
+.why svg{width:34px;height:34px;color:var(--gold);margin-bottom:28px}
+.why h3{font-size:1.65rem;margin-bottom:12px}
+.why p{color:rgba(246,241,232,.66);font-size:.95rem}
 
-.visit{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:10px}
-.visit .card h3{font-size:20px}
-.visit a{color:var(--accent);font-weight:600}
-footer{border-top:1px solid color-mix(in srgb,var(--ink) 9%,transparent);padding:40px 0 110px;color:var(--muted);font-size:14px}
-footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
-.mobile-bar{display:none}
+/* steps */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;counter-reset:s}
+.step{position:relative;padding:34px 28px;border-radius:var(--r);border:1px solid rgba(15,26,28,.1);background:linear-gradient(180deg,#fffdf9,var(--bone));transition:transform .6s var(--ease),border-color .6s;min-width:0}
+.step:hover{transform:translateY(-6px);border-color:var(--gold)}
+.step .n{font-family:var(--serif);font-size:4.4rem;line-height:1;color:transparent;-webkit-text-stroke:1px var(--gold-d);margin-bottom:18px}
+.step h3{font-size:1.55rem;margin-bottom:10px}
+.step p{color:var(--muted);font-size:.95rem}
+.step a{color:var(--ink);font-weight:600}
 
-@keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
-.hero .copy>*{animation:rise .8s cubic-bezier(.2,.7,.2,1) both}
-.hero .copy>*:nth-child(2){animation-delay:.08s}.hero .copy>*:nth-child(3){animation-delay:.16s}
-.hero .copy>*:nth-child(4){animation-delay:.24s}.hero .copy>*:nth-child(5){animation-delay:.32s}
-.visual{animation:rise 1s .2s cubic-bezier(.2,.7,.2,1) both}
+/* faq */
+.faq{background:var(--bone-2)}
+.faq-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:70px;align-items:start}
+.faq-grid h2{margin-top:18px}
+.qa{border-bottom:1px solid rgba(15,26,28,.12)}
+.qa button{all:unset;cursor:pointer;width:100%;box-sizing:border-box;display:flex;justify-content:space-between;align-items:center;gap:20px;padding:28px 0;font-family:var(--serif);font-size:1.6rem;line-height:1.2;color:var(--ink)}
+.qa button:focus-visible{outline:2px solid var(--gold);outline-offset:4px}
+.qa .pm{flex:none;width:38px;height:38px;border-radius:50%;border:1px solid rgba(15,26,28,.2);position:relative;transition:background .4s,transform .5s var(--ease)}
+.qa .pm::before,.qa .pm::after{content:"";position:absolute;left:50%;top:50%;width:12px;height:1.5px;background:var(--ink);transform:translate(-50%,-50%)}
+.qa .pm::after{transform:translate(-50%,-50%) rotate(90deg);transition:transform .5s var(--ease)}
+.qa.open .pm{background:var(--gold);border-color:var(--gold);transform:rotate(180deg)}
+.qa.open .pm::after{transform:translate(-50%,-50%) rotate(0)}
+.qa .ans{display:grid;grid-template-rows:0fr;transition:grid-template-rows .6s var(--ease)}
+.qa.open .ans{grid-template-rows:1fr}
+.qa .ans>div{overflow:hidden}
+.qa .ans p{padding:0 50px 28px 0;color:var(--muted)}
+.qa .ans a{color:var(--ink);font-weight:600;border-bottom:1px solid var(--gold)}
 
-@media (max-width:980px){
-  .links{display:none}
-  .hero-grid,.why-grid,.cta-box{grid-template-columns:1fr}
-  .hero-grid{gap:56px}
-  .services,.reviews,.visit{grid-template-columns:1fr 1fr}
-  .trust .wrap{grid-template-columns:1fr 1fr}
-  .float.one{left:12px;bottom:-26px}.float.two{right:12px}
-  .visual{max-width:560px;margin-bottom:20px}
-  .section-head{flex-direction:column;align-items:flex-start}
+/* cta band */
+.cta{background:radial-gradient(90% 120% at 50% 0%,#24403f,var(--ink) 65%);color:var(--bone);text-align:center;overflow:hidden}
+.cta h2{color:var(--bone);font-size:clamp(2.6rem,7vw,6rem);font-weight:400;max-width:15ch;margin:24px auto 26px}
+.cta h2 em{color:var(--gold-2)}
+.cta p{color:rgba(246,241,232,.72);max-width:50ch;margin:0 auto 42px}
+.cta .hero-ctas{justify-content:center}
+.cta .big-phone{display:inline-block;font-family:var(--serif);font-size:clamp(2rem,5vw,3.4rem);color:var(--gold-2);margin-top:46px}
+.cta-lines{position:absolute;inset:0;pointer-events:none;opacity:.5}
+
+/* contact */
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.c-card{border-radius:var(--r);padding:44px;background:#fffdf9;border:1px solid rgba(15,26,28,.08);min-width:0}
+.c-card h2{font-size:clamp(2.2rem,4.4vw,3.4rem);margin:18px 0 22px}
+.c-list{display:grid;gap:26px;margin-top:34px}
+.c-item{display:flex;gap:18px;align-items:flex-start}
+.c-item .ci{flex:none;width:48px;height:48px;border-radius:50%;background:var(--ink);color:var(--gold-2);display:grid;place-items:center}
+.c-item .ci svg{width:20px;height:20px}
+.c-item small{display:block;font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold-d);font-weight:600;margin-bottom:4px}
+.c-item a,.c-item span{font-size:1.08rem;color:var(--ink);font-weight:500;overflow-wrap:anywhere}
+.map-card{position:relative;overflow:hidden;background:var(--ink);color:var(--bone);display:flex;flex-direction:column;justify-content:flex-end;min-height:440px;padding:40px}
+.map-card svg.mapart{position:absolute;inset:0;width:100%;height:100%}
+.map-card .pin{position:absolute;left:58%;top:38%;width:22px;height:22px;border-radius:50%;background:var(--gold);box-shadow:0 0 0 8px rgba(198,164,106,.25)}
+.map-card .pin::after{content:"";position:absolute;inset:-8px;border-radius:50%;border:1px solid var(--gold);animation:ping 2.6s var(--ease) infinite}
+@keyframes ping{from{transform:scale(1);opacity:1}to{transform:scale(3.2);opacity:0}}
+.map-card .inner{position:relative}
+.map-card h3{color:var(--bone);font-size:2.2rem;margin-bottom:10px}
+.map-card p{color:rgba(246,241,232,.7);margin-bottom:24px}
+
+/* footer */
+footer{background:#0a1214;color:rgba(246,241,232,.6);padding:70px 0 40px;font-size:.9rem}
+.f-top{display:flex;flex-wrap:wrap;justify-content:space-between;gap:36px;padding-bottom:44px;border-bottom:1px solid rgba(246,241,232,.1)}
+.f-nav{display:flex;flex-wrap:wrap;gap:14px 30px}
+.f-nav a:hover{color:var(--gold-2)}
+.f-bot{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;padding-top:28px;font-size:.8rem}
+
+/* mobile call bar */
+.callbar{display:none}
+
+/* reveal */
+.rv{opacity:0;transform:translateY(40px);transition:opacity 1.1s var(--ease),transform 1.1s var(--ease)}
+.rv.in{opacity:1;transform:none}
+.rv.d1{transition-delay:.1s}.rv.d2{transition-delay:.2s}.rv.d3{transition-delay:.3s}
+
+@media (max-width:1080px){
+  .nav{display:none}
+  .burger{display:block}
+  .cards{grid-template-columns:1fr 1fr}
+  .cards .card:last-child{grid-column:1/-1}
+  .why-grid{grid-template-columns:1fr 1fr}
+  .why:nth-child(2){border-right:0;margin-right:0}
+  .steps{grid-template-columns:1fr 1fr}
+}
+@media (max-width:860px){
+  .hero-grid,.about-grid,.faq-grid,.contact-grid,.sec-head{grid-template-columns:1fr}
+  .about-grid{gap:50px}
+  .faq-grid{gap:30px}
+  .spine-wrap{max-width:300px;order:-1;margin-bottom:-10px;aspect-ratio:3/3.4}
+  .hero{padding-top:120px}
+  .sec-head{margin-bottom:44px}
+  .about-art{max-width:460px;width:100%}
 }
 @media (max-width:640px){
-  body{font-size:16px}
-  .wrap{padding:0 18px}
-  .nav{height:66px}.brand{font-size:19px}
-  .phone,.nav-right .btn{display:none}
-  .hero{padding:44px 0 64px}
-  .lead-text{font-size:17.5px}
-  .hero-ctas .btn{flex:1;justify-content:center}
-  .ticks{display:none}
-  .services,.reviews,.visit,.trust .wrap{grid-template-columns:1fr}
-  section.block{padding:76px 0}
-  .quote-panel,.photo{aspect-ratio:auto;min-height:380px}.photo{aspect-ratio:4/3;min-height:0}
-  .quote-panel{padding:40px 30px 64px}.quote-panel p{font-size:23px}
-  .float{font-size:13px;padding:12px 14px}.float b{font-size:18px}
-  .float.two{display:none}
-  .cta-box{padding:52px 28px}
-  .point{grid-template-columns:44px 1fr;padding:24px}
-  .mobile-bar{display:flex;position:fixed;left:12px;right:12px;bottom:12px;z-index:30;gap:10px}
-  .mobile-bar .btn{flex:1;justify-content:center;box-shadow:0 14px 30px -14px color-mix(in srgb,var(--ink) 60%,transparent)}
-  .mobile-bar .btn.ghost{background:var(--surface)}
+  body{font-size:16px;padding-bottom:76px}
+  .wrap{width:calc(100% - 40px)}
+  .hdr{inset:10px 0 auto}
+  .hdr .bar{padding:8px 8px 8px 16px}
+  .hdr-phone,.hdr .btn{display:none}
+  .logo b{font-size:1.12rem}
+  .logo small{font-size:.52rem;letter-spacing:.18em}
+  .logo svg{width:32px;height:32px}
+  .hero{padding:110px 0 90px}
+  .hero h1{font-size:clamp(2.6rem,12.5vw,3.6rem)}
+  .hero .sub{font-size:1.03rem}
+  .hero-ctas{flex-direction:column}
+  .hero-ctas .btn{width:100%}
+  .hero-meta{margin-top:40px;gap:12px}
+  .spine-wrap{max-width:220px}
+  .scroll-cue{display:none}
+  .cards,.why-grid,.steps{grid-template-columns:1fr}
+  .cards .card:last-child{grid-column:auto}
+  .card{padding:34px 26px 30px}
+  .why{border-right:0;margin-right:0;padding:34px 0 26px;border-bottom:1px solid rgba(246,241,232,.12)}
+  .why:last-child{border-bottom:0}
+  .qa button{font-size:1.32rem;padding:22px 0}
+  .qa .ans p{padding-right:0}
+  .c-card{padding:32px 24px}
+  .map-card{min-height:380px;padding:28px 24px}
+  .mq-track span{font-size:1.3rem}
+  .about-copy .quote{font-size:1.4rem}
+  .callbar{display:flex;position:fixed;left:10px;right:10px;bottom:10px;z-index:40;gap:8px;padding:8px;border-radius:999px;background:rgba(15,26,28,.9);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid rgba(246,241,232,.12);box-shadow:0 20px 40px -20px rgba(0,0,0,.6)}
+  .callbar a{flex:1;display:flex;align-items:center;justify-content:center;gap:8px;padding:13px 10px;border-radius:999px;font-weight:600;font-size:.88rem;white-space:nowrap}
+  .callbar a:first-child{background:var(--gold);color:var(--ink)}
+  .callbar a:last-child{color:var(--bone);border:1px solid rgba(246,241,232,.2)}
+  .callbar svg{width:16px;height:16px}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+  .rv,.hero .fx,.hero h1 .ln>span,.vert{opacity:1!important;transform:none!important}
+  #spinePath{stroke-dashoffset:0!important}
 }
 </style>
 </head>
 <body>
-<div class="concept">Website concept prepared for <b>Bee Caves Scoliosis &amp; Chiropractic Center</b> by webstudio &middot; not a live site</div>
 
-<header>
-  <div class="wrap nav">
-    <a href="#top" class="brand">Bee Caves Scoliosis &amp; Chiropractic Center</a>
-    <nav class="links">
-      <a href="#services">Services</a><a href="#why">Why us</a><a href="#visit">Visit</a>
+<header class="hdr" id="hdr">
+  <div class="bar">
+    <a href="#top" class="logo" aria-label="Bee Caves Scoliosis &amp; Chiropractic Center home">
+      <svg viewBox="0 0 40 40" fill="none" aria-hidden="true"><circle cx="20" cy="20" r="19" stroke="#c6a46a" stroke-width="1"/><path d="M20 6c-5 5 5 9 0 14s5 9 0 14" stroke="#e2c890" stroke-width="1.6" stroke-linecap="round"/><g fill="#c6a46a"><rect x="15" y="9" width="10" height="2.4" rx="1.2"/><rect x="15" y="15" width="10" height="2.4" rx="1.2"/><rect x="15" y="21" width="10" height="2.4" rx="1.2"/><rect x="15" y="27" width="10" height="2.4" rx="1.2"/></g></svg>
+      <span><b>Bee Caves</b><small>Scoliosis &amp; Chiropractic</small></span>
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <a class="ulink" href="#services">Care</a>
+      <a class="ulink" href="#about">About</a>
+      <a class="ulink" href="#process">Your Visit</a>
+      <a class="ulink" href="#faq">FAQ</a>
+      <a class="ulink" href="#contact">Contact</a>
     </nav>
-    <div class="nav-right">
-      <a class="phone" href="tel:5123275311">(512) 327-5311</a>
-      <a class="btn" href="#visit">Book now</a>
+    <div class="hdr-r">
+      <a class="hdr-phone ulink" href="tel:+15123275311">(512) 327-5311</a>
+      <a class="btn" href="tel:+15123275311">Book a Visit</a>
+      <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false"><span></span><span></span></button>
     </div>
   </div>
 </header>
 
+<div class="mmenu" id="mmenu" aria-hidden="true">
+  <a href="#services">Care</a>
+  <a href="#about">About</a>
+  <a href="#process">Your Visit</a>
+  <a href="#faq">FAQ</a>
+  <a href="#contact">Contact</a>
+  <div class="mm-meta">248 Addie Roy Rd, Bldg C, Suite 102<br>Austin, TX 78746<br><br><a href="tel:+15123275311" style="font-family:var(--sans);font-size:1.2rem;color:var(--gold-2)">(512) 327-5311</a></div>
+</div>
+
 <main id="top">
-<section class="hero">
+<section class="hero" id="hero">
+  <div class="grain"></div>
   <div class="wrap hero-grid">
-    <div class="copy">
-      <div class="eyebrow">
-        <span class="dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-7-4.4-7-10a4 4 0 017-2.6A4 4 0 0119 10c0 5.6-7 10-7 10z"/></svg></span>Chiropractic &amp; wellness
-      </div>
-      <h1>Move better. Feel better. <em>Live better.</em></h1>
-      <p class="lead-text">Gentle, evidence-based chiropractic care that gets to the root of your pain, not just the symptoms.</p>
-      <div class="hero-ctas">
-        <a class="btn" href="#visit">Book your first visit <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-        <a class="btn ghost" href="tel:5123275311">Call (512) 327-5311</a>
-      </div>
-      <div class="ticks">
-        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7"/></svg>New patients welcome</span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7"/></svg>Most insurance accepted</span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7"/></svg>Same-day visits</span>
-      </div>
-    </div>
-    <div class="visual">
-      
-      <div class="quote-panel"><div class="quote-mark">“</div><div><p>Gentle, evidence-based chiropractic care that gets to the root of your pain, not just the symptoms.</p><div class="who">Bee Caves Scoliosis &amp; Chiropractic Center</div></div></div>
-      
-      
-      <div class="float two"><span class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><span><b>This week</b>Most insurance accepted</span></div>
-    </div>
-  </div>
-  <template id="qp"><div class="quote-panel"><div class="quote-mark">“</div><div><p>Gentle, evidence-based chiropractic care that gets to the root of your pain, not just the symptoms.</p><div class="who">Bee Caves Scoliosis &amp; Chiropractic Center</div></div></div></template>
-</section>
-
-<div class="trust"><div class="wrap">
-  <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.2-8 9-4.6-.8-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg>New patients welcome</div><div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.2-8 9-4.6-.8-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg>Most insurance accepted</div><div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.2-8 9-4.6-.8-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg>Same-day visits</div><div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.2-8 9-4.6-.8-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg>Gentle techniques</div>
-</div></div>
-
-<section class="block" id="services">
-  <div class="wrap">
-    <div class="section-head">
-      <div><div class="kicker">What we do</div><h2>Everything you need,<br>under one roof.</h2></div>
-      <p>From routine visits to the work that changes how you feel about your day, Bee Caves Scoliosis &amp; Chiropractic Center takes care of it properly.</p>
-    </div>
-    <div class="services">
-      
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-7-4.4-7-10a4 4 0 017-2.6A4 4 0 0119 10c0 5.6-7 10-7 10z"/></svg></div><h3>Back &amp; neck pain</h3><p>Relief that lasts, from a plan built around you.</p></div>
-      
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1-4.4-4.3 6.1-.9z"/></svg></div><h3>Sports injuries</h3><p>Get back in the game faster and stronger.</p></div>
-      
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 19c0-8 5-14 15-14 0 10-6 15-14 15"/><path d="M5 19c3-4 6-6 10-8"/></svg></div><h3>Headaches</h3><p>Address the tension and alignment issues behind them.</p></div>
-      
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 14s1.5 2.5 4 2.5 4-2.5 4-2.5"/><path d="M9 9.5h.01M15 9.5h.01"/></svg></div><h3>Prenatal care</h3><p>Gentle, safe adjustments for moms-to-be.</p></div>
-      
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.2-8 9-4.6-.8-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg></div><h3>Auto injuries</h3><p>Care and documentation after car accidents.</p></div>
-      
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div><h3>Same-day visits</h3><p>In pain today? We&#39;ll see you today.</p></div>
-      
-    </div>
-  </div>
-</section>
-
-<section class="block why" id="why">
-  <div class="wrap why-grid">
     <div>
-      <div class="kicker">Why patients choose us</div>
-      <h2>The Austin chiropractor people recommend to their friends.</h2>
-      <p class="intro">it still comes down to the same three things.</p>
+      <span class="eyebrow fx d1" style="color:var(--gold)">Scoliosis &amp; Chiropractic · Austin, Texas</span>
+      <h1>
+        <span class="ln"><span>Stand taller.</span></span>
+        <span class="ln"><span>Move <em>freer.</em></span></span>
+        <span class="ln"><span>Live aligned.</span></span>
+      </h1>
+      <p class="sub fx d2">Thoughtful, focused care for scoliosis and the whole spine, delivered with the attention your body deserves, in a calm West Austin setting.</p>
+      <div class="hero-ctas fx d3">
+        <a class="btn" href="tel:+15123275311"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>Call (512) 327-5311</a>
+        <a class="btn btn-ghost" href="#services">Explore Our Care</a>
+      </div>
+      <div class="hero-meta fx d4">
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s-7-6.2-7-12a7 7 0 0 1 14 0c0 5.8-7 12-7 12z"/><circle cx="12" cy="9" r="2.5"/></svg>248 Addie Roy Rd, Austin</span>
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 12h16M12 4v16"/></svg>Scoliosis-focused practice</span>
+      </div>
     </div>
-    <div class="points">
-      
-      <div class="point"><div class="num">01</div><div><h3>Root-cause care</h3><p>We find out why it hurts, not just where.</p></div></div>
-      
-      <div class="point"><div class="num">02</div><div><h3>Gentle techniques</h3><p>Comfortable adjustments for every age and condition.</p></div></div>
-      
-      <div class="point"><div class="num">03</div><div><h3>Clear plans</h3><p>You&#39;ll know your plan, timeline and costs from day one.</p></div></div>
-      
+    <div class="spine-wrap fx d5" id="spine" aria-hidden="true">
+      <div class="ring"></div><div class="ring r2"></div>
+      <svg viewBox="0 0 300 440">
+        <defs>
+          <linearGradient id="g1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e2c890"/><stop offset="1" stop-color="#9a7a42"/></linearGradient>
+        </defs>
+        <path id="spinePath" d="M150 20 C 90 90, 210 150, 150 220 S 90 350, 150 420" fill="none" stroke="url(#g1)" stroke-width="1.4" stroke-linecap="round"/>
+        <path d="M150 20 L150 420" stroke="rgba(246,241,232,.14)" stroke-dasharray="3 7"/>
+        <g id="verts"></g>
+      </svg>
+    </div>
+  </div>
+  <div class="scroll-cue"><i></i>Scroll</div>
+</section>
+
+<div class="marquee" aria-hidden="true">
+  <div class="mq-track">
+    <span>Scoliosis Care</span><span>Chiropractic Care</span><span>Posture &amp; Alignment</span><span>Austin, Texas</span><span>Addie Roy Road</span><span>Whole-Spine Wellness</span>
+    <span>Scoliosis Care</span><span>Chiropractic Care</span><span>Posture &amp; Alignment</span><span>Austin, Texas</span><span>Addie Roy Road</span><span>Whole-Spine Wellness</span>
+  </div>
+</div>
+
+<section class="sec" id="services">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="rv"><span class="eyebrow">Our Care</span><h2>Two disciplines.<br><em>One focus:</em> you.</h2></div>
+      <p class="lead rv d1">Scoliosis is in our name for a reason. Alongside dedicated scoliosis care, we offer chiropractic care for the everyday strains that keep you from feeling like yourself.</p>
+    </div>
+    <div class="cards">
+      <article class="card feature rv">
+        <span class="num">01</span>
+        <div class="ico"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M16 3c-6 5 6 8 0 13s6 8 0 13"/><path d="M11 7h10M10 13h12M10 19h12M11 25h10"/></svg></div>
+        <h3>Scoliosis Care</h3>
+        <p>Care centered on the curved spine. Our practice is built around scoliosis, so your questions, your concerns and your goals are at the heart of every visit.</p>
+        <ul><li>A practice dedicated to scoliosis</li><li>Clear explanations, every step</li><li>Care shaped around your goals</li></ul>
+      </article>
+      <article class="card rv d1">
+        <span class="num">02</span>
+        <div class="ico"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M9 28c0-6 3-9 7-9s7 3 7 9"/><circle cx="16" cy="10" r="5"/><path d="M4 16h4M24 16h4"/></svg></div>
+        <h3>Chiropractic Care</h3>
+        <p>Hands-on chiropractic care for the back and neck tension of modern life, from long days at a desk to an active weekend in the Hill Country.</p>
+        <ul><li>Personal, hands-on approach</li><li>Attention to the whole spine</li><li>Care that fits your routine</li></ul>
+      </article>
+      <article class="card rv d2">
+        <span class="num">03</span>
+        <div class="ico"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M16 3v26"/><path d="M8 9l8-6 8 6"/><path d="M6 29h20"/><circle cx="16" cy="17" r="4"/></svg></div>
+        <h3>Posture &amp; Alignment</h3>
+        <p>Your spine shapes how you stand, sit and move. We look at the bigger picture of posture and balance so you can carry yourself with ease.</p>
+        <ul><li>Whole-body perspective</li><li>Guidance you can use at home</li><li>Built for the long term</li></ul>
+      </article>
     </div>
   </div>
 </section>
 
-
-
-<section class="cta-band" id="book">
-  <div class="wrap"><div class="cta-box">
-    <div><h2>Ready when you are.</h2><p>Book your first visit in under a minute, or give us a call and talk to a real person.</p></div>
-    <div class="actions">
-      <a class="btn" href="#visit">Book your first visit</a>
-      <a class="btn ghost" href="tel:5123275311">Call (512) 327-5311</a>
+<section class="sec about" id="about">
+  <div class="wrap about-grid">
+    <div class="about-art rv" aria-hidden="true">
+      <svg viewBox="0 0 400 500" preserveAspectRatio="xMidYMid slice">
+        <defs><radialGradient id="ag" cx=".5" cy=".35" r=".6"><stop offset="0" stop-color="rgba(198,164,106,.35)"/><stop offset="1" stop-color="rgba(198,164,106,0)"/></radialGradient></defs>
+        <rect width="400" height="500" fill="url(#ag)"/>
+        <g fill="none" stroke="rgba(226,200,144,.5)" stroke-width="1">
+          <circle cx="200" cy="190" r="70"/><circle cx="200" cy="190" r="115" stroke-opacity=".5"/><circle cx="200" cy="190" r="160" stroke-opacity=".25"/>
+        </g>
+        <path d="M200 60 C 160 120, 240 160, 200 220 S 160 330, 200 400" fill="none" stroke="#e2c890" stroke-width="1.6"/>
+        <g fill="#c6a46a" opacity=".9">
+          <rect x="186" y="80" width="28" height="7" rx="3.5" transform="rotate(-14 200 83)"/>
+          <rect x="182" y="118" width="28" height="7" rx="3.5" transform="rotate(-6 196 121)"/>
+          <rect x="190" y="156" width="28" height="7" rx="3.5" transform="rotate(10 204 159)"/>
+          <rect x="192" y="194" width="28" height="7" rx="3.5" transform="rotate(12 206 197)"/>
+          <rect x="184" y="232" width="28" height="7" rx="3.5" transform="rotate(-4 198 235)"/>
+          <rect x="178" y="270" width="28" height="7" rx="3.5" transform="rotate(-12 192 273)"/>
+          <rect x="180" y="308" width="28" height="7" rx="3.5" transform="rotate(-8 194 311)"/>
+          <rect x="186" y="346" width="28" height="7" rx="3.5" transform="rotate(4 200 349)"/>
+        </g>
+      </svg>
+      <div class="tag"><small>Austin · 78746</small><b>Bee Caves Scoliosis &amp; Chiropractic Center</b></div>
     </div>
-  </div></div>
+    <div class="about-copy">
+      <span class="eyebrow rv">About the Practice</span>
+      <h2 class="rv d1">Specialized care,<br><em>personally</em> delivered.</h2>
+      <p class="rv d2">Most chiropractic offices treat scoliosis as one item on a long list. At Bee Caves Scoliosis &amp; Chiropractic Center, it is part of who we are, written right into our name.</p>
+      <p class="rv d2">That focus shapes the experience: a quieter, more considered kind of care, where you are listened to, where your spine is seen as part of your whole life, and where you leave each visit understanding exactly what comes next.</p>
+      <p class="quote rv d3">“Your spine tells a story. We take the time to read it.”</p>
+      <a class="btn btn-dark rv d3" href="#contact">Plan Your First Visit</a>
+    </div>
+  </div>
 </section>
 
-<section class="block" id="visit" style="padding-top:0">
+<section class="sec dark" id="why">
   <div class="wrap">
-    <div class="kicker">Visit us</div><h2>Come say hello.</h2>
-    <div class="visit">
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11l8-7 8 7v9a1 1 0 01-1 1h-4v-6H9v6H5a1 1 0 01-1-1z"/></svg></div><h3>Address</h3><p>248 Addie Roy Rd Bldg c suite 102, Austin TX 78746</p></div>
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div><h3>Phone</h3><p><a href="tel:5123275311">(512) 327-5311</a></p><p style="margin-top:10px">Call or message us for today's opening hours.</p></div>
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-7-4.4-7-10a4 4 0 017-2.6A4 4 0 0119 10c0 5.6-7 10-7 10z"/></svg></div><h3>Most insurance accepted</h3><p>Book your first visit online or by phone and we'll take care of the rest.</p></div>
+    <div class="sec-head">
+      <div class="rv"><span class="eyebrow">Why Bee Caves</span><h2>The difference is in<br><em>the details.</em></h2></div>
+      <p class="lead rv d1">A practice designed around a single idea: that the people who trust us with their spine deserve focus, clarity and genuine care.</p>
+    </div>
+    <div class="why-grid">
+      <div class="why rv">
+        <svg viewBox="0 0 34 34" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="17" cy="17" r="13"/><circle cx="17" cy="17" r="7"/><circle cx="17" cy="17" r="1.5" fill="currentColor"/></svg>
+        <h3>A Defined Focus</h3><p>Scoliosis isn't a side note here. It is a cornerstone of our practice.</p>
+      </div>
+      <div class="why rv d1">
+        <svg viewBox="0 0 34 34" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 24c3-9 19-9 22 0"/><circle cx="17" cy="11" r="5"/></svg>
+        <h3>You, Heard</h3><p>Your history, your concerns and your goals guide the conversation from the very first call.</p>
+      </div>
+      <div class="why rv d2">
+        <svg viewBox="0 0 34 34" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M7 9h20M7 17h20M7 25h12"/></svg>
+        <h3>Clear Answers</h3><p>No jargon, no guesswork. You'll understand your care and the reasoning behind it.</p>
+      </div>
+      <div class="why rv d3">
+        <svg viewBox="0 0 34 34" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 30s-9-8-9-15a9 9 0 0 1 18 0c0 7-9 15-9 15z"/><circle cx="17" cy="15" r="3"/></svg>
+        <h3>West Austin Home</h3><p>Find us on Addie Roy Road in Austin's 78746, a calm and convenient place to care for yourself.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="process">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="rv"><span class="eyebrow">Your Visit</span><h2>A simple path to<br><em>feeling aligned.</em></h2></div>
+      <p class="lead rv d1">Getting started is easy. Here's what you can expect, from your first call to the care that follows.</p>
+    </div>
+    <div class="steps">
+      <div class="step rv"><div class="n">01</div><h3>Reach Out</h3><p>Call us at <a href="tel:+15123275311">(512) 327-5311</a> to ask questions and find a time that works for you.</p></div>
+      <div class="step rv d1"><div class="n">02</div><h3>Talk It Through</h3><p>Share your history, what you're feeling and what you hope to change. We listen first.</p></div>
+      <div class="step rv d2"><div class="n">03</div><h3>Your Plan</h3><p>Together we map out a course of care tailored to your spine, your schedule and your goals.</p></div>
+      <div class="step rv d3"><div class="n">04</div><h3>Move Forward</h3><p>Ongoing, attentive care, with clear check-ins so you always know where you stand.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec faq" id="faq">
+  <div class="wrap faq-grid">
+    <div class="rv"><span class="eyebrow">Questions</span><h2>Good to <em>know.</em></h2><p class="lead" style="margin-top:22px">Have a question not covered here? A quick call is the fastest way to an answer.</p></div>
+    <div class="rv d1">
+      <div class="qa open"><button aria-expanded="true">Do you treat scoliosis?<span class="pm"></span></button><div class="ans"><div><p>Yes. Scoliosis care is central to our practice; it's right there in our name. Call us to talk through your situation and how we can help.</p></div></div></div>
+      <div class="qa"><button aria-expanded="false">Do you offer general chiropractic care too?<span class="pm"></span></button><div class="ans"><div><p>Yes. Alongside scoliosis care, we're a full chiropractic center, here for the back, neck and posture concerns of everyday life.</p></div></div></div>
+      <div class="qa"><button aria-expanded="false">Where are you located?<span class="pm"></span></button><div class="ans"><div><p>We're at 248 Addie Roy Rd, Building C, Suite 102, Austin, TX 78746. <a href="https://maps.google.com/?q=248+Addie+Roy+Rd+Bldg+C+Suite+102+Austin+TX+78746" target="_blank" rel="noopener">Get directions</a>.</p></div></div></div>
+      <div class="qa"><button aria-expanded="false">How do I book an appointment?<span class="pm"></span></button><div class="ans"><div><p>Simply call <a href="tel:+15123275311">(512) 327-5311</a>. We'll help you find a time and answer any questions about current hours and your first visit.</p></div></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec cta">
+  <svg class="cta-lines" viewBox="0 0 1200 500" preserveAspectRatio="none" aria-hidden="true"><g fill="none" stroke="rgba(198,164,106,.35)" stroke-width="1"><path d="M0 120 C 300 40, 500 220, 800 120 S 1100 60, 1200 140"/><path d="M0 380 C 300 300, 600 460, 900 360 S 1150 320, 1200 380" stroke-opacity=".5"/></g></svg>
+  <div class="wrap" style="position:relative">
+    <span class="eyebrow rv">Begin Today</span>
+    <h2 class="rv d1">Your spine deserves <em>this</em> level of care.</h2>
+    <p class="rv d2">One call is all it takes to start a conversation about scoliosis, posture or the aches you've been living with.</p>
+    <div class="hero-ctas rv d3">
+      <a class="btn" href="tel:+15123275311">Call to Book</a>
+      <a class="btn btn-ghost" href="https://maps.google.com/?q=248+Addie+Roy+Rd+Bldg+C+Suite+102+Austin+TX+78746" target="_blank" rel="noopener">Get Directions</a>
+    </div>
+    <a class="big-phone ulink rv d3" href="tel:+15123275311">(512) 327-5311</a>
+  </div>
+</section>
+
+<section class="sec" id="contact">
+  <div class="wrap contact-grid">
+    <div class="c-card rv">
+      <span class="eyebrow">Visit Us</span>
+      <h2>We'd love to <em>meet you.</em></h2>
+      <p class="lead">Reach out by phone to schedule, ask a question or confirm our current hours.</p>
+      <div class="c-list">
+        <div class="c-item"><span class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg></span><div><small>Phone</small><a class="ulink" href="tel:+15123275311">(512) 327-5311</a></div></div>
+        <div class="c-item"><span class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s-7-6.2-7-12a7 7 0 0 1 14 0c0 5.8-7 12-7 12z"/><circle cx="12" cy="9" r="2.5"/></svg></span><div><small>Address</small><a class="ulink" href="https://maps.google.com/?q=248+Addie+Roy+Rd+Bldg+C+Suite+102+Austin+TX+78746" target="_blank" rel="noopener">248 Addie Roy Rd, Bldg C, Suite 102<br>Austin, TX 78746</a></div></div>
+        <div class="c-item"><span class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><div><small>Hours</small><span>Please call for current hours</span></div></div>
+      </div>
+    </div>
+    <div class="c-card map-card rv d1">
+      <svg class="mapart" viewBox="0 0 500 500" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+        <g fill="none" stroke="rgba(246,241,232,.08)" stroke-width="1"><path d="M0 60h500M0 140h500M0 220h500M0 300h500M0 380h500M0 460h500M60 0v500M140 0v500M220 0v500M300 0v500M380 0v500M460 0v500"/></g>
+        <g fill="none" stroke="rgba(198,164,106,.45)" stroke-width="2"><path d="M-20 300 C 120 260, 200 120, 520 160"/><path d="M290 -20 C 300 120, 260 260, 320 520" stroke-opacity=".5"/></g>
+        <path d="M-20 420 C 140 380, 300 460, 520 400" fill="none" stroke="rgba(246,241,232,.15)" stroke-width="10"/>
+      </svg>
+      <span class="pin" aria-hidden="true"></span>
+      <div class="inner">
+        <span class="eyebrow">Find Us</span>
+        <h3 style="margin-top:14px">Addie Roy Road</h3>
+        <p>Building C, Suite 102 · Austin, TX 78746</p>
+        <a class="btn" href="https://maps.google.com/?q=248+Addie+Roy+Rd+Bldg+C+Suite+102+Austin+TX+78746" target="_blank" rel="noopener">Open in Google Maps</a>
+      </div>
     </div>
   </div>
 </section>
 </main>
 
-<footer><div class="wrap">
-  <span>© 2026 Bee Caves Scoliosis &amp; Chiropractic Center</span>
-  <span>Concept design by webstudio. Not affiliated with or endorsed by Bee Caves Scoliosis &amp; Chiropractic Center.</span>
-</div></footer>
+<footer>
+  <div class="wrap">
+    <div class="f-top">
+      <a href="#top" class="logo">
+        <svg viewBox="0 0 40 40" fill="none" aria-hidden="true"><circle cx="20" cy="20" r="19" stroke="#c6a46a" stroke-width="1"/><path d="M20 6c-5 5 5 9 0 14s5 9 0 14" stroke="#e2c890" stroke-width="1.6" stroke-linecap="round"/><g fill="#c6a46a"><rect x="15" y="9" width="10" height="2.4" rx="1.2"/><rect x="15" y="15" width="10" height="2.4" rx="1.2"/><rect x="15" y="21" width="10" height="2.4" rx="1.2"/><rect x="15" y="27" width="10" height="2.4" rx="1.2"/></g></svg>
+        <span><b>Bee Caves</b><small>Scoliosis &amp; Chiropractic</small></span>
+      </a>
+      <nav class="f-nav" aria-label="Footer">
+        <a href="#services">Care</a><a href="#about">About</a><a href="#process">Your Visit</a><a href="#faq">FAQ</a><a href="#contact">Contact</a>
+      </nav>
+      <div>248 Addie Roy Rd, Bldg C, Suite 102<br>Austin, TX 78746<br><a class="ulink" href="tel:+15123275311" style="color:var(--gold-2)">(512) 327-5311</a></div>
+    </div>
+    <div class="f-bot">
+      <span>© <span id="yr"></span> Bee Caves Scoliosis &amp; Chiropractic Center</span>
+      <span>Austin, Texas</span>
+    </div>
+  </div>
+</footer>
 
-<div class="mobile-bar">
-  <a class="btn ghost" href="tel:5123275311">Call</a>
-  <a class="btn" href="#visit">Book now</a>
+<div class="callbar">
+  <a href="tel:+15123275311"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>Call Now</a>
+  <a href="https://maps.google.com/?q=248+Addie+Roy+Rd+Bldg+C+Suite+102+Austin+TX+78746" target="_blank" rel="noopener">Directions</a>
 </div>
-</body>
+
+<script>
+(function(){
+  var d=document,b=d.body,reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  d.getElementById('yr').textContent=new Date().getFullYear();
+
+  // vertebrae along the spine curve
+  var path=d.getElementById('spinePath'),g=d.getElementById('verts'),ns='http://www.w3.org/2000/svg';
+  if(path&&path.getTotalLength){
+    var L=path.getTotalLength(),n=14;
+    for(var i=0;i<n;i++){
+      var t=(i+.5)/n*L,p=path.getPointAtLength(t),q=path.getPointAtLength(Math.min(L,t+2)),
+          ang=Math.atan2(q.y-p.y,q.x-p.x)*180/Math.PI-90,w=34-Math.abs(i-n/2)*1.2;
+      var r=d.createElementNS(ns,'rect');
+      r.setAttribute('x',p.x-w/2);r.setAttribute('y',p.y-5);r.setAttribute('width',w);r.setAttribute('height',10);r.setAttribute('rx',5);
+      r.setAttribute('fill',i%2?'#c6a46a':'#e2c890');r.setAttribute('fill-opacity',.85);
+      r.setAttribute('transform','rotate('+ang.toFixed(1)+' '+p.x.toFixed(1)+' '+p.y.toFixed(1)+')');
+      r.setAttribute('class','vert');r.style.transitionDelay=(.9+i*.08)+'s';
+      g.appendChild(r);
+      if(i<n-1){var c=d.createElementNS(ns,'circle');var m=path.getPointAtLength((i+1)/n*L);
+        c.setAttribute('cx',m.x);c.setAttribute('cy',m.y);c.setAttribute('r',2.2);c.setAttribute('fill','#f6f1e8');c.setAttribute('fill-opacity',.5);
+        c.setAttribute('class','vert');c.style.transitionDelay=(1+i*.08)+'s';g.appendChild(c);}
+    }
+  }
+  requestAnimationFrame(function(){setTimeout(function(){b.classList.add('loaded')},60)});
+
+  // header state
+  var hdr=d.getElementById('hdr');
+  function onScroll(){hdr.classList.toggle('scrolled',scrollY>40)}
+  addEventListener('scroll',onScroll,{passive:true});onScroll();
+
+  // mobile menu
+  var bg=d.getElementById('burger'),mm=d.getElementById('mmenu');
+  function setMenu(o){b.classList.toggle('menu-open',o);bg.setAttribute('aria-expanded',o);mm.setAttribute('aria-hidden',!o);b.style.overflow=o?'hidden':''}
+  bg.addEventListener('click',function(){setMenu(!b.classList.contains('menu-open'))});
+  mm.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){setMenu(false)})});
+  addEventListener('keydown',function(e){if(e.key==='Escape')setMenu(false)});
+
+  // reveal on scroll
+  var rv=d.querySelectorAll('.rv');
+  if('IntersectionObserver' in window&&!reduce){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12,rootMargin:'0px 0px -40px 0px'});
+    rv.forEach(function(el){io.observe(el)});
+  }else{rv.forEach(function(el){el.classList.add('in')})}
+
+  // FAQ accordion
+  d.querySelectorAll('.qa button').forEach(function(btn){
+    btn.addEventListener('click',function(){
+      var qa=btn.parentNode,o=!qa.classList.contains('open');
+      d.querySelectorAll('.qa').forEach(function(x){x.classList.remove('open');x.querySelector('button').setAttribute('aria-expanded','false')});
+      if(o){qa.classList.add('open');btn.setAttribute('aria-expanded','true')}
+    });
+  });
+
+  // hero parallax
+  var sp=d.getElementById('spine');
+  if(sp&&!reduce){
+    var tick=false;
+    addEventListener('scroll',function(){
+      if(tick)return;tick=true;
+      requestAnimationFrame(function(){
+        var y=Math.min(scrollY,innerHeight);
+        sp.style.translate='0 '+(y*.18).toFixed(1)+'px';
+        tick=false;
+      });
+    },{passive:true});
+  }
+})();
+</script>
+<div id="lm-concept" style="position:fixed;left:12px;bottom:12px;z-index:2147483647;font:500 11px/1.3 -apple-system,BlinkMacSystemFont,Segoe UI,sans-serif;letter-spacing:.02em;background:rgba(15,15,18,.82);color:#f4f1ea;padding:7px 11px;border-radius:999px;backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);pointer-events:none;max-width:70vw">Website concept for Bee Caves Scoliosis &amp; Chiropractic Center by webstudio &middot; not the live site</div><p style="margin:0;padding:18px 16px 70px;text-align:center;font:12px/1.5 -apple-system,sans-serif;color:#8a8a8a;background:#0e0e10">Concept design by webstudio. Not affiliated with or endorsed by Bee Caves Scoliosis &amp; Chiropractic Center.</p></body>
 </html>
