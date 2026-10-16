@@ -1,291 +1,618 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src * data: blob:; media-src 'self' data:; style-src 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com data:; script-src 'unsafe-inline'; connect-src 'none'; frame-src 'none'; form-action 'none'; base-uri 'none'; object-src 'none'">
 <meta name="robots" content="noindex, nofollow">
-<title>Connected Health Cedar Park | Website concept</title>
+<style>html,body{max-width:100%;overflow-x:clip}</style>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Connected Health Cedar Park | Chiropractor in Cedar Park, TX</title>
+<meta name="description" content="Connected Health Cedar Park: calm, considered chiropractic care at 600 S Bell Blvd #15, Cedar Park, TX. Call (737) 268-8277.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..600&family=Inter+Tight:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{
-  --bg:#f5f3ee;--surface:#ffffff;--ink:#1c2a22;--muted:#5f6b63;
-  --accent:#2f5a43;--accent-ink:#ffffff;--gold:#b8955a;--soft:#e6ece6;
-  --radius:22px;--max:1180px;
-  --serif:"Fraunces",Georgia,serif;--sans:"Manrope",system-ui,-apple-system,sans-serif;
+  --bg:#F4F8FD;--card:#FFFFFF;--ink:#0B2340;--ink-2:#3A4F6B;--blue:#1D6FD8;--blue-d:#1559B3;--sky:#7FC4F5;
+  --sky-l:#E3F1FC;--sand:#F3EDE3;--sand-d:#E6DCCB;--line:rgba(11,35,64,.1);
+  --shadow:0 1px 2px rgba(11,35,64,.04),0 10px 30px -12px rgba(11,35,64,.14);
+  --shadow-l:0 2px 4px rgba(11,35,64,.05),0 30px 60px -24px rgba(11,35,64,.25);
+  --serif:"Fraunces",Georgia,serif;--sans:"Inter Tight",system-ui,-apple-system,sans-serif;
+  --r:22px;--ease:cubic-bezier(.2,.7,.2,1);
 }
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:var(--sans);background:var(--bg);color:var(--ink);font-size:17px;line-height:1.65;overflow-x:hidden;-webkit-font-smoothing:antialiased}
 a{color:inherit;text-decoration:none}
-img{max-width:100%;display:block}
-.wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
-.concept{background:var(--ink);color:var(--bg);font-size:13px;text-align:center;padding:8px 16px;letter-spacing:.02em}
-.concept b{color:var(--gold);font-weight:600}
+svg{display:block}
+.wrap{width:min(1200px,100% - 48px);margin-inline:auto}
+.label{font-size:12px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--blue)}
+.label.dot::before{content:"";display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--sky);margin-right:12px;vertical-align:middle;transform:translateY(-1px)}
+h1,h2,h3{font-family:var(--serif);font-weight:400;line-height:1.04;letter-spacing:-.025em;font-variation-settings:"opsz" 144}
+h2{font-size:clamp(38px,5.4vw,72px)}
+h3{font-size:26px;letter-spacing:-.015em}
+em{font-style:italic;color:var(--blue)}
+p.lead{font-size:clamp(18px,1.6vw,21px);color:var(--ink-2);max-width:56ch}
 
-/* header */
-header{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:saturate(1.4) blur(10px);border-bottom:1px solid color-mix(in srgb,var(--ink) 8%,transparent)}
-.nav{display:flex;align-items:center;justify-content:space-between;height:76px;gap:24px}
-.brand{font-family:var(--serif);font-size:23px;font-weight:600;letter-spacing:-.01em;line-height:1.1;max-width:340px}
-.links{display:flex;gap:30px;font-size:15px;font-weight:500;color:var(--muted)}
-.links a:hover{color:var(--ink)}
-.nav-right{display:flex;align-items:center;gap:18px}
-.phone{font-weight:600;font-size:15px;white-space:nowrap}
-.btn{display:inline-flex;align-items:center;gap:10px;background:var(--accent);color:var(--accent-ink);padding:14px 26px;border-radius:999px;font-weight:600;font-size:15.5px;transition:transform .2s ease,box-shadow .2s ease;white-space:nowrap}
-.btn:hover{transform:translateY(-2px);box-shadow:0 12px 28px -12px var(--accent)}
-.btn.ghost{background:transparent;color:var(--ink);border:1.5px solid color-mix(in srgb,var(--ink) 20%,transparent)}
-.btn.ghost:hover{box-shadow:none;border-color:var(--ink)}
-.btn svg{width:18px;height:18px}
+/* Buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:16px 28px;border-radius:999px;font-weight:600;font-size:15px;letter-spacing:.01em;transition:transform .4s var(--ease),box-shadow .4s var(--ease),background .3s;white-space:nowrap}
+.btn svg{width:16px;height:16px;transition:transform .4s var(--ease)}
+.btn:hover svg{transform:translateX(4px)}
+.btn-p{background:var(--blue);color:#fff;box-shadow:0 12px 28px -12px rgba(29,111,216,.7)}
+.btn-p:hover{background:var(--blue-d);transform:translateY(-2px);box-shadow:0 18px 36px -14px rgba(29,111,216,.8)}
+.btn-g{background:#fff;color:var(--ink);box-shadow:inset 0 0 0 1px var(--line),var(--shadow)}
+.btn-g:hover{transform:translateY(-2px);box-shadow:inset 0 0 0 1px rgba(29,111,216,.35),var(--shadow-l)}
+.btn-w{background:#fff;color:var(--ink)}
+.btn-w:hover{transform:translateY(-2px);background:var(--sky-l)}
+.btn-o{color:#fff;box-shadow:inset 0 0 0 1.5px rgba(255,255,255,.6)}
+.btn-o:hover{background:rgba(255,255,255,.12);transform:translateY(-2px)}
+.ul{background:linear-gradient(currentColor,currentColor) 0 100%/0 1.5px no-repeat;transition:background-size .45s var(--ease);padding-bottom:2px}
+.ul:hover{background-size:100% 1.5px}
 
-/* hero */
-.hero{padding:72px 0 88px}
-.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:64px;align-items:center}
-.eyebrow{display:inline-flex;align-items:center;gap:10px;background:var(--surface);border:1px solid color-mix(in srgb,var(--ink) 10%,transparent);padding:8px 16px 8px 10px;border-radius:999px;font-size:14px;font-weight:600;color:var(--muted)}
-.stars{color:var(--gold);letter-spacing:1px;font-size:14px}
-.eyebrow .dot{width:26px;height:26px;border-radius:50%;background:var(--soft);display:grid;place-items:center;color:var(--accent)}
-h1{font-family:var(--serif);font-weight:500;font-size:clamp(44px,5.6vw,74px);line-height:1.02;letter-spacing:-.025em;margin:26px 0 22px}
-h1 em{font-style:italic;color:var(--accent)}
-.lead-text{font-size:19.5px;color:var(--muted);max-width:540px}
-.hero-ctas{display:flex;gap:14px;margin-top:36px;flex-wrap:wrap}
-.ticks{display:flex;gap:22px;margin-top:34px;flex-wrap:wrap;font-size:14.5px;font-weight:600;color:var(--muted)}
-.ticks span{display:flex;align-items:center;gap:8px}
-.ticks svg{width:18px;height:18px;color:var(--accent)}
-.visual{position:relative}
-.photo{aspect-ratio:4/5;border-radius:calc(var(--radius) + 10px);overflow:hidden;background:var(--soft);box-shadow:0 40px 80px -40px color-mix(in srgb,var(--ink) 55%,transparent)}
-.photo img{width:100%;height:100%;object-fit:cover}
-.quote-panel{aspect-ratio:4/5;border-radius:calc(var(--radius) + 10px);background:linear-gradient(155deg,var(--accent),color-mix(in srgb,var(--accent) 55%,var(--ink)));color:var(--accent-ink);padding:52px 46px;display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden;box-shadow:0 40px 80px -40px color-mix(in srgb,var(--ink) 60%,transparent)}
-.quote-panel:before{content:"";position:absolute;width:420px;height:420px;border-radius:50%;right:-160px;top:-160px;background:color-mix(in srgb,var(--accent-ink) 9%,transparent)}
-.quote-panel:after{content:"";position:absolute;width:260px;height:260px;border-radius:50%;left:-90px;bottom:-110px;border:1.5px solid color-mix(in srgb,var(--accent-ink) 22%,transparent)}
-.quote-mark{font-family:var(--serif);font-size:120px;line-height:.6;opacity:.35}
-.quote-panel p{font-family:var(--serif);font-size:28px;line-height:1.3;position:relative;z-index:1}
-.quote-panel .who{font-family:var(--sans);font-size:15px;opacity:.85;margin-top:22px;font-weight:600}
-.float{position:absolute;background:var(--surface);color:var(--ink);border-radius:18px;padding:16px 20px;box-shadow:0 24px 50px -24px color-mix(in srgb,var(--ink) 50%,transparent);display:flex;align-items:center;gap:14px;font-size:14px;line-height:1.35}
-.float b{font-size:22px;font-family:var(--serif);font-weight:600;display:block}
-.float.one{left:-34px;bottom:-28px}
-.float.two{right:-22px;top:44px}
-.float .badge{width:44px;height:44px;border-radius:14px;background:var(--soft);display:grid;place-items:center;color:var(--accent)}
-.float .badge svg{width:22px;height:22px}
+/* Header */
+header{position:fixed;inset:14px 0 auto;z-index:50;pointer-events:none}
+.bar{pointer-events:auto;display:flex;align-items:center;justify-content:space-between;gap:20px;padding:10px 10px 10px 22px;border-radius:999px;background:rgba(255,255,255,.62);backdrop-filter:blur(18px) saturate(1.6);-webkit-backdrop-filter:blur(18px) saturate(1.6);box-shadow:inset 0 0 0 1px rgba(255,255,255,.8),0 10px 30px -18px rgba(11,35,64,.3);transition:background .4s}
+header.scrolled .bar{background:rgba(255,255,255,.85)}
+.logo{display:flex;align-items:center;gap:12px;font-family:var(--serif);font-size:19px;letter-spacing:-.01em;line-height:1.1}
+.logo small{display:block;font-family:var(--sans);font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:var(--blue);font-weight:600}
+.mark{width:38px;height:38px;flex:none}
+nav ul{display:flex;gap:30px;list-style:none;font-size:14px;font-weight:500;color:var(--ink-2)}
+nav a:hover{color:var(--ink)}
+.h-right{display:flex;align-items:center;gap:18px}
+.h-phone{font-size:14px;font-weight:600}
+.bar .btn{padding:12px 20px;font-size:14px}
+.burger{display:none;width:44px;height:44px;border-radius:50%;background:var(--ink);border:0;cursor:pointer;position:relative}
+.burger span{position:absolute;left:14px;right:14px;height:1.5px;background:#fff;transition:transform .4s var(--ease),top .4s var(--ease)}
+.burger span:first-child{top:18px}.burger span:last-child{top:25px}
+.menu-open .burger span:first-child{top:21.5px;transform:rotate(45deg)}
+.menu-open .burger span:last-child{top:21.5px;transform:rotate(-45deg)}
+.mnav{position:fixed;inset:0;z-index:40;background:rgba(244,248,253,.97);backdrop-filter:blur(10px);display:flex;flex-direction:column;justify-content:center;padding:100px 32px 40px;gap:8px;opacity:0;visibility:hidden;transition:opacity .4s,visibility .4s}
+.menu-open .mnav{opacity:1;visibility:visible}
+.mnav a{font-family:var(--serif);font-size:42px;letter-spacing:-.02em;padding:4px 0;border-bottom:1px solid var(--line)}
+.mnav .btn{margin-top:26px;font-family:var(--sans);font-size:16px;border:0}
 
-/* trust */
-.trust{border-top:1px solid color-mix(in srgb,var(--ink) 9%,transparent);border-bottom:1px solid color-mix(in srgb,var(--ink) 9%,transparent);background:var(--surface)}
-.trust .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;padding-top:26px;padding-bottom:26px}
-.trust div{display:flex;align-items:center;gap:12px;font-weight:600;font-size:15px}
-.trust svg{width:22px;height:22px;color:var(--accent);flex:none}
+/* Hero */
+.hero{position:relative;min-height:100vh;min-height:100svh;display:flex;align-items:center;justify-content:center;text-align:center;padding:150px 0 110px;overflow:hidden;isolation:isolate}
+.hero-bg{position:absolute;inset:0;z-index:-1;background:radial-gradient(60% 50% at 50% 0%,#DCEEFC 0%,rgba(220,238,252,0) 70%),radial-gradient(45% 40% at 85% 85%,rgba(243,237,227,.9),transparent 70%),radial-gradient(40% 40% at 8% 70%,rgba(127,196,245,.22),transparent 70%),var(--bg)}
+.orb{position:absolute;border-radius:50%;filter:blur(2px);will-change:transform}
+.orb.a{width:520px;height:520px;left:-160px;top:12%;background:radial-gradient(circle at 35% 35%,rgba(255,255,255,.9),rgba(127,196,245,.35) 60%,transparent 72%)}
+.orb.b{width:380px;height:380px;right:-110px;top:48%;background:radial-gradient(circle at 40% 40%,#fff,rgba(230,220,203,.8) 55%,transparent 72%)}
+.waves{position:absolute;left:0;right:0;bottom:0;width:100%;height:220px;opacity:.55}
+.spine{position:absolute;left:50%;top:0;bottom:0;width:2px;transform:translateX(-50%);z-index:-1;opacity:.5}
+.spine::before{content:"";position:absolute;inset:0;background:linear-gradient(to bottom,transparent,rgba(29,111,216,.25) 20%,rgba(29,111,216,.25) 80%,transparent)}
+.hero-in{position:relative;max-width:1100px;padding:0 24px}
+.hero h1{font-size:clamp(54px,11.2vw,172px);font-weight:300;line-height:.93;letter-spacing:-.045em;margin:28px 0 30px}
+.hero h1 .ln{display:block;overflow:hidden;padding-bottom:.06em}
+.hero h1 .ln>span{display:inline-block}
+.hero h1 em{font-weight:300}
+.hero h1 .gap{display:inline-flex;vertical-align:middle;width:.9em;height:.62em;margin:0 .06em;border-radius:999px;background:linear-gradient(120deg,var(--sky),var(--blue));position:relative;overflow:hidden;transform:translateY(-.06em);box-shadow:inset 0 0 0 1px rgba(255,255,255,.4),0 18px 40px -16px rgba(29,111,216,.7)}
+.hero h1 .gap::after{content:"";position:absolute;inset:18% 12%;border-radius:999px;border:1.5px solid rgba(255,255,255,.65)}
+.hero .lead{margin:0 auto 40px;text-align:center}
+.ctas{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.hero-meta{display:flex;gap:28px;justify-content:center;flex-wrap:wrap;margin-top:56px;font-size:13px;color:var(--ink-2);letter-spacing:.04em}
+.hero-meta span{display:inline-flex;align-items:center;gap:8px}
+.hero-meta svg{width:16px;height:16px;color:var(--blue)}
+.scroll-cue{position:absolute;bottom:28px;left:50%;transform:translateX(-50%);width:26px;height:42px;border-radius:20px;box-shadow:inset 0 0 0 1.5px rgba(11,35,64,.25)}
+.scroll-cue::after{content:"";position:absolute;left:50%;top:9px;width:4px;height:8px;margin-left:-2px;border-radius:2px;background:var(--blue);animation:cue 2s infinite}
+@keyframes cue{0%{opacity:0;transform:translateY(0)}30%{opacity:1}100%{opacity:0;transform:translateY(14px)}}
 
-/* sections */
-section.block{padding:110px 0}
-.kicker{font-size:13px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
-h2{font-family:var(--serif);font-weight:500;font-size:clamp(34px,3.8vw,52px);line-height:1.08;letter-spacing:-.02em;margin:14px 0 18px}
-.section-head{display:flex;justify-content:space-between;align-items:end;gap:40px;margin-bottom:56px}
-.section-head p{color:var(--muted);max-width:420px}
-.services{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-.card{background:var(--surface);border-radius:var(--radius);padding:34px 32px 36px;border:1px solid color-mix(in srgb,var(--ink) 7%,transparent);transition:transform .25s ease,box-shadow .25s ease}
-.card:hover{transform:translateY(-4px);box-shadow:0 30px 60px -36px color-mix(in srgb,var(--ink) 45%,transparent)}
-.icon{width:54px;height:54px;border-radius:16px;background:var(--soft);color:var(--accent);display:grid;place-items:center;margin-bottom:24px}
-.icon svg{width:26px;height:26px}
-.card h3{font-family:var(--serif);font-weight:500;font-size:23px;margin-bottom:8px;letter-spacing:-.01em}
-.card p{color:var(--muted);font-size:16px}
+/* Entrance */
+.in{opacity:0;transform:translateY(24px)}
+.hero h1 .ln>span{transform:translateY(105%)}
+.loaded .in{opacity:1;transform:none;transition:opacity 1s var(--ease),transform 1s var(--ease);transition-delay:calc(var(--d,0)*1ms)}
+.loaded .hero h1 .ln>span{transform:none;transition:transform 1.2s var(--ease);transition-delay:calc(var(--d,0)*1ms)}
 
-.why{background:var(--ink);color:var(--bg)}
-.why .kicker{color:var(--gold)}
-.why-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:80px;align-items:start}
-.why h2{color:var(--bg)}
-.why .intro{color:color-mix(in srgb,var(--bg) 70%,transparent);font-size:18px;max-width:440px}
-.points{display:grid;gap:14px}
-.point{display:grid;grid-template-columns:62px 1fr;gap:20px;padding:30px;border-radius:var(--radius);background:color-mix(in srgb,var(--bg) 6%,transparent);border:1px solid color-mix(in srgb,var(--bg) 10%,transparent)}
-.point .num{font-family:var(--serif);font-size:34px;color:var(--gold);line-height:1}
-.point h3{font-family:var(--serif);font-weight:500;font-size:24px;margin-bottom:6px}
-.point p{color:color-mix(in srgb,var(--bg) 72%,transparent);font-size:16px}
+/* Colour band (signature) */
+.band{position:relative;background:var(--blue);color:#fff;overflow:hidden;padding:120px 0 110px}
+.band::before{content:"";position:absolute;inset:0;background:radial-gradient(60% 80% at 15% 0%,rgba(127,196,245,.55),transparent 60%),radial-gradient(50% 70% at 100% 100%,rgba(11,35,64,.45),transparent 60%)}
+.band-curve{position:absolute;top:-1px;left:0;width:100%;height:70px;color:var(--bg)}
+.band-in{position:relative;display:grid;grid-template-columns:1.1fr 1fr;gap:60px;align-items:end}
+.band .label{color:#CDE7FB}
+.band h2{font-size:clamp(44px,7vw,104px);font-weight:300;margin-top:20px;letter-spacing:-.04em}
+.band h2 em{color:#fff;font-style:italic;background:linear-gradient(transparent 70%,rgba(127,196,245,.55) 70%)}
+.band p{font-size:19px;color:#EAF4FD;max-width:46ch}
+.band .ctas{justify-content:flex-start;margin-top:30px}
+.giant{position:relative;margin-top:90px;font-family:var(--serif);font-weight:300;font-size:clamp(80px,19vw,300px);line-height:.8;letter-spacing:-.06em;white-space:nowrap;color:transparent;-webkit-text-stroke:1.2px rgba(255,255,255,.45);will-change:transform}
+.giant b{font-weight:300;color:#fff;-webkit-text-stroke:0;font-style:italic}
 
-.score{display:flex;align-items:center;gap:18px;background:var(--surface);padding:16px 24px;border-radius:18px;border:1px solid color-mix(in srgb,var(--ink) 8%,transparent)}
-.score b{font-family:var(--serif);font-size:40px;font-weight:500;line-height:1}
-.score small{display:block;color:var(--muted);font-size:14px}
-.reviews{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-.review{background:var(--surface);border-radius:var(--radius);padding:34px;display:flex;flex-direction:column;gap:22px;border:1px solid color-mix(in srgb,var(--ink) 7%,transparent)}
-.review p{font-family:var(--serif);font-size:19.5px;line-height:1.45}
-.review .by{margin-top:auto;display:flex;align-items:center;gap:12px;font-weight:600;font-size:15px}
-.avatar{width:40px;height:40px;border-radius:50%;background:var(--soft);color:var(--accent);display:grid;place-items:center;font-weight:700}
-.review .src{color:var(--muted);font-weight:500;font-size:13px;display:block}
+/* Marquee */
+.marq{background:var(--ink);color:#fff;overflow:hidden;padding:22px 0;position:relative}
+.marq-track{display:flex;width:max-content;animation:mq 38s linear infinite}
+.marq:hover .marq-track{animation-play-state:paused}
+.marq-track span{display:inline-flex;align-items:center;gap:28px;padding-right:28px;font-family:var(--serif);font-size:24px;font-weight:300;white-space:nowrap;letter-spacing:-.01em}
+.marq-track i{width:8px;height:8px;border-radius:50%;background:var(--sky);flex:none}
+@keyframes mq{to{transform:translateX(-50%)}}
 
-.cta-band{padding:0 0 110px}
-.cta-box{border-radius:calc(var(--radius) + 12px);background:linear-gradient(140deg,var(--accent),color-mix(in srgb,var(--accent) 60%,var(--ink)));color:var(--accent-ink);padding:76px 64px;display:grid;grid-template-columns:1.3fr 1fr;gap:40px;align-items:center;position:relative;overflow:hidden}
-.cta-box:after{content:"";position:absolute;right:-120px;bottom:-200px;width:460px;height:460px;border-radius:50%;border:1.5px solid color-mix(in srgb,var(--accent-ink) 22%,transparent)}
-.cta-box h2{color:inherit;margin:0 0 12px}
-.cta-box p{opacity:.85;font-size:18px}
-.cta-box .actions{display:flex;flex-direction:column;gap:12px;align-items:flex-start;position:relative;z-index:1}
-.cta-box .btn{background:var(--accent-ink);color:var(--accent)}
-.cta-box .btn.ghost{background:transparent;color:var(--accent-ink);border-color:color-mix(in srgb,var(--accent-ink) 40%,transparent)}
+/* Sections */
+section{position:relative}
+.sec{padding:140px 0}
+.split{display:grid;grid-template-columns:5fr 7fr;gap:80px;align-items:start}
+.sticky{position:sticky;top:120px}
+.sticky h2{margin:20px 0 26px}
+.note{margin-top:28px;padding:18px 20px;border-radius:16px;background:var(--sand);font-size:15px;color:var(--ink-2);display:flex;gap:12px}
+.note svg{width:20px;height:20px;color:var(--blue);flex:none;margin-top:2px}
 
-.visit{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:10px}
-.visit .card h3{font-size:20px}
-.visit a{color:var(--accent);font-weight:600}
-footer{border-top:1px solid color-mix(in srgb,var(--ink) 9%,transparent);padding:40px 0 110px;color:var(--muted);font-size:14px}
-footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
-.mobile-bar{display:none}
+/* Service cards */
+.cards{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.card{position:relative;background:var(--card);border-radius:var(--r);padding:38px 32px 34px;box-shadow:var(--shadow);transition:transform .5s var(--ease),box-shadow .5s var(--ease);overflow:hidden;isolation:isolate}
+.card::after{content:"";position:absolute;right:-60px;top:-60px;width:180px;height:180px;border-radius:50%;background:radial-gradient(circle,var(--sky-l),transparent 70%);z-index:-1;transition:transform .6s var(--ease)}
+.card:hover{transform:translateY(-6px);box-shadow:var(--shadow-l)}
+.card:hover::after{transform:scale(1.5)}
+.cards .card:nth-child(2n){margin-top:56px}
+.card .ic{width:56px;height:56px;border-radius:16px;background:var(--sky-l);display:grid;place-items:center;color:var(--blue);margin-bottom:30px}
+.card .ic svg{width:28px;height:28px}
+.card .n{position:absolute;top:30px;right:30px;font-family:var(--serif);font-size:15px;color:#6E829C;font-style:italic}
+.card h3{margin-bottom:12px}
+.card p{color:var(--ink-2);font-size:16px}
+.card.wide{grid-column:1/-1;margin-top:0;background:linear-gradient(135deg,#fff 0%,var(--sky-l) 100%);display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap}
+.card.wide h3{margin:0}
 
-@keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
-.hero .copy>*{animation:rise .8s cubic-bezier(.2,.7,.2,1) both}
-.hero .copy>*:nth-child(2){animation-delay:.08s}.hero .copy>*:nth-child(3){animation-delay:.16s}
-.hero .copy>*:nth-child(4){animation-delay:.24s}.hero .copy>*:nth-child(5){animation-delay:.32s}
-.visual{animation:rise 1s .2s cubic-bezier(.2,.7,.2,1) both}
+/* About */
+.about{background:linear-gradient(180deg,var(--bg),#fff 40%,#fff 60%,var(--bg))}
+.about-grid{display:grid;grid-template-columns:7fr 5fr;gap:80px;align-items:center}
+.about h2{margin:20px 0 30px}
+.about p+p{margin-top:18px}
+.about p{color:var(--ink-2);max-width:58ch}
+.quote{font-family:var(--serif);font-size:clamp(26px,2.6vw,34px);line-height:1.25;font-weight:300;letter-spacing:-.015em;color:var(--ink);margin:36px 0 0;padding-left:28px;border-left:2px solid var(--sky)}
+.stack{position:relative;aspect-ratio:4/5;max-width:440px;margin-left:auto;width:100%}
+.layer{position:absolute;border-radius:28px;box-shadow:var(--shadow-l)}
+.layer.l1{inset:0 18% 18% 0;background:linear-gradient(160deg,var(--sky) 0%,var(--blue) 100%);overflow:hidden}
+.layer.l1 svg{position:absolute;inset:0;width:100%;height:100%}
+.layer.l2{inset:30% 0 0 30%;background:var(--sand);display:flex;flex-direction:column;justify-content:flex-end;padding:30px}
+.layer.l3{left:-6%;bottom:6%;width:58%;background:#fff;padding:22px 24px;border-radius:20px}
+.layer.l2 b{font-family:var(--serif);font-weight:300;font-size:clamp(34px,3.6vw,46px);line-height:1;letter-spacing:-.03em}
+.layer.l2 span{font-size:13px;color:var(--ink-2);margin-top:10px}
+.layer.l3 .label{font-size:10px}
+.layer.l3 p{font-family:var(--serif);font-size:19px;line-height:1.25;color:var(--ink);margin-top:8px}
 
-@media (max-width:980px){
-  .links{display:none}
-  .hero-grid,.why-grid,.cta-box{grid-template-columns:1fr}
-  .hero-grid{gap:56px}
-  .services,.reviews,.visit{grid-template-columns:1fr 1fr}
-  .trust .wrap{grid-template-columns:1fr 1fr}
-  .float.one{left:12px;bottom:-26px}.float.two{right:12px}
-  .visual{max-width:560px;margin-bottom:20px}
-  .section-head{flex-direction:column;align-items:flex-start}
+/* Why */
+.why-head{display:flex;justify-content:space-between;align-items:end;gap:40px;margin-bottom:64px;flex-wrap:wrap}
+.why-head h2{margin-top:20px;max-width:14ch}
+.why-head p{max-width:40ch;color:var(--ink-2)}
+.why{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line)}
+.why div{padding:42px 36px 10px 0;border-right:1px solid var(--line)}
+.why div:not(:first-child){padding-left:36px}
+.why div:last-child{border-right:0}
+.why .k{font-family:var(--serif);font-size:56px;font-weight:300;font-style:italic;color:var(--sky);line-height:1;margin-bottom:22px}
+.why h3{font-size:24px;margin-bottom:12px}
+.why p{color:var(--ink-2);font-size:16px}
+
+/* Steps */
+.steps-sec{background:var(--sand);overflow:hidden}
+.steps-sec .wave-top{position:absolute;top:-1px;left:0;width:100%;height:60px;color:var(--bg)}
+.steps-sec .wave-bot{position:absolute;bottom:-1px;left:0;width:100%;height:60px;color:var(--bg)}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:64px;counter-reset:s;position:relative}
+.steps::before{content:"";position:absolute;top:35px;left:5%;right:5%;height:1.5px;background:repeating-linear-gradient(90deg,rgba(29,111,216,.4) 0 6px,transparent 6px 14px)}
+.step{position:relative;background:rgba(255,255,255,.75);backdrop-filter:blur(6px);border-radius:var(--r);padding:28px 26px 30px;box-shadow:var(--shadow);transition:transform .5s var(--ease),box-shadow .5s var(--ease)}
+.step:hover{transform:translateY(-6px);box-shadow:var(--shadow-l)}
+.step .num{width:52px;height:52px;border-radius:50%;background:var(--ink);color:#fff;display:grid;place-items:center;font-family:var(--serif);font-size:20px;margin-bottom:26px;position:relative;box-shadow:0 0 0 7px var(--sand)}
+.step:nth-child(1) .num{background:var(--blue)}
+.step h3{font-size:22px;margin-bottom:10px}
+.step p{font-size:15.5px;color:var(--ink-2)}
+
+/* FAQ */
+.faq{max-width:none}
+.faq details{background:#fff;border-radius:18px;box-shadow:var(--shadow);margin-bottom:14px;transition:box-shadow .4s}
+.faq details[open]{box-shadow:var(--shadow-l)}
+.faq summary{list-style:none;cursor:pointer;padding:24px 26px;display:flex;justify-content:space-between;align-items:center;gap:20px;font-family:var(--serif);font-size:21px;letter-spacing:-.01em;line-height:1.3}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary i{width:34px;height:34px;flex:none;border-radius:50%;background:var(--sky-l);position:relative;transition:transform .4s var(--ease),background .3s}
+.faq summary i::before,.faq summary i::after{content:"";position:absolute;left:50%;top:50%;width:12px;height:1.5px;background:var(--blue);transform:translate(-50%,-50%)}
+.faq summary i::after{transform:translate(-50%,-50%) rotate(90deg)}
+.faq details[open] summary i{transform:rotate(45deg);background:var(--sky)}
+.faq .ans{padding:0 26px 26px;color:var(--ink-2);font-size:16px}
+.faq .ans a{color:var(--blue);font-weight:600}
+
+/* CTA */
+.cta{padding:0 0 140px}
+.cta-box{position:relative;border-radius:36px;overflow:hidden;background:var(--ink);color:#fff;padding:110px 60px;text-align:center;isolation:isolate}
+.cta-box::before{content:"";position:absolute;inset:0;z-index:-1;background:radial-gradient(50% 70% at 50% 0%,rgba(29,111,216,.75),transparent 70%),radial-gradient(40% 60% at 0% 100%,rgba(127,196,245,.3),transparent 70%)}
+.cta-rings{position:absolute;left:50%;top:50%;width:900px;height:900px;transform:translate(-50%,-50%);z-index:-1;opacity:.25}
+.cta-box .label{color:var(--sky)}
+.cta-box h2{font-size:clamp(44px,7vw,100px);font-weight:300;margin:24px auto 24px;max-width:13ch;letter-spacing:-.04em}
+.cta-box h2 em{color:var(--sky)}
+.cta-box p{color:#D3E2F3;max-width:46ch;margin:0 auto 40px;font-size:18px}
+.big-phone{display:inline-block;font-family:var(--serif);font-size:clamp(30px,4vw,48px);font-weight:300;letter-spacing:-.02em;margin-bottom:36px;color:#fff}
+
+/* Contact */
+.contact{padding-bottom:130px}
+.c-grid{display:grid;grid-template-columns:5fr 7fr;gap:60px;align-items:stretch}
+.c-grid h2{margin:20px 0 24px}
+.c-cards{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.c-card{background:#fff;border-radius:var(--r);padding:30px;box-shadow:var(--shadow);display:flex;flex-direction:column;gap:10px;transition:transform .5s var(--ease),box-shadow .5s var(--ease)}
+a.c-card:hover{transform:translateY(-5px);box-shadow:var(--shadow-l)}
+.c-card .ic{width:44px;height:44px;border-radius:12px;background:var(--sky-l);color:var(--blue);display:grid;place-items:center;margin-bottom:8px}
+.c-card .ic svg{width:22px;height:22px}
+.c-card b{font-family:var(--serif);font-weight:400;font-size:23px;line-height:1.25;letter-spacing:-.01em;overflow-wrap:anywhere}
+.c-card span{font-size:15px;color:var(--ink-2)}
+.c-card .go{margin-top:auto;padding-top:10px;color:var(--blue);font-weight:600;font-size:14px}
+.map{grid-column:1/-1;position:relative;min-height:240px;border-radius:var(--r);overflow:hidden;background:linear-gradient(135deg,#EAF4FD,#F3EDE3);box-shadow:var(--shadow);display:flex;align-items:flex-end;padding:28px}
+.map svg.grid{position:absolute;inset:0;width:100%;height:100%}
+.pin{position:absolute;left:56%;top:40%;transform:translate(-50%,-100%)}
+.pin::before{content:"";position:absolute;left:50%;bottom:-8px;width:60px;height:60px;margin-left:-30px;border-radius:50%;background:rgba(29,111,216,.18);animation:pulse 2.6s infinite;transform-origin:center}
+@keyframes pulse{0%{transform:scale(.4);opacity:1}100%{transform:scale(1.8);opacity:0}}
+.pin svg{position:relative;width:40px;height:52px}
+.map .btn{position:relative}
+
+footer{background:var(--ink);color:#C9D6E6;padding:80px 0 40px;font-size:15px}
+.f-top{display:flex;justify-content:space-between;gap:40px;flex-wrap:wrap;padding-bottom:50px;border-bottom:1px solid rgba(255,255,255,.12)}
+footer .logo{color:#fff}
+footer .logo small{color:var(--sky)}
+.f-cols{display:flex;gap:70px;flex-wrap:wrap}
+.f-cols h4{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--sky);margin-bottom:16px;font-weight:600}
+.f-cols a,.f-cols p{display:block;margin-bottom:8px;color:#E3ECF6}
+.f-bot{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;padding-top:30px;font-size:13px;color:#9FB2C9}
+
+/* Mobile call bar */
+.mbar{display:none}
+
+/* Reveal */
+.rv{opacity:0;transform:translateY(40px);transition:opacity 1s var(--ease),transform 1s var(--ease);transition-delay:calc(var(--d,0)*1ms)}
+.rv.on{opacity:1;transform:none}
+
+/* Responsive */
+@media (max-width:1060px){
+  nav,.h-phone{display:none}
+  .split,.about-grid,.c-grid,.band-in{grid-template-columns:1fr;gap:56px}
+  .sticky{position:static}
+  .steps{grid-template-columns:1fr 1fr}
+  .steps::before{display:none}
+  .stack{margin:0 auto}
 }
-@media (max-width:640px){
+@media (max-width:760px){
   body{font-size:16px}
-  .wrap{padding:0 18px}
-  .nav{height:66px}.brand{font-size:19px}
-  .phone,.nav-right .btn{display:none}
-  .hero{padding:44px 0 64px}
-  .lead-text{font-size:17.5px}
-  .hero-ctas .btn{flex:1;justify-content:center}
-  .ticks{display:none}
-  .services,.reviews,.visit,.trust .wrap{grid-template-columns:1fr}
-  section.block{padding:76px 0}
-  .quote-panel,.photo{aspect-ratio:auto;min-height:380px}.photo{aspect-ratio:4/3;min-height:0}
-  .quote-panel{padding:40px 30px 64px}.quote-panel p{font-size:23px}
-  .float{font-size:13px;padding:12px 14px}.float b{font-size:18px}
-  .float.two{display:none}
-  .cta-box{padding:52px 28px}
-  .point{grid-template-columns:44px 1fr;padding:24px}
-  .mobile-bar{display:flex;position:fixed;left:12px;right:12px;bottom:12px;z-index:30;gap:10px}
-  .mobile-bar .btn{flex:1;justify-content:center;box-shadow:0 14px 30px -14px color-mix(in srgb,var(--ink) 60%,transparent)}
-  .mobile-bar .btn.ghost{background:var(--surface)}
+  .wrap{width:calc(100% - 40px)}
+  .sec{padding:96px 0}
+  header{inset:10px 0 auto}
+  .bar{padding:8px 8px 8px 16px}
+  .bar .btn{display:none}
+  .burger{display:block}
+  .logo{font-size:16px}
+  .logo small{font-size:9px;letter-spacing:.2em}
+  .mark{width:34px;height:34px}
+  .hero{padding:130px 0 120px}
+  .hero h1{font-size:clamp(46px,13.6vw,80px);margin:22px 0 24px}
+  .hero-meta{gap:14px 22px;margin-top:40px}
+  .ctas .btn{width:100%}
+  .ctas{flex-direction:column}
+  .band{padding:96px 0 80px}
+  .band .ctas{align-items:stretch}
+  .giant{margin-top:60px}
+  .cards{grid-template-columns:1fr}
+  .cards .card:nth-child(2n){margin-top:0}
+  .card{padding:32px 26px}
+  .why{grid-template-columns:1fr}
+  .why div,.why div:not(:first-child){padding:34px 0;border-right:0;border-bottom:1px solid var(--line)}
+  .steps{grid-template-columns:1fr}
+  .cta{padding-bottom:96px}
+  .cta-box{padding:80px 24px;border-radius:28px}
+  .c-cards{grid-template-columns:1fr}
+  .marq-track span{font-size:20px}
+  .faq summary{font-size:18px;padding:20px}
+  .faq .ans{padding:0 20px 22px}
+  .layer.l3{left:0;width:64%}
+  .mbar{display:flex;position:fixed;left:12px;right:12px;bottom:12px;z-index:45;gap:8px;padding:8px;border-radius:999px;background:rgba(255,255,255,.88);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);box-shadow:0 14px 40px -12px rgba(11,35,64,.35),inset 0 0 0 1px rgba(255,255,255,.8);transform:translateY(140%);transition:transform .5s var(--ease)}
+  .mbar.show{transform:none}
+  .mbar .btn{flex:1;padding:14px 10px;font-size:14px}
+  footer{padding-bottom:110px}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+  .in,.rv,.hero h1 .ln>span{opacity:1!important;transform:none!important}
 }
 </style>
 </head>
 <body>
-<div class="concept">Website concept prepared for <b>Connected Health Cedar Park</b> by webstudio &middot; not a live site</div>
 
-<header>
-  <div class="wrap nav">
-    <a href="#top" class="brand">Connected Health Cedar Park</a>
-    <nav class="links">
-      <a href="#services">Services</a><a href="#why">Why us</a><a href="#visit">Visit</a>
-    </nav>
-    <div class="nav-right">
-      <a class="phone" href="tel:7372688277">(737) 268-8277</a>
-      <a class="btn" href="#visit">Book now</a>
+<header id="top-h">
+  <div class="wrap bar">
+    <a href="#top" class="logo" aria-label="Connected Health Cedar Park home">
+      <svg class="mark" viewBox="0 0 40 40" fill="none" aria-hidden="true"><circle cx="20" cy="20" r="19" fill="#0B2340"/><g fill="#7FC4F5"><rect x="15" y="7" width="10" height="4" rx="2"/><rect x="14" y="13" width="12" height="4" rx="2" fill="#fff"/><rect x="14.5" y="19" width="11" height="4" rx="2"/><rect x="15" y="25" width="10" height="4" rx="2" fill="#fff"/><rect x="16" y="31" width="8" height="3" rx="1.5"/></g></svg>
+      <span>Connected Health<small>Cedar Park</small></span>
+    </a>
+    <nav aria-label="Primary"><ul>
+      <li><a class="ul" href="#care">Care</a></li>
+      <li><a class="ul" href="#about">Approach</a></li>
+      <li><a class="ul" href="#process">Your visit</a></li>
+      <li><a class="ul" href="#faq">FAQ</a></li>
+      <li><a class="ul" href="#contact">Visit</a></li>
+    </ul></nav>
+    <div class="h-right">
+      <a class="h-phone ul" href="tel:+17372688277">(737) 268-8277</a>
+      <a class="btn btn-p" href="#contact">Book a visit</a>
+      <button class="burger" aria-label="Open menu" aria-expanded="false"><span></span><span></span></button>
     </div>
   </div>
 </header>
 
+<div class="mnav" aria-hidden="true">
+  <a href="#care">Care</a>
+  <a href="#about">Approach</a>
+  <a href="#process">Your visit</a>
+  <a href="#faq">FAQ</a>
+  <a href="#contact">Visit us</a>
+  <a class="btn btn-p" href="tel:+17372688277">Call (737) 268-8277</a>
+</div>
+
 <main id="top">
+<!-- HERO -->
 <section class="hero">
-  <div class="wrap hero-grid">
-    <div class="copy">
-      <div class="eyebrow">
-        <span class="dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-7-4.4-7-10a4 4 0 017-2.6A4 4 0 0119 10c0 5.6-7 10-7 10z"/></svg></span>Chiropractic care in Cedar Park
-      </div>
-      <h1>Feel better, move easier, right here in <em>Cedar Park.</em></h1>
-      <p class="lead-text">Book your next visit online in a few taps from any phone, and let our team help you get back to doing what you love.</p>
-      <div class="hero-ctas">
-        <a class="btn" href="#visit">Book your first visit <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-        <a class="btn ghost" href="tel:7372688277">Call (737) 268-8277</a>
-      </div>
-      <div class="ticks">
-        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7"/></svg>New patients welcome</span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7"/></svg>Most insurance accepted</span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7"/></svg>Same-day visits</span>
-      </div>
+  <div class="hero-bg" aria-hidden="true">
+    <div class="orb a" data-par="0.18"></div>
+    <div class="orb b" data-par="-0.12"></div>
+    <svg class="waves" viewBox="0 0 1440 220" preserveAspectRatio="none"><path d="M0 120c160-40 320-40 480 0s320 40 480 0 320-40 480 0v100H0z" fill="#fff" opacity=".7"/><path d="M0 160c200-30 400-30 600 0s400 30 600 0 160-20 240-10v70H0z" fill="#F4F8FD"/></svg>
+  </div>
+  <div class="spine" aria-hidden="true"></div>
+  <div class="hero-in">
+    <p class="label dot in" style="--d:100">Chiropractic care · Cedar Park, Texas</p>
+    <h1>
+      <span class="ln"><span style="--d:220">Move through</span></span>
+      <span class="ln"><span style="--d:340">life <span class="gap" aria-hidden="true"></span> <em>connected.</em></span></span>
+    </h1>
+    <p class="lead in" style="--d:620">Calm, unhurried chiropractic care on Bell Boulevard, for people who want to feel at home in their body again, and stay that way.</p>
+    <div class="ctas in" style="--d:760">
+      <a class="btn btn-p" href="tel:+17372688277">Call (737) 268-8277
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+      <a class="btn btn-g" href="#care">Explore our care</a>
     </div>
-    <div class="visual">
-      
-      <div class="quote-panel"><div class="quote-mark">“</div><div><p>Gentle, evidence-based chiropractic care that gets to the root of your pain, not just the symptoms.</p><div class="who">Connected Health Cedar Park</div></div></div>
-      
-      
-      <div class="float two"><span class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><span><b>This week</b>Most insurance accepted</span></div>
+    <div class="hero-meta in" style="--d:900">
+      <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>600 S Bell Blvd #15</span>
+      <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Call for current hours</span>
     </div>
   </div>
-  <template id="qp"><div class="quote-panel"><div class="quote-mark">“</div><div><p>Gentle, evidence-based chiropractic care that gets to the root of your pain, not just the symptoms.</p><div class="who">Connected Health Cedar Park</div></div></div></template>
+  <div class="scroll-cue" aria-hidden="true"></div>
 </section>
 
-<div class="trust"><div class="wrap">
-  <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.2-8 9-4.6-.8-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg>New patients welcome</div><div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.2-8 9-4.6-.8-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg>Most insurance accepted</div><div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.2-8 9-4.6-.8-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg>Same-day visits</div><div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.2-8 9-4.6-.8-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg>Gentle techniques</div>
-</div></div>
+<!-- COLOUR BAND (signature) -->
+<section class="band" aria-labelledby="band-h">
+  <svg class="band-curve" viewBox="0 0 1440 70" preserveAspectRatio="none" aria-hidden="true"><path d="M0 0h1440v20C1080 70 360 70 0 20z" fill="currentColor"/></svg>
+  <div class="wrap band-in">
+    <div class="rv">
+      <p class="label dot">The idea behind the name</p>
+      <h2 id="band-h">Everything is <em>connected.</em></h2>
+    </div>
+    <div class="rv" style="--d:150">
+      <p>How you sleep, sit, lift, drive and breathe all trace back to the same structure. Chiropractic care looks at the whole picture, not just the spot that hurts, so you can feel the difference in the rest of your day.</p>
+      <div class="ctas">
+        <a class="btn btn-w" href="#contact">Plan your first visit
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+      </div>
+    </div>
+  </div>
+  <div class="giant" data-drift aria-hidden="true">Align <b>·</b> Move <b>·</b> Live <b>·</b> Align</div>
+</section>
 
-<section class="block" id="services">
+<!-- MARQUEE -->
+<div class="marq" aria-hidden="true">
+  <div class="marq-track">
+    <span>Chiropractic care<i></i>Cedar Park, Texas<i></i>Whole-body perspective<i></i>600 S Bell Blvd #15<i></i>Calm, unhurried visits<i></i>(737) 268-8277<i></i></span>
+    <span>Chiropractic care<i></i>Cedar Park, Texas<i></i>Whole-body perspective<i></i>600 S Bell Blvd #15<i></i>Calm, unhurried visits<i></i>(737) 268-8277<i></i></span>
+  </div>
+</div>
+
+<!-- CARE -->
+<section class="sec" id="care">
+  <div class="wrap split">
+    <div class="sticky rv">
+      <p class="label dot">Our care</p>
+      <h2>Care that <em>meets you</em> where you are.</h2>
+      <p class="lead">Whether something is nagging you today or you simply want to move better for years to come, your care starts with understanding you.</p>
+      <div class="note"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5v.5"/></svg><span>Curious whether we can help with something specific? Call us and ask; we're happy to talk it through.</span></div>
+    </div>
+    <div class="cards">
+      <article class="card rv">
+        <span class="n">01</span>
+        <div class="ic"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><rect x="12" y="3" width="8" height="4" rx="2"/><rect x="11" y="10" width="10" height="4" rx="2"/><rect x="11" y="17" width="10" height="4" rx="2"/><rect x="12" y="24" width="8" height="4" rx="2"/></svg></div>
+        <h3>Chiropractic care</h3>
+        <p>Hands-on chiropractic care focused on how your spine and joints move, so your body can function the way it's meant to.</p>
+      </article>
+      <article class="card rv" style="--d:120">
+        <span class="n">02</span>
+        <div class="ic"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><circle cx="16" cy="6" r="3"/><path d="M16 9v10M10 13l6 2 6-2M12 28l4-9 4 9"/></svg></div>
+        <h3>Posture &amp; everyday movement</h3>
+        <p>Long days at a desk, behind the wheel or on your feet add up. We look at how you move and hold yourself day to day.</p>
+      </article>
+      <article class="card rv">
+        <span class="n">03</span>
+        <div class="ic"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M6 20c3-6 7-9 10-9s7 3 10 9"/><path d="M4 26h24"/><circle cx="16" cy="11" r="2"/></svg></div>
+        <h3>Neck &amp; back comfort</h3>
+        <p>A thoughtful, whole-body look at the areas that tend to carry the most tension, rather than chasing one sore spot.</p>
+      </article>
+      <article class="card rv" style="--d:120">
+        <span class="n">04</span>
+        <div class="ic"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><circle cx="9" cy="16" r="4"/><circle cx="23" cy="9" r="4"/><circle cx="23" cy="23" r="4"/><path d="M12.5 14l7-3.5M12.5 18l7 3.5"/></svg></div>
+        <h3>Whole-body wellbeing</h3>
+        <p>True to our name: care that considers how everything connects, from how you rest to how you recover and move.</p>
+      </article>
+      <article class="card wide rv">
+        <div><p class="label">Not sure where to start?</p><h3 style="margin-top:8px">Start with a conversation.</h3></div>
+        <a class="btn btn-p" href="tel:+17372688277">Call (737) 268-8277</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="sec about" id="about">
+  <div class="wrap about-grid">
+    <div class="rv">
+      <p class="label dot">Our approach</p>
+      <h2>A quieter, more <em>considered</em> kind of chiropractic.</h2>
+      <p>Connected Health Cedar Park is built on a simple belief: your body works as one connected system. When one part is out of rhythm, the rest of you feels it, in your energy, your sleep, your focus and your mood.</p>
+      <p>So we slow down. We listen first, explain clearly, and make sure you understand what's happening and why, so every visit feels purposeful rather than rushed.</p>
+      <blockquote class="quote">"Feel better in your body, and the rest of life tends to follow."</blockquote>
+    </div>
+    <div class="stack rv" style="--d:150" aria-hidden="true">
+      <div class="layer l1" data-par="0.05">
+        <svg viewBox="0 0 300 380" preserveAspectRatio="xMidYMid slice"><g fill="none" stroke="rgba(255,255,255,.35)" stroke-width="1.2"><circle cx="150" cy="170" r="40"/><circle cx="150" cy="170" r="80"/><circle cx="150" cy="170" r="120"/><circle cx="150" cy="170" r="160"/><circle cx="150" cy="170" r="200"/></g><g fill="#fff"><rect x="132" y="70" width="36" height="14" rx="7" opacity=".9"/><rect x="128" y="94" width="44" height="14" rx="7"/><rect x="126" y="118" width="48" height="14" rx="7" opacity=".9"/><rect x="126" y="142" width="48" height="14" rx="7"/><rect x="128" y="166" width="44" height="14" rx="7" opacity=".9"/><rect x="130" y="190" width="40" height="14" rx="7"/><rect x="134" y="214" width="32" height="14" rx="7" opacity=".9"/></g></svg>
+      </div>
+      <div class="layer l2"><b>Whole<br>body.</b><span>Not just the spot that hurts.</span></div>
+      <div class="layer l3"><p class="label">Find us</p><p>600 S Bell Blvd #15, Cedar Park</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY -->
+<section class="sec" id="why" style="padding-top:60px">
   <div class="wrap">
-    <div class="section-head">
-      <div><div class="kicker">What we do</div><h2>Everything you need,<br>under one roof.</h2></div>
-      <p>From routine visits to the work that changes how you feel about your day, Connected Health Cedar Park takes care of it properly.</p>
+    <div class="why-head rv">
+      <div><p class="label dot">Why Connected Health</p><h2>What you can <em>expect</em> from us.</h2></div>
+      <p>The details that make care feel personal, not processed.</p>
     </div>
-    <div class="services">
-      
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-7-4.4-7-10a4 4 0 017-2.6A4 4 0 0119 10c0 5.6-7 10-7 10z"/></svg></div><h3>Back &amp; neck pain</h3><p>Relief that lasts, from a plan built around you.</p></div>
-      
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1-4.4-4.3 6.1-.9z"/></svg></div><h3>Sports injuries</h3><p>Get back in the game faster and stronger.</p></div>
-      
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 19c0-8 5-14 15-14 0 10-6 15-14 15"/><path d="M5 19c3-4 6-6 10-8"/></svg></div><h3>Headaches</h3><p>Address the tension and alignment issues behind them.</p></div>
-      
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 14s1.5 2.5 4 2.5 4-2.5 4-2.5"/><path d="M9 9.5h.01M15 9.5h.01"/></svg></div><h3>Prenatal care</h3><p>Gentle, safe adjustments for moms-to-be.</p></div>
-      
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.2-8 9-4.6-.8-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg></div><h3>Auto injuries</h3><p>Care and documentation after car accidents.</p></div>
-      
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div><h3>Same-day visits</h3><p>In pain today? We&#39;ll see you today.</p></div>
-      
+    <div class="why">
+      <div class="rv"><div class="k">i.</div><h3>Listened to, first</h3><p>Your visit begins with your story: what you feel, what you've tried, and what you want to get back to.</p></div>
+      <div class="rv" style="--d:120"><div class="k">ii.</div><h3>Clear explanations</h3><p>No jargon, no guesswork. You'll understand the reasoning behind your care and have room to ask questions.</p></div>
+      <div class="rv" style="--d:240"><div class="k">iii.</div><h3>Close to home</h3><p>Right on S Bell Blvd in Cedar Park, easy to fit into your week whether you're coming from home or work.</p></div>
     </div>
   </div>
 </section>
 
-<section class="block why" id="why">
-  <div class="wrap why-grid">
-    <div>
-      <div class="kicker">Why patients choose us</div>
-      <h2>The Austin chiropractor people recommend to their friends.</h2>
-      <p class="intro">it still comes down to the same three things.</p>
-    </div>
-    <div class="points">
-      
-      <div class="point"><div class="num">01</div><div><h3>Root-cause care</h3><p>We find out why it hurts, not just where.</p></div></div>
-      
-      <div class="point"><div class="num">02</div><div><h3>Gentle techniques</h3><p>Comfortable adjustments for every age and condition.</p></div></div>
-      
-      <div class="point"><div class="num">03</div><div><h3>Clear plans</h3><p>You&#39;ll know your plan, timeline and costs from day one.</p></div></div>
-      
-    </div>
-  </div>
-</section>
-
-
-
-<section class="cta-band" id="book">
-  <div class="wrap"><div class="cta-box">
-    <div><h2>Ready when you are.</h2><p>Book your first visit in under a minute, or give us a call and talk to a real person.</p></div>
-    <div class="actions">
-      <a class="btn" href="#visit">Book your first visit</a>
-      <a class="btn ghost" href="tel:7372688277">Call (737) 268-8277</a>
-    </div>
-  </div></div>
-</section>
-
-<section class="block" id="visit" style="padding-top:0">
+<!-- PROCESS -->
+<section class="sec steps-sec" id="process">
+  <svg class="wave-top" viewBox="0 0 1440 60" preserveAspectRatio="none" aria-hidden="true"><path d="M0 0h1440v10c-240 50-480 50-720 20S240 0 0 30z" fill="currentColor"/></svg>
   <div class="wrap">
-    <div class="kicker">Visit us</div><h2>Come say hello.</h2>
-    <div class="visit">
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11l8-7 8 7v9a1 1 0 01-1 1h-4v-6H9v6H5a1 1 0 01-1-1z"/></svg></div><h3>Address</h3><p>600 S Bell Blvd #15, Cedar Park TX 78613</p></div>
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div><h3>Phone</h3><p><a href="tel:7372688277">(737) 268-8277</a></p><p style="margin-top:10px">Call or message us for today's opening hours.</p></div>
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-7-4.4-7-10a4 4 0 017-2.6A4 4 0 0119 10c0 5.6-7 10-7 10z"/></svg></div><h3>Most insurance accepted</h3><p>Book your first visit online or by phone and we'll take care of the rest.</p></div>
+    <div class="rv" style="text-align:center;max-width:760px;margin:0 auto">
+      <p class="label dot">Your visit</p>
+      <h2 style="margin-top:20px">Four easy steps to <em>feeling better.</em></h2>
+    </div>
+    <div class="steps">
+      <div class="step rv"><div class="num">1</div><h3>Call us</h3><p>Ring (737) 268-8277. We'll answer your questions and find a time that suits you.</p></div>
+      <div class="step rv" style="--d:100"><div class="num">2</div><h3>Talk it through</h3><p>Share what's going on, your history and your goals, so we see the full picture.</p></div>
+      <div class="step rv" style="--d:200"><div class="num">3</div><h3>Your care plan</h3><p>We explain what we recommend and why, in plain language, before anything begins.</p></div>
+      <div class="step rv" style="--d:300"><div class="num">4</div><h3>Move forward</h3><p>Return to the things you love with a body that feels more connected and at ease.</p></div>
+    </div>
+  </div>
+  <svg class="wave-bot" viewBox="0 0 1440 60" preserveAspectRatio="none" aria-hidden="true"><path d="M0 60h1440V30c-240-30-480-30-720 0S240 50 0 20z" fill="currentColor"/></svg>
+</section>
+
+<!-- FAQ -->
+<section class="sec" id="faq">
+  <div class="wrap split">
+    <div class="sticky rv">
+      <p class="label dot">Good to know</p>
+      <h2>Questions, <em>answered.</em></h2>
+      <p class="lead">Anything else on your mind? A quick call is the fastest way to an answer.</p>
+    </div>
+    <div class="faq rv" style="--d:120">
+      <details open><summary>Where is Connected Health Cedar Park located?<i></i></summary><div class="ans">We're at 600 S Bell Blvd #15, Cedar Park, TX 78613. <a class="ul" href="https://maps.google.com/?q=600+S+Bell+Blvd+%2315,+Cedar+Park,+TX+78613" target="_blank" rel="noopener">Open in Google Maps</a>.</div></details>
+      <details><summary>How do I book an appointment?<i></i></summary><div class="ans">Simply call us at <a class="ul" href="tel:+17372688277">(737) 268-8277</a> and we'll help you find a time.</div></details>
+      <details><summary>What are your hours?<i></i></summary><div class="ans">Please call <a class="ul" href="tel:+17372688277">(737) 268-8277</a> for our current hours and availability.</div></details>
+      <details><summary>Can you help with my specific concern?<i></i></summary><div class="ans">Every body is different. Give us a call, tell us what's going on, and we'll let you know honestly whether our care is a good fit.</div></details>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+  <div class="wrap">
+    <div class="cta-box rv">
+      <svg class="cta-rings" viewBox="0 0 900 900" fill="none" stroke="#7FC4F5" aria-hidden="true"><circle cx="450" cy="450" r="120"/><circle cx="450" cy="450" r="210"/><circle cx="450" cy="450" r="300"/><circle cx="450" cy="450" r="390"/></svg>
+      <p class="label">Your next step</p>
+      <h2>Feel at home in your <em>body</em> again.</h2>
+      <p>One call is all it takes to start. We'll take it from there, calmly and clearly.</p>
+      <a class="big-phone ul" href="tel:+17372688277">(737) 268-8277</a>
+      <div class="ctas">
+        <a class="btn btn-w" href="tel:+17372688277">Call to book
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+        <a class="btn btn-o" href="https://maps.google.com/?q=600+S+Bell+Blvd+%2315,+Cedar+Park,+TX+78613" target="_blank" rel="noopener">Get directions</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="wrap c-grid">
+    <div class="rv">
+      <p class="label dot">Visit us</p>
+      <h2>Find us on <em>Bell Blvd.</em></h2>
+      <p class="lead">Connected Health Cedar Park welcomes you in Cedar Park, just northwest of Austin. Call ahead and we'll have everything ready for you.</p>
+    </div>
+    <div class="c-cards">
+      <a class="c-card rv" href="tel:+17372688277">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg></div>
+        <span>Phone</span><b>(737) 268-8277</b><span class="go">Tap to call →</span>
+      </a>
+      <a class="c-card rv" style="--d:100" href="https://maps.google.com/?q=600+S+Bell+Blvd+%2315,+Cedar+Park,+TX+78613" target="_blank" rel="noopener">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg></div>
+        <span>Address</span><b>600 S Bell Blvd #15<br>Cedar Park, TX 78613</b><span class="go">Open in Maps →</span>
+      </a>
+      <div class="c-card rv">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
+        <span>Hours</span><b>Please call for current hours</b>
+      </div>
+      <div class="c-card rv" style="--d:100">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 12h16M14 6l6 6-6 6"/></svg></div>
+        <span>New here?</span><b>Your first step is a phone call.</b>
+      </div>
+      <div class="map rv" aria-hidden="false">
+        <svg class="grid" viewBox="0 0 800 260" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><g stroke="#fff" stroke-width="10" fill="none"><path d="M0 90h800M0 200h800M120 0v260M330 0v260M620 0v260"/></g><path d="M440 -10 C 460 80, 430 160, 460 270" stroke="#7FC4F5" stroke-width="16" fill="none" opacity=".8"/><g fill="#fff" opacity=".55"><rect x="140" y="110" width="170" height="70" rx="10"/><rect x="640" y="10" width="140" height="60" rx="10"/><rect x="20" y="10" width="80" height="60" rx="10"/></g></svg>
+        <div class="pin"><svg viewBox="0 0 40 52"><path d="M20 51S2 32 2 19a18 18 0 0 1 36 0c0 13-18 32-18 32z" fill="#1D6FD8"/><circle cx="20" cy="19" r="7" fill="#fff"/></svg></div>
+        <a class="btn btn-g" href="https://maps.google.com/?q=600+S+Bell+Blvd+%2315,+Cedar+Park,+TX+78613" target="_blank" rel="noopener">Get directions
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+      </div>
     </div>
   </div>
 </section>
 </main>
 
-<footer><div class="wrap">
-  <span>© 2026 Connected Health Cedar Park</span>
-  <span>Concept design by webstudio. Not affiliated with or endorsed by Connected Health Cedar Park.</span>
-</div></footer>
+<footer>
+  <div class="wrap">
+    <div class="f-top">
+      <a href="#top" class="logo">
+        <svg class="mark" viewBox="0 0 40 40" fill="none" aria-hidden="true"><circle cx="20" cy="20" r="19" fill="#1D6FD8"/><g fill="#fff"><rect x="15" y="7" width="10" height="4" rx="2"/><rect x="14" y="13" width="12" height="4" rx="2" fill="#7FC4F5"/><rect x="14.5" y="19" width="11" height="4" rx="2"/><rect x="15" y="25" width="10" height="4" rx="2" fill="#7FC4F5"/><rect x="16" y="31" width="8" height="3" rx="1.5"/></g></svg>
+        <span>Connected Health<small>Cedar Park</small></span>
+      </a>
+      <div class="f-cols">
+        <div><h4>Visit</h4><a class="ul" href="https://maps.google.com/?q=600+S+Bell+Blvd+%2315,+Cedar+Park,+TX+78613" target="_blank" rel="noopener">600 S Bell Blvd #15<br>Cedar Park, TX 78613</a></div>
+        <div><h4>Call</h4><a class="ul" href="tel:+17372688277">(737) 268-8277</a><p>Call for current hours</p></div>
+        <div><h4>Explore</h4><a class="ul" href="#care">Our care</a><a class="ul" href="#about">Approach</a><a class="ul" href="#faq">FAQ</a></div>
+      </div>
+    </div>
+    <div class="f-bot"><span>© <span id="yr"></span> Connected Health Cedar Park</span><span>Chiropractic care in Cedar Park, Texas</span></div>
+  </div>
+</footer>
 
-<div class="mobile-bar">
-  <a class="btn ghost" href="tel:7372688277">Call</a>
-  <a class="btn" href="#visit">Book now</a>
+<div class="mbar" id="mbar">
+  <a class="btn btn-p" href="tel:+17372688277">Call now</a>
+  <a class="btn btn-g" href="https://maps.google.com/?q=600+S+Bell+Blvd+%2315,+Cedar+Park,+TX+78613" target="_blank" rel="noopener">Directions</a>
 </div>
-</body>
+
+<script>
+(function(){
+  var d=document,b=d.body,rm=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  d.getElementById('yr').textContent=new Date().getFullYear();
+  requestAnimationFrame(function(){setTimeout(function(){b.classList.add('loaded')},60)});
+
+  // Mobile menu
+  var burger=d.querySelector('.burger'),mnav=d.querySelector('.mnav');
+  function setMenu(o){b.classList.toggle('menu-open',o);burger.setAttribute('aria-expanded',o);mnav.setAttribute('aria-hidden',!o);b.style.overflow=o?'hidden':''}
+  burger.addEventListener('click',function(){setMenu(!b.classList.contains('menu-open'))});
+  mnav.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){setMenu(false)})});
+
+  // Reveal on scroll
+  var els=d.querySelectorAll('.rv');
+  if('IntersectionObserver' in window&&!rm){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target)}})},{threshold:.12,rootMargin:'0px 0px -40px 0px'});
+    els.forEach(function(el){io.observe(el)});
+  }else{els.forEach(function(el){el.classList.add('on')})}
+
+  // Scroll effects
+  var hdr=d.getElementById('top-h'),mbar=d.getElementById('mbar'),par=d.querySelectorAll('[data-par]'),drift=d.querySelector('[data-drift]'),tick=false;
+  function onScroll(){
+    var y=window.scrollY;
+    hdr.classList.toggle('scrolled',y>30);
+    mbar.classList.toggle('show',y>window.innerHeight*.6);
+    if(!rm){
+      par.forEach(function(el){el.style.transform='translate3d(0,'+(y*parseFloat(el.dataset.par))+'px,0)'});
+      if(drift){var r=drift.getBoundingClientRect();drift.style.transform='translate3d('+((r.top-window.innerHeight)*0.25)+'px,0,0)'}
+    }
+    tick=false;
+  }
+  window.addEventListener('scroll',function(){if(!tick){requestAnimationFrame(onScroll);tick=true}},{passive:true});
+  onScroll();
+})();
+</script>
+<div id="lm-concept" style="position:fixed;left:12px;bottom:12px;z-index:2147483647;font:500 11px/1.3 -apple-system,BlinkMacSystemFont,Segoe UI,sans-serif;letter-spacing:.02em;background:rgba(15,15,18,.82);color:#f4f1ea;padding:7px 11px;border-radius:999px;backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);pointer-events:none;max-width:70vw">Website concept for Connected Health Cedar Park by webstudio &middot; not the live site</div><p style="margin:0;padding:18px 16px 70px;text-align:center;font:12px/1.5 -apple-system,sans-serif;color:#8a8a8a;background:#0e0e10">Concept design by webstudio. Not affiliated with or endorsed by Connected Health Cedar Park.</p></body>
 </html>
