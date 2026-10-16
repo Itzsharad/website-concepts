@@ -1,291 +1,556 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src * data: blob:; media-src 'self' data:; style-src 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com data:; script-src 'unsafe-inline'; connect-src 'none'; frame-src 'none'; form-action 'none'; base-uri 'none'; object-src 'none'">
 <meta name="robots" content="noindex, nofollow">
-<title>Jester Village Dental | Website concept</title>
+<style>html,body{max-width:100%;overflow-x:clip}</style>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Jester Village Dental | Dentist on Jester Blvd, Austin TX</title>
+<meta name="description" content="Jester Village Dental, a neighbourhood dental practice at 6507 Jester Blvd #303, Austin TX 78750. Call (512) 418-9150 to plan your visit.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{
-  --bg:#f7f3ec;--surface:#ffffff;--ink:#12302c;--muted:#5b6b67;
-  --accent:#1f5c53;--accent-ink:#ffffff;--gold:#b8915a;--soft:#e8efe9;
-  --radius:22px;--max:1180px;
-  --serif:"Fraunces",Georgia,serif;--sans:"Manrope",system-ui,-apple-system,sans-serif;
+  --bg:#FFFBEF;--surface:#FFFFFF;--ink:#1E1B14;--ink-soft:#4A4536;
+  --gold:#E0A100;--gold-soft:#F6E3A8;--gold-tint:#FBF1D2;
+  --blue:#2F5D8A;--blue-deep:#1F4266;--line:rgba(30,27,20,.14);
+  --serif:"Instrument Serif",Georgia,serif;--sans:"Inter",system-ui,-apple-system,sans-serif;
+  --pad:clamp(20px,5vw,72px);--max:1320px;
+  --ease:cubic-bezier(.2,.7,.1,1);
 }
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:var(--sans);background:var(--bg);color:var(--ink);font-size:17px;line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
 a{color:inherit;text-decoration:none}
-img{max-width:100%;display:block}
-.wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
-.concept{background:var(--ink);color:var(--bg);font-size:13px;text-align:center;padding:8px 16px;letter-spacing:.02em}
-.concept b{color:var(--gold);font-weight:600}
+svg{display:block}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 var(--pad)}
+.label{font-size:11.5px;font-weight:600;letter-spacing:.22em;text-transform:uppercase}
+.serif{font-family:var(--serif);font-weight:400}
+em{font-style:italic}
 
-/* header */
-header{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:saturate(1.4) blur(10px);border-bottom:1px solid color-mix(in srgb,var(--ink) 8%,transparent)}
-.nav{display:flex;align-items:center;justify-content:space-between;height:76px;gap:24px}
-.brand{font-family:var(--serif);font-size:23px;font-weight:600;letter-spacing:-.01em;line-height:1.1;max-width:340px}
-.links{display:flex;gap:30px;font-size:15px;font-weight:500;color:var(--muted)}
-.links a:hover{color:var(--ink)}
-.nav-right{display:flex;align-items:center;gap:18px}
-.phone{font-weight:600;font-size:15px;white-space:nowrap}
-.btn{display:inline-flex;align-items:center;gap:10px;background:var(--accent);color:var(--accent-ink);padding:14px 26px;border-radius:999px;font-weight:600;font-size:15.5px;transition:transform .2s ease,box-shadow .2s ease;white-space:nowrap}
-.btn:hover{transform:translateY(-2px);box-shadow:0 12px 28px -12px var(--accent)}
-.btn.ghost{background:transparent;color:var(--ink);border:1.5px solid color-mix(in srgb,var(--ink) 20%,transparent)}
-.btn.ghost:hover{box-shadow:none;border-color:var(--ink)}
-.btn svg{width:18px;height:18px}
+/* Buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:12px;padding:17px 28px;font-weight:600;font-size:15px;letter-spacing:.02em;border:1.5px solid var(--ink);transition:transform .35s var(--ease),background .35s,color .35s,box-shadow .35s;white-space:nowrap;text-align:center}
+.btn svg{width:16px;height:16px;transition:transform .35s var(--ease)}
+.btn:hover{transform:translateY(-3px)}
+.btn:hover svg{transform:translateX(4px)}
+.btn-dark{background:var(--ink);color:var(--bg)}
+.btn-dark:hover{box-shadow:0 14px 30px -12px rgba(30,27,20,.55)}
+.btn-gold{background:var(--gold);color:var(--ink);border-color:var(--gold)}
+.btn-gold:hover{box-shadow:0 14px 30px -12px rgba(224,161,0,.7)}
+.btn-ghost{background:transparent;color:var(--ink)}
+.btn-ghost:hover{background:var(--ink);color:var(--bg)}
+.ulink{position:relative;display:inline-block}
+.ulink::after{content:"";position:absolute;left:0;bottom:-3px;width:100%;height:1.5px;background:currentColor;transform:scaleX(0);transform-origin:right;transition:transform .45s var(--ease)}
+.ulink:hover::after{transform:scaleX(1);transform-origin:left}
 
-/* hero */
-.hero{padding:72px 0 88px}
-.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:64px;align-items:center}
-.eyebrow{display:inline-flex;align-items:center;gap:10px;background:var(--surface);border:1px solid color-mix(in srgb,var(--ink) 10%,transparent);padding:8px 16px 8px 10px;border-radius:999px;font-size:14px;font-weight:600;color:var(--muted)}
-.stars{color:var(--gold);letter-spacing:1px;font-size:14px}
-.eyebrow .dot{width:26px;height:26px;border-radius:50%;background:var(--soft);display:grid;place-items:center;color:var(--accent)}
-h1{font-family:var(--serif);font-weight:500;font-size:clamp(44px,5.6vw,74px);line-height:1.02;letter-spacing:-.025em;margin:26px 0 22px}
-h1 em{font-style:italic;color:var(--accent)}
-.lead-text{font-size:19.5px;color:var(--muted);max-width:540px}
-.hero-ctas{display:flex;gap:14px;margin-top:36px;flex-wrap:wrap}
-.ticks{display:flex;gap:22px;margin-top:34px;flex-wrap:wrap;font-size:14.5px;font-weight:600;color:var(--muted)}
-.ticks span{display:flex;align-items:center;gap:8px}
-.ticks svg{width:18px;height:18px;color:var(--accent)}
-.visual{position:relative}
-.photo{aspect-ratio:4/5;border-radius:calc(var(--radius) + 10px);overflow:hidden;background:var(--soft);box-shadow:0 40px 80px -40px color-mix(in srgb,var(--ink) 55%,transparent)}
-.photo img{width:100%;height:100%;object-fit:cover}
-.quote-panel{aspect-ratio:4/5;border-radius:calc(var(--radius) + 10px);background:linear-gradient(155deg,var(--accent),color-mix(in srgb,var(--accent) 55%,var(--ink)));color:var(--accent-ink);padding:52px 46px;display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden;box-shadow:0 40px 80px -40px color-mix(in srgb,var(--ink) 60%,transparent)}
-.quote-panel:before{content:"";position:absolute;width:420px;height:420px;border-radius:50%;right:-160px;top:-160px;background:color-mix(in srgb,var(--accent-ink) 9%,transparent)}
-.quote-panel:after{content:"";position:absolute;width:260px;height:260px;border-radius:50%;left:-90px;bottom:-110px;border:1.5px solid color-mix(in srgb,var(--accent-ink) 22%,transparent)}
-.quote-mark{font-family:var(--serif);font-size:120px;line-height:.6;opacity:.35}
-.quote-panel p{font-family:var(--serif);font-size:28px;line-height:1.3;position:relative;z-index:1}
-.quote-panel .who{font-family:var(--sans);font-size:15px;opacity:.85;margin-top:22px;font-weight:600}
-.float{position:absolute;background:var(--surface);color:var(--ink);border-radius:18px;padding:16px 20px;box-shadow:0 24px 50px -24px color-mix(in srgb,var(--ink) 50%,transparent);display:flex;align-items:center;gap:14px;font-size:14px;line-height:1.35}
-.float b{font-size:22px;font-family:var(--serif);font-weight:600;display:block}
-.float.one{left:-34px;bottom:-28px}
-.float.two{right:-22px;top:44px}
-.float .badge{width:44px;height:44px;border-radius:14px;background:var(--soft);display:grid;place-items:center;color:var(--accent)}
-.float .badge svg{width:22px;height:22px}
+/* Header */
+header{position:fixed;inset:0 0 auto 0;z-index:50;background:rgba(255,251,239,.72);backdrop-filter:blur(16px) saturate(1.4);-webkit-backdrop-filter:blur(16px) saturate(1.4);border-bottom:1px solid transparent;transition:border-color .3s,background .3s}
+header.scrolled{border-color:var(--line);background:rgba(255,251,239,.9)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:76px;gap:20px}
+.brand{display:flex;align-items:center;gap:12px;min-width:0}
+.mark{width:40px;height:40px;flex:none}
+.brand-name{font-family:var(--serif);font-size:25px;line-height:1;white-space:nowrap}
+.brand-name small{display:block;font-family:var(--sans);font-size:9.5px;letter-spacing:.26em;text-transform:uppercase;font-weight:600;color:var(--ink-soft);margin-top:5px}
+.nav-links{display:flex;gap:34px;font-size:14px;font-weight:500}
+.nav-right{display:flex;align-items:center;gap:22px}
+.nav-phone{font-weight:600;font-size:14px;white-space:nowrap}
+.nav .btn{padding:12px 20px;font-size:14px}
+.burger{display:none;width:44px;height:44px;border:1.5px solid var(--ink);background:transparent;cursor:pointer;position:relative}
+.burger span{position:absolute;left:11px;right:11px;height:1.5px;background:var(--ink);transition:transform .35s var(--ease),opacity .2s}
+.burger span:nth-child(1){top:16px}.burger span:nth-child(2){top:21px}.burger span:nth-child(3){top:26px}
+.menu-open .burger span:nth-child(1){transform:translateY(5px) rotate(45deg)}
+.menu-open .burger span:nth-child(2){opacity:0}
+.menu-open .burger span:nth-child(3){transform:translateY(-5px) rotate(-45deg)}
+.mobile-menu{position:fixed;inset:76px 0 0 0;background:var(--bg);z-index:49;padding:40px var(--pad);display:flex;flex-direction:column;gap:6px;transform:translateY(-12px);opacity:0;visibility:hidden;transition:all .4s var(--ease)}
+.menu-open .mobile-menu{transform:none;opacity:1;visibility:visible}
+.mobile-menu a.m{font-family:var(--serif);font-size:44px;line-height:1.15;border-bottom:1px solid var(--line);padding:12px 0;display:flex;justify-content:space-between;align-items:baseline}
+.mobile-menu a.m span{font-family:var(--sans);font-size:12px;letter-spacing:.2em;color:var(--ink-soft)}
+.mobile-menu .btn{margin-top:28px}
 
-/* trust */
-.trust{border-top:1px solid color-mix(in srgb,var(--ink) 9%,transparent);border-bottom:1px solid color-mix(in srgb,var(--ink) 9%,transparent);background:var(--surface)}
-.trust .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;padding-top:26px;padding-bottom:26px}
-.trust div{display:flex;align-items:center;gap:12px;font-weight:600;font-size:15px}
-.trust svg{width:22px;height:22px;color:var(--accent);flex:none}
+/* Hero */
+.hero{position:relative;min-height:100vh;min-height:100svh;padding:140px 0 70px;display:flex;flex-direction:column;justify-content:center;overflow:hidden;text-align:center}
+.grid-lines{position:absolute;inset:0;pointer-events:none;display:grid;grid-template-columns:repeat(6,1fr);max-width:var(--max);margin:0 auto;padding:0 var(--pad)}
+.grid-lines i{border-left:1px solid rgba(30,27,20,.06)}
+.grid-lines i:last-child{border-right:1px solid rgba(30,27,20,.06)}
+.sun{position:absolute;left:50%;top:54%;width:min(78vw,820px);aspect-ratio:1;border-radius:50%;background:radial-gradient(circle at 38% 34%,#FFE8A0 0%,#F5C94A 38%,var(--gold) 72%);transform:translate(-50%,-50%);opacity:.9;z-index:0;will-change:transform}
+.sun::after{content:"";position:absolute;inset:-9%;border-radius:50%;border:1px solid rgba(224,161,0,.35)}
+.sun-cut{position:absolute;left:0;right:0;bottom:0;height:42%;background:var(--bg);z-index:0}
+.hero-meta{position:relative;z-index:2;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;border-top:1.5px solid var(--ink);padding-top:14px;margin-bottom:clamp(40px,7vh,80px);color:var(--ink)}
+.hero h1{position:relative;z-index:2;font-family:var(--serif);font-weight:400;font-size:clamp(58px,13.2vw,212px);line-height:.86;letter-spacing:-.035em}
+.hero h1 .row{display:block;overflow:hidden;padding-bottom:.06em}
+.hero h1 .row>span{display:inline-block}
+.hero h1 em{color:var(--blue)}
+.hero-sub{position:relative;z-index:2;max-width:560px;margin:clamp(28px,4vh,44px) auto 0;font-size:clamp(17px,1.4vw,20px);color:var(--ink-soft)}
+.hero-ctas{position:relative;z-index:2;display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:36px}
+.hero-foot{position:relative;z-index:2;display:flex;justify-content:space-between;align-items:end;margin-top:clamp(40px,7vh,80px);gap:20px}
+.hero-foot .label{color:var(--ink-soft)}
+.scroll-cue{display:flex;align-items:center;gap:12px}
+.scroll-cue i{display:block;width:1.5px;height:44px;background:var(--ink);transform-origin:top;animation:cue 2.2s var(--ease) infinite}
+@keyframes cue{0%{transform:scaleY(0)}50%{transform:scaleY(1);transform-origin:top}51%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
 
-/* sections */
-section.block{padding:110px 0}
-.kicker{font-size:13px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
-h2{font-family:var(--serif);font-weight:500;font-size:clamp(34px,3.8vw,52px);line-height:1.08;letter-spacing:-.02em;margin:14px 0 18px}
-.section-head{display:flex;justify-content:space-between;align-items:end;gap:40px;margin-bottom:56px}
-.section-head p{color:var(--muted);max-width:420px}
-.services{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-.card{background:var(--surface);border-radius:var(--radius);padding:34px 32px 36px;border:1px solid color-mix(in srgb,var(--ink) 7%,transparent);transition:transform .25s ease,box-shadow .25s ease}
-.card:hover{transform:translateY(-4px);box-shadow:0 30px 60px -36px color-mix(in srgb,var(--ink) 45%,transparent)}
-.icon{width:54px;height:54px;border-radius:16px;background:var(--soft);color:var(--accent);display:grid;place-items:center;margin-bottom:24px}
-.icon svg{width:26px;height:26px}
-.card h3{font-family:var(--serif);font-weight:500;font-size:23px;margin-bottom:8px;letter-spacing:-.01em}
-.card p{color:var(--muted);font-size:16px}
+/* hero entrance */
+.in{opacity:0;transform:translateY(26px)}
+.hero h1 .row>span.in{transform:translateY(105%);opacity:1}
+.loaded .in{opacity:1;transform:none;transition:opacity 1s var(--ease),transform 1.15s var(--ease);transition-delay:var(--d,0s)}
+.sun{opacity:0;scale:.86}
+.loaded .sun{opacity:.92;scale:1;transition:opacity 1.6s var(--ease),scale 1.8s var(--ease)}
 
-.why{background:var(--ink);color:var(--bg)}
-.why .kicker{color:var(--gold)}
-.why-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:80px;align-items:start}
-.why h2{color:var(--bg)}
-.why .intro{color:color-mix(in srgb,var(--bg) 70%,transparent);font-size:18px;max-width:440px}
-.points{display:grid;gap:14px}
-.point{display:grid;grid-template-columns:62px 1fr;gap:20px;padding:30px;border-radius:var(--radius);background:color-mix(in srgb,var(--bg) 6%,transparent);border:1px solid color-mix(in srgb,var(--bg) 10%,transparent)}
-.point .num{font-family:var(--serif);font-size:34px;color:var(--gold);line-height:1}
-.point h3{font-family:var(--serif);font-weight:500;font-size:24px;margin-bottom:6px}
-.point p{color:color-mix(in srgb,var(--bg) 72%,transparent);font-size:16px}
+/* Band / marquee */
+.band{background:var(--gold);color:var(--ink);border-top:1.5px solid var(--ink);border-bottom:1.5px solid var(--ink);overflow:hidden}
+.marquee{display:flex;width:max-content;animation:marq 38s linear infinite}
+.marquee:hover{animation-play-state:paused}
+.marquee span{font-family:var(--serif);font-size:clamp(34px,4.6vw,64px);line-height:1;padding:26px 0;display:flex;align-items:center;white-space:nowrap}
+.marquee span::after{content:"";width:16px;height:16px;background:var(--ink);margin:0 clamp(24px,3vw,48px);flex:none}
+.marquee span:nth-child(even){font-style:italic}
+@keyframes marq{to{transform:translateX(-50%)}}
 
-.score{display:flex;align-items:center;gap:18px;background:var(--surface);padding:16px 24px;border-radius:18px;border:1px solid color-mix(in srgb,var(--ink) 8%,transparent)}
-.score b{font-family:var(--serif);font-size:40px;font-weight:500;line-height:1}
-.score small{display:block;color:var(--muted);font-size:14px}
-.reviews{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-.review{background:var(--surface);border-radius:var(--radius);padding:34px;display:flex;flex-direction:column;gap:22px;border:1px solid color-mix(in srgb,var(--ink) 7%,transparent)}
-.review p{font-family:var(--serif);font-size:19.5px;line-height:1.45}
-.review .by{margin-top:auto;display:flex;align-items:center;gap:12px;font-weight:600;font-size:15px}
-.avatar{width:40px;height:40px;border-radius:50%;background:var(--soft);color:var(--accent);display:grid;place-items:center;font-weight:700}
-.review .src{color:var(--muted);font-weight:500;font-size:13px;display:block}
+/* Sections */
+section{position:relative}
+.sec{padding:clamp(90px,13vw,170px) 0}
+.sec-head{display:flex;align-items:baseline;gap:18px;border-top:1.5px solid var(--ink);padding-top:16px;margin-bottom:clamp(40px,6vw,72px)}
+.sec-head .num{font-family:var(--serif);font-size:20px}
+.sec-head .label{flex:1}
+.h2{font-family:var(--serif);font-weight:400;font-size:clamp(46px,6.8vw,104px);line-height:.92;letter-spacing:-.03em}
+.h2 em{color:var(--blue)}
+.lead{font-size:clamp(17px,1.35vw,20px);color:var(--ink-soft);max-width:520px}
 
-.cta-band{padding:0 0 110px}
-.cta-box{border-radius:calc(var(--radius) + 12px);background:linear-gradient(140deg,var(--accent),color-mix(in srgb,var(--accent) 60%,var(--ink)));color:var(--accent-ink);padding:76px 64px;display:grid;grid-template-columns:1.3fr 1fr;gap:40px;align-items:center;position:relative;overflow:hidden}
-.cta-box:after{content:"";position:absolute;right:-120px;bottom:-200px;width:460px;height:460px;border-radius:50%;border:1.5px solid color-mix(in srgb,var(--accent-ink) 22%,transparent)}
-.cta-box h2{color:inherit;margin:0 0 12px}
-.cta-box p{opacity:.85;font-size:18px}
-.cta-box .actions{display:flex;flex-direction:column;gap:12px;align-items:flex-start;position:relative;z-index:1}
-.cta-box .btn{background:var(--accent-ink);color:var(--accent)}
-.cta-box .btn.ghost{background:transparent;color:var(--accent-ink);border-color:color-mix(in srgb,var(--accent-ink) 40%,transparent)}
+/* Services */
+.split{display:grid;grid-template-columns:5fr 7fr;gap:clamp(40px,6vw,100px);align-items:start}
+.sticky{position:sticky;top:120px}
+.sticky .lead{margin-top:28px}
+.sticky .note{margin-top:32px;font-size:14px;color:var(--ink-soft);border-left:3px solid var(--gold);padding-left:14px;max-width:420px}
+.cards{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.card{background:var(--surface);border:1.5px solid var(--ink);padding:clamp(26px,3vw,40px);display:flex;flex-direction:column;min-height:340px;transition:transform .5s var(--ease),box-shadow .5s var(--ease),background .4s}
+.card:nth-child(2){margin-top:70px}
+.card:nth-child(4){margin-top:70px}
+.card:hover{transform:translateY(-8px);box-shadow:10px 10px 0 var(--ink)}
+.card .top{display:flex;justify-content:space-between;align-items:start;margin-bottom:auto}
+.card .n{font-family:var(--serif);font-size:72px;line-height:.8;color:var(--gold)}
+.card .ic{width:46px;height:46px;border:1.5px solid var(--ink);display:grid;place-items:center;transition:background .4s}
+.card:hover .ic{background:var(--gold)}
+.card .ic svg{width:22px;height:22px}
+.card h3{font-family:var(--serif);font-weight:400;font-size:clamp(30px,2.6vw,38px);line-height:1.02;margin:44px 0 12px;letter-spacing:-.01em}
+.card p{font-size:15.5px;color:var(--ink-soft)}
+.card.blue{background:var(--blue);border-color:var(--blue);color:#fff}
+.card.blue p{color:rgba(255,255,255,.86)}
+.card.blue .n{color:var(--gold-soft)}
+.card.blue .ic{border-color:#fff}
+.card.blue .ic svg{stroke:#fff}
+.card.blue:hover .ic{background:var(--gold);border-color:var(--gold)}
+.card.blue:hover .ic svg{stroke:var(--ink)}
+.card.blue:hover{box-shadow:10px 10px 0 var(--gold)}
 
-.visit{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:10px}
-.visit .card h3{font-size:20px}
-.visit a{color:var(--accent);font-weight:600}
-footer{border-top:1px solid color-mix(in srgb,var(--ink) 9%,transparent);padding:40px 0 110px;color:var(--muted);font-size:14px}
-footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
-.mobile-bar{display:none}
+/* About: signature 303 block */
+.about{background:var(--blue);color:#fff;overflow:hidden}
+.about .sec-head{border-color:#fff}
+.about .h2 em{color:var(--gold-soft)}
+.about .lead{color:rgba(255,255,255,.86)}
+.about-grid{display:grid;grid-template-columns:7fr 5fr;gap:clamp(40px,6vw,100px);align-items:end}
+.giant{font-family:var(--serif);font-size:clamp(170px,31vw,500px);line-height:.74;letter-spacing:-.06em;color:var(--gold);position:relative;display:inline-block}
+.giant sup{font-family:var(--sans);font-size:clamp(11px,1vw,13px);letter-spacing:.24em;text-transform:uppercase;font-weight:600;color:#fff;position:absolute;top:8px;left:100%;margin-left:12px;white-space:nowrap;line-height:1.6}
+.about-copy p+p{margin-top:18px}
+.about-copy .h2{margin-bottom:30px}
+.addr-line{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid rgba(255,255,255,.35);margin-top:clamp(50px,7vw,90px)}
+.addr-line div{padding:20px 20px 0 0}
+.addr-line div+div{padding-left:20px;border-left:1px solid rgba(255,255,255,.35)}
+.addr-line .label{color:var(--gold-soft);display:block;margin-bottom:8px}
+.addr-line b{font-family:var(--serif);font-weight:400;font-size:clamp(22px,2.2vw,30px);line-height:1.1}
 
-@keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
-.hero .copy>*{animation:rise .8s cubic-bezier(.2,.7,.2,1) both}
-.hero .copy>*:nth-child(2){animation-delay:.08s}.hero .copy>*:nth-child(3){animation-delay:.16s}
-.hero .copy>*:nth-child(4){animation-delay:.24s}.hero .copy>*:nth-child(5){animation-delay:.32s}
-.visual{animation:rise 1s .2s cubic-bezier(.2,.7,.2,1) both}
+/* Why */
+.why-list{display:grid;grid-template-columns:repeat(3,1fr);border-top:1.5px solid var(--ink)}
+.why{padding:36px 30px 40px 0;position:relative}
+.why+.why{padding-left:30px;border-left:1px solid var(--line)}
+.why .big{font-family:var(--serif);font-size:clamp(64px,7vw,110px);line-height:.85;color:var(--ink);display:block;margin-bottom:26px}
+.why .big em{color:var(--gold)}
+.why h3{font-size:19px;font-weight:600;margin-bottom:10px;letter-spacing:-.01em}
+.why p{color:var(--ink-soft);font-size:15.5px}
+.why-intro{display:flex;justify-content:space-between;align-items:end;gap:40px;margin-bottom:60px;flex-wrap:wrap}
 
-@media (max-width:980px){
-  .links{display:none}
-  .hero-grid,.why-grid,.cta-box{grid-template-columns:1fr}
-  .hero-grid{gap:56px}
-  .services,.reviews,.visit{grid-template-columns:1fr 1fr}
-  .trust .wrap{grid-template-columns:1fr 1fr}
-  .float.one{left:12px;bottom:-26px}.float.two{right:12px}
-  .visual{max-width:560px;margin-bottom:20px}
-  .section-head{flex-direction:column;align-items:flex-start}
+/* Steps */
+.steps-sec{background:var(--gold-tint);border-top:1.5px solid var(--ink);border-bottom:1.5px solid var(--ink)}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:0;counter-reset:s}
+.step{border-left:1.5px solid var(--ink);padding:0 26px 10px;position:relative}
+.step:last-child{border-right:1.5px solid var(--ink)}
+.step .sn{font-family:var(--serif);font-size:clamp(90px,9vw,140px);line-height:.8;display:block;margin-bottom:30px;color:var(--ink);transition:color .4s}
+.step:hover .sn{color:var(--blue)}
+.step .bar{height:6px;background:var(--gold);width:40px;margin-bottom:22px;transition:width .6s var(--ease)}
+.step:hover .bar{width:100%}
+.step h3{font-size:19px;font-weight:600;margin-bottom:8px}
+.step p{font-size:15.5px;color:var(--ink-soft)}
+.step a{font-weight:600;color:var(--blue)}
+
+/* CTA band */
+.cta{background:var(--ink);color:var(--bg);overflow:hidden;text-align:center;padding:clamp(100px,14vw,180px) 0}
+.cta .label{color:var(--gold)}
+.cta h2{font-family:var(--serif);font-weight:400;font-size:clamp(52px,10vw,170px);line-height:.88;letter-spacing:-.035em;margin:26px 0 40px}
+.cta h2 em{color:var(--gold)}
+.cta-phone{font-family:var(--serif);font-size:clamp(34px,5vw,72px);display:inline-block;color:var(--bg)}
+.cta .btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:44px}
+.cta .btn-ghost{color:var(--bg);border-color:var(--bg)}
+.cta .btn-ghost:hover{background:var(--bg);color:var(--ink)}
+.cta-ring{position:absolute;width:min(90vw,900px);aspect-ratio:1;border:1px solid rgba(224,161,0,.25);border-radius:50%;left:50%;top:50%;transform:translate(-50%,-50%);pointer-events:none}
+.cta-ring.r2{width:min(64vw,620px);border-color:rgba(224,161,0,.18)}
+
+/* Contact */
+.contact-grid{display:grid;grid-template-columns:5fr 7fr;gap:clamp(40px,6vw,100px)}
+.info{display:grid;grid-template-columns:1fr 1fr;border-top:1.5px solid var(--ink)}
+.info>div{padding:30px 24px 34px 0;border-bottom:1px solid var(--line)}
+.info>div:nth-child(even){padding-left:24px;border-left:1px solid var(--line)}
+.info .label{color:var(--ink-soft);display:block;margin-bottom:12px}
+.info .v{font-family:var(--serif);font-size:clamp(26px,2.4vw,34px);line-height:1.1;overflow-wrap:anywhere}
+.info .v a:hover{color:var(--blue)}
+.info .s{font-size:14px;color:var(--ink-soft);margin-top:8px}
+.map-card{grid-column:1/-1;border:1.5px solid var(--ink);margin-top:34px;background:var(--surface);display:grid;grid-template-columns:1.1fr 1fr;min-height:260px;transition:transform .5s var(--ease),box-shadow .5s var(--ease)}
+.map-card:hover{transform:translateY(-6px);box-shadow:10px 10px 0 var(--gold)}
+.map-art{position:relative;background:var(--gold-tint);border-right:1.5px solid var(--ink);overflow:hidden}
+.map-art svg{position:absolute;inset:0;width:100%;height:100%}
+.map-txt{padding:32px;display:flex;flex-direction:column;justify-content:space-between;gap:24px}
+.map-txt h3{font-family:var(--serif);font-weight:400;font-size:clamp(30px,2.8vw,40px);line-height:1}
+.map-txt .go{display:flex;align-items:center;gap:10px;font-weight:600;font-size:15px}
+.map-txt .go svg{width:18px;height:18px;transition:transform .35s var(--ease)}
+.map-card:hover .go svg{transform:translate(4px,-4px)}
+
+/* Footer */
+footer{border-top:1.5px solid var(--ink);padding:60px 0 40px}
+.foot-top{display:flex;justify-content:space-between;align-items:end;gap:30px;flex-wrap:wrap}
+.foot-name{font-family:var(--serif);font-size:clamp(48px,8.5vw,140px);line-height:.85;letter-spacing:-.035em}
+.foot-name em{color:var(--gold)}
+.foot-links{display:flex;gap:28px;flex-wrap:wrap;font-size:14px;font-weight:500}
+.foot-bot{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;margin-top:50px;padding-top:20px;border-top:1px solid var(--line);font-size:13px;color:var(--ink-soft)}
+
+/* Sticky mobile bar */
+.mbar{display:none}
+
+/* Reveal */
+.rv{opacity:0;transform:translateY(40px);transition:opacity 1s var(--ease),transform 1.1s var(--ease);transition-delay:var(--d,0s)}
+.rv.on{opacity:1;transform:none}
+
+/* Responsive */
+@media (max-width:1080px){
+  .nav-links{display:none}
+  .split,.about-grid,.contact-grid{grid-template-columns:1fr}
+  .sticky{position:static}
+  .steps{grid-template-columns:1fr 1fr;row-gap:50px}
+  .step:nth-child(2){border-right:1.5px solid var(--ink)}
 }
-@media (max-width:640px){
-  body{font-size:16px}
-  .wrap{padding:0 18px}
-  .nav{height:66px}.brand{font-size:19px}
-  .phone,.nav-right .btn{display:none}
-  .hero{padding:44px 0 64px}
-  .lead-text{font-size:17.5px}
-  .hero-ctas .btn{flex:1;justify-content:center}
-  .ticks{display:none}
-  .services,.reviews,.visit,.trust .wrap{grid-template-columns:1fr}
-  section.block{padding:76px 0}
-  .quote-panel,.photo{aspect-ratio:auto;min-height:380px}.photo{aspect-ratio:4/3;min-height:0}
-  .quote-panel{padding:40px 30px 64px}.quote-panel p{font-size:23px}
-  .float{font-size:13px;padding:12px 14px}.float b{font-size:18px}
-  .float.two{display:none}
-  .cta-box{padding:52px 28px}
-  .point{grid-template-columns:44px 1fr;padding:24px}
-  .mobile-bar{display:flex;position:fixed;left:12px;right:12px;bottom:12px;z-index:30;gap:10px}
-  .mobile-bar .btn{flex:1;justify-content:center;box-shadow:0 14px 30px -14px color-mix(in srgb,var(--ink) 60%,transparent)}
-  .mobile-bar .btn.ghost{background:var(--surface)}
+@media (max-width:760px){
+  body{font-size:16px;padding-bottom:74px}
+  .nav{height:68px}
+  .mobile-menu{inset:68px 0 0 0}
+  .nav-phone,.nav .btn{display:none}
+  .burger{display:block}
+  .brand-name{font-size:22px}
+  .hero{padding:110px 0 50px}
+  .hero-meta{justify-content:center;gap:6px 14px}
+  .hero-meta .hide-m{display:none}
+  .sun{top:46%;width:118vw}
+  .hero-ctas .btn{width:100%}
+  .hero-foot{justify-content:center}
+  .hero-foot .scroll-cue{display:none}
+  .cards{grid-template-columns:1fr}
+  .card:nth-child(2),.card:nth-child(4){margin-top:0}
+  .card{min-height:0}
+  .card h3{margin-top:34px}
+  .why-list{grid-template-columns:1fr}
+  .why,.why+.why{padding:32px 0;border-left:0;border-bottom:1px solid var(--line)}
+  .steps{grid-template-columns:1fr;row-gap:0}
+  .step,.step:last-child,.step:nth-child(2){border-right:0;border-left:0;border-top:1.5px solid var(--ink);padding:30px 0}
+  .step .sn{margin-bottom:20px}
+  .addr-line{grid-template-columns:1fr}
+  .addr-line div,.addr-line div+div{padding:18px 0;border-left:0;border-bottom:1px solid rgba(255,255,255,.35)}
+  .giant sup{position:static;display:block;margin:18px 0 0;white-space:normal}
+  .info{grid-template-columns:1fr}
+  .info>div,.info>div:nth-child(even){padding:26px 0;border-left:0}
+  .map-card{grid-template-columns:1fr}
+  .map-art{min-height:180px;border-right:0;border-bottom:1.5px solid var(--ink)}
+  .cta .btn{width:100%}
+  .mbar{display:grid;grid-template-columns:1fr 1fr;position:fixed;left:0;right:0;bottom:0;z-index:60;border-top:1.5px solid var(--ink);background:var(--bg)}
+  .mbar a{display:flex;align-items:center;justify-content:center;gap:8px;padding:0 10px;height:62px;font-weight:600;font-size:15px}
+  .mbar a svg{width:17px;height:17px}
+  .mbar a:first-child{background:var(--ink);color:var(--bg)}
+  .mbar a:last-child{background:var(--gold);color:var(--ink)}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+  .in,.rv,.sun{opacity:1!important;transform:none!important;scale:1!important}
+  .hero h1 .row>span.in{transform:none!important}
+  .sun{transform:translate(-50%,-50%)!important}
 }
 </style>
 </head>
 <body>
-<div class="concept">Website concept prepared for <b>Jester Village Dental</b> by webstudio &middot; not a live site</div>
 
-<header>
+<header id="top-bar">
   <div class="wrap nav">
-    <a href="#top" class="brand">Jester Village Dental</a>
-    <nav class="links">
-      <a href="#services">Services</a><a href="#why">Why us</a><a href="#visit">Visit</a>
+    <a href="#top" class="brand" aria-label="Jester Village Dental, back to top">
+      <svg class="mark" viewBox="0 0 40 40" aria-hidden="true"><rect width="40" height="40" fill="#1E1B14"/><circle cx="20" cy="22" r="11" fill="#E0A100"/><rect x="0" y="26" width="40" height="14" fill="#1E1B14"/><rect x="6" y="28.5" width="28" height="1.5" fill="#FFFBEF"/></svg>
+      <span class="brand-name">Jester Village<small>Dental · Austin</small></span>
+    </a>
+    <nav class="nav-links" aria-label="Primary">
+      <a class="ulink" href="#services">Care</a>
+      <a class="ulink" href="#about">Practice</a>
+      <a class="ulink" href="#process">Your visit</a>
+      <a class="ulink" href="#contact">Contact</a>
     </nav>
     <div class="nav-right">
-      <a class="phone" href="tel:5124189150">(512) 418-9150</a>
-      <a class="btn" href="#visit">Book now</a>
+      <a class="nav-phone ulink" href="tel:+15124189150">(512) 418-9150</a>
+      <a class="btn btn-dark" href="#contact">Book a visit</a>
+      <button class="burger" aria-label="Open menu" aria-expanded="false" aria-controls="mmenu"><span></span><span></span><span></span></button>
     </div>
   </div>
 </header>
 
+<div class="mobile-menu" id="mmenu">
+  <a class="m" href="#services">Care <span>01</span></a>
+  <a class="m" href="#about">Practice <span>02</span></a>
+  <a class="m" href="#process">Your visit <span>03</span></a>
+  <a class="m" href="#contact">Contact <span>04</span></a>
+  <a class="btn btn-dark" href="tel:+15124189150">Call (512) 418-9150</a>
+</div>
+
 <main id="top">
-<section class="hero">
-  <div class="wrap hero-grid">
-    <div class="copy">
-      <div class="eyebrow">
-        <span class="dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-7-4.4-7-10a4 4 0 017-2.6A4 4 0 0119 10c0 5.6-7 10-7 10z"/></svg></span>Dental care in Austin
+  <!-- HERO -->
+  <section class="hero" aria-label="Introduction">
+    <div class="grid-lines" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+    <div class="sun" aria-hidden="true"></div>
+    <div class="sun-cut" aria-hidden="true"></div>
+    <div class="wrap">
+      <div class="hero-meta label in" style="--d:.1s">
+        <span>Jester Village Dental</span>
+        <span class="hide-m">6507 Jester Blvd · Suite 303</span>
+        <span>Austin, TX 78750</span>
       </div>
-      <h1>Your neighborhood dentist in Jester <em>Village, Austin.</em></h1>
-      <p class="lead-text">Friendly, careful dental care close to home, with appointments you can book online in a few taps from your phone.</p>
-      <div class="hero-ctas">
-        <a class="btn" href="#visit">Book your visit <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-        <a class="btn ghost" href="tel:5124189150">Call (512) 418-9150</a>
+      <h1>
+        <span class="row"><span class="in" style="--d:.2s">Dentistry,</span></span>
+        <span class="row"><span class="in" style="--d:.34s"><em>brilliantly</em></span></span>
+        <span class="row"><span class="in" style="--d:.48s">considered.</span></span>
+      </h1>
+      <p class="hero-sub in" style="--d:.75s">A neighbourhood dental practice on Jester Blvd in Northwest Austin, for people who want unhurried care, honest answers and a smile they are proud of.</p>
+      <div class="hero-ctas in" style="--d:.9s">
+        <a class="btn btn-dark" href="tel:+15124189150">Call (512) 418-9150
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a class="btn btn-ghost" href="#contact">Plan your visit</a>
       </div>
-      <div class="ticks">
-        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7"/></svg>Most insurance accepted</span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7"/></svg>New patients welcome</span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7"/></svg>Flexible payment plans</span>
+      <div class="hero-foot in" style="--d:1.1s">
+        <span class="label">Northwest Austin</span>
+        <span class="scroll-cue label"><i></i>Scroll</span>
+        <span class="label">Suite N° 303</span>
       </div>
     </div>
-    <div class="visual">
-      
-      <div class="quote-panel"><div class="quote-mark">“</div><div><p>Gentle, modern care for the whole family, with same-week appointments and a team that actually takes time to listen.</p><div class="who">Jester Village Dental</div></div></div>
-      
-      
-      <div class="float two"><span class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><span><b>This week</b>New patients welcome</span></div>
+  </section>
+
+  <!-- BAND -->
+  <div class="band" aria-hidden="true">
+    <div class="marquee">
+      <span>Unhurried visits</span><span>Clear explanations</span><span>Jester Village</span><span>Thoughtful care</span><span>Northwest Austin</span><span>Suite 303</span>
+      <span>Unhurried visits</span><span>Clear explanations</span><span>Jester Village</span><span>Thoughtful care</span><span>Northwest Austin</span><span>Suite 303</span>
     </div>
   </div>
-  <template id="qp"><div class="quote-panel"><div class="quote-mark">“</div><div><p>Gentle, modern care for the whole family, with same-week appointments and a team that actually takes time to listen.</p><div class="who">Jester Village Dental</div></div></div></template>
-</section>
 
-<div class="trust"><div class="wrap">
-  <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.2-8 9-4.6-.8-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg>Most insurance accepted</div><div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.2-8 9-4.6-.8-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg>New patients welcome</div><div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.2-8 9-4.6-.8-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg>Flexible payment plans</div><div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.2-8 9-4.6-.8-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg>Evening appointments</div>
-</div></div>
-
-<section class="block" id="services">
-  <div class="wrap">
-    <div class="section-head">
-      <div><div class="kicker">What we do</div><h2>Everything you need,<br>under one roof.</h2></div>
-      <p>From routine visits to the work that changes how you feel about your day, Jester Village Dental takes care of it properly.</p>
+  <!-- SERVICES -->
+  <section class="sec" id="services">
+    <div class="wrap">
+      <div class="sec-head rv"><span class="num">01</span><span class="label">Care</span><span class="label">Jester Village Dental</span></div>
+      <div class="split">
+        <div class="sticky rv">
+          <h2 class="h2">Care that <em>fits</em> your life.</h2>
+          <p class="lead">From your next routine visit to the question you have been putting off, start with a conversation. We will listen first, then talk you through your options in plain language.</p>
+          <p class="note">Treatments vary from patient to patient. Call <a class="ulink" href="tel:+15124189150"><b>(512) 418-9150</b></a> to ask about the specific care you are looking for.</p>
+        </div>
+        <div class="cards">
+          <article class="card rv">
+            <div class="top"><span class="n">01</span><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#1E1B14" stroke-width="1.6"><path d="M12 3l7 3v5c0 4.5-3 8.5-7 10-4-1.5-7-5.5-7-10V6l7-3z"/><path d="M9 12l2 2 4-4"/></svg></span></div>
+            <h3>Everyday dental visits</h3>
+            <p>Make routine care something you look forward to: calm appointments that keep your smile healthy over the long run.</p>
+          </article>
+          <article class="card blue rv" style="--d:.1s">
+            <div class="top"><span class="n">02</span><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.6"><path d="M12 3v4M12 17v4M3 12h4M17 12h4M5.6 5.6l2.8 2.8M15.6 15.6l2.8 2.8M5.6 18.4l2.8-2.8M15.6 8.4l2.8-2.8"/></svg></span></div>
+            <h3>A brighter, more confident smile</h3>
+            <p>Thinking about how your smile looks? Bring your goals and we will talk honestly about what could work for you.</p>
+          </article>
+          <article class="card rv">
+            <div class="top"><span class="n">03</span><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#1E1B14" stroke-width="1.6"><path d="M4 20l6-6M14 4l6 6-8 8-6-6 8-8z"/></svg></span></div>
+            <h3>When something feels off</h3>
+            <p>Sensitivity, discomfort or a tooth that just does not feel right. Call and tell us what is going on.</p>
+          </article>
+          <article class="card rv" style="--d:.1s">
+            <div class="top"><span class="n">04</span><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#1E1B14" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M9.5 9.5a2.5 2.5 0 1 1 3.5 2.3c-.6.3-1 .9-1 1.6V14M12 17.5v.01"/></svg></span></div>
+            <h3>Questions &amp; second opinions</h3>
+            <p>Already been told you need work? Sit down with us, ask everything, and leave knowing where you stand.</p>
+          </article>
+        </div>
+      </div>
     </div>
-    <div class="services">
-      
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3c-2.5 0-4 2-4 4.5 0 3 1.5 4.5 2 7.5.4 2.4.8 6 2.5 6 1.6 0 1.6-4.5 4.5-4.5s2.9 4.5 4.5 4.5c1.7 0 2.1-3.6 2.5-6 .5-3 2-4.5 2-7.5C21 5 19.5 3 17 3c-2 0-3 1-5 1S9 3 7 3z"/></svg></div><h3>Checkups &amp; cleanings</h3><p>Thorough, comfortable exams that keep small problems from becoming big ones.</p></div>
-      
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/><path d="M19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8z"/></svg></div><h3>Teeth whitening</h3><p>Professional whitening that brightens your smile safely in a single visit.</p></div>
-      
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 14s1.5 2.5 4 2.5 4-2.5 4-2.5"/><path d="M9 9.5h.01M15 9.5h.01"/></svg></div><h3>Invisalign &amp; aligners</h3><p>Straighten your teeth discreetly with clear aligners planned around your life.</p></div>
-      
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.2-8 9-4.6-.8-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg></div><h3>Dental implants</h3><p>Permanent, natural-looking replacements that feel and work like your own teeth.</p></div>
-      
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-7-4.4-7-10a4 4 0 017-2.6A4 4 0 0119 10c0 5.6-7 10-7 10z"/></svg></div><h3>Kids&#39; dentistry</h3><p>A calm, friendly first experience that helps children love their checkups.</p></div>
-      
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div><h3>Emergency care</h3><p>Same-day help for toothaches, chips and broken teeth when you need it most.</p></div>
-      
-    </div>
-  </div>
-</section>
+  </section>
 
-<section class="block why" id="why">
-  <div class="wrap why-grid">
-    <div>
-      <div class="kicker">Why patients choose us</div>
-      <h2>The Austin dentist people recommend to their friends.</h2>
-      <p class="intro">it still comes down to the same three things.</p>
+  <!-- ABOUT: signature -->
+  <section class="sec about" id="about">
+    <div class="wrap">
+      <div class="sec-head rv"><span class="num">02</span><span class="label">The practice</span><span class="label">Austin, TX</span></div>
+      <div class="about-grid">
+        <div class="rv">
+          <span class="giant">303<sup>Suite · 6507 Jester Blvd</sup></span>
+        </div>
+        <div class="about-copy rv" style="--d:.15s">
+          <h2 class="h2">Your dentist, <em>just around</em> the corner.</h2>
+          <p class="lead">Jester Village Dental sits on Jester Blvd in Northwest Austin, close to home for neighbours across 78750.</p>
+          <p class="lead">The idea is simple: a practice where you feel known, where nothing is rushed, and where every recommendation comes with a clear reason behind it.</p>
+        </div>
+      </div>
+      <div class="addr-line rv">
+        <div><span class="label">Street</span><b>6507 Jester Blvd</b></div>
+        <div><span class="label">Suite</span><b>#303</b></div>
+        <div><span class="label">City</span><b>Austin, TX 78750</b></div>
+      </div>
     </div>
-    <div class="points">
-      
-      <div class="point"><div class="num">01</div><div><h3>Comfort first</h3><p>Numbing that works, warm blankets, and no lectures. Anxious patients are welcome here.</p></div></div>
-      
-      <div class="point"><div class="num">02</div><div><h3>Modern technology</h3><p>Digital X-rays and 3D scans mean less radiation, fewer goopy impressions and faster results.</p></div></div>
-      
-      <div class="point"><div class="num">03</div><div><h3>Clear pricing</h3><p>We explain costs and insurance before treatment, so there are never any surprises.</p></div></div>
-      
+  </section>
+
+  <!-- WHY -->
+  <section class="sec" id="why">
+    <div class="wrap">
+      <div class="sec-head rv"><span class="num">03</span><span class="label">Our approach</span><span class="label">What you can expect</span></div>
+      <div class="why-intro">
+        <h2 class="h2 rv">The <em>details</em><br>make the visit.</h2>
+        <p class="lead rv" style="--d:.1s">Great dentistry is as much about how you feel in the chair as it is about the work itself. Here is what we hold ourselves to.</p>
+      </div>
+      <div class="why-list">
+        <div class="why rv"><span class="big">A<em>.</em></span><h3>Time to listen</h3><p>Your concerns come first. We want to understand what matters to you before we suggest anything.</p></div>
+        <div class="why rv" style="--d:.1s"><span class="big">B<em>.</em></span><h3>Plain-language answers</h3><p>No jargon and no pressure. You will know what we see, what your options are and why.</p></div>
+        <div class="why rv" style="--d:.2s"><span class="big">C<em>.</em></span><h3>Close to home</h3><p>A convenient Jester Blvd address in Northwest Austin, so looking after your smile is easy to fit in.</p></div>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-
-
-<section class="cta-band" id="book">
-  <div class="wrap"><div class="cta-box">
-    <div><h2>Ready when you are.</h2><p>Book your visit in under a minute, or give us a call and talk to a real person.</p></div>
-    <div class="actions">
-      <a class="btn" href="#visit">Book your visit</a>
-      <a class="btn ghost" href="tel:5124189150">Call (512) 418-9150</a>
+  <!-- PROCESS -->
+  <section class="sec steps-sec" id="process">
+    <div class="wrap">
+      <div class="sec-head rv"><span class="num">04</span><span class="label">Your visit</span><span class="label">Four simple steps</span></div>
+      <h2 class="h2 rv" style="margin-bottom:clamp(50px,7vw,90px)">From first call to <em>fresh smile.</em></h2>
+      <div class="steps">
+        <div class="step rv"><span class="sn">1</span><div class="bar"></div><h3>Give us a call</h3><p>Ring <a href="tel:+15124189150">(512) 418-9150</a> to ask a question or find a time that suits you.</p></div>
+        <div class="step rv" style="--d:.1s"><span class="sn">2</span><div class="bar"></div><h3>Tell us your goals</h3><p>Whether it is a routine visit or a specific concern, let us know so we can prepare.</p></div>
+        <div class="step rv" style="--d:.2s"><span class="sn">3</span><div class="bar"></div><h3>Visit Suite 303</h3><p>Find us at 6507 Jester Blvd, Austin. Come as you are; we will take it from there.</p></div>
+        <div class="step rv" style="--d:.3s"><span class="sn">4</span><div class="bar"></div><h3>Leave with a clear plan</h3><p>Walk out knowing exactly where your smile stands and what, if anything, comes next.</p></div>
+      </div>
     </div>
-  </div></div>
-</section>
+  </section>
 
-<section class="block" id="visit" style="padding-top:0">
-  <div class="wrap">
-    <div class="kicker">Visit us</div><h2>Come say hello.</h2>
-    <div class="visit">
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11l8-7 8 7v9a1 1 0 01-1 1h-4v-6H9v6H5a1 1 0 01-1-1z"/></svg></div><h3>Address</h3><p>6507 Jester Blvd #303, Austin TX 78750</p></div>
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div><h3>Phone</h3><p><a href="tel:5124189150">(512) 418-9150</a></p><p style="margin-top:10px">Call or message us for today's opening hours.</p></div>
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-7-4.4-7-10a4 4 0 017-2.6A4 4 0 0119 10c0 5.6-7 10-7 10z"/></svg></div><h3>New patients welcome</h3><p>Book your visit online or by phone and we'll take care of the rest.</p></div>
+  <!-- CTA -->
+  <section class="cta" aria-label="Book a visit">
+    <div class="cta-ring" aria-hidden="true"></div><div class="cta-ring r2" aria-hidden="true"></div>
+    <div class="wrap" style="position:relative">
+      <span class="label rv">Ready when you are</span>
+      <h2 class="rv" style="--d:.1s">Your best smile<br>starts with <em>hello.</em></h2>
+      <a class="cta-phone ulink rv" style="--d:.2s" href="tel:+15124189150">(512) 418-9150</a>
+      <div class="btns rv" style="--d:.3s">
+        <a class="btn btn-gold" href="tel:+15124189150">Call the practice
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a class="btn btn-ghost" href="https://maps.google.com/?q=6507+Jester+Blvd+%23303,+Austin,+TX+78750" target="_blank" rel="noopener">Get directions</a>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="sec" id="contact">
+    <div class="wrap">
+      <div class="sec-head rv"><span class="num">05</span><span class="label">Visit</span><span class="label">Contact</span></div>
+      <div class="contact-grid">
+        <div class="rv">
+          <h2 class="h2">Come and <em>see us.</em></h2>
+          <p class="lead" style="margin-top:28px">The quickest way to book or ask a question is to call. We will be glad to help you find a time.</p>
+        </div>
+        <div class="info rv" style="--d:.1s">
+          <div><span class="label">Telephone</span><div class="v"><a href="tel:+15124189150">(512) 418-9150</a></div><p class="s">Tap to call</p></div>
+          <div><span class="label">Hours</span><div class="v">By phone</div><p class="s">Please call for current opening hours</p></div>
+          <div><span class="label">Address</span><div class="v">6507 Jester Blvd #303</div><p class="s">Austin, TX 78750</p></div>
+          <div><span class="label">Area</span><div class="v">Northwest Austin</div><p class="s">Jester Village</p></div>
+          <a class="map-card" href="https://maps.google.com/?q=6507+Jester+Blvd+%23303,+Austin,+TX+78750" target="_blank" rel="noopener" aria-label="Open 6507 Jester Blvd #303 in Google Maps">
+            <div class="map-art" aria-hidden="true">
+              <svg viewBox="0 0 400 260" preserveAspectRatio="xMidYMid slice">
+                <g stroke="#1E1B14" stroke-opacity=".16" stroke-width="1"><path d="M0 40h400M0 100h400M0 160h400M0 220h400M60 0v260M150 0v260M240 0v260M330 0v260"/></g>
+                <path d="M-10 190C80 170 120 90 210 110S330 60 410 40" fill="none" stroke="#2F5D8A" stroke-width="10" stroke-linecap="round"/>
+                <path d="M120 -10L170 270" stroke="#1E1B14" stroke-opacity=".35" stroke-width="4"/>
+                <circle cx="210" cy="110" r="34" fill="#E0A100" fill-opacity=".3"/>
+                <circle cx="210" cy="110" r="14" fill="#E0A100" stroke="#1E1B14" stroke-width="2"/>
+                <rect x="232" y="128" width="104" height="28" fill="#1E1B14"/>
+                <text x="284" y="147" text-anchor="middle" font-family="Inter,sans-serif" font-size="12" font-weight="600" letter-spacing="2" fill="#FFFBEF">SUITE 303</text>
+              </svg>
+            </div>
+            <div class="map-txt">
+              <div><span class="label" style="color:var(--ink-soft)">Directions</span><h3 style="margin-top:12px">Find us on Jester Blvd</h3></div>
+              <span class="go">Open in Google Maps <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M8 7h9v9"/></svg></span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
 </main>
 
-<footer><div class="wrap">
-  <span>© 2026 Jester Village Dental</span>
-  <span>Concept design by webstudio. Not affiliated with or endorsed by Jester Village Dental.</span>
-</div></footer>
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <div class="foot-name">Jester Village<br><em>Dental.</em></div>
+      <nav class="foot-links" aria-label="Footer">
+        <a class="ulink" href="#services">Care</a>
+        <a class="ulink" href="#about">Practice</a>
+        <a class="ulink" href="#process">Your visit</a>
+        <a class="ulink" href="#contact">Contact</a>
+        <a class="ulink" href="tel:+15124189150">(512) 418-9150</a>
+      </nav>
+    </div>
+    <div class="foot-bot">
+      <span>6507 Jester Blvd #303, Austin, TX 78750</span>
+      <span>© <span id="yr">2026</span> Jester Village Dental</span>
+    </div>
+  </div>
+</footer>
 
-<div class="mobile-bar">
-  <a class="btn ghost" href="tel:5124189150">Call</a>
-  <a class="btn" href="#visit">Book now</a>
+<div class="mbar">
+  <a href="tel:+15124189150"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>Call now</a>
+  <a href="#contact">Plan a visit</a>
 </div>
-</body>
+
+<script>
+(function(){
+  var d=document,root=d.documentElement,body=d.body;
+  d.getElementById('yr').textContent=new Date().getFullYear();
+  requestAnimationFrame(function(){requestAnimationFrame(function(){body.classList.add('loaded')})});
+
+  var header=d.getElementById('top-bar');
+  var burger=d.querySelector('.burger');
+  function closeMenu(){body.classList.remove('menu-open');burger.setAttribute('aria-expanded','false');burger.setAttribute('aria-label','Open menu')}
+  burger.addEventListener('click',function(){
+    var open=body.classList.toggle('menu-open');
+    burger.setAttribute('aria-expanded',open);burger.setAttribute('aria-label',open?'Close menu':'Open menu');
+  });
+  d.querySelectorAll('.mobile-menu a').forEach(function(a){a.addEventListener('click',closeMenu)});
+  d.addEventListener('keydown',function(e){if(e.key==='Escape')closeMenu()});
+
+  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var els=d.querySelectorAll('.rv');
+  if('IntersectionObserver' in window&&!reduce){
+    var io=new IntersectionObserver(function(entries){
+      entries.forEach(function(en){if(en.isIntersecting){en.target.classList.add('on');io.unobserve(en.target)}});
+    },{threshold:.12,rootMargin:'0px 0px -6% 0px'});
+    els.forEach(function(el){io.observe(el)});
+  }else{els.forEach(function(el){el.classList.add('on')})}
+
+  var sun=d.querySelector('.sun'),ticking=false;
+  function onScroll(){
+    var y=window.scrollY;
+    header.classList.toggle('scrolled',y>20);
+    if(!reduce&&y<window.innerHeight*1.2){
+      sun.style.transform='translate(-50%,calc(-50% + '+(y*0.28)+'px))';
+    }
+    ticking=false;
+  }
+  window.addEventListener('scroll',function(){if(!ticking){requestAnimationFrame(onScroll);ticking=true}},{passive:true});
+  onScroll();
+})();
+</script>
+<div id="lm-concept" style="position:fixed;left:12px;bottom:12px;z-index:2147483647;font:500 11px/1.3 -apple-system,BlinkMacSystemFont,Segoe UI,sans-serif;letter-spacing:.02em;background:rgba(15,15,18,.82);color:#f4f1ea;padding:7px 11px;border-radius:999px;backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);pointer-events:none;max-width:70vw">Website concept for Jester Village Dental by webstudio &middot; not the live site</div><p style="margin:0;padding:18px 16px 70px;text-align:center;font:12px/1.5 -apple-system,sans-serif;color:#8a8a8a;background:#0e0e10">Concept design by webstudio. Not affiliated with or endorsed by Jester Village Dental.</p></body>
 </html>
