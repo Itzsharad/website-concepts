@@ -1,291 +1,579 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src * data: blob:; media-src 'self' data:; style-src 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com data:; script-src 'unsafe-inline'; connect-src 'none'; frame-src 'none'; form-action 'none'; base-uri 'none'; object-src 'none'">
 <meta name="robots" content="noindex, nofollow">
-<title>1 Guy 1 Gal Movers | Website concept</title>
+<style>html,body{max-width:100%;overflow-x:clip}</style>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>1 Guy 1 Gal Movers | Moving Company in Austin, TX</title>
+<meta name="description" content="1 Guy 1 Gal Movers, a moving company based on E Cesar Chavez St in East Austin, TX. Call (737) 781-3989 to plan your move.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@300;400;500;600;700&family=Marcellus&display=swap" rel="stylesheet">
 <style>
 :root{
-  --bg:#f6f4f0;--surface:#ffffff;--ink:#1d2433;--muted:#5f6675;
-  --accent:#c4512b;--accent-ink:#ffffff;--gold:#d79a3e;--soft:#f3e6de;
-  --radius:22px;--max:1180px;
-  --serif:"Fraunces",Georgia,serif;--sans:"Manrope",system-ui,-apple-system,sans-serif;
+  --bg:#071A2B;--bg2:#05131F;--card:#0E2840;--card2:#123250;
+  --text:#EAF2F8;--muted:#A9BFD0;--accent:#4FB3E8;--gold:#E9C46A;
+  --line:rgba(234,242,248,.12);
+  --serif:"Marcellus",Georgia,serif;--sans:"Figtree",system-ui,sans-serif;
+  --ease:cubic-bezier(.22,1,.36,1);
 }
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:90px}
+body{background:var(--bg);color:var(--text);font-family:var(--sans);font-size:17px;line-height:1.65;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+img,svg{display:block;max-width:100%}
 a{color:inherit;text-decoration:none}
-img{max-width:100%;display:block}
-.wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
-.concept{background:var(--ink);color:var(--bg);font-size:13px;text-align:center;padding:8px 16px;letter-spacing:.02em}
-.concept b{color:var(--gold);font-weight:600}
+h1,h2,h3{font-family:var(--serif);font-weight:400;line-height:1.08;letter-spacing:-.01em}
+.wrap{width:min(1200px,100% - 48px);margin-inline:auto}
+.label{display:inline-flex;align-items:center;gap:12px;font-size:12px;font-weight:600;letter-spacing:.28em;text-transform:uppercase;color:var(--gold)}
+.label::before{content:"";width:28px;height:1px;background:currentColor}
+.h2{font-size:clamp(36px,5.4vw,68px);margin:18px 0 22px}
+.h2 em{font-style:normal;color:var(--accent)}
+.lead{color:var(--muted);font-size:clamp(17px,1.5vw,19px);max-width:56ch}
+section{position:relative}
+.pad{padding:clamp(90px,12vw,150px) 0}
 
-/* header */
-header{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:saturate(1.4) blur(10px);border-bottom:1px solid color-mix(in srgb,var(--ink) 8%,transparent)}
-.nav{display:flex;align-items:center;justify-content:space-between;height:76px;gap:24px}
-.brand{font-family:var(--serif);font-size:23px;font-weight:600;letter-spacing:-.01em;line-height:1.1;max-width:340px}
-.links{display:flex;gap:30px;font-size:15px;font-weight:500;color:var(--muted)}
-.links a:hover{color:var(--ink)}
-.nav-right{display:flex;align-items:center;gap:18px}
-.phone{font-weight:600;font-size:15px;white-space:nowrap}
-.btn{display:inline-flex;align-items:center;gap:10px;background:var(--accent);color:var(--accent-ink);padding:14px 26px;border-radius:999px;font-weight:600;font-size:15.5px;transition:transform .2s ease,box-shadow .2s ease;white-space:nowrap}
-.btn:hover{transform:translateY(-2px);box-shadow:0 12px 28px -12px var(--accent)}
-.btn.ghost{background:transparent;color:var(--ink);border:1.5px solid color-mix(in srgb,var(--ink) 20%,transparent)}
-.btn.ghost:hover{box-shadow:none;border-color:var(--ink)}
+/* Buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:16px 28px;border-radius:100px;font-weight:600;font-size:15px;letter-spacing:.04em;transition:transform .5s var(--ease),background .4s,box-shadow .5s,color .3s;white-space:nowrap}
+.btn-primary{background:var(--accent);color:#06192A;box-shadow:0 10px 40px -10px rgba(79,179,232,.6)}
+.btn-primary:hover{transform:translateY(-3px);box-shadow:0 18px 50px -12px rgba(79,179,232,.8)}
+.btn-ghost{border:1px solid rgba(234,242,248,.3);color:var(--text)}
+.btn-ghost:hover{border-color:var(--gold);color:var(--gold);transform:translateY(-3px)}
 .btn svg{width:18px;height:18px}
 
-/* hero */
-.hero{padding:72px 0 88px}
-.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:64px;align-items:center}
-.eyebrow{display:inline-flex;align-items:center;gap:10px;background:var(--surface);border:1px solid color-mix(in srgb,var(--ink) 10%,transparent);padding:8px 16px 8px 10px;border-radius:999px;font-size:14px;font-weight:600;color:var(--muted)}
-.stars{color:var(--gold);letter-spacing:1px;font-size:14px}
-.eyebrow .dot{width:26px;height:26px;border-radius:50%;background:var(--soft);display:grid;place-items:center;color:var(--accent)}
-h1{font-family:var(--serif);font-weight:500;font-size:clamp(44px,5.6vw,74px);line-height:1.02;letter-spacing:-.025em;margin:26px 0 22px}
-h1 em{font-style:italic;color:var(--accent)}
-.lead-text{font-size:19.5px;color:var(--muted);max-width:540px}
-.hero-ctas{display:flex;gap:14px;margin-top:36px;flex-wrap:wrap}
-.ticks{display:flex;gap:22px;margin-top:34px;flex-wrap:wrap;font-size:14.5px;font-weight:600;color:var(--muted)}
-.ticks span{display:flex;align-items:center;gap:8px}
-.ticks svg{width:18px;height:18px;color:var(--accent)}
-.visual{position:relative}
-.photo{aspect-ratio:4/5;border-radius:calc(var(--radius) + 10px);overflow:hidden;background:var(--soft);box-shadow:0 40px 80px -40px color-mix(in srgb,var(--ink) 55%,transparent)}
-.photo img{width:100%;height:100%;object-fit:cover}
-.quote-panel{aspect-ratio:4/5;border-radius:calc(var(--radius) + 10px);background:linear-gradient(155deg,var(--accent),color-mix(in srgb,var(--accent) 55%,var(--ink)));color:var(--accent-ink);padding:52px 46px;display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden;box-shadow:0 40px 80px -40px color-mix(in srgb,var(--ink) 60%,transparent)}
-.quote-panel:before{content:"";position:absolute;width:420px;height:420px;border-radius:50%;right:-160px;top:-160px;background:color-mix(in srgb,var(--accent-ink) 9%,transparent)}
-.quote-panel:after{content:"";position:absolute;width:260px;height:260px;border-radius:50%;left:-90px;bottom:-110px;border:1.5px solid color-mix(in srgb,var(--accent-ink) 22%,transparent)}
-.quote-mark{font-family:var(--serif);font-size:120px;line-height:.6;opacity:.35}
-.quote-panel p{font-family:var(--serif);font-size:28px;line-height:1.3;position:relative;z-index:1}
-.quote-panel .who{font-family:var(--sans);font-size:15px;opacity:.85;margin-top:22px;font-weight:600}
-.float{position:absolute;background:var(--surface);color:var(--ink);border-radius:18px;padding:16px 20px;box-shadow:0 24px 50px -24px color-mix(in srgb,var(--ink) 50%,transparent);display:flex;align-items:center;gap:14px;font-size:14px;line-height:1.35}
-.float b{font-size:22px;font-family:var(--serif);font-weight:600;display:block}
-.float.one{left:-34px;bottom:-28px}
-.float.two{right:-22px;top:44px}
-.float .badge{width:44px;height:44px;border-radius:14px;background:var(--soft);display:grid;place-items:center;color:var(--accent)}
-.float .badge svg{width:22px;height:22px}
+/* Header */
+.header{position:fixed;inset:0 0 auto;z-index:50;transition:background .5s,backdrop-filter .5s,border-color .5s;border-bottom:1px solid transparent}
+.header.scrolled{background:rgba(7,26,43,.72);backdrop-filter:blur(18px) saturate(1.3);-webkit-backdrop-filter:blur(18px) saturate(1.3);border-color:var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:84px;gap:20px}
+.logo{display:flex;align-items:center;gap:12px;font-family:var(--serif);font-size:20px;letter-spacing:.02em}
+.logo-mark{width:42px;height:42px;border-radius:50%;border:1px solid rgba(233,196,106,.55);display:grid;place-items:center;color:var(--gold);font-size:15px;flex:none}
+.logo small{display:block;font-family:var(--sans);font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--muted);margin-top:2px}
+.menu{display:flex;gap:34px;list-style:none}
+.menu a{font-size:14px;letter-spacing:.06em;color:var(--muted);position:relative;transition:color .3s}
+.menu a::after{content:"";position:absolute;left:0;bottom:-6px;width:100%;height:1px;background:var(--gold);transform:scaleX(0);transform-origin:right;transition:transform .5s var(--ease)}
+.menu a:hover{color:var(--text)}
+.menu a:hover::after{transform:scaleX(1);transform-origin:left}
+.nav-right{display:flex;align-items:center;gap:18px}
+.nav-phone{font-size:14px;font-weight:600;letter-spacing:.04em;color:var(--text)}
+.nav-phone span{color:var(--accent)}
+.nav .btn{padding:12px 22px;font-size:14px}
+.burger{display:none;width:46px;height:46px;border-radius:50%;border:1px solid var(--line);background:transparent;cursor:pointer;position:relative}
+.burger span{position:absolute;left:14px;right:14px;height:1.5px;background:var(--text);transition:transform .4s var(--ease),opacity .3s}
+.burger span:nth-child(1){top:18px}.burger span:nth-child(2){top:26px}
+.burger[aria-expanded="true"] span:nth-child(1){transform:translateY(4px) rotate(45deg)}
+.burger[aria-expanded="true"] span:nth-child(2){transform:translateY(-4px) rotate(-45deg)}
+.mobile-menu{position:fixed;inset:0;z-index:40;background:rgba(5,19,31,.97);backdrop-filter:blur(20px);display:flex;flex-direction:column;justify-content:center;padding:0 32px;gap:8px;opacity:0;pointer-events:none;transition:opacity .5s var(--ease)}
+.mobile-menu.open{opacity:1;pointer-events:auto}
+.mobile-menu a{font-family:var(--serif);font-size:40px;padding:6px 0;border-bottom:1px solid var(--line)}
+.mobile-menu .btn{margin-top:28px;font-family:var(--sans);font-size:16px;border:0}
 
-/* trust */
-.trust{border-top:1px solid color-mix(in srgb,var(--ink) 9%,transparent);border-bottom:1px solid color-mix(in srgb,var(--ink) 9%,transparent);background:var(--surface)}
-.trust .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;padding-top:26px;padding-bottom:26px}
-.trust div{display:flex;align-items:center;gap:12px;font-weight:600;font-size:15px}
-.trust svg{width:22px;height:22px;color:var(--accent);flex:none}
+/* Hero */
+.hero{min-height:100vh;min-height:100svh;display:flex;align-items:center;padding:140px 0 80px;overflow:hidden;isolation:isolate}
+.hero-bg{position:absolute;inset:0;z-index:-1;pointer-events:none}
+.glow{position:absolute;border-radius:50%;filter:blur(90px);opacity:.55}
+.glow.g1{width:52vw;height:52vw;background:radial-gradient(circle,rgba(79,179,232,.55),transparent 65%);top:-18vw;right:-12vw}
+.glow.g2{width:38vw;height:38vw;background:radial-gradient(circle,rgba(233,196,106,.28),transparent 65%);bottom:-14vw;left:-10vw}
+.grid-lines{position:absolute;inset:0;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:120px 120px;mask-image:radial-gradient(ellipse at 60% 40%,#000 10%,transparent 70%);-webkit-mask-image:radial-gradient(ellipse at 60% 40%,#000 10%,transparent 70%);opacity:.35}
+.hero-inner{display:grid;grid-template-columns:1.25fr .75fr;gap:40px;align-items:end;width:100%}
+.hero .label{margin-bottom:30px}
+.headline{font-size:clamp(52px,9.4vw,146px);line-height:.95;letter-spacing:-.02em}
+.headline .line{display:block;overflow:hidden;padding-bottom:.08em}
+.headline .line>span{display:inline-block;transform:translateY(110%);transition:transform 1.4s var(--ease)}
+.loaded .headline .line>span{transform:none}
+.headline .line:nth-child(2)>span{transition-delay:.15s}
+.headline .line:nth-child(3)>span{transition-delay:.3s}
+.headline .accent{color:var(--accent);font-style:normal}
+.headline .amp{font-family:var(--serif);color:var(--gold)}
+.hero-sub{margin-top:34px;max-width:520px;color:var(--muted);font-size:clamp(17px,1.6vw,20px)}
+.hero-ctas{display:flex;flex-wrap:wrap;gap:14px;margin-top:40px}
+.fade-in{opacity:0;transform:translateY(24px);transition:opacity 1.2s var(--ease),transform 1.2s var(--ease)}
+.loaded .fade-in{opacity:1;transform:none}
+.loaded .d1{transition-delay:.55s}.loaded .d2{transition-delay:.7s}.loaded .d3{transition-delay:.85s}.loaded .d4{transition-delay:1s}
 
-/* sections */
-section.block{padding:110px 0}
-.kicker{font-size:13px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
-h2{font-family:var(--serif);font-weight:500;font-size:clamp(34px,3.8vw,52px);line-height:1.08;letter-spacing:-.02em;margin:14px 0 18px}
-.section-head{display:flex;justify-content:space-between;align-items:end;gap:40px;margin-bottom:56px}
-.section-head p{color:var(--muted);max-width:420px}
-.services{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-.card{background:var(--surface);border-radius:var(--radius);padding:34px 32px 36px;border:1px solid color-mix(in srgb,var(--ink) 7%,transparent);transition:transform .25s ease,box-shadow .25s ease}
-.card:hover{transform:translateY(-4px);box-shadow:0 30px 60px -36px color-mix(in srgb,var(--ink) 45%,transparent)}
-.icon{width:54px;height:54px;border-radius:16px;background:var(--soft);color:var(--accent);display:grid;place-items:center;margin-bottom:24px}
-.icon svg{width:26px;height:26px}
-.card h3{font-family:var(--serif);font-weight:500;font-size:23px;margin-bottom:8px;letter-spacing:-.01em}
-.card p{color:var(--muted);font-size:16px}
+/* Signature: 1 + 1 composition */
+.duo{position:relative;aspect-ratio:3/4;max-width:380px;justify-self:end;width:100%}
+.duo-num{position:absolute;font-family:var(--serif);line-height:.8;font-size:clamp(170px,22vw,330px);user-select:none}
+.duo-num.n1{top:0;left:0;color:transparent;-webkit-text-stroke:1.5px rgba(79,179,232,.85);animation:float 9s ease-in-out infinite}
+.duo-num.n2{bottom:0;right:0;color:var(--gold);text-shadow:0 0 60px rgba(233,196,106,.25);animation:float 9s ease-in-out -4.5s infinite}
+.duo-tag{position:absolute;font-size:11px;letter-spacing:.32em;text-transform:uppercase;color:var(--muted)}
+.duo-tag.t1{top:44%;left:6%}.duo-tag.t2{bottom:2%;left:6%}
+.duo-box{position:absolute;top:46%;left:50%;width:90px;height:90px;transform:translate(-50%,-50%)}
+.duo-box svg{width:100%;height:100%;animation:bob 6s ease-in-out infinite}
+@keyframes float{50%{transform:translateY(-18px)}}
+@keyframes bob{50%{transform:translateY(-10px) rotate(-4deg)}}
+.scroll-cue{position:absolute;left:50%;bottom:28px;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:10px;font-size:10px;letter-spacing:.32em;text-transform:uppercase;color:var(--muted)}
+.scroll-cue i{width:1px;height:46px;background:linear-gradient(var(--gold),transparent);animation:cue 2.4s var(--ease) infinite;transform-origin:top}
+@keyframes cue{0%{transform:scaleY(0)}50%{transform:scaleY(1)}100%{transform:scaleY(1);opacity:0}}
 
-.why{background:var(--ink);color:var(--bg)}
-.why .kicker{color:var(--gold)}
-.why-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:80px;align-items:start}
-.why h2{color:var(--bg)}
-.why .intro{color:color-mix(in srgb,var(--bg) 70%,transparent);font-size:18px;max-width:440px}
-.points{display:grid;gap:14px}
-.point{display:grid;grid-template-columns:62px 1fr;gap:20px;padding:30px;border-radius:var(--radius);background:color-mix(in srgb,var(--bg) 6%,transparent);border:1px solid color-mix(in srgb,var(--bg) 10%,transparent)}
-.point .num{font-family:var(--serif);font-size:34px;color:var(--gold);line-height:1}
-.point h3{font-family:var(--serif);font-weight:500;font-size:24px;margin-bottom:6px}
-.point p{color:color-mix(in srgb,var(--bg) 72%,transparent);font-size:16px}
+/* Marquee */
+.marquee{border-block:1px solid var(--line);background:var(--bg2);overflow:hidden;padding:28px 0}
+.marquee-track{display:flex;width:max-content;animation:marq 42s linear infinite}
+.marquee:hover .marquee-track{animation-play-state:paused}
+.marquee-track span{display:flex;align-items:center;gap:40px;padding-right:40px;font-family:var(--serif);font-size:clamp(28px,4vw,48px);white-space:nowrap}
+.marquee-track span:nth-child(even){color:transparent;-webkit-text-stroke:1px rgba(234,242,248,.55)}
+.marquee-track svg{width:22px;height:22px;color:var(--gold);flex:none}
+@keyframes marq{to{transform:translateX(-50%)}}
 
-.score{display:flex;align-items:center;gap:18px;background:var(--surface);padding:16px 24px;border-radius:18px;border:1px solid color-mix(in srgb,var(--ink) 8%,transparent)}
-.score b{font-family:var(--serif);font-size:40px;font-weight:500;line-height:1}
-.score small{display:block;color:var(--muted);font-size:14px}
-.reviews{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-.review{background:var(--surface);border-radius:var(--radius);padding:34px;display:flex;flex-direction:column;gap:22px;border:1px solid color-mix(in srgb,var(--ink) 7%,transparent)}
-.review p{font-family:var(--serif);font-size:19.5px;line-height:1.45}
-.review .by{margin-top:auto;display:flex;align-items:center;gap:12px;font-weight:600;font-size:15px}
-.avatar{width:40px;height:40px;border-radius:50%;background:var(--soft);color:var(--accent);display:grid;place-items:center;font-weight:700}
-.review .src{color:var(--muted);font-weight:500;font-size:13px;display:block}
+/* Services */
+.sec-head{display:flex;justify-content:space-between;align-items:end;gap:40px;flex-wrap:wrap;margin-bottom:64px}
+.services-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.card{position:relative;background:linear-gradient(160deg,var(--card2),var(--card) 60%);border:1px solid var(--line);border-radius:22px;padding:38px 30px 34px;overflow:hidden;transition:transform .7s var(--ease),border-color .5s,box-shadow .7s var(--ease)}
+.card::before{content:"";position:absolute;inset:-1px;background:radial-gradient(400px circle at var(--mx,50%) var(--my,0%),rgba(79,179,232,.16),transparent 45%);opacity:0;transition:opacity .5s;pointer-events:none}
+.card:hover{transform:translateY(-8px);border-color:rgba(79,179,232,.4);box-shadow:0 30px 60px -30px rgba(0,0,0,.7)}
+.card:hover::before{opacity:1}
+.card-num{font-size:12px;letter-spacing:.3em;color:var(--gold);margin-bottom:46px;display:flex;justify-content:space-between;align-items:center}
+.card-icon{width:56px;height:56px;border-radius:16px;background:rgba(79,179,232,.1);border:1px solid rgba(79,179,232,.25);display:grid;place-items:center;color:var(--accent);margin-bottom:26px}
+.card-icon svg{width:26px;height:26px}
+.card h3{font-size:26px;margin-bottom:12px}
+.card p{color:var(--muted);font-size:15.5px}
+.note{margin-top:30px;color:var(--muted);font-size:15px}
+.note a{color:var(--accent);border-bottom:1px solid rgba(79,179,232,.4)}
 
-.cta-band{padding:0 0 110px}
-.cta-box{border-radius:calc(var(--radius) + 12px);background:linear-gradient(140deg,var(--accent),color-mix(in srgb,var(--accent) 60%,var(--ink)));color:var(--accent-ink);padding:76px 64px;display:grid;grid-template-columns:1.3fr 1fr;gap:40px;align-items:center;position:relative;overflow:hidden}
-.cta-box:after{content:"";position:absolute;right:-120px;bottom:-200px;width:460px;height:460px;border-radius:50%;border:1.5px solid color-mix(in srgb,var(--accent-ink) 22%,transparent)}
-.cta-box h2{color:inherit;margin:0 0 12px}
-.cta-box p{opacity:.85;font-size:18px}
-.cta-box .actions{display:flex;flex-direction:column;gap:12px;align-items:flex-start;position:relative;z-index:1}
-.cta-box .btn{background:var(--accent-ink);color:var(--accent)}
-.cta-box .btn.ghost{background:transparent;color:var(--accent-ink);border-color:color-mix(in srgb,var(--accent-ink) 40%,transparent)}
+/* About */
+.about{background:linear-gradient(180deg,var(--bg),var(--bg2))}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,7vw,110px);align-items:center}
+.about-art{position:relative;aspect-ratio:1;border-radius:28px;background:radial-gradient(circle at 30% 25%,rgba(79,179,232,.25),transparent 55%),radial-gradient(circle at 80% 85%,rgba(233,196,106,.18),transparent 50%),var(--card);border:1px solid var(--line);overflow:hidden;display:grid;place-items:center}
+.about-art .big{font-family:var(--serif);font-size:clamp(90px,13vw,190px);line-height:1;text-align:center;letter-spacing:-.03em}
+.about-art .big b{font-weight:400;color:var(--gold)}
+.about-art .ring{position:absolute;inset:9%;border:1px dashed rgba(234,242,248,.18);border-radius:50%;animation:spin 60s linear infinite}
+.about-art .ring::after{content:"";position:absolute;top:-6px;left:50%;width:12px;height:12px;border-radius:50%;background:var(--accent);box-shadow:0 0 22px var(--accent)}
+@keyframes spin{to{transform:rotate(360deg)}}
+.about-art .caption{position:absolute;bottom:26px;left:0;right:0;text-align:center;font-size:11px;letter-spacing:.32em;text-transform:uppercase;color:var(--muted)}
+.about p+p{margin-top:18px}
+.about .lead{max-width:none}
+.pill-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:34px}
+.pill{padding:10px 18px;border-radius:100px;border:1px solid var(--line);font-size:14px;color:var(--text);background:rgba(14,40,64,.6)}
 
-.visit{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:10px}
-.visit .card h3{font-size:20px}
-.visit a{color:var(--accent);font-weight:600}
-footer{border-top:1px solid color-mix(in srgb,var(--ink) 9%,transparent);padding:40px 0 110px;color:var(--muted);font-size:14px}
-footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
-.mobile-bar{display:none}
+/* Why */
+.why-grid{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line)}
+.why-item{padding:46px 36px 46px 0;border-bottom:1px solid var(--line)}
+.why-item+.why-item{padding-left:36px;border-left:1px solid var(--line)}
+.why-item h3{font-size:28px;margin:22px 0 12px}
+.why-item p{color:var(--muted)}
+.why-item .ic{color:var(--gold);width:34px;height:34px}
 
-@keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
-.hero .copy>*{animation:rise .8s cubic-bezier(.2,.7,.2,1) both}
-.hero .copy>*:nth-child(2){animation-delay:.08s}.hero .copy>*:nth-child(3){animation-delay:.16s}
-.hero .copy>*:nth-child(4){animation-delay:.24s}.hero .copy>*:nth-child(5){animation-delay:.32s}
-.visual{animation:rise 1s .2s cubic-bezier(.2,.7,.2,1) both}
+/* Steps */
+.steps{background:var(--bg2);overflow:hidden}
+.steps-list{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;counter-reset:s;position:relative}
+.steps-list::before{content:"";position:absolute;top:38px;left:4%;right:4%;height:1px;background:linear-gradient(90deg,transparent,rgba(79,179,232,.5),rgba(233,196,106,.5),transparent)}
+.step{position:relative;padding-top:0}
+.step-dot{width:76px;height:76px;border-radius:50%;background:var(--bg);border:1px solid rgba(79,179,232,.4);display:grid;place-items:center;font-family:var(--serif);font-size:28px;color:var(--accent);margin-bottom:30px;position:relative;transition:background .5s,color .5s,transform .6s var(--ease)}
+.step:hover .step-dot{background:var(--accent);color:#06192A;transform:scale(1.06)}
+.step h3{font-size:26px;margin-bottom:10px}
+.step p{color:var(--muted);font-size:15.5px;max-width:30ch}
 
-@media (max-width:980px){
-  .links{display:none}
-  .hero-grid,.why-grid,.cta-box{grid-template-columns:1fr}
-  .hero-grid{gap:56px}
-  .services,.reviews,.visit{grid-template-columns:1fr 1fr}
-  .trust .wrap{grid-template-columns:1fr 1fr}
-  .float.one{left:12px;bottom:-26px}.float.two{right:12px}
-  .visual{max-width:560px;margin-bottom:20px}
-  .section-head{flex-direction:column;align-items:flex-start}
+/* FAQ */
+.faq-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(40px,6vw,90px)}
+details{border-bottom:1px solid var(--line)}
+summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:20px;padding:28px 0;font-family:var(--serif);font-size:clamp(21px,2.2vw,26px)}
+summary::-webkit-details-marker{display:none}
+summary i{flex:none;width:36px;height:36px;border-radius:50%;border:1px solid var(--line);position:relative;transition:transform .5s var(--ease),border-color .3s}
+summary i::before,summary i::after{content:"";position:absolute;left:50%;top:50%;width:12px;height:1.5px;background:var(--gold);transform:translate(-50%,-50%)}
+summary i::after{transform:translate(-50%,-50%) rotate(90deg)}
+details[open] summary i{transform:rotate(45deg);border-color:var(--gold)}
+details p{color:var(--muted);padding:0 50px 28px 0}
+details p a{color:var(--accent)}
+
+/* CTA band */
+.cta{padding:clamp(80px,10vw,130px) 0;overflow:hidden;isolation:isolate;text-align:center;background:radial-gradient(ellipse at 50% 120%,rgba(79,179,232,.35),transparent 60%),linear-gradient(180deg,var(--bg),#0A2238)}
+.cta::before{content:"1 Guy 1 Gal";position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);font-family:var(--serif);font-size:clamp(90px,19vw,300px);white-space:nowrap;color:transparent;-webkit-text-stroke:1px rgba(234,242,248,.06);z-index:-1;pointer-events:none}
+.cta h2{font-size:clamp(42px,7vw,100px);max-width:14ch;margin:20px auto 26px}
+.cta h2 em{font-style:normal;color:var(--gold)}
+.cta .lead{margin:0 auto 42px}
+.cta-phone{display:inline-block;font-family:var(--serif);font-size:clamp(34px,5.5vw,70px);color:var(--accent);position:relative;margin-bottom:36px;transition:color .3s}
+.cta-phone::after{content:"";position:absolute;left:0;right:0;bottom:-4px;height:1px;background:var(--gold);transform:scaleX(.3);transition:transform .6s var(--ease)}
+.cta-phone:hover{color:var(--text)}
+.cta-phone:hover::after{transform:scaleX(1)}
+
+/* Contact */
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.info{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:38px;display:flex;gap:22px;align-items:flex-start;transition:transform .6s var(--ease),border-color .4s}
+.info:hover{transform:translateY(-5px);border-color:rgba(233,196,106,.4)}
+.info .card-icon{margin:0;flex:none}
+.info h3{font-size:14px;font-family:var(--sans);font-weight:600;letter-spacing:.24em;text-transform:uppercase;color:var(--gold);margin-bottom:10px}
+.info p,.info a.big{font-family:var(--serif);font-size:clamp(22px,2.4vw,28px);line-height:1.3;word-break:break-word}
+.info .link{display:inline-block;margin-top:14px;font-size:14px;font-weight:600;color:var(--accent);letter-spacing:.06em;border-bottom:1px solid rgba(79,179,232,.4)}
+.map-card{grid-column:1/-1;position:relative;border-radius:22px;overflow:hidden;border:1px solid var(--line);min-height:300px;display:flex;align-items:flex-end;padding:38px;background:var(--card)}
+.map-card svg.map{position:absolute;inset:0;width:100%;height:100%}
+.map-card .pin-wrap{position:relative;z-index:1;display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap;width:100%}
+.map-card h3{font-size:clamp(28px,3.4vw,42px)}
+.map-card p{color:var(--muted)}
+
+/* Footer */
+footer{border-top:1px solid var(--line);padding:60px 0 40px;background:var(--bg2)}
+.foot{display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap;align-items:center}
+.foot-links{display:flex;gap:26px;flex-wrap:wrap;font-size:14px;color:var(--muted)}
+.foot-links a:hover{color:var(--gold)}
+.copy{margin-top:40px;font-size:13px;color:rgba(169,191,208,.7)}
+
+/* Mobile CTA bar */
+.mbar{display:none}
+
+/* Reveal */
+.reveal{opacity:0;transform:translateY(40px);transition:opacity 1.1s var(--ease),transform 1.1s var(--ease)}
+.reveal.in{opacity:1;transform:none}
+.stagger>*{transition-delay:calc(var(--i,0) * 110ms)}
+
+@media (max-width:1080px){
+  .services-grid{grid-template-columns:repeat(2,1fr)}
+  .steps-list{grid-template-columns:repeat(2,1fr);row-gap:50px}
+  .steps-list::before{display:none}
+  .menu,.nav-phone{display:none}
 }
-@media (max-width:640px){
+@media (max-width:860px){
+  .hero-inner,.about-grid,.faq-grid,.contact-grid{grid-template-columns:1fr}
+  .duo{max-width:300px;justify-self:start;aspect-ratio:auto;height:300px;margin-top:10px}
+  .why-grid{grid-template-columns:1fr}
+  .why-item,.why-item+.why-item{padding:38px 0;border-left:0}
+  .burger{display:block}
+  .nav .btn{display:none}
+}
+@media (max-width:600px){
   body{font-size:16px}
-  .wrap{padding:0 18px}
-  .nav{height:66px}.brand{font-size:19px}
-  .phone,.nav-right .btn{display:none}
-  .hero{padding:44px 0 64px}
-  .lead-text{font-size:17.5px}
-  .hero-ctas .btn{flex:1;justify-content:center}
-  .ticks{display:none}
-  .services,.reviews,.visit,.trust .wrap{grid-template-columns:1fr}
-  section.block{padding:76px 0}
-  .quote-panel,.photo{aspect-ratio:auto;min-height:380px}.photo{aspect-ratio:4/3;min-height:0}
-  .quote-panel{padding:40px 30px 64px}.quote-panel p{font-size:23px}
-  .float{font-size:13px;padding:12px 14px}.float b{font-size:18px}
-  .float.two{display:none}
-  .cta-box{padding:52px 28px}
-  .point{grid-template-columns:44px 1fr;padding:24px}
-  .mobile-bar{display:flex;position:fixed;left:12px;right:12px;bottom:12px;z-index:30;gap:10px}
-  .mobile-bar .btn{flex:1;justify-content:center;box-shadow:0 14px 30px -14px color-mix(in srgb,var(--ink) 60%,transparent)}
-  .mobile-bar .btn.ghost{background:var(--surface)}
+  .wrap{width:calc(100% - 40px)}
+  .nav{height:72px}
+  .logo{font-size:17px}
+  .hero{padding:120px 0 70px}
+  .headline{font-size:clamp(44px,13.4vw,64px)}
+  .hero-ctas .btn{flex:1 1 100%}
+  .duo{height:230px;max-width:none}
+  .duo-num{font-size:190px}
+  .scroll-cue{display:none}
+  .services-grid,.steps-list{grid-template-columns:1fr}
+  .card{padding:32px 24px}
+  .card-num{margin-bottom:30px}
+  .info{padding:28px 22px;flex-direction:column;gap:16px}
+  .map-card{padding:26px 22px}
+  .map-card .btn{width:100%}
+  details p{padding-right:0}
+  .cta .btn{width:100%}
+  footer{padding-bottom:110px}
+  .mbar{display:flex;position:fixed;left:12px;right:12px;bottom:12px;z-index:45;gap:10px;padding:8px;border-radius:100px;background:rgba(7,26,43,.85);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid var(--line);box-shadow:0 20px 40px -10px rgba(0,0,0,.6)}
+  .mbar .btn{flex:1;padding:14px 10px;font-size:14px}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+  .reveal,.fade-in,.headline .line>span{opacity:1!important;transform:none!important}
 }
 </style>
 </head>
 <body>
-<div class="concept">Website concept prepared for <b>1 Guy 1 Gal Movers</b> by webstudio &middot; not a live site</div>
 
-<header>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="spark" viewBox="0 0 24 24"><path fill="currentColor" d="M12 0c.6 6.4 5.6 11.4 12 12-6.4.6-11.4 5.6-12 12-.6-6.4-5.6-11.4-12-12C6.4 11.4 11.4 6.4 12 0z"/></symbol>
+  <symbol id="phone" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></symbol>
+  <symbol id="arrow" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 6l6 6-6 6"/></symbol>
+  <symbol id="pin" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" d="M12 22s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.5" fill="none" stroke="currentColor" stroke-width="1.6"/></symbol>
+</svg>
+
+<header class="header" id="top">
   <div class="wrap nav">
-    <a href="#top" class="brand">1 Guy 1 Gal Movers</a>
-    <nav class="links">
-      <a href="#services">Services</a><a href="#why">Why us</a><a href="#visit">Visit</a>
-    </nav>
+    <a href="#top" class="logo" aria-label="1 Guy 1 Gal Movers home">
+      <span class="logo-mark">1+1</span>
+      <span>1 Guy 1 Gal<small>Movers · Austin</small></span>
+    </a>
+    <ul class="menu">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#process">Process</a></li>
+      <li><a href="#faq">FAQ</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
     <div class="nav-right">
-      <a class="phone" href="tel:7377813989">(737) 781-3989</a>
-      <a class="btn" href="#visit">Free estimate</a>
+      <a class="nav-phone" href="tel:+17377813989"><span>Call</span> (737) 781-3989</a>
+      <a class="btn btn-primary" href="#contact">Plan my move</a>
+      <button class="burger" aria-label="Open menu" aria-expanded="false" aria-controls="mmenu"><span></span><span></span></button>
     </div>
   </div>
 </header>
 
-<main id="top">
+<nav class="mobile-menu" id="mmenu" aria-label="Mobile">
+  <a href="#services">Services</a>
+  <a href="#about">About</a>
+  <a href="#process">Process</a>
+  <a href="#faq">FAQ</a>
+  <a href="#contact">Contact</a>
+  <a class="btn btn-primary" href="tel:+17377813989"><svg><use href="#phone"/></svg>(737) 781-3989</a>
+</nav>
+
+<main>
 <section class="hero">
-  <div class="wrap hero-grid">
-    <div class="copy">
-      <div class="eyebrow">
-        <span class="dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-7-4.4-7-10a4 4 0 017-2.6A4 4 0 0119 10c0 5.6-7 10-7 10z"/></svg></span>Local &amp; long-distance moving
-      </div>
-      <h1>Moving day, minus the <em>stress.</em></h1>
-      <p class="lead-text">Careful, on-time movers who treat your things like their own, with honest flat-rate pricing and no surprises.</p>
-      <div class="hero-ctas">
-        <a class="btn" href="#visit">Get a free estimate <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-        <a class="btn ghost" href="tel:7377813989">Call (737) 781-3989</a>
-      </div>
-      <div class="ticks">
-        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7"/></svg>Licensed &amp; insured</span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7"/></svg>Free in-home estimates</span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7"/></svg>No hidden fees</span>
-      </div>
-    </div>
-    <div class="visual">
-      
-      <div class="quote-panel"><div class="quote-mark">“</div><div><p>Careful, on-time movers who treat your things like their own, with honest flat-rate pricing and no surprises.</p><div class="who">1 Guy 1 Gal Movers</div></div></div>
-      
-      
-      <div class="float two"><span class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><span><b>This week</b>Free in-home estimates</span></div>
-    </div>
+  <div class="hero-bg" aria-hidden="true">
+    <div class="glow g1" data-parallax="0.15"></div>
+    <div class="glow g2" data-parallax="-0.1"></div>
+    <div class="grid-lines"></div>
   </div>
-  <template id="qp"><div class="quote-panel"><div class="quote-mark">“</div><div><p>Careful, on-time movers who treat your things like their own, with honest flat-rate pricing and no surprises.</p><div class="who">1 Guy 1 Gal Movers</div></div></div></template>
-</section>
-
-<div class="trust"><div class="wrap">
-  <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.2-8 9-4.6-.8-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg>Licensed &amp; insured</div><div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.2-8 9-4.6-.8-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg>Free in-home estimates</div><div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.2-8 9-4.6-.8-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg>No hidden fees</div><div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.2-8 9-4.6-.8-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg>Same-week availability</div>
-</div></div>
-
-<section class="block" id="services">
-  <div class="wrap">
-    <div class="section-head">
-      <div><div class="kicker">What we do</div><h2>Everything you need,<br>under one roof.</h2></div>
-      <p>From routine visits to the work that changes how you feel about your day, 1 Guy 1 Gal Movers takes care of it properly.</p>
-    </div>
-    <div class="services">
-      
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M2 6h11v10H2zM13 9h4l4 4v3h-8"/><circle cx="6" cy="17.5" r="1.8"/><circle cx="17" cy="17.5" r="1.8"/></svg></div><h3>Local moves</h3><p>Fast, careful moves across town, often done in a single morning.</p></div>
-      
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="18" r="2.5"/><circle cx="18" cy="6" r="2.5"/><path d="M8.5 18H16a3 3 0 000-6H8a3 3 0 010-6h7.5"/></svg></div><h3>Long-distance moves</h3><p>Coast-to-coast moves with tracking and one point of contact.</p></div>
-      
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7l9-4 9 4v10l-9 4-9-4z"/><path d="M3 7l9 4 9-4M12 11v10"/></svg></div><h3>Packing &amp; unpacking</h3><p>Professional packing materials and a team that wraps everything right.</p></div>
-      
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3" width="14" height="18" rx="1"/><path d="M9 7h2M13 7h2M9 11h2M13 11h2M9 15h2M13 15h2"/></svg></div><h3>Office relocation</h3><p>After-hours business moves that keep downtime to a minimum.</p></div>
-      
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.2-8 9-4.6-.8-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg></div><h3>Fragile &amp; specialty items</h3><p>Pianos, art, antiques and TVs handled with extra care.</p></div>
-      
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11l8-7 8 7v9a1 1 0 01-1 1h-4v-6H9v6H5a1 1 0 01-1-1z"/></svg></div><h3>Storage solutions</h3><p>Clean, secure short- and long-term storage when timing doesn&#39;t line up.</p></div>
-      
-    </div>
-  </div>
-</section>
-
-<section class="block why" id="why">
-  <div class="wrap why-grid">
+  <div class="wrap hero-inner">
     <div>
-      <div class="kicker">Why customers choose us</div>
-      <h2>The Austin moving company people recommend to their friends.</h2>
-      <p class="intro">it still comes down to the same three things.</p>
+      <span class="label fade-in">East Austin Moving Company</span>
+      <h1 class="headline">
+        <span class="line"><span>One guy.</span></span>
+        <span class="line"><span>One gal.</span></span>
+        <span class="line"><span><em class="accent">Every</em> <span class="amp">box</span>, home.</span></span>
+      </h1>
+      <p class="hero-sub fade-in d1">A moving team built on two people who care how your things travel. From the first call to the last box through the door, your Austin move is handled with calm, careful hands.</p>
+      <div class="hero-ctas fade-in d2">
+        <a class="btn btn-primary" href="tel:+17377813989"><svg><use href="#phone"/></svg>Call (737) 781-3989</a>
+        <a class="btn btn-ghost" href="#services">Explore services <svg><use href="#arrow"/></svg></a>
+      </div>
     </div>
-    <div class="points">
-      
-      <div class="point"><div class="num">01</div><div><h3>Flat-rate pricing</h3><p>A firm quote up front, so the price on moving day is the price you were told.</p></div></div>
-      
-      <div class="point"><div class="num">02</div><div><h3>Licensed &amp; insured</h3><p>Fully licensed and insured, with valuation coverage on everything we carry.</p></div></div>
-      
-      <div class="point"><div class="num">03</div><div><h3>On time, every time</h3><p>We show up when we say we will, with the right truck and the right crew.</p></div></div>
-      
+    <div class="duo fade-in d3" aria-hidden="true" data-parallax="-0.08">
+      <span class="duo-num n1">1</span>
+      <span class="duo-num n2">1</span>
+      <span class="duo-tag t1">The guy</span>
+      <span class="duo-tag t2">The gal</span>
+      <div class="duo-box">
+        <svg viewBox="0 0 100 100" fill="none">
+          <path d="M50 12 88 31v38L50 88 12 69V31z" fill="rgba(79,179,232,.12)" stroke="#4FB3E8" stroke-width="1.6" stroke-linejoin="round"/>
+          <path d="M12 31l38 19 38-19M50 50v38" stroke="#4FB3E8" stroke-width="1.6" stroke-linejoin="round"/>
+          <path d="M31 21.5 69 40.5" stroke="#E9C46A" stroke-width="3" stroke-linecap="round"/>
+        </svg>
+      </div>
+    </div>
+  </div>
+  <div class="scroll-cue fade-in d4" aria-hidden="true">Scroll<i></i></div>
+</section>
+
+<div class="marquee" aria-label="What we move">
+  <div class="marquee-track">
+    <span>Home Moves <svg><use href="#spark"/></svg></span>
+    <span>Apartment Moves <svg><use href="#spark"/></svg></span>
+    <span>Local Austin Moves <svg><use href="#spark"/></svg></span>
+    <span>Loading &amp; Unloading <svg><use href="#spark"/></svg></span>
+    <span>East Austin <svg><use href="#spark"/></svg></span>
+    <span>Careful Hands <svg><use href="#spark"/></svg></span>
+    <span>Home Moves <svg><use href="#spark"/></svg></span>
+    <span>Apartment Moves <svg><use href="#spark"/></svg></span>
+    <span>Local Austin Moves <svg><use href="#spark"/></svg></span>
+    <span>Loading &amp; Unloading <svg><use href="#spark"/></svg></span>
+    <span>East Austin <svg><use href="#spark"/></svg></span>
+    <span>Careful Hands <svg><use href="#spark"/></svg></span>
+  </div>
+</div>
+
+<section class="pad" id="services">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="reveal">
+        <span class="label">Services</span>
+        <h2 class="h2">Moves, handled<br><em>beautifully.</em></h2>
+      </div>
+      <p class="lead reveal">Whether it's a house full of memories or a first apartment, we treat every move as the start of something good, and plan it around the way you live.</p>
+    </div>
+    <div class="services-grid stagger">
+      <article class="card reveal" style="--i:0">
+        <div class="card-num">01</div>
+        <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11 12 4l9 7v9a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></svg></div>
+        <h3>Home Moves</h3>
+        <p>Room by room, piece by piece. Your household moved with the attention it deserves.</p>
+      </article>
+      <article class="card reveal" style="--i:1">
+        <div class="card-num">02</div>
+        <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3" width="14" height="18" rx="1"/><path d="M9 7h2M13 7h2M9 11h2M13 11h2M10 21v-4h4v4"/></svg></div>
+        <h3>Apartment Moves</h3>
+        <p>Stairs, elevators, tight corners. Smaller spaces, moved with the same steady care.</p>
+      </article>
+      <article class="card reveal" style="--i:2">
+        <div class="card-num">03</div>
+        <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M1 7h13v10H1zM14 10h4l4 4v3h-8z"/><circle cx="6" cy="18" r="2"/><circle cx="18" cy="18" r="2"/></svg></div>
+        <h3>Local Austin Moves</h3>
+        <p>Based right here on E Cesar Chavez St, we know how this city moves, block to block.</p>
+      </article>
+      <article class="card reveal" style="--i:3">
+        <div class="card-num">04</div>
+        <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 21 7.5v9L12 21 3 16.5v-9z"/><path d="M3 7.5 12 12l9-4.5M12 12v9"/></svg></div>
+        <h3>Loading &amp; Unloading</h3>
+        <p>The heavy lifting, done thoughtfully, so your belongings arrive the way they left.</p>
+      </article>
+    </div>
+    <p class="note reveal">Every move is different. <a href="tel:+17377813989">Call (737) 781-3989</a> to talk through yours and find the right fit.</p>
+  </div>
+</section>
+
+<section class="pad about" id="about">
+  <div class="wrap about-grid">
+    <div class="about-art reveal" aria-hidden="true">
+      <div class="ring"></div>
+      <div class="big">1<b>+</b>1</div>
+      <div class="caption">One guy · One gal · One team</div>
+    </div>
+    <div class="reveal">
+      <span class="label">Our Story</span>
+      <h2 class="h2">The name says<br>it <em>all.</em></h2>
+      <p class="lead">1 Guy 1 Gal Movers is exactly what it sounds like: a moving company with real people behind the name. Not a faceless fleet, not a call centre. Just a team that shows up, owns the work, and treats your home like it matters.</p>
+      <p class="lead">We're rooted in East Austin, on E Cesar Chavez St, and we move people across the city we call home.</p>
+      <div class="pill-row">
+        <span class="pill">Austin, TX</span>
+        <span class="pill">East Austin · 78702</span>
+        <span class="pill">Locally based</span>
+      </div>
     </div>
   </div>
 </section>
 
-
-
-<section class="cta-band" id="book">
-  <div class="wrap"><div class="cta-box">
-    <div><h2>Ready when you are.</h2><p>Get a free estimate in under a minute, or give us a call and talk to a real person.</p></div>
-    <div class="actions">
-      <a class="btn" href="#visit">Get a free estimate</a>
-      <a class="btn ghost" href="tel:7377813989">Call (737) 781-3989</a>
+<section class="pad" id="why">
+  <div class="wrap">
+    <div class="reveal" style="margin-bottom:56px">
+      <span class="label">Why Choose Us</span>
+      <h2 class="h2">Small team.<br><em>Serious</em> care.</h2>
     </div>
-  </div></div>
+    <div class="why-grid stagger">
+      <div class="why-item reveal" style="--i:0">
+        <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"><circle cx="8" cy="7" r="3"/><circle cx="16" cy="7" r="3"/><path d="M2 20c0-3.3 2.7-6 6-6s6 2.7 6 6M12 20c0-3.3 1.8-6 4-6 3.3 0 6 2.7 6 6"/></svg>
+        <h3>Real people, real names</h3>
+        <p>A guy and a gal, right there in the name. You know who's behind your move.</p>
+      </div>
+      <div class="why-item reveal" style="--i:1">
+        <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"><use href="#pin"/></svg>
+        <h3>Local to Austin</h3>
+        <p>Based in East Austin, so your move is handled by neighbours, not a distant dispatcher.</p>
+      </div>
+      <div class="why-item reveal" style="--i:2">
+        <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"><use href="#phone"/></svg>
+        <h3>One call away</h3>
+        <p>No forms, no runaround. Pick up the phone and talk to the people who'll do the move.</p>
+      </div>
+    </div>
+  </div>
 </section>
 
-<section class="block" id="visit" style="padding-top:0">
+<section class="pad steps" id="process">
   <div class="wrap">
-    <div class="kicker">Visit us</div><h2>Come say hello.</h2>
-    <div class="visit">
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11l8-7 8 7v9a1 1 0 01-1 1h-4v-6H9v6H5a1 1 0 01-1-1z"/></svg></div><h3>Address</h3><p>2321 E Cesar Chavez St, Austin TX 78702</p></div>
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div><h3>Phone</h3><p><a href="tel:7377813989">(737) 781-3989</a></p><p style="margin-top:10px">Call or message us for today's opening hours.</p></div>
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-7-4.4-7-10a4 4 0 017-2.6A4 4 0 0119 10c0 5.6-7 10-7 10z"/></svg></div><h3>Free in-home estimates</h3><p>Get a free estimate online or by phone and we'll take care of the rest.</p></div>
+    <div class="sec-head">
+      <div class="reveal">
+        <span class="label">How It Works</span>
+        <h2 class="h2">Four steps to<br><em>settled in.</em></h2>
+      </div>
+      <p class="lead reveal">A simple, personal process from the first hello to the last box.</p>
+    </div>
+    <div class="steps-list stagger">
+      <div class="step reveal" style="--i:0"><div class="step-dot">1</div><h3>Call us</h3><p>Ring (737) 781-3989 and tell us where you're moving from, and to.</p></div>
+      <div class="step reveal" style="--i:1"><div class="step-dot">2</div><h3>Plan it</h3><p>We talk through your home, your timing and anything that needs extra care.</p></div>
+      <div class="step reveal" style="--i:2"><div class="step-dot">3</div><h3>Move day</h3><p>Our team arrives, loads up carefully and gets your belongings on their way.</p></div>
+      <div class="step reveal" style="--i:3"><div class="step-dot">4</div><h3>Settle in</h3><p>Everything unloaded at your new place, so you can start feeling at home.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="pad" id="faq">
+  <div class="wrap faq-grid">
+    <div class="reveal">
+      <span class="label">FAQ</span>
+      <h2 class="h2">Good<br><em>questions.</em></h2>
+      <p class="lead">Anything else on your mind? We'd rather hear it on the phone.</p>
+    </div>
+    <div class="reveal">
+      <details open><summary>Where are you based?<i></i></summary><p>Our home base is 2321 E Cesar Chavez St, Austin, TX 78702, in East Austin. <a href="https://maps.google.com/?q=2321+E+Cesar+Chavez+St,+Austin,+TX+78702" target="_blank" rel="noopener">Open in Maps</a>.</p></details>
+      <details><summary>How do I book a move?<i></i></summary><p>Just call us at <a href="tel:+17377813989">(737) 781-3989</a>. We'll talk through the details of your move and find a plan that works for you.</p></details>
+      <details><summary>What are your hours?<i></i></summary><p>Give us a call and we'll confirm our availability for your moving date.</p></details>
+      <details><summary>Why "1 Guy 1 Gal"?<i></i></summary><p>Because it's who we are. The name puts real people front and centre, and that's how we want every move to feel.</p></details>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap reveal">
+    <span class="label">Ready when you are</span>
+    <h2>Your next chapter starts with <em>one call.</em></h2>
+    <p class="lead">Tell us about your move and let the 1 Guy 1 Gal team take it from there.</p>
+    <a class="cta-phone" href="tel:+17377813989">(737) 781-3989</a><br>
+    <a class="btn btn-primary" href="tel:+17377813989"><svg><use href="#phone"/></svg>Call to plan your move</a>
+  </div>
+</section>
+
+<section class="pad" id="contact">
+  <div class="wrap">
+    <div class="reveal" style="margin-bottom:56px">
+      <span class="label">Contact &amp; Visit</span>
+      <h2 class="h2">Let's get you<br><em>moving.</em></h2>
+    </div>
+    <div class="contact-grid stagger">
+      <div class="info reveal" style="--i:0">
+        <div class="card-icon"><svg><use href="#phone"/></svg></div>
+        <div><h3>Phone</h3><a class="big" href="tel:+17377813989">(737) 781-3989</a><br><a class="link" href="tel:+17377813989">Tap to call →</a></div>
+      </div>
+      <div class="info reveal" style="--i:1">
+        <div class="card-icon"><svg><use href="#pin"/></svg></div>
+        <div><h3>Address</h3><p>2321 E Cesar Chavez St<br>Austin, TX 78702</p><a class="link" href="https://maps.google.com/?q=2321+E+Cesar+Chavez+St,+Austin,+TX+78702" target="_blank" rel="noopener">Get directions →</a></div>
+      </div>
+      <div class="map-card reveal" style="--i:2">
+        <svg class="map" viewBox="0 0 800 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+          <defs><radialGradient id="mg" cx="70%" cy="40%" r="60%"><stop offset="0" stop-color="#4FB3E8" stop-opacity=".22"/><stop offset="1" stop-color="#0E2840" stop-opacity="0"/></radialGradient></defs>
+          <rect width="800" height="300" fill="url(#mg)"/>
+          <g stroke="rgba(234,242,248,.09)" stroke-width="1" fill="none">
+            <path d="M0 60h800M0 130h800M0 210h800M120 0v300M260 0v300M420 0v300M600 0v300M720 0v300"/>
+          </g>
+          <path d="M0 180C160 150 300 200 460 160S700 110 800 140" stroke="rgba(79,179,232,.45)" stroke-width="10" fill="none" stroke-linecap="round"/>
+          <path d="M0 240C200 230 380 260 800 220" stroke="rgba(233,196,106,.35)" stroke-width="2" fill="none" stroke-dasharray="6 8"/>
+          <circle cx="560" cy="120" r="34" fill="rgba(233,196,106,.15)"><animate attributeName="r" values="18;40;18" dur="3.5s" repeatCount="indefinite"/></circle>
+          <circle cx="560" cy="120" r="8" fill="#E9C46A"/>
+        </svg>
+        <div class="pin-wrap">
+          <div><h3>Find us in East Austin</h3><p>E Cesar Chavez St · Austin, TX 78702</p></div>
+          <a class="btn btn-ghost" href="https://maps.google.com/?q=2321+E+Cesar+Chavez+St,+Austin,+TX+78702" target="_blank" rel="noopener">Open in Google Maps <svg><use href="#arrow"/></svg></a>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 </main>
 
-<footer><div class="wrap">
-  <span>© 2026 1 Guy 1 Gal Movers</span>
-  <span>Concept design by webstudio. Not affiliated with or endorsed by 1 Guy 1 Gal Movers.</span>
-</div></footer>
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <a href="#top" class="logo"><span class="logo-mark">1+1</span><span>1 Guy 1 Gal<small>Movers · Austin</small></span></a>
+      <nav class="foot-links" aria-label="Footer">
+        <a href="#services">Services</a><a href="#about">About</a><a href="#process">Process</a><a href="#faq">FAQ</a><a href="tel:+17377813989">(737) 781-3989</a>
+      </nav>
+    </div>
+    <p class="copy">© <span id="yr"></span> 1 Guy 1 Gal Movers · 2321 E Cesar Chavez St, Austin, TX 78702</p>
+  </div>
+</footer>
 
-<div class="mobile-bar">
-  <a class="btn ghost" href="tel:7377813989">Call</a>
-  <a class="btn" href="#visit">Free estimate</a>
+<div class="mbar">
+  <a class="btn btn-primary" href="tel:+17377813989"><svg><use href="#phone"/></svg>Call now</a>
+  <a class="btn btn-ghost" href="#contact">Contact</a>
 </div>
-</body>
+
+<script>
+(function(){
+  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  document.getElementById('yr').textContent=new Date().getFullYear();
+  requestAnimationFrame(function(){setTimeout(function(){document.body.classList.add('loaded')},80)});
+
+  var header=document.querySelector('.header');
+  var onScroll=function(){header.classList.toggle('scrolled',window.scrollY>30)};
+  onScroll();window.addEventListener('scroll',onScroll,{passive:true});
+
+  var burger=document.querySelector('.burger'),mm=document.getElementById('mmenu');
+  function setMenu(open){burger.setAttribute('aria-expanded',open);burger.setAttribute('aria-label',open?'Close menu':'Open menu');mm.classList.toggle('open',open);document.body.style.overflow=open?'hidden':''}
+  burger.addEventListener('click',function(){setMenu(burger.getAttribute('aria-expanded')!=='true')});
+  mm.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){setMenu(false)})});
+
+  var els=document.querySelectorAll('.reveal');
+  if(reduce||!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in')})}
+  else{
+    var io=new IntersectionObserver(function(entries){entries.forEach(function(en){if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target)}})},{threshold:.12,rootMargin:'0px 0px -40px 0px'});
+    els.forEach(function(e){io.observe(e)});
+  }
+
+  if(!reduce){
+    var px=document.querySelectorAll('[data-parallax]'),ticking=false;
+    window.addEventListener('scroll',function(){
+      if(ticking)return;ticking=true;
+      requestAnimationFrame(function(){
+        var y=window.scrollY;
+        if(y<window.innerHeight*1.2)px.forEach(function(el){el.style.transform='translate3d(0,'+(y*parseFloat(el.dataset.parallax))+'px,0)'});
+        ticking=false;
+      });
+    },{passive:true});
+    document.querySelectorAll('.card').forEach(function(c){
+      c.addEventListener('pointermove',function(e){var r=c.getBoundingClientRect();c.style.setProperty('--mx',(e.clientX-r.left)+'px');c.style.setProperty('--my',(e.clientY-r.top)+'px')});
+    });
+  }
+})();
+</script>
+<div id="lm-concept" style="position:fixed;left:12px;bottom:12px;z-index:2147483647;font:500 11px/1.3 -apple-system,BlinkMacSystemFont,Segoe UI,sans-serif;letter-spacing:.02em;background:rgba(15,15,18,.82);color:#f4f1ea;padding:7px 11px;border-radius:999px;backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);pointer-events:none;max-width:70vw">Website concept for 1 Guy 1 Gal Movers by webstudio &middot; not the live site</div><p style="margin:0;padding:18px 16px 70px;text-align:center;font:12px/1.5 -apple-system,sans-serif;color:#8a8a8a;background:#0e0e10">Concept design by webstudio. Not affiliated with or endorsed by 1 Guy 1 Gal Movers.</p></body>
 </html>
