@@ -1,291 +1,580 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src * data: blob:; media-src 'self' data:; style-src 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com data:; script-src 'unsafe-inline'; connect-src 'none'; frame-src 'none'; form-action 'none'; base-uri 'none'; object-src 'none'">
 <meta name="robots" content="noindex, nofollow">
-<title>Balmoral Chiropractic Centre | Website concept</title>
+<style>html,body{max-width:100%;overflow-x:clip}</style>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Balmoral Chiropractic Centre | Chiropractor on Bukit Timah Road, Singapore</title>
+<meta name="description" content="Balmoral Chiropractic Centre — chiropractic care at 271 Bukit Timah Rd, #04-02, Singapore 259708. Call +65 6235 9083 to book.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
 :root{
-  --bg:#f5f3ee;--surface:#ffffff;--ink:#1c2a22;--muted:#5f6b63;
-  --accent:#2f5a43;--accent-ink:#ffffff;--gold:#b8955a;--soft:#e6ece6;
-  --radius:22px;--max:1180px;
-  --serif:"Fraunces",Georgia,serif;--sans:"Manrope",system-ui,-apple-system,sans-serif;
+  --bg:#F3F1E7;--surface:#FFFFFF;--ink:#26291D;--ink-2:#4A4E3B;--olive:#6B7A2E;--olive-d:#4F5B20;--olive-dd:#343C14;--gold:#D9A441;--gold-l:#F1DDAE;--navy:#101c36;--line:rgba(38,41,29,.14);
+  --serif:"Cormorant Garamond",Georgia,serif;--sans:"Manrope",system-ui,-apple-system,sans-serif;
+  --pad:clamp(20px,5vw,72px);--max:1320px;--ease:cubic-bezier(.2,.8,.2,1);
 }
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.65;overflow-x:hidden;-webkit-font-smoothing:antialiased}
 a{color:inherit;text-decoration:none}
-img{max-width:100%;display:block}
-.wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
-.concept{background:var(--ink);color:var(--bg);font-size:13px;text-align:center;padding:8px 16px;letter-spacing:.02em}
-.concept b{color:var(--gold);font-weight:600}
+svg{display:block}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 var(--pad)}
+.label{font-family:var(--sans);font-size:12px;font-weight:700;letter-spacing:.22em;text-transform:uppercase}
+.label i{display:inline-block;width:28px;height:2px;background:currentColor;vertical-align:middle;margin-right:12px;transform:translateY(-2px)}
+h1,h2,h3{font-family:var(--serif);font-weight:600;line-height:.98;letter-spacing:-.01em}
+h2{font-size:clamp(42px,6.4vw,92px)}
+h2 em,h1 em{font-style:italic;color:var(--olive)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:12px;min-height:56px;padding:0 28px;font-family:var(--sans);font-weight:700;font-size:14px;letter-spacing:.08em;text-transform:uppercase;border:2px solid var(--ink);transition:background .35s var(--ease),color .35s var(--ease),transform .35s var(--ease),border-color .35s;text-align:center;line-height:1.2}
+.btn svg{width:18px;height:18px;transition:transform .35s var(--ease);flex:none}
+.btn:hover svg{transform:translateX(4px)}
+.btn-solid{background:var(--ink);color:var(--bg)}
+.btn-solid:hover{background:var(--olive);border-color:var(--olive);color:#fff;transform:translateY(-3px)}
+.btn-ghost{color:var(--ink)}
+.btn-ghost:hover{background:var(--ink);color:var(--bg);transform:translateY(-3px)}
+.u{background:linear-gradient(currentColor,currentColor) 0 100%/0 1.5px no-repeat;transition:background-size .4s var(--ease);padding-bottom:2px}
+.u:hover{background-size:100% 1.5px}
 
-/* header */
-header{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:saturate(1.4) blur(10px);border-bottom:1px solid color-mix(in srgb,var(--ink) 8%,transparent)}
-.nav{display:flex;align-items:center;justify-content:space-between;height:76px;gap:24px}
-.brand{font-family:var(--serif);font-size:23px;font-weight:600;letter-spacing:-.01em;line-height:1.1;max-width:340px}
-.links{display:flex;gap:30px;font-size:15px;font-weight:500;color:var(--muted)}
-.links a:hover{color:var(--ink)}
-.nav-right{display:flex;align-items:center;gap:18px}
-.phone{font-weight:600;font-size:15px;white-space:nowrap}
-.btn{display:inline-flex;align-items:center;gap:10px;background:var(--accent);color:var(--accent-ink);padding:14px 26px;border-radius:999px;font-weight:600;font-size:15.5px;transition:transform .2s ease,box-shadow .2s ease;white-space:nowrap}
-.btn:hover{transform:translateY(-2px);box-shadow:0 12px 28px -12px var(--accent)}
-.btn.ghost{background:transparent;color:var(--ink);border:1.5px solid color-mix(in srgb,var(--ink) 20%,transparent)}
-.btn.ghost:hover{box-shadow:none;border-color:var(--ink)}
-.btn svg{width:18px;height:18px}
+/* Header */
+.hdr{position:fixed;inset:0 0 auto;z-index:50;transition:background .4s,box-shadow .4s,backdrop-filter .4s}
+.hdr.scrolled{background:rgba(243,241,231,.78);backdrop-filter:blur(16px) saturate(1.4);-webkit-backdrop-filter:blur(16px) saturate(1.4);box-shadow:0 1px 0 var(--line)}
+.hdr .wrap{display:flex;align-items:center;justify-content:space-between;height:84px;gap:20px}
+.logo{display:flex;align-items:center;gap:14px;min-width:0}
+.mark{width:42px;height:42px;background:var(--navy);display:grid;place-items:center;flex:none}
+.mark svg{width:22px;height:22px}
+.logo b{font-family:var(--serif);font-size:23px;font-weight:700;line-height:1;display:block;letter-spacing:.01em}
+.logo small{display:block;font-size:10px;letter-spacing:.24em;text-transform:uppercase;font-weight:700;color:var(--olive-d);margin-top:4px}
+.nav{display:flex;align-items:center;gap:34px}
+.nav a.lk{font-size:14px;font-weight:600}
+.nav .tel{font-weight:700;font-size:14px;display:flex;align-items:center;gap:8px}
+.nav .btn{min-height:46px;padding:0 20px;font-size:12px}
+.burger{display:none;width:48px;height:48px;border:2px solid var(--ink);background:transparent;cursor:pointer;position:relative;flex:none}
+.burger span{position:absolute;left:12px;right:12px;height:2px;background:var(--ink);transition:transform .35s var(--ease),opacity .2s}
+.burger span:nth-child(1){top:16px}.burger span:nth-child(2){top:22px}.burger span:nth-child(3){top:28px}
+.menu-open .burger span:nth-child(1){transform:translateY(6px) rotate(45deg)}
+.menu-open .burger span:nth-child(2){opacity:0}
+.menu-open .burger span:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
+.mmenu{position:fixed;inset:0;background:var(--olive-dd);color:var(--bg);z-index:45;display:flex;flex-direction:column;justify-content:center;padding:100px var(--pad) 40px;gap:8px;transform:translateY(-100%);transition:transform .6s var(--ease);visibility:hidden}
+.menu-open .mmenu{transform:none;visibility:visible}
+.menu-open .hdr{background:transparent;box-shadow:none;backdrop-filter:none}
+.menu-open .hdr .logo,.menu-open .burger{color:var(--bg)}
+.menu-open .burger{border-color:var(--bg)}.menu-open .burger span{background:var(--bg)}
+.menu-open .logo small{color:var(--gold)}
+.mmenu a{font-family:var(--serif);font-size:44px;font-weight:600;line-height:1.2;display:flex;gap:16px;align-items:baseline}
+.mmenu a span{font-family:var(--sans);font-size:12px;letter-spacing:.2em;color:var(--gold);font-weight:700}
+.mmenu .mtel{margin-top:30px;font-family:var(--sans);font-size:18px;font-weight:700}
 
-/* hero */
-.hero{padding:72px 0 88px}
-.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:64px;align-items:center}
-.eyebrow{display:inline-flex;align-items:center;gap:10px;background:var(--surface);border:1px solid color-mix(in srgb,var(--ink) 10%,transparent);padding:8px 16px 8px 10px;border-radius:999px;font-size:14px;font-weight:600;color:var(--muted)}
-.stars{color:var(--gold);letter-spacing:1px;font-size:14px}
-.eyebrow .dot{width:26px;height:26px;border-radius:50%;background:var(--soft);display:grid;place-items:center;color:var(--accent)}
-h1{font-family:var(--serif);font-weight:500;font-size:clamp(44px,5.6vw,74px);line-height:1.02;letter-spacing:-.025em;margin:26px 0 22px}
-h1 em{font-style:italic;color:var(--accent)}
-.lead-text{font-size:19.5px;color:var(--muted);max-width:540px}
-.hero-ctas{display:flex;gap:14px;margin-top:36px;flex-wrap:wrap}
-.ticks{display:flex;gap:22px;margin-top:34px;flex-wrap:wrap;font-size:14.5px;font-weight:600;color:var(--muted)}
-.ticks span{display:flex;align-items:center;gap:8px}
-.ticks svg{width:18px;height:18px;color:var(--accent)}
-.visual{position:relative}
-.photo{aspect-ratio:4/5;border-radius:calc(var(--radius) + 10px);overflow:hidden;background:var(--soft);box-shadow:0 40px 80px -40px color-mix(in srgb,var(--ink) 55%,transparent)}
-.photo img{width:100%;height:100%;object-fit:cover}
-.quote-panel{aspect-ratio:4/5;border-radius:calc(var(--radius) + 10px);background:linear-gradient(155deg,var(--accent),color-mix(in srgb,var(--accent) 55%,var(--ink)));color:var(--accent-ink);padding:52px 46px;display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden;box-shadow:0 40px 80px -40px color-mix(in srgb,var(--ink) 60%,transparent)}
-.quote-panel:before{content:"";position:absolute;width:420px;height:420px;border-radius:50%;right:-160px;top:-160px;background:color-mix(in srgb,var(--accent-ink) 9%,transparent)}
-.quote-panel:after{content:"";position:absolute;width:260px;height:260px;border-radius:50%;left:-90px;bottom:-110px;border:1.5px solid color-mix(in srgb,var(--accent-ink) 22%,transparent)}
-.quote-mark{font-family:var(--serif);font-size:120px;line-height:.6;opacity:.35}
-.quote-panel p{font-family:var(--serif);font-size:28px;line-height:1.3;position:relative;z-index:1}
-.quote-panel .who{font-family:var(--sans);font-size:15px;opacity:.85;margin-top:22px;font-weight:600}
-.float{position:absolute;background:var(--surface);color:var(--ink);border-radius:18px;padding:16px 20px;box-shadow:0 24px 50px -24px color-mix(in srgb,var(--ink) 50%,transparent);display:flex;align-items:center;gap:14px;font-size:14px;line-height:1.35}
-.float b{font-size:22px;font-family:var(--serif);font-weight:600;display:block}
-.float.one{left:-34px;bottom:-28px}
-.float.two{right:-22px;top:44px}
-.float .badge{width:44px;height:44px;border-radius:14px;background:var(--soft);display:grid;place-items:center;color:var(--accent)}
-.float .badge svg{width:22px;height:22px}
+/* Hero */
+.hero{min-height:100vh;min-height:100svh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:130px var(--pad) 70px;position:relative;overflow:hidden}
+.hero-grid{position:absolute;inset:0;pointer-events:none;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:calc(100%/12) 100%,calc(100%/12) 100%;opacity:.45;-webkit-mask-image:radial-gradient(ellipse at center,#000 30%,transparent 78%);mask-image:radial-gradient(ellipse at center,#000 30%,transparent 78%)}
+.hero-top{display:flex;gap:18px;align-items:center;justify-content:center;flex-wrap:wrap;color:var(--olive-d);margin-bottom:34px;position:relative}
+.hero-top .dot{width:6px;height:6px;background:var(--gold)}
+.hero h1{font-size:clamp(58px,12.5vw,196px);max-width:13ch;margin:0 auto;position:relative}
+.hero h1 .ln{display:block;overflow:hidden;padding-bottom:.06em}
+.hero h1 .ln>span{display:inline-block}
+.spine{display:flex;justify-content:center;align-items:center;gap:clamp(6px,1.1vw,14px);margin:clamp(26px,4vw,44px) auto;height:clamp(70px,9vw,120px);position:relative}
+.spine b{display:block;width:clamp(16px,2.3vw,30px);height:clamp(10px,1.4vw,18px);background:var(--olive);transition:transform 1.6s var(--ease),background .6s}
+.spine b:nth-child(odd){background:var(--ink)}
+.spine b.g{background:var(--gold)}
+.hero p.sub{max-width:600px;margin:0 auto;font-size:clamp(17px,1.6vw,20px);color:var(--ink-2);position:relative}
+.hero .ctas{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:38px;position:relative}
+.scroll{position:absolute;bottom:28px;left:var(--pad);display:flex;align-items:center;gap:12px;color:var(--ink-2)}
+.scroll::after{content:"";width:1px;height:44px;background:var(--ink);transform-origin:top;animation:drip 2.2s var(--ease) infinite}
+@keyframes drip{0%{transform:scaleY(0)}50%{transform:scaleY(1);transform-origin:top}51%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+.hero-side{position:absolute;bottom:28px;right:var(--pad);color:var(--ink-2);text-align:right}
 
-/* trust */
-.trust{border-top:1px solid color-mix(in srgb,var(--ink) 9%,transparent);border-bottom:1px solid color-mix(in srgb,var(--ink) 9%,transparent);background:var(--surface)}
-.trust .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;padding-top:26px;padding-bottom:26px}
-.trust div{display:flex;align-items:center;gap:12px;font-weight:600;font-size:15px}
-.trust svg{width:22px;height:22px;color:var(--accent);flex:none}
+/* Entrance */
+.js .in{opacity:0;transform:translateY(28px)}
+.js .ln>span{transform:translateY(110%)}
+.loaded .in{opacity:1;transform:none;transition:opacity 1s var(--ease),transform 1s var(--ease)}
+.loaded .ln>span{transform:none;transition:transform 1.2s var(--ease)}
+.loaded .ln:nth-child(2)>span{transition-delay:.12s}
+.loaded .ln:nth-child(3)>span{transition-delay:.24s}
+.loaded .d1{transition-delay:.1s}.loaded .d2{transition-delay:.45s}.loaded .d3{transition-delay:.6s}.loaded .d4{transition-delay:.75s}.loaded .d5{transition-delay:1s}
 
-/* sections */
-section.block{padding:110px 0}
-.kicker{font-size:13px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
-h2{font-family:var(--serif);font-weight:500;font-size:clamp(34px,3.8vw,52px);line-height:1.08;letter-spacing:-.02em;margin:14px 0 18px}
-.section-head{display:flex;justify-content:space-between;align-items:end;gap:40px;margin-bottom:56px}
-.section-head p{color:var(--muted);max-width:420px}
-.services{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-.card{background:var(--surface);border-radius:var(--radius);padding:34px 32px 36px;border:1px solid color-mix(in srgb,var(--ink) 7%,transparent);transition:transform .25s ease,box-shadow .25s ease}
-.card:hover{transform:translateY(-4px);box-shadow:0 30px 60px -36px color-mix(in srgb,var(--ink) 45%,transparent)}
-.icon{width:54px;height:54px;border-radius:16px;background:var(--soft);color:var(--accent);display:grid;place-items:center;margin-bottom:24px}
-.icon svg{width:26px;height:26px}
-.card h3{font-family:var(--serif);font-weight:500;font-size:23px;margin-bottom:8px;letter-spacing:-.01em}
-.card p{color:var(--muted);font-size:16px}
+/* Band */
+.band{background:var(--olive);color:#fff;position:relative;overflow:hidden}
+.band .wrap{display:grid;grid-template-columns:1.1fr 1fr;align-items:stretch}
+.band-num{font-family:var(--serif);font-weight:700;font-size:clamp(150px,26vw,380px);line-height:.78;letter-spacing:-.04em;padding:clamp(40px,6vw,80px) 0 0;color:var(--gold);position:relative;align-self:end}
+.band-num sup{font-family:var(--sans);font-size:13px;letter-spacing:.22em;color:#fff;font-weight:700;position:absolute;top:clamp(40px,6vw,80px);left:4px;line-height:1}
+.band-txt{padding:clamp(40px,6vw,80px) 0 clamp(40px,6vw,80px) clamp(0px,4vw,60px);border-left:1px solid rgba(255,255,255,.25);display:flex;flex-direction:column;justify-content:center;gap:22px}
+.band-txt h2{font-size:clamp(36px,4.6vw,64px)}
+.band-txt p{color:rgba(255,255,255,.92);max-width:460px}
+.band-txt a{color:#fff;font-weight:700;display:inline-flex;gap:10px;align-items:center;align-self:flex-start}
 
-.why{background:var(--ink);color:var(--bg)}
-.why .kicker{color:var(--gold)}
-.why-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:80px;align-items:start}
-.why h2{color:var(--bg)}
-.why .intro{color:color-mix(in srgb,var(--bg) 70%,transparent);font-size:18px;max-width:440px}
-.points{display:grid;gap:14px}
-.point{display:grid;grid-template-columns:62px 1fr;gap:20px;padding:30px;border-radius:var(--radius);background:color-mix(in srgb,var(--bg) 6%,transparent);border:1px solid color-mix(in srgb,var(--bg) 10%,transparent)}
-.point .num{font-family:var(--serif);font-size:34px;color:var(--gold);line-height:1}
-.point h3{font-family:var(--serif);font-weight:500;font-size:24px;margin-bottom:6px}
-.point p{color:color-mix(in srgb,var(--bg) 72%,transparent);font-size:16px}
+/* Marquee */
+.marq{background:var(--ink);color:var(--bg);overflow:hidden;padding:22px 0;border-top:6px solid var(--gold)}
+.marq-t{display:flex;width:max-content;animation:mq 38s linear infinite}
+.marq span{font-family:var(--serif);font-size:clamp(26px,3vw,40px);font-style:italic;font-weight:500;padding:0 34px;white-space:nowrap;display:flex;align-items:center;gap:34px}
+.marq span::after{content:"";width:10px;height:10px;background:var(--gold);flex:none}
+@keyframes mq{to{transform:translateX(-50%)}}
 
-.score{display:flex;align-items:center;gap:18px;background:var(--surface);padding:16px 24px;border-radius:18px;border:1px solid color-mix(in srgb,var(--ink) 8%,transparent)}
-.score b{font-family:var(--serif);font-size:40px;font-weight:500;line-height:1}
-.score small{display:block;color:var(--muted);font-size:14px}
-.reviews{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-.review{background:var(--surface);border-radius:var(--radius);padding:34px;display:flex;flex-direction:column;gap:22px;border:1px solid color-mix(in srgb,var(--ink) 7%,transparent)}
-.review p{font-family:var(--serif);font-size:19.5px;line-height:1.45}
-.review .by{margin-top:auto;display:flex;align-items:center;gap:12px;font-weight:600;font-size:15px}
-.avatar{width:40px;height:40px;border-radius:50%;background:var(--soft);color:var(--accent);display:grid;place-items:center;font-weight:700}
-.review .src{color:var(--muted);font-weight:500;font-size:13px;display:block}
+/* Sections */
+section{position:relative}
+.sec{padding:clamp(90px,12vw,170px) 0}
+.sec-head{display:grid;grid-template-columns:4fr 8fr;gap:40px;margin-bottom:clamp(50px,7vw,90px);align-items:end}
+.sec-head .label{color:var(--olive-d);align-self:start;padding-top:12px}
+.sec-head p{max-width:560px;color:var(--ink-2);margin-top:26px;font-size:18px}
 
-.cta-band{padding:0 0 110px}
-.cta-box{border-radius:calc(var(--radius) + 12px);background:linear-gradient(140deg,var(--accent),color-mix(in srgb,var(--accent) 60%,var(--ink)));color:var(--accent-ink);padding:76px 64px;display:grid;grid-template-columns:1.3fr 1fr;gap:40px;align-items:center;position:relative;overflow:hidden}
-.cta-box:after{content:"";position:absolute;right:-120px;bottom:-200px;width:460px;height:460px;border-radius:50%;border:1.5px solid color-mix(in srgb,var(--accent-ink) 22%,transparent)}
-.cta-box h2{color:inherit;margin:0 0 12px}
-.cta-box p{opacity:.85;font-size:18px}
-.cta-box .actions{display:flex;flex-direction:column;gap:12px;align-items:flex-start;position:relative;z-index:1}
-.cta-box .btn{background:var(--accent-ink);color:var(--accent)}
-.cta-box .btn.ghost{background:transparent;color:var(--accent-ink);border-color:color-mix(in srgb,var(--accent-ink) 40%,transparent)}
+/* Services */
+.cards{display:grid;grid-template-columns:repeat(12,1fr);gap:2px;background:var(--line);border:2px solid var(--ink)}
+.card{background:var(--surface);padding:clamp(28px,3.4vw,48px);position:relative;display:flex;flex-direction:column;min-height:360px;transition:background .45s var(--ease),color .45s var(--ease);overflow:hidden}
+.card:nth-child(1){grid-column:span 7}.card:nth-child(2){grid-column:span 5}.card:nth-child(3){grid-column:span 5}.card:nth-child(4){grid-column:span 7}
+.card .no{font-family:var(--serif);font-size:clamp(70px,8vw,120px);font-weight:700;line-height:.8;color:var(--olive);transition:color .45s,transform .6s var(--ease)}
+.card .ic{position:absolute;top:clamp(28px,3.4vw,48px);right:clamp(28px,3.4vw,48px);width:46px;height:46px;border:2px solid currentColor;display:grid;place-items:center}
+.card .ic svg{width:22px;height:22px}
+.card h3{font-size:clamp(32px,3.2vw,46px);margin:auto 0 14px;padding-top:40px}
+.card p{color:var(--ink-2);max-width:440px;transition:color .45s}
+.card:hover{background:var(--olive-dd);color:var(--bg)}
+.card:hover .no{color:var(--gold);transform:translateX(8px)}
+.card:hover p{color:rgba(243,241,231,.88)}
+.note{margin-top:22px;font-size:14px;color:var(--ink-2)}
+.note a{font-weight:700;color:var(--olive-d)}
 
-.visit{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:10px}
-.visit .card h3{font-size:20px}
-.visit a{color:var(--accent);font-weight:600}
-footer{border-top:1px solid color-mix(in srgb,var(--ink) 9%,transparent);padding:40px 0 110px;color:var(--muted);font-size:14px}
-footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
-.mobile-bar{display:none}
+/* About - asymmetric */
+.about{background:var(--surface);border-top:2px solid var(--ink);border-bottom:2px solid var(--ink)}
+.about .wrap{display:grid;grid-template-columns:5fr 7fr;gap:clamp(40px,7vw,110px)}
+.about-l{position:sticky;top:120px;align-self:start}
+.about-l .label{color:var(--olive-d);display:block;margin-bottom:28px}
+.about-l h2{font-size:clamp(44px,5.4vw,80px)}
+.plate{margin-top:44px;background:var(--bg);border-left:6px solid var(--gold);padding:26px 28px}
+.plate .label{color:var(--ink-2);margin:0 0 8px;font-size:11px}
+.plate address{font-style:normal;font-family:var(--serif);font-size:26px;font-weight:600;line-height:1.2}
+.about-r p{font-size:clamp(18px,1.6vw,21px);color:var(--ink-2);margin-bottom:26px}
+.about-r p.lead{font-family:var(--serif);font-size:clamp(28px,2.8vw,40px);line-height:1.2;color:var(--ink);font-weight:500;margin-bottom:40px}
+.about-r p.lead em{color:var(--olive);font-style:italic}
+.pillars{display:grid;grid-template-columns:1fr 1fr;border-top:2px solid var(--ink);margin-top:50px}
+.pillar{padding:30px 26px 30px 0;border-bottom:1px solid var(--line)}
+.pillar:nth-child(even){padding-left:26px;border-left:1px solid var(--line)}
+.pillar .label{color:var(--olive-d);font-size:11px}
+.pillar h3{font-size:30px;margin:12px 0 8px}
+.pillar p{font-size:15.5px;margin:0;color:var(--ink-2)}
 
-@keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
-.hero .copy>*{animation:rise .8s cubic-bezier(.2,.7,.2,1) both}
-.hero .copy>*:nth-child(2){animation-delay:.08s}.hero .copy>*:nth-child(3){animation-delay:.16s}
-.hero .copy>*:nth-child(4){animation-delay:.24s}.hero .copy>*:nth-child(5){animation-delay:.32s}
-.visual{animation:rise 1s .2s cubic-bezier(.2,.7,.2,1) both}
+/* Steps */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);border-top:2px solid var(--ink)}
+.step{padding:34px 28px 40px 0;position:relative}
+.step+.step{padding-left:28px;border-left:1px solid var(--line)}
+.step .n{font-family:var(--serif);font-size:clamp(90px,9vw,140px);font-weight:700;line-height:.8;color:transparent;-webkit-text-stroke:1.5px var(--olive);display:block;margin-bottom:30px;transition:color .5s var(--ease)}
+.step:hover .n{color:var(--olive)}
+.step h3{font-size:32px;margin-bottom:12px}
+.step p{color:var(--ink-2);font-size:16px}
+.step::before{content:"";position:absolute;top:-2px;left:0;height:2px;width:0;background:var(--gold);transition:width .8s var(--ease)}
+.step.vis::before{width:100%}
 
-@media (max-width:980px){
-  .links{display:none}
-  .hero-grid,.why-grid,.cta-box{grid-template-columns:1fr}
-  .hero-grid{gap:56px}
-  .services,.reviews,.visit{grid-template-columns:1fr 1fr}
-  .trust .wrap{grid-template-columns:1fr 1fr}
-  .float.one{left:12px;bottom:-26px}.float.two{right:12px}
-  .visual{max-width:560px;margin-bottom:20px}
-  .section-head{flex-direction:column;align-items:flex-start}
+/* FAQ */
+.faq{background:var(--gold-l)}
+.faq .wrap{display:grid;grid-template-columns:4fr 8fr;gap:clamp(40px,6vw,90px)}
+.faq .label{color:var(--olive-dd)}
+.faq h2{margin-top:24px;font-size:clamp(44px,5.4vw,80px)}
+.faq h2 em{color:var(--olive-dd)}
+.qa{border-top:2px solid var(--ink)}
+.qa details{border-bottom:1px solid rgba(38,41,29,.25)}
+.qa summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:20px;padding:28px 0;font-family:var(--serif);font-size:clamp(24px,2.4vw,32px);font-weight:600;line-height:1.2}
+.qa summary::-webkit-details-marker{display:none}
+.qa summary i{width:40px;height:40px;border:2px solid var(--ink);flex:none;position:relative;transition:background .3s,transform .4s var(--ease)}
+.qa summary i::before,.qa summary i::after{content:"";position:absolute;left:50%;top:50%;width:14px;height:2px;background:var(--ink);transform:translate(-50%,-50%)}
+.qa summary i::after{transform:translate(-50%,-50%) rotate(90deg);transition:transform .4s var(--ease)}
+.qa details[open] summary i{background:var(--ink);transform:rotate(180deg)}
+.qa details[open] summary i::before{background:var(--gold-l)}
+.qa details[open] summary i::after{transform:translate(-50%,-50%) rotate(0);background:var(--gold-l)}
+.qa .a{padding:0 60px 30px 0;color:var(--ink-2);font-size:17px}
+.qa .a a{font-weight:700;color:var(--olive-dd)}
+
+/* CTA */
+.cta{background:var(--olive-dd);color:var(--bg);overflow:hidden;text-align:center;padding:clamp(100px,13vw,190px) 0}
+.cta .label{color:var(--gold)}
+.cta h2{font-size:clamp(54px,10vw,160px);margin:28px auto 30px;max-width:11ch}
+.cta h2 em{color:var(--gold)}
+.cta p{color:rgba(243,241,231,.88);max-width:520px;margin:0 auto 44px;font-size:18px}
+.cta .ctas{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.cta .btn-solid{background:var(--gold);border-color:var(--gold);color:var(--ink)}
+.cta .btn-solid:hover{background:var(--bg);border-color:var(--bg);color:var(--ink)}
+.cta .btn-ghost{border-color:var(--bg);color:var(--bg)}
+.cta .btn-ghost:hover{background:var(--bg);color:var(--ink)}
+.cta-bars{position:absolute;inset:0;pointer-events:none;display:flex;justify-content:space-between;opacity:.08}
+.cta-bars span{width:1px;background:var(--bg)}
+
+/* Contact */
+.visit .wrap{display:grid;grid-template-columns:7fr 5fr;gap:2px;background:var(--ink);border:2px solid var(--ink);padding:0}
+.visit-outer{padding:clamp(80px,10vw,140px) var(--pad)}
+.v-main{background:var(--surface);padding:clamp(32px,5vw,70px)}
+.v-main .label{color:var(--olive-d)}
+.v-main h2{margin:22px 0 40px;font-size:clamp(44px,5.6vw,84px)}
+.v-rows{display:grid;gap:0;border-top:1px solid var(--line)}
+.v-row{display:grid;grid-template-columns:140px 1fr;gap:20px;padding:22px 0;border-bottom:1px solid var(--line);align-items:baseline}
+.v-row .label{font-size:11px;color:var(--ink-2)}
+.v-row div,.v-row a{font-family:var(--serif);font-size:clamp(22px,2.2vw,30px);font-weight:600;line-height:1.25}
+.v-row small{display:block;font-family:var(--sans);font-size:14px;font-weight:500;color:var(--ink-2);margin-top:4px}
+.v-map{background:var(--olive);color:#fff;padding:clamp(32px,4vw,56px);display:flex;flex-direction:column;justify-content:space-between;gap:40px;position:relative;overflow:hidden;min-height:440px;transition:background .5s var(--ease)}
+.v-map:hover{background:var(--olive-d)}
+.v-map svg.grid{position:absolute;inset:0;width:100%;height:100%;opacity:.35}
+.v-map>*{position:relative}
+.v-map .pin{width:64px;height:64px;background:var(--gold);display:grid;place-items:center;color:var(--ink)}
+.v-map .pin svg{width:28px;height:28px}
+.v-map h3{font-size:clamp(34px,3.4vw,48px)}
+.v-map span.go{display:inline-flex;gap:10px;align-items:center;font-weight:700;letter-spacing:.08em;text-transform:uppercase;font-size:13px;margin-top:16px}
+.v-map span.go svg{width:18px;height:18px;transition:transform .35s var(--ease)}
+.v-map:hover span.go svg{transform:translateX(6px)}
+
+/* Footer */
+footer{background:var(--navy);color:#E9E7DC;padding:70px 0 40px}
+.f-top{display:flex;justify-content:space-between;gap:40px;flex-wrap:wrap;padding-bottom:50px;border-bottom:1px solid rgba(233,231,220,.18)}
+.f-name{font-family:var(--serif);font-size:clamp(40px,6vw,84px);font-weight:600;line-height:.95}
+.f-name em{color:var(--gold)}
+.f-links{display:grid;gap:10px;font-size:15px;align-content:start}
+.f-links .label{color:var(--gold);margin-bottom:6px;font-size:11px}
+.f-bot{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;padding-top:28px;font-size:13px;color:rgba(233,231,220,.75)}
+
+/* Mobile bar */
+.mbar{display:none}
+
+/* Reveal */
+.js .rv{opacity:0;transform:translateY(40px);transition:opacity 1s var(--ease),transform 1s var(--ease)}
+.js .rv.vis{opacity:1;transform:none}
+.rv.r2{transition-delay:.12s}.rv.r3{transition-delay:.24s}.rv.r4{transition-delay:.36s}
+
+@media (max-width:1000px){
+  .nav .lk,.nav .tel{display:none}
+  .sec-head,.about .wrap,.faq .wrap,.visit .wrap{grid-template-columns:1fr}
+  .about-l{position:static}
+  .card:nth-child(n){grid-column:span 12}
+  .card{min-height:300px}
+  .steps{grid-template-columns:1fr 1fr}
+  .step:nth-child(3){padding-left:0;border-left:0}
+  .step:nth-child(n+3){border-top:1px solid var(--line)}
+  .band .wrap{grid-template-columns:1fr}
+  .band-txt{border-left:0;border-top:1px solid rgba(255,255,255,.25);padding-left:0}
+  .band-num{padding-top:70px}
 }
-@media (max-width:640px){
+@media (max-width:720px){
   body{font-size:16px}
-  .wrap{padding:0 18px}
-  .nav{height:66px}.brand{font-size:19px}
-  .phone,.nav-right .btn{display:none}
-  .hero{padding:44px 0 64px}
-  .lead-text{font-size:17.5px}
-  .hero-ctas .btn{flex:1;justify-content:center}
-  .ticks{display:none}
-  .services,.reviews,.visit,.trust .wrap{grid-template-columns:1fr}
-  section.block{padding:76px 0}
-  .quote-panel,.photo{aspect-ratio:auto;min-height:380px}.photo{aspect-ratio:4/3;min-height:0}
-  .quote-panel{padding:40px 30px 64px}.quote-panel p{font-size:23px}
-  .float{font-size:13px;padding:12px 14px}.float b{font-size:18px}
-  .float.two{display:none}
-  .cta-box{padding:52px 28px}
-  .point{grid-template-columns:44px 1fr;padding:24px}
-  .mobile-bar{display:flex;position:fixed;left:12px;right:12px;bottom:12px;z-index:30;gap:10px}
-  .mobile-bar .btn{flex:1;justify-content:center;box-shadow:0 14px 30px -14px color-mix(in srgb,var(--ink) 60%,transparent)}
-  .mobile-bar .btn.ghost{background:var(--surface)}
+  .hdr .wrap{height:72px}
+  .nav .btn{display:none}
+  .burger{display:block}
+  .logo b{font-size:20px}
+  .logo small{font-size:9px;letter-spacing:.18em}
+  .mark{width:38px;height:38px}
+  .hero{padding:110px var(--pad) 90px}
+  .hero-top{gap:10px;margin-bottom:24px}
+  .hero-top .label{font-size:10.5px;letter-spacing:.18em}
+  .hero .ctas{flex-direction:column;width:100%;max-width:360px}
+  .hero .ctas .btn{width:100%}
+  .scroll,.hero-side{display:none}
+  .steps{grid-template-columns:1fr}
+  .step,.step+.step{padding:30px 0 34px;border-left:0}
+  .step+.step{border-top:1px solid var(--line)}
+  .pillars{grid-template-columns:1fr}
+  .pillar,.pillar:nth-child(even){padding:26px 0;border-left:0}
+  .v-row{grid-template-columns:1fr;gap:6px}
+  .qa .a{padding-right:0}
+  .cta .ctas{flex-direction:column;align-items:stretch;max-width:360px;margin:0 auto}
+  .visit-outer{padding:70px var(--pad) 110px}
+  .v-map{min-height:360px}
+  .mbar{display:grid;grid-template-columns:1fr 1fr;position:fixed;left:0;right:0;bottom:0;z-index:40;background:var(--ink);border-top:4px solid var(--gold);transform:translateY(110%);transition:transform .5s var(--ease)}
+  .mbar.show{transform:none}
+  .mbar a{display:flex;align-items:center;justify-content:center;gap:10px;min-height:62px;color:var(--bg);font-weight:700;font-size:13px;letter-spacing:.1em;text-transform:uppercase}
+  .mbar a+a{background:var(--olive);color:#fff}
+  .mbar svg{width:18px;height:18px}
+  footer{padding-bottom:110px}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+  .js .rv,.js .in,.js .ln>span{opacity:1!important;transform:none!important}
+  .spine b{transform:none!important}
 }
 </style>
 </head>
 <body>
-<div class="concept">Website concept prepared for <b>Balmoral Chiropractic Centre</b> by webstudio &middot; not a live site</div>
 
-<header>
-  <div class="wrap nav">
-    <a href="#top" class="brand">Balmoral Chiropractic Centre</a>
-    <nav class="links">
-      <a href="#services">Services</a><a href="#why">Why us</a><a href="#visit">Visit</a>
+<header class="hdr" id="hdr">
+  <div class="wrap">
+    <a href="#top" class="logo" aria-label="Balmoral Chiropractic Centre home">
+      <span class="mark"><svg viewBox="0 0 24 24" fill="none" stroke="#D9A441" stroke-width="2.2"><path d="M12 2v20"/><path d="M8 5h8M7 10h10M8 15h8M9 20h6"/></svg></span>
+      <span><b>Balmoral</b><small>Chiropractic Centre</small></span>
+    </a>
+    <nav class="nav" aria-label="Main">
+      <a class="lk u" href="#services">Care</a>
+      <a class="lk u" href="#about">About</a>
+      <a class="lk u" href="#process">Your visit</a>
+      <a class="lk u" href="#faq">FAQ</a>
+      <a class="tel u" href="tel:+6562359083">+65 6235 9083</a>
+      <a class="btn btn-solid" href="#contact">Book a visit</a>
+      <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
     </nav>
-    <div class="nav-right">
-      <a class="phone" href="tel:+6562359083">+6562359083</a>
-      <a class="btn" href="#visit">Book now</a>
-    </div>
   </div>
 </header>
 
+<div class="mmenu" id="mmenu" aria-hidden="true">
+  <a href="#services"><span>01</span>Care</a>
+  <a href="#about"><span>02</span>About</a>
+  <a href="#process"><span>03</span>Your visit</a>
+  <a href="#faq"><span>04</span>FAQ</a>
+  <a href="#contact"><span>05</span>Visit us</a>
+  <a class="mtel" href="tel:+6562359083">Call +65 6235 9083</a>
+</div>
+
 <main id="top">
-<section class="hero">
-  <div class="wrap hero-grid">
-    <div class="copy">
-      <div class="eyebrow">
-        <span class="dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-7-4.4-7-10a4 4 0 017-2.6A4 4 0 0119 10c0 5.6-7 10-7 10z"/></svg></span>Chiropractic care in Singapore
+  <section class="hero" id="hero">
+    <div class="hero-grid" aria-hidden="true"></div>
+    <div class="hero-top in d1">
+      <span class="label">Balmoral Chiropractic Centre</span><span class="dot"></span><span class="label">Bukit Timah, Singapore</span>
+    </div>
+    <h1>
+      <span class="ln"><span>Move freely.</span></span>
+      <span class="ln"><span>Stand <em>taller.</em></span></span>
+    </h1>
+    <div class="spine in d3" id="spine" aria-hidden="true">
+      <b></b><b></b><b></b><b class="g"></b><b></b><b></b><b></b><b class="g"></b><b></b><b></b><b></b>
+    </div>
+    <p class="sub in d4">Considered, one-to-one chiropractic care on Bukit Timah Road, for people who want to feel at home in their own body again.</p>
+    <div class="ctas in d5">
+      <a class="btn btn-solid" href="tel:+6562359083">Call +65 6235 9083
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a class="btn btn-ghost" href="#services">Explore our care</a>
+    </div>
+    <span class="scroll label in d5">Scroll</span>
+    <span class="hero-side label in d5">271 Bukit Timah Rd · #04-02</span>
+  </section>
+
+  <section class="band" aria-label="Location">
+    <div class="wrap">
+      <div class="band-num rv"><sup>Level</sup>04</div>
+      <div class="band-txt">
+        <span class="label rv">Find us · 271 Bukit Timah Road</span>
+        <h2 class="rv r2">Four floors up. A world away from the traffic.</h2>
+        <p class="rv r3">Our centre sits at #04-02, 271 Bukit Timah Road — a calm, central address where your care gets the time and attention it deserves.</p>
+        <a class="u rv r4" href="https://maps.google.com/?q=271+Bukit+Timah+Rd+%2304-02+Singapore+259708" target="_blank" rel="noopener">Get directions
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
       </div>
-      <h1>Move more freely, with care that fits <em>your schedule.</em></h1>
-      <p class="lead-text">Balmoral Chiropractic Centre makes it simple to book your visit online and get hands-on chiropractic care in Singapore.</p>
-      <div class="hero-ctas">
-        <a class="btn" href="#visit">Book your first visit <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-        <a class="btn ghost" href="tel:+6562359083">Call +6562359083</a>
+    </div>
+  </section>
+
+  <div class="marq" aria-hidden="true">
+    <div class="marq-t">
+      <span>Chiropractic care</span><span>Bukit Timah Road</span><span>One-to-one attention</span><span>Singapore 259708</span><span>Move with ease</span>
+      <span>Chiropractic care</span><span>Bukit Timah Road</span><span>One-to-one attention</span><span>Singapore 259708</span><span>Move with ease</span>
+    </div>
+  </div>
+
+  <section class="sec" id="services">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="label rv"><i></i>01 — The care</span>
+        <div>
+          <h2 class="rv r2">Care that begins with <em>listening.</em></h2>
+          <p class="rv r3">Every body carries its own story. Our chiropractic care is shaped around yours — how you move, how you work, and what you want to get back to.</p>
+        </div>
       </div>
-      <div class="ticks">
-        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7"/></svg>New patients welcome</span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7"/></svg>Most insurance accepted</span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7"/></svg>Same-day visits</span>
+      <div class="cards">
+        <article class="card rv">
+          <span class="no">01</span>
+          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 5h16v11H9l-5 4z"/></svg></span>
+          <h3>A conversation first</h3>
+          <p>We start by understanding what brought you in — where it's uncomfortable, when it started, and how it's shaping your days.</p>
+        </article>
+        <article class="card rv r2">
+          <span class="no">02</span>
+          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v18M8 6h8M7 11h10M8 16h8"/></svg></span>
+          <h3>Hands-on chiropractic care</h3>
+          <p>Focused, unhurried chiropractic care for the spine and joints, delivered one-to-one in a private setting.</p>
+        </article>
+        <article class="card rv">
+          <span class="no">03</span>
+          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="5" width="16" height="15"/><path d="M4 10h16M9 3v4M15 3v4"/></svg></span>
+          <h3>A plan that fits your week</h3>
+          <p>A clear, honest path forward, explained in plain language and arranged around your schedule.</p>
+        </article>
+        <article class="card rv r2">
+          <span class="no">04</span>
+          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></svg></span>
+          <h3>Keeping you moving</h3>
+          <p>Practical guidance for posture, desk days and everyday movement — so the good work continues between visits.</p>
+        </article>
+      </div>
+      <p class="note rv">Not sure if chiropractic is right for you? <a class="u" href="tel:+6562359083">Call +65 6235 9083</a> and talk it through with us.</p>
+    </div>
+  </section>
+
+  <section class="sec about" id="about">
+    <div class="wrap">
+      <div class="about-l">
+        <span class="label rv"><i></i>02 — About us</span>
+        <h2 class="rv r2">A centre built around <em>you.</em></h2>
+        <div class="plate rv r3">
+          <p class="label">Our address</p>
+          <address>271 Bukit Timah Rd<br>#04-02, Singapore 259708</address>
+        </div>
+      </div>
+      <div class="about-r">
+        <p class="lead rv">Balmoral Chiropractic Centre is a place to <em>slow down</em>, be properly heard, and leave feeling more like yourself.</p>
+        <p class="rv">We believe good chiropractic care is personal. It means time to explain, room to ask questions, and a practitioner who treats you as a whole person — not a single sore spot.</p>
+        <p class="rv">Tucked away on Bukit Timah Road, our centre is easy to reach yet quiet enough to feel like a pause in your day. Whether you're dealing with something new or something that's lingered for too long, the first step is simply a call.</p>
+        <div class="pillars">
+          <div class="pillar rv"><span class="label">Personal</span><h3>One-to-one</h3><p>Your time with us is focused entirely on you.</p></div>
+          <div class="pillar rv r2"><span class="label">Clear</span><h3>Plain language</h3><p>You'll understand what we're doing, and why.</p></div>
+          <div class="pillar rv"><span class="label">Central</span><h3>Bukit Timah</h3><p>A convenient address on Bukit Timah Road.</p></div>
+          <div class="pillar rv r2"><span class="label">Simple</span><h3>One call</h3><p>Book directly with us on +65 6235 9083.</p></div>
+        </div>
       </div>
     </div>
-    <div class="visual">
-      
-      <div class="quote-panel"><div class="quote-mark">“</div><div><p>Gentle, evidence-based chiropractic care that gets to the root of your pain, not just the symptoms.</p><div class="who">Balmoral Chiropractic Centre</div></div></div>
-      
-      
-      <div class="float two"><span class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><span><b>This week</b>Most insurance accepted</span></div>
-    </div>
-  </div>
-  <template id="qp"><div class="quote-panel"><div class="quote-mark">“</div><div><p>Gentle, evidence-based chiropractic care that gets to the root of your pain, not just the symptoms.</p><div class="who">Balmoral Chiropractic Centre</div></div></div></template>
-</section>
+  </section>
 
-<div class="trust"><div class="wrap">
-  <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.2-8 9-4.6-.8-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg>New patients welcome</div><div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.2-8 9-4.6-.8-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg>Most insurance accepted</div><div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.2-8 9-4.6-.8-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg>Same-day visits</div><div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.2-8 9-4.6-.8-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg>Gentle techniques</div>
-</div></div>
-
-<section class="block" id="services">
-  <div class="wrap">
-    <div class="section-head">
-      <div><div class="kicker">What we do</div><h2>Everything you need,<br>under one roof.</h2></div>
-      <p>From routine visits to the work that changes how you feel about your day, Balmoral Chiropractic Centre takes care of it properly.</p>
+  <section class="sec" id="process">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="label rv"><i></i>03 — Your visit</span>
+        <div><h2 class="rv r2">Four simple steps to <em>feeling better.</em></h2></div>
+      </div>
+      <div class="steps">
+        <div class="step rv"><span class="n">01</span><h3>Call us</h3><p>Ring +65 6235 9083 to arrange a time that suits you and ask anything you'd like to know.</p></div>
+        <div class="step rv r2"><span class="n">02</span><h3>Come in</h3><p>Find us on level 4 at 271 Bukit Timah Road, unit #04-02.</p></div>
+        <div class="step rv r3"><span class="n">03</span><h3>Talk it through</h3><p>We listen, assess and explain what we find — then agree a plan together.</p></div>
+        <div class="step rv r4"><span class="n">04</span><h3>Keep moving</h3><p>Follow your plan at your own pace, with support at every stage.</p></div>
+      </div>
     </div>
-    <div class="services">
-      
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-7-4.4-7-10a4 4 0 017-2.6A4 4 0 0119 10c0 5.6-7 10-7 10z"/></svg></div><h3>Back &amp; neck pain</h3><p>Relief that lasts, from a plan built around you.</p></div>
-      
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1-4.4-4.3 6.1-.9z"/></svg></div><h3>Sports injuries</h3><p>Get back in the game faster and stronger.</p></div>
-      
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 19c0-8 5-14 15-14 0 10-6 15-14 15"/><path d="M5 19c3-4 6-6 10-8"/></svg></div><h3>Headaches</h3><p>Address the tension and alignment issues behind them.</p></div>
-      
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 14s1.5 2.5 4 2.5 4-2.5 4-2.5"/><path d="M9 9.5h.01M15 9.5h.01"/></svg></div><h3>Prenatal care</h3><p>Gentle, safe adjustments for moms-to-be.</p></div>
-      
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.2-8 9-4.6-.8-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg></div><h3>Auto injuries</h3><p>Care and documentation after car accidents.</p></div>
-      
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div><h3>Same-day visits</h3><p>In pain today? We&#39;ll see you today.</p></div>
-      
-    </div>
-  </div>
-</section>
+  </section>
 
-<section class="block why" id="why">
-  <div class="wrap why-grid">
-    <div>
-      <div class="kicker">Why patients choose us</div>
-      <h2>The Singapore chiropractor people recommend to their friends.</h2>
-      <p class="intro">it still comes down to the same three things.</p>
+  <section class="sec faq" id="faq">
+    <div class="wrap">
+      <div>
+        <span class="label rv"><i></i>04 — Questions</span>
+        <h2 class="rv r2">Good to <em>know.</em></h2>
+      </div>
+      <div class="qa rv r2">
+        <details open>
+          <summary>Where is Balmoral Chiropractic Centre?<i></i></summary>
+          <div class="a">We're at 271 Bukit Timah Rd, unit #04-02, Singapore 259708 — on the fourth floor. <a class="u" href="https://maps.google.com/?q=271+Bukit+Timah+Rd+%2304-02+Singapore+259708" target="_blank" rel="noopener">Open in Google Maps</a>.</div>
+        </details>
+        <details>
+          <summary>How do I book an appointment?<i></i></summary>
+          <div class="a">Simply call us on <a class="u" href="tel:+6562359083">+65 6235 9083</a> and we'll find a time that works for you.</div>
+        </details>
+        <details>
+          <summary>What are your opening hours?<i></i></summary>
+          <div class="a">Please call <a class="u" href="tel:+6562359083">+65 6235 9083</a> for our current hours and availability — we'll be happy to help.</div>
+        </details>
+        <details>
+          <summary>Can I ask questions before I book?<i></i></summary>
+          <div class="a">Of course. Give us a call and talk through what's been bothering you — it's the easiest way to see whether our care is the right fit.</div>
+        </details>
+      </div>
     </div>
-    <div class="points">
-      
-      <div class="point"><div class="num">01</div><div><h3>Root-cause care</h3><p>We find out why it hurts, not just where.</p></div></div>
-      
-      <div class="point"><div class="num">02</div><div><h3>Gentle techniques</h3><p>Comfortable adjustments for every age and condition.</p></div></div>
-      
-      <div class="point"><div class="num">03</div><div><h3>Clear plans</h3><p>You&#39;ll know your plan, timeline and costs from day one.</p></div></div>
-      
+  </section>
+
+  <section class="cta" aria-label="Book">
+    <div class="cta-bars" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+    <div class="wrap" style="position:relative">
+      <span class="label rv">Balmoral Chiropractic Centre</span>
+      <h2 class="rv r2">Your body, <em>realigned.</em></h2>
+      <p class="rv r3">The first step is a short phone call. We'll take it from there, together.</p>
+      <div class="ctas rv r4">
+        <a class="btn btn-solid" href="tel:+6562359083">Call +65 6235 9083</a>
+        <a class="btn btn-ghost" href="https://maps.google.com/?q=271+Bukit+Timah+Rd+%2304-02+Singapore+259708" target="_blank" rel="noopener">Get directions</a>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-
-
-<section class="cta-band" id="book">
-  <div class="wrap"><div class="cta-box">
-    <div><h2>Ready when you are.</h2><p>Book your first visit in under a minute, or give us a call and talk to a real person.</p></div>
-    <div class="actions">
-      <a class="btn" href="#visit">Book your first visit</a>
-      <a class="btn ghost" href="tel:+6562359083">Call +6562359083</a>
+  <section id="contact" class="visit visit-outer">
+    <div class="wrap">
+      <div class="v-main">
+        <span class="label rv"><i></i>05 — Visit us</span>
+        <h2 class="rv r2">Come and <em>see us.</em></h2>
+        <div class="v-rows">
+          <div class="v-row rv"><span class="label">Phone</span><a class="u" href="tel:+6562359083">+65 6235 9083</a></div>
+          <div class="v-row rv"><span class="label">Address</span><div>271 Bukit Timah Rd, #04-02<small>Singapore 259708</small></div></div>
+          <div class="v-row rv"><span class="label">Hours</span><div>By appointment<small>Please call to confirm current opening hours.</small></div></div>
+        </div>
+      </div>
+      <a class="v-map" href="https://maps.google.com/?q=271+Bukit+Timah+Rd+%2304-02+Singapore+259708" target="_blank" rel="noopener" aria-label="Open location in Google Maps">
+        <svg class="grid" viewBox="0 0 400 440" preserveAspectRatio="xMidYMid slice" fill="none" stroke="#fff" stroke-width="1"><path d="M0 120L400 60M0 260L400 200M0 380L400 340M80 0L120 440M220 0L250 440M330 0L350 440"/><path d="M-20 300C80 260 160 230 400 120" stroke-width="10" stroke="#D9A441" opacity=".7"/></svg>
+        <span class="pin"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 21s7-6.2 7-12a7 7 0 10-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="9" r="2.5"/></svg></span>
+        <div>
+          <span class="label">Bukit Timah Road</span>
+          <h3>Open in Google Maps</h3>
+          <span class="go">Get directions <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </div>
+      </a>
     </div>
-  </div></div>
-</section>
-
-<section class="block" id="visit" style="padding-top:0">
-  <div class="wrap">
-    <div class="kicker">Visit us</div><h2>Come say hello.</h2>
-    <div class="visit">
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11l8-7 8 7v9a1 1 0 01-1 1h-4v-6H9v6H5a1 1 0 01-1-1z"/></svg></div><h3>Address</h3><p>271 Bukit Timah Rd, #04-02, Singapore 259708</p></div>
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div><h3>Phone</h3><p><a href="tel:+6562359083">+6562359083</a></p><p style="margin-top:10px">Call or message us for today's opening hours.</p></div>
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-7-4.4-7-10a4 4 0 017-2.6A4 4 0 0119 10c0 5.6-7 10-7 10z"/></svg></div><h3>Most insurance accepted</h3><p>Book your first visit online or by phone and we'll take care of the rest.</p></div>
-    </div>
-  </div>
-</section>
+  </section>
 </main>
 
-<footer><div class="wrap">
-  <span>© 2026 Balmoral Chiropractic Centre</span>
-  <span>Concept design by webstudio. Not affiliated with or endorsed by Balmoral Chiropractic Centre.</span>
-</div></footer>
+<footer>
+  <div class="wrap">
+    <div class="f-top">
+      <div class="f-name">Balmoral<br><em>Chiropractic</em> Centre</div>
+      <div class="f-links">
+        <span class="label">Visit</span>
+        <span>271 Bukit Timah Rd, #04-02</span>
+        <span>Singapore 259708</span>
+        <a class="u" href="tel:+6562359083" style="justify-self:start">+65 6235 9083</a>
+      </div>
+      <div class="f-links">
+        <span class="label">Explore</span>
+        <a class="u" href="#services" style="justify-self:start">Care</a>
+        <a class="u" href="#about" style="justify-self:start">About</a>
+        <a class="u" href="#process" style="justify-self:start">Your visit</a>
+        <a class="u" href="#faq" style="justify-self:start">FAQ</a>
+      </div>
+    </div>
+    <div class="f-bot">
+      <span>© <span id="yr"></span> Balmoral Chiropractic Centre. Singapore.</span>
+      <a class="u" href="#top">Back to top ↑</a>
+    </div>
+  </div>
+</footer>
 
-<div class="mobile-bar">
-  <a class="btn ghost" href="tel:+6562359083">Call</a>
-  <a class="btn" href="#visit">Book now</a>
+<div class="mbar" id="mbar">
+  <a href="tel:+6562359083"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 005 5L15 13l5 2v4a2 2 0 01-2 2A16 16 0 013 6a2 2 0 012-2"/></svg>Call</a>
+  <a href="#contact"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s7-6.2 7-12a7 7 0 10-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="9" r="2.5"/></svg>Visit</a>
 </div>
-</body>
+
+<script>
+(function(){
+  var d=document.documentElement,b=document.body;
+  d.classList.add('js');
+  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  document.getElementById('yr').textContent=new Date().getFullYear();
+
+  // Spine: start misaligned in a curve, settle into alignment
+  var bars=[].slice.call(document.querySelectorAll('#spine b')),mid=(bars.length-1)/2;
+  function curve(k){bars.forEach(function(el,i){var t=(i-mid)/mid;var y=Math.sin(t*Math.PI)*28*k;var r=Math.cos(t*Math.PI)*14*k;el.style.transform='translateY('+y.toFixed(1)+'px) rotate('+r.toFixed(1)+'deg)';});}
+  if(!reduce){curve(1);bars.forEach(function(el,i){el.style.transitionDelay=(.7+Math.abs(i-mid)*.06)+'s';});}
+  window.addEventListener('load',function(){requestAnimationFrame(function(){b.classList.add('loaded');if(!reduce)curve(0);});});
+  setTimeout(function(){if(!b.classList.contains('loaded')){b.classList.add('loaded');if(!reduce)curve(0);}},1800);
+
+  // Header + mobile bar + hero parallax
+  var hdr=document.getElementById('hdr'),mbar=document.getElementById('mbar'),h1=document.querySelector('.hero h1'),grid=document.querySelector('.hero-grid'),ticking=false;
+  function onScroll(){
+    var y=window.scrollY;
+    hdr.classList.toggle('scrolled',y>30);
+    mbar.classList.toggle('show',y>window.innerHeight*.6);
+    if(!reduce&&y<window.innerHeight*1.2){
+      h1.style.transform='translateY('+(y*.18)+'px)';
+      grid.style.transform='translateY('+(y*.35)+'px)';
+    }
+    ticking=false;
+  }
+  window.addEventListener('scroll',function(){if(!ticking){requestAnimationFrame(onScroll);ticking=true;}},{passive:true});
+  onScroll();
+
+  // Mobile menu
+  var burger=document.getElementById('burger'),mm=document.getElementById('mmenu');
+  function setMenu(open){b.classList.toggle('menu-open',open);burger.setAttribute('aria-expanded',open);mm.setAttribute('aria-hidden',!open);b.style.overflow=open?'hidden':'';}
+  burger.addEventListener('click',function(){setMenu(!b.classList.contains('menu-open'));});
+  mm.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){setMenu(false);});});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')setMenu(false);});
+
+  // Reveal on scroll
+  var els=document.querySelectorAll('.rv,.step');
+  if('IntersectionObserver' in window&&!reduce){
+    var io=new IntersectionObserver(function(en){en.forEach(function(e){if(e.isIntersecting){e.target.classList.add('vis');io.unobserve(e.target);}});},{threshold:.15,rootMargin:'0px 0px -40px 0px'});
+    els.forEach(function(el){io.observe(el);});
+  }else{els.forEach(function(el){el.classList.add('vis');});}
+})();
+</script>
+<div id="lm-concept" style="position:fixed;left:12px;bottom:12px;z-index:2147483647;font:500 11px/1.3 -apple-system,BlinkMacSystemFont,Segoe UI,sans-serif;letter-spacing:.02em;background:rgba(15,15,18,.82);color:#f4f1ea;padding:7px 11px;border-radius:999px;backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);pointer-events:none;max-width:70vw">Website concept for Balmoral Chiropractic Centre by webstudio &middot; not the live site</div><p style="margin:0;padding:18px 16px 70px;text-align:center;font:12px/1.5 -apple-system,sans-serif;color:#8a8a8a;background:#0e0e10">Concept design by webstudio. Not affiliated with or endorsed by Balmoral Chiropractic Centre.</p></body>
 </html>
