@@ -1,291 +1,698 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src * data: blob:; media-src 'self' data:; style-src 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com data:; script-src 'unsafe-inline'; connect-src 'none'; frame-src 'none'; form-action 'none'; base-uri 'none'; object-src 'none'">
 <meta name="robots" content="noindex, nofollow">
-<title>Intertech Commercial Flooring | Website concept</title>
+<style>html,body{max-width:100%;overflow-x:clip}</style>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Intertech Commercial Flooring | Expertly Installed Commercial Flooring in Austin, TX</title>
+<meta name="description" content="Founded in Austin in 1988, Intertech Commercial Flooring delivers expertly installed carpet, resilient, tile, stone, wood, access, sports flooring, coatings and polished concrete throughout Texas and the Southwest.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{
-  --bg:#f5f3ee;--surface:#ffffff;--ink:#1c2a22;--muted:#5f6b63;
-  --accent:#2f5a43;--accent-ink:#ffffff;--gold:#b8955a;--soft:#e6ece6;
-  --radius:22px;--max:1180px;
-  --serif:"Fraunces",Georgia,serif;--sans:"Manrope",system-ui,-apple-system,sans-serif;
+  --bg:#0F1115;--sf:#1A1D23;--sf2:#22262D;--tx:#F2EEE6;--mut:rgba(242,238,230,.7);--dim:rgba(242,238,230,.5);
+  --br:#C8A96A;--br2:#E2CB97;--brd:#8E7746;--sl:#7D8C9E;--ln:rgba(200,169,106,.22);
+  --r:18px;--ease:cubic-bezier(.2,.7,.1,1);
 }
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;overflow-x:clip}
+body{font-family:"Sora",system-ui,sans-serif;background:var(--bg);color:var(--tx);font-weight:300;line-height:1.65;overflow-x:clip;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
 a{color:inherit;text-decoration:none}
-img{max-width:100%;display:block}
-.wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
-.concept{background:var(--ink);color:var(--bg);font-size:13px;text-align:center;padding:8px 16px;letter-spacing:.02em}
-.concept b{color:var(--gold);font-weight:600}
+h1,h2,h3{font-weight:500;line-height:1.08;letter-spacing:-.02em}
+.wrap{width:min(1240px,100% - 48px);margin-inline:auto}
+.label{display:inline-flex;align-items:center;gap:12px;font-size:.72rem;font-weight:500;letter-spacing:.28em;text-transform:uppercase;color:var(--br)}
+.label::before{content:"";width:28px;height:1px;background:currentColor}
+.h2{font-size:clamp(2.1rem,5vw,4rem);margin:18px 0 22px}
+.h2 em{font-style:normal;color:var(--br);font-weight:300}
+.lead{color:var(--mut);font-size:clamp(1rem,1.3vw,1.12rem);max-width:60ch}
+section{padding:clamp(80px,11vw,150px) 0}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:16px 28px;border-radius:100px;font-size:.88rem;font-weight:500;letter-spacing:.04em;transition:transform .4s var(--ease),background .4s,color .4s,border-color .4s,box-shadow .4s;text-align:center}
+.btn-gold{background:var(--br);color:#14120E;box-shadow:0 10px 30px -12px rgba(200,169,106,.6)}
+.btn-gold:hover{background:var(--br2);transform:translateY(-3px)}
+.btn-ghost{border:1px solid rgba(242,238,230,.35);color:var(--tx);backdrop-filter:blur(6px)}
+.btn-ghost:hover{border-color:var(--br);color:var(--br);transform:translateY(-3px)}
+.btn svg{width:16px;height:16px}
+.ul{background:linear-gradient(var(--br),var(--br)) 0 100%/0 1px no-repeat;transition:background-size .45s var(--ease)}
+.ul:hover{background-size:100% 1px}
 
 /* header */
-header{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:saturate(1.4) blur(10px);border-bottom:1px solid color-mix(in srgb,var(--ink) 8%,transparent)}
-.nav{display:flex;align-items:center;justify-content:space-between;height:76px;gap:24px}
-.brand{font-family:var(--serif);font-size:23px;font-weight:600;letter-spacing:-.01em;line-height:1.1;max-width:340px}
-.links{display:flex;gap:30px;font-size:15px;font-weight:500;color:var(--muted)}
-.links a:hover{color:var(--ink)}
-.nav-right{display:flex;align-items:center;gap:18px}
-.phone{font-weight:600;font-size:15px;white-space:nowrap}
-.btn{display:inline-flex;align-items:center;gap:10px;background:var(--accent);color:var(--accent-ink);padding:14px 26px;border-radius:999px;font-weight:600;font-size:15.5px;transition:transform .2s ease,box-shadow .2s ease;white-space:nowrap}
-.btn:hover{transform:translateY(-2px);box-shadow:0 12px 28px -12px var(--accent)}
-.btn.ghost{background:transparent;color:var(--ink);border:1.5px solid color-mix(in srgb,var(--ink) 20%,transparent)}
-.btn.ghost:hover{box-shadow:none;border-color:var(--ink)}
-.btn svg{width:18px;height:18px}
+.hdr{position:fixed;inset:0 0 auto;z-index:50;transition:background .4s,border-color .4s,padding .4s;border-bottom:1px solid transparent;padding:18px 0}
+.hdr.scrolled{background:rgba(15,17,21,.72);backdrop-filter:blur(16px) saturate(140%);-webkit-backdrop-filter:blur(16px) saturate(140%);border-color:var(--ln);padding:10px 0}
+.hdr .wrap{display:flex;align-items:center;justify-content:space-between;gap:20px}
+.brand{display:flex;align-items:center;gap:14px;min-width:0}
+.brand .chip{background:var(--tx);border-radius:10px;padding:6px 10px;display:flex;align-items:center;flex-shrink:0}
+.brand img{height:30px;width:auto}
+.brand span{font-size:.78rem;letter-spacing:.2em;text-transform:uppercase;font-weight:500;line-height:1.3;white-space:nowrap}
+.brand small{display:block;color:var(--br);font-size:.62rem;letter-spacing:.3em}
+.nav{display:flex;gap:30px;font-size:.84rem;color:var(--mut)}
+.nav a:hover{color:var(--tx)}
+.hdr-cta{display:flex;align-items:center;gap:18px}
+.hdr-cta .tel{font-size:.86rem;font-weight:500;color:var(--tx)}
+.hdr-cta .btn{padding:12px 22px}
+.burger{display:none;width:44px;height:44px;border-radius:50%;border:1px solid var(--ln);background:rgba(26,29,35,.6);color:var(--tx);cursor:pointer;align-items:center;justify-content:center}
+.burger i{display:block;width:18px;height:1px;background:currentColor;position:relative;transition:.3s}
+.burger i::before,.burger i::after{content:"";position:absolute;left:0;width:100%;height:1px;background:currentColor;transition:.3s}
+.burger i::before{top:-6px}.burger i::after{top:6px}
+.menu-open .burger i{background:transparent}
+.menu-open .burger i::before{top:0;transform:rotate(45deg)}
+.menu-open .burger i::after{top:0;transform:rotate(-45deg)}
+.mnav{position:fixed;inset:0;z-index:45;background:rgba(15,17,21,.97);display:flex;flex-direction:column;justify-content:center;padding:0 32px;gap:8px;opacity:0;visibility:hidden;transition:.4s}
+.mnav a{font-size:2rem;font-weight:300;padding:8px 0;border-bottom:1px solid var(--ln)}
+.mnav .btn{margin-top:24px;font-size:1rem;border:0}
+.menu-open .mnav{opacity:1;visibility:visible}
 
 /* hero */
-.hero{padding:72px 0 88px}
-.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:64px;align-items:center}
-.eyebrow{display:inline-flex;align-items:center;gap:10px;background:var(--surface);border:1px solid color-mix(in srgb,var(--ink) 10%,transparent);padding:8px 16px 8px 10px;border-radius:999px;font-size:14px;font-weight:600;color:var(--muted)}
-.stars{color:var(--gold);letter-spacing:1px;font-size:14px}
-.eyebrow .dot{width:26px;height:26px;border-radius:50%;background:var(--soft);display:grid;place-items:center;color:var(--accent)}
-h1{font-family:var(--serif);font-weight:500;font-size:clamp(44px,5.6vw,74px);line-height:1.02;letter-spacing:-.025em;margin:26px 0 22px}
-h1 em{font-style:italic;color:var(--accent)}
-.lead-text{font-size:19.5px;color:var(--muted);max-width:540px}
-.hero-ctas{display:flex;gap:14px;margin-top:36px;flex-wrap:wrap}
-.ticks{display:flex;gap:22px;margin-top:34px;flex-wrap:wrap;font-size:14.5px;font-weight:600;color:var(--muted)}
-.ticks span{display:flex;align-items:center;gap:8px}
-.ticks svg{width:18px;height:18px;color:var(--accent)}
-.visual{position:relative}
-.photo{aspect-ratio:4/5;border-radius:calc(var(--radius) + 10px);overflow:hidden;background:var(--soft);box-shadow:0 40px 80px -40px color-mix(in srgb,var(--ink) 55%,transparent)}
-.photo img{width:100%;height:100%;object-fit:cover}
-.quote-panel{aspect-ratio:4/5;border-radius:calc(var(--radius) + 10px);background:linear-gradient(155deg,var(--accent),color-mix(in srgb,var(--accent) 55%,var(--ink)));color:var(--accent-ink);padding:52px 46px;display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden;box-shadow:0 40px 80px -40px color-mix(in srgb,var(--ink) 60%,transparent)}
-.quote-panel:before{content:"";position:absolute;width:420px;height:420px;border-radius:50%;right:-160px;top:-160px;background:color-mix(in srgb,var(--accent-ink) 9%,transparent)}
-.quote-panel:after{content:"";position:absolute;width:260px;height:260px;border-radius:50%;left:-90px;bottom:-110px;border:1.5px solid color-mix(in srgb,var(--accent-ink) 22%,transparent)}
-.quote-mark{font-family:var(--serif);font-size:120px;line-height:.6;opacity:.35}
-.quote-panel p{font-family:var(--serif);font-size:28px;line-height:1.3;position:relative;z-index:1}
-.quote-panel .who{font-family:var(--sans);font-size:15px;opacity:.85;margin-top:22px;font-weight:600}
-.float{position:absolute;background:var(--surface);color:var(--ink);border-radius:18px;padding:16px 20px;box-shadow:0 24px 50px -24px color-mix(in srgb,var(--ink) 50%,transparent);display:flex;align-items:center;gap:14px;font-size:14px;line-height:1.35}
-.float b{font-size:22px;font-family:var(--serif);font-weight:600;display:block}
-.float.one{left:-34px;bottom:-28px}
-.float.two{right:-22px;top:44px}
-.float .badge{width:44px;height:44px;border-radius:14px;background:var(--soft);display:grid;place-items:center;color:var(--accent)}
-.float .badge svg{width:22px;height:22px}
+.hero{position:sticky;top:0;height:100vh;height:100svh;min-height:600px;overflow:hidden;display:flex;align-items:flex-end;z-index:0}
+.hero-img{position:absolute;inset:-6% 0;will-change:transform}
+.hero-img img{width:100%;height:100%;object-fit:cover;transform:scale(1.08);animation:heroZoom 2.4s var(--ease) forwards}
+@keyframes heroZoom{to{transform:scale(1)}}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(15,17,21,.55) 0%,rgba(15,17,21,.2) 30%,rgba(15,17,21,.75) 68%,#0F1115 100%),linear-gradient(90deg,rgba(15,17,21,.75),transparent 70%)}
+.hero-frame{position:absolute;inset:clamp(14px,2.4vw,30px);border:1px solid rgba(200,169,106,.35);z-index:1;pointer-events:none}
+.hero-frame::before,.hero-frame::after{content:"";position:absolute;width:18px;height:18px;border:1px solid var(--br)}
+.hero-frame::before{top:-1px;left:-1px;border-right:0;border-bottom:0}
+.hero-frame::after{bottom:-1px;right:-1px;border-left:0;border-top:0}
+.hero-in{position:relative;z-index:2;padding-bottom:clamp(70px,11vh,120px);width:100%}
+.hero-grid{display:grid;grid-template-columns:1fr auto;align-items:end;gap:40px}
+.hero h1{font-size:clamp(2.8rem,8.4vw,7.6rem);font-weight:300;letter-spacing:-.045em;line-height:.98;margin:22px 0 26px}
+.hero h1 b{font-weight:600;display:block}
+.hero h1 .gold{color:var(--br);font-weight:300}
+.hero p{max-width:52ch;color:rgba(242,238,230,.86);font-size:clamp(1rem,1.4vw,1.15rem)}
+.hero-btns{display:flex;flex-wrap:wrap;gap:14px;margin-top:34px}
+.seal{width:150px;height:150px;position:relative;flex-shrink:0}
+.seal svg{width:100%;height:100%;animation:spin 26s linear infinite}
+.seal strong{position:absolute;inset:0;display:grid;place-items:center;font-size:1.5rem;font-weight:600;color:var(--br);letter-spacing:-.02em}
+@keyframes spin{to{transform:rotate(360deg)}}
+.rise{opacity:0;transform:translateY(34px);transition:opacity 1.1s var(--ease),transform 1.1s var(--ease)}
+.loaded .rise{opacity:1;transform:none}
+.loaded .d1{transition-delay:.15s}.loaded .d2{transition-delay:.3s}.loaded .d3{transition-delay:.45s}.loaded .d4{transition-delay:.6s}.loaded .d5{transition-delay:.8s}
+.scroll-cue{position:absolute;left:50%;bottom:26px;z-index:2;transform:translateX(-50%);font-size:.62rem;letter-spacing:.3em;text-transform:uppercase;color:var(--dim);display:flex;flex-direction:column;align-items:center;gap:10px}
+.scroll-cue::after{content:"";width:1px;height:38px;background:linear-gradient(var(--br),transparent);animation:cue 2s ease-in-out infinite}
+@keyframes cue{0%,100%{transform:scaleY(.4);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}}
 
-/* trust */
-.trust{border-top:1px solid color-mix(in srgb,var(--ink) 9%,transparent);border-bottom:1px solid color-mix(in srgb,var(--ink) 9%,transparent);background:var(--surface)}
-.trust .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;padding-top:26px;padding-bottom:26px}
-.trust div{display:flex;align-items:center;gap:12px;font-weight:600;font-size:15px}
-.trust svg{width:22px;height:22px;color:var(--accent);flex:none}
+/* panels sliding over hero */
+.panels{position:relative;z-index:2;background:var(--bg);border-radius:32px 32px 0 0;box-shadow:0 -40px 80px -20px rgba(0,0,0,.6)}
+.panels::before{content:"";position:absolute;top:0;left:50%;transform:translateX(-50%);width:min(380px,60%);height:1px;background:linear-gradient(90deg,transparent,var(--br),transparent)}
 
-/* sections */
-section.block{padding:110px 0}
-.kicker{font-size:13px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
-h2{font-family:var(--serif);font-weight:500;font-size:clamp(34px,3.8vw,52px);line-height:1.08;letter-spacing:-.02em;margin:14px 0 18px}
-.section-head{display:flex;justify-content:space-between;align-items:end;gap:40px;margin-bottom:56px}
-.section-head p{color:var(--muted);max-width:420px}
-.services{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-.card{background:var(--surface);border-radius:var(--radius);padding:34px 32px 36px;border:1px solid color-mix(in srgb,var(--ink) 7%,transparent);transition:transform .25s ease,box-shadow .25s ease}
-.card:hover{transform:translateY(-4px);box-shadow:0 30px 60px -36px color-mix(in srgb,var(--ink) 45%,transparent)}
-.icon{width:54px;height:54px;border-radius:16px;background:var(--soft);color:var(--accent);display:grid;place-items:center;margin-bottom:24px}
-.icon svg{width:26px;height:26px}
-.card h3{font-family:var(--serif);font-weight:500;font-size:23px;margin-bottom:8px;letter-spacing:-.01em}
-.card p{color:var(--muted);font-size:16px}
+/* marquee */
+.marquee{border-bottom:1px solid var(--ln);padding:30px 0;overflow:hidden;border-radius:32px 32px 0 0}
+.mq-track{display:flex;width:max-content;animation:mq 42s linear infinite}
+.mq-track span{display:flex;align-items:center;gap:34px;padding-right:34px;font-size:clamp(1rem,1.8vw,1.35rem);font-weight:300;white-space:nowrap;color:var(--mut)}
+.mq-track span::after{content:"";width:8px;height:8px;transform:rotate(45deg);border:1px solid var(--br)}
+.mq-track b{font-weight:500;color:var(--tx)}
+@keyframes mq{to{transform:translateX(-50%)}}
 
-.why{background:var(--ink);color:var(--bg)}
-.why .kicker{color:var(--gold)}
-.why-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:80px;align-items:start}
-.why h2{color:var(--bg)}
-.why .intro{color:color-mix(in srgb,var(--bg) 70%,transparent);font-size:18px;max-width:440px}
-.points{display:grid;gap:14px}
-.point{display:grid;grid-template-columns:62px 1fr;gap:20px;padding:30px;border-radius:var(--radius);background:color-mix(in srgb,var(--bg) 6%,transparent);border:1px solid color-mix(in srgb,var(--bg) 10%,transparent)}
-.point .num{font-family:var(--serif);font-size:34px;color:var(--gold);line-height:1}
-.point h3{font-family:var(--serif);font-weight:500;font-size:24px;margin-bottom:6px}
-.point p{color:color-mix(in srgb,var(--bg) 72%,transparent);font-size:16px}
+/* promise */
+.promise{padding-top:clamp(70px,9vw,120px)}
+.promise-top{display:grid;grid-template-columns:1.1fr 1fr;gap:60px;align-items:end;margin-bottom:60px}
+.pillars{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--ln)}
+.pillar{padding:40px 34px 10px 0;position:relative}
+.pillar+.pillar{padding-left:34px;border-left:1px solid var(--ln)}
+.pillar .no{font-size:.72rem;letter-spacing:.25em;color:var(--sl)}
+.pillar h3{font-size:clamp(1.6rem,2.6vw,2.2rem);margin:16px 0 12px}
+.pillar p{color:var(--mut);font-size:.95rem}
 
-.score{display:flex;align-items:center;gap:18px;background:var(--surface);padding:16px 24px;border-radius:18px;border:1px solid color-mix(in srgb,var(--ink) 8%,transparent)}
-.score b{font-family:var(--serif);font-size:40px;font-weight:500;line-height:1}
-.score small{display:block;color:var(--muted);font-size:14px}
-.reviews{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-.review{background:var(--surface);border-radius:var(--radius);padding:34px;display:flex;flex-direction:column;gap:22px;border:1px solid color-mix(in srgb,var(--ink) 7%,transparent)}
-.review p{font-family:var(--serif);font-size:19.5px;line-height:1.45}
-.review .by{margin-top:auto;display:flex;align-items:center;gap:12px;font-weight:600;font-size:15px}
-.avatar{width:40px;height:40px;border-radius:50%;background:var(--soft);color:var(--accent);display:grid;place-items:center;font-weight:700}
-.review .src{color:var(--muted);font-weight:500;font-size:13px;display:block}
+/* services */
+.services{background:linear-gradient(180deg,var(--bg),#13161B 40%,var(--bg))}
+.svc-head{display:flex;justify-content:space-between;align-items:end;gap:40px;flex-wrap:wrap;margin-bottom:56px}
+.svc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.svc{background:var(--sf);border:1px solid rgba(242,238,230,.06);border-radius:var(--r);padding:34px 28px 30px;position:relative;overflow:hidden;transition:transform .5s var(--ease),border-color .5s,background .5s;min-height:300px;display:flex;flex-direction:column}
+.svc::before{content:"";position:absolute;inset:0;background:radial-gradient(500px 220px at 100% 0,rgba(200,169,106,.12),transparent 60%);opacity:0;transition:opacity .5s}
+.svc:hover{transform:translateY(-8px);border-color:var(--ln);background:var(--sf2)}
+.svc:hover::before{opacity:1}
+.svc .ic{width:52px;height:52px;border-radius:50%;border:1px solid var(--ln);display:grid;place-items:center;color:var(--br);margin-bottom:auto}
+.svc .ic svg{width:24px;height:24px}
+.svc .n{position:absolute;top:30px;right:28px;font-size:.7rem;letter-spacing:.2em;color:var(--sl)}
+.svc h3{font-size:1.32rem;margin:40px 0 10px;position:relative}
+.svc p{color:var(--mut);font-size:.9rem;position:relative}
+.svc.feat{grid-column:span 2;background:linear-gradient(140deg,#2A2418,#1A1D23 60%);border-color:var(--ln)}
+.svc.cta{background:var(--br);color:#14120E;justify-content:space-between}
+.svc.cta p{color:rgba(20,18,14,.8)}
+.svc.cta h3{margin-top:0;font-size:1.6rem}
+.svc.cta .go{display:inline-flex;align-items:center;gap:10px;font-weight:600;font-size:.9rem;margin-top:22px}
+.svc.cta:hover{background:var(--br2)}
 
-.cta-band{padding:0 0 110px}
-.cta-box{border-radius:calc(var(--radius) + 12px);background:linear-gradient(140deg,var(--accent),color-mix(in srgb,var(--accent) 60%,var(--ink)));color:var(--accent-ink);padding:76px 64px;display:grid;grid-template-columns:1.3fr 1fr;gap:40px;align-items:center;position:relative;overflow:hidden}
-.cta-box:after{content:"";position:absolute;right:-120px;bottom:-200px;width:460px;height:460px;border-radius:50%;border:1.5px solid color-mix(in srgb,var(--accent-ink) 22%,transparent)}
-.cta-box h2{color:inherit;margin:0 0 12px}
-.cta-box p{opacity:.85;font-size:18px}
-.cta-box .actions{display:flex;flex-direction:column;gap:12px;align-items:flex-start;position:relative;z-index:1}
-.cta-box .btn{background:var(--accent-ink);color:var(--accent)}
-.cta-box .btn.ghost{background:transparent;color:var(--accent-ink);border-color:color-mix(in srgb,var(--accent-ink) 40%,transparent)}
+/* story */
+.story-grid{display:grid;grid-template-columns:1fr 1.05fr;gap:clamp(40px,7vw,110px);align-items:center}
+.frames{position:relative;aspect-ratio:4/5}
+.frame{position:absolute;padding:12px;background:linear-gradient(145deg,#2B2519,#15171C);border:1px solid var(--ln);box-shadow:0 40px 80px -30px rgba(0,0,0,.8)}
+.frame img{width:100%;height:100%;object-fit:cover}
+.frame.a{inset:0 22% 14% 0}
+.frame.b{width:52%;aspect-ratio:1;right:0;bottom:0}
+.frame.a::after{content:"";position:absolute;inset:5px;border:1px solid rgba(200,169,106,.3);pointer-events:none}
+.year{position:absolute;left:-4%;bottom:-6%;font-size:clamp(4.5rem,11vw,9rem);font-weight:700;line-height:1;letter-spacing:-.06em;color:transparent;-webkit-text-stroke:1px var(--br);z-index:3;pointer-events:none}
+.story p+p{margin-top:18px}
+.beliefs{margin-top:40px;border-top:1px solid var(--ln)}
+.beliefs li{list-style:none;display:flex;gap:18px;align-items:baseline;padding:14px 0;border-bottom:1px solid rgba(200,169,106,.12);font-size:1.02rem;transition:padding .4s var(--ease),color .4s}
+.beliefs li:hover{padding-left:10px;color:var(--br)}
+.beliefs li span{font-size:.7rem;letter-spacing:.2em;color:var(--sl);min-width:24px}
 
-.visit{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:10px}
-.visit .card h3{font-size:20px}
-.visit a{color:var(--accent);font-weight:600}
-footer{border-top:1px solid color-mix(in srgb,var(--ink) 9%,transparent);padding:40px 0 110px;color:var(--muted);font-size:14px}
-footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
-.mobile-bar{display:none}
+/* panorama signature */
+.pano{position:relative;height:clamp(420px,72vh,720px);overflow:hidden;display:grid;place-items:center;text-align:center;padding:0}
+.pano img{position:absolute;inset:-10% 0;width:100%;height:120%;object-fit:cover;will-change:transform}
+.pano::after{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(15,17,21,.55),rgba(15,17,21,.88))}
+.pano .q{position:relative;z-index:2;padding:0 24px}
+.pano blockquote{font-size:clamp(2rem,6.4vw,5.6rem);font-weight:300;letter-spacing:-.04em;line-height:1.02;max-width:16ch;margin:22px auto 0}
+.pano blockquote b{font-weight:600;color:var(--br)}
 
-@keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
-.hero .copy>*{animation:rise .8s cubic-bezier(.2,.7,.2,1) both}
-.hero .copy>*:nth-child(2){animation-delay:.08s}.hero .copy>*:nth-child(3){animation-delay:.16s}
-.hero .copy>*:nth-child(4){animation-delay:.24s}.hero .copy>*:nth-child(5){animation-delay:.32s}
-.visual{animation:rise 1s .2s cubic-bezier(.2,.7,.2,1) both}
+/* case */
+.case-grid{display:grid;grid-template-columns:.85fr 1fr;gap:clamp(40px,7vw,100px);align-items:center}
+.case-img{position:relative;border-radius:4px;overflow:hidden;aspect-ratio:3/4;outline:1px solid var(--ln);outline-offset:14px}
+.case-img img{width:100%;height:100%;object-fit:cover;transition:transform 1.4s var(--ease)}
+.case-img:hover img{transform:scale(1.05)}
+.case h3{font-size:clamp(1.8rem,3.6vw,3rem);font-weight:300;margin:18px 0 24px}
+.case h3 b{font-weight:600}
+.specs{display:flex;flex-wrap:wrap;gap:10px;margin:30px 0}
+.specs span{border:1px solid var(--ln);border-radius:100px;padding:8px 16px;font-size:.8rem;color:var(--br2)}
+.times{display:flex;gap:12px;align-items:center;font-size:.85rem;color:var(--mut)}
+.times i{width:42px;height:42px;border-radius:50%;border:1px solid var(--br);display:grid;place-items:center;font-style:normal;color:var(--br);font-weight:500}
 
-@media (max-width:980px){
-  .links{display:none}
-  .hero-grid,.why-grid,.cta-box{grid-template-columns:1fr}
-  .hero-grid{gap:56px}
-  .services,.reviews,.visit{grid-template-columns:1fr 1fr}
-  .trust .wrap{grid-template-columns:1fr 1fr}
-  .float.one{left:12px;bottom:-26px}.float.two{right:12px}
-  .visual{max-width:560px;margin-bottom:20px}
-  .section-head{flex-direction:column;align-items:flex-start}
+/* why */
+.why{background:var(--sf);border-radius:32px;margin:0 clamp(12px,2vw,24px)}
+.why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--ln);border:1px solid var(--ln);border-radius:var(--r);overflow:hidden;margin-top:56px}
+.why-item{background:var(--sf);padding:40px 34px;transition:background .5s}
+.why-item:hover{background:#20242B}
+.why-item svg{width:30px;height:30px;color:var(--br);margin-bottom:24px}
+.why-item h3{font-size:1.2rem;margin-bottom:10px}
+.why-item p{color:var(--mut);font-size:.92rem}
+
+/* process */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:64px;counter-reset:s}
+.step{position:relative;padding-top:44px}
+.step::before{content:"";position:absolute;top:10px;left:0;right:-24px;height:1px;background:var(--ln)}
+.step:last-child::before{right:0}
+.step::after{content:"";position:absolute;top:5px;left:0;width:11px;height:11px;transform:rotate(45deg);background:var(--bg);border:1px solid var(--br)}
+.step .num{font-size:3.4rem;font-weight:200;color:var(--br);line-height:1;letter-spacing:-.04em}
+.step h3{font-size:1.18rem;margin:16px 0 10px}
+.step p{color:var(--mut);font-size:.92rem}
+
+/* gallery */
+.gal-head{display:flex;justify-content:space-between;align-items:end;gap:30px;flex-wrap:wrap;margin-bottom:50px}
+.gallery{display:grid;grid-template-columns:repeat(12,1fr);grid-auto-rows:clamp(120px,14vw,200px);gap:14px}
+.g{position:relative;overflow:hidden;border-radius:6px;background:var(--sf)}
+.g img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s var(--ease),filter .8s}
+.g:hover img{transform:scale(1.06)}
+.g::after{content:"";position:absolute;inset:0;border:1px solid rgba(200,169,106,0);transition:border-color .6s, inset .6s var(--ease)}
+.g:hover::after{border-color:rgba(200,169,106,.7);inset:10px}
+.g1{grid-column:1/6;grid-row:span 3}
+.g2{grid-column:6/9;grid-row:span 2}
+.g3{grid-column:9/13;grid-row:span 2}
+.g4{grid-column:6/10;grid-row:span 2}
+.g5{grid-column:10/13;grid-row:span 3}
+.g6{grid-column:1/4;grid-row:span 2}
+.g7{grid-column:4/6;grid-row:span 2}
+.g8{grid-column:6/10;grid-row:span 1}
+
+/* faq */
+.faq-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(40px,6vw,90px)}
+.faq details{border-bottom:1px solid var(--ln)}
+.faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:20px;padding:26px 0;font-size:clamp(1rem,1.6vw,1.2rem);font-weight:400;transition:color .3s}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary:hover{color:var(--br)}
+.faq summary i{flex-shrink:0;width:30px;height:30px;border-radius:50%;border:1px solid var(--ln);position:relative;transition:transform .4s var(--ease),background .4s}
+.faq summary i::before,.faq summary i::after{content:"";position:absolute;left:50%;top:50%;width:10px;height:1px;background:var(--br);transform:translate(-50%,-50%)}
+.faq summary i::after{transform:translate(-50%,-50%) rotate(90deg)}
+.faq details[open] summary i{transform:rotate(45deg);background:rgba(200,169,106,.1)}
+.faq details p{color:var(--mut);padding:0 50px 26px 0;font-size:.95rem}
+
+/* cta band */
+.band{position:relative;overflow:hidden;margin:0 clamp(12px,2vw,24px);border-radius:32px;padding:clamp(90px,12vw,170px) 0;text-align:center}
+.band img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.band::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(15,17,21,.82),rgba(15,17,21,.9)),radial-gradient(circle at 50% 120%,rgba(200,169,106,.35),transparent 60%)}
+.band .wrap{position:relative;z-index:2}
+.band h2{font-size:clamp(2.3rem,6.6vw,5.6rem);font-weight:300;letter-spacing:-.04em;max-width:16ch;margin:20px auto 22px}
+.band h2 b{font-weight:600;color:var(--br)}
+.band p{color:rgba(242,238,230,.85);max-width:54ch;margin:0 auto}
+.band .hero-btns{justify-content:center}
+
+/* contact */
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,6vw,90px);align-items:start}
+.phone-big{display:inline-block;font-size:clamp(2rem,5vw,3.8rem);font-weight:300;letter-spacing:-.03em;color:var(--br);margin:26px 0 12px}
+.cards{display:grid;gap:16px}
+.office{background:var(--sf);border:1px solid rgba(242,238,230,.06);border-radius:var(--r);padding:32px;transition:border-color .4s,transform .4s var(--ease)}
+.office:hover{border-color:var(--ln);transform:translateY(-4px)}
+.office .tag{font-size:.68rem;letter-spacing:.25em;text-transform:uppercase;color:var(--sl)}
+.office h3{font-size:1.3rem;margin:10px 0 8px}
+.office address{font-style:normal;color:var(--mut);font-size:.95rem}
+.office .row{display:flex;flex-wrap:wrap;gap:12px 24px;margin-top:20px;font-size:.86rem;font-weight:500;color:var(--br)}
+.office .row a{display:inline-flex;align-items:center;gap:8px}
+.office .row svg{width:15px;height:15px}
+
+/* footer */
+footer{border-top:1px solid var(--ln);padding:70px 0 40px;margin-top:clamp(70px,9vw,120px)}
+.ft{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px}
+.ft h4{font-size:.7rem;letter-spacing:.25em;text-transform:uppercase;color:var(--br);font-weight:500;margin-bottom:18px}
+.ft ul{list-style:none;display:grid;gap:10px;font-size:.88rem;color:var(--mut)}
+.ft a:hover{color:var(--tx)}
+.ft p{color:var(--mut);font-size:.88rem;max-width:34ch;margin-top:18px}
+.fb{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;margin-top:60px;padding-top:26px;border-top:1px solid rgba(242,238,230,.06);font-size:.78rem;color:var(--dim)}
+
+/* mobile bar */
+.mbar{display:none;position:fixed;left:12px;right:12px;bottom:12px;z-index:40;gap:10px;padding:8px;border-radius:100px;background:rgba(26,29,35,.88);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid var(--ln);transform:translateY(130%);transition:transform .5s var(--ease)}
+.mbar.show{transform:none}
+.mbar a{flex:1;padding:14px 10px;font-size:.85rem}
+
+/* reveal */
+.rv{opacity:0;transform:translateY(40px);transition:opacity 1s var(--ease),transform 1s var(--ease)}
+.rv.on{opacity:1;transform:none}
+.rv.s2{transition-delay:.1s}.rv.s3{transition-delay:.2s}.rv.s4{transition-delay:.3s}
+
+@media (max-width:1080px){
+  .nav{display:none}
+  .burger{display:inline-flex}
+  .svc-grid{grid-template-columns:repeat(2,1fr)}
+  .why-grid{grid-template-columns:repeat(2,1fr)}
+  .steps{grid-template-columns:repeat(2,1fr);row-gap:50px}
+  .step::before{right:0}
+  .ft{grid-template-columns:1fr 1fr}
 }
-@media (max-width:640px){
-  body{font-size:16px}
-  .wrap{padding:0 18px}
-  .nav{height:66px}.brand{font-size:19px}
-  .phone,.nav-right .btn{display:none}
-  .hero{padding:44px 0 64px}
-  .lead-text{font-size:17.5px}
-  .hero-ctas .btn{flex:1;justify-content:center}
-  .ticks{display:none}
-  .services,.reviews,.visit,.trust .wrap{grid-template-columns:1fr}
-  section.block{padding:76px 0}
-  .quote-panel,.photo{aspect-ratio:auto;min-height:380px}.photo{aspect-ratio:4/3;min-height:0}
-  .quote-panel{padding:40px 30px 64px}.quote-panel p{font-size:23px}
-  .float{font-size:13px;padding:12px 14px}.float b{font-size:18px}
-  .float.two{display:none}
-  .cta-box{padding:52px 28px}
-  .point{grid-template-columns:44px 1fr;padding:24px}
-  .mobile-bar{display:flex;position:fixed;left:12px;right:12px;bottom:12px;z-index:30;gap:10px}
-  .mobile-bar .btn{flex:1;justify-content:center;box-shadow:0 14px 30px -14px color-mix(in srgb,var(--ink) 60%,transparent)}
-  .mobile-bar .btn.ghost{background:var(--surface)}
+@media (max-width:860px){
+  .hdr-cta .tel,.hdr-cta .btn{display:none}
+  .hero-grid{grid-template-columns:1fr}
+  .seal{display:none}
+  .promise-top,.story-grid,.case-grid,.faq-grid,.contact-grid{grid-template-columns:1fr}
+  .pillars{grid-template-columns:1fr}
+  .pillar,.pillar+.pillar{padding:30px 0;border-left:0;border-bottom:1px solid var(--ln)}
+  .frames{max-width:520px;width:100%;margin:0 auto 30px}
+  .case-img{max-width:480px;margin:0 auto}
+  .gallery{grid-template-columns:repeat(2,1fr);grid-auto-rows:clamp(150px,44vw,260px);gap:10px}
+  .g1,.g2,.g3,.g4,.g5,.g6,.g7,.g8{grid-column:auto;grid-row:auto}
+  .g1,.g5{grid-row:span 2}
+  .g8{grid-column:span 2}
+  .mbar{display:flex}
+  footer{padding-bottom:110px}
+}
+@media (max-width:560px){
+  .wrap{width:calc(100% - 36px)}
+  .brand span{font-size:.68rem;letter-spacing:.14em}
+  .brand small{font-size:.56rem;letter-spacing:.2em}
+  .brand img{height:24px}
+  .svc-grid,.why-grid,.steps{grid-template-columns:1fr}
+  .svc.feat{grid-column:auto}
+  .svc{min-height:0}
+  .hero h1{font-size:clamp(2.5rem,12vw,3.4rem)}
+  .hero-btns .btn{flex:1 1 100%}
+  .hero-in{padding-bottom:84px}
+  .faq details p{padding-right:0}
+  .ft{grid-template-columns:1fr}
+  .office{padding:26px}
+  .why-item{padding:32px 26px}
+  .year{left:0}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+  .rv,.rise{opacity:1;transform:none}
 }
 </style>
 </head>
 <body>
-<div class="concept">Website concept prepared for <b>Intertech Commercial Flooring</b> by webstudio &middot; not a live site</div>
 
-<header>
-  <div class="wrap nav">
-    <a href="#top" class="brand">Intertech Commercial Flooring</a>
-    <nav class="links">
-      <a href="#services">Services</a><a href="#why">Why us</a><a href="#visit">Visit</a>
+<header class="hdr" id="hdr">
+  <div class="wrap">
+    <a href="#top" class="brand" aria-label="Intertech Commercial Flooring home">
+      <span class="chip"><img src="img/logo.png" alt="Intertech Commercial Flooring logo"></span>
+      <span>Intertech<small>Commercial Flooring</small></span>
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <a class="ul" href="#services">Flooring Solutions</a>
+      <a class="ul" href="#story">Our Story</a>
+      <a class="ul" href="#process">Process</a>
+      <a class="ul" href="#work">Work</a>
+      <a class="ul" href="#contact">Contact</a>
     </nav>
-    <div class="nav-right">
-      <a class="phone" href="tel:5123854574">(512) 385-4574</a>
-      <a class="btn" href="#visit">Get a quote</a>
+    <div class="hdr-cta">
+      <a class="tel ul" href="tel:+15123854574">(512) 385-4574</a>
+      <a class="btn btn-gold" href="#contact">Start a Project</a>
+      <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false"><i></i></button>
     </div>
   </div>
 </header>
 
-<main id="top">
-<section class="hero">
-  <div class="wrap hero-grid">
-    <div class="copy">
-      <div class="eyebrow">
-        <span class="dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-7-4.4-7-10a4 4 0 017-2.6A4 4 0 0119 10c0 5.6-7 10-7 10z"/></svg></span>Kitchen &amp; bath remodeling
+<nav class="mnav" id="mnav" aria-label="Mobile">
+  <a href="#services">Flooring Solutions</a>
+  <a href="#story">Our Story</a>
+  <a href="#process">Process</a>
+  <a href="#work">Work</a>
+  <a href="#faq">FAQ</a>
+  <a href="#contact">Contact</a>
+  <a class="btn btn-gold" href="tel:+15123854574">Call (512) 385-4574</a>
+</nav>
+
+<section class="hero" id="top" aria-label="Introduction">
+  <div class="hero-img" id="heroImg"><img src="img/photo-11.jpg" alt="Commercial flooring installed by Intertech" fetchpriority="high"></div>
+  <div class="hero-frame" aria-hidden="true"></div>
+  <div class="hero-in wrap">
+    <div class="hero-grid">
+      <div>
+        <span class="label rise d1">Austin, Texas · Since 1988</span>
+        <h1 class="rise d2">Extraordinary,<b>expertly <span class="gold">installed.</span></b></h1>
+        <p class="rise d3">Commercial flooring for Texas and the Southwest, from carpet and resilient to tile, stone, wood, access and polished concrete. Locally owned, nationally connected, and built on more than 30 years of keeping schedules and keeping budgets.</p>
+        <div class="hero-btns rise d4">
+          <a class="btn btn-gold" href="#contact">Plan Your Project
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <a class="btn btn-ghost" href="tel:+15123854574">Call (512) 385-4574</a>
+        </div>
       </div>
-      <h1>The home you love, <em>finally finished.</em></h1>
-      <p class="lead-text">Design-build remodeling with one team from first sketch to final walkthrough, on time and on budget.</p>
-      <div class="hero-ctas">
-        <a class="btn" href="#visit">Book a design consult <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-        <a class="btn ghost" href="tel:5123854574">Call (512) 385-4574</a>
-      </div>
-      <div class="ticks">
-        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7"/></svg>Licensed &amp; insured</span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7"/></svg>3D design previews</span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7"/></svg>Fixed-price quotes</span>
+      <div class="seal rise d5" aria-hidden="true">
+        <svg viewBox="0 0 150 150"><defs><path id="c" d="M75 75m-58 0a58 58 0 1 1 116 0a58 58 0 1 1-116 0"/></defs>
+          <circle cx="75" cy="75" r="72" fill="none" stroke="rgba(200,169,106,.4)"/>
+          <text font-family="Sora" font-size="10.5" letter-spacing="4.2" fill="#C8A96A"><textPath href="#c">THE INTERTECH ADVANTAGE · EXPERIENCE MATTERS · </textPath></text>
+        </svg>
+        <strong>1988</strong>
       </div>
     </div>
-    <div class="visual">
-      
-      <div class="quote-panel"><div class="quote-mark">“</div><div><p>Design-build remodeling with one team from first sketch to final walkthrough, on time and on budget.</p><div class="who">Intertech Commercial Flooring</div></div></div>
-      
-      
-      <div class="float two"><span class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><span><b>This week</b>3D design previews</span></div>
+  </div>
+  <div class="scroll-cue" aria-hidden="true">Scroll</div>
+</section>
+
+<main class="panels">
+
+  <div class="marquee" aria-hidden="true">
+    <div class="mq-track">
+      <span><b>Deadlines Met</b></span><span>Carpet &amp; Resilient</span><span><b>Stunning Results</b></span><span>Tile &amp; Stone</span><span><b>Budgets Kept</b></span><span>Wood Flooring</span><span>Access Flooring</span><span>Sports Flooring</span><span>Coatings &amp; Finishes</span><span>Polished Concrete</span><span><b>Starnet Member</b></span>
+      <span><b>Deadlines Met</b></span><span>Carpet &amp; Resilient</span><span><b>Stunning Results</b></span><span>Tile &amp; Stone</span><span><b>Budgets Kept</b></span><span>Wood Flooring</span><span>Access Flooring</span><span>Sports Flooring</span><span>Coatings &amp; Finishes</span><span>Polished Concrete</span><span><b>Starnet Member</b></span>
     </div>
   </div>
-  <template id="qp"><div class="quote-panel"><div class="quote-mark">“</div><div><p>Design-build remodeling with one team from first sketch to final walkthrough, on time and on budget.</p><div class="who">Intertech Commercial Flooring</div></div></div></template>
-</section>
 
-<div class="trust"><div class="wrap">
-  <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.2-8 9-4.6-.8-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg>Licensed &amp; insured</div><div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.2-8 9-4.6-.8-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg>3D design previews</div><div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.2-8 9-4.6-.8-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg>Fixed-price quotes</div><div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.2-8 9-4.6-.8-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg>Financing available</div>
-</div></div>
-
-<section class="block" id="services">
-  <div class="wrap">
-    <div class="section-head">
-      <div><div class="kicker">What we do</div><h2>Everything you need,<br>under one roof.</h2></div>
-      <p>From routine visits to the work that changes how you feel about your day, Intertech Commercial Flooring takes care of it properly.</p>
+  <section class="promise">
+    <div class="wrap">
+      <div class="promise-top">
+        <div class="rv">
+          <span class="label">The Intertech Advantage</span>
+          <h2 class="h2">We keep our promises, <em>so you can keep yours.</em></h2>
+        </div>
+        <p class="lead rv s2">Missed deadlines. Budget surprises. Floors that don't hold up. There's a better way. Our team is here to help your project run smoothly, from budgeting to project management to beautifully installed floors and everything in between.</p>
+      </div>
+      <div class="pillars">
+        <div class="pillar rv"><span class="no">01</span><h3>Deadlines Met.</h3><p>With over 30 years of experience, we know a thing or two about keeping a schedule.</p></div>
+        <div class="pillar rv s2"><span class="no">02</span><h3>Stunning Results.</h3><p>Delivering extraordinary, one square foot at a time. Let our experience be your advantage.</p></div>
+        <div class="pillar rv s3"><span class="no">03</span><h3>Budgets Kept.</h3><p>Get the job done right the first time, for the budget you expect.</p></div>
+      </div>
     </div>
-    <div class="services">
-      
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11l8-7 8 7v9a1 1 0 01-1 1h-4v-6H9v6H5a1 1 0 01-1-1z"/></svg></div><h3>Kitchen remodels</h3><p>Beautiful, functional kitchens built around how you cook and live.</p></div>
-      
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/><path d="M19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8z"/></svg></div><h3>Bathroom remodels</h3><p>Spa-like bathrooms with craftsmanship that lasts.</p></div>
-      
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3" width="14" height="18" rx="1"/><path d="M9 7h2M13 7h2M9 11h2M13 11h2M9 15h2M13 15h2"/></svg></div><h3>Home additions</h3><p>More space without the move.</p></div>
-      
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 19c0-8 5-14 15-14 0 10-6 15-14 15"/><path d="M5 19c3-4 6-6 10-8"/></svg></div><h3>Basements</h3><p>Turn unused space into your favourite room.</p></div>
-      
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1-4.4-4.3 6.1-.9z"/></svg></div><h3>Design services</h3><p>3D designs so you see it before we build it.</p></div>
-      
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.2-8 9-4.6-.8-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg></div><h3>Warranty</h3><p>Workmanship guaranteed long after we leave.</p></div>
-      
-    </div>
-  </div>
-</section>
+  </section>
 
-<section class="block why" id="why">
-  <div class="wrap why-grid">
-    <div>
-      <div class="kicker">Why homeowners choose us</div>
-      <h2>The Austin remodeling company people recommend to their friends.</h2>
-      <p class="intro">it still comes down to the same three things.</p>
+  <section class="services" id="services">
+    <div class="wrap">
+      <div class="svc-head">
+        <div class="rv">
+          <span class="label">Flooring Solutions</span>
+          <h2 class="h2">Seven disciplines.<br><em>One trusted partner.</em></h2>
+        </div>
+        <p class="lead rv s2">Every surface your building needs, sourced with care and installed by people who take real pride in doing it right.</p>
+      </div>
+      <div class="svc-grid">
+        <article class="svc rv">
+          <span class="n">01</span>
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3" y="3" width="18" height="18" rx="1"/><path d="M3 9h18M3 15h18M9 3v18M15 3v18"/></svg></div>
+          <h3>Carpet &amp; Resilient</h3>
+          <p>Comfortable, durable surfaces for offices and busy commercial interiors, laid with precision from the first tile to the last.</p>
+        </article>
+        <article class="svc rv s2">
+          <span class="n">02</span>
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M3 3h8v8H3zM13 3h8v8h-8zM3 13h8v8H3zM13 13h8v8h-8z"/></svg></div>
+          <h3>Tile &amp; Stone</h3>
+          <p>Timeless materials set true and finished cleanly, for lobbies, restrooms and spaces that need to make an impression.</p>
+        </article>
+        <article class="svc feat rv s3">
+          <span class="n">03</span>
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M3 6h7v4H3zM10 6h11v4H10zM3 10h11v4H3zM14 10h7v4h-7zM3 14h5v4H3zM8 14h13v4H8z"/></svg></div>
+          <h3>Wood Flooring</h3>
+          <p>From custom white oak parquet to hand-milled curved borders and black walnut accents, our wood work can be designed and built in house. And when it comes to sourcing, we ask the hard questions before a product ever reaches your site.</p>
+        </article>
+        <article class="svc rv">
+          <span class="n">04</span>
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M3 8h18v4H3zM5 12v8M19 12v8M12 12v8M3 4h18"/></svg></div>
+          <h3>Access Flooring</h3>
+          <p>Raised access floors for data centers and technical spaces, including assessments and proactive reinforcement before heavier equipment arrives.</p>
+        </article>
+        <article class="svc rv s2">
+          <span class="n">05</span>
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3" y="5" width="18" height="14" rx="1"/><circle cx="12" cy="12" r="3"/><path d="M12 5v14"/></svg></div>
+          <h3>Sports Flooring</h3>
+          <p>Performance surfaces for courts, gyms and athletic spaces, installed with the technical care these demanding floors require.</p>
+        </article>
+        <article class="svc rv s3">
+          <span class="n">06</span>
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M4 4h12v5H4zM16 6h3v6h-8v3M10 15h2v6h-2z"/></svg></div>
+          <h3>Coatings &amp; Finishes</h3>
+          <p>Protective and decorative finishes that extend the life of your floors and keep them looking their best.</p>
+        </article>
+        <article class="svc rv">
+          <span class="n">07</span>
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="12" cy="12" r="8"/><path d="M8 10l3-3M9 14l6-6M12 16l4-4"/></svg></div>
+          <h3>Polished Concrete</h3>
+          <p>Sleek, hard-wearing concrete floors with a refined sheen for modern commercial and industrial spaces.</p>
+        </article>
+        <a href="#contact" class="svc cta rv s2">
+          <div>
+            <h3>Not sure which floor is right?</h3>
+            <p>Objective and honest advice wins the day. Tell us about your space and we'll help you choose well.</p>
+          </div>
+          <span class="go">Talk to our team <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </a>
+      </div>
     </div>
-    <div class="points">
-      
-      <div class="point"><div class="num">01</div><div><h3>Design-build</h3><p>One team, one contract, one point of contact.</p></div></div>
-      
-      <div class="point"><div class="num">02</div><div><h3>Fixed pricing</h3><p>A clear, detailed quote with no surprise change orders.</p></div></div>
-      
-      <div class="point"><div class="num">03</div><div><h3>Clean job sites</h3><p>We respect your home like it&#39;s our own.</p></div></div>
-      
+  </section>
+
+  <section class="story" id="story">
+    <div class="wrap story-grid">
+      <div class="frames rv">
+        <div class="frame a"><img src="img/photo-7.jpg" alt="Intertech commercial flooring installation" loading="lazy"></div>
+        <div class="frame b"><img src="img/photo-1.jpg" alt="Finished commercial floor by Intertech" loading="lazy"></div>
+        <div class="year" aria-hidden="true">1988</div>
+      </div>
+      <div>
+        <span class="label rv">Our Story</span>
+        <h2 class="h2 rv s2">Locally owned. <em>Nationally connected.</em></h2>
+        <p class="lead rv s2">Intertech Commercial Flooring was founded in Austin in 1988 and has grown into one of the country's leading providers of commercial flooring products and services, serving clients throughout Texas and the Southwest.</p>
+        <p class="lead rv s3">As a Starnet member, we bring national buying power, an unmatched product selection and consistent quality standards to every job, while still delivering the personal service of a locally owned business. Experience matters, expertise is delivered and extraordinary is installed.</p>
+        <ul class="beliefs rv s4" aria-label="Our fundamental beliefs">
+          <li><span>01</span>Experience matters.</li>
+          <li><span>02</span>Start strong. Finish strong.</li>
+          <li><span>03</span>Objective &amp; honest advice wins the day.</li>
+          <li><span>04</span>People matter.</li>
+          <li><span>05</span>Knowledge is best shared.</li>
+          <li><span>06</span>Find ways to raise the bar.</li>
+          <li><span>07</span>Do the right thing, always.</li>
+        </ul>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-
-
-<section class="cta-band" id="book">
-  <div class="wrap"><div class="cta-box">
-    <div><h2>Ready when you are.</h2><p>Book a design consult in under a minute, or give us a call and talk to a real person.</p></div>
-    <div class="actions">
-      <a class="btn" href="#visit">Book a design consult</a>
-      <a class="btn ghost" href="tel:5123854574">Call (512) 385-4574</a>
+  <section class="pano" aria-label="Our philosophy">
+    <img src="img/photo-12.jpg" alt="" loading="lazy" data-par="0.12">
+    <div class="q rv">
+      <span class="label">Since 1988</span>
+      <blockquote>Delivering extraordinary, <b>one square foot</b> at a time.</blockquote>
     </div>
-  </div></div>
-</section>
+  </section>
 
-<section class="block" id="visit" style="padding-top:0">
-  <div class="wrap">
-    <div class="kicker">Visit us</div><h2>Come say hello.</h2>
-    <div class="visit">
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11l8-7 8 7v9a1 1 0 01-1 1h-4v-6H9v6H5a1 1 0 01-1-1z"/></svg></div><h3>Address</h3><p>8015 Burleson Rd Bldg 1. Suite 500, Austin TX 78744</p></div>
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div><h3>Phone</h3><p><a href="tel:5123854574">(512) 385-4574</a></p><p style="margin-top:10px">Call or message us for today's opening hours.</p></div>
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-7-4.4-7-10a4 4 0 017-2.6A4 4 0 0119 10c0 5.6-7 10-7 10z"/></svg></div><h3>3D design previews</h3><p>Book a design consult online or by phone and we'll take care of the rest.</p></div>
+  <section class="case">
+    <div class="wrap case-grid">
+      <div class="case-img rv"><img src="img/photo-8.jpg" alt="Custom wood flooring craftsmanship by Intertech" loading="lazy"></div>
+      <div>
+        <span class="label rv">Craftsmanship, Proven</span>
+        <h3 class="rv s2">Three rebuilds. <b>Same floor every time.</b></h3>
+        <p class="lead rv s2">Marathon Petroleum's executive offices in San Antonio feature custom white oak parquet, hand-milled curved borders, black walnut accents and a seven-stain custom blend, all designed and built in house by Intertech.</p>
+        <div class="specs rv s3">
+          <span>White oak parquet</span><span>Hand-milled curved borders</span><span>Black walnut accents</span><span>Seven-stain custom blend</span>
+        </div>
+        <p class="lead rv s3">When water damage struck twice, the client didn't want something new. He wanted his floor back. We delivered.</p>
+        <div class="times rv s4" style="margin-top:26px"><i>1</i><i>2</i><i>3</i>&nbsp;Three times.</div>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
+
+  <section class="why" id="why">
+    <div class="wrap">
+      <span class="label rv">Why Intertech</span>
+      <h2 class="h2 rv s2">Experience you can <em>stand on.</em></h2>
+      <p class="lead rv s3">Commercial flooring is physical, technical and demanding. Here's why owners, builders and facility teams trust us with it.</p>
+      <div class="why-grid">
+        <div class="why-item rv"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><h3>30+ years of schedules kept</h3><p>Since 1988 we've learned how to start strong, finish strong, and keep your project on track.</p></div>
+        <div class="why-item rv s2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"/></svg><h3>National buying power</h3><p>Starnet membership gives us product selection and consistent quality standards, delivered with local, personal service.</p></div>
+        <div class="why-item rv s3"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg><h3>Objective, honest advice</h3><p>From product sourcing to floor capacity, we tell you what you need to know before it becomes a costly problem.</p></div>
+        <div class="why-item rv"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><circle cx="9" cy="8" r="3.5"/><circle cx="17" cy="9" r="2.5"/><path d="M3 20c0-3.5 2.7-6 6-6s6 2.5 6 6M15 14.5c3 0 6 2 6 5"/></svg><h3>People who take pride</h3><p>Our installers, apprentices, project managers and field crews are what set us apart.</p></div>
+        <div class="why-item rv s2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M4 20l4-1 11-11-3-3L5 16z"/><path d="M14 7l3 3"/></svg><h3>Built in house</h3><p>Custom details, from parquet patterns to hand-milled borders, can be designed and crafted by our own team.</p></div>
+        <div class="why-item rv s3"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M4 5h7a2 2 0 012 2v12a2 2 0 00-2-2H4zM20 5h-7a2 2 0 00-2 2v12a2 2 0 012-2h7z"/></svg><h3>Knowledge, shared</h3><p>We share what we've learned, so you can make smarter decisions on sourcing, planning and long-term care.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="process" id="process">
+    <div class="wrap">
+      <span class="label rv">How It Works</span>
+      <h2 class="h2 rv s2">Start strong. <em>Finish strong.</em></h2>
+      <p class="lead rv s3">One team guiding your project from the first number to the final square foot.</p>
+      <div class="steps">
+        <div class="step rv"><div class="num">01</div><h3>Consult &amp; advise</h3><p>We learn your space, schedule and goals, then give objective, honest guidance on the right flooring solution.</p></div>
+        <div class="step rv s2"><div class="num">02</div><h3>Budget</h3><p>Clear budgeting up front, so the job gets done right the first time, for the budget you expect.</p></div>
+        <div class="step rv s3"><div class="num">03</div><h3>Project management</h3><p>Sourcing, coordination and scheduling handled by people who know how to keep a project running smoothly.</p></div>
+        <div class="step rv s4"><div class="num">04</div><h3>Beautifully installed</h3><p>Our skilled crews install with care and finish strong, with deadlines met and stunning results.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="work" id="work" style="padding-top:0">
+    <div class="wrap">
+      <div class="gal-head">
+        <div class="rv">
+          <span class="label">Our Work</span>
+          <h2 class="h2">Extraordinary, <em>installed.</em></h2>
+        </div>
+        <a href="#contact" class="btn btn-ghost rv s2">Discuss your project</a>
+      </div>
+      <div class="gallery">
+        <figure class="g g1 rv"><img src="img/photo-9.jpg" alt="Commercial flooring project by Intertech" loading="lazy"></figure>
+        <figure class="g g2 rv s2"><img src="img/photo-2.jpg" alt="Commercial flooring detail by Intertech" loading="lazy"></figure>
+        <figure class="g g3 rv s3"><img src="img/photo-13.jpg" alt="Commercial interior flooring by Intertech" loading="lazy"></figure>
+        <figure class="g g4 rv"><img src="img/photo-3.jpg" alt="Flooring installation by Intertech" loading="lazy"></figure>
+        <figure class="g g5 rv s2"><img src="img/photo-10.jpg" alt="Commercial floor finish by Intertech" loading="lazy"></figure>
+        <figure class="g g6 rv"><img src="img/photo-4.jpg" alt="Commercial flooring by Intertech" loading="lazy"></figure>
+        <figure class="g g7 rv s2"><img src="img/photo-5.jpg" alt="Flooring craftsmanship by Intertech" loading="lazy"></figure>
+        <figure class="g g8 rv s3"><img src="img/photo-6.jpg" alt="Installed commercial floor by Intertech" loading="lazy"></figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="faq" id="faq" style="padding-top:0">
+    <div class="wrap faq-grid">
+      <div>
+        <span class="label rv">FAQ</span>
+        <h2 class="h2 rv s2">Good questions, <em>straight answers.</em></h2>
+        <p class="lead rv s3">Knowledge is best shared. If you don't see your question here, give us a call.</p>
+      </div>
+      <div class="rv s2">
+        <details open><summary>Where does Intertech work?<i></i></summary><p>We're headquartered in Austin, Texas, with an office in San Antonio, and we serve commercial clients throughout Texas and the Southwest.</p></details>
+        <details><summary>What types of flooring do you install?<i></i></summary><p>Carpet &amp; resilient, tile &amp; stone, wood flooring, access flooring, sports flooring, coatings &amp; finishes, and polished concrete.</p></details>
+        <details><summary>How long have you been in business?<i></i></summary><p>Intertech was founded in Austin in 1988, so we bring over 30 years of commercial flooring experience to every project.</p></details>
+        <details><summary>Can you help with more than installation?<i></i></summary><p>Yes. Our team supports your project from budgeting to project management to beautifully installed floors and everything in between.</p></details>
+        <details><summary>Our data center is adding equipment. Should we assess our raised floor?<i></i></summary><p>Servers have grown much heavier in recent years. Assessing your raised access floor before new equipment arrives helps avoid emergency repairs and unplanned downtime, and reinforcement options are often simpler and more affordable than people expect.</p></details>
+        <details><summary>What does Starnet membership mean for my project?<i></i></summary><p>It gives us national buying power, an unmatched product selection and consistent quality standards, combined with the personal service of a locally owned business.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <section class="band" aria-label="Get started">
+    <img src="img/photo-14.jpg" alt="" loading="lazy">
+    <div class="wrap">
+      <span class="label rv">Let our experience be your advantage</span>
+      <h2 class="rv s2">Your next floor, <b>done right</b> the first time.</h2>
+      <p class="rv s3">Tell us about your space, timeline and budget. We'll bring the expertise, honest advice and a team that finishes strong.</p>
+      <div class="hero-btns rv s4">
+        <a class="btn btn-gold" href="tel:+15123854574">Call (512) 385-4574</a>
+        <a class="btn btn-ghost" href="#contact">Visit Our Offices</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="wrap contact-grid">
+      <div>
+        <span class="label rv">Contact</span>
+        <h2 class="h2 rv s2">Let's talk <em>floors.</em></h2>
+        <p class="lead rv s3">Whether you're budgeting a new build, refreshing an office or planning ahead for a data center, the Intertech team is ready to help your project run smoothly.</p>
+        <a class="phone-big ul rv s3" href="tel:+15123854574">(512) 385-4574</a>
+        <p class="lead rv s4" style="font-size:.92rem">Hours: please call to confirm availability and schedule a visit.</p>
+      </div>
+      <div class="cards">
+        <div class="office rv">
+          <span class="tag">Headquarters</span>
+          <h3>Austin</h3>
+          <address>8015 Burleson Rd Bldg 1. Suite 500<br>Austin, TX 78744</address>
+          <div class="row">
+            <a class="ul" href="tel:+15123854574"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 005 5L15 13l5 2v4a2 2 0 01-2 2A16 16 0 013 6a2 2 0 012-2"/></svg>(512) 385-4574</a>
+            <a class="ul" href="https://maps.google.com/?q=8015+Burleson+Rd+Bldg+1+Suite+500+Austin+TX+78744" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21s-7-6-7-11a7 7 0 0114 0c0 5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>Get directions</a>
+          </div>
+        </div>
+        <div class="office rv s2">
+          <span class="tag">San Antonio</span>
+          <h3>San Antonio</h3>
+          <address>11827 Tech Com Road, Suite 100<br>San Antonio, TX 78233</address>
+          <div class="row">
+            <a class="ul" href="https://maps.google.com/?q=11827+Tech+Com+Road+Suite+100+San+Antonio+TX+78233" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21s-7-6-7-11a7 7 0 0114 0c0 5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>Get directions</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <div class="wrap">
+        <div class="ft">
+          <div>
+            <a href="#top" class="brand"><span class="chip"><img src="img/logo.png" alt="Intertech Commercial Flooring logo"></span><span>Intertech<small>Commercial Flooring</small></span></a>
+            <p>Experience the Intertech Advantage. Expertly installed commercial flooring for Texas and the Southwest since 1988.</p>
+          </div>
+          <div>
+            <h4>Solutions</h4>
+            <ul><li><a href="#services">Carpet &amp; Resilient</a></li><li><a href="#services">Tile &amp; Stone</a></li><li><a href="#services">Wood Flooring</a></li><li><a href="#services">Access Flooring</a></li></ul>
+          </div>
+          <div>
+            <h4>&nbsp;</h4>
+            <ul><li><a href="#services">Sports Flooring</a></li><li><a href="#services">Coatings &amp; Finishes</a></li><li><a href="#services">Polished Concrete</a></li><li><a href="#faq">FAQ</a></li></ul>
+          </div>
+          <div>
+            <h4>Visit</h4>
+            <ul><li><a href="tel:+15123854574">(512) 385-4574</a></li><li>8015 Burleson Rd Bldg 1. Suite 500<br>Austin, TX 78744</li><li><a href="https://maps.google.com/?q=8015+Burleson+Rd+Bldg+1+Suite+500+Austin+TX+78744" target="_blank" rel="noopener">Open in Maps</a></li></ul>
+          </div>
+        </div>
+        <div class="fb"><span>© <span id="yr">2026</span> Intertech Commercial Flooring. All rights reserved.</span><span>Deadlines Met · Stunning Results · Budgets Kept</span></div>
+      </div>
+    </footer>
+  </section>
 </main>
 
-<footer><div class="wrap">
-  <span>© 2026 Intertech Commercial Flooring</span>
-  <span>Concept design by webstudio. Not affiliated with or endorsed by Intertech Commercial Flooring.</span>
-</div></footer>
-
-<div class="mobile-bar">
-  <a class="btn ghost" href="tel:5123854574">Call</a>
-  <a class="btn" href="#visit">Get a quote</a>
+<div class="mbar" id="mbar">
+  <a class="btn btn-ghost" href="#contact">Contact</a>
+  <a class="btn btn-gold" href="tel:+15123854574">Call Now</a>
 </div>
-</body>
+
+<script>
+(function(){
+  var d=document,b=d.body,hdr=d.getElementById('hdr'),mbar=d.getElementById('mbar'),hi=d.getElementById('heroImg');
+  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  d.getElementById('yr').textContent=new Date().getFullYear();
+  requestAnimationFrame(function(){b.classList.add('loaded')});
+
+  var burger=d.getElementById('burger');
+  function closeMenu(){b.classList.remove('menu-open');burger.setAttribute('aria-expanded','false');b.style.overflow=''}
+  burger.addEventListener('click',function(){
+    var open=b.classList.toggle('menu-open');
+    burger.setAttribute('aria-expanded',open);b.style.overflow=open?'hidden':'';
+  });
+  d.querySelectorAll('#mnav a').forEach(function(a){a.addEventListener('click',closeMenu)});
+
+  var pars=[].slice.call(d.querySelectorAll('[data-par]')),ticking=false;
+  function onScroll(){
+    var y=window.scrollY,h=window.innerHeight;
+    hdr.classList.toggle('scrolled',y>40);
+    mbar.classList.toggle('show',y>h*.6);
+    if(!reduce){
+      if(y<h*1.2)hi.style.transform='translate3d(0,'+(y*.3)+'px,0)';
+      pars.forEach(function(el){
+        var r=el.parentNode.getBoundingClientRect();
+        if(r.bottom>0&&r.top<h){el.style.transform='translate3d(0,'+((r.top+r.height/2-h/2)*-parseFloat(el.dataset.par))+'px,0)'}
+      });
+    }
+    ticking=false;
+  }
+  window.addEventListener('scroll',function(){if(!ticking){ticking=true;requestAnimationFrame(onScroll)}},{passive:true});
+  onScroll();
+
+  var els=d.querySelectorAll('.rv');
+  if('IntersectionObserver' in window&&!reduce){
+    var io=new IntersectionObserver(function(es){
+      es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target)}});
+    },{threshold:.12,rootMargin:'0px 0px -40px 0px'});
+    els.forEach(function(el){io.observe(el)});
+  }else{els.forEach(function(el){el.classList.add('on')})}
+})();
+</script>
+<div id="lm-concept" style="position:fixed;left:12px;bottom:12px;z-index:2147483647;font:500 11px/1.3 -apple-system,BlinkMacSystemFont,Segoe UI,sans-serif;letter-spacing:.02em;background:rgba(15,15,18,.82);color:#f4f1ea;padding:7px 11px;border-radius:999px;backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);pointer-events:none;max-width:70vw">Website concept for Intertech Commercial Flooring by webstudio &middot; not the live site</div><p style="margin:0;padding:18px 16px 70px;text-align:center;font:12px/1.5 -apple-system,sans-serif;color:#8a8a8a;background:#0e0e10">Concept design by webstudio. Not affiliated with or endorsed by Intertech Commercial Flooring.</p></body>
 </html>
