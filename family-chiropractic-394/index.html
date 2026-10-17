@@ -1,291 +1,705 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src * data: blob:; media-src 'self' data:; style-src 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com data:; script-src 'unsafe-inline'; connect-src 'none'; frame-src 'none'; form-action 'none'; base-uri 'none'; object-src 'none'">
 <meta name="robots" content="noindex, nofollow">
-<title>Family Chiropractic | Website concept</title>
+<style>html,body{max-width:100%;overflow-x:clip}</style>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Family Chiropractic | Gentle Chiropractor in Ang Mo Kio, Singapore Since 2009</title>
+<meta name="description" content="Trusted family chiropractor in Ang Mo Kio, Singapore since 2009. Gentle, drug-free care for newborns to seniors. Book your first consultation at 302 Ang Mo Kio Ave 3.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 :root{
-  --bg:#f5f3ee;--surface:#ffffff;--ink:#1c2a22;--muted:#5f6b63;
-  --accent:#2f5a43;--accent-ink:#ffffff;--gold:#b8955a;--soft:#e6ece6;
-  --radius:22px;--max:1180px;
-  --serif:"Fraunces",Georgia,serif;--sans:"Manrope",system-ui,-apple-system,sans-serif;
+  --bg:#F3F0E8;--card:#FFFFFF;--ink:#1F2A24;--ink-2:#46524B;--sage:#5E7D63;--sage-d:#45604B;--sage-dd:#2E4234;
+  --sand:#C9B79C;--sand-l:#E7DECF;--sand-ll:#EDE7DB;--gold:#ebad0e;--gold-2:#f7b91a;
+  --serif:"Instrument Serif",Georgia,serif;--sans:"Inter",system-ui,-apple-system,sans-serif;
+  --r:28px;--pad:clamp(20px,5vw,72px);--max:1280px;--ease:cubic-bezier(.22,.8,.24,1);
 }
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.65;font-weight:400;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
 a{color:inherit;text-decoration:none}
-img{max-width:100%;display:block}
-.wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
-.concept{background:var(--ink);color:var(--bg);font-size:13px;text-align:center;padding:8px 16px;letter-spacing:.02em}
-.concept b{color:var(--gold);font-weight:600}
+h1,h2,h3{font-family:var(--serif);font-weight:400;line-height:1.02;letter-spacing:-.01em}
+em{font-style:italic}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 var(--pad)}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:.74rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--sage-d)}
+.eyebrow::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--gold)}
+.h2{font-size:clamp(2.5rem,5.6vw,4.8rem)}
+.h2 em{color:var(--sage)}
+.lead{font-size:clamp(1.05rem,1.4vw,1.2rem);color:var(--ink-2);max-width:58ch}
+section{position:relative}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:16px 28px;border-radius:999px;font-weight:500;font-size:.98rem;letter-spacing:.01em;transition:transform .4s var(--ease),background .3s,color .3s,box-shadow .4s;white-space:nowrap;text-align:center}
+.btn svg{width:18px;height:18px;flex:none;transition:transform .4s var(--ease)}
+.btn:hover{transform:translateY(-3px)}
+.btn:hover svg{transform:translateX(3px)}
+.btn-sage{background:var(--sage-d);color:#fff;box-shadow:0 10px 30px -12px rgba(46,66,52,.6)}
+.btn-sage:hover{background:var(--sage-dd)}
+.btn-light{background:#fff;color:var(--ink)}
+.btn-ghost{border:1px solid rgba(255,255,255,.55);color:#fff;backdrop-filter:blur(6px);background:rgba(255,255,255,.08)}
+.btn-ghost:hover{background:rgba(255,255,255,.18)}
+.btn-line{border:1px solid var(--ink);color:var(--ink)}
+.btn-line:hover{background:var(--ink);color:#fff}
+.ulink{position:relative;display:inline-block}
+.ulink::after{content:"";position:absolute;left:0;bottom:-3px;width:100%;height:1px;background:currentColor;transform:scaleX(0);transform-origin:right;transition:transform .5s var(--ease)}
+.ulink:hover::after{transform:scaleX(1);transform-origin:left}
 
 /* header */
-header{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:saturate(1.4) blur(10px);border-bottom:1px solid color-mix(in srgb,var(--ink) 8%,transparent)}
-.nav{display:flex;align-items:center;justify-content:space-between;height:76px;gap:24px}
-.brand{font-family:var(--serif);font-size:23px;font-weight:600;letter-spacing:-.01em;line-height:1.1;max-width:340px}
-.links{display:flex;gap:30px;font-size:15px;font-weight:500;color:var(--muted)}
-.links a:hover{color:var(--ink)}
-.nav-right{display:flex;align-items:center;gap:18px}
-.phone{font-weight:600;font-size:15px;white-space:nowrap}
-.btn{display:inline-flex;align-items:center;gap:10px;background:var(--accent);color:var(--accent-ink);padding:14px 26px;border-radius:999px;font-weight:600;font-size:15.5px;transition:transform .2s ease,box-shadow .2s ease;white-space:nowrap}
-.btn:hover{transform:translateY(-2px);box-shadow:0 12px 28px -12px var(--accent)}
-.btn.ghost{background:transparent;color:var(--ink);border:1.5px solid color-mix(in srgb,var(--ink) 20%,transparent)}
-.btn.ghost:hover{box-shadow:none;border-color:var(--ink)}
-.btn svg{width:18px;height:18px}
+.hdr{position:fixed;top:14px;left:50%;transform:translateX(-50%);width:min(calc(100% - 24px),1240px);z-index:60;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:10px 10px 10px 20px;border-radius:999px;background:rgba(243,240,232,.72);backdrop-filter:blur(18px) saturate(1.4);-webkit-backdrop-filter:blur(18px) saturate(1.4);border:1px solid rgba(255,255,255,.6);box-shadow:0 10px 40px -20px rgba(31,42,36,.35);transition:background .4s,box-shadow .4s}
+.hdr.scrolled{background:rgba(243,240,232,.9);box-shadow:0 14px 40px -18px rgba(31,42,36,.4)}
+.brand{display:flex;align-items:center;gap:12px;min-width:0}
+.brand img{height:40px;width:auto}
+.brand span{font-family:var(--serif);font-size:1.35rem;line-height:1;white-space:nowrap}
+.nav{display:flex;gap:28px;font-size:.92rem;font-weight:500;color:var(--ink-2)}
+.nav a:hover{color:var(--ink)}
+.hdr-r{display:flex;align-items:center;gap:8px}
+.hdr-tel{font-size:.92rem;font-weight:500;padding:10px 14px;white-space:nowrap}
+.hdr .btn{padding:12px 22px;font-size:.9rem}
+.burger{display:none;width:46px;height:46px;border-radius:50%;background:var(--ink);border:0;cursor:pointer;position:relative}
+.burger i{position:absolute;left:14px;right:14px;height:1.5px;background:#fff;transition:transform .4s var(--ease),opacity .3s}
+.burger i:nth-child(1){top:18px}.burger i:nth-child(2){top:26px}
+.menu-open .burger i:nth-child(1){transform:translateY(4px) rotate(45deg)}
+.menu-open .burger i:nth-child(2){transform:translateY(-4px) rotate(-45deg)}
+.drawer{position:fixed;inset:0;z-index:55;background:var(--bg);padding:110px 28px 40px;display:flex;flex-direction:column;gap:6px;opacity:0;visibility:hidden;transition:opacity .4s,visibility .4s}
+.drawer a.dl{font-family:var(--serif);font-size:2.6rem;line-height:1.2;border-bottom:1px solid var(--sand-l);padding:8px 0}
+.drawer .btn{margin-top:24px}
+.menu-open .drawer{opacity:1;visibility:visible}
 
 /* hero */
-.hero{padding:72px 0 88px}
-.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:64px;align-items:center}
-.eyebrow{display:inline-flex;align-items:center;gap:10px;background:var(--surface);border:1px solid color-mix(in srgb,var(--ink) 10%,transparent);padding:8px 16px 8px 10px;border-radius:999px;font-size:14px;font-weight:600;color:var(--muted)}
-.stars{color:var(--gold);letter-spacing:1px;font-size:14px}
-.eyebrow .dot{width:26px;height:26px;border-radius:50%;background:var(--soft);display:grid;place-items:center;color:var(--accent)}
-h1{font-family:var(--serif);font-weight:500;font-size:clamp(44px,5.6vw,74px);line-height:1.02;letter-spacing:-.025em;margin:26px 0 22px}
-h1 em{font-style:italic;color:var(--accent)}
-.lead-text{font-size:19.5px;color:var(--muted);max-width:540px}
-.hero-ctas{display:flex;gap:14px;margin-top:36px;flex-wrap:wrap}
-.ticks{display:flex;gap:22px;margin-top:34px;flex-wrap:wrap;font-size:14.5px;font-weight:600;color:var(--muted)}
-.ticks span{display:flex;align-items:center;gap:8px}
-.ticks svg{width:18px;height:18px;color:var(--accent)}
-.visual{position:relative}
-.photo{aspect-ratio:4/5;border-radius:calc(var(--radius) + 10px);overflow:hidden;background:var(--soft);box-shadow:0 40px 80px -40px color-mix(in srgb,var(--ink) 55%,transparent)}
-.photo img{width:100%;height:100%;object-fit:cover}
-.quote-panel{aspect-ratio:4/5;border-radius:calc(var(--radius) + 10px);background:linear-gradient(155deg,var(--accent),color-mix(in srgb,var(--accent) 55%,var(--ink)));color:var(--accent-ink);padding:52px 46px;display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden;box-shadow:0 40px 80px -40px color-mix(in srgb,var(--ink) 60%,transparent)}
-.quote-panel:before{content:"";position:absolute;width:420px;height:420px;border-radius:50%;right:-160px;top:-160px;background:color-mix(in srgb,var(--accent-ink) 9%,transparent)}
-.quote-panel:after{content:"";position:absolute;width:260px;height:260px;border-radius:50%;left:-90px;bottom:-110px;border:1.5px solid color-mix(in srgb,var(--accent-ink) 22%,transparent)}
-.quote-mark{font-family:var(--serif);font-size:120px;line-height:.6;opacity:.35}
-.quote-panel p{font-family:var(--serif);font-size:28px;line-height:1.3;position:relative;z-index:1}
-.quote-panel .who{font-family:var(--sans);font-size:15px;opacity:.85;margin-top:22px;font-weight:600}
-.float{position:absolute;background:var(--surface);color:var(--ink);border-radius:18px;padding:16px 20px;box-shadow:0 24px 50px -24px color-mix(in srgb,var(--ink) 50%,transparent);display:flex;align-items:center;gap:14px;font-size:14px;line-height:1.35}
-.float b{font-size:22px;font-family:var(--serif);font-weight:600;display:block}
-.float.one{left:-34px;bottom:-28px}
-.float.two{right:-22px;top:44px}
-.float .badge{width:44px;height:44px;border-radius:14px;background:var(--soft);display:grid;place-items:center;color:var(--accent)}
-.float .badge svg{width:22px;height:22px}
+.hero{position:sticky;top:0;height:100vh;height:100svh;min-height:620px;overflow:hidden;z-index:0;color:#fff;display:flex;align-items:flex-end}
+.hero-img{position:absolute;inset:-6% 0 0;will-change:transform}
+.hero-img img{width:100%;height:100%;object-fit:cover;object-position:center 40%}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(18,26,21,.5) 0%,rgba(18,26,21,.12) 32%,rgba(18,26,21,.45) 60%,rgba(18,26,21,.88) 100%)}
+.hero-in{position:relative;z-index:2;width:100%;padding-bottom:clamp(90px,13vh,150px)}
+.hero h1{font-size:clamp(3rem,9.2vw,8.6rem);max-width:13ch;line-height:.95;text-shadow:0 4px 40px rgba(0,0,0,.25)}
+.hero h1 em{color:#E9DFC8}
+.hero .eyebrow{color:#fff}
+.hero-sub{margin-top:26px;max-width:46ch;font-size:clamp(1.02rem,1.4vw,1.2rem);color:rgba(255,255,255,.9);font-weight:300}
+.hero-cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:34px}
+.hero-meta{position:absolute;right:var(--pad);bottom:clamp(90px,13vh,150px);z-index:2;text-align:right}
+.seal{width:150px;height:150px;position:relative;display:grid;place-items:center;margin-left:auto}
+.seal svg{position:absolute;inset:0;animation:spin 22s linear infinite}
+.seal b{font-family:var(--serif);font-weight:400;font-size:2.4rem;line-height:1}
+.seal small{display:block;font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;opacity:.85;margin-top:4px}
+.rating{margin-top:18px;font-size:.9rem;display:flex;gap:8px;align-items:center;justify-content:flex-end}
+.stars{color:var(--gold-2);letter-spacing:2px}
+@keyframes spin{to{transform:rotate(360deg)}}
+.h-in>*{opacity:0;transform:translateY(34px);animation:hin 1.2s var(--ease) forwards}
+.h-in>*:nth-child(1){animation-delay:.2s}.h-in>*:nth-child(2){animation-delay:.35s}.h-in>*:nth-child(3){animation-delay:.55s}.h-in>*:nth-child(4){animation-delay:.72s}
+.hero-meta{opacity:0;animation:hin 1.4s var(--ease) .9s forwards}
+@keyframes hin{to{opacity:1;transform:none}}
+.scroll-cue{position:absolute;left:50%;bottom:28px;z-index:2;transform:translateX(-50%);width:1px;height:46px;background:rgba(255,255,255,.3);overflow:hidden}
+.scroll-cue::after{content:"";position:absolute;left:0;top:-50%;width:1px;height:50%;background:#fff;animation:cue 2.2s var(--ease) infinite}
+@keyframes cue{to{top:100%}}
 
-/* trust */
-.trust{border-top:1px solid color-mix(in srgb,var(--ink) 9%,transparent);border-bottom:1px solid color-mix(in srgb,var(--ink) 9%,transparent);background:var(--surface)}
-.trust .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;padding-top:26px;padding-bottom:26px}
-.trust div{display:flex;align-items:center;gap:12px;font-weight:600;font-size:15px}
-.trust svg{width:22px;height:22px;color:var(--accent);flex:none}
+/* sheet that slides over hero */
+.sheet{position:relative;z-index:2;background:var(--bg);border-radius:clamp(36px,6vw,80px) clamp(36px,6vw,80px) 0 0;margin-top:-60px;box-shadow:0 -30px 80px -30px rgba(0,0,0,.35)}
+.sheet::before{content:"";position:absolute;top:14px;left:50%;width:54px;height:4px;border-radius:4px;background:var(--sand);transform:translateX(-50%);opacity:.7}
 
-/* sections */
-section.block{padding:110px 0}
-.kicker{font-size:13px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
-h2{font-family:var(--serif);font-weight:500;font-size:clamp(34px,3.8vw,52px);line-height:1.08;letter-spacing:-.02em;margin:14px 0 18px}
-.section-head{display:flex;justify-content:space-between;align-items:end;gap:40px;margin-bottom:56px}
-.section-head p{color:var(--muted);max-width:420px}
-.services{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-.card{background:var(--surface);border-radius:var(--radius);padding:34px 32px 36px;border:1px solid color-mix(in srgb,var(--ink) 7%,transparent);transition:transform .25s ease,box-shadow .25s ease}
-.card:hover{transform:translateY(-4px);box-shadow:0 30px 60px -36px color-mix(in srgb,var(--ink) 45%,transparent)}
-.icon{width:54px;height:54px;border-radius:16px;background:var(--soft);color:var(--accent);display:grid;place-items:center;margin-bottom:24px}
-.icon svg{width:26px;height:26px}
-.card h3{font-family:var(--serif);font-weight:500;font-size:23px;margin-bottom:8px;letter-spacing:-.01em}
-.card p{color:var(--muted);font-size:16px}
+/* marquee */
+.marquee{overflow:hidden;padding:44px 0 34px;border-bottom:1px solid var(--sand-l)}
+.mq-track{display:flex;width:max-content;animation:mq 46s linear infinite}
+.marquee:hover .mq-track{animation-play-state:paused}
+.mq-track span{font-family:var(--serif);font-size:clamp(1.8rem,3.4vw,2.8rem);white-space:nowrap;padding:0 28px;display:flex;align-items:center;gap:56px}
+.mq-track span:nth-child(even){font-style:italic;color:var(--sage)}
+.mq-track span::after{content:"✦";font-size:.9rem;color:var(--gold);font-style:normal}
+@keyframes mq{to{transform:translateX(-50%)}}
 
-.why{background:var(--ink);color:var(--bg)}
-.why .kicker{color:var(--gold)}
-.why-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:80px;align-items:start}
-.why h2{color:var(--bg)}
-.why .intro{color:color-mix(in srgb,var(--bg) 70%,transparent);font-size:18px;max-width:440px}
-.points{display:grid;gap:14px}
-.point{display:grid;grid-template-columns:62px 1fr;gap:20px;padding:30px;border-radius:var(--radius);background:color-mix(in srgb,var(--bg) 6%,transparent);border:1px solid color-mix(in srgb,var(--bg) 10%,transparent)}
-.point .num{font-family:var(--serif);font-size:34px;color:var(--gold);line-height:1}
-.point h3{font-family:var(--serif);font-weight:500;font-size:24px;margin-bottom:6px}
-.point p{color:color-mix(in srgb,var(--bg) 72%,transparent);font-size:16px}
+/* stats */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:0;padding:clamp(50px,7vw,90px) 0}
+.stat{padding:8px 28px;border-left:1px solid var(--sand-l)}
+.stat:first-child{border-left:0;padding-left:0}
+.stat h3{font-size:clamp(2.6rem,4.6vw,4.2rem);color:var(--ink)}
+.stat p{font-size:.88rem;color:var(--ink-2);margin-top:8px;max-width:22ch}
+.stat .lbl{font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--sage-d);font-weight:600;margin-bottom:10px;display:block}
 
-.score{display:flex;align-items:center;gap:18px;background:var(--surface);padding:16px 24px;border-radius:18px;border:1px solid color-mix(in srgb,var(--ink) 8%,transparent)}
-.score b{font-family:var(--serif);font-size:40px;font-weight:500;line-height:1}
-.score small{display:block;color:var(--muted);font-size:14px}
-.reviews{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-.review{background:var(--surface);border-radius:var(--radius);padding:34px;display:flex;flex-direction:column;gap:22px;border:1px solid color-mix(in srgb,var(--ink) 7%,transparent)}
-.review p{font-family:var(--serif);font-size:19.5px;line-height:1.45}
-.review .by{margin-top:auto;display:flex;align-items:center;gap:12px;font-weight:600;font-size:15px}
-.avatar{width:40px;height:40px;border-radius:50%;background:var(--soft);color:var(--accent);display:grid;place-items:center;font-weight:700}
-.review .src{color:var(--muted);font-weight:500;font-size:13px;display:block}
+/* about */
+.about{padding:clamp(70px,10vw,140px) 0;display:grid;grid-template-columns:1.05fr 1fr;gap:clamp(40px,7vw,110px);align-items:center}
+.arch-stack{position:relative;aspect-ratio:4/5;max-width:560px}
+.arch{position:absolute;overflow:hidden;border-radius:999px 999px 28px 28px}
+.arch img{width:100%;height:100%;object-fit:cover;transition:transform 1.4s var(--ease)}
+.arch:hover img{transform:scale(1.05)}
+.arch.a1{inset:0 18% 8% 0}
+.arch.a2{width:42%;aspect-ratio:1;right:0;bottom:0;border-radius:50%;border:10px solid var(--bg)}
+.blob{position:absolute;z-index:-1;left:-8%;top:10%;width:70%;aspect-ratio:1;background:var(--sand-l);border-radius:62% 38% 55% 45%/48% 60% 40% 52%;animation:morph 14s ease-in-out infinite alternate}
+@keyframes morph{to{border-radius:40% 60% 38% 62%/60% 40% 60% 40%}}
+.badge{position:absolute;left:-10px;bottom:16%;background:#fff;border-radius:22px;padding:16px 20px;box-shadow:0 20px 50px -20px rgba(31,42,36,.35);font-size:.85rem;max-width:210px}
+.badge b{font-family:var(--serif);font-size:1.7rem;font-weight:400;display:block;line-height:1}
+.about-txt .h2{margin:18px 0 26px}
+.about-txt p+p{margin-top:18px}
+.sig{margin-top:34px;display:flex;align-items:center;gap:16px;padding-top:28px;border-top:1px solid var(--sand-l)}
+.mono{width:58px;height:58px;border-radius:50%;background:var(--sage-d);color:#fff;display:grid;place-items:center;font-family:var(--serif);font-size:1.5rem;flex:none}
+.sig b{display:block;font-weight:600;font-size:1rem}
+.sig span{font-size:.88rem;color:var(--ink-2)}
 
-.cta-band{padding:0 0 110px}
-.cta-box{border-radius:calc(var(--radius) + 12px);background:linear-gradient(140deg,var(--accent),color-mix(in srgb,var(--accent) 60%,var(--ink)));color:var(--accent-ink);padding:76px 64px;display:grid;grid-template-columns:1.3fr 1fr;gap:40px;align-items:center;position:relative;overflow:hidden}
-.cta-box:after{content:"";position:absolute;right:-120px;bottom:-200px;width:460px;height:460px;border-radius:50%;border:1.5px solid color-mix(in srgb,var(--accent-ink) 22%,transparent)}
-.cta-box h2{color:inherit;margin:0 0 12px}
-.cta-box p{opacity:.85;font-size:18px}
-.cta-box .actions{display:flex;flex-direction:column;gap:12px;align-items:flex-start;position:relative;z-index:1}
-.cta-box .btn{background:var(--accent-ink);color:var(--accent)}
-.cta-box .btn.ghost{background:transparent;color:var(--accent-ink);border-color:color-mix(in srgb,var(--accent-ink) 40%,transparent)}
+/* conditions */
+.cond{background:var(--card);border-radius:var(--r);padding:clamp(40px,6vw,90px);margin:0 auto}
+.cond-head{display:flex;justify-content:space-between;align-items:end;gap:30px;flex-wrap:wrap;margin-bottom:46px}
+.cond-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,270px),1fr));gap:0 36px;counter-reset:c;list-style:none}
+.cond-list li{counter-increment:c;display:flex;gap:16px;align-items:baseline;padding:18px 0;border-bottom:1px solid var(--sand-l);font-size:1.02rem;transition:color .3s,padding .4s var(--ease)}
+.cond-list li::before{content:counter(c,decimal-leading-zero);font-size:.72rem;letter-spacing:.12em;color:var(--sage);font-weight:600;flex:none}
+.cond-list li:hover{color:var(--sage-d);padding-left:8px}
 
-.visit{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:10px}
-.visit .card h3{font-size:20px}
-.visit a{color:var(--accent);font-weight:600}
-footer{border-top:1px solid color-mix(in srgb,var(--ink) 9%,transparent);padding:40px 0 110px;color:var(--muted);font-size:14px}
-footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
-.mobile-bar{display:none}
+/* services */
+.svc{padding:clamp(80px,11vw,150px) 0 0}
+.svc-head{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:end;margin-bottom:56px}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,330px),1fr));gap:22px}
+.card{background:var(--card);border-radius:var(--r);overflow:hidden;display:flex;flex-direction:column;transition:transform .6s var(--ease),box-shadow .6s var(--ease)}
+.card:hover{transform:translateY(-8px);box-shadow:0 30px 60px -30px rgba(31,42,36,.35)}
+.card-img{aspect-ratio:3/2;overflow:hidden;margin:10px 10px 0;border-radius:20px 20px 120px 20px}
+.card:nth-child(even) .card-img{border-radius:20px 120px 20px 20px}
+.card-img img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s var(--ease)}
+.card:hover .card-img img{transform:scale(1.06)}
+.card-b{padding:26px 28px 30px;display:flex;flex-direction:column;gap:12px;flex:1}
+.card-b .tag{font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--sage-d);font-weight:600}
+.card h3{font-size:1.9rem}
+.card p{font-size:.96rem;color:var(--ink-2)}
+.more{margin-top:22px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:14px}
+.mini{border:1px solid var(--sand);border-radius:22px;padding:22px 24px;transition:background .4s,transform .5s var(--ease)}
+.mini:hover{background:#fff;transform:translateY(-4px)}
+.mini h3{font-size:1.45rem;margin-bottom:6px}
+.mini p{font-size:.9rem;color:var(--ink-2)}
 
-@keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
-.hero .copy>*{animation:rise .8s cubic-bezier(.2,.7,.2,1) both}
-.hero .copy>*:nth-child(2){animation-delay:.08s}.hero .copy>*:nth-child(3){animation-delay:.16s}
-.hero .copy>*:nth-child(4){animation-delay:.24s}.hero .copy>*:nth-child(5){animation-delay:.32s}
-.visual{animation:rise 1s .2s cubic-bezier(.2,.7,.2,1) both}
+/* approach */
+.approach{margin-top:clamp(80px,11vw,150px);position:relative;color:#fff;overflow:hidden;border-radius:clamp(36px,6vw,80px)}
+.approach>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.approach::before{content:"";position:absolute;inset:0;background:linear-gradient(100deg,rgba(26,37,30,.94) 0%,rgba(30,44,35,.86) 45%,rgba(30,44,35,.45) 100%)}
+.ap-in{position:relative;z-index:1;padding:clamp(60px,9vw,130px) clamp(26px,6vw,90px);display:grid;grid-template-columns:1.1fr 1fr;gap:clamp(40px,6vw,90px)}
+.approach .eyebrow{color:#E9DFC8}
+.approach .h2{margin:18px 0 24px;color:#fff}
+.approach .h2 em{color:#DCCFB5}
+.approach p{color:rgba(255,255,255,.88)}
+.ticks{list-style:none;display:grid;gap:14px;align-content:center}
+.ticks li{display:flex;gap:16px;align-items:flex-start;padding:18px 22px;border-radius:20px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);backdrop-filter:blur(6px);font-size:.98rem}
+.ticks li::before{content:"";flex:none;width:22px;height:22px;margin-top:2px;border-radius:50%;background:var(--gold) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%231F2A24' stroke-width='3'%3E%3Cpath d='M5 12l5 5 9-10'/%3E%3C/svg%3E") center/12px no-repeat}
+.ideal{margin-top:28px;display:flex;flex-wrap:wrap;gap:10px}
+.ideal span{padding:9px 16px;border-radius:999px;border:1px solid rgba(255,255,255,.35);font-size:.85rem}
 
-@media (max-width:980px){
-  .links{display:none}
-  .hero-grid,.why-grid,.cta-box{grid-template-columns:1fr}
-  .hero-grid{gap:56px}
-  .services,.reviews,.visit{grid-template-columns:1fr 1fr}
-  .trust .wrap{grid-template-columns:1fr 1fr}
-  .float.one{left:12px;bottom:-26px}.float.two{right:12px}
-  .visual{max-width:560px;margin-bottom:20px}
-  .section-head{flex-direction:column;align-items:flex-start}
+/* team */
+.team{padding:clamp(80px,11vw,150px) 0}
+.team-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:56px}
+.doc{background:var(--card);border-radius:200px 200px var(--r) var(--r);padding:56px 30px 36px;text-align:center;transition:transform .6s var(--ease),box-shadow .6s}
+.doc:hover{transform:translateY(-8px);box-shadow:0 30px 60px -30px rgba(31,42,36,.3)}
+.doc .mono{width:96px;height:96px;font-size:2.4rem;margin:0 auto 24px;background:var(--sand-l);color:var(--sage-dd)}
+.doc:nth-child(2) .mono{background:var(--sage-d);color:#fff}
+.doc h3{font-size:2rem}
+.doc p{font-size:.88rem;color:var(--ink-2);margin-top:8px;letter-spacing:.04em}
+.focus{margin-top:22px;display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.focus div{padding:26px 28px;border-radius:var(--r);background:var(--sand-ll);border:1px solid var(--sand-l)}
+.focus b{display:block;font-family:var(--serif);font-weight:400;font-size:1.5rem;line-height:1.15;margin-bottom:8px}
+.focus p{font-size:.92rem;color:var(--ink-2)}
+.team-note{margin-top:28px;font-size:.92rem;color:var(--ink-2);text-align:center}
+
+/* steps */
+.steps-sec{background:var(--sage-dd);color:#fff;border-radius:clamp(36px,6vw,80px);padding:clamp(70px,10vw,130px) 0}
+.steps-sec .eyebrow{color:#E9DFC8}
+.steps-sec .h2{color:#fff;margin-top:18px}
+.steps-sec .h2 em{color:#DCCFB5}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;margin-top:60px;counter-reset:s}
+.step{counter-increment:s;padding-top:28px;border-top:1px solid rgba(255,255,255,.22);position:relative}
+.step::before{content:counter(s,decimal-leading-zero);font-family:var(--serif);font-size:3.4rem;line-height:1;color:#DCCFB5;display:block;margin-bottom:18px}
+.step h3{font-size:1.65rem;margin-bottom:10px}
+.step p{font-size:.94rem;color:rgba(255,255,255,.82)}
+.stages{margin-top:80px;padding:34px;border-radius:var(--r);background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14)}
+.stages h3{font-size:1.8rem;margin-bottom:6px}
+.stages>p{font-size:.94rem;color:rgba(255,255,255,.78);margin-bottom:26px}
+.track{display:grid;grid-template-columns:repeat(8,1fr);gap:8px;position:relative}
+.track::before{content:"";position:absolute;left:0;right:0;top:9px;height:2px;background:linear-gradient(90deg,var(--sand),#9DB8A1,var(--gold));border-radius:2px}
+.track div{position:relative;padding-top:34px;font-size:.84rem;line-height:1.35;color:rgba(255,255,255,.92)}
+.track div::before{content:"";position:absolute;top:2px;left:0;width:16px;height:16px;border-radius:50%;background:var(--sage-dd);border:2px solid #DCCFB5}
+.track div:last-child::before{background:var(--gold);border-color:var(--gold)}
+
+/* gallery */
+.gal{padding:clamp(80px,11vw,150px) 0}
+.gal-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:56px;align-items:end}
+.gal-grid figure{overflow:hidden;border-radius:999px 999px 24px 24px;aspect-ratio:3/4.4}
+.gal-grid figure:nth-child(2){aspect-ratio:3/5.2}
+.gal-grid figure:nth-child(3){aspect-ratio:3/3.8;border-radius:24px 24px 999px 999px}
+.gal-grid figure:nth-child(4){aspect-ratio:3/4.8}
+.gal-grid img{width:100%;height:100%;object-fit:cover;transition:transform 1.4s var(--ease)}
+.gal-grid figure:hover img{transform:scale(1.07)}
+
+/* faq */
+.faq{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(40px,7vw,100px);padding-bottom:clamp(80px,11vw,150px)}
+.faq-l p{margin-top:22px}
+details{border-bottom:1px solid var(--sand);padding:4px 0}
+summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:20px;padding:22px 0;font-family:var(--serif);font-size:clamp(1.4rem,2.2vw,1.8rem);line-height:1.2}
+summary::-webkit-details-marker{display:none}
+summary i{flex:none;width:38px;height:38px;border-radius:50%;border:1px solid var(--sand);position:relative;transition:background .3s,transform .5s var(--ease)}
+summary i::before,summary i::after{content:"";position:absolute;left:50%;top:50%;width:12px;height:1.5px;background:var(--ink);transform:translate(-50%,-50%)}
+summary i::after{transform:translate(-50%,-50%) rotate(90deg);transition:transform .4s var(--ease)}
+details[open] summary i{background:var(--sage-d);border-color:var(--sage-d);transform:rotate(180deg)}
+details[open] summary i::before,details[open] summary i::after{background:#fff}
+details[open] summary i::after{transform:translate(-50%,-50%) rotate(0)}
+details p{padding:0 50px 24px 0;color:var(--ink-2);font-size:.98rem}
+
+/* cta */
+.cta{position:relative;overflow:hidden;background:var(--sand-l);border-radius:clamp(36px,6vw,80px);padding:clamp(70px,10vw,140px) var(--pad);text-align:center}
+.cta h2{font-size:clamp(2.8rem,8vw,7.4rem);max-width:14ch;margin:20px auto 0}
+.cta h2 em{color:var(--sage-d)}
+.cta p{margin:24px auto 0;max-width:50ch;color:var(--ink-2)}
+.cta .row{display:flex;justify-content:center;flex-wrap:wrap;gap:12px;margin-top:38px}
+.cta svg.deco{position:absolute;opacity:.55;pointer-events:none}
+
+/* contact */
+.contact{padding:clamp(80px,11vw,150px) 0;display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.c-card{background:var(--card);border-radius:var(--r);padding:clamp(30px,4vw,54px)}
+.c-card .h2{margin:16px 0 30px;font-size:clamp(2.3rem,4.6vw,3.8rem)}
+.c-row{display:flex;gap:18px;padding:20px 0;border-top:1px solid var(--sand-l)}
+.c-row svg{width:22px;height:22px;flex:none;color:var(--sage);margin-top:3px}
+.c-row small{display:block;font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--sage-d);font-weight:600;margin-bottom:4px}
+.c-row a,.c-row span{font-size:1.05rem;word-break:break-word}
+.c-map{position:relative;border-radius:var(--r);overflow:hidden;background:var(--sage-d);color:#fff;padding:clamp(30px,4vw,54px);display:flex;flex-direction:column;justify-content:space-between;min-height:440px}
+.c-map svg.grid{position:absolute;inset:0;width:100%;height:100%;opacity:.22}
+.c-map>*{position:relative}
+.pin{width:74px;height:74px;border-radius:50% 50% 50% 0;transform:rotate(-45deg);background:var(--gold);display:grid;place-items:center;margin:30px 0 0 10px;box-shadow:0 20px 40px -10px rgba(0,0,0,.4);animation:bob 3s ease-in-out infinite}
+.pin::after{content:"";width:24px;height:24px;border-radius:50%;background:var(--sage-dd)}
+@keyframes bob{50%{transform:rotate(-45deg) translate(4px,-4px)}}
+.c-map h3{font-size:clamp(2rem,3.6vw,3rem);margin-top:30px}
+.c-map p{color:rgba(255,255,255,.86);margin:12px 0 26px;max-width:36ch}
+
+/* footer */
+footer{background:var(--ink);color:rgba(255,255,255,.78);padding:70px 0 40px;border-radius:clamp(36px,6vw,80px) clamp(36px,6vw,80px) 0 0;font-size:.92rem}
+.f-top{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px;padding-bottom:50px;border-bottom:1px solid rgba(255,255,255,.12)}
+.f-logo{display:inline-flex;align-items:center;gap:12px;background:var(--bg);padding:10px 18px 10px 12px;border-radius:999px;color:var(--ink)}
+.f-logo img{height:38px;width:auto}
+.f-logo span{font-family:var(--serif);font-size:1.3rem}
+.f-top h4{font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:#E9DFC8;margin-bottom:16px;font-weight:600}
+.f-top ul{list-style:none;display:grid;gap:8px}
+.f-top a:hover{color:#fff}
+.f-tag{font-family:var(--serif);font-size:2rem;color:#fff;margin-top:24px;line-height:1.1}
+.f-bot{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;padding-top:28px;font-size:.82rem;color:rgba(255,255,255,.55)}
+
+/* mobile bar */
+.mbar{display:none;position:fixed;left:12px;right:12px;bottom:12px;z-index:50;gap:8px;padding:8px;border-radius:999px;background:rgba(31,42,36,.92);backdrop-filter:blur(14px);box-shadow:0 14px 40px -12px rgba(0,0,0,.5)}
+.mbar a{flex:1;padding:14px 10px;font-size:.92rem}
+
+/* reveal */
+.js .rv{opacity:0;transform:translateY(36px);transition:opacity 1.1s var(--ease),transform 1.1s var(--ease)}
+.js .rv.in{opacity:1;transform:none}
+.js .rv.d1{transition-delay:.1s}.js .rv.d2{transition-delay:.2s}.js .rv.d3{transition-delay:.3s}
+
+@media (max-width:1060px){
+  .nav,.hdr-tel{display:none}
+  .burger{display:block}
+  .about,.svc-head,.ap-in,.faq,.contact{grid-template-columns:1fr}
+  .arch-stack{max-width:520px;width:100%;margin:0 auto}
+  .stats{grid-template-columns:repeat(2,1fr);row-gap:40px}
+  .stat:nth-child(3){border-left:0;padding-left:0}
+  .steps{grid-template-columns:repeat(2,1fr);row-gap:44px}
+  .track{grid-template-columns:repeat(4,1fr);row-gap:26px}
+  .track::before{display:none}
+  .team-grid,.focus{grid-template-columns:1fr}
+  .doc{border-radius:var(--r);display:grid;grid-template-columns:auto 1fr;gap:22px;align-items:center;text-align:left;padding:26px}
+  .doc .mono{margin:0;width:72px;height:72px;font-size:1.8rem}
+  .f-top{grid-template-columns:1fr 1fr}
+  .f-top>div:first-child{grid-column:1/-1}
 }
-@media (max-width:640px){
-  body{font-size:16px}
-  .wrap{padding:0 18px}
-  .nav{height:66px}.brand{font-size:19px}
-  .phone,.nav-right .btn{display:none}
-  .hero{padding:44px 0 64px}
-  .lead-text{font-size:17.5px}
-  .hero-ctas .btn{flex:1;justify-content:center}
-  .ticks{display:none}
-  .services,.reviews,.visit,.trust .wrap{grid-template-columns:1fr}
-  section.block{padding:76px 0}
-  .quote-panel,.photo{aspect-ratio:auto;min-height:380px}.photo{aspect-ratio:4/3;min-height:0}
-  .quote-panel{padding:40px 30px 64px}.quote-panel p{font-size:23px}
-  .float{font-size:13px;padding:12px 14px}.float b{font-size:18px}
-  .float.two{display:none}
-  .cta-box{padding:52px 28px}
-  .point{grid-template-columns:44px 1fr;padding:24px}
-  .mobile-bar{display:flex;position:fixed;left:12px;right:12px;bottom:12px;z-index:30;gap:10px}
-  .mobile-bar .btn{flex:1;justify-content:center;box-shadow:0 14px 30px -14px color-mix(in srgb,var(--ink) 60%,transparent)}
-  .mobile-bar .btn.ghost{background:var(--surface)}
+@media (max-width:760px){
+  body{font-size:16px;padding-bottom:84px}
+  .hdr{top:10px;padding:8px 8px 8px 14px}
+  .hdr .btn{display:none}
+  .brand img{height:34px}
+  .brand span{font-size:1.15rem}
+  .hero{min-height:600px}
+  .hero-meta{display:none}
+  .hero-in{padding-bottom:110px}
+  .hero-cta .btn{flex:1 1 100%}
+  .gal-grid{grid-template-columns:repeat(2,1fr)}
+  .mbar{display:flex}
+  .stages{padding:24px}
+  .track{grid-template-columns:repeat(2,1fr)}
+  .steps{grid-template-columns:1fr}
+  .cond{border-radius:24px}
+  details p{padding-right:0}
+  .f-top{grid-template-columns:1fr}
+  .badge{left:0}
+}
+@media (max-width:400px){
+  .brand span{display:none}
+  .stats{grid-template-columns:1fr}
+  .stat{border-left:0;padding-left:0}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+  .h-in>*,.hero-meta{opacity:1;transform:none}
+  .js .rv{opacity:1;transform:none}
 }
 </style>
 </head>
 <body>
-<div class="concept">Website concept prepared for <b>Family Chiropractic</b> by webstudio &middot; not a live site</div>
 
-<header>
-  <div class="wrap nav">
-    <a href="#top" class="brand">Family Chiropractic</a>
-    <nav class="links">
-      <a href="#services">Services</a><a href="#why">Why us</a><a href="#visit">Visit</a>
-    </nav>
-    <div class="nav-right">
-      <a class="phone" href="tel:+6565544339">+6565544339</a>
-      <a class="btn" href="#visit">Book now</a>
-    </div>
+<header class="hdr" id="hdr">
+  <a href="#top" class="brand" aria-label="Family Chiropractic home">
+    <img src="img/logo.png" alt="Family Chiropractic logo">
+    <span>Family Chiropractic</span>
+  </a>
+  <nav class="nav" aria-label="Main">
+    <a class="ulink" href="#about">About</a>
+    <a class="ulink" href="#services">Treatments</a>
+    <a class="ulink" href="#team">Our Team</a>
+    <a class="ulink" href="#faq">FAQ</a>
+    <a class="ulink" href="#contact">Visit</a>
+  </nav>
+  <div class="hdr-r">
+    <a class="hdr-tel ulink" href="tel:+6565544339">+65 6554 4339</a>
+    <a class="btn btn-sage" href="#contact">Book Appointment</a>
+    <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false"><i></i><i></i></button>
   </div>
 </header>
 
+<div class="drawer" id="drawer" aria-hidden="true">
+  <a class="dl" href="#about">About</a>
+  <a class="dl" href="#services">Treatments</a>
+  <a class="dl" href="#team">Our Team</a>
+  <a class="dl" href="#faq">FAQ</a>
+  <a class="dl" href="#contact">Visit Us</a>
+  <a class="btn btn-sage" href="tel:+6565544339">Call +65 6554 4339</a>
+</div>
+
 <main id="top">
-<section class="hero">
-  <div class="wrap hero-grid">
-    <div class="copy">
-      <div class="eyebrow">
-        <span class="dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-7-4.4-7-10a4 4 0 017-2.6A4 4 0 0119 10c0 5.6-7 10-7 10z"/></svg></span>Family chiropractic in Singapore
-      </div>
-      <h1>Chiropractic care for the whole family <em>in Singapore.</em></h1>
-      <p class="lead-text">Book a visit for back, neck, or posture concerns and get care that helps you and your family move more comfortably day to day.</p>
-      <div class="hero-ctas">
-        <a class="btn" href="#visit">Book your first visit <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-        <a class="btn ghost" href="tel:+6565544339">Call +6565544339</a>
-      </div>
-      <div class="ticks">
-        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7"/></svg>New patients welcome</span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7"/></svg>Most insurance accepted</span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7"/></svg>Same-day visits</span>
+  <section class="hero" aria-label="Introduction">
+    <div class="hero-img" id="heroImg"><img src="img/photo-1.jpg" alt="Chiropractic care at Family Chiropractic, Ang Mo Kio" fetchpriority="high"></div>
+    <div class="wrap hero-in">
+      <div class="h-in">
+        <span class="eyebrow">Ang Mo Kio · Singapore · Since 2009</span>
+        <h1>Gentle care for <em>every body</em> in your family.</h1>
+        <p class="hero-sub">From newborns to seniors — hands-on, drug-free chiropractic care that restores movement, eases tension and puts you back in the driver's seat of your health.</p>
+        <div class="hero-cta">
+          <a class="btn btn-light" href="#contact">Book your first consultation <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <a class="btn btn-ghost" href="tel:+6565544339">Call +65 6554 4339</a>
+        </div>
       </div>
     </div>
-    <div class="visual">
-      
-      <div class="photo"><img src="https://familychiropractic.com.sg/wp-content/uploads/2020/11/Family-Chiropractic-e1605060719413.jpg" alt="Family Chiropractic" onerror="this.parentNode.outerHTML=document.getElementById('qp').innerHTML"></div>
-      
-      
-      <div class="float two"><span class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><span><b>This week</b>Most insurance accepted</span></div>
+    <div class="hero-meta">
+      <div class="seal">
+        <svg viewBox="0 0 150 150" aria-hidden="true"><defs><path id="circ" d="M75,75 m-60,0 a60,60 0 1,1 120,0 a60,60 0 1,1 -120,0"/></defs><text fill="#fff" font-size="10.5" letter-spacing="3.6" font-family="Inter"><textPath href="#circ">YOUR WELLNESS · OUR PRIORITY · YOUR WELLNESS · OUR PRIORITY ·</textPath></text></svg>
+        <div><b>2009</b><small>Est.</small></div>
+      </div>
+      <div class="rating"><span class="stars" aria-hidden="true">★★★★★</span> 5.0 from 91 reviews</div>
     </div>
+    <div class="scroll-cue" aria-hidden="true"></div>
+  </section>
+
+  <div class="sheet">
+    <div class="marquee" aria-hidden="true">
+      <div class="mq-track">
+        <span>Neck Pain &amp; Whiplash</span><span>Lower Back, Hip &amp; Pelvic Pain</span><span>Sciatica</span><span>Headaches &amp; Migraines</span><span>Slipped Disc</span><span>Pregnancy &amp; Postnatal Care</span><span>Poor Posture &amp; Scoliosis</span><span>Sports Injuries</span>
+        <span>Neck Pain &amp; Whiplash</span><span>Lower Back, Hip &amp; Pelvic Pain</span><span>Sciatica</span><span>Headaches &amp; Migraines</span><span>Slipped Disc</span><span>Pregnancy &amp; Postnatal Care</span><span>Poor Posture &amp; Scoliosis</span><span>Sports Injuries</span>
+      </div>
+    </div>
+
+    <div class="wrap">
+      <div class="stats">
+        <div class="stat rv"><span class="lbl">Experience</span><h3><span data-count="17">17</span> years</h3><p>Trusted in Singapore since 2009</p></div>
+        <div class="stat rv d1"><span class="lbl">Reviews</span><h3><span data-count="200">200</span>+</h3><p>From patients we've cared for</p></div>
+        <div class="stat rv d2"><span class="lbl">Sessions</span><h3><span data-count="120000">120,000</span>+</h3><p>Treatment sessions administered</p></div>
+        <div class="stat rv d3"><span class="lbl">Locations</span><h3>SG &amp; MY</h3><p>A family practice, two locations — Singapore &amp; Malaysia</p></div>
+      </div>
+    </div>
+
+    <section class="wrap about" id="about">
+      <div class="arch-stack rv">
+        <div class="blob" aria-hidden="true"></div>
+        <figure class="arch a1"><img src="img/photo-2.jpg" alt="Family Chiropractic clinic in Ang Mo Kio" loading="lazy"></figure>
+        <figure class="arch a2"><img src="img/photo-10.jpg" alt="Chiropractor in Singapore" loading="lazy"></figure>
+        <div class="badge"><b>30+ years</b>of combined hands-on clinical experience</div>
+      </div>
+      <div class="about-txt">
+        <span class="eyebrow rv">Why families trust us</span>
+        <h2 class="h2 rv d1">A body that feels <em>balanced,</em> energised &amp; yours again.</h2>
+        <p class="lead rv d2">We believe every individual deserves a body that supports the life they love. That's why our care is gentle, personalised and built around you — whatever your age.</p>
+        <p class="rv d2">We're more than a clinic. We're a community built on compassion, connection and genuine care. Many families come to us for pain relief, then stay for ongoing wellness, better posture and preventive support. We take the time to listen, understand your concerns and guide you through every step of your healing journey.</p>
+        <div class="sig rv d3">
+          <div class="mono" aria-hidden="true">EC</div>
+          <div><b>Dr Eunice Chong</b><span>Lead chiropractor, Family Chiropractic</span></div>
+        </div>
+      </div>
+    </section>
+
+    <div class="wrap">
+      <section class="cond rv" aria-labelledby="cond-h">
+        <div class="cond-head">
+          <div>
+            <span class="eyebrow">Conditions we help with</span>
+            <h2 class="h2" id="cond-h" style="margin-top:16px">Where it hurts, <em>we listen.</em></h2>
+          </div>
+          <p class="lead" style="max-width:40ch">Prolonged sitting, device use, stress and repetitive movement all weigh on the spine, muscles and nervous system. We help untangle the cause — not just the symptom.</p>
+        </div>
+        <ul class="cond-list">
+          <li>Headaches, Migraines &amp; Jaw Pain</li>
+          <li>Neck Pain and Whiplash</li>
+          <li>Shoulder Pain</li>
+          <li>Lower Back, Hip &amp; Pelvic Pain</li>
+          <li>Slipped Disc</li>
+          <li>Sciatica</li>
+          <li>Elbow Pain</li>
+          <li>Sports &amp; Accident Related Injuries</li>
+          <li>Muscle Tension</li>
+          <li>Poor Posture and Scoliosis</li>
+          <li>Upper &amp; Lower Extremity Pain</li>
+          <li>Pregnancy and Postnatal Care</li>
+          <li>Paediatric &amp; Geriatric Care</li>
+          <li>Degenerative Joint Disease</li>
+        </ul>
+      </section>
+
+      <section class="svc" id="services" aria-labelledby="svc-h">
+        <div class="svc-head">
+          <div>
+            <span class="eyebrow rv">Treatments</span>
+            <h2 class="h2 rv d1" id="svc-h" style="margin-top:16px">Holistic care for pain relief, <em>posture</em> &amp; mobility.</h2>
+          </div>
+          <p class="lead rv d2">A wide toolkit of chiropractic techniques — chosen and combined for your body, your condition and your lifestyle. Natural, effective, drug-free.</p>
+        </div>
+        <div class="cards">
+          <article class="card rv">
+            <div class="card-img"><img src="img/photo-4.jpg" alt="Chirotherapy in Singapore" loading="lazy"></div>
+            <div class="card-b"><span class="tag">Core care</span><h3>Chiropractic Spinal &amp; Extremity Adjustments</h3><p>Precise, non-invasive adjustments by hand or instrument to correct alignment, reduce tension and help your body heal itself.</p></div>
+          </article>
+          <article class="card rv d1">
+            <div class="card-img"><img src="img/photo-5.jpg" alt="Chiro Singapore" loading="lazy"></div>
+            <div class="card-b"><span class="tag">Soft tissue</span><h3>Active Release Therapy</h3><p>Targeted pressure, stretches and movement to break down adhesions and scar tissue — ideal for stubborn, chronic problems.</p></div>
+          </article>
+          <article class="card rv d2">
+            <div class="card-img"><img src="img/photo-6.jpg" alt="Chiropractic in Singapore" loading="lazy"></div>
+            <div class="card-b"><span class="tag">Pregnancy</span><h3>Webster Technique</h3><p>A specialised technique for mums-to-be that releases two ligaments, two bones and two muscles — giving baby room to settle into place.</p></div>
+          </article>
+          <article class="card rv">
+            <div class="card-img"><img src="img/photo-7.jpg" alt="Chiropractic price Singapore" loading="lazy"></div>
+            <div class="card-b"><span class="tag">Babies, children &amp; jaw</span><h3>Craniosacral &amp; TMJ Therapy</h3><p>Gentle corrections for little ones with colic, reflux, flat head or feeding issues — and relief for jaw-related headaches and neck pain.</p></div>
+          </article>
+          <article class="card rv d1">
+            <div class="card-img"><img src="img/photo-8.jpg" alt="Family chiropractic Singapore" loading="lazy"></div>
+            <div class="card-b"><span class="tag">Muscle pain</span><h3>Trigger Point &amp; Myofascial Therapy</h3><p>Specific finger pressure "deactivates" painful knots and releases fascial tightness to improve circulation and muscle healing.</p></div>
+          </article>
+          <article class="card rv d2">
+            <div class="card-img"><img src="img/photo-9.jpg" alt="Chiropractic therapy" loading="lazy"></div>
+            <div class="card-b"><span class="tag">Tendons</span><h3>Shockwave Therapy</h3><p>A non-surgical treatment for chronic tendon and muscle pain that boosts your body's own regenerative capabilities.</p></div>
+          </article>
+        </div>
+        <div class="more">
+          <div class="mini rv"><h3>SOT Therapy &amp; Denneroll Wedges</h3><p>Sacro Occipital Technique to balance structure and stabilise the pelvis, with Denneroll wedges for a healthy neck curve.</p></div>
+          <div class="mini rv d1"><h3>Traction for Neck &amp; Low Back</h3><p>Manual or mechanical decompression to ease muscle spasm and nerve irritation.</p></div>
+          <div class="mini rv d2"><h3>Sports Taping</h3><p>Supportive taping for ankles and hands to protect ligaments and lower the chance of re-injury.</p></div>
+          <div class="mini rv"><h3>Nutrition, Diet &amp; Exercises</h3><p>Guidance that protects the good work of every adjustment and supports musculoskeletal health.</p></div>
+          <div class="mini rv d1"><h3>TENS Electrotherapy</h3><p>Gentle electrical stimulation to block pain signals and improve range of motion.</p></div>
+          <div class="mini rv d2"><h3>Ultrasound Therapy</h3><p>Warms the injured area to boost local blood flow, reduce swelling and break down scar tissue.</p></div>
+        </div>
+      </section>
+
+      <section class="approach" aria-labelledby="ap-h">
+        <img src="img/photo-3.jpg" alt="" loading="lazy">
+        <div class="ap-in">
+          <div>
+            <span class="eyebrow rv">Our unique approach</span>
+            <h2 class="h2 rv d1" id="ap-h">Adjustments, <em>plus</em> tailored soft-tissue release.</h2>
+            <p class="rv d2">What sets us apart is our specialised approach to soft-tissue healing. Alongside chiropractic adjustments, we offer tailored Active Release Therapy and specific fascia release — matched to your unique tightness, movement restrictions and muscular patterns.</p>
+            <p class="rv d2" style="margin-top:16px">Patients often describe feeling "lighter", "freer" and "more aligned" within just a few sessions.</p>
+            <div class="ideal rv d3"><span>Posture-related discomfort</span><span>Headaches &amp; jaw tightness</span><span>Nerve-like arm or leg symptoms</span></div>
+          </div>
+          <ul class="ticks">
+            <li class="rv">Targets the exact muscles, fascia and tension lines causing pain</li>
+            <li class="rv d1">Improves mobility and flexibility more effectively than adjustments alone</li>
+            <li class="rv d1">Releases stubborn knots, adhesions and nerve entrapments</li>
+            <li class="rv d2">Enhances posture correction and accelerates recovery</li>
+            <li class="rv d3">Supports long-term musculoskeletal health</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="team" id="team" aria-labelledby="team-h">
+        <div style="text-align:center">
+          <span class="eyebrow rv">Meet our team</span>
+          <h2 class="h2 rv d1" id="team-h" style="margin:16px auto 20px;max-width:16ch">Three chiropractors, <em>one</em> family.</h2>
+          <p class="lead rv d2" style="margin:0 auto">Over 30 years of combined hands-on clinical experience, with an abundance of techniques and diverse clinical knowledge to best suit your concerns.</p>
+        </div>
+        <div class="team-grid">
+          <div class="doc rv"><div class="mono" aria-hidden="true">CS</div><div><h3>Dr Choo Suyi</h3><p>Chiropractor</p></div></div>
+          <div class="doc rv d1"><div class="mono" aria-hidden="true">EC</div><div><h3>Dr Eunice Chong Min Lei</h3><p>Chiropractor</p></div></div>
+          <div class="doc rv d2"><div class="mono" aria-hidden="true">ME</div><div><h3>Dr Mark Enriquez</h3><p>Chiropractor</p></div></div>
+        </div>
+        <div class="focus">
+          <div class="rv"><b>Women's health</b><p>A holistic approach to mental, physical and physiological wellbeing, with care shaped around each woman's needs.</p></div>
+          <div class="rv d1"><b>Pre &amp; postnatal, paediatric</b><p>Webster practitioner care, craniosacral therapy and a strong interest in TMJ disorders — for mums-to-be and children.</p></div>
+          <div class="rv d2"><b>Strength training injuries</b><p>Support for powerlifting, barbell sports and CrossFit athletes getting back under the bar.</p></div>
+        </div>
+        <p class="team-note rv">Together we're committed to finding the most effective chiropractic solutions for your needs — because we care.</p>
+      </section>
+    </div>
+
+    <section class="steps-sec" aria-labelledby="steps-h">
+      <div class="wrap">
+        <span class="eyebrow rv">How it works</span>
+        <h2 class="h2 rv d1" id="steps-h" style="max-width:15ch">Individualised attention, <em>from day one.</em></h2>
+        <div class="steps">
+          <div class="step rv"><h3>Book your visit</h3><p>Call us or drop by our Ang Mo Kio clinic to arrange your first consultation.</p></div>
+          <div class="step rv d1"><h3>Thorough assessment</h3><p>Your chiropractor takes time to listen and carefully assess your condition before recommending anything.</p></div>
+          <div class="step rv d2"><h3>Your personal plan</h3><p>We explain the recommended treatment — a care plan tailored to your age, condition and lifestyle.</p></div>
+          <div class="step rv d3"><h3>Heal &amp; thrive</h3><p>Adjustments, tailored Active Release Therapy and corrective exercises take you from relief to lasting wellness.</p></div>
+        </div>
+        <div class="stages rv">
+          <h3>Types &amp; stages of chiropractic care</h3>
+          <p>Every journey is different — here's the path we guide you along.</p>
+          <div class="track">
+            <div>Obvious Pain &amp; Discomfort</div><div>Some Relief</div><div>Starting to Improve</div><div>Symptom Free</div><div>Feeling Good</div><div>Enjoying Care</div><div>Optimizing Health</div><div>Optimal Health</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="wrap gal" aria-labelledby="gal-h">
+      <div class="svc-head" style="margin-bottom:0">
+        <div>
+          <span class="eyebrow rv">Inside the clinic</span>
+          <h2 class="h2 rv d1" id="gal-h" style="margin-top:16px">Move better. Live better. <em>Feel better.</em></h2>
+        </div>
+        <p class="lead rv d2">Newborns, children, students, office workers, athletes and seniors — every one welcomed with warmth, precision and experience.</p>
+      </div>
+      <div class="gal-grid">
+        <figure class="rv"><img src="img/photo-11.jpg" alt="Chiropractor SG" loading="lazy"></figure>
+        <figure class="rv d1"><img src="img/photo-12.jpg" alt="Wellness chiropractic" loading="lazy"></figure>
+        <figure class="rv d2"><img src="img/photo-13.jpg" alt="Treatment at Family Chiropractic" loading="lazy"></figure>
+        <figure class="rv d3"><img src="img/photo-14.jpg" alt="Family Chiropractic Ang Mo Kio" loading="lazy"></figure>
+      </div>
+    </section>
+
+    <section class="wrap faq" id="faq" aria-labelledby="faq-h">
+      <div class="faq-l">
+        <span class="eyebrow rv">Good to know</span>
+        <h2 class="h2 rv d1" id="faq-h" style="margin-top:16px">Questions, <em>answered.</em></h2>
+        <p class="rv d2">Anything else on your mind? Call us on <a class="ulink" href="tel:+6565544339" style="font-weight:600">+65 6554 4339</a> — we're happy to help.</p>
+      </div>
+      <div class="rv d1">
+        <details open><summary>How much does a chiropractor visit cost?<i></i></summary><p>Pricing depends on the type of visit and whether it's your first consultation or a follow-up adjustment. Consultation fees start from $100, while treatment fees start from $90.</p></details>
+        <details><summary>What happens at my first visit?<i></i></summary><p>Your chiropractor carries out a thorough assessment to understand your condition, then recommends a personalised care plan and explains the treatment before you begin.</p></details>
+        <details><summary>Who do you treat?<i></i></summary><p>Families of every age — newborns, children, students, adults, athletes and seniors. Each person receives a care plan tailored to their age, condition and lifestyle.</p></details>
+        <details><summary>Do you offer care during pregnancy?<i></i></summary><p>Yes. We offer pregnancy and postnatal care, including the Webster Technique — a specialised chiropractic technique for pregnant patients.</p></details>
+        <details><summary>Is chiropractic care drug-free?<i></i></summary><p>Yes. Our approach combines manual adjustments, tailored Active Release Therapy and corrective exercises for natural, drug-free relief.</p></details>
+        <details><summary>Where are you located?<i></i></summary><p>Our Singapore clinic is at 302 Ang Mo Kio Avenue 3 (St 31) #01-1848, Singapore 560302. We're a family practice with two locations, in Singapore and Malaysia.</p></details>
+      </div>
+    </section>
+
+    <div class="wrap">
+      <section class="cta rv" aria-labelledby="cta-h">
+        <svg class="deco" style="left:-80px;top:-60px;width:320px" viewBox="0 0 200 200" aria-hidden="true"><path fill="#C9B79C" d="M44.7,-58.2C57.3,-49.5,66.6,-35.5,71.1,-19.8C75.6,-4.1,75.3,13.3,68.1,27.2C60.9,41.1,46.8,51.5,31.4,59.4C16,67.3,-0.7,72.7,-17.4,69.8C-34.1,66.9,-50.8,55.7,-61.6,40.3C-72.4,24.9,-77.3,5.3,-73.2,-11.8C-69.1,-28.9,-56,-43.5,-41.2,-52.1C-26.4,-60.7,-9.9,-63.3,4.9,-69.3C19.7,-75.2,32.1,-66.9,44.7,-58.2Z" transform="translate(100 100)"/></svg>
+        <svg class="deco" style="right:-60px;bottom:-80px;width:280px" viewBox="0 0 200 200" aria-hidden="true"><path fill="#5E7D63" opacity=".35" d="M39.9,-51.3C52.5,-43.6,63.8,-32.3,68.6,-18.4C73.4,-4.5,71.7,12,64.4,25.3C57.1,38.6,44.2,48.7,30,55.8C15.8,62.9,0.3,67,-15.6,65C-31.5,63,-47.8,54.9,-58.4,41.8C-69,28.7,-73.9,10.6,-70.6,-5.6C-67.3,-21.8,-55.8,-36.1,-42.3,-43.7C-28.8,-51.3,-14.4,-52.2,0.4,-52.7C15.2,-53.2,27.3,-59,39.9,-51.3Z" transform="translate(100 100)"/></svg>
+        <span class="eyebrow" style="position:relative">Your wellness. Our priority.</span>
+        <h2 id="cta-h" style="position:relative">Take the <em>driver's seat</em> of your health.</h2>
+        <p style="position:relative">Book your first consultation at our Ang Mo Kio clinic and let us guide you, gently, toward a body that feels like yours again.</p>
+        <div class="row" style="position:relative">
+          <a class="btn btn-sage" href="tel:+6565544339">Call +65 6554 4339 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <a class="btn btn-line" href="https://maps.google.com/?q=302+Ang+Mo+Kio+Avenue+3+Singapore+560302" target="_blank" rel="noopener">Get directions</a>
+        </div>
+      </section>
+
+      <section class="contact" id="contact" aria-labelledby="ct-h">
+        <div class="c-card rv">
+          <span class="eyebrow">Visit us</span>
+          <h2 class="h2" id="ct-h">Make an appointment <em>today.</em></h2>
+          <div class="c-row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg><div><small>Phone</small><a class="ulink" href="tel:+6565544339">+65 6554 4339</a></div></div>
+          <div class="c-row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg><div><small>Address</small><a class="ulink" href="https://maps.google.com/?q=302+Ang+Mo+Kio+Avenue+3+Singapore+560302" target="_blank" rel="noopener">302 Ang Mo Kio Avenue 3 (St 31) #01-1848, Singapore 560302</a></div></div>
+          <div class="c-row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg><div><small>Email</small><span>familychirosg@gmail.com</span></div></div>
+          <div class="c-row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><div><small>Opening hours</small><span>Please call us to confirm today's hours and available slots.</span></div></div>
+        </div>
+        <div class="c-map rv d1">
+          <svg class="grid" viewBox="0 0 400 400" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><g fill="none" stroke="#fff" stroke-width="1"><path d="M0 80 Q120 60 200 120 T400 100"/><path d="M0 220 Q140 180 240 240 T400 210"/><path d="M0 330 Q160 300 260 350 T400 320"/><path d="M90 0 Q70 140 120 240 T100 400"/><path d="M250 0 Q290 120 260 220 T300 400"/></g><g fill="none" stroke="#fff" stroke-width="5" opacity=".6"><path d="M0 160 Q180 130 400 170"/></g></svg>
+          <div>
+            <span class="eyebrow" style="color:#E9DFC8">Ang Mo Kio</span>
+            <div class="pin" aria-hidden="true"></div>
+            <h3>Find us at Block 302.</h3>
+            <p>Ang Mo Kio Avenue 3 (St 31), unit #01-1848 — your neighbourhood family chiropractor.</p>
+          </div>
+          <a class="btn btn-light" style="align-self:flex-start" href="https://maps.google.com/?q=302+Ang+Mo+Kio+Avenue+3+Singapore+560302" target="_blank" rel="noopener">Open in Google Maps <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+        </div>
+      </section>
+    </div>
+
+    <footer>
+      <div class="wrap">
+        <div class="f-top">
+          <div>
+            <a href="#top" class="f-logo"><img src="img/logo.png" alt="Family Chiropractic logo"><span>Family Chiropractic</span></a>
+            <p class="f-tag">Move better. Live better.<br>Feel better.</p>
+          </div>
+          <div>
+            <h4>Site links</h4>
+            <ul><li><a href="#about">About</a></li><li><a href="#services">Treatments</a></li><li><a href="#team">Our Team</a></li><li><a href="#faq">FAQ</a></li><li><a href="#contact">Contact</a></li></ul>
+          </div>
+          <div>
+            <h4>Contact us</h4>
+            <ul><li><a href="tel:+6565544339">+65 6554 4339</a></li><li>familychirosg@gmail.com</li><li><a href="https://maps.google.com/?q=302+Ang+Mo+Kio+Avenue+3+Singapore+560302" target="_blank" rel="noopener">302 Ang Mo Kio Ave 3 #01-1848, Singapore 560302</a></li></ul>
+          </div>
+        </div>
+        <div class="f-bot"><span>© <span id="yr">2026</span> Family Chiropractic. Trusted in Singapore since 2009.</span><span>Ang Mo Kio · Singapore</span></div>
+      </div>
+    </footer>
   </div>
-  <template id="qp"><div class="quote-panel"><div class="quote-mark">“</div><div><p>Gentle, evidence-based chiropractic care that gets to the root of your pain, not just the symptoms.</p><div class="who">Family Chiropractic</div></div></div></template>
-</section>
-
-<div class="trust"><div class="wrap">
-  <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.2-8 9-4.6-.8-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg>New patients welcome</div><div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.2-8 9-4.6-.8-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg>Most insurance accepted</div><div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.2-8 9-4.6-.8-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg>Same-day visits</div><div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.2-8 9-4.6-.8-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg>Gentle techniques</div>
-</div></div>
-
-<section class="block" id="services">
-  <div class="wrap">
-    <div class="section-head">
-      <div><div class="kicker">What we do</div><h2>Everything you need,<br>under one roof.</h2></div>
-      <p>From routine visits to the work that changes how you feel about your day, Family Chiropractic takes care of it properly.</p>
-    </div>
-    <div class="services">
-      
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-7-4.4-7-10a4 4 0 017-2.6A4 4 0 0119 10c0 5.6-7 10-7 10z"/></svg></div><h3>Back &amp; neck pain</h3><p>Relief that lasts, from a plan built around you.</p></div>
-      
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1-4.4-4.3 6.1-.9z"/></svg></div><h3>Sports injuries</h3><p>Get back in the game faster and stronger.</p></div>
-      
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 19c0-8 5-14 15-14 0 10-6 15-14 15"/><path d="M5 19c3-4 6-6 10-8"/></svg></div><h3>Headaches</h3><p>Address the tension and alignment issues behind them.</p></div>
-      
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 14s1.5 2.5 4 2.5 4-2.5 4-2.5"/><path d="M9 9.5h.01M15 9.5h.01"/></svg></div><h3>Prenatal care</h3><p>Gentle, safe adjustments for moms-to-be.</p></div>
-      
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.2-8 9-4.6-.8-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg></div><h3>Auto injuries</h3><p>Care and documentation after car accidents.</p></div>
-      
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div><h3>Same-day visits</h3><p>In pain today? We&#39;ll see you today.</p></div>
-      
-    </div>
-  </div>
-</section>
-
-<section class="block why" id="why">
-  <div class="wrap why-grid">
-    <div>
-      <div class="kicker">Why patients choose us</div>
-      <h2>The Singapore chiropractor people recommend to their friends.</h2>
-      <p class="intro">it still comes down to the same three things.</p>
-    </div>
-    <div class="points">
-      
-      <div class="point"><div class="num">01</div><div><h3>Root-cause care</h3><p>We find out why it hurts, not just where.</p></div></div>
-      
-      <div class="point"><div class="num">02</div><div><h3>Gentle techniques</h3><p>Comfortable adjustments for every age and condition.</p></div></div>
-      
-      <div class="point"><div class="num">03</div><div><h3>Clear plans</h3><p>You&#39;ll know your plan, timeline and costs from day one.</p></div></div>
-      
-    </div>
-  </div>
-</section>
-
-
-
-<section class="cta-band" id="book">
-  <div class="wrap"><div class="cta-box">
-    <div><h2>Ready when you are.</h2><p>Book your first visit in under a minute, or give us a call and talk to a real person.</p></div>
-    <div class="actions">
-      <a class="btn" href="#visit">Book your first visit</a>
-      <a class="btn ghost" href="tel:+6565544339">Call +6565544339</a>
-    </div>
-  </div></div>
-</section>
-
-<section class="block" id="visit" style="padding-top:0">
-  <div class="wrap">
-    <div class="kicker">Visit us</div><h2>Come say hello.</h2>
-    <div class="visit">
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11l8-7 8 7v9a1 1 0 01-1 1h-4v-6H9v6H5a1 1 0 01-1-1z"/></svg></div><h3>Address</h3><p>302 Ang Mo Kio Ave 3, Singapore 560302</p></div>
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div><h3>Phone</h3><p><a href="tel:+6565544339">+6565544339</a></p><p style="margin-top:10px">Call or message us for today's opening hours.</p></div>
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-7-4.4-7-10a4 4 0 017-2.6A4 4 0 0119 10c0 5.6-7 10-7 10z"/></svg></div><h3>Most insurance accepted</h3><p>Book your first visit online or by phone and we'll take care of the rest.</p></div>
-    </div>
-  </div>
-</section>
 </main>
 
-<footer><div class="wrap">
-  <span>© 2026 Family Chiropractic</span>
-  <span>Concept design by webstudio. Not affiliated with or endorsed by Family Chiropractic.</span>
-</div></footer>
-
-<div class="mobile-bar">
-  <a class="btn ghost" href="tel:+6565544339">Call</a>
-  <a class="btn" href="#visit">Book now</a>
+<div class="mbar">
+  <a class="btn btn-light" href="tel:+6565544339">Call now</a>
+  <a class="btn btn-sage" href="#contact">Book</a>
 </div>
-</body>
+
+<script>
+(function(){
+  var d=document,root=d.documentElement;
+  root.classList.add('js');
+  var rm=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var hdr=d.getElementById('hdr'),heroImg=d.getElementById('heroImg');
+  d.getElementById('yr').textContent=new Date().getFullYear();
+
+  var burger=d.getElementById('burger'),drawer=d.getElementById('drawer');
+  function setMenu(open){
+    d.body.classList.toggle('menu-open',open);
+    burger.setAttribute('aria-expanded',open);
+    drawer.setAttribute('aria-hidden',!open);
+    d.body.style.overflow=open?'hidden':'';
+  }
+  burger.addEventListener('click',function(){setMenu(!d.body.classList.contains('menu-open'))});
+  drawer.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){setMenu(false)})});
+
+  var ticking=false;
+  function onScroll(){
+    var y=window.scrollY;
+    hdr.classList.toggle('scrolled',y>40);
+    if(!rm&&y<window.innerHeight*1.2){heroImg.style.transform='translate3d(0,'+(y*.28)+'px,0) scale(1.06)'}
+    ticking=false;
+  }
+  window.addEventListener('scroll',function(){if(!ticking){requestAnimationFrame(onScroll);ticking=true}},{passive:true});
+  onScroll();
+
+  function count(el){
+    var end=+el.dataset.count,t0=null,dur=1800;
+    if(rm){el.textContent=end.toLocaleString('en-US');return}
+    function step(t){
+      if(!t0)t0=t;
+      var p=Math.min((t-t0)/dur,1),e=1-Math.pow(1-p,3);
+      el.textContent=Math.round(end*e).toLocaleString('en-US');
+      if(p<1)requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+
+  var items=d.querySelectorAll('.rv,[data-count]');
+  if(!('IntersectionObserver' in window)){items.forEach(function(el){el.classList.add('in')});return}
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(en){
+      if(!en.isIntersecting)return;
+      var el=en.target;
+      if(el.dataset.count)count(el);else el.classList.add('in');
+      io.unobserve(el);
+    });
+  },{threshold:.12,rootMargin:'0px 0px -6% 0px'});
+  items.forEach(function(el){io.observe(el)});
+})();
+</script>
+<div id="lm-concept" style="position:fixed;left:12px;bottom:12px;z-index:2147483647;font:500 11px/1.3 -apple-system,BlinkMacSystemFont,Segoe UI,sans-serif;letter-spacing:.02em;background:rgba(15,15,18,.82);color:#f4f1ea;padding:7px 11px;border-radius:999px;backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);pointer-events:none;max-width:70vw">Website concept for Family Chiropractic by webstudio &middot; not the live site</div><p style="margin:0;padding:18px 16px 70px;text-align:center;font:12px/1.5 -apple-system,sans-serif;color:#8a8a8a;background:#0e0e10">Concept design by webstudio. Not affiliated with or endorsed by Family Chiropractic.</p></body>
 </html>
