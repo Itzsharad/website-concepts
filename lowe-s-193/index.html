@@ -1,291 +1,585 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src * data: blob:; media-src 'self' data:; style-src 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com data:; script-src 'unsafe-inline'; connect-src 'none'; frame-src 'none'; form-action 'none'; base-uri 'none'; object-src 'none'">
 <meta name="robots" content="noindex, nofollow">
-<title>Lowe&#39;s | Website concept</title>
+<style>html,body{max-width:100%;overflow-x:clip}</style>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lowe's · Remodeling in North Austin, TX</title>
+<meta name="description" content="Lowe's in North Austin: remodeling for kitchens, baths, flooring and more. Visit 13000 N I35 Svc Rd Sb, Bldg. 12, Austin TX 78753 or call (512) 634-0070.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{
-  --bg:#f5f3ee;--surface:#ffffff;--ink:#1c2a22;--muted:#5f6b63;
-  --accent:#2f5a43;--accent-ink:#ffffff;--gold:#b8955a;--soft:#e6ece6;
-  --radius:22px;--max:1180px;
-  --serif:"Fraunces",Georgia,serif;--sans:"Manrope",system-ui,-apple-system,sans-serif;
+  --bg:#1A1411;--bg2:#140F0D;--surface:#251D18;--surface2:#2E241E;
+  --text:#F3E9DC;--muted:#C9B9A6;--dim:#9C8875;
+  --gold:#D4A44F;--gold-l:#E6C27F;--bronze:#A07D63;
+  --line:rgba(243,233,220,.12);--line-g:rgba(212,164,79,.35);
+  --serif:"Cormorant Garamond",Georgia,serif;--sans:"Manrope",system-ui,sans-serif;
+  --ease:cubic-bezier(.2,.7,.1,1);--pad:clamp(20px,5vw,72px);
 }
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--bg);color:var(--text);font-family:var(--sans);font-size:16px;line-height:1.7;font-weight:400;overflow-x:hidden;-webkit-font-smoothing:antialiased}
 a{color:inherit;text-decoration:none}
-img{max-width:100%;display:block}
-.wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
-.concept{background:var(--ink);color:var(--bg);font-size:13px;text-align:center;padding:8px 16px;letter-spacing:.02em}
-.concept b{color:var(--gold);font-weight:600}
+svg{display:block}
+::selection{background:var(--gold);color:var(--bg)}
+.wrap{max-width:1320px;margin:0 auto;padding:0 var(--pad)}
+.label{font-family:var(--sans);font-size:11px;font-weight:600;letter-spacing:.28em;text-transform:uppercase;color:var(--gold)}
+.label.m{color:var(--dim)}
+h1,h2,h3{font-family:var(--serif);font-weight:400;line-height:1.02;letter-spacing:-.01em}
+h2{font-size:clamp(40px,6.4vw,92px)}
+h2 em,h1 em{font-style:italic;color:var(--gold);font-weight:300}
+p{color:var(--muted)}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:12px;padding:17px 30px;font-size:12px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;border:1px solid var(--gold);transition:background .4s var(--ease),color .4s var(--ease),transform .4s var(--ease);white-space:nowrap;position:relative;overflow:hidden}
+.btn-gold{background:var(--gold);color:var(--bg)}
+.btn-gold:hover{background:var(--gold-l);transform:translateY(-3px)}
+.btn-line{color:var(--text);border-color:var(--line)}
+.btn-line:hover{border-color:var(--gold);color:var(--gold);transform:translateY(-3px)}
+.btn svg{width:16px;height:16px;transition:transform .4s var(--ease)}
+.btn:hover svg{transform:translateX(4px)}
+.ul{position:relative}
+.ul::after{content:"";position:absolute;left:0;bottom:-3px;width:100%;height:1px;background:var(--gold);transform:scaleX(0);transform-origin:right;transition:transform .5s var(--ease)}
+.ul:hover::after{transform:scaleX(1);transform-origin:left}
 
 /* header */
-header{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:saturate(1.4) blur(10px);border-bottom:1px solid color-mix(in srgb,var(--ink) 8%,transparent)}
-.nav{display:flex;align-items:center;justify-content:space-between;height:76px;gap:24px}
-.brand{font-family:var(--serif);font-size:23px;font-weight:600;letter-spacing:-.01em;line-height:1.1;max-width:340px}
-.links{display:flex;gap:30px;font-size:15px;font-weight:500;color:var(--muted)}
-.links a:hover{color:var(--ink)}
-.nav-right{display:flex;align-items:center;gap:18px}
-.phone{font-weight:600;font-size:15px;white-space:nowrap}
-.btn{display:inline-flex;align-items:center;gap:10px;background:var(--accent);color:var(--accent-ink);padding:14px 26px;border-radius:999px;font-weight:600;font-size:15.5px;transition:transform .2s ease,box-shadow .2s ease;white-space:nowrap}
-.btn:hover{transform:translateY(-2px);box-shadow:0 12px 28px -12px var(--accent)}
-.btn.ghost{background:transparent;color:var(--ink);border:1.5px solid color-mix(in srgb,var(--ink) 20%,transparent)}
-.btn.ghost:hover{box-shadow:none;border-color:var(--ink)}
-.btn svg{width:18px;height:18px}
+header{position:fixed;top:0;left:0;right:0;z-index:50;transition:background .5s,border-color .5s,padding .5s;border-bottom:1px solid transparent;padding:22px 0}
+header.scrolled{background:rgba(26,20,17,.72);backdrop-filter:blur(18px) saturate(140%);-webkit-backdrop-filter:blur(18px) saturate(140%);border-color:var(--line);padding:14px 0}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:24px}
+.logo{display:flex;align-items:center;gap:14px}
+.logo-mark{width:38px;height:38px;border:1px solid var(--gold);display:grid;place-items:center;font-family:var(--serif);font-size:22px;color:var(--gold);font-style:italic}
+.logo-t{font-family:var(--serif);font-size:26px;letter-spacing:.02em;line-height:1}
+.logo-t small{display:block;font-family:var(--sans);font-size:9px;letter-spacing:.32em;text-transform:uppercase;color:var(--dim);margin-top:5px}
+.links{display:flex;gap:34px;font-size:12px;letter-spacing:.18em;text-transform:uppercase;font-weight:500}
+.links a{color:var(--muted);transition:color .3s}
+.links a:hover{color:var(--text)}
+.nav-r{display:flex;align-items:center;gap:24px}
+.phone{font-size:13px;letter-spacing:.08em;color:var(--text);font-weight:500}
+.nav-r .btn{padding:13px 22px}
+.burger{display:none;width:44px;height:44px;border:1px solid var(--line);background:none;cursor:pointer;position:relative}
+.burger span{position:absolute;left:12px;right:12px;height:1px;background:var(--text);transition:transform .4s var(--ease),opacity .3s}
+.burger span:nth-child(1){top:17px}.burger span:nth-child(2){top:26px}
+.menu-open .burger span:nth-child(1){transform:translateY(4.5px) rotate(45deg)}
+.menu-open .burger span:nth-child(2){transform:translateY(-4.5px) rotate(-45deg)}
+.mmenu{position:fixed;inset:0;z-index:45;background:var(--bg2);display:flex;flex-direction:column;justify-content:center;padding:100px var(--pad) 120px;opacity:0;visibility:hidden;transition:opacity .5s var(--ease),visibility .5s}
+.menu-open .mmenu{opacity:1;visibility:visible}
+.mmenu a{font-family:var(--serif);font-size:44px;line-height:1.3;border-bottom:1px solid var(--line);padding:8px 0;display:flex;justify-content:space-between;align-items:baseline}
+.mmenu a span{font-family:var(--sans);font-size:11px;letter-spacing:.2em;color:var(--gold)}
+.mmenu .mfoot{margin-top:40px;color:var(--muted);font-size:14px}
 
 /* hero */
-.hero{padding:72px 0 88px}
-.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:64px;align-items:center}
-.eyebrow{display:inline-flex;align-items:center;gap:10px;background:var(--surface);border:1px solid color-mix(in srgb,var(--ink) 10%,transparent);padding:8px 16px 8px 10px;border-radius:999px;font-size:14px;font-weight:600;color:var(--muted)}
-.stars{color:var(--gold);letter-spacing:1px;font-size:14px}
-.eyebrow .dot{width:26px;height:26px;border-radius:50%;background:var(--soft);display:grid;place-items:center;color:var(--accent)}
-h1{font-family:var(--serif);font-weight:500;font-size:clamp(44px,5.6vw,74px);line-height:1.02;letter-spacing:-.025em;margin:26px 0 22px}
-h1 em{font-style:italic;color:var(--accent)}
-.lead-text{font-size:19.5px;color:var(--muted);max-width:540px}
-.hero-ctas{display:flex;gap:14px;margin-top:36px;flex-wrap:wrap}
-.ticks{display:flex;gap:22px;margin-top:34px;flex-wrap:wrap;font-size:14.5px;font-weight:600;color:var(--muted)}
-.ticks span{display:flex;align-items:center;gap:8px}
-.ticks svg{width:18px;height:18px;color:var(--accent)}
-.visual{position:relative}
-.photo{aspect-ratio:4/5;border-radius:calc(var(--radius) + 10px);overflow:hidden;background:var(--soft);box-shadow:0 40px 80px -40px color-mix(in srgb,var(--ink) 55%,transparent)}
-.photo img{width:100%;height:100%;object-fit:cover}
-.quote-panel{aspect-ratio:4/5;border-radius:calc(var(--radius) + 10px);background:linear-gradient(155deg,var(--accent),color-mix(in srgb,var(--accent) 55%,var(--ink)));color:var(--accent-ink);padding:52px 46px;display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden;box-shadow:0 40px 80px -40px color-mix(in srgb,var(--ink) 60%,transparent)}
-.quote-panel:before{content:"";position:absolute;width:420px;height:420px;border-radius:50%;right:-160px;top:-160px;background:color-mix(in srgb,var(--accent-ink) 9%,transparent)}
-.quote-panel:after{content:"";position:absolute;width:260px;height:260px;border-radius:50%;left:-90px;bottom:-110px;border:1.5px solid color-mix(in srgb,var(--accent-ink) 22%,transparent)}
-.quote-mark{font-family:var(--serif);font-size:120px;line-height:.6;opacity:.35}
-.quote-panel p{font-family:var(--serif);font-size:28px;line-height:1.3;position:relative;z-index:1}
-.quote-panel .who{font-family:var(--sans);font-size:15px;opacity:.85;margin-top:22px;font-weight:600}
-.float{position:absolute;background:var(--surface);color:var(--ink);border-radius:18px;padding:16px 20px;box-shadow:0 24px 50px -24px color-mix(in srgb,var(--ink) 50%,transparent);display:flex;align-items:center;gap:14px;font-size:14px;line-height:1.35}
-.float b{font-size:22px;font-family:var(--serif);font-weight:600;display:block}
-.float.one{left:-34px;bottom:-28px}
-.float.two{right:-22px;top:44px}
-.float .badge{width:44px;height:44px;border-radius:14px;background:var(--soft);display:grid;place-items:center;color:var(--accent)}
-.float .badge svg{width:22px;height:22px}
+.hero{min-height:100vh;min-height:100svh;position:relative;display:flex;flex-direction:column;justify-content:flex-end;padding:140px 0 0;overflow:hidden;isolation:isolate}
+.hero-bg{position:absolute;inset:0;z-index:-1;pointer-events:none}
+.hero-bg::before{content:"";position:absolute;width:70vw;height:70vw;max-width:980px;max-height:980px;right:-18vw;top:-22vw;background:radial-gradient(circle,rgba(212,164,79,.16),transparent 62%)}
+.hero-bg::after{content:"";position:absolute;width:50vw;height:50vw;left:-20vw;bottom:-20vw;background:radial-gradient(circle,rgba(160,125,99,.14),transparent 65%)}
+.grid-lines{position:absolute;inset:0;display:grid;grid-template-columns:repeat(6,1fr);padding:0 var(--pad);max-width:1320px;margin:0 auto}
+.grid-lines i{border-left:1px solid rgba(243,233,220,.045)}
+.grid-lines i:last-child{border-right:1px solid rgba(243,233,220,.045)}
+.blueprint{position:absolute;right:var(--pad);top:120px;width:min(44vw,560px);opacity:.9}
+.blueprint path,.blueprint line,.blueprint rect,.blueprint circle{fill:none;stroke:var(--gold);stroke-width:.8;vector-effect:non-scaling-stroke}
+.blueprint .thin{stroke:var(--bronze);stroke-width:.5;opacity:.7}
+.blueprint .draw{stroke-dasharray:1400;stroke-dashoffset:1400;animation:draw 3.4s var(--ease) forwards .6s}
+.blueprint text{fill:var(--dim);font-family:var(--sans);font-size:8px;letter-spacing:2px}
+@keyframes draw{to{stroke-dashoffset:0}}
+.hero-meta{display:flex;justify-content:space-between;align-items:flex-start;gap:30px;margin-bottom:clamp(30px,5vh,60px)}
+.hero-meta .label{display:flex;align-items:center;gap:14px}
+.hero-meta .label::before{content:"";width:44px;height:1px;background:var(--gold)}
+.coords{font-size:11px;letter-spacing:.2em;color:var(--dim);text-transform:uppercase;text-align:right;line-height:1.9}
+.h1{font-size:clamp(58px,13.4vw,220px);line-height:.86;letter-spacing:-.025em;font-weight:300}
+.h1 .row{display:block;overflow:hidden;padding-bottom:.06em}
+.h1 .row>span{display:inline-block;transform:translateY(110%);transition:transform 1.3s var(--ease)}
+.loaded .h1 .row>span{transform:none}
+.h1 .row:nth-child(2)>span{transition-delay:.12s}
+.h1 .row:nth-child(3)>span{transition-delay:.24s}
+.h1 .indent{padding-left:clamp(0px,14vw,240px)}
+.h1 .amp{font-style:italic;color:var(--gold);font-weight:300}
+.hero-foot{display:grid;grid-template-columns:1.1fr 1fr auto;gap:40px;align-items:end;border-top:1px solid var(--line);margin-top:clamp(30px,5vh,56px);padding:34px 0 40px}
+.hero-foot p{max-width:440px;font-size:17px}
+.hero-cta{display:flex;gap:14px;flex-wrap:wrap}
+.scroll-cue{display:flex;flex-direction:column;align-items:center;gap:10px;font-size:10px;letter-spacing:.3em;color:var(--dim);text-transform:uppercase}
+.scroll-cue i{width:1px;height:46px;background:linear-gradient(var(--gold),transparent);animation:cue 2.2s var(--ease) infinite;transform-origin:top}
+@keyframes cue{0%{transform:scaleY(0)}50%{transform:scaleY(1)}100%{transform:scaleY(1);opacity:0}}
+.fade{opacity:0;transform:translateY(22px);transition:opacity 1.1s var(--ease),transform 1.1s var(--ease)}
+.loaded .fade{opacity:1;transform:none}
+.d1{transition-delay:.5s!important}.d2{transition-delay:.7s!important}.d3{transition-delay:.9s!important}
 
-/* trust */
-.trust{border-top:1px solid color-mix(in srgb,var(--ink) 9%,transparent);border-bottom:1px solid color-mix(in srgb,var(--ink) 9%,transparent);background:var(--surface)}
-.trust .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;padding-top:26px;padding-bottom:26px}
-.trust div{display:flex;align-items:center;gap:12px;font-weight:600;font-size:15px}
-.trust svg{width:22px;height:22px;color:var(--accent);flex:none}
+/* marquee */
+.marquee{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--bg2);overflow:hidden;padding:30px 0;position:relative}
+.marquee::before,.marquee::after{content:"";position:absolute;top:0;bottom:0;width:12vw;z-index:2;pointer-events:none}
+.marquee::before{left:0;background:linear-gradient(90deg,var(--bg2),transparent)}
+.marquee::after{right:0;background:linear-gradient(-90deg,var(--bg2),transparent)}
+.track{display:flex;width:max-content;animation:mq 42s linear infinite}
+.marquee:hover .track{animation-play-state:paused}
+.track span{font-family:var(--serif);font-size:clamp(34px,5vw,64px);font-weight:300;padding:0 34px;white-space:nowrap;display:flex;align-items:center;gap:68px;line-height:1.1}
+.track span:nth-child(even){font-style:italic;color:transparent;-webkit-text-stroke:1px var(--bronze)}
+.track span::after{content:"";width:10px;height:10px;border:1px solid var(--gold);transform:rotate(45deg);flex:none}
+@keyframes mq{to{transform:translateX(-50%)}}
 
 /* sections */
-section.block{padding:110px 0}
-.kicker{font-size:13px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
-h2{font-family:var(--serif);font-weight:500;font-size:clamp(34px,3.8vw,52px);line-height:1.08;letter-spacing:-.02em;margin:14px 0 18px}
-.section-head{display:flex;justify-content:space-between;align-items:end;gap:40px;margin-bottom:56px}
-.section-head p{color:var(--muted);max-width:420px}
-.services{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-.card{background:var(--surface);border-radius:var(--radius);padding:34px 32px 36px;border:1px solid color-mix(in srgb,var(--ink) 7%,transparent);transition:transform .25s ease,box-shadow .25s ease}
-.card:hover{transform:translateY(-4px);box-shadow:0 30px 60px -36px color-mix(in srgb,var(--ink) 45%,transparent)}
-.icon{width:54px;height:54px;border-radius:16px;background:var(--soft);color:var(--accent);display:grid;place-items:center;margin-bottom:24px}
-.icon svg{width:26px;height:26px}
-.card h3{font-family:var(--serif);font-weight:500;font-size:23px;margin-bottom:8px;letter-spacing:-.01em}
-.card p{color:var(--muted);font-size:16px}
+section{position:relative}
+.sec{padding:clamp(90px,14vw,180px) 0}
+.sec-head{display:grid;grid-template-columns:1fr 1.6fr;gap:40px;align-items:end;margin-bottom:clamp(50px,7vw,90px)}
+.sec-head .label{display:flex;gap:14px;align-items:center}
+.num{font-family:var(--serif);font-style:italic;color:var(--gold);font-size:15px;letter-spacing:0}
+.sec-head p{max-width:520px;margin-top:22px;font-size:17px}
 
-.why{background:var(--ink);color:var(--bg)}
-.why .kicker{color:var(--gold)}
-.why-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:80px;align-items:start}
-.why h2{color:var(--bg)}
-.why .intro{color:color-mix(in srgb,var(--bg) 70%,transparent);font-size:18px;max-width:440px}
-.points{display:grid;gap:14px}
-.point{display:grid;grid-template-columns:62px 1fr;gap:20px;padding:30px;border-radius:var(--radius);background:color-mix(in srgb,var(--bg) 6%,transparent);border:1px solid color-mix(in srgb,var(--bg) 10%,transparent)}
-.point .num{font-family:var(--serif);font-size:34px;color:var(--gold);line-height:1}
-.point h3{font-family:var(--serif);font-weight:500;font-size:24px;margin-bottom:6px}
-.point p{color:color-mix(in srgb,var(--bg) 72%,transparent);font-size:16px}
+/* services */
+.svc-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
+.svc{background:var(--bg);padding:clamp(28px,3.4vw,48px);position:relative;overflow:hidden;min-height:340px;display:flex;flex-direction:column;transition:background .6s var(--ease)}
+.svc:nth-child(1){grid-column:span 7}.svc:nth-child(2){grid-column:span 5}
+.svc:nth-child(3),.svc:nth-child(4),.svc:nth-child(5){grid-column:span 4}
+.svc:nth-child(6){grid-column:span 5}.svc:nth-child(7){grid-column:span 7}
+.svc::before{content:"";position:absolute;left:0;top:0;height:2px;width:100%;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:transform .7s var(--ease)}
+.svc:hover{background:var(--surface)}
+.svc:hover::before{transform:scaleX(1)}
+.svc-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:auto}
+.svc-ico{width:56px;height:56px;color:var(--gold);transition:transform .7s var(--ease)}
+.svc:hover .svc-ico{transform:translateY(-6px)}
+.svc-ico *{fill:none;stroke:currentColor;stroke-width:1.1}
+.svc h3{font-size:clamp(30px,3vw,42px);margin:44px 0 14px}
+.svc p{font-size:15px;max-width:420px}
+.svc .ghost{position:absolute;right:-10px;bottom:-40px;font-family:var(--serif);font-size:200px;font-style:italic;line-height:1;color:rgba(243,233,220,.03);pointer-events:none;transition:color .7s}
+.svc:hover .ghost{color:rgba(212,164,79,.07)}
 
-.score{display:flex;align-items:center;gap:18px;background:var(--surface);padding:16px 24px;border-radius:18px;border:1px solid color-mix(in srgb,var(--ink) 8%,transparent)}
-.score b{font-family:var(--serif);font-size:40px;font-weight:500;line-height:1}
-.score small{display:block;color:var(--muted);font-size:14px}
-.reviews{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-.review{background:var(--surface);border-radius:var(--radius);padding:34px;display:flex;flex-direction:column;gap:22px;border:1px solid color-mix(in srgb,var(--ink) 7%,transparent)}
-.review p{font-family:var(--serif);font-size:19.5px;line-height:1.45}
-.review .by{margin-top:auto;display:flex;align-items:center;gap:12px;font-weight:600;font-size:15px}
-.avatar{width:40px;height:40px;border-radius:50%;background:var(--soft);color:var(--accent);display:grid;place-items:center;font-weight:700}
-.review .src{color:var(--muted);font-weight:500;font-size:13px;display:block}
+/* about — signature split */
+.about{background:var(--bg2);overflow:hidden}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,7vw,120px);align-items:center}
+.monolith{position:relative;aspect-ratio:4/5;background:linear-gradient(160deg,var(--surface2),var(--surface) 55%,#1E1713);border:1px solid var(--line);overflow:hidden}
+.monolith svg{position:absolute;inset:0;width:100%;height:100%}
+.monolith .arch *{fill:none;stroke:var(--gold);stroke-width:1;vector-effect:non-scaling-stroke}
+.monolith .arch .b{stroke:var(--bronze);opacity:.55}
+.monolith .cap{position:absolute;left:28px;bottom:26px;right:28px;display:flex;justify-content:space-between;border-top:1px solid var(--line-g);padding-top:16px}
+.monolith .big{position:absolute;top:24px;left:28px;font-family:var(--serif);font-size:clamp(90px,12vw,170px);line-height:.8;font-style:italic;color:rgba(212,164,79,.14)}
+.about-txt h2{margin:22px 0 34px}
+.about-txt p{font-size:17px;margin-bottom:20px;max-width:520px}
+.about-txt .lead{font-family:var(--serif);font-size:clamp(24px,2.3vw,30px);color:var(--text);line-height:1.35;font-style:italic;font-weight:300}
+.addr-line{display:flex;gap:18px;align-items:center;margin-top:36px;padding-top:28px;border-top:1px solid var(--line)}
+.addr-line svg{width:22px;height:22px;flex:none;color:var(--gold)}
+.addr-line svg *{fill:none;stroke:currentColor;stroke-width:1.2}
+.addr-line div{font-size:14px;color:var(--muted);line-height:1.6}
 
-.cta-band{padding:0 0 110px}
-.cta-box{border-radius:calc(var(--radius) + 12px);background:linear-gradient(140deg,var(--accent),color-mix(in srgb,var(--accent) 60%,var(--ink)));color:var(--accent-ink);padding:76px 64px;display:grid;grid-template-columns:1.3fr 1fr;gap:40px;align-items:center;position:relative;overflow:hidden}
-.cta-box:after{content:"";position:absolute;right:-120px;bottom:-200px;width:460px;height:460px;border-radius:50%;border:1.5px solid color-mix(in srgb,var(--accent-ink) 22%,transparent)}
-.cta-box h2{color:inherit;margin:0 0 12px}
-.cta-box p{opacity:.85;font-size:18px}
-.cta-box .actions{display:flex;flex-direction:column;gap:12px;align-items:flex-start;position:relative;z-index:1}
-.cta-box .btn{background:var(--accent-ink);color:var(--accent)}
-.cta-box .btn.ghost{background:transparent;color:var(--accent-ink);border-color:color-mix(in srgb,var(--accent-ink) 40%,transparent)}
+/* why */
+.why-list{border-top:1px solid var(--line)}
+.why{display:grid;grid-template-columns:120px 1fr 1.3fr;gap:40px;padding:44px 0;border-bottom:1px solid var(--line);align-items:baseline;transition:padding .6s var(--ease)}
+.why:hover{padding-left:18px}
+.why .n{font-family:var(--serif);font-style:italic;font-size:22px;color:var(--gold)}
+.why h3{font-size:clamp(28px,3.2vw,44px)}
+.why p{font-size:16px;max-width:520px}
 
-.visit{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:10px}
-.visit .card h3{font-size:20px}
-.visit a{color:var(--accent);font-weight:600}
-footer{border-top:1px solid color-mix(in srgb,var(--ink) 9%,transparent);padding:40px 0 110px;color:var(--muted);font-size:14px}
-footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
-.mobile-bar{display:none}
+/* steps */
+.steps-sec{background:linear-gradient(180deg,var(--bg),var(--bg2))}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;counter-reset:s;position:relative}
+.steps::before{content:"";position:absolute;top:31px;left:0;right:0;height:1px;background:linear-gradient(90deg,var(--gold),var(--line) 70%)}
+.step{position:relative;padding-top:80px}
+.step .dot{position:absolute;top:22px;left:0;width:19px;height:19px;border:1px solid var(--gold);background:var(--bg);transform:rotate(45deg)}
+.step .dot::after{content:"";position:absolute;inset:5px;background:var(--gold)}
+.step .label{display:block;margin-bottom:16px}
+.step h3{font-size:32px;margin-bottom:14px}
+.step p{font-size:15px}
 
-@keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
-.hero .copy>*{animation:rise .8s cubic-bezier(.2,.7,.2,1) both}
-.hero .copy>*:nth-child(2){animation-delay:.08s}.hero .copy>*:nth-child(3){animation-delay:.16s}
-.hero .copy>*:nth-child(4){animation-delay:.24s}.hero .copy>*:nth-child(5){animation-delay:.32s}
-.visual{animation:rise 1s .2s cubic-bezier(.2,.7,.2,1) both}
+/* faq */
+.faq-grid{display:grid;grid-template-columns:1fr 1.6fr;gap:clamp(40px,7vw,120px)}
+.faq-grid h2{position:sticky;top:120px}
+details{border-bottom:1px solid var(--line)}
+details:first-child{border-top:1px solid var(--line)}
+summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:24px;padding:30px 0;font-family:var(--serif);font-size:clamp(22px,2.4vw,30px);line-height:1.25;transition:color .3s}
+summary::-webkit-details-marker{display:none}
+summary:hover{color:var(--gold-l)}
+summary i{width:16px;height:16px;position:relative;flex:none}
+summary i::before,summary i::after{content:"";position:absolute;left:0;right:0;top:50%;height:1px;background:var(--gold);transition:transform .4s var(--ease)}
+summary i::after{transform:rotate(90deg)}
+details[open] summary i::after{transform:rotate(0)}
+details p{padding:0 0 30px;max-width:620px;font-size:16px}
+details p a{color:var(--gold)}
 
-@media (max-width:980px){
+/* cta band */
+.cta-band{padding:clamp(100px,16vw,200px) 0;text-align:center;overflow:hidden;border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:radial-gradient(ellipse at 50% 120%,rgba(212,164,79,.18),transparent 60%),var(--bg2)}
+.cta-band h2{font-size:clamp(50px,10vw,150px);font-weight:300;margin:26px 0 44px}
+.cta-band .hero-cta{justify-content:center}
+.ring{position:absolute;left:50%;top:50%;width:min(110vw,1100px);aspect-ratio:1;transform:translate(-50%,-50%);border:1px solid rgba(212,164,79,.1);border-radius:50%;pointer-events:none}
+.ring.r2{width:min(80vw,800px);border-color:rgba(160,125,99,.12)}
+
+/* contact */
+.contact-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line)}
+.c-cell{background:var(--bg);padding:clamp(30px,4vw,56px)}
+.c-cell.feature{grid-row:span 2;display:flex;flex-direction:column;justify-content:space-between;gap:40px;background:var(--surface)}
+.c-cell h3{font-size:clamp(34px,4vw,54px);margin-top:18px}
+.c-big{font-family:var(--serif);font-size:clamp(36px,5vw,64px);line-height:1.05;display:inline-block;margin-top:18px;color:var(--text);transition:color .3s;word-break:break-word}
+.c-big:hover{color:var(--gold)}
+.c-cell p{margin-top:14px;font-size:16px}
+.c-link{display:inline-flex;gap:10px;align-items:center;margin-top:22px;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);font-weight:600}
+
+footer{padding:70px 0 40px}
+.foot{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;flex-wrap:wrap}
+.foot-name{font-family:var(--serif);font-size:clamp(70px,16vw,240px);line-height:.8;font-weight:300;letter-spacing:-.03em;color:var(--surface2);-webkit-text-stroke:1px rgba(212,164,79,.35)}
+.foot-links{display:flex;gap:26px;flex-wrap:wrap;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+.foot-bottom{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;border-top:1px solid var(--line);margin-top:50px;padding-top:26px;font-size:12px;color:var(--dim);letter-spacing:.06em}
+
+/* sticky mobile bar */
+.mbar{display:none}
+
+/* reveal */
+.rv{opacity:0;transform:translateY(40px);transition:opacity 1.1s var(--ease),transform 1.1s var(--ease)}
+.rv.in{opacity:1;transform:none}
+.rv.s1{transition-delay:.1s}.rv.s2{transition-delay:.2s}.rv.s3{transition-delay:.3s}
+
+@media (max-width:1080px){
   .links{display:none}
-  .hero-grid,.why-grid,.cta-box{grid-template-columns:1fr}
-  .hero-grid{gap:56px}
-  .services,.reviews,.visit{grid-template-columns:1fr 1fr}
-  .trust .wrap{grid-template-columns:1fr 1fr}
-  .float.one{left:12px;bottom:-26px}.float.two{right:12px}
-  .visual{max-width:560px;margin-bottom:20px}
-  .section-head{flex-direction:column;align-items:flex-start}
+  .svc:nth-child(n){grid-column:span 6}
+  .svc:nth-child(7){grid-column:span 12}
+  .steps{grid-template-columns:repeat(2,1fr);row-gap:50px}
+  .steps::before{display:none}
+  .hero-foot{grid-template-columns:1fr 1fr}
+  .scroll-cue{display:none}
 }
-@media (max-width:640px){
-  body{font-size:16px}
-  .wrap{padding:0 18px}
-  .nav{height:66px}.brand{font-size:19px}
-  .phone,.nav-right .btn{display:none}
-  .hero{padding:44px 0 64px}
-  .lead-text{font-size:17.5px}
-  .hero-ctas .btn{flex:1;justify-content:center}
-  .ticks{display:none}
-  .services,.reviews,.visit,.trust .wrap{grid-template-columns:1fr}
-  section.block{padding:76px 0}
-  .quote-panel,.photo{aspect-ratio:auto;min-height:380px}.photo{aspect-ratio:4/3;min-height:0}
-  .quote-panel{padding:40px 30px 64px}.quote-panel p{font-size:23px}
-  .float{font-size:13px;padding:12px 14px}.float b{font-size:18px}
-  .float.two{display:none}
-  .cta-box{padding:52px 28px}
-  .point{grid-template-columns:44px 1fr;padding:24px}
-  .mobile-bar{display:flex;position:fixed;left:12px;right:12px;bottom:12px;z-index:30;gap:10px}
-  .mobile-bar .btn{flex:1;justify-content:center;box-shadow:0 14px 30px -14px color-mix(in srgb,var(--ink) 60%,transparent)}
-  .mobile-bar .btn.ghost{background:var(--surface)}
+@media (max-width:820px){
+  .nav-r .phone,.nav-r .btn{display:none}
+  .burger{display:block}
+  .blueprint{width:78vw;top:96px;right:-8vw;opacity:.45}
+  .sec-head,.about-grid,.faq-grid,.contact-grid{grid-template-columns:1fr}
+  .faq-grid h2{position:static}
+  .why{grid-template-columns:1fr;gap:12px}
+  .why:hover{padding-left:0}
+  .hero-foot{grid-template-columns:1fr;gap:26px}
+  .coords{display:none}
+  .c-cell.feature{grid-row:auto}
+  .mbar{display:grid;grid-template-columns:1fr 1fr;position:fixed;left:0;right:0;bottom:0;z-index:60;background:rgba(20,15,13,.9);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-top:1px solid var(--line);padding:10px 12px calc(10px + env(safe-area-inset-bottom));gap:10px}
+  .mbar .btn{padding:15px 10px;font-size:11px;letter-spacing:.14em}
+  body{padding-bottom:78px}
+}
+@media (max-width:560px){
+  .svc:nth-child(n){grid-column:span 12;min-height:auto}
+  .svc h3{margin-top:30px}
+  .steps{grid-template-columns:1fr}
+  .h1{font-size:clamp(50px,15.5vw,90px)}
+  .h1 .indent{padding-left:0}
+  .hero-cta .btn{flex:1 1 100%}
+  .logo-t{font-size:22px}
+  .mmenu a{font-size:36px}
+  .track span{gap:48px;padding:0 24px}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+  .rv,.fade{opacity:1;transform:none}
+  .h1 .row>span{transform:none}
+  .blueprint .draw{stroke-dashoffset:0}
 }
 </style>
 </head>
 <body>
-<div class="concept">Website concept prepared for <b>Lowe&#39;s</b> by webstudio &middot; not a live site</div>
 
-<header>
+<header id="top-h">
   <div class="wrap nav">
-    <a href="#top" class="brand">Lowe&#39;s</a>
-    <nav class="links">
-      <a href="#services">Services</a><a href="#why">Why us</a><a href="#visit">Visit</a>
+    <a href="#top" class="logo" aria-label="Lowe's, back to top">
+      <span class="logo-mark">L</span>
+      <span class="logo-t">Lowe's<small>Austin · Remodeling</small></span>
+    </a>
+    <nav class="links" aria-label="Primary">
+      <a href="#services" class="ul">Services</a>
+      <a href="#about" class="ul">About</a>
+      <a href="#process" class="ul">Process</a>
+      <a href="#faq" class="ul">FAQ</a>
+      <a href="#contact" class="ul">Visit</a>
     </nav>
-    <div class="nav-right">
-      <a class="phone" href="tel:5126340070">(512) 634-0070</a>
-      <a class="btn" href="#visit">Get a quote</a>
+    <div class="nav-r">
+      <a href="tel:+15126340070" class="phone ul">(512) 634-0070</a>
+      <a href="#contact" class="btn btn-gold">Start a Project</a>
+      <button class="burger" aria-label="Open menu" aria-expanded="false"><span></span><span></span></button>
     </div>
   </div>
 </header>
 
+<div class="mmenu" aria-hidden="true">
+  <a href="#services">Services <span>01</span></a>
+  <a href="#about">About <span>02</span></a>
+  <a href="#process">Process <span>03</span></a>
+  <a href="#faq">FAQ <span>04</span></a>
+  <a href="#contact">Visit <span>05</span></a>
+  <div class="mfoot">13000 N I35 Svc Rd Sb, Bldg. 12<br>Austin, TX 78753</div>
+</div>
+
 <main id="top">
+<!-- HERO -->
 <section class="hero">
-  <div class="wrap hero-grid">
-    <div class="copy">
-      <div class="eyebrow">
-        <span class="dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-7-4.4-7-10a4 4 0 017-2.6A4 4 0 0119 10c0 5.6-7 10-7 10z"/></svg></span>Kitchen &amp; bath remodeling
-      </div>
-      <h1>The home you love, <em>finally finished.</em></h1>
-      <p class="lead-text">Design-build remodeling with one team from first sketch to final walkthrough, on time and on budget.</p>
-      <div class="hero-ctas">
-        <a class="btn" href="#visit">Book a design consult <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-        <a class="btn ghost" href="tel:5126340070">Call (512) 634-0070</a>
-      </div>
-      <div class="ticks">
-        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7"/></svg>Licensed &amp; insured</span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7"/></svg>3D design previews</span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7"/></svg>Fixed-price quotes</span>
-      </div>
-    </div>
-    <div class="visual">
-      
-      <div class="quote-panel"><div class="quote-mark">“</div><div><p>Design-build remodeling with one team from first sketch to final walkthrough, on time and on budget.</p><div class="who">Lowe&#39;s</div></div></div>
-      
-      
-      <div class="float two"><span class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><span><b>This week</b>3D design previews</span></div>
-    </div>
+  <div class="hero-bg" aria-hidden="true">
+    <div class="grid-lines"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+    <svg class="blueprint" id="bp" viewBox="0 0 560 520">
+      <rect class="draw" x="40" y="40" width="480" height="420"/>
+      <line class="draw" x1="40" y1="250" x2="300" y2="250"/>
+      <line class="draw" x1="300" y1="40" x2="300" y2="460"/>
+      <line class="draw" x1="300" y1="320" x2="520" y2="320"/>
+      <path class="draw" d="M300 250 A70 70 0 0 1 230 180"/>
+      <path class="draw" d="M300 320 A60 60 0 0 0 360 380"/>
+      <rect class="draw" x="70" y="70" width="190" height="34"/>
+      <rect class="draw" x="340" y="70" width="140" height="90"/>
+      <circle class="draw" cx="410" cy="115" r="22"/>
+      <rect class="draw" x="340" y="360" width="64" height="70"/>
+      <line class="thin" x1="20" y1="40" x2="20" y2="460"/>
+      <line class="thin" x1="14" y1="40" x2="26" y2="40"/>
+      <line class="thin" x1="14" y1="460" x2="26" y2="460"/>
+      <line class="thin" x1="40" y1="490" x2="520" y2="490"/>
+      <line class="thin" x1="40" y1="484" x2="40" y2="496"/>
+      <line class="thin" x1="520" y1="484" x2="520" y2="496"/>
+      <text x="60" y="235">KITCHEN</text>
+      <text x="320" y="300">BATH</text>
+      <text x="60" y="440">LIVING</text>
+      <text x="240" y="510">PLAN · N. AUSTIN</text>
+    </svg>
   </div>
-  <template id="qp"><div class="quote-panel"><div class="quote-mark">“</div><div><p>Design-build remodeling with one team from first sketch to final walkthrough, on time and on budget.</p><div class="who">Lowe&#39;s</div></div></div></template>
-</section>
-
-<div class="trust"><div class="wrap">
-  <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.2-8 9-4.6-.8-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg>Licensed &amp; insured</div><div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.2-8 9-4.6-.8-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg>3D design previews</div><div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.2-8 9-4.6-.8-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg>Fixed-price quotes</div><div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.2-8 9-4.6-.8-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg>Financing available</div>
-</div></div>
-
-<section class="block" id="services">
   <div class="wrap">
-    <div class="section-head">
-      <div><div class="kicker">What we do</div><h2>Everything you need,<br>under one roof.</h2></div>
-      <p>From routine visits to the work that changes how you feel about your day, Lowe&#39;s takes care of it properly.</p>
+    <div class="hero-meta fade">
+      <span class="label">Remodeling · Austin, Texas</span>
+      <span class="coords">North Austin<br>I-35 · Bldg. 12</span>
     </div>
-    <div class="services">
-      
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11l8-7 8 7v9a1 1 0 01-1 1h-4v-6H9v6H5a1 1 0 01-1-1z"/></svg></div><h3>Kitchen remodels</h3><p>Beautiful, functional kitchens built around how you cook and live.</p></div>
-      
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/><path d="M19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8z"/></svg></div><h3>Bathroom remodels</h3><p>Spa-like bathrooms with craftsmanship that lasts.</p></div>
-      
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3" width="14" height="18" rx="1"/><path d="M9 7h2M13 7h2M9 11h2M13 11h2M9 15h2M13 15h2"/></svg></div><h3>Home additions</h3><p>More space without the move.</p></div>
-      
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 19c0-8 5-14 15-14 0 10-6 15-14 15"/><path d="M5 19c3-4 6-6 10-8"/></svg></div><h3>Basements</h3><p>Turn unused space into your favourite room.</p></div>
-      
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1-4.4-4.3 6.1-.9z"/></svg></div><h3>Design services</h3><p>3D designs so you see it before we build it.</p></div>
-      
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.2-8 9-4.6-.8-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg></div><h3>Warranty</h3><p>Workmanship guaranteed long after we leave.</p></div>
-      
+    <h1 class="h1" aria-label="Rooms, remade with intention.">
+      <span class="row"><span>Rooms,</span></span>
+      <span class="row indent"><span><em>remade</em> with</span></span>
+      <span class="row"><span>intention<span class="amp">.</span></span></span>
+    </h1>
+    <div class="hero-foot">
+      <p class="fade d1">From the first measurement to the final fixture, Lowe's in North Austin helps you plan, choose and complete the remodel your home deserves, all from one address off I-35.</p>
+      <div class="hero-cta fade d2">
+        <a href="#contact" class="btn btn-gold">Plan Your Remodel <svg viewBox="0 0 16 16" fill="none" stroke="currentColor"><path d="M1 8h13M9 3l5 5-5 5"/></svg></a>
+        <a href="tel:+15126340070" class="btn btn-line">Call (512) 634-0070</a>
+      </div>
+      <div class="scroll-cue fade d3"><i></i>Scroll</div>
     </div>
   </div>
 </section>
 
-<section class="block why" id="why">
-  <div class="wrap why-grid">
-    <div>
-      <div class="kicker">Why homeowners choose us</div>
-      <h2>The Austin remodeling company people recommend to their friends.</h2>
-      <p class="intro">it still comes down to the same three things.</p>
-    </div>
-    <div class="points">
-      
-      <div class="point"><div class="num">01</div><div><h3>Design-build</h3><p>One team, one contract, one point of contact.</p></div></div>
-      
-      <div class="point"><div class="num">02</div><div><h3>Fixed pricing</h3><p>A clear, detailed quote with no surprise change orders.</p></div></div>
-      
-      <div class="point"><div class="num">03</div><div><h3>Clean job sites</h3><p>We respect your home like it&#39;s our own.</p></div></div>
-      
-    </div>
+<!-- MARQUEE -->
+<div class="marquee" aria-label="Remodeling services">
+  <div class="track">
+    <span>Kitchens</span><span>Bathrooms</span><span>Flooring</span><span>Cabinetry</span><span>Countertops</span><span>Windows &amp; Doors</span><span>Outdoor Living</span>
+    <span aria-hidden="true">Kitchens</span><span aria-hidden="true">Bathrooms</span><span aria-hidden="true">Flooring</span><span aria-hidden="true">Cabinetry</span><span aria-hidden="true">Countertops</span><span aria-hidden="true">Windows &amp; Doors</span><span aria-hidden="true">Outdoor Living</span>
   </div>
-</section>
+</div>
 
-
-
-<section class="cta-band" id="book">
-  <div class="wrap"><div class="cta-box">
-    <div><h2>Ready when you are.</h2><p>Book a design consult in under a minute, or give us a call and talk to a real person.</p></div>
-    <div class="actions">
-      <a class="btn" href="#visit">Book a design consult</a>
-      <a class="btn ghost" href="tel:5126340070">Call (512) 634-0070</a>
-    </div>
-  </div></div>
-</section>
-
-<section class="block" id="visit" style="padding-top:0">
+<!-- SERVICES -->
+<section class="sec" id="services">
   <div class="wrap">
-    <div class="kicker">Visit us</div><h2>Come say hello.</h2>
-    <div class="visit">
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11l8-7 8 7v9a1 1 0 01-1 1h-4v-6H9v6H5a1 1 0 01-1-1z"/></svg></div><h3>Address</h3><p>13000 N I35 Svc Rd Sb, Bldg 12 Bldg. 12, Austin TX 78753</p></div>
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div><h3>Phone</h3><p><a href="tel:5126340070">(512) 634-0070</a></p><p style="margin-top:10px">Call or message us for today's opening hours.</p></div>
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-7-4.4-7-10a4 4 0 017-2.6A4 4 0 0119 10c0 5.6-7 10-7 10z"/></svg></div><h3>3D design previews</h3><p>Book a design consult online or by phone and we'll take care of the rest.</p></div>
+    <div class="sec-head">
+      <div class="rv"><span class="label"><span class="num">01</span> What We Remodel</span></div>
+      <div class="rv s1">
+        <h2>Every room, <em>considered.</em></h2>
+        <p>Whether it's a single surface or the whole floor plan, start the conversation with the team at our North Austin location.</p>
+      </div>
+    </div>
+    <div class="svc-grid">
+      <article class="svc rv">
+        <div class="svc-top"><svg class="svc-ico" viewBox="0 0 56 56"><rect x="6" y="20" width="44" height="30"/><path d="M6 30h44M18 20V8h20v12M24 38h8"/><circle cx="16" cy="12" r="0"/></svg><span class="label m">I</span></div>
+        <h3>Kitchen Remodeling</h3>
+        <p>The room everyone gathers in, redesigned around how you actually cook, host and live. Layout, cabinetry, surfaces and finishes, planned as one.</p>
+        <span class="ghost">K</span>
+      </article>
+      <article class="svc rv s1">
+        <div class="svc-top"><svg class="svc-ico" viewBox="0 0 56 56"><path d="M6 28h44v8a12 12 0 0 1-12 12H18A12 12 0 0 1 6 36z"/><path d="M14 28V12a6 6 0 0 1 12 0M20 48l-2 4M36 48l2 4"/></svg><span class="label m">II</span></div>
+        <h3>Bathrooms</h3>
+        <p>Quiet, spa-like retreats with the details that matter: tile, vanity, lighting and fixtures that feel calm every morning.</p>
+        <span class="ghost">B</span>
+      </article>
+      <article class="svc rv">
+        <div class="svc-top"><svg class="svc-ico" viewBox="0 0 56 56"><path d="M6 50L28 38l22 12M6 50l22-12M28 38V6M14 46l22-12M20 50l22-12"/></svg><span class="label m">III</span></div>
+        <h3>Flooring</h3>
+        <p>The foundation of every room. Choose the material, tone and texture that ties your home together.</p>
+        <span class="ghost">F</span>
+      </article>
+      <article class="svc rv s1">
+        <div class="svc-top"><svg class="svc-ico" viewBox="0 0 56 56"><rect x="8" y="6" width="40" height="44"/><path d="M28 6v44M8 28h40M22 16v4M34 16v4M22 36v4M34 36v4"/></svg><span class="label m">IV</span></div>
+        <h3>Cabinetry</h3>
+        <p>Storage that disappears into the architecture, built to bring order and beauty to the everyday.</p>
+        <span class="ghost">C</span>
+      </article>
+      <article class="svc rv s2">
+        <div class="svc-top"><svg class="svc-ico" viewBox="0 0 56 56"><path d="M4 22h48v6H4zM10 28v22M46 28v22M18 14c3-4 7-4 10 0s7 4 10 0"/></svg><span class="label m">V</span></div>
+        <h3>Countertops</h3>
+        <p>The working surface of a home, chosen for both how it looks and how it holds up.</p>
+        <span class="ghost">S</span>
+      </article>
+      <article class="svc rv">
+        <div class="svc-top"><svg class="svc-ico" viewBox="0 0 56 56"><path d="M10 50V18a18 18 0 0 1 36 0v32z"/><path d="M28 0v50M10 30h36"/></svg><span class="label m">VI</span></div>
+        <h3>Windows &amp; Doors</h3>
+        <p>Frame the light and the view. The right openings change how every room feels.</p>
+        <span class="ghost">W</span>
+      </article>
+      <article class="svc rv s1">
+        <div class="svc-top"><svg class="svc-ico" viewBox="0 0 56 56"><path d="M4 26L28 8l24 18M10 22v28h36V22M4 50h48M22 50V36h12v14"/></svg><span class="label m">VII</span></div>
+        <h3>Outdoor Living</h3>
+        <p>Austin lives outside. Extend your home into patios, decks and spaces made for long Texas evenings.</p>
+        <span class="ghost">O</span>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="sec about" id="about">
+  <div class="wrap about-grid">
+    <div class="monolith rv" aria-hidden="true">
+      <span class="big">Bldg.<br>12</span>
+      <svg class="arch" viewBox="0 0 400 500" preserveAspectRatio="none">
+        <path d="M120 500V250a80 80 0 0 1 160 0v250"/>
+        <path class="b" d="M150 500V260a50 50 0 0 1 100 0v240"/>
+        <path class="b" d="M0 420h400M0 440h400"/>
+        <path d="M340 60v380M60 60h280"/>
+      </svg>
+      <div class="cap"><span class="label">North Austin</span><span class="label m">TX 78753</span></div>
+    </div>
+    <div class="about-txt">
+      <span class="label rv"><span class="num">02</span>&nbsp;&nbsp;Our Place in Austin</span>
+      <h2 class="rv s1">Close to home, <em>built for it.</em></h2>
+      <p class="lead rv s2">A remodel is personal. It should begin with a conversation, not a catalogue.</p>
+      <p class="rv s2">Lowe's in North Austin sits right on the I-35 southbound service road, an easy stop whether you're coming from the north side, downtown or the suburbs beyond. Come in with a sketch, a photo or just a feeling about the room you want, and leave with a clearer plan.</p>
+      <p class="rv s3">We help Austin homeowners choose with confidence: materials you can see and touch, people who will talk you through the options, and a single place to bring your remodel together.</p>
+      <div class="addr-line rv s3">
+        <svg viewBox="0 0 22 22"><path d="M11 21s-7-6.5-7-12a7 7 0 0 1 14 0c0 5.5-7 12-7 12z"/><circle cx="11" cy="9" r="2.5"/></svg>
+        <div>13000 N I35 Svc Rd Sb, Bldg. 12<br>Austin, TX 78753</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY -->
+<section class="sec" id="why">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="rv"><span class="label"><span class="num">03</span> Why Lowe's</span></div>
+      <div class="rv s1"><h2>The calm way <em>to remodel.</em></h2></div>
+    </div>
+    <div class="why-list">
+      <div class="why rv"><span class="n">i.</span><h3>One address, every room</h3><p>Kitchens, baths, floors, cabinetry and outdoor spaces, all planned from one North Austin location, so your project stays coherent from start to finish.</p></div>
+      <div class="why rv"><span class="n">ii.</span><h3>See it before you choose it</h3><p>Materials, finishes and fixtures you can look at in person, so the decisions you make feel certain rather than hopeful.</p></div>
+      <div class="why rv"><span class="n">iii.</span><h3>A real conversation</h3><p>Call or stop by and talk your ideas through with people who know remodeling. No pressure, just a clearer picture of what's possible.</p></div>
+      <div class="why rv"><span class="n">iv.</span><h3>Easy to reach</h3><p>Right on the I-35 southbound service road in North Austin, simple to find and simple to come back to as your project takes shape.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="sec steps-sec" id="process">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="rv"><span class="label"><span class="num">04</span> How It Works</span></div>
+      <div class="rv s1"><h2>Four quiet <em>steps.</em></h2></div>
+    </div>
+    <div class="steps">
+      <div class="step rv"><span class="dot"></span><span class="label">Step 01</span><h3>Reach out</h3><p>Call (512) 634-0070 or visit us in North Austin to tell us about the room you want to change.</p></div>
+      <div class="step rv s1"><span class="dot"></span><span class="label">Step 02</span><h3>Plan</h3><p>Talk through your space, your style and how you use it, and shape the scope of the remodel.</p></div>
+      <div class="step rv s2"><span class="dot"></span><span class="label">Step 03</span><h3>Select</h3><p>Choose materials, finishes and fixtures in person, with guidance at every decision.</p></div>
+      <div class="step rv s3"><span class="dot"></span><span class="label">Step 04</span><h3>Transform</h3><p>Watch the plan become a finished room, one that finally feels like yours.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="sec" id="faq">
+  <div class="wrap faq-grid">
+    <div><span class="label rv"><span class="num">05</span>&nbsp;&nbsp;Questions</span><h2 class="rv s1" style="margin-top:22px">Good to <em>know.</em></h2></div>
+    <div class="rv s1">
+      <details><summary>Where are you located?<i></i></summary><p>We're at 13000 N I35 Svc Rd Sb, Bldg. 12, Austin, TX 78753, on the southbound service road of I-35 in North Austin. <a href="https://maps.google.com/?q=13000+N+I35+Svc+Rd+Sb+Bldg+12+Austin+TX+78753" target="_blank" rel="noopener" class="ul">Get directions</a>.</p></details>
+      <details><summary>How do I start a remodeling project?<i></i></summary><p>The simplest way is to call us at <a href="tel:+15126340070" class="ul">(512) 634-0070</a> or stop by the store. Bring photos, measurements or ideas if you have them.</p></details>
+      <details><summary>What are your opening hours?<i></i></summary><p>Please call <a href="tel:+15126340070" class="ul">(512) 634-0070</a> to confirm current hours before you visit.</p></details>
+      <details><summary>Which rooms can you help with?<i></i></summary><p>Talk to us about kitchens, bathrooms, flooring, cabinetry, countertops, windows and doors, and outdoor spaces. Call ahead to discuss your specific project.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-band">
+  <span class="ring" aria-hidden="true"></span><span class="ring r2" aria-hidden="true"></span>
+  <div class="wrap" style="position:relative">
+    <span class="label rv">North Austin · I-35</span>
+    <h2 class="rv s1">Your next room<br><em>starts here.</em></h2>
+    <div class="hero-cta rv s2">
+      <a href="tel:+15126340070" class="btn btn-gold">Call (512) 634-0070</a>
+      <a href="https://maps.google.com/?q=13000+N+I35+Svc+Rd+Sb+Bldg+12+Austin+TX+78753" target="_blank" rel="noopener" class="btn btn-line">Get Directions</a>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="sec" id="contact">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="rv"><span class="label"><span class="num">06</span> Visit &amp; Contact</span></div>
+      <div class="rv s1"><h2>Come <em>see us.</em></h2></div>
+    </div>
+    <div class="contact-grid rv">
+      <div class="c-cell feature">
+        <div>
+          <span class="label">Call the Store</span>
+          <a href="tel:+15126340070" class="c-big">(512)<br>634-0070</a>
+          <p>The fastest way to start a conversation about your remodel.</p>
+        </div>
+        <a href="tel:+15126340070" class="btn btn-gold" style="align-self:flex-start">Call Now <svg viewBox="0 0 16 16" fill="none" stroke="currentColor"><path d="M1 8h13M9 3l5 5-5 5"/></svg></a>
+      </div>
+      <div class="c-cell">
+        <span class="label">Address</span>
+        <h3>13000 N I35 Svc Rd Sb</h3>
+        <p>Bldg. 12<br>Austin, TX 78753</p>
+        <a href="https://maps.google.com/?q=13000+N+I35+Svc+Rd+Sb+Bldg+12+Austin+TX+78753" target="_blank" rel="noopener" class="c-link ul">Open in Google Maps →</a>
+      </div>
+      <div class="c-cell">
+        <span class="label">Hours</span>
+        <h3>Call to confirm</h3>
+        <p>Please phone ahead for current opening hours before visiting.</p>
+      </div>
     </div>
   </div>
 </section>
 </main>
 
-<footer><div class="wrap">
-  <span>© 2026 Lowe&#39;s</span>
-  <span>Concept design by webstudio. Not affiliated with or endorsed by Lowe&#39;s.</span>
-</div></footer>
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div class="foot-name">Lowe's</div>
+      <nav class="foot-links" aria-label="Footer">
+        <a href="#services" class="ul">Services</a><a href="#about" class="ul">About</a><a href="#process" class="ul">Process</a><a href="#contact" class="ul">Visit</a>
+      </nav>
+    </div>
+    <div class="foot-bottom">
+      <span>Lowe's · 13000 N I35 Svc Rd Sb, Bldg. 12, Austin, TX 78753</span>
+      <a href="tel:+15126340070" class="ul">(512) 634-0070</a>
+    </div>
+  </div>
+</footer>
 
-<div class="mobile-bar">
-  <a class="btn ghost" href="tel:5126340070">Call</a>
-  <a class="btn" href="#visit">Get a quote</a>
+<div class="mbar">
+  <a href="tel:+15126340070" class="btn btn-line">Call</a>
+  <a href="#contact" class="btn btn-gold">Visit Us</a>
 </div>
-</body>
+
+<script>
+(function(){
+  var d=document,b=d.body,h=d.getElementById('top-h');
+  requestAnimationFrame(function(){setTimeout(function(){b.classList.add('loaded')},80)});
+  var onScroll=function(){h.classList.toggle('scrolled',scrollY>30)};
+  onScroll();addEventListener('scroll',onScroll,{passive:true});
+
+  var burger=d.querySelector('.burger'),mm=d.querySelector('.mmenu');
+  function setMenu(o){b.classList.toggle('menu-open',o);burger.setAttribute('aria-expanded',o);mm.setAttribute('aria-hidden',!o);b.style.overflow=o?'hidden':''}
+  burger.addEventListener('click',function(){setMenu(!b.classList.contains('menu-open'))});
+  mm.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){setMenu(false)})});
+
+  var rv=d.querySelectorAll('.rv');
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12,rootMargin:'0px 0px -40px 0px'});
+    rv.forEach(function(el){io.observe(el)});
+  }else rv.forEach(function(el){el.classList.add('in')});
+
+  if(!matchMedia('(prefers-reduced-motion: reduce)').matches){
+    var bp=d.getElementById('bp'),t=false;
+    addEventListener('scroll',function(){
+      if(t)return;t=true;
+      requestAnimationFrame(function(){var y=scrollY;if(y<innerHeight*1.2)bp.style.transform='translate3d(0,'+(y*.18)+'px,0) rotate('+(y*.008)+'deg)';t=false});
+    },{passive:true});
+  }
+})();
+</script>
+<div id="lm-concept" style="position:fixed;left:12px;bottom:12px;z-index:2147483647;font:500 11px/1.3 -apple-system,BlinkMacSystemFont,Segoe UI,sans-serif;letter-spacing:.02em;background:rgba(15,15,18,.82);color:#f4f1ea;padding:7px 11px;border-radius:999px;backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);pointer-events:none;max-width:70vw">Website concept for Lowe&#x27;s by webstudio &middot; not the live site</div><p style="margin:0;padding:18px 16px 70px;text-align:center;font:12px/1.5 -apple-system,sans-serif;color:#8a8a8a;background:#0e0e10">Concept design by webstudio. Not affiliated with or endorsed by Lowe&#x27;s.</p></body>
 </html>
