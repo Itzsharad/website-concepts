@@ -1,291 +1,641 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src * data: blob:; media-src 'self' data:; style-src 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com data:; script-src 'unsafe-inline'; connect-src 'none'; frame-src 'none'; form-action 'none'; base-uri 'none'; object-src 'none'">
 <meta name="robots" content="noindex, nofollow">
-<title>Westlake Chiropractor | Website concept</title>
+<style>html,body{max-width:100%;overflow-x:clip}</style>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Westlake Chiropractor | Chiropractic Care in West Lake Hills, Austin TX</title>
+<meta name="description" content="Westlake Chiropractor — hands-on chiropractic care at 5524 Bee Caves Rd, West Lake Hills, TX 78746. Call (512) 535-1048 to book your visit.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..800;1,6..96,400..700&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 :root{
-  --bg:#f5f3ee;--surface:#ffffff;--ink:#1c2a22;--muted:#5f6b63;
-  --accent:#2f5a43;--accent-ink:#ffffff;--gold:#b8955a;--soft:#e6ece6;
-  --radius:22px;--max:1180px;
-  --serif:"Fraunces",Georgia,serif;--sans:"Manrope",system-ui,-apple-system,sans-serif;
+  --bg:#EFF7F7;--surface:#FFFFFF;--ink:#0F2F33;--ink-soft:#3D5B5F;
+  --teal:#0F8B8D;--teal-deep:#0B6E70;--teal-dark:#0A4F52;--teal-tint:#D6ECEC;--teal-mist:#E3F1F1;
+  --gold:#F2B544;--gold-soft:#FBE7BE;--cream:#FBF6EC;
+  --r-lg:36px;--r-md:24px;--r-pill:999px;
+  --serif:"Bodoni Moda",Georgia,serif;--sans:"Jost",system-ui,sans-serif;
+  --ease:cubic-bezier(.22,.8,.24,1);
+  --shadow:0 1px 2px rgba(15,47,51,.04),0 18px 50px -24px rgba(15,47,51,.22);
 }
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
-a{color:inherit;text-decoration:none}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:96px}
+body{font-family:var(--sans);font-weight:400;font-size:17px;line-height:1.7;color:var(--ink);background:var(--bg);overflow-x:hidden;-webkit-font-smoothing:antialiased}
 img{max-width:100%;display:block}
-.wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
-.concept{background:var(--ink);color:var(--bg);font-size:13px;text-align:center;padding:8px 16px;letter-spacing:.02em}
-.concept b{color:var(--gold);font-weight:600}
+a{color:inherit;text-decoration:none}
+h1,h2,h3{font-family:var(--serif);font-weight:500;line-height:1.05;letter-spacing:-.015em}
+em{font-style:italic;color:var(--teal-deep)}
+.label{font-size:12px;font-weight:500;letter-spacing:.28em;text-transform:uppercase;color:var(--teal-deep);display:inline-flex;align-items:center;gap:12px}
+.label::before{content:"";width:28px;height:1px;background:currentColor}
+::selection{background:var(--gold-soft);color:var(--ink)}
 
-/* header */
-header{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:saturate(1.4) blur(10px);border-bottom:1px solid color-mix(in srgb,var(--ink) 8%,transparent)}
-.nav{display:flex;align-items:center;justify-content:space-between;height:76px;gap:24px}
-.brand{font-family:var(--serif);font-size:23px;font-weight:600;letter-spacing:-.01em;line-height:1.1;max-width:340px}
-.links{display:flex;gap:30px;font-size:15px;font-weight:500;color:var(--muted)}
-.links a:hover{color:var(--ink)}
+/* Buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:16px 28px;border-radius:var(--r-pill);font-family:var(--sans);font-weight:500;font-size:15px;letter-spacing:.04em;transition:transform .45s var(--ease),box-shadow .45s var(--ease),background .3s;white-space:nowrap;text-align:center}
+.btn-primary{background:var(--teal-deep);color:#fff;box-shadow:0 12px 30px -12px rgba(11,110,112,.65)}
+.btn-primary:hover{transform:translateY(-3px);background:var(--teal-dark);box-shadow:0 18px 36px -14px rgba(11,110,112,.7)}
+.btn-ghost{background:transparent;color:var(--ink);border:1px solid rgba(15,47,51,.22)}
+.btn-ghost:hover{transform:translateY(-3px);border-color:var(--ink);background:var(--surface)}
+.btn-gold{background:var(--gold);color:var(--ink)}
+.btn-gold:hover{transform:translateY(-3px);box-shadow:0 18px 36px -14px rgba(242,181,68,.8)}
+.btn svg{width:16px;height:16px;flex-shrink:0}
+.ulink{position:relative;display:inline-block}
+.ulink::after{content:"";position:absolute;left:0;bottom:-2px;height:1px;width:100%;background:currentColor;transform:scaleX(0);transform-origin:right;transition:transform .5s var(--ease)}
+.ulink:hover::after{transform:scaleX(1);transform-origin:left}
+
+/* Header */
+.nav{position:fixed;inset:14px 14px auto;z-index:50;display:flex;align-items:center;justify-content:space-between;gap:20px;padding:10px 12px 10px 18px;border-radius:var(--r-pill);background:rgba(255,255,255,.62);backdrop-filter:blur(18px) saturate(1.4);-webkit-backdrop-filter:blur(18px) saturate(1.4);border:1px solid rgba(255,255,255,.8);box-shadow:0 10px 40px -20px rgba(15,47,51,.25);transition:background .4s}
+.nav.scrolled{background:rgba(255,255,255,.86)}
+.brand{display:flex;align-items:center;gap:12px;min-width:0}
+.brand img{height:38px;width:auto;max-width:120px;object-fit:contain}
+.brand span{font-family:var(--serif);font-size:19px;font-weight:600;letter-spacing:-.01em;white-space:nowrap}
+.nav-links{display:flex;gap:30px;font-size:14px;letter-spacing:.06em}
 .nav-right{display:flex;align-items:center;gap:18px}
-.phone{font-weight:600;font-size:15px;white-space:nowrap}
-.btn{display:inline-flex;align-items:center;gap:10px;background:var(--accent);color:var(--accent-ink);padding:14px 26px;border-radius:999px;font-weight:600;font-size:15.5px;transition:transform .2s ease,box-shadow .2s ease;white-space:nowrap}
-.btn:hover{transform:translateY(-2px);box-shadow:0 12px 28px -12px var(--accent)}
-.btn.ghost{background:transparent;color:var(--ink);border:1.5px solid color-mix(in srgb,var(--ink) 20%,transparent)}
-.btn.ghost:hover{box-shadow:none;border-color:var(--ink)}
-.btn svg{width:18px;height:18px}
+.nav-phone{font-size:14px;font-weight:500;letter-spacing:.04em;white-space:nowrap}
+.nav .btn{padding:12px 22px;font-size:14px}
+.burger{display:none;width:46px;height:46px;border-radius:50%;border:0;background:var(--ink);cursor:pointer;position:relative}
+.burger i{position:absolute;left:14px;right:14px;height:1.5px;background:#fff;transition:transform .4s var(--ease),opacity .3s}
+.burger i:nth-child(1){top:18px}.burger i:nth-child(2){top:26px}
+.burger[aria-expanded="true"] i:nth-child(1){transform:translateY(4px) rotate(45deg)}
+.burger[aria-expanded="true"] i:nth-child(2){transform:translateY(-4px) rotate(-45deg)}
+.mobile-menu{position:fixed;inset:0;z-index:45;background:var(--cream);display:flex;flex-direction:column;justify-content:center;padding:100px 32px 120px;gap:8px;opacity:0;visibility:hidden;transition:opacity .45s var(--ease),visibility .45s}
+.mobile-menu.open{opacity:1;visibility:visible}
+.mobile-menu a.m{font-family:var(--serif);font-size:42px;line-height:1.25;border-bottom:1px solid rgba(15,47,51,.1);padding:8px 0}
+.mobile-menu .btn{margin-top:28px}
 
-/* hero */
-.hero{padding:72px 0 88px}
-.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:64px;align-items:center}
-.eyebrow{display:inline-flex;align-items:center;gap:10px;background:var(--surface);border:1px solid color-mix(in srgb,var(--ink) 10%,transparent);padding:8px 16px 8px 10px;border-radius:999px;font-size:14px;font-weight:600;color:var(--muted)}
-.stars{color:var(--gold);letter-spacing:1px;font-size:14px}
-.eyebrow .dot{width:26px;height:26px;border-radius:50%;background:var(--soft);display:grid;place-items:center;color:var(--accent)}
-h1{font-family:var(--serif);font-weight:500;font-size:clamp(44px,5.6vw,74px);line-height:1.02;letter-spacing:-.025em;margin:26px 0 22px}
-h1 em{font-style:italic;color:var(--accent)}
-.lead-text{font-size:19.5px;color:var(--muted);max-width:540px}
-.hero-ctas{display:flex;gap:14px;margin-top:36px;flex-wrap:wrap}
-.ticks{display:flex;gap:22px;margin-top:34px;flex-wrap:wrap;font-size:14.5px;font-weight:600;color:var(--muted)}
-.ticks span{display:flex;align-items:center;gap:8px}
-.ticks svg{width:18px;height:18px;color:var(--accent)}
-.visual{position:relative}
-.photo{aspect-ratio:4/5;border-radius:calc(var(--radius) + 10px);overflow:hidden;background:var(--soft);box-shadow:0 40px 80px -40px color-mix(in srgb,var(--ink) 55%,transparent)}
-.photo img{width:100%;height:100%;object-fit:cover}
-.quote-panel{aspect-ratio:4/5;border-radius:calc(var(--radius) + 10px);background:linear-gradient(155deg,var(--accent),color-mix(in srgb,var(--accent) 55%,var(--ink)));color:var(--accent-ink);padding:52px 46px;display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden;box-shadow:0 40px 80px -40px color-mix(in srgb,var(--ink) 60%,transparent)}
-.quote-panel:before{content:"";position:absolute;width:420px;height:420px;border-radius:50%;right:-160px;top:-160px;background:color-mix(in srgb,var(--accent-ink) 9%,transparent)}
-.quote-panel:after{content:"";position:absolute;width:260px;height:260px;border-radius:50%;left:-90px;bottom:-110px;border:1.5px solid color-mix(in srgb,var(--accent-ink) 22%,transparent)}
-.quote-mark{font-family:var(--serif);font-size:120px;line-height:.6;opacity:.35}
-.quote-panel p{font-family:var(--serif);font-size:28px;line-height:1.3;position:relative;z-index:1}
-.quote-panel .who{font-family:var(--sans);font-size:15px;opacity:.85;margin-top:22px;font-weight:600}
-.float{position:absolute;background:var(--surface);color:var(--ink);border-radius:18px;padding:16px 20px;box-shadow:0 24px 50px -24px color-mix(in srgb,var(--ink) 50%,transparent);display:flex;align-items:center;gap:14px;font-size:14px;line-height:1.35}
-.float b{font-size:22px;font-family:var(--serif);font-weight:600;display:block}
-.float.one{left:-34px;bottom:-28px}
-.float.two{right:-22px;top:44px}
-.float .badge{width:44px;height:44px;border-radius:14px;background:var(--soft);display:grid;place-items:center;color:var(--accent)}
-.float .badge svg{width:22px;height:22px}
+/* Layout */
+.layout{display:grid;grid-template-columns:minmax(380px,42%) 1fr;gap:0;max-width:1480px;margin:0 auto}
+.intro{position:sticky;top:0;height:100vh;padding:130px 56px 48px;display:flex;flex-direction:column;justify-content:space-between;overflow:hidden}
+.intro-top>*{opacity:0;transform:translateY(26px);animation:rise 1.1s var(--ease) forwards}
+.intro-top>*:nth-child(1){animation-delay:.15s}.intro-top>*:nth-child(2){animation-delay:.3s}
+.intro-top>*:nth-child(3){animation-delay:.48s}.intro-top>*:nth-child(4){animation-delay:.64s}
+@keyframes rise{to{opacity:1;transform:none}}
+.intro h1{font-size:clamp(48px,5.6vw,88px);margin:26px 0 24px}
+.intro h1 em{display:inline-block}
+.intro p.sub{font-size:18px;color:var(--ink-soft);max-width:430px;font-weight:300}
+.cta-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:34px}
+.intro-foot{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;opacity:0;animation:rise 1.2s .9s var(--ease) forwards}
+.intro-foot address{font-style:normal;font-size:14px;line-height:1.6;color:var(--ink-soft);letter-spacing:.02em}
+.intro-foot address strong{display:block;color:var(--ink);font-weight:500;font-size:12px;letter-spacing:.24em;text-transform:uppercase;margin-bottom:6px}
 
-/* trust */
-.trust{border-top:1px solid color-mix(in srgb,var(--ink) 9%,transparent);border-bottom:1px solid color-mix(in srgb,var(--ink) 9%,transparent);background:var(--surface)}
-.trust .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;padding-top:26px;padding-bottom:26px}
-.trust div{display:flex;align-items:center;gap:12px;font-weight:600;font-size:15px}
-.trust svg{width:22px;height:22px;color:var(--accent);flex:none}
+/* Signature: the aligning spine */
+.spine{position:absolute;right:28px;top:120px;bottom:40px;width:60px;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:7px;pointer-events:none}
+.spine b{display:block;height:15px;border-radius:var(--r-pill);background:linear-gradient(90deg,var(--teal-tint),#fff);border:1px solid rgba(15,139,141,.25);transform:translateX(calc(var(--o,0px) * var(--mis,1)));transition:transform .25s linear,background .6s}
+.spine.aligned b{background:linear-gradient(90deg,var(--teal),#5FBDBE);border-color:transparent}
+.spine-cap{position:absolute;right:20px;bottom:44px;writing-mode:vertical-rl;transform:rotate(180deg);font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:var(--teal-deep)}
 
-/* sections */
-section.block{padding:110px 0}
-.kicker{font-size:13px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
-h2{font-family:var(--serif);font-weight:500;font-size:clamp(34px,3.8vw,52px);line-height:1.08;letter-spacing:-.02em;margin:14px 0 18px}
-.section-head{display:flex;justify-content:space-between;align-items:end;gap:40px;margin-bottom:56px}
-.section-head p{color:var(--muted);max-width:420px}
-.services{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-.card{background:var(--surface);border-radius:var(--radius);padding:34px 32px 36px;border:1px solid color-mix(in srgb,var(--ink) 7%,transparent);transition:transform .25s ease,box-shadow .25s ease}
-.card:hover{transform:translateY(-4px);box-shadow:0 30px 60px -36px color-mix(in srgb,var(--ink) 45%,transparent)}
-.icon{width:54px;height:54px;border-radius:16px;background:var(--soft);color:var(--accent);display:grid;place-items:center;margin-bottom:24px}
-.icon svg{width:26px;height:26px}
-.card h3{font-family:var(--serif);font-weight:500;font-size:23px;margin-bottom:8px;letter-spacing:-.01em}
-.card p{color:var(--muted);font-size:16px}
+.flow{padding:120px 40px 80px 0;display:flex;flex-direction:column;gap:28px;min-width:0}
+.panel{background:var(--surface);border-radius:var(--r-lg);padding:64px;box-shadow:var(--shadow);position:relative;overflow:hidden}
 
-.why{background:var(--ink);color:var(--bg)}
-.why .kicker{color:var(--gold)}
-.why-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:80px;align-items:start}
-.why h2{color:var(--bg)}
-.why .intro{color:color-mix(in srgb,var(--bg) 70%,transparent);font-size:18px;max-width:440px}
-.points{display:grid;gap:14px}
-.point{display:grid;grid-template-columns:62px 1fr;gap:20px;padding:30px;border-radius:var(--radius);background:color-mix(in srgb,var(--bg) 6%,transparent);border:1px solid color-mix(in srgb,var(--bg) 10%,transparent)}
-.point .num{font-family:var(--serif);font-size:34px;color:var(--gold);line-height:1}
-.point h3{font-family:var(--serif);font-weight:500;font-size:24px;margin-bottom:6px}
-.point p{color:color-mix(in srgb,var(--bg) 72%,transparent);font-size:16px}
+/* Hero composition */
+.hero-art{min-height:calc(100vh - 160px);padding:0;background:var(--teal-dark);color:#fff;display:flex;flex-direction:column;justify-content:flex-end;isolation:isolate}
+.hero-art .arch{position:absolute;left:50%;bottom:-2px;width:min(78%,560px);aspect-ratio:3/4;transform:translateX(-50%);border-radius:999px 999px 0 0;background:linear-gradient(180deg,#127F81 0%,#0E6567 100%);z-index:-2}
+.hero-art .arch.inner{width:min(56%,400px);background:linear-gradient(180deg,var(--cream),#F3E6CC);z-index:-1}
+.blob{position:absolute;border-radius:58% 42% 55% 45%/48% 55% 45% 52%;z-index:-1;will-change:transform}
+.blob.b1{width:200px;height:200px;background:var(--gold);top:9%;right:8%;animation:morph 14s ease-in-out infinite}
+.blob.b2{width:120px;height:120px;background:#5FBDBE;bottom:30%;left:7%;opacity:.85;animation:morph 18s ease-in-out infinite reverse}
+@keyframes morph{0%,100%{border-radius:58% 42% 55% 45%/48% 55% 45% 52%}50%{border-radius:42% 58% 40% 60%/58% 42% 58% 42%}}
+.hero-word{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;z-index:0;pointer-events:none}
+.hero-word span{font-family:var(--serif);font-style:italic;font-weight:400;font-size:clamp(90px,14vw,230px);line-height:.8;color:var(--ink);letter-spacing:-.04em;mix-blend-mode:normal;transform:translateY(8%)}
+.hero-word span i{font-style:normal;color:var(--teal-deep)}
+.hero-cap{position:relative;z-index:2;display:flex;justify-content:space-between;align-items:flex-end;gap:20px;padding:36px 40px;background:linear-gradient(0deg,rgba(10,79,82,.95),rgba(10,79,82,0))}
+.hero-cap p{font-size:13px;letter-spacing:.24em;text-transform:uppercase;color:#E6F4F4}
+.hero-cap .pin{display:flex;align-items:center;gap:10px}
+.hero-cap .pin svg{width:18px;height:18px;color:var(--gold)}
+.hero-top{position:absolute;top:36px;left:40px;right:40px;display:flex;justify-content:space-between;z-index:2;font-size:12px;letter-spacing:.28em;text-transform:uppercase;color:#E6F4F4}
 
-.score{display:flex;align-items:center;gap:18px;background:var(--surface);padding:16px 24px;border-radius:18px;border:1px solid color-mix(in srgb,var(--ink) 8%,transparent)}
-.score b{font-family:var(--serif);font-size:40px;font-weight:500;line-height:1}
-.score small{display:block;color:var(--muted);font-size:14px}
-.reviews{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-.review{background:var(--surface);border-radius:var(--radius);padding:34px;display:flex;flex-direction:column;gap:22px;border:1px solid color-mix(in srgb,var(--ink) 7%,transparent)}
-.review p{font-family:var(--serif);font-size:19.5px;line-height:1.45}
-.review .by{margin-top:auto;display:flex;align-items:center;gap:12px;font-weight:600;font-size:15px}
-.avatar{width:40px;height:40px;border-radius:50%;background:var(--soft);color:var(--accent);display:grid;place-items:center;font-weight:700}
-.review .src{color:var(--muted);font-weight:500;font-size:13px;display:block}
+/* Marquee */
+.marquee{border-radius:var(--r-pill);background:var(--gold);color:var(--ink);overflow:hidden;padding:20px 0;box-shadow:var(--shadow)}
+.marquee-track{display:flex;width:max-content;animation:scroll 34s linear infinite}
+.marquee-track span{font-family:var(--serif);font-size:24px;font-style:italic;padding:0 26px;white-space:nowrap;display:flex;align-items:center;gap:52px}
+.marquee-track span::after{content:"";width:9px;height:9px;border-radius:50%;background:var(--teal-dark)}
+@keyframes scroll{to{transform:translateX(-50%)}}
 
-.cta-band{padding:0 0 110px}
-.cta-box{border-radius:calc(var(--radius) + 12px);background:linear-gradient(140deg,var(--accent),color-mix(in srgb,var(--accent) 60%,var(--ink)));color:var(--accent-ink);padding:76px 64px;display:grid;grid-template-columns:1.3fr 1fr;gap:40px;align-items:center;position:relative;overflow:hidden}
-.cta-box:after{content:"";position:absolute;right:-120px;bottom:-200px;width:460px;height:460px;border-radius:50%;border:1.5px solid color-mix(in srgb,var(--accent-ink) 22%,transparent)}
-.cta-box h2{color:inherit;margin:0 0 12px}
-.cta-box p{opacity:.85;font-size:18px}
-.cta-box .actions{display:flex;flex-direction:column;gap:12px;align-items:flex-start;position:relative;z-index:1}
-.cta-box .btn{background:var(--accent-ink);color:var(--accent)}
-.cta-box .btn.ghost{background:transparent;color:var(--accent-ink);border-color:color-mix(in srgb,var(--accent-ink) 40%,transparent)}
+/* Section heads */
+.head{display:flex;flex-direction:column;gap:18px;margin-bottom:44px;max-width:620px}
+.head h2{font-size:clamp(38px,4.4vw,64px)}
+.head p{color:var(--ink-soft);font-weight:300;font-size:18px}
 
-.visit{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:10px}
-.visit .card h3{font-size:20px}
-.visit a{color:var(--accent);font-weight:600}
-footer{border-top:1px solid color-mix(in srgb,var(--ink) 9%,transparent);padding:40px 0 110px;color:var(--muted);font-size:14px}
-footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
-.mobile-bar{display:none}
+/* Services */
+.cards{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+.card{background:var(--bg);border-radius:var(--r-md);padding:34px 30px 32px;position:relative;overflow:hidden;transition:transform .55s var(--ease),box-shadow .55s var(--ease),background .4s;min-width:0}
+.card:hover{transform:translateY(-6px);background:#fff;box-shadow:0 26px 50px -26px rgba(15,47,51,.35)}
+.card .ic{width:58px;height:58px;border-radius:20px 20px 20px 6px;background:#fff;display:grid;place-items:center;margin-bottom:26px;color:var(--teal-deep);transition:background .4s,color .4s}
+.card:hover .ic{background:var(--teal-deep);color:#fff}
+.card .ic svg{width:28px;height:28px}
+.card h3{font-size:28px;margin-bottom:10px}
+.card p{color:var(--ink-soft);font-size:16px;font-weight:300}
+.card .num{position:absolute;top:26px;right:28px;font-family:var(--serif);font-style:italic;color:var(--teal);font-size:18px}
+.card.feature{grid-column:1/-1;background:var(--teal-mist);display:grid;grid-template-columns:1.2fr 1fr;gap:30px;align-items:center}
+.card.feature h3{font-size:clamp(30px,3vw,40px)}
 
-@keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
-.hero .copy>*{animation:rise .8s cubic-bezier(.2,.7,.2,1) both}
-.hero .copy>*:nth-child(2){animation-delay:.08s}.hero .copy>*:nth-child(3){animation-delay:.16s}
-.hero .copy>*:nth-child(4){animation-delay:.24s}.hero .copy>*:nth-child(5){animation-delay:.32s}
-.visual{animation:rise 1s .2s cubic-bezier(.2,.7,.2,1) both}
+/* About */
+.about{background:var(--cream)}
+.about-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:56px;align-items:center}
+.about-art{aspect-ratio:4/5;border-radius:999px 999px 30px 30px;background:var(--teal-deep);position:relative;overflow:hidden;display:grid;place-items:center}
+.about-art::before{content:"";position:absolute;width:70%;aspect-ratio:1;border-radius:50%;background:var(--gold);bottom:-12%;right:-14%}
+.about-art::after{content:"";position:absolute;width:46%;aspect-ratio:1;border-radius:50%;border:1.5px solid rgba(255,255,255,.4);top:16%;left:12%}
+.about-art img{position:relative;z-index:2;width:62%;height:auto;max-height:46%;object-fit:contain;filter:drop-shadow(0 10px 24px rgba(0,0,0,.25))}
+.about-art .logo-bg{position:relative;z-index:1;width:72%;aspect-ratio:1;border-radius:50%;background:rgba(255,255,255,.92);display:grid;place-items:center}
+.about h2{font-size:clamp(36px,4vw,56px);margin:20px 0 24px}
+.about p{color:var(--ink-soft);font-weight:300;margin-bottom:16px}
+.about .sig{font-family:var(--serif);font-style:italic;font-size:22px;color:var(--ink);margin-top:26px}
 
-@media (max-width:980px){
-  .links{display:none}
-  .hero-grid,.why-grid,.cta-box{grid-template-columns:1fr}
-  .hero-grid{gap:56px}
-  .services,.reviews,.visit{grid-template-columns:1fr 1fr}
-  .trust .wrap{grid-template-columns:1fr 1fr}
-  .float.one{left:12px;bottom:-26px}.float.two{right:12px}
-  .visual{max-width:560px;margin-bottom:20px}
-  .section-head{flex-direction:column;align-items:flex-start}
+/* Why */
+.why{background:var(--ink);color:#EAF4F4}
+.why .label{color:var(--gold)}
+.why .head h2{color:#fff}
+.why .head h2 em{color:var(--gold)}
+.why .head p{color:#B9D3D4}
+.why-list{display:grid;grid-template-columns:repeat(2,1fr);gap:0;border-top:1px solid rgba(255,255,255,.14)}
+.why-item{padding:32px 28px 32px 0;border-bottom:1px solid rgba(255,255,255,.14);display:flex;gap:20px}
+.why-item:nth-child(odd){border-right:1px solid rgba(255,255,255,.14)}
+.why-item:nth-child(even){padding-left:28px}
+.why-item .dot{flex-shrink:0;width:42px;height:42px;border-radius:50%;background:rgba(242,181,68,.14);color:var(--gold);display:grid;place-items:center;font-family:var(--serif);font-style:italic;font-size:18px}
+.why-item h3{font-size:24px;color:#fff;margin-bottom:8px}
+.why-item p{font-size:15.5px;color:#B9D3D4;font-weight:300}
+.why::after{content:"";position:absolute;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(15,139,141,.45),transparent 70%);top:-180px;right:-160px;pointer-events:none}
+
+/* Steps */
+.steps{display:grid;gap:0;counter-reset:s}
+.step{display:grid;grid-template-columns:120px 1fr;gap:28px;padding:32px 0;border-top:1px solid rgba(15,47,51,.1);align-items:start;transition:padding .5s var(--ease)}
+.step:hover{padding-left:12px}
+.step:last-child{border-bottom:1px solid rgba(15,47,51,.1)}
+.step .n{font-family:var(--serif);font-size:72px;line-height:.8;color:var(--teal);font-style:italic}
+.step h3{font-size:28px;margin-bottom:8px}
+.step p{color:var(--ink-soft);font-weight:300}
+
+/* FAQ */
+.faq-item{border-top:1px solid rgba(15,47,51,.12)}
+.faq-item:last-child{border-bottom:1px solid rgba(15,47,51,.12)}
+.faq-q{width:100%;background:none;border:0;cursor:pointer;text-align:left;font-family:var(--serif);font-size:24px;color:var(--ink);padding:26px 0;display:flex;justify-content:space-between;align-items:center;gap:20px}
+.faq-q .pm{flex-shrink:0;width:38px;height:38px;border-radius:50%;background:var(--bg);position:relative;transition:background .3s,transform .5s var(--ease)}
+.faq-q .pm::before,.faq-q .pm::after{content:"";position:absolute;left:12px;right:12px;top:18.5px;height:1.5px;background:var(--ink)}
+.faq-q .pm::after{transform:rotate(90deg);transition:transform .4s var(--ease)}
+.faq-item.open .pm{background:var(--gold);transform:rotate(180deg)}
+.faq-item.open .pm::after{transform:rotate(0)}
+.faq-a{display:grid;grid-template-rows:0fr;transition:grid-template-rows .5s var(--ease)}
+.faq-item.open .faq-a{grid-template-rows:1fr}
+.faq-a>div{overflow:hidden}
+.faq-a p{padding:0 50px 26px 0;color:var(--ink-soft);font-weight:300}
+.faq-a a{color:var(--teal-deep);font-weight:500}
+
+/* CTA band */
+.band{background:var(--teal-deep);color:#fff;text-align:center;padding:96px 48px}
+.band h2{font-size:clamp(42px,5.4vw,84px);color:#fff;max-width:760px;margin:22px auto 22px}
+.band h2 em{color:var(--gold)}
+.band p{color:#DDF0F0;font-weight:300;max-width:480px;margin:0 auto 36px;font-size:18px}
+.band .label{color:var(--gold)}
+.band .label::before{display:none}
+.band .cta-row{justify-content:center}
+.band .btn-ghost{color:#fff;border-color:rgba(255,255,255,.4)}
+.band .btn-ghost:hover{background:rgba(255,255,255,.1);border-color:#fff}
+.band .ring{position:absolute;border-radius:50%;border:1px solid rgba(255,255,255,.14);pointer-events:none}
+.band .ring.r1{width:520px;height:520px;left:-200px;top:-220px}
+.band .ring.r2{width:380px;height:380px;right:-150px;bottom:-200px;border-color:rgba(242,181,68,.4)}
+
+/* Contact */
+.visit-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.vcard{background:var(--bg);border-radius:var(--r-md);padding:30px 26px;display:flex;flex-direction:column;gap:12px;min-width:0;transition:transform .5s var(--ease),background .4s}
+.vcard:hover{transform:translateY(-5px);background:var(--teal-mist)}
+.vcard .k{font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:var(--teal-deep);font-weight:500}
+.vcard .v{font-family:var(--serif);font-size:24px;line-height:1.25;overflow-wrap:anywhere}
+.vcard .more{margin-top:auto;font-size:14px;font-weight:500;color:var(--teal-deep);display:inline-flex;gap:8px;align-items:center}
+.map-art{margin-top:16px;border-radius:var(--r-md);background:var(--teal-mist);height:260px;position:relative;overflow:hidden;display:block}
+.map-art svg.grid{position:absolute;inset:0;width:100%;height:100%}
+.map-art .marker{position:absolute;left:50%;top:50%;transform:translate(-50%,-100%);display:flex;flex-direction:column;align-items:center;gap:10px}
+.map-art .marker .tag{background:var(--ink);color:#fff;padding:10px 18px;border-radius:var(--r-pill);font-size:14px;font-weight:500;letter-spacing:.03em;white-space:nowrap;box-shadow:0 12px 28px -10px rgba(15,47,51,.6)}
+.map-art .marker .p{width:22px;height:22px;border-radius:50%;background:var(--gold);border:4px solid #fff;box-shadow:0 0 0 0 rgba(242,181,68,.6);animation:pulse 2.4s infinite}
+@keyframes pulse{70%{box-shadow:0 0 0 22px rgba(242,181,68,0)}100%{box-shadow:0 0 0 0 rgba(242,181,68,0)}}
+.map-art:hover .tag{background:var(--teal-deep)}
+
+/* Footer */
+footer{max-width:1480px;margin:0 auto;padding:60px 40px 50px;display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px;border-top:1px solid rgba(15,47,51,.12)}
+footer .fbrand{font-family:var(--serif);font-size:34px;line-height:1.1}
+footer .fbrand em{display:block}
+footer h4{font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:var(--teal-deep);font-weight:500;margin-bottom:14px}
+footer p,footer a{font-size:15px;color:var(--ink-soft)}
+footer .fl{display:flex;flex-direction:column;gap:6px}
+footer .copy{grid-column:1/-1;font-size:13px;color:var(--ink-soft);padding-top:24px;border-top:1px solid rgba(15,47,51,.08);display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+
+/* Mobile call bar */
+.callbar{display:none}
+
+/* Reveal */
+.reveal{opacity:0;transform:translateY(40px);transition:opacity 1s var(--ease),transform 1s var(--ease)}
+.reveal.in{opacity:1;transform:none}
+.stagger>*{opacity:0;transform:translateY(28px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
+.stagger.in>*{opacity:1;transform:none}
+.stagger.in>*:nth-child(2){transition-delay:.1s}.stagger.in>*:nth-child(3){transition-delay:.2s}
+.stagger.in>*:nth-child(4){transition-delay:.3s}.stagger.in>*:nth-child(5){transition-delay:.4s}
+
+/* Responsive */
+@media (max-width:1180px){
+  .nav-links{display:none}
+  .intro{padding:120px 40px 40px}
+  .panel{padding:48px}
+  .card.feature{grid-template-columns:1fr}
 }
-@media (max-width:640px){
+@media (max-width:960px){
+  .layout{grid-template-columns:1fr}
+  .intro{position:relative;height:auto;min-height:auto;padding:130px 28px 40px;gap:40px}
+  .spine{right:12px;top:110px;bottom:auto;height:300px;width:44px;opacity:.7}
+  .spine-cap{display:none}
+  .intro h1,.intro p.sub{padding-right:40px}
+  .flow{padding:0 16px 60px}
+  .hero-art{min-height:560px}
+  .about-grid{grid-template-columns:1fr;gap:36px}
+  .about-art{max-width:380px;width:100%;margin:0 auto}
+  .visit-grid{grid-template-columns:1fr}
+  footer{grid-template-columns:1fr 1fr;padding:50px 24px 120px}
+  footer>div:first-child{grid-column:1/-1}
+}
+@media (max-width:720px){
   body{font-size:16px}
-  .wrap{padding:0 18px}
-  .nav{height:66px}.brand{font-size:19px}
-  .phone,.nav-right .btn{display:none}
-  .hero{padding:44px 0 64px}
-  .lead-text{font-size:17.5px}
-  .hero-ctas .btn{flex:1;justify-content:center}
-  .ticks{display:none}
-  .services,.reviews,.visit,.trust .wrap{grid-template-columns:1fr}
-  section.block{padding:76px 0}
-  .quote-panel,.photo{aspect-ratio:auto;min-height:380px}.photo{aspect-ratio:4/3;min-height:0}
-  .quote-panel{padding:40px 30px 64px}.quote-panel p{font-size:23px}
-  .float{font-size:13px;padding:12px 14px}.float b{font-size:18px}
-  .float.two{display:none}
-  .cta-box{padding:52px 28px}
-  .point{grid-template-columns:44px 1fr;padding:24px}
-  .mobile-bar{display:flex;position:fixed;left:12px;right:12px;bottom:12px;z-index:30;gap:10px}
-  .mobile-bar .btn{flex:1;justify-content:center;box-shadow:0 14px 30px -14px color-mix(in srgb,var(--ink) 60%,transparent)}
-  .mobile-bar .btn.ghost{background:var(--surface)}
+  .nav{inset:10px 10px auto;padding:8px 8px 8px 14px}
+  .nav-phone,.nav-right .btn{display:none}
+  .burger{display:block}
+  .brand img{height:32px}
+  .brand span{font-size:17px}
+  .intro{padding:116px 22px 36px}
+  .intro h1{font-size:clamp(44px,13vw,60px);padding-right:34px}
+  .intro p.sub{font-size:17px;padding-right:30px}
+  .cta-row .btn{flex:1 1 100%}
+  .intro-foot{flex-direction:column;align-items:flex-start}
+  .panel{padding:40px 24px;border-radius:28px}
+  .hero-art{min-height:500px;padding:0}
+  .hero-top{left:24px;right:24px;top:26px;font-size:11px;letter-spacing:.2em}
+  .hero-cap{padding:26px 24px;flex-direction:column;align-items:flex-start;gap:10px}
+  .hero-cap p{font-size:11.5px;letter-spacing:.18em}
+  .blob.b1{width:120px;height:120px}
+  .blob.b2{width:80px;height:80px}
+  .marquee-track span{font-size:20px;gap:36px;padding:0 18px}
+  .cards{grid-template-columns:1fr}
+  .card{padding:30px 24px}
+  .why-list{grid-template-columns:1fr}
+  .why-item,.why-item:nth-child(even){padding:26px 0;border-right:0!important}
+  .step{grid-template-columns:1fr;gap:10px;padding:28px 0}
+  .step .n{font-size:56px}
+  .faq-q{font-size:20px;padding:22px 0}
+  .faq-a p{padding-right:0}
+  .band{padding:72px 24px}
+  .map-art{height:220px}
+  footer{grid-template-columns:1fr;gap:28px}
+  .callbar{display:flex;position:fixed;left:10px;right:10px;bottom:10px;z-index:40;gap:8px;padding:8px;border-radius:var(--r-pill);background:rgba(15,47,51,.92);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);box-shadow:0 18px 40px -16px rgba(15,47,51,.6)}
+  .callbar a{flex:1;display:flex;align-items:center;justify-content:center;gap:8px;padding:14px 10px;border-radius:var(--r-pill);font-size:15px;font-weight:500;white-space:nowrap}
+  .callbar .c1{background:var(--gold);color:var(--ink)}
+  .callbar .c2{color:#fff}
+  .callbar svg{width:16px;height:16px;flex-shrink:0}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important;scroll-behavior:auto!important}
+  .reveal,.stagger>*,.intro-top>*,.intro-foot{opacity:1!important;transform:none!important}
+  .marquee-track{animation:none}
 }
 </style>
 </head>
 <body>
-<div class="concept">Website concept prepared for <b>Westlake Chiropractor</b> by webstudio &middot; not a live site</div>
 
-<header>
-  <div class="wrap nav">
-    <a href="#top" class="brand">Westlake Chiropractor</a>
-    <nav class="links">
-      <a href="#services">Services</a><a href="#why">Why us</a><a href="#visit">Visit</a>
-    </nav>
-    <div class="nav-right">
-      <a class="phone" href="tel:5125351048">(512) 535-1048</a>
-      <a class="btn" href="#visit">Book now</a>
-    </div>
+<header class="nav" id="nav">
+  <a href="#top" class="brand" aria-label="Westlake Chiropractor home">
+    <img src="img/logo.png" alt="Westlake Chiropractor logo">
+    <span>Westlake Chiropractor</span>
+  </a>
+  <nav class="nav-links" aria-label="Primary">
+    <a href="#services" class="ulink">Care</a>
+    <a href="#about" class="ulink">Approach</a>
+    <a href="#process" class="ulink">Your Visit</a>
+    <a href="#faq" class="ulink">FAQ</a>
+    <a href="#contact" class="ulink">Contact</a>
+  </nav>
+  <div class="nav-right">
+    <a href="tel:+15125351048" class="nav-phone ulink">(512) 535-1048</a>
+    <a href="tel:+15125351048" class="btn btn-primary">Book a Visit</a>
+    <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="mmenu"><i></i><i></i></button>
   </div>
 </header>
 
-<main id="top">
-<section class="hero">
-  <div class="wrap hero-grid">
-    <div class="copy">
-      <div class="eyebrow">
-        <span class="dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-7-4.4-7-10a4 4 0 017-2.6A4 4 0 0119 10c0 5.6-7 10-7 10z"/></svg></span>Chiropractic &amp; wellness
-      </div>
-      <h1>Move better. Feel better. <em>Live better.</em></h1>
-      <p class="lead-text">Gentle, evidence-based chiropractic care that gets to the root of your pain, not just the symptoms.</p>
-      <div class="hero-ctas">
-        <a class="btn" href="#visit">Book your first visit <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-        <a class="btn ghost" href="tel:5125351048">Call (512) 535-1048</a>
-      </div>
-      <div class="ticks">
-        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7"/></svg>New patients welcome</span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7"/></svg>Most insurance accepted</span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7"/></svg>Same-day visits</span>
-      </div>
-    </div>
-    <div class="visual">
-      
-      <div class="quote-panel"><div class="quote-mark">“</div><div><p>Gentle, evidence-based chiropractic care that gets to the root of your pain, not just the symptoms.</p><div class="who">Westlake Chiropractor</div></div></div>
-      
-      
-      <div class="float two"><span class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><span><b>This week</b>Most insurance accepted</span></div>
-    </div>
-  </div>
-  <template id="qp"><div class="quote-panel"><div class="quote-mark">“</div><div><p>Gentle, evidence-based chiropractic care that gets to the root of your pain, not just the symptoms.</p><div class="who">Westlake Chiropractor</div></div></div></template>
-</section>
-
-<div class="trust"><div class="wrap">
-  <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.2-8 9-4.6-.8-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg>New patients welcome</div><div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.2-8 9-4.6-.8-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg>Most insurance accepted</div><div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.2-8 9-4.6-.8-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg>Same-day visits</div><div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.2-8 9-4.6-.8-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg>Gentle techniques</div>
-</div></div>
-
-<section class="block" id="services">
-  <div class="wrap">
-    <div class="section-head">
-      <div><div class="kicker">What we do</div><h2>Everything you need,<br>under one roof.</h2></div>
-      <p>From routine visits to the work that changes how you feel about your day, Westlake Chiropractor takes care of it properly.</p>
-    </div>
-    <div class="services">
-      
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-7-4.4-7-10a4 4 0 017-2.6A4 4 0 0119 10c0 5.6-7 10-7 10z"/></svg></div><h3>Back &amp; neck pain</h3><p>Relief that lasts, from a plan built around you.</p></div>
-      
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1-4.4-4.3 6.1-.9z"/></svg></div><h3>Sports injuries</h3><p>Get back in the game faster and stronger.</p></div>
-      
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 19c0-8 5-14 15-14 0 10-6 15-14 15"/><path d="M5 19c3-4 6-6 10-8"/></svg></div><h3>Headaches</h3><p>Address the tension and alignment issues behind them.</p></div>
-      
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 14s1.5 2.5 4 2.5 4-2.5 4-2.5"/><path d="M9 9.5h.01M15 9.5h.01"/></svg></div><h3>Prenatal care</h3><p>Gentle, safe adjustments for moms-to-be.</p></div>
-      
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.2-8 9-4.6-.8-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg></div><h3>Auto injuries</h3><p>Care and documentation after car accidents.</p></div>
-      
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div><h3>Same-day visits</h3><p>In pain today? We&#39;ll see you today.</p></div>
-      
-    </div>
-  </div>
-</section>
-
-<section class="block why" id="why">
-  <div class="wrap why-grid">
-    <div>
-      <div class="kicker">Why patients choose us</div>
-      <h2>The Austin chiropractor people recommend to their friends.</h2>
-      <p class="intro">it still comes down to the same three things.</p>
-    </div>
-    <div class="points">
-      
-      <div class="point"><div class="num">01</div><div><h3>Root-cause care</h3><p>We find out why it hurts, not just where.</p></div></div>
-      
-      <div class="point"><div class="num">02</div><div><h3>Gentle techniques</h3><p>Comfortable adjustments for every age and condition.</p></div></div>
-      
-      <div class="point"><div class="num">03</div><div><h3>Clear plans</h3><p>You&#39;ll know your plan, timeline and costs from day one.</p></div></div>
-      
-    </div>
-  </div>
-</section>
-
-
-
-<section class="cta-band" id="book">
-  <div class="wrap"><div class="cta-box">
-    <div><h2>Ready when you are.</h2><p>Book your first visit in under a minute, or give us a call and talk to a real person.</p></div>
-    <div class="actions">
-      <a class="btn" href="#visit">Book your first visit</a>
-      <a class="btn ghost" href="tel:5125351048">Call (512) 535-1048</a>
-    </div>
-  </div></div>
-</section>
-
-<section class="block" id="visit" style="padding-top:0">
-  <div class="wrap">
-    <div class="kicker">Visit us</div><h2>Come say hello.</h2>
-    <div class="visit">
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11l8-7 8 7v9a1 1 0 01-1 1h-4v-6H9v6H5a1 1 0 01-1-1z"/></svg></div><h3>Address</h3><p>5524 Bee Caves Rd, West Lake Hills TX 78746</p></div>
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div><h3>Phone</h3><p><a href="tel:5125351048">(512) 535-1048</a></p><p style="margin-top:10px">Call or message us for today's opening hours.</p></div>
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-7-4.4-7-10a4 4 0 017-2.6A4 4 0 0119 10c0 5.6-7 10-7 10z"/></svg></div><h3>Most insurance accepted</h3><p>Book your first visit online or by phone and we'll take care of the rest.</p></div>
-    </div>
-  </div>
-</section>
-</main>
-
-<footer><div class="wrap">
-  <span>© 2026 Westlake Chiropractor</span>
-  <span>Concept design by webstudio. Not affiliated with or endorsed by Westlake Chiropractor.</span>
-</div></footer>
-
-<div class="mobile-bar">
-  <a class="btn ghost" href="tel:5125351048">Call</a>
-  <a class="btn" href="#visit">Book now</a>
+<div class="mobile-menu" id="mmenu" aria-hidden="true">
+  <a class="m" href="#services">Care</a>
+  <a class="m" href="#about">Approach</a>
+  <a class="m" href="#process">Your Visit</a>
+  <a class="m" href="#faq">FAQ</a>
+  <a class="m" href="#contact">Contact</a>
+  <a href="tel:+15125351048" class="btn btn-primary">Call (512) 535-1048</a>
 </div>
-</body>
+
+<div class="layout" id="top">
+  <aside class="intro">
+    <div class="intro-top">
+      <span class="label">Chiropractor · West Lake Hills</span>
+      <h1>Move through life <em>beautifully aligned.</em></h1>
+      <p class="sub">Hands-on chiropractic care on Bee Caves Road, for Westlake and Austin locals who want to feel at home in their bodies again.</p>
+      <div class="cta-row">
+        <a href="tel:+15125351048" class="btn btn-primary">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>
+          Call to Book
+        </a>
+        <a href="#services" class="btn btn-ghost">Explore Care</a>
+      </div>
+    </div>
+    <div class="intro-foot">
+      <address>
+        <strong>Visit</strong>
+        5524 Bee Caves Rd<br>West Lake Hills, TX 78746
+      </address>
+    </div>
+    <div class="spine" id="spine" aria-hidden="true"></div>
+    <span class="spine-cap" aria-hidden="true">Scroll to align</span>
+  </aside>
+
+  <main class="flow">
+    <!-- Signature hero composition -->
+    <section class="panel hero-art reveal" aria-label="Westlake Chiropractor">
+      <div class="hero-top"><span>Est. on Bee Caves Rd</span><span>Austin, TX</span></div>
+      <div class="arch" data-par="0.06"></div>
+      <div class="arch inner" data-par="0.12"></div>
+      <div class="blob b1" data-par="-0.18"></div>
+      <div class="blob b2" data-par="0.22"></div>
+      <div class="hero-word" data-par="0.04"><span>W<i>e</i>st&shy;lake</span></div>
+      <div class="hero-cap">
+        <p class="pin">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          West Lake Hills · 78746
+        </p>
+        <p>Chiropractic Care</p>
+      </div>
+    </section>
+
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-track">
+        <span>Chiropractic care</span><span>West Lake Hills</span><span>Bee Caves Road</span><span>Spine &amp; posture</span><span>Austin, Texas</span><span>Feel aligned</span>
+        <span>Chiropractic care</span><span>West Lake Hills</span><span>Bee Caves Road</span><span>Spine &amp; posture</span><span>Austin, Texas</span><span>Feel aligned</span>
+      </div>
+    </div>
+
+    <!-- Services -->
+    <section class="panel" id="services">
+      <div class="head reveal">
+        <span class="label">The Care</span>
+        <h2>Care that meets you <em>where you are.</em></h2>
+        <p>Chiropractic is hands-on, personal and focused on how your spine and joints move. Call us to talk through what you're feeling and how we can help.</p>
+      </div>
+      <div class="cards stagger">
+        <article class="card feature">
+          <div>
+            <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="9" y="2" width="6" height="3.5" rx="1.75"/><rect x="8.5" y="7" width="7" height="3.5" rx="1.75"/><rect x="8.5" y="12" width="7" height="3.5" rx="1.75"/><rect x="9" y="17" width="6" height="3.5" rx="1.75"/></svg></div>
+            <h3>Chiropractic Adjustments</h3>
+          </div>
+          <p>The heart of what a chiropractor does: precise, hands-on adjustments that work with your spine and joints to help you move more freely.</p>
+        </article>
+        <article class="card">
+          <span class="num">ii</span>
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="5" r="2.5"/><path d="M12 8v6M8 22l4-8 4 8M7 11h10"/></svg></div>
+          <h3>Back &amp; Neck</h3>
+          <p>Stiffness, tension and that ache you've been working around. Tell us what's bothering you and let's talk about care.</p>
+        </article>
+        <article class="card">
+          <span class="num">iii</span>
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3v18M6 7c2 1 4 1 6 0s4-1 6 0M6 17c2-1 4-1 6 0s4 1 6 0"/></svg></div>
+          <h3>Posture &amp; Alignment</h3>
+          <p>Long desk days and busy lives add up. Chiropractic care looks at how you hold and move your body, day to day.</p>
+        </article>
+        <article class="card">
+          <span class="num">iv</span>
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 12a8 8 0 0 1 16 0"/><path d="M8 12a4 4 0 0 1 8 0"/><circle cx="12" cy="12" r="1.2" fill="currentColor"/><path d="M3 16h18"/></svg></div>
+          <h3>Mobility &amp; Movement</h3>
+          <p>Whether it's your morning run on the trails or just turning your head with ease, moving well matters.</p>
+        </article>
+        <article class="card">
+          <span class="num">v</span>
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21s-7-4.5-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 11c0 5.5-7 10-7 10z"/></svg></div>
+          <h3>Your First Visit</h3>
+          <p>New to chiropractic? Call ahead with any questions and we'll explain what to expect before you arrive.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section class="panel about" id="about">
+      <div class="about-grid">
+        <div class="about-art reveal" data-par="-0.05">
+          <div class="logo-bg"><img src="img/logo.png" alt="Westlake Chiropractor logo"></div>
+        </div>
+        <div class="reveal">
+          <span class="label">Our Approach</span>
+          <h2>Your neighbourhood chiropractor, <em>in the hills.</em></h2>
+          <p>Westlake Chiropractor sits right on Bee Caves Road in West Lake Hills, a short drive from downtown Austin and just around the corner for the Westlake community.</p>
+          <p>We believe great chiropractic care should feel personal. It starts with a conversation about how you feel and what you'd like to get back to, then hands-on care designed around you.</p>
+          <p class="sig">Come as you are. Leave feeling lighter.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why -->
+    <section class="panel why">
+      <div class="head reveal">
+        <span class="label">Why Westlake</span>
+        <h2>The details that make it <em>feel different.</em></h2>
+        <p>A calm, personal experience close to home in West Lake Hills.</p>
+      </div>
+      <div class="why-list stagger">
+        <div class="why-item"><span class="dot">i</span><div><h3>Right on Bee Caves Rd</h3><p>Easy to reach from Westlake, Rollingwood and central Austin, so care fits into your week.</p></div></div>
+        <div class="why-item"><span class="dot">ii</span><div><h3>Hands-on Care</h3><p>Chiropractic is personal, skilled, hands-on work, focused on how your body actually moves.</p></div></div>
+        <div class="why-item"><span class="dot">iii</span><div><h3>Talk to Us First</h3><p>Not sure if chiropractic is right for you? Pick up the phone and ask. Simple as that.</p></div></div>
+        <div class="why-item"><span class="dot">iv</span><div><h3>Built Around You</h3><p>Your goals and how you feel guide the conversation, from the very first visit.</p></div></div>
+      </div>
+    </section>
+
+    <!-- Process -->
+    <section class="panel" id="process">
+      <div class="head reveal">
+        <span class="label">How It Works</span>
+        <h2>Four simple steps to <em>feeling better.</em></h2>
+      </div>
+      <div class="steps stagger">
+        <div class="step"><span class="n">01</span><div><h3>Call to book</h3><p>Ring us on <a href="tel:+15125351048" class="ulink">(512) 535-1048</a> to find a time that works and ask any questions.</p></div></div>
+        <div class="step"><span class="n">02</span><div><h3>Tell us your story</h3><p>We'll talk about what you're feeling, your daily routine and what you want to get back to.</p></div></div>
+        <div class="step"><span class="n">03</span><div><h3>Hands-on care</h3><p>Chiropractic care tailored to you, with everything explained along the way.</p></div></div>
+        <div class="step"><span class="n">04</span><div><h3>Keep moving well</h3><p>Leave with a clear sense of next steps for staying comfortable and moving freely.</p></div></div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="panel" id="faq">
+      <div class="head reveal">
+        <span class="label">Good to Know</span>
+        <h2>Questions, <em>answered.</em></h2>
+      </div>
+      <div class="faq reveal">
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">Where is Westlake Chiropractor located?<span class="pm"></span></button>
+          <div class="faq-a"><div><p>You'll find us at 5524 Bee Caves Rd, West Lake Hills, TX 78746. <a href="https://maps.google.com/?q=5524+Bee+Caves+Rd,+West+Lake+Hills,+TX+78746" target="_blank" rel="noopener">Open in Google Maps</a>.</p></div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">How do I book an appointment?<span class="pm"></span></button>
+          <div class="faq-a"><div><p>The easiest way is to call us on <a href="tel:+15125351048">(512) 535-1048</a>. We'll find a time that suits you.</p></div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">What are your opening hours?<span class="pm"></span></button>
+          <div class="faq-a"><div><p>Please call <a href="tel:+15125351048">(512) 535-1048</a> for current hours and availability.</p></div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">I've never seen a chiropractor. Is that okay?<span class="pm"></span></button>
+          <div class="faq-a"><div><p>Absolutely. Give us a call before your visit and ask anything you like about what to expect.</p></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA band -->
+    <section class="panel band reveal">
+      <span class="ring r1"></span><span class="ring r2"></span>
+      <span class="label">Westlake Chiropractor</span>
+      <h2>Ready to feel <em>like yourself</em> again?</h2>
+      <p>One call is all it takes. We're on Bee Caves Road, ready when you are.</p>
+      <div class="cta-row">
+        <a href="tel:+15125351048" class="btn btn-gold">Call (512) 535-1048</a>
+        <a href="https://maps.google.com/?q=5524+Bee+Caves+Rd,+West+Lake+Hills,+TX+78746" target="_blank" rel="noopener" class="btn btn-ghost">Get Directions</a>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="panel" id="contact">
+      <div class="head reveal">
+        <span class="label">Visit Us</span>
+        <h2>Find us in <em>West Lake Hills.</em></h2>
+      </div>
+      <div class="visit-grid stagger">
+        <a class="vcard" href="tel:+15125351048">
+          <span class="k">Call</span>
+          <span class="v">(512) 535-1048</span>
+          <span class="more">Tap to call →</span>
+        </a>
+        <a class="vcard" href="https://maps.google.com/?q=5524+Bee+Caves+Rd,+West+Lake+Hills,+TX+78746" target="_blank" rel="noopener">
+          <span class="k">Address</span>
+          <span class="v">5524 Bee Caves Rd, West Lake Hills TX 78746</span>
+          <span class="more">Get directions →</span>
+        </a>
+        <a class="vcard" href="tel:+15125351048">
+          <span class="k">Hours</span>
+          <span class="v">Please call for current hours</span>
+          <span class="more">Check availability →</span>
+        </a>
+      </div>
+      <a class="map-art reveal" href="https://maps.google.com/?q=5524+Bee+Caves+Rd,+West+Lake+Hills,+TX+78746" target="_blank" rel="noopener" aria-label="Open Westlake Chiropractor in Google Maps">
+        <svg class="grid" viewBox="0 0 600 260" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+          <path d="M-20 190 C120 150 200 210 320 160 S520 90 640 110" stroke="#fff" stroke-width="22" fill="none"/>
+          <path d="M-20 190 C120 150 200 210 320 160 S520 90 640 110" stroke="#F2B544" stroke-width="2" stroke-dasharray="8 10" fill="none"/>
+          <path d="M140 -10 C160 80 120 160 170 280M430 -10 C400 90 460 170 420 280" stroke="#fff" stroke-width="10" fill="none"/>
+          <path d="M-10 60 C120 80 300 30 620 50" stroke="#fff" stroke-width="6" fill="none" opacity=".8"/>
+          <circle cx="520" cy="210" r="60" fill="#C7E3E3"/><circle cx="60" cy="40" r="44" fill="#C7E3E3"/>
+          <text x="470" y="96" font-family="Jost" font-size="12" letter-spacing="3" fill="#0B6E70">BEE CAVES RD</text>
+        </svg>
+        <span class="marker"><span class="tag">5524 Bee Caves Rd</span><span class="p"></span></span>
+      </a>
+    </section>
+  </main>
+</div>
+
+<footer>
+  <div>
+    <p class="fbrand">Westlake <em>Chiropractor</em></p>
+  </div>
+  <div class="fl">
+    <h4>Visit</h4>
+    <a href="https://maps.google.com/?q=5524+Bee+Caves+Rd,+West+Lake+Hills,+TX+78746" target="_blank" rel="noopener" class="ulink">5524 Bee Caves Rd<br>West Lake Hills, TX 78746</a>
+  </div>
+  <div class="fl">
+    <h4>Contact</h4>
+    <a href="tel:+15125351048" class="ulink">(512) 535-1048</a>
+    <a href="#services" class="ulink">Our Care</a>
+    <a href="#faq" class="ulink">FAQ</a>
+  </div>
+  <div class="copy">
+    <span>© <span id="yr"></span> Westlake Chiropractor · Austin, TX</span>
+    <a href="#top" class="ulink">Back to top ↑</a>
+  </div>
+</footer>
+
+<div class="callbar">
+  <a href="tel:+15125351048" class="c1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>Call Now</a>
+  <a href="https://maps.google.com/?q=5524+Bee+Caves+Rd,+West+Lake+Hills,+TX+78746" target="_blank" rel="noopener" class="c2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Directions</a>
+</div>
+
+<script>
+(function(){
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  document.getElementById('yr').textContent = new Date().getFullYear();
+
+  // Header state
+  var nav = document.getElementById('nav');
+  // Mobile menu
+  var burger = document.getElementById('burger'), menu = document.getElementById('mmenu');
+  function setMenu(open){
+    burger.setAttribute('aria-expanded', open);
+    menu.classList.toggle('open', open);
+    menu.setAttribute('aria-hidden', !open);
+    document.body.style.overflow = open ? 'hidden' : '';
+  }
+  burger.addEventListener('click', function(){ setMenu(burger.getAttribute('aria-expanded') !== 'true'); });
+  menu.querySelectorAll('a').forEach(function(a){ a.addEventListener('click', function(){ setMenu(false); }); });
+
+  // Reveal on scroll
+  var els = document.querySelectorAll('.reveal,.stagger');
+  if ('IntersectionObserver' in window && !reduce) {
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){ if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, {threshold:.12, rootMargin:'0px 0px -40px 0px'});
+    els.forEach(function(el){ io.observe(el); });
+  } else { els.forEach(function(el){ el.classList.add('in'); }); }
+
+  // FAQ
+  document.querySelectorAll('.faq-q').forEach(function(q){
+    q.addEventListener('click', function(){
+      var item = q.parentElement, open = item.classList.toggle('open');
+      q.setAttribute('aria-expanded', open);
+    });
+  });
+
+  // Signature spine: vertebrae drift into alignment as you scroll
+  var spine = document.getElementById('spine'), N = 17, verts = [];
+  for (var i = 0; i < N; i++){
+    var b = document.createElement('b');
+    var t = i / (N - 1), w = 26 + Math.sin(t * Math.PI) * 22;
+    b.style.width = w + 'px';
+    var off = Math.sin(i * 1.7) * 14 + Math.cos(i * .9) * 6;
+    b.style.setProperty('--o', off.toFixed(1) + 'px');
+    spine.appendChild(b); verts.push(b);
+  }
+
+  // Parallax + spine alignment
+  var par = document.querySelectorAll('[data-par]');
+  var ticking = false;
+  function update(){
+    var y = window.scrollY, h = document.documentElement.scrollHeight - innerHeight;
+    nav.classList.toggle('scrolled', y > 20);
+    var p = Math.min(1, y / Math.max(1, h * .35));
+    var mis = reduce ? 0 : 1 - p;
+    spine.style.setProperty('--mis', mis.toFixed(3));
+    verts.forEach(function(v){ v.style.setProperty('--mis', mis.toFixed(3)); });
+    spine.classList.toggle('aligned', mis < .04);
+    if (!reduce){
+      par.forEach(function(el){
+        var r = el.getBoundingClientRect();
+        if (r.bottom < -200 || r.top > innerHeight + 200) return;
+        var s = parseFloat(el.dataset.par), c = r.top + r.height / 2 - innerHeight / 2;
+        var base = el.classList.contains('arch') ? 'translateX(-50%) ' : '';
+        el.style.transform = base + 'translateY(' + (c * s).toFixed(1) + 'px)';
+      });
+    }
+    ticking = false;
+  }
+  window.addEventListener('scroll', function(){ if (!ticking){ requestAnimationFrame(update); ticking = true; } }, {passive:true});
+  window.addEventListener('resize', update);
+  update();
+})();
+</script>
+<div id="lm-concept" style="position:fixed;left:12px;bottom:12px;z-index:2147483647;font:500 11px/1.3 -apple-system,BlinkMacSystemFont,Segoe UI,sans-serif;letter-spacing:.02em;background:rgba(15,15,18,.82);color:#f4f1ea;padding:7px 11px;border-radius:999px;backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);pointer-events:none;max-width:70vw">Website concept for Westlake Chiropractor by webstudio &middot; not the live site</div><p style="margin:0;padding:18px 16px 70px;text-align:center;font:12px/1.5 -apple-system,sans-serif;color:#8a8a8a;background:#0e0e10">Concept design by webstudio. Not affiliated with or endorsed by Westlake Chiropractor.</p></body>
 </html>

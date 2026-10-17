@@ -1,291 +1,567 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src * data: blob:; media-src 'self' data:; style-src 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com data:; script-src 'unsafe-inline'; connect-src 'none'; frame-src 'none'; form-action 'none'; base-uri 'none'; object-src 'none'">
 <meta name="robots" content="noindex, nofollow">
-<title>The GOAT Movers | Website concept</title>
+<style>html,body{max-width:100%;overflow-x:clip}</style>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The GOAT Movers | Moving Company in Austin, TX</title>
+<meta name="description" content="The GOAT Movers: a moving company on S Lamar Blvd in Austin, TX. Call (830) 310-1191 to plan your move.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Italiana&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
 :root{
-  --bg:#f6f4f0;--surface:#ffffff;--ink:#1d2433;--muted:#5f6675;
-  --accent:#c4512b;--accent-ink:#ffffff;--gold:#d79a3e;--soft:#f3e6de;
-  --radius:22px;--max:1180px;
-  --serif:"Fraunces",Georgia,serif;--sans:"Manrope",system-ui,-apple-system,sans-serif;
+  --bg:#FBF3EC;--surface:#FFFFFF;--ink:#2B1D16;--ink-2:#5A463C;
+  --accent:#C4572F;--accent-d:#A2441F;--sun:#E9B872;--sun-l:#F6E2C1;
+  --line:rgba(43,29,22,.14);
+  --pad:clamp(20px,5vw,72px);
+  --ease:cubic-bezier(.2,.7,.1,1);
 }
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:"Plus Jakarta Sans",system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;font-size:17px;overflow-x:hidden}
 a{color:inherit;text-decoration:none}
-img{max-width:100%;display:block}
-.wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
-.concept{background:var(--ink);color:var(--bg);font-size:13px;text-align:center;padding:8px 16px;letter-spacing:.02em}
-.concept b{color:var(--gold);font-weight:600}
+svg{display:block}
+h1,h2,h3,.display{font-family:"Italiana",serif;font-weight:400;line-height:.95;letter-spacing:-.01em}
+.wrap{max-width:1360px;margin:0 auto;padding:0 var(--pad)}
+.label{font-size:12px;font-weight:700;letter-spacing:.22em;text-transform:uppercase}
+.label .dot{display:inline-block;width:8px;height:8px;background:var(--accent);margin-right:10px;vertical-align:1px}
 
-/* header */
-header{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:saturate(1.4) blur(10px);border-bottom:1px solid color-mix(in srgb,var(--ink) 8%,transparent)}
-.nav{display:flex;align-items:center;justify-content:space-between;height:76px;gap:24px}
-.brand{font-family:var(--serif);font-size:23px;font-weight:600;letter-spacing:-.01em;line-height:1.1;max-width:340px}
-.links{display:flex;gap:30px;font-size:15px;font-weight:500;color:var(--muted)}
-.links a:hover{color:var(--ink)}
-.nav-right{display:flex;align-items:center;gap:18px}
-.phone{font-weight:600;font-size:15px;white-space:nowrap}
-.btn{display:inline-flex;align-items:center;gap:10px;background:var(--accent);color:var(--accent-ink);padding:14px 26px;border-radius:999px;font-weight:600;font-size:15.5px;transition:transform .2s ease,box-shadow .2s ease;white-space:nowrap}
-.btn:hover{transform:translateY(-2px);box-shadow:0 12px 28px -12px var(--accent)}
-.btn.ghost{background:transparent;color:var(--ink);border:1.5px solid color-mix(in srgb,var(--ink) 20%,transparent)}
-.btn.ghost:hover{box-shadow:none;border-color:var(--ink)}
-.btn svg{width:18px;height:18px}
+/* Buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:12px;padding:18px 28px;font-weight:700;font-size:15px;letter-spacing:.04em;border:2px solid var(--ink);transition:background .35s var(--ease),color .35s var(--ease),transform .35s var(--ease),border-color .35s;text-align:center;white-space:nowrap}
+.btn svg{width:18px;height:18px;transition:transform .35s var(--ease)}
+.btn:hover svg{transform:translateX(4px)}
+.btn-primary{background:var(--accent);border-color:var(--accent);color:#fff}
+.btn-primary:hover{background:var(--ink);border-color:var(--ink);transform:translateY(-3px)}
+.btn-ghost{background:transparent;color:var(--ink)}
+.btn-ghost:hover{background:var(--ink);color:var(--bg);transform:translateY(-3px)}
+.ul{background:linear-gradient(currentColor,currentColor) 0 100%/0 2px no-repeat;transition:background-size .4s var(--ease);padding-bottom:2px}
+.ul:hover{background-size:100% 2px}
 
-/* hero */
-.hero{padding:72px 0 88px}
-.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:64px;align-items:center}
-.eyebrow{display:inline-flex;align-items:center;gap:10px;background:var(--surface);border:1px solid color-mix(in srgb,var(--ink) 10%,transparent);padding:8px 16px 8px 10px;border-radius:999px;font-size:14px;font-weight:600;color:var(--muted)}
-.stars{color:var(--gold);letter-spacing:1px;font-size:14px}
-.eyebrow .dot{width:26px;height:26px;border-radius:50%;background:var(--soft);display:grid;place-items:center;color:var(--accent)}
-h1{font-family:var(--serif);font-weight:500;font-size:clamp(44px,5.6vw,74px);line-height:1.02;letter-spacing:-.025em;margin:26px 0 22px}
-h1 em{font-style:italic;color:var(--accent)}
-.lead-text{font-size:19.5px;color:var(--muted);max-width:540px}
-.hero-ctas{display:flex;gap:14px;margin-top:36px;flex-wrap:wrap}
-.ticks{display:flex;gap:22px;margin-top:34px;flex-wrap:wrap;font-size:14.5px;font-weight:600;color:var(--muted)}
-.ticks span{display:flex;align-items:center;gap:8px}
-.ticks svg{width:18px;height:18px;color:var(--accent)}
-.visual{position:relative}
-.photo{aspect-ratio:4/5;border-radius:calc(var(--radius) + 10px);overflow:hidden;background:var(--soft);box-shadow:0 40px 80px -40px color-mix(in srgb,var(--ink) 55%,transparent)}
-.photo img{width:100%;height:100%;object-fit:cover}
-.quote-panel{aspect-ratio:4/5;border-radius:calc(var(--radius) + 10px);background:linear-gradient(155deg,var(--accent),color-mix(in srgb,var(--accent) 55%,var(--ink)));color:var(--accent-ink);padding:52px 46px;display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden;box-shadow:0 40px 80px -40px color-mix(in srgb,var(--ink) 60%,transparent)}
-.quote-panel:before{content:"";position:absolute;width:420px;height:420px;border-radius:50%;right:-160px;top:-160px;background:color-mix(in srgb,var(--accent-ink) 9%,transparent)}
-.quote-panel:after{content:"";position:absolute;width:260px;height:260px;border-radius:50%;left:-90px;bottom:-110px;border:1.5px solid color-mix(in srgb,var(--accent-ink) 22%,transparent)}
-.quote-mark{font-family:var(--serif);font-size:120px;line-height:.6;opacity:.35}
-.quote-panel p{font-family:var(--serif);font-size:28px;line-height:1.3;position:relative;z-index:1}
-.quote-panel .who{font-family:var(--sans);font-size:15px;opacity:.85;margin-top:22px;font-weight:600}
-.float{position:absolute;background:var(--surface);color:var(--ink);border-radius:18px;padding:16px 20px;box-shadow:0 24px 50px -24px color-mix(in srgb,var(--ink) 50%,transparent);display:flex;align-items:center;gap:14px;font-size:14px;line-height:1.35}
-.float b{font-size:22px;font-family:var(--serif);font-weight:600;display:block}
-.float.one{left:-34px;bottom:-28px}
-.float.two{right:-22px;top:44px}
-.float .badge{width:44px;height:44px;border-radius:14px;background:var(--soft);display:grid;place-items:center;color:var(--accent)}
-.float .badge svg{width:22px;height:22px}
+/* Header */
+header{position:fixed;inset:0 0 auto;z-index:50;transition:background .4s,box-shadow .4s,padding .4s;padding:20px 0}
+header.scrolled{background:rgba(251,243,236,.78);backdrop-filter:blur(14px) saturate(140%);-webkit-backdrop-filter:blur(14px) saturate(140%);box-shadow:0 1px 0 var(--line);padding:12px 0}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:24px}
+.logo{display:flex;align-items:center;gap:12px;font-weight:800;letter-spacing:.08em;font-size:14px;text-transform:uppercase}
+.logo-mark{width:42px;height:42px;background:var(--ink);display:grid;place-items:center;flex-shrink:0}
+.logo-mark svg{width:26px;height:26px}
+.logo small{display:block;font-weight:500;letter-spacing:.2em;font-size:10px;color:var(--ink-2)}
+.links{display:flex;gap:32px;font-size:14px;font-weight:600}
+.nav-right{display:flex;align-items:center;gap:20px}
+.nav-phone{font-weight:700;font-size:15px}
+.nav .btn{padding:12px 20px;font-size:13px}
+.burger{display:none;width:46px;height:46px;border:2px solid var(--ink);background:none;cursor:pointer;position:relative}
+.burger span{position:absolute;left:11px;right:11px;height:2px;background:var(--ink);transition:transform .35s var(--ease),opacity .2s}
+.burger span:nth-child(1){top:15px}.burger span:nth-child(2){top:21px}.burger span:nth-child(3){top:27px}
+.menu-open .burger span:nth-child(1){transform:translateY(6px) rotate(45deg)}
+.menu-open .burger span:nth-child(2){opacity:0}
+.menu-open .burger span:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
+.mobile-menu{position:fixed;inset:0;background:var(--ink);color:var(--bg);z-index:40;display:flex;flex-direction:column;justify-content:center;padding:100px var(--pad) 60px;gap:8px;clip-path:inset(0 0 100% 0);transition:clip-path .6s var(--ease);visibility:hidden}
+.menu-open .mobile-menu{clip-path:inset(0);visibility:visible}
+.mobile-menu a{font-family:"Italiana",serif;font-size:clamp(44px,12vw,72px);line-height:1.1;border-bottom:1px solid rgba(251,243,236,.15);padding:6px 0;display:flex;justify-content:space-between;align-items:baseline}
+.mobile-menu a span{font-family:"Plus Jakarta Sans";font-size:12px;letter-spacing:.2em;color:var(--sun)}
+.mobile-menu .btn{margin-top:28px;font-family:"Plus Jakarta Sans";font-size:15px;border-bottom:2px solid var(--accent)}
+.menu-open header{background:transparent;box-shadow:none;backdrop-filter:none}
+.menu-open .logo,.menu-open .logo small{color:var(--bg)}
+.menu-open .logo-mark{background:var(--accent)}
+.menu-open .burger{border-color:var(--bg)}
+.menu-open .burger span{background:var(--bg)}
 
-/* trust */
-.trust{border-top:1px solid color-mix(in srgb,var(--ink) 9%,transparent);border-bottom:1px solid color-mix(in srgb,var(--ink) 9%,transparent);background:var(--surface)}
-.trust .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;padding-top:26px;padding-bottom:26px}
-.trust div{display:flex;align-items:center;gap:12px;font-weight:600;font-size:15px}
-.trust svg{width:22px;height:22px;color:var(--accent);flex:none}
+/* Hero */
+.hero{min-height:100vh;min-height:100svh;position:relative;padding:140px 0 0;display:flex;flex-direction:column;overflow:hidden}
+.grid-lines{position:absolute;inset:0;display:grid;grid-template-columns:repeat(12,1fr);max-width:1360px;margin:0 auto;padding:0 var(--pad);pointer-events:none;z-index:0}
+.grid-lines i{border-left:1px solid var(--line)}
+.grid-lines i:last-child{border-right:1px solid var(--line)}
+.hero .wrap{position:relative;z-index:2;flex:1;display:flex;flex-direction:column}
+.hero-top{display:flex;justify-content:space-between;align-items:flex-start;gap:24px;flex-wrap:wrap}
+.hero-index{font-weight:800;font-size:13px;letter-spacing:.2em;text-align:right;line-height:1.8}
+.hero-index b{color:var(--accent)}
+.hero h1{font-size:clamp(68px,15.5vw,248px);margin-top:clamp(28px,4vw,48px);position:relative}
+.hero h1 .row{display:block;overflow:hidden;padding-bottom:.06em}
+.hero h1 .w{display:inline-block;transform:translateY(110%);transition:transform 1.2s var(--ease)}
+.loaded .hero h1 .w{transform:none}
+.hero h1 .row:nth-child(2) .w{transition-delay:.12s}
+.hero h1 .row:nth-child(3) .w{transition-delay:.24s}
+.hero h1 .indent{padding-left:clamp(0px,16vw,260px)}
+.hero h1 em{font-style:normal;color:var(--accent)}
+/* signature: the travelling box */
+.box-track{display:inline-block;position:relative;width:clamp(70px,13vw,200px);height:.72em;vertical-align:baseline;margin:0 .08em}
+.box-track::before{content:"";position:absolute;left:0;right:0;bottom:.02em;border-bottom:3px dashed var(--accent)}
+.box{position:absolute;bottom:.06em;left:0;width:.5em;height:.5em;background:var(--sun);border:3px solid var(--ink);animation:slide 4.5s var(--ease) infinite;}
+.box::before{content:"";position:absolute;left:50%;top:-3px;bottom:-3px;width:16%;transform:translateX(-50%);background:var(--accent)}
+@keyframes slide{0%,8%{left:0;transform:rotate(0)}45%,55%{left:calc(100% - .5em);transform:rotate(90deg)}92%,100%{left:0;transform:rotate(0)}}
+.hero-bottom{display:grid;grid-template-columns:repeat(12,1fr);gap:24px;margin-top:auto;padding:clamp(36px,5vw,64px) 0 clamp(36px,5vw,56px);align-items:end}
+.hero-sub{grid-column:1/span 5;font-size:clamp(17px,1.5vw,20px);color:var(--ink-2);max-width:480px}
+.hero-sub strong{color:var(--ink)}
+.hero-ctas{grid-column:7/span 6;display:flex;gap:14px;justify-content:flex-end;flex-wrap:wrap}
+.fade-in{opacity:0;transform:translateY(24px);transition:opacity 1s var(--ease),transform 1s var(--ease)}
+.loaded .fade-in{opacity:1;transform:none}
+.loaded .d1{transition-delay:.5s}.loaded .d2{transition-delay:.65s}.loaded .d3{transition-delay:.8s}
+.sun{position:absolute;right:-10vw;top:12vh;width:clamp(260px,42vw,640px);aspect-ratio:1;border-radius:50%;background:radial-gradient(circle at 35% 35%,var(--sun) 0%,#EFC98E 45%,rgba(233,184,114,0) 70%);z-index:1;opacity:.75;will-change:transform}
+.block{position:absolute;z-index:1;will-change:transform}
+.block.b1{width:clamp(70px,9vw,140px);height:clamp(70px,9vw,140px);background:var(--accent);right:18%;bottom:34%}
+.block.b2{width:clamp(40px,5vw,80px);height:clamp(40px,5vw,80px);border:3px solid var(--ink);right:8%;bottom:48%}
 
-/* sections */
-section.block{padding:110px 0}
-.kicker{font-size:13px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
-h2{font-family:var(--serif);font-weight:500;font-size:clamp(34px,3.8vw,52px);line-height:1.08;letter-spacing:-.02em;margin:14px 0 18px}
-.section-head{display:flex;justify-content:space-between;align-items:end;gap:40px;margin-bottom:56px}
-.section-head p{color:var(--muted);max-width:420px}
-.services{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-.card{background:var(--surface);border-radius:var(--radius);padding:34px 32px 36px;border:1px solid color-mix(in srgb,var(--ink) 7%,transparent);transition:transform .25s ease,box-shadow .25s ease}
-.card:hover{transform:translateY(-4px);box-shadow:0 30px 60px -36px color-mix(in srgb,var(--ink) 45%,transparent)}
-.icon{width:54px;height:54px;border-radius:16px;background:var(--soft);color:var(--accent);display:grid;place-items:center;margin-bottom:24px}
-.icon svg{width:26px;height:26px}
-.card h3{font-family:var(--serif);font-weight:500;font-size:23px;margin-bottom:8px;letter-spacing:-.01em}
-.card p{color:var(--muted);font-size:16px}
+/* Marquee */
+.marquee{background:var(--ink);color:var(--bg);overflow:hidden;padding:26px 0;position:relative;z-index:3}
+.marquee.alt{background:var(--accent);color:#fff;transform:rotate(-1.5deg);margin:-14px -2vw 0;padding:18px 0}
+.track{display:flex;width:max-content;animation:marq 38s linear infinite}
+.marquee.alt .track{animation-direction:reverse;animation-duration:44s}
+.track span{font-family:"Italiana",serif;font-size:clamp(32px,4.4vw,64px);white-space:nowrap;padding:0 28px;display:flex;align-items:center;gap:56px}
+.marquee.alt .track span{font-family:"Plus Jakarta Sans";font-weight:800;font-size:15px;letter-spacing:.24em;text-transform:uppercase}
+.track span::after{content:"";width:14px;height:14px;background:var(--sun);transform:rotate(45deg);flex-shrink:0}
+.marquee.alt .track span::after{background:#fff;width:8px;height:8px}
+@keyframes marq{to{transform:translateX(-50%)}}
 
+/* Sections */
+section{position:relative}
+.sec{padding:clamp(90px,12vw,170px) 0}
+.sec-head{display:grid;grid-template-columns:repeat(12,1fr);gap:24px;margin-bottom:clamp(48px,6vw,90px);align-items:end}
+.sec-head .label{grid-column:1/span 3;align-self:start;padding-top:14px}
+.sec-head h2{grid-column:4/span 9;font-size:clamp(48px,7.4vw,118px)}
+.sec-head h2 em{font-style:normal;color:var(--accent)}
+.sec-head p{grid-column:4/span 6;color:var(--ink-2);font-size:18px;margin-top:-20px}
+
+/* Services */
+.services-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:0;border-top:2px solid var(--ink)}
+.svc{grid-column:span 4;background:var(--surface);padding:clamp(28px,3vw,44px);border-right:1px solid var(--line);border-bottom:1px solid var(--line);position:relative;min-height:380px;display:flex;flex-direction:column;transition:background .45s var(--ease),color .45s var(--ease),transform .45s var(--ease),box-shadow .45s;overflow:hidden}
+.svc:nth-child(3n){border-right:0}
+.svc:hover{background:var(--ink);color:var(--bg);transform:translateY(-6px);box-shadow:0 30px 60px -30px rgba(43,29,22,.5);z-index:2}
+.svc .num{font-family:"Italiana",serif;font-size:clamp(72px,7vw,108px);line-height:.8;color:var(--accent);transition:color .45s}
+.svc:hover .num{color:var(--sun)}
+.svc .ico{position:absolute;top:clamp(28px,3vw,44px);right:clamp(28px,3vw,44px);width:52px;height:52px;border:2px solid currentColor;display:grid;place-items:center}
+.svc .ico svg{width:26px;height:26px}
+.svc h3{font-family:"Plus Jakarta Sans";font-weight:800;font-size:22px;letter-spacing:-.01em;margin:auto 0 12px;line-height:1.2;padding-top:40px}
+.svc p{font-size:15.5px;color:var(--ink-2);transition:color .45s}
+.svc:hover p{color:rgba(251,243,236,.78)}
+.svc.feature{grid-column:span 8;background:var(--accent);color:#fff;border-right:0}
+.svc.feature .num{color:var(--sun-l)}
+.svc.feature p{color:rgba(255,255,255,.9)}
+.svc.feature h3{font-family:"Italiana",serif;font-weight:400;font-size:clamp(36px,4vw,56px);line-height:1}
+.svc.feature:hover{background:var(--accent-d);color:#fff}
+
+/* About */
+.about{background:var(--surface);overflow:hidden}
+.about-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:24px;align-items:center}
+.about-art{grid-column:1/span 5;position:relative;aspect-ratio:4/5}
+.about-copy{grid-column:7/span 6}
+.about-copy h2{font-size:clamp(46px,6.2vw,96px);margin:22px 0 32px}
+.about-copy h2 em{font-style:normal;color:var(--accent)}
+.about-copy p{color:var(--ink-2);margin-bottom:20px;font-size:18px;max-width:560px}
+.about-copy .btn{margin-top:20px}
+.stack{position:absolute;inset:0}
+.stack div{position:absolute;border:3px solid var(--ink)}
+.s1{inset:38% 8% 0 0;background:var(--sun)}
+.s2{inset:10% 30% 62% 14%;background:var(--accent)}
+.s3{inset:0 2% 72% 58%;background:var(--bg)}
+.stack .tape{position:absolute;background:var(--ink);border:0}
+.s1 .tape{left:50%;top:-3px;bottom:-3px;width:14%;transform:translateX(-50%);background:var(--accent)}
+.s2 .tape{left:50%;top:-3px;bottom:-3px;width:16%;transform:translateX(-50%);background:var(--sun)}
+.about-art .addr{position:absolute;left:8%;bottom:8%;background:var(--ink);color:var(--bg);padding:18px 20px;font-size:12px;letter-spacing:.18em;font-weight:700;text-transform:uppercase;line-height:1.7;border:0}
+.about-art .big{position:absolute;right:-2%;bottom:16%;font-family:"Italiana",serif;font-size:clamp(90px,11vw,180px);line-height:.8;color:var(--ink);border:0}
+
+/* Why */
 .why{background:var(--ink);color:var(--bg)}
-.why .kicker{color:var(--gold)}
-.why-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:80px;align-items:start}
-.why h2{color:var(--bg)}
-.why .intro{color:color-mix(in srgb,var(--bg) 70%,transparent);font-size:18px;max-width:440px}
-.points{display:grid;gap:14px}
-.point{display:grid;grid-template-columns:62px 1fr;gap:20px;padding:30px;border-radius:var(--radius);background:color-mix(in srgb,var(--bg) 6%,transparent);border:1px solid color-mix(in srgb,var(--bg) 10%,transparent)}
-.point .num{font-family:var(--serif);font-size:34px;color:var(--gold);line-height:1}
-.point h3{font-family:var(--serif);font-weight:500;font-size:24px;margin-bottom:6px}
-.point p{color:color-mix(in srgb,var(--bg) 72%,transparent);font-size:16px}
+.why .sec-head h2 em{color:var(--sun)}
+.why .label .dot{background:var(--sun)}
+.why-list{border-top:1px solid rgba(251,243,236,.2)}
+.why-item{display:grid;grid-template-columns:repeat(12,1fr);gap:24px;padding:clamp(28px,3.4vw,46px) 0;border-bottom:1px solid rgba(251,243,236,.2);align-items:baseline;transition:padding .45s var(--ease)}
+.why-item:hover{padding-left:20px}
+.why-item .n{grid-column:1/span 2;font-weight:800;font-size:13px;letter-spacing:.2em;color:var(--sun)}
+.why-item h3{grid-column:3/span 5;font-size:clamp(34px,4vw,60px)}
+.why-item p{grid-column:8/span 5;color:rgba(251,243,236,.78);font-size:16.5px}
 
-.score{display:flex;align-items:center;gap:18px;background:var(--surface);padding:16px 24px;border-radius:18px;border:1px solid color-mix(in srgb,var(--ink) 8%,transparent)}
-.score b{font-family:var(--serif);font-size:40px;font-weight:500;line-height:1}
-.score small{display:block;color:var(--muted);font-size:14px}
-.reviews{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-.review{background:var(--surface);border-radius:var(--radius);padding:34px;display:flex;flex-direction:column;gap:22px;border:1px solid color-mix(in srgb,var(--ink) 7%,transparent)}
-.review p{font-family:var(--serif);font-size:19.5px;line-height:1.45}
-.review .by{margin-top:auto;display:flex;align-items:center;gap:12px;font-weight:600;font-size:15px}
-.avatar{width:40px;height:40px;border-radius:50%;background:var(--soft);color:var(--accent);display:grid;place-items:center;font-weight:700}
-.review .src{color:var(--muted);font-weight:500;font-size:13px;display:block}
+/* Steps */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;counter-reset:s}
+.step{background:var(--surface);padding:36px 30px 40px;position:relative;border-top:6px solid var(--ink);transition:transform .45s var(--ease),border-color .45s,box-shadow .45s}
+.step:hover{transform:translateY(-8px);border-color:var(--accent);box-shadow:0 28px 50px -28px rgba(43,29,22,.4)}
+.step .big{font-family:"Italiana",serif;font-size:clamp(96px,10vw,150px);line-height:.8;color:var(--sun);display:block;margin-bottom:28px}
+.step h3{font-family:"Plus Jakarta Sans";font-weight:800;font-size:20px;margin-bottom:10px;line-height:1.25}
+.step p{font-size:15.5px;color:var(--ink-2)}
+.step-line{height:2px;background:var(--line);margin-bottom:28px;position:relative;overflow:hidden}
+.step-line::after{content:"";position:absolute;inset:0;background:var(--accent);transform:scaleX(0);transform-origin:left;transition:transform 1.6s var(--ease) .3s}
+.step-line.in::after{transform:scaleX(1)}
 
-.cta-band{padding:0 0 110px}
-.cta-box{border-radius:calc(var(--radius) + 12px);background:linear-gradient(140deg,var(--accent),color-mix(in srgb,var(--accent) 60%,var(--ink)));color:var(--accent-ink);padding:76px 64px;display:grid;grid-template-columns:1.3fr 1fr;gap:40px;align-items:center;position:relative;overflow:hidden}
-.cta-box:after{content:"";position:absolute;right:-120px;bottom:-200px;width:460px;height:460px;border-radius:50%;border:1.5px solid color-mix(in srgb,var(--accent-ink) 22%,transparent)}
-.cta-box h2{color:inherit;margin:0 0 12px}
-.cta-box p{opacity:.85;font-size:18px}
-.cta-box .actions{display:flex;flex-direction:column;gap:12px;align-items:flex-start;position:relative;z-index:1}
-.cta-box .btn{background:var(--accent-ink);color:var(--accent)}
-.cta-box .btn.ghost{background:transparent;color:var(--accent-ink);border-color:color-mix(in srgb,var(--accent-ink) 40%,transparent)}
+/* CTA band */
+.cta-band{background:var(--accent);color:#fff;overflow:hidden;padding:clamp(90px,12vw,170px) 0}
+.cta-band .ghost{position:absolute;inset:auto 0 -6vw 0;font-family:"Italiana",serif;font-size:32vw;line-height:.8;color:rgba(255,255,255,.08);white-space:nowrap;text-align:center;pointer-events:none}
+.cta-inner{position:relative;z-index:2;display:grid;grid-template-columns:repeat(12,1fr);gap:24px;align-items:end}
+.cta-inner h2{grid-column:1/span 8;font-size:clamp(54px,8.6vw,140px)}
+.cta-inner h2 em{font-style:normal;color:var(--sun-l)}
+.cta-side{grid-column:9/span 4;display:flex;flex-direction:column;gap:14px}
+.cta-side p{font-size:17px;color:rgba(255,255,255,.92);margin-bottom:8px}
+.cta-band .btn-primary{background:var(--ink);border-color:var(--ink)}
+.cta-band .btn-primary:hover{background:#fff;color:var(--ink);border-color:#fff}
+.cta-band .btn-ghost{border-color:#fff;color:#fff}
+.cta-band .btn-ghost:hover{background:#fff;color:var(--accent)}
+.cta-band .label .dot{background:var(--sun-l)}
 
-.visit{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:10px}
-.visit .card h3{font-size:20px}
-.visit a{color:var(--accent);font-weight:600}
-footer{border-top:1px solid color-mix(in srgb,var(--ink) 9%,transparent);padding:40px 0 110px;color:var(--muted);font-size:14px}
-footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
-.mobile-bar{display:none}
+/* Contact */
+.contact-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border:2px solid var(--ink)}
+.c-card{padding:clamp(30px,3.4vw,48px);background:var(--surface);border-right:2px solid var(--ink);display:flex;flex-direction:column;gap:14px;min-height:300px;transition:background .4s var(--ease)}
+.c-card:last-child{border-right:0}
+.c-card .label{color:var(--accent)}
+.c-card .val{font-family:"Italiana",serif;font-size:clamp(32px,3.2vw,46px);line-height:1.05;word-break:break-word}
+.c-card p{color:var(--ink-2);font-size:15.5px}
+.c-card .go{margin-top:auto;font-weight:700;font-size:14px;letter-spacing:.06em;display:inline-flex;gap:10px;align-items:center;align-self:flex-start}
+.c-card .go svg{width:16px;height:16px;transition:transform .35s var(--ease)}
+a.c-card:hover{background:var(--sun-l)}
+a.c-card:hover .go svg{transform:translate(4px,-4px)}
 
-@keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
-.hero .copy>*{animation:rise .8s cubic-bezier(.2,.7,.2,1) both}
-.hero .copy>*:nth-child(2){animation-delay:.08s}.hero .copy>*:nth-child(3){animation-delay:.16s}
-.hero .copy>*:nth-child(4){animation-delay:.24s}.hero .copy>*:nth-child(5){animation-delay:.32s}
-.visual{animation:rise 1s .2s cubic-bezier(.2,.7,.2,1) both}
+/* Footer */
+footer{background:var(--ink);color:var(--bg);padding:80px 0 40px}
+.foot-big{font-family:"Italiana",serif;font-size:clamp(64px,15vw,240px);line-height:.85;border-bottom:1px solid rgba(251,243,236,.2);padding-bottom:40px;margin-bottom:32px}
+.foot-big em{font-style:normal;color:var(--accent)}
+.foot-row{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;font-size:14px;color:rgba(251,243,236,.75)}
+.foot-row nav{display:flex;gap:24px;flex-wrap:wrap}
+.foot-row a:hover{color:var(--sun)}
 
-@media (max-width:980px){
+/* Mobile bar */
+.mbar{display:none}
+
+/* Reveal */
+.rv{opacity:0;transform:translateY(40px);transition:opacity 1s var(--ease),transform 1s var(--ease)}
+.rv.in{opacity:1;transform:none}
+.rv.d1{transition-delay:.1s}.rv.d2{transition-delay:.2s}.rv.d3{transition-delay:.3s}
+
+/* Responsive */
+@media (max-width:1080px){
   .links{display:none}
-  .hero-grid,.why-grid,.cta-box{grid-template-columns:1fr}
-  .hero-grid{gap:56px}
-  .services,.reviews,.visit{grid-template-columns:1fr 1fr}
-  .trust .wrap{grid-template-columns:1fr 1fr}
-  .float.one{left:12px;bottom:-26px}.float.two{right:12px}
-  .visual{max-width:560px;margin-bottom:20px}
-  .section-head{flex-direction:column;align-items:flex-start}
+  .svc,.svc.feature{grid-column:span 6}
+  .svc:nth-child(3n){border-right:1px solid var(--line)}
+  .svc:nth-child(2n+1){border-right:0}
+  .svc.feature{grid-column:span 12}
+  .steps{grid-template-columns:repeat(2,1fr)}
+  .cta-inner h2{grid-column:1/-1}
+  .cta-side{grid-column:1/span 8}
 }
-@media (max-width:640px){
+@media (max-width:820px){
+  .nav-phone,.nav .btn{display:none}
+  .burger{display:block}
+  .grid-lines{grid-template-columns:repeat(4,1fr)}
+  .grid-lines i:nth-child(n+5){display:none}
+  .hero-bottom{grid-template-columns:1fr}
+  .hero-sub,.hero-ctas{grid-column:1/-1}
+  .hero-ctas{justify-content:flex-start}
+  .sec-head{grid-template-columns:1fr;gap:18px}
+  .sec-head .label,.sec-head h2,.sec-head p{grid-column:1/-1}
+  .sec-head p{margin-top:0}
+  .about-grid{grid-template-columns:1fr;gap:56px}
+  .about-art,.about-copy{grid-column:1/-1}
+  .about-art{max-width:460px;width:100%}
+  .why-item{grid-template-columns:1fr;gap:10px}
+  .why-item .n,.why-item h3,.why-item p{grid-column:1/-1}
+  .contact-grid{grid-template-columns:1fr}
+  .c-card{border-right:0;border-bottom:2px solid var(--ink);min-height:0}
+  .c-card:last-child{border-bottom:0}
+  .cta-side{grid-column:1/-1}
+  .mbar{display:grid;grid-template-columns:1fr 1fr;position:fixed;left:0;right:0;bottom:0;z-index:60;box-shadow:0 -8px 30px rgba(43,29,22,.18);transform:translateY(100%);transition:transform .5s var(--ease)}
+  .mbar.show{transform:none}
+  .mbar a{display:flex;align-items:center;justify-content:center;gap:10px;padding:17px 10px;font-weight:700;font-size:15px}
+  .mbar a svg{width:18px;height:18px}
+  .mbar .call{background:var(--accent);color:#fff}
+  .mbar .plan{background:var(--ink);color:var(--bg)}
+  footer{padding-bottom:110px}
+}
+@media (max-width:600px){
   body{font-size:16px}
-  .wrap{padding:0 18px}
-  .nav{height:66px}.brand{font-size:19px}
-  .phone,.nav-right .btn{display:none}
-  .hero{padding:44px 0 64px}
-  .lead-text{font-size:17.5px}
-  .hero-ctas .btn{flex:1;justify-content:center}
-  .ticks{display:none}
-  .services,.reviews,.visit,.trust .wrap{grid-template-columns:1fr}
-  section.block{padding:76px 0}
-  .quote-panel,.photo{aspect-ratio:auto;min-height:380px}.photo{aspect-ratio:4/3;min-height:0}
-  .quote-panel{padding:40px 30px 64px}.quote-panel p{font-size:23px}
-  .float{font-size:13px;padding:12px 14px}.float b{font-size:18px}
-  .float.two{display:none}
-  .cta-box{padding:52px 28px}
-  .point{grid-template-columns:44px 1fr;padding:24px}
-  .mobile-bar{display:flex;position:fixed;left:12px;right:12px;bottom:12px;z-index:30;gap:10px}
-  .mobile-bar .btn{flex:1;justify-content:center;box-shadow:0 14px 30px -14px color-mix(in srgb,var(--ink) 60%,transparent)}
-  .mobile-bar .btn.ghost{background:var(--surface)}
+  .hero{padding-top:118px}
+  .hero-index{display:none}
+  .hero h1 .indent{padding-left:0}
+  .box-track{width:clamp(56px,18vw,90px)}
+  .services-grid{grid-template-columns:1fr}
+  .svc,.svc.feature{grid-column:1/-1;border-right:0!important;min-height:300px}
+  .steps{grid-template-columns:1fr}
+  .btn{width:100%;white-space:normal}
+  .hero-ctas{flex-direction:column}
+  .block.b1{right:6%;bottom:auto;top:26%}
+  .block.b2{display:none}
+  .sun{right:-30vw;top:6vh}
+  .about-art .big{right:0}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .rv,.fade-in,.hero h1 .w{opacity:1!important;transform:none!important}
+  .box{left:calc(100% - .5em)}
+  html{scroll-behavior:auto}
 }
 </style>
 </head>
 <body>
-<div class="concept">Website concept prepared for <b>The GOAT Movers</b> by webstudio &middot; not a live site</div>
 
-<header>
+<header id="top">
   <div class="wrap nav">
-    <a href="#top" class="brand">The GOAT Movers</a>
-    <nav class="links">
-      <a href="#services">Services</a><a href="#why">Why us</a><a href="#visit">Visit</a>
+    <a href="#top" class="logo" aria-label="The GOAT Movers home">
+      <span class="logo-mark" aria-hidden="true">
+        <svg viewBox="0 0 32 32" fill="none"><rect x="5" y="9" width="22" height="18" stroke="#E9B872" stroke-width="2.4"/><path d="M5 9l4-5h14l4 5" stroke="#E9B872" stroke-width="2.4"/><rect x="14" y="4" width="4" height="23" fill="#C4572F"/></svg>
+      </span>
+      <span>The GOAT Movers<small>Austin, Texas</small></span>
+    </a>
+    <nav class="links" aria-label="Primary">
+      <a href="#services" class="ul">Services</a>
+      <a href="#about" class="ul">About</a>
+      <a href="#process" class="ul">Process</a>
+      <a href="#contact" class="ul">Contact</a>
     </nav>
     <div class="nav-right">
-      <a class="phone" href="tel:8303101191">(830) 310-1191</a>
-      <a class="btn" href="#visit">Free estimate</a>
+      <a href="tel:+18303101191" class="nav-phone ul">(830) 310-1191</a>
+      <a href="#contact" class="btn btn-primary">Plan my move</a>
+      <button class="burger" aria-label="Open menu" aria-expanded="false" aria-controls="mmenu"><span></span><span></span><span></span></button>
     </div>
   </div>
 </header>
 
-<main id="top">
-<section class="hero">
-  <div class="wrap hero-grid">
-    <div class="copy">
-      <div class="eyebrow">
-        <span class="dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-7-4.4-7-10a4 4 0 017-2.6A4 4 0 0119 10c0 5.6-7 10-7 10z"/></svg></span>Local &amp; long-distance moving
-      </div>
-      <h1>Moving day, minus the <em>stress.</em></h1>
-      <p class="lead-text">Careful, on-time movers who treat your things like their own, with honest flat-rate pricing and no surprises.</p>
-      <div class="hero-ctas">
-        <a class="btn" href="#visit">Get a free estimate <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-        <a class="btn ghost" href="tel:8303101191">Call (830) 310-1191</a>
-      </div>
-      <div class="ticks">
-        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7"/></svg>Licensed &amp; insured</span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7"/></svg>Free in-home estimates</span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7"/></svg>No hidden fees</span>
-      </div>
-    </div>
-    <div class="visual">
-      
-      <div class="quote-panel"><div class="quote-mark">“</div><div><p>Careful, on-time movers who treat your things like their own, with honest flat-rate pricing and no surprises.</p><div class="who">The GOAT Movers</div></div></div>
-      
-      
-      <div class="float two"><span class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><span><b>This week</b>Free in-home estimates</span></div>
-    </div>
-  </div>
-  <template id="qp"><div class="quote-panel"><div class="quote-mark">“</div><div><p>Careful, on-time movers who treat your things like their own, with honest flat-rate pricing and no surprises.</p><div class="who">The GOAT Movers</div></div></div></template>
-</section>
+<div class="mobile-menu" id="mmenu" aria-hidden="true">
+  <a href="#services">Services <span>01</span></a>
+  <a href="#about">About <span>02</span></a>
+  <a href="#process">Process <span>03</span></a>
+  <a href="#contact">Contact <span>04</span></a>
+  <a href="tel:+18303101191" class="btn btn-primary">Call (830) 310-1191</a>
+</div>
 
-<div class="trust"><div class="wrap">
-  <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.2-8 9-4.6-.8-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg>Licensed &amp; insured</div><div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.2-8 9-4.6-.8-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg>Free in-home estimates</div><div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.2-8 9-4.6-.8-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg>No hidden fees</div><div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.2-8 9-4.6-.8-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg>Same-week availability</div>
-</div></div>
-
-<section class="block" id="services">
+<main>
+<section class="hero" aria-label="Introduction">
+  <div class="grid-lines" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+  <div class="sun" data-par="0.18" aria-hidden="true"></div>
+  <div class="block b1" data-par="0.32" aria-hidden="true"></div>
+  <div class="block b2" data-par="0.08" aria-hidden="true"></div>
   <div class="wrap">
-    <div class="section-head">
-      <div><div class="kicker">What we do</div><h2>Everything you need,<br>under one roof.</h2></div>
-      <p>From routine visits to the work that changes how you feel about your day, The GOAT Movers takes care of it properly.</p>
+    <div class="hero-top">
+      <p class="label fade-in d1"><span class="dot"></span>Moving company · Austin, TX</p>
+      <p class="hero-index fade-in d2">2709 S LAMAR BLVD<br><b>AUSTIN 78704</b></p>
     </div>
-    <div class="services">
-      
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M2 6h11v10H2zM13 9h4l4 4v3h-8"/><circle cx="6" cy="17.5" r="1.8"/><circle cx="17" cy="17.5" r="1.8"/></svg></div><h3>Local moves</h3><p>Fast, careful moves across town, often done in a single morning.</p></div>
-      
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="18" r="2.5"/><circle cx="18" cy="6" r="2.5"/><path d="M8.5 18H16a3 3 0 000-6H8a3 3 0 010-6h7.5"/></svg></div><h3>Long-distance moves</h3><p>Coast-to-coast moves with tracking and one point of contact.</p></div>
-      
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7l9-4 9 4v10l-9 4-9-4z"/><path d="M3 7l9 4 9-4M12 11v10"/></svg></div><h3>Packing &amp; unpacking</h3><p>Professional packing materials and a team that wraps everything right.</p></div>
-      
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3" width="14" height="18" rx="1"/><path d="M9 7h2M13 7h2M9 11h2M13 11h2M9 15h2M13 15h2"/></svg></div><h3>Office relocation</h3><p>After-hours business moves that keep downtime to a minimum.</p></div>
-      
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.2-8 9-4.6-.8-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg></div><h3>Fragile &amp; specialty items</h3><p>Pianos, art, antiques and TVs handled with extra care.</p></div>
-      
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11l8-7 8 7v9a1 1 0 01-1 1h-4v-6H9v6H5a1 1 0 01-1-1z"/></svg></div><h3>Storage solutions</h3><p>Clean, secure short- and long-term storage when timing doesn&#39;t line up.</p></div>
-      
+    <h1>
+      <span class="row"><span class="w">Moving,</span></span>
+      <span class="row indent"><span class="w">done <span class="box-track" aria-hidden="true"><span class="box"></span></span> like</span></span>
+      <span class="row"><span class="w">the <em>GOAT.</em></span></span>
+    </h1>
+    <div class="hero-bottom">
+      <p class="hero-sub fade-in d2"><strong>The GOAT Movers</strong> brings a calm, careful, white-glove approach to every Austin move, from South Lamar to wherever you're headed next. One call and your move has a plan.</p>
+      <div class="hero-ctas fade-in d3">
+        <a href="tel:+18303101191" class="btn btn-primary">Call (830) 310-1191
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a href="#services" class="btn btn-ghost">Explore services</a>
+      </div>
     </div>
   </div>
 </section>
 
-<section class="block why" id="why">
-  <div class="wrap why-grid">
-    <div>
-      <div class="kicker">Why customers choose us</div>
-      <h2>The Austin moving company people recommend to their friends.</h2>
-      <p class="intro">it still comes down to the same three things.</p>
-    </div>
-    <div class="points">
-      
-      <div class="point"><div class="num">01</div><div><h3>Flat-rate pricing</h3><p>A firm quote up front, so the price on moving day is the price you were told.</p></div></div>
-      
-      <div class="point"><div class="num">02</div><div><h3>Licensed &amp; insured</h3><p>Fully licensed and insured, with valuation coverage on everything we carry.</p></div></div>
-      
-      <div class="point"><div class="num">03</div><div><h3>On time, every time</h3><p>We show up when we say we will, with the right truck and the right crew.</p></div></div>
-      
-    </div>
+<div class="marquee" aria-hidden="true">
+  <div class="track">
+    <span>Home moves</span><span>Apartments &amp; condos</span><span>Packing</span><span>Office moves</span><span>Furniture care</span><span>Local Austin</span>
+    <span>Home moves</span><span>Apartments &amp; condos</span><span>Packing</span><span>Office moves</span><span>Furniture care</span><span>Local Austin</span>
   </div>
-</section>
+</div>
+<div class="marquee alt" aria-hidden="true">
+  <div class="track">
+    <span>The GOAT Movers</span><span>South Lamar</span><span>Austin 78704</span><span>(830) 310-1191</span><span>Handled with care</span>
+    <span>The GOAT Movers</span><span>South Lamar</span><span>Austin 78704</span><span>(830) 310-1191</span><span>Handled with care</span>
+  </div>
+</div>
 
-
-
-<section class="cta-band" id="book">
-  <div class="wrap"><div class="cta-box">
-    <div><h2>Ready when you are.</h2><p>Get a free estimate in under a minute, or give us a call and talk to a real person.</p></div>
-    <div class="actions">
-      <a class="btn" href="#visit">Get a free estimate</a>
-      <a class="btn ghost" href="tel:8303101191">Call (830) 310-1191</a>
-    </div>
-  </div></div>
-</section>
-
-<section class="block" id="visit" style="padding-top:0">
+<section class="sec" id="services">
   <div class="wrap">
-    <div class="kicker">Visit us</div><h2>Come say hello.</h2>
-    <div class="visit">
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11l8-7 8 7v9a1 1 0 01-1 1h-4v-6H9v6H5a1 1 0 01-1-1z"/></svg></div><h3>Address</h3><p>2709 S Lamar Blvd, Austin TX 78704</p></div>
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div><h3>Phone</h3><p><a href="tel:8303101191">(830) 310-1191</a></p><p style="margin-top:10px">Call or message us for today's opening hours.</p></div>
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-7-4.4-7-10a4 4 0 017-2.6A4 4 0 0119 10c0 5.6-7 10-7 10z"/></svg></div><h3>Free in-home estimates</h3><p>Get a free estimate online or by phone and we'll take care of the rest.</p></div>
+    <div class="sec-head">
+      <p class="label rv"><span class="dot"></span>01 / Services</p>
+      <h2 class="rv d1">Every box. Every room. <em>Every detail.</em></h2>
+      <p class="rv d2">Tell us what you're moving and where. We'll talk you through how The GOAT Movers can help, so you know exactly what to expect before the first box is lifted.</p>
+    </div>
+    <div class="services-grid">
+      <article class="svc feature rv">
+        <span class="num">01</span>
+        <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 11l9-7 9 7v9H3z"/><path d="M9 20v-6h6v6"/></svg></span>
+        <h3>Home moves across Austin</h3>
+        <p>Your life, carefully carried from one front door to the next. Call to talk through your home, your timing and what matters most to you.</p>
+      </article>
+      <article class="svc rv d1">
+        <span class="num">02</span>
+        <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="5" y="3" width="14" height="18"/><path d="M9 7h2M13 7h2M9 11h2M13 11h2M9 15h2M13 15h2"/></svg></span>
+        <h3>Apartments &amp; condos</h3>
+        <p>Stairs, elevators and tight hallways: ask us how we'd approach your building.</p>
+      </article>
+      <article class="svc rv">
+        <span class="num">03</span>
+        <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 7l9-4 9 4v10l-9 4-9-4z"/><path d="M3 7l9 4 9-4M12 11v10"/></svg></span>
+        <h3>Packing help</h3>
+        <p>Give us a call to discuss packing support for your move, so less of it lands on your weekend.</p>
+      </article>
+      <article class="svc rv d1">
+        <span class="num">04</span>
+        <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="7" width="18" height="13"/><path d="M8 7V4h8v3M3 12h18"/></svg></span>
+        <h3>Office &amp; workspace</h3>
+        <p>Moving a team or a studio? Let's talk through the plan and keep the disruption small.</p>
+      </article>
+      <article class="svc rv d2">
+        <span class="num">05</span>
+        <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 18v-6a3 3 0 013-3h10a3 3 0 013 3v6"/><path d="M2 14h20v4H2zM5 18v2M19 18v2"/></svg></span>
+        <h3>Furniture with care</h3>
+        <p>The pieces you love deserve a thoughtful hand. Tell us about them when you call.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="sec about" id="about">
+  <div class="wrap about-grid">
+    <div class="about-art rv" aria-hidden="true">
+      <div class="stack" data-par="0.06">
+        <div class="s1"><span class="tape"></span></div>
+        <div class="s2"><span class="tape"></span></div>
+        <div class="s3"></div>
+        <div class="big">78704</div>
+        <div class="addr">2709 S Lamar Blvd<br>Austin, Texas</div>
+      </div>
+    </div>
+    <div class="about-copy">
+      <p class="label rv"><span class="dot"></span>02 / About</p>
+      <h2 class="rv d1">Rooted on <em>South Lamar.</em></h2>
+      <p class="rv d2">The GOAT Movers is an Austin moving company based at 2709 S Lamar Blvd, right in the heart of 78704. We know this city's streets and neighbourhoods because this is where we work.</p>
+      <p class="rv d2">The name sets the bar. A move should feel organised, unhurried and respectful of your things and your time. That's the standard we hold ourselves to, and it starts with a real conversation on the phone.</p>
+      <a href="tel:+18303101191" class="btn btn-ghost rv d3">Talk to us: (830) 310-1191</a>
+    </div>
+  </div>
+</section>
+
+<section class="sec why" id="why">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="label rv"><span class="dot"></span>03 / Why us</p>
+      <h2 class="rv d1">The standard, <em>not the exception.</em></h2>
+    </div>
+    <div class="why-list">
+      <div class="why-item rv"><span class="n">— 01</span><h3>Austin locals</h3><p>Based on S Lamar Blvd, we move people around the city we call home.</p></div>
+      <div class="why-item rv"><span class="n">— 02</span><h3>A real person</h3><p>Call (830) 310-1191 and talk your move through directly, with no maze of forms.</p></div>
+      <div class="why-item rv"><span class="n">— 03</span><h3>Care first</h3><p>We treat your belongings like they matter, because to you they do.</p></div>
+      <div class="why-item rv"><span class="n">— 04</span><h3>A clear plan</h3><p>We'll walk through the details with you up front, so moving day holds no surprises.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="process">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="label rv"><span class="dot"></span>04 / How it works</p>
+      <h2 class="rv d1">Four steps to <em>your new front door.</em></h2>
+    </div>
+    <div class="step-line rv" aria-hidden="true"></div>
+    <div class="steps">
+      <div class="step rv"><span class="big">1</span><h3>Call us</h3><p>Ring (830) 310-1191 and tell us where you're moving from and to.</p></div>
+      <div class="step rv d1"><span class="big">2</span><h3>Share the details</h3><p>Your home, your timeline, the special pieces: we listen and ask the right questions.</p></div>
+      <div class="step rv d2"><span class="big">3</span><h3>Get your plan</h3><p>We talk you through how your move will run, so you can plan with confidence.</p></div>
+      <div class="step rv d3"><span class="big">4</span><h3>Moving day</h3><p>The GOAT Movers handle it with care, and you settle into your new place.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band" aria-label="Call to action">
+  <div class="ghost" aria-hidden="true">GOAT</div>
+  <div class="wrap cta-inner">
+    <div style="grid-column:1/-1"><p class="label rv"><span class="dot"></span>Ready when you are</p></div>
+    <h2 class="rv d1">Your next chapter <em>starts with one call.</em></h2>
+    <div class="cta-side rv d2">
+      <p>Tell us about your move and let The GOAT Movers take it from there.</p>
+      <a href="tel:+18303101191" class="btn btn-primary">Call (830) 310-1191</a>
+      <a href="#contact" class="btn btn-ghost">Find us on S Lamar</a>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="contact">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="label rv"><span class="dot"></span>05 / Contact</p>
+      <h2 class="rv d1">Let's get you <em>moving.</em></h2>
+    </div>
+    <div class="contact-grid rv">
+      <a class="c-card" href="tel:+18303101191">
+        <span class="label">Phone</span>
+        <span class="val">(830) 310-1191</span>
+        <p>The fastest way to start planning your move.</p>
+        <span class="go">Call now <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M7 17L17 7M8 7h9v9"/></svg></span>
+      </a>
+      <a class="c-card" href="https://maps.google.com/?q=2709+S+Lamar+Blvd,+Austin,+TX+78704" target="_blank" rel="noopener">
+        <span class="label">Address</span>
+        <span class="val">2709 S Lamar Blvd</span>
+        <p>Austin, TX 78704</p>
+        <span class="go">Open in Google Maps <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M7 17L17 7M8 7h9v9"/></svg></span>
+      </a>
+      <div class="c-card">
+        <span class="label">Hours</span>
+        <span class="val">Call for availability</span>
+        <p>Give us a ring to check timing for your move date.</p>
+      </div>
     </div>
   </div>
 </section>
 </main>
 
-<footer><div class="wrap">
-  <span>© 2026 The GOAT Movers</span>
-  <span>Concept design by webstudio. Not affiliated with or endorsed by The GOAT Movers.</span>
-</div></footer>
+<footer>
+  <div class="wrap">
+    <div class="foot-big">The GOAT <em>Movers.</em></div>
+    <div class="foot-row">
+      <span>2709 S Lamar Blvd, Austin TX 78704 · <a href="tel:+18303101191" class="ul">(830) 310-1191</a></span>
+      <nav aria-label="Footer">
+        <a href="#services">Services</a><a href="#about">About</a><a href="#process">Process</a><a href="#contact">Contact</a><a href="#top">Back to top ↑</a>
+      </nav>
+    </div>
+  </div>
+</footer>
 
-<div class="mobile-bar">
-  <a class="btn ghost" href="tel:8303101191">Call</a>
-  <a class="btn" href="#visit">Free estimate</a>
+<div class="mbar" id="mbar">
+  <a href="tel:+18303101191" class="call"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3.1 19.5 19.5 0 01-6-6A19.8 19.8 0 012.1 4.2 2 2 0 014.1 2h3a2 2 0 012 1.7c.1 1 .4 1.9.7 2.8a2 2 0 01-.5 2.1L8 9.9a16 16 0 006 6l1.3-1.3a2 2 0 012.1-.4c.9.3 1.8.6 2.8.7a2 2 0 011.7 2z"/></svg>Call now</a>
+  <a href="#contact" class="plan">Plan my move</a>
 </div>
-</body>
+
+<script>
+(function(){
+  var d=document, b=d.body, h=d.querySelector('header'), mbar=d.getElementById('mbar');
+  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  requestAnimationFrame(function(){ setTimeout(function(){ b.classList.add('loaded'); },60); });
+
+  // Menu
+  var burger=d.querySelector('.burger'), mm=d.getElementById('mmenu');
+  function toggle(open){
+    b.classList.toggle('menu-open',open);
+    burger.setAttribute('aria-expanded',open);
+    mm.setAttribute('aria-hidden',!open);
+    b.style.overflow=open?'hidden':'';
+  }
+  burger.addEventListener('click',function(){ toggle(!b.classList.contains('menu-open')); });
+  mm.querySelectorAll('a').forEach(function(a){ a.addEventListener('click',function(){ toggle(false); }); });
+  d.addEventListener('keydown',function(e){ if(e.key==='Escape') toggle(false); });
+
+  // Scroll: header, mobile bar, parallax
+  var par=[].slice.call(d.querySelectorAll('[data-par]')), ticking=false;
+  function onScroll(){
+    var y=window.scrollY;
+    h.classList.toggle('scrolled',y>30);
+    mbar.classList.toggle('show',y>window.innerHeight*.6);
+    if(!reduce){
+      par.forEach(function(el){
+        var r=el.getBoundingClientRect();
+        if(r.bottom<-200||r.top>window.innerHeight+200) return;
+        var f=parseFloat(el.dataset.par);
+        var off=el.closest('.hero')?y*f:(r.top+r.height/2-window.innerHeight/2)*-f;
+        el.style.transform='translate3d(0,'+off.toFixed(1)+'px,0)';
+      });
+    }
+    ticking=false;
+  }
+  window.addEventListener('scroll',function(){ if(!ticking){ requestAnimationFrame(onScroll); ticking=true; } },{passive:true});
+  onScroll();
+
+  // Reveal
+  var els=d.querySelectorAll('.rv');
+  if('IntersectionObserver' in window && !reduce){
+    var io=new IntersectionObserver(function(entries){
+      entries.forEach(function(en){ if(en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); } });
+    },{threshold:.15,rootMargin:'0px 0px -40px 0px'});
+    els.forEach(function(el){ io.observe(el); });
+  } else { els.forEach(function(el){ el.classList.add('in'); }); }
+})();
+</script>
+<div id="lm-concept" style="position:fixed;left:12px;bottom:12px;z-index:2147483647;font:500 11px/1.3 -apple-system,BlinkMacSystemFont,Segoe UI,sans-serif;letter-spacing:.02em;background:rgba(15,15,18,.82);color:#f4f1ea;padding:7px 11px;border-radius:999px;backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);pointer-events:none;max-width:70vw">Website concept for The GOAT Movers by webstudio &middot; not the live site</div><p style="margin:0;padding:18px 16px 70px;text-align:center;font:12px/1.5 -apple-system,sans-serif;color:#8a8a8a;background:#0e0e10">Concept design by webstudio. Not affiliated with or endorsed by The GOAT Movers.</p></body>
 </html>
