@@ -1,291 +1,555 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src * data: blob:; media-src 'self' data:; style-src 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com data:; script-src 'unsafe-inline'; connect-src 'none'; frame-src 'none'; form-action 'none'; base-uri 'none'; object-src 'none'">
 <meta name="robots" content="noindex, nofollow">
-<title>Gonzalez Dumpster Service | Website concept</title>
+<style>html,body{max-width:100%;overflow-x:clip}</style>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gonzalez Dumpster Service | Moving &amp; Hauling in San Diego, CA</title>
+<meta name="description" content="Gonzalez Dumpster Service: moving, hauling and dumpster service from Newton Ave, San Diego. Call (619) 571-8798.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 :root{
-  --bg:#f6f4f0;--surface:#ffffff;--ink:#1d2433;--muted:#5f6675;
-  --accent:#c4512b;--accent-ink:#ffffff;--gold:#d79a3e;--soft:#f3e6de;
-  --radius:22px;--max:1180px;
-  --serif:"Fraunces",Georgia,serif;--sans:"Manrope",system-ui,-apple-system,sans-serif;
+  --bg:#071A2B;--bg2:#05131F;--surface:#0E2840;--surface2:#12324F;
+  --text:#EAF2F8;--muted:#A9BFD0;--accent:#4FB3E8;--gold:#E9C46A;
+  --line:rgba(234,242,248,.12);--serif:"Instrument Serif",Georgia,serif;--sans:"Inter",system-ui,sans-serif;
+  --ease:cubic-bezier(.2,.7,.1,1);--wrap:min(1240px,100% - 48px)
 }
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:90px}
+body{background:var(--bg);color:var(--text);font-family:var(--sans);font-weight:400;line-height:1.65;overflow-x:clip;-webkit-font-smoothing:antialiased}
 a{color:inherit;text-decoration:none}
-img{max-width:100%;display:block}
-.wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
-.concept{background:var(--ink);color:var(--bg);font-size:13px;text-align:center;padding:8px 16px;letter-spacing:.02em}
-.concept b{color:var(--gold);font-weight:600}
+svg{display:block}
+.wrap{width:var(--wrap);margin-inline:auto}
+.label{font-size:.72rem;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);font-weight:500;display:inline-flex;align-items:center;gap:12px}
+.label::before{content:"";width:28px;height:1px;background:currentColor}
+h1,h2,h3{font-family:var(--serif);font-weight:400;line-height:1.02;letter-spacing:-.01em}
+h2{font-size:clamp(2.4rem,5.5vw,4.6rem);margin:18px 0 22px}
+h2 em,h1 em{font-style:italic;color:var(--accent)}
+p.lead{color:var(--muted);font-size:1.08rem;max-width:56ch}
+section{position:relative}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:16px 28px;border-radius:999px;font-weight:500;font-size:.95rem;letter-spacing:.02em;transition:transform .5s var(--ease),background .4s,box-shadow .5s,color .4s;white-space:nowrap;text-align:center}
+.btn-primary{background:var(--accent);color:#04121F;box-shadow:0 0 0 0 rgba(79,179,232,.5),0 10px 40px -10px rgba(79,179,232,.6)}
+.btn-primary:hover{transform:translateY(-3px);box-shadow:0 0 0 6px rgba(79,179,232,.14),0 20px 50px -12px rgba(79,179,232,.75)}
+.btn-ghost{border:1px solid rgba(234,242,248,.28);color:var(--text)}
+.btn-ghost:hover{border-color:var(--gold);color:var(--gold);transform:translateY(-3px)}
+.btn svg{width:18px;height:18px}
+.ul{background:linear-gradient(currentColor,currentColor) 0 100%/0 1px no-repeat;transition:background-size .5s var(--ease)}
+.ul:hover{background-size:100% 1px}
 
 /* header */
-header{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:saturate(1.4) blur(10px);border-bottom:1px solid color-mix(in srgb,var(--ink) 8%,transparent)}
-.nav{display:flex;align-items:center;justify-content:space-between;height:76px;gap:24px}
-.brand{font-family:var(--serif);font-size:23px;font-weight:600;letter-spacing:-.01em;line-height:1.1;max-width:340px}
-.links{display:flex;gap:30px;font-size:15px;font-weight:500;color:var(--muted)}
-.links a:hover{color:var(--ink)}
-.nav-right{display:flex;align-items:center;gap:18px}
-.phone{font-weight:600;font-size:15px;white-space:nowrap}
-.btn{display:inline-flex;align-items:center;gap:10px;background:var(--accent);color:var(--accent-ink);padding:14px 26px;border-radius:999px;font-weight:600;font-size:15.5px;transition:transform .2s ease,box-shadow .2s ease;white-space:nowrap}
-.btn:hover{transform:translateY(-2px);box-shadow:0 12px 28px -12px var(--accent)}
-.btn.ghost{background:transparent;color:var(--ink);border:1.5px solid color-mix(in srgb,var(--ink) 20%,transparent)}
-.btn.ghost:hover{box-shadow:none;border-color:var(--ink)}
-.btn svg{width:18px;height:18px}
+header{position:fixed;inset:0 0 auto;z-index:50;transition:background .5s,border-color .5s,padding .5s}
+header .bar{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:22px 0;transition:padding .5s var(--ease)}
+header.scrolled{background:rgba(7,26,43,.72);backdrop-filter:blur(18px) saturate(1.3);-webkit-backdrop-filter:blur(18px) saturate(1.3);border-bottom:1px solid var(--line)}
+header.scrolled .bar{padding:14px 0}
+.logo{display:flex;align-items:center;gap:12px;min-width:0}
+.logo svg{width:40px;height:40px;flex:none}
+.logo span{font-family:var(--serif);font-size:1.35rem;line-height:1;white-space:nowrap}
+.logo small{display:block;font-family:var(--sans);font-size:.6rem;letter-spacing:.3em;text-transform:uppercase;color:var(--muted);margin-top:5px}
+nav.main{display:flex;gap:34px;font-size:.88rem;color:var(--muted)}
+nav.main a:hover{color:var(--text)}
+.h-right{display:flex;align-items:center;gap:22px}
+.h-phone{font-size:.9rem;color:var(--text);display:flex;align-items:center;gap:8px}
+.h-phone svg{width:16px;height:16px;color:var(--accent)}
+.h-right .btn{padding:12px 22px;font-size:.85rem}
+.burger{display:none;width:46px;height:46px;border-radius:50%;border:1px solid var(--line);background:transparent;color:var(--text);cursor:pointer;position:relative}
+.burger i{position:absolute;left:14px;right:14px;height:1.5px;background:currentColor;transition:transform .4s var(--ease),top .4s var(--ease)}
+.burger i:nth-child(1){top:19px}.burger i:nth-child(2){top:26px}
+.menu-open .burger i:nth-child(1){top:22px;transform:rotate(45deg)}
+.menu-open .burger i:nth-child(2){top:22px;transform:rotate(-45deg)}
+.mobile-menu{position:fixed;inset:0;z-index:40;background:rgba(5,19,31,.97);backdrop-filter:blur(10px);display:flex;flex-direction:column;justify-content:center;padding:100px 28px 40px;gap:8px;opacity:0;visibility:hidden;transition:opacity .5s var(--ease),visibility .5s}
+.mobile-menu a{font-family:var(--serif);font-size:2.6rem;line-height:1.2;transform:translateY(20px);opacity:0;transition:transform .6s var(--ease),opacity .6s}
+.mobile-menu .btn{font-family:var(--sans);font-size:1rem;margin-top:26px}
+.menu-open .mobile-menu{opacity:1;visibility:visible}
+.menu-open .mobile-menu a{transform:none;opacity:1}
+.menu-open .mobile-menu a:nth-child(2){transition-delay:.06s}.menu-open .mobile-menu a:nth-child(3){transition-delay:.12s}.menu-open .mobile-menu a:nth-child(4){transition-delay:.18s}.menu-open .mobile-menu a:nth-child(5){transition-delay:.24s}
 
 /* hero */
-.hero{padding:72px 0 88px}
-.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:64px;align-items:center}
-.eyebrow{display:inline-flex;align-items:center;gap:10px;background:var(--surface);border:1px solid color-mix(in srgb,var(--ink) 10%,transparent);padding:8px 16px 8px 10px;border-radius:999px;font-size:14px;font-weight:600;color:var(--muted)}
-.stars{color:var(--gold);letter-spacing:1px;font-size:14px}
-.eyebrow .dot{width:26px;height:26px;border-radius:50%;background:var(--soft);display:grid;place-items:center;color:var(--accent)}
-h1{font-family:var(--serif);font-weight:500;font-size:clamp(44px,5.6vw,74px);line-height:1.02;letter-spacing:-.025em;margin:26px 0 22px}
-h1 em{font-style:italic;color:var(--accent)}
-.lead-text{font-size:19.5px;color:var(--muted);max-width:540px}
-.hero-ctas{display:flex;gap:14px;margin-top:36px;flex-wrap:wrap}
-.ticks{display:flex;gap:22px;margin-top:34px;flex-wrap:wrap;font-size:14.5px;font-weight:600;color:var(--muted)}
-.ticks span{display:flex;align-items:center;gap:8px}
-.ticks svg{width:18px;height:18px;color:var(--accent)}
-.visual{position:relative}
-.photo{aspect-ratio:4/5;border-radius:calc(var(--radius) + 10px);overflow:hidden;background:var(--soft);box-shadow:0 40px 80px -40px color-mix(in srgb,var(--ink) 55%,transparent)}
-.photo img{width:100%;height:100%;object-fit:cover}
-.quote-panel{aspect-ratio:4/5;border-radius:calc(var(--radius) + 10px);background:linear-gradient(155deg,var(--accent),color-mix(in srgb,var(--accent) 55%,var(--ink)));color:var(--accent-ink);padding:52px 46px;display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden;box-shadow:0 40px 80px -40px color-mix(in srgb,var(--ink) 60%,transparent)}
-.quote-panel:before{content:"";position:absolute;width:420px;height:420px;border-radius:50%;right:-160px;top:-160px;background:color-mix(in srgb,var(--accent-ink) 9%,transparent)}
-.quote-panel:after{content:"";position:absolute;width:260px;height:260px;border-radius:50%;left:-90px;bottom:-110px;border:1.5px solid color-mix(in srgb,var(--accent-ink) 22%,transparent)}
-.quote-mark{font-family:var(--serif);font-size:120px;line-height:.6;opacity:.35}
-.quote-panel p{font-family:var(--serif);font-size:28px;line-height:1.3;position:relative;z-index:1}
-.quote-panel .who{font-family:var(--sans);font-size:15px;opacity:.85;margin-top:22px;font-weight:600}
-.float{position:absolute;background:var(--surface);color:var(--ink);border-radius:18px;padding:16px 20px;box-shadow:0 24px 50px -24px color-mix(in srgb,var(--ink) 50%,transparent);display:flex;align-items:center;gap:14px;font-size:14px;line-height:1.35}
-.float b{font-size:22px;font-family:var(--serif);font-weight:600;display:block}
-.float.one{left:-34px;bottom:-28px}
-.float.two{right:-22px;top:44px}
-.float .badge{width:44px;height:44px;border-radius:14px;background:var(--soft);display:grid;place-items:center;color:var(--accent)}
-.float .badge svg{width:22px;height:22px}
+.hero{min-height:100svh;display:flex;flex-direction:column;justify-content:center;padding:150px 0 0;overflow:hidden;isolation:isolate}
+.hero-bg{position:absolute;inset:0;z-index:-1;pointer-events:none}
+.glow{position:absolute;border-radius:50%;filter:blur(90px)}
+.glow.a{width:620px;height:620px;background:radial-gradient(circle,rgba(79,179,232,.32),transparent 65%);top:-160px;right:-120px}
+.glow.b{width:520px;height:520px;background:radial-gradient(circle,rgba(233,196,106,.14),transparent 65%);bottom:-140px;left:-160px}
+.grid-lines{position:absolute;inset:0;background-image:linear-gradient(rgba(234,242,248,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(234,242,248,.035) 1px,transparent 1px);background-size:80px 80px;mask-image:radial-gradient(ellipse at 60% 40%,#000 20%,transparent 75%);-webkit-mask-image:radial-gradient(ellipse at 60% 40%,#000 20%,transparent 75%)}
+.route{position:absolute;right:-4%;top:12%;width:min(760px,70vw);height:auto;opacity:.95}
+.route .path{fill:none;stroke:url(#rg);stroke-width:2;stroke-linecap:round;stroke-dasharray:1400;stroke-dashoffset:1400;animation:draw 3.6s .9s var(--ease) forwards}
+.route .dash{fill:none;stroke:rgba(234,242,248,.12);stroke-width:1;stroke-dasharray:3 9}
+.route .pt{opacity:0;animation:fade 1s forwards}
+.route .p1{animation-delay:.8s}.route .p2{animation-delay:3.9s}
+.route .ring{transform-origin:center;transform-box:fill-box;animation:pulse 2.8s 4s infinite}
+@keyframes draw{to{stroke-dashoffset:0}}
+@keyframes fade{to{opacity:1}}
+@keyframes pulse{0%{transform:scale(1);opacity:.7}100%{transform:scale(3.2);opacity:0}}
+.hero .wrap{position:relative}
+.hero .label{opacity:0;animation:up 1s .2s var(--ease) forwards}
+.hero h1{font-size:clamp(3.4rem,11.5vw,10.5rem);line-height:.92;margin:28px 0 34px;letter-spacing:-.025em}
+.hero h1 .ln{display:block;overflow:hidden;padding-bottom:.06em}
+.hero h1 .ln>span{display:inline-block;transform:translateY(110%);animation:rise 1.3s var(--ease) forwards}
+.hero h1 .ln:nth-child(2)>span{animation-delay:.15s}
+.hero h1 .ln:nth-child(3)>span{animation-delay:.3s}
+@keyframes rise{to{transform:none}}
+@keyframes up{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+.cycle{display:inline-grid;vertical-align:top;font-style:italic;color:var(--accent);text-shadow:0 0 60px rgba(79,179,232,.35)}
+.cycle b{grid-area:1/1;font-weight:400;opacity:0;transform:translateY(40%);transition:opacity .8s var(--ease),transform .8s var(--ease)}
+.cycle b.on{opacity:1;transform:none}
+.cycle b.off{opacity:0;transform:translateY(-40%)}
+.hero-foot{display:grid;grid-template-columns:minmax(0,1.1fr) auto;gap:40px;align-items:end}
+.hero-foot p{color:var(--muted);font-size:1.15rem;max-width:46ch;opacity:0;animation:up 1s .7s var(--ease) forwards}
+.hero-foot p strong{color:var(--text);font-weight:500}
+.ctas{display:flex;flex-wrap:wrap;gap:14px;opacity:0;animation:up 1s .9s var(--ease) forwards}
+.hero-meta{display:flex;gap:40px;flex-wrap:wrap;margin-top:70px;padding:26px 0;border-top:1px solid var(--line);font-size:.82rem;color:var(--muted);opacity:0;animation:up 1s 1.1s var(--ease) forwards}
+.hero-meta span{display:flex;align-items:center;gap:10px}
+.hero-meta svg{width:16px;height:16px;color:var(--gold);flex:none}
+.scroll-cue{position:absolute;right:0;bottom:30px;display:flex;align-items:center;gap:12px;font-size:.7rem;letter-spacing:.3em;text-transform:uppercase;color:var(--muted)}
+.scroll-cue i{width:1px;height:48px;background:linear-gradient(var(--accent),transparent);animation:cue 2.2s infinite}
+@keyframes cue{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}51%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
 
-/* trust */
-.trust{border-top:1px solid color-mix(in srgb,var(--ink) 9%,transparent);border-bottom:1px solid color-mix(in srgb,var(--ink) 9%,transparent);background:var(--surface)}
-.trust .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;padding-top:26px;padding-bottom:26px}
-.trust div{display:flex;align-items:center;gap:12px;font-weight:600;font-size:15px}
-.trust svg{width:22px;height:22px;color:var(--accent);flex:none}
+/* marquee */
+.marquee{border-block:1px solid var(--line);background:linear-gradient(90deg,var(--bg2),var(--surface) 50%,var(--bg2));overflow:hidden;padding:26px 0}
+.track{display:flex;width:max-content;animation:scroll 46s linear infinite}
+.marquee:hover .track{animation-play-state:paused}
+.track span{font-family:var(--serif);font-size:clamp(1.8rem,3.6vw,3rem);padding:0 28px;white-space:nowrap;display:flex;align-items:center;gap:56px}
+.track span:nth-child(even){font-style:italic;color:transparent;-webkit-text-stroke:1px rgba(234,242,248,.55)}
+.track span::after{content:"";width:10px;height:10px;transform:rotate(45deg);background:var(--gold);flex:none}
+@keyframes scroll{to{transform:translateX(-50%)}}
 
-/* sections */
-section.block{padding:110px 0}
-.kicker{font-size:13px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
-h2{font-family:var(--serif);font-weight:500;font-size:clamp(34px,3.8vw,52px);line-height:1.08;letter-spacing:-.02em;margin:14px 0 18px}
-.section-head{display:flex;justify-content:space-between;align-items:end;gap:40px;margin-bottom:56px}
-.section-head p{color:var(--muted);max-width:420px}
-.services{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-.card{background:var(--surface);border-radius:var(--radius);padding:34px 32px 36px;border:1px solid color-mix(in srgb,var(--ink) 7%,transparent);transition:transform .25s ease,box-shadow .25s ease}
-.card:hover{transform:translateY(-4px);box-shadow:0 30px 60px -36px color-mix(in srgb,var(--ink) 45%,transparent)}
-.icon{width:54px;height:54px;border-radius:16px;background:var(--soft);color:var(--accent);display:grid;place-items:center;margin-bottom:24px}
-.icon svg{width:26px;height:26px}
-.card h3{font-family:var(--serif);font-weight:500;font-size:23px;margin-bottom:8px;letter-spacing:-.01em}
-.card p{color:var(--muted);font-size:16px}
+/* statement (signature scroll fill) */
+.statement{padding:clamp(110px,16vw,200px) 0}
+.statement p{font-family:var(--serif);font-size:clamp(2.1rem,5.4vw,4.8rem);line-height:1.08;letter-spacing:-.01em;max-width:18ch}
+.statement .w{opacity:.16;transition:opacity .35s linear}
+.statement .w.lit{opacity:1}
+.statement .w.acc{color:var(--accent);font-style:italic}
+.statement .w.gld{color:var(--gold);font-style:italic}
 
-.why{background:var(--ink);color:var(--bg)}
-.why .kicker{color:var(--gold)}
-.why-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:80px;align-items:start}
-.why h2{color:var(--bg)}
-.why .intro{color:color-mix(in srgb,var(--bg) 70%,transparent);font-size:18px;max-width:440px}
-.points{display:grid;gap:14px}
-.point{display:grid;grid-template-columns:62px 1fr;gap:20px;padding:30px;border-radius:var(--radius);background:color-mix(in srgb,var(--bg) 6%,transparent);border:1px solid color-mix(in srgb,var(--bg) 10%,transparent)}
-.point .num{font-family:var(--serif);font-size:34px;color:var(--gold);line-height:1}
-.point h3{font-family:var(--serif);font-weight:500;font-size:24px;margin-bottom:6px}
-.point p{color:color-mix(in srgb,var(--bg) 72%,transparent);font-size:16px}
+/* services */
+.services{padding:40px 0 clamp(100px,12vw,160px)}
+.sec-head{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.8fr);gap:40px;align-items:end;margin-bottom:64px}
+.cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}
+.card{position:relative;background:linear-gradient(160deg,var(--surface2),var(--surface) 55%);border:1px solid var(--line);border-radius:26px;padding:clamp(28px,3.4vw,46px);overflow:hidden;transition:transform .7s var(--ease),border-color .5s,box-shadow .7s var(--ease);min-height:340px;display:flex;flex-direction:column}
+.card::before{content:"";position:absolute;inset:0;background:radial-gradient(500px circle at var(--mx,80%) var(--my,0%),rgba(79,179,232,.16),transparent 45%);opacity:0;transition:opacity .5s}
+.card:hover{transform:translateY(-8px);border-color:rgba(79,179,232,.4);box-shadow:0 40px 80px -40px rgba(0,0,0,.8)}
+.card:hover::before{opacity:1}
+.card .num{position:absolute;right:28px;top:18px;font-family:var(--serif);font-size:5.5rem;line-height:1;color:transparent;-webkit-text-stroke:1px rgba(234,242,248,.12)}
+.card .ico{width:58px;height:58px;border-radius:16px;display:grid;place-items:center;background:rgba(79,179,232,.1);border:1px solid rgba(79,179,232,.25);color:var(--accent);margin-bottom:auto}
+.card .ico svg{width:28px;height:28px}
+.card h3{font-size:clamp(1.9rem,2.8vw,2.5rem);margin:48px 0 12px;position:relative}
+.card p{color:var(--muted);position:relative;max-width:42ch}
+.card .go{margin-top:22px;font-size:.85rem;color:var(--gold);display:inline-flex;align-items:center;gap:8px;position:relative;width:max-content}
+.card .go svg{width:16px;height:16px;transition:transform .5s var(--ease)}
+.card:hover .go svg{transform:translateX(5px)}
+.card.wide{grid-column:1/-1;min-height:0;flex-direction:row;align-items:center;gap:40px;background:linear-gradient(110deg,rgba(233,196,106,.1),var(--surface) 45%)}
+.card.wide h3{margin:0 0 8px}
+.card.wide .ico{margin:0;flex:none;color:var(--gold);background:rgba(233,196,106,.1);border-color:rgba(233,196,106,.3)}
+.card.wide .btn{margin-left:auto}
 
-.score{display:flex;align-items:center;gap:18px;background:var(--surface);padding:16px 24px;border-radius:18px;border:1px solid color-mix(in srgb,var(--ink) 8%,transparent)}
-.score b{font-family:var(--serif);font-size:40px;font-weight:500;line-height:1}
-.score small{display:block;color:var(--muted);font-size:14px}
-.reviews{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-.review{background:var(--surface);border-radius:var(--radius);padding:34px;display:flex;flex-direction:column;gap:22px;border:1px solid color-mix(in srgb,var(--ink) 7%,transparent)}
-.review p{font-family:var(--serif);font-size:19.5px;line-height:1.45}
-.review .by{margin-top:auto;display:flex;align-items:center;gap:12px;font-weight:600;font-size:15px}
-.avatar{width:40px;height:40px;border-radius:50%;background:var(--soft);color:var(--accent);display:grid;place-items:center;font-weight:700}
-.review .src{color:var(--muted);font-weight:500;font-size:13px;display:block}
+/* about */
+.about{padding:clamp(100px,12vw,160px) 0;background:linear-gradient(180deg,var(--bg),var(--bg2));overflow:hidden}
+.about-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(40px,7vw,110px);align-items:center}
+.monument{position:relative;aspect-ratio:4/5;border-radius:30px;overflow:hidden;background:radial-gradient(circle at 30% 20%,rgba(79,179,232,.35),transparent 55%),radial-gradient(circle at 80% 90%,rgba(233,196,106,.22),transparent 50%),var(--surface);border:1px solid var(--line);display:flex;align-items:flex-end;padding:36px}
+.monument .big{position:absolute;inset:0;display:grid;place-items:center;font-family:var(--serif);font-style:italic;font-size:clamp(9rem,22vw,20rem);line-height:1;color:transparent;-webkit-text-stroke:1.5px rgba(234,242,248,.22);will-change:transform}
+.monument .stack{position:absolute;left:50%;top:44%;transform:translate(-50%,-50%);width:58%}
+.monument .tag{position:relative;background:rgba(7,26,43,.78);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid var(--line);border-radius:18px;padding:18px 22px;font-size:.88rem;color:var(--muted);display:flex;gap:14px;align-items:center}
+.monument .tag svg{width:22px;height:22px;color:var(--gold);flex:none}
+.monument .tag strong{color:var(--text);font-weight:500;display:block}
+.about p+p{margin-top:18px}
 
-.cta-band{padding:0 0 110px}
-.cta-box{border-radius:calc(var(--radius) + 12px);background:linear-gradient(140deg,var(--accent),color-mix(in srgb,var(--accent) 60%,var(--ink)));color:var(--accent-ink);padding:76px 64px;display:grid;grid-template-columns:1.3fr 1fr;gap:40px;align-items:center;position:relative;overflow:hidden}
-.cta-box:after{content:"";position:absolute;right:-120px;bottom:-200px;width:460px;height:460px;border-radius:50%;border:1.5px solid color-mix(in srgb,var(--accent-ink) 22%,transparent)}
-.cta-box h2{color:inherit;margin:0 0 12px}
-.cta-box p{opacity:.85;font-size:18px}
-.cta-box .actions{display:flex;flex-direction:column;gap:12px;align-items:flex-start;position:relative;z-index:1}
-.cta-box .btn{background:var(--accent-ink);color:var(--accent)}
-.cta-box .btn.ghost{background:transparent;color:var(--accent-ink);border-color:color-mix(in srgb,var(--accent-ink) 40%,transparent)}
+/* why */
+.why{padding:clamp(100px,12vw,160px) 0}
+.why-list{margin-top:60px;border-top:1px solid var(--line)}
+.why-item{display:grid;grid-template-columns:90px minmax(0,1fr) minmax(0,1.1fr);gap:30px;padding:38px 0;border-bottom:1px solid var(--line);align-items:baseline;transition:padding .6s var(--ease),background .6s}
+.why-item:hover{padding-left:18px;background:linear-gradient(90deg,rgba(79,179,232,.06),transparent 60%)}
+.why-item .n{font-size:.75rem;letter-spacing:.25em;color:var(--gold)}
+.why-item h3{font-size:clamp(1.8rem,3.2vw,2.8rem)}
+.why-item p{color:var(--muted)}
 
-.visit{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:10px}
-.visit .card h3{font-size:20px}
-.visit a{color:var(--accent);font-weight:600}
-footer{border-top:1px solid color-mix(in srgb,var(--ink) 9%,transparent);padding:40px 0 110px;color:var(--muted);font-size:14px}
-footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
-.mobile-bar{display:none}
+/* steps */
+.steps{padding:clamp(100px,12vw,160px) 0;background:var(--bg2);border-block:1px solid var(--line);overflow:hidden}
+.step-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:22px;margin-top:64px;position:relative}
+.step-grid::before{content:"";position:absolute;top:31px;left:31px;right:31px;height:1px;background:linear-gradient(90deg,var(--accent),var(--gold));transform:scaleX(0);transform-origin:left;transition:transform 2s var(--ease)}
+.step-grid.in::before{transform:scaleX(1)}
+.step .dot{width:62px;height:62px;border-radius:50%;background:var(--bg2);border:1px solid rgba(79,179,232,.5);display:grid;place-items:center;font-family:var(--serif);font-size:1.5rem;color:var(--accent);position:relative;box-shadow:0 0 30px -6px rgba(79,179,232,.55)}
+.step h3{font-size:1.9rem;margin:28px 0 10px}
+.step p{color:var(--muted);font-size:.96rem}
 
-@keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
-.hero .copy>*{animation:rise .8s cubic-bezier(.2,.7,.2,1) both}
-.hero .copy>*:nth-child(2){animation-delay:.08s}.hero .copy>*:nth-child(3){animation-delay:.16s}
-.hero .copy>*:nth-child(4){animation-delay:.24s}.hero .copy>*:nth-child(5){animation-delay:.32s}
-.visual{animation:rise 1s .2s cubic-bezier(.2,.7,.2,1) both}
+/* cta band */
+.cta-band{padding:clamp(120px,15vw,200px) 0;text-align:center;overflow:hidden;isolation:isolate}
+.cta-band::before{content:"";position:absolute;inset:0;z-index:-1;background:radial-gradient(ellipse 60% 70% at 50% 50%,rgba(79,179,232,.22),transparent 70%)}
+.cta-band h2{font-size:clamp(3rem,9vw,8rem);margin:24px auto 30px;max-width:12ch;line-height:.95}
+.cta-band .big-phone{font-family:var(--serif);font-size:clamp(2rem,5vw,3.6rem);color:var(--gold);display:inline-block;margin-bottom:38px}
+.cta-band .ctas{justify-content:center;opacity:1;animation:none}
 
-@media (max-width:980px){
-  .links{display:none}
-  .hero-grid,.why-grid,.cta-box{grid-template-columns:1fr}
-  .hero-grid{gap:56px}
-  .services,.reviews,.visit{grid-template-columns:1fr 1fr}
-  .trust .wrap{grid-template-columns:1fr 1fr}
-  .float.one{left:12px;bottom:-26px}.float.two{right:12px}
-  .visual{max-width:560px;margin-bottom:20px}
-  .section-head{flex-direction:column;align-items:flex-start}
+/* contact */
+.contact{padding:clamp(90px,10vw,140px) 0;border-top:1px solid var(--line)}
+.contact-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);gap:clamp(40px,6vw,90px)}
+.info{display:grid;gap:16px}
+.info a,.info div.i{display:flex;gap:20px;align-items:flex-start;padding:26px 28px;background:var(--surface);border:1px solid var(--line);border-radius:20px;transition:transform .6s var(--ease),border-color .4s}
+.info a:hover{transform:translateY(-4px);border-color:rgba(79,179,232,.45)}
+.info svg{width:24px;height:24px;color:var(--accent);flex:none;margin-top:3px}
+.info small{display:block;font-size:.7rem;letter-spacing:.25em;text-transform:uppercase;color:var(--muted);margin-bottom:4px}
+.info strong{font-weight:500;font-size:1.12rem;display:block;overflow-wrap:anywhere}
+.info em{font-style:normal;color:var(--gold);font-size:.85rem;display:block;margin-top:6px}
+.mapcard{position:relative;border-radius:26px;overflow:hidden;min-height:420px;border:1px solid var(--line);background:var(--surface);display:block}
+.mapcard svg.map{position:absolute;inset:0;width:100%;height:100%}
+.mapcard .pin{position:absolute;left:52%;top:46%;transform:translate(-50%,-100%)}
+.mapcard .pin svg{width:46px;height:46px;color:var(--gold);filter:drop-shadow(0 0 18px rgba(233,196,106,.6))}
+.mapcard .cap{position:absolute;left:22px;right:22px;bottom:22px;background:rgba(7,26,43,.85);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid var(--line);border-radius:16px;padding:18px 22px;display:flex;justify-content:space-between;gap:16px;align-items:center;flex-wrap:wrap}
+.mapcard .cap span{font-size:.9rem;color:var(--muted)}
+.mapcard .cap b{display:block;color:var(--text);font-weight:500}
+.mapcard .cap i{font-style:normal;color:var(--accent);font-size:.85rem;white-space:nowrap}
+
+footer{padding:60px 0 50px;border-top:1px solid var(--line);color:var(--muted);font-size:.86rem}
+.foot{display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap;align-items:center}
+.foot nav{display:flex;gap:26px;flex-wrap:wrap}
+.foot nav a:hover{color:var(--text)}
+.wordmark{font-family:var(--serif);font-size:clamp(3rem,12vw,11rem);line-height:.9;color:transparent;-webkit-text-stroke:1px rgba(234,242,248,.14);margin-bottom:46px;white-space:nowrap;overflow:hidden}
+
+/* sticky mobile bar */
+.mbar{display:none}
+
+/* reveal */
+.rv{opacity:0;transform:translateY(40px);transition:opacity 1.1s var(--ease),transform 1.1s var(--ease)}
+.rv.in{opacity:1;transform:none}
+.d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}
+
+@media (max-width:1020px){
+  nav.main,.h-phone{display:none}
+  .sec-head,.about-grid,.contact-grid{grid-template-columns:minmax(0,1fr)}
+  .hero-foot{grid-template-columns:minmax(0,1fr)}
+  .step-grid{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:50px}
+  .step-grid::before{display:none}
+  .why-item{grid-template-columns:60px minmax(0,1fr)}
+  .why-item p{grid-column:2}
+  .monument{max-width:520px}
 }
-@media (max-width:640px){
-  body{font-size:16px}
-  .wrap{padding:0 18px}
-  .nav{height:66px}.brand{font-size:19px}
-  .phone,.nav-right .btn{display:none}
-  .hero{padding:44px 0 64px}
-  .lead-text{font-size:17.5px}
-  .hero-ctas .btn{flex:1;justify-content:center}
-  .ticks{display:none}
-  .services,.reviews,.visit,.trust .wrap{grid-template-columns:1fr}
-  section.block{padding:76px 0}
-  .quote-panel,.photo{aspect-ratio:auto;min-height:380px}.photo{aspect-ratio:4/3;min-height:0}
-  .quote-panel{padding:40px 30px 64px}.quote-panel p{font-size:23px}
-  .float{font-size:13px;padding:12px 14px}.float b{font-size:18px}
-  .float.two{display:none}
-  .cta-box{padding:52px 28px}
-  .point{grid-template-columns:44px 1fr;padding:24px}
-  .mobile-bar{display:flex;position:fixed;left:12px;right:12px;bottom:12px;z-index:30;gap:10px}
-  .mobile-bar .btn{flex:1;justify-content:center;box-shadow:0 14px 30px -14px color-mix(in srgb,var(--ink) 60%,transparent)}
-  .mobile-bar .btn.ghost{background:var(--surface)}
+@media (max-width:720px){
+  :root{--wrap:min(1240px,100% - 36px)}
+  .h-right .btn{display:none}
+  .burger{display:block}
+  .hero{padding-top:120px}
+  .hero h1{font-size:clamp(3rem,15.5vw,5rem);margin:22px 0 26px}
+  .route{width:130vw;right:-50%;top:8%;opacity:.55}
+  .hero-foot p{font-size:1.02rem}
+  .ctas .btn{flex:1 1 100%}
+  .hero-meta{gap:16px;flex-direction:column;margin-top:44px}
+  .scroll-cue{display:none}
+  .cards{grid-template-columns:minmax(0,1fr)}
+  .card{min-height:0}
+  .card .num{font-size:4rem}
+  .card.wide{flex-direction:column;align-items:flex-start;gap:20px}
+  .card.wide .btn{margin-left:0;width:100%}
+  .step-grid{grid-template-columns:minmax(0,1fr)}
+  .why-item{grid-template-columns:minmax(0,1fr);gap:10px;padding:30px 0}
+  .why-item p{grid-column:auto}
+  .why-item:hover{padding-left:0}
+  .info a,.info div.i{padding:22px}
+  .mapcard{min-height:340px}
+  .logo span{font-size:1.15rem}
+  .logo small{letter-spacing:.2em}
+  .mbar{display:grid;grid-template-columns:1fr 1fr;gap:10px;position:fixed;left:12px;right:12px;bottom:12px;z-index:45;padding:10px;background:rgba(7,26,43,.88);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid var(--line);border-radius:999px;transform:translateY(140%);transition:transform .6s var(--ease)}
+  .mbar.show{transform:none}
+  .mbar .btn{padding:13px 10px;font-size:.88rem}
+  footer{padding-bottom:110px}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;animation-delay:0s!important;animation-iteration-count:1!important;transition-duration:.01ms!important;transition-delay:0s!important}
+  html{scroll-behavior:auto}
+  .hero h1 .ln>span,.hero .label,.hero-foot p,.ctas,.hero-meta{transform:none;opacity:1}
+  .route .path{stroke-dashoffset:0}.route .pt{opacity:1}
+  .track{animation:none;flex-wrap:wrap;width:100%;justify-content:center}
+  .track span[aria-hidden]{display:none}
+  .rv{opacity:1;transform:none}
+  .statement .w{opacity:1}
 }
 </style>
 </head>
 <body>
-<div class="concept">Website concept prepared for <b>Gonzalez Dumpster Service</b> by webstudio &middot; not a live site</div>
 
-<header>
-  <div class="wrap nav">
-    <a href="#top" class="brand">Gonzalez Dumpster Service</a>
-    <nav class="links">
-      <a href="#services">Services</a><a href="#why">Why us</a><a href="#visit">Visit</a>
+<header id="top">
+  <div class="wrap bar">
+    <a href="#top" class="logo" aria-label="Gonzalez Dumpster Service, back to top">
+      <svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="19" fill="none" stroke="#4FB3E8" stroke-opacity=".55"/><path d="M27 14.5a9 9 0 1 0 1.2 7.5H20" fill="none" stroke="#EAF2F8" stroke-width="2" stroke-linecap="round"/><circle cx="28.2" cy="22" r="1.8" fill="#E9C46A"/></svg>
+      <span>Gonzalez<small>Dumpster Service</small></span>
+    </a>
+    <nav class="main" aria-label="Main">
+      <a class="ul" href="#services">Services</a>
+      <a class="ul" href="#about">About</a>
+      <a class="ul" href="#process">How it works</a>
+      <a class="ul" href="#contact">Contact</a>
     </nav>
-    <div class="nav-right">
-      <a class="phone" href="tel:6195718798">(619) 571-8798</a>
-      <a class="btn" href="#visit">Free estimate</a>
+    <div class="h-right">
+      <a class="h-phone ul" href="tel:+16195718798"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A17 17 0 0 1 3 5a2 2 0 0 1 2-2"/></svg>(619) 571-8798</a>
+      <a class="btn btn-primary" href="tel:+16195718798">Call now</a>
+      <button class="burger" aria-label="Open menu" aria-expanded="false"><i></i><i></i></button>
     </div>
   </div>
 </header>
 
-<main id="top">
+<div class="mobile-menu" aria-hidden="true">
+  <a href="#services">Services</a>
+  <a href="#about">About</a>
+  <a href="#process">How it works</a>
+  <a href="#contact">Contact</a>
+  <a class="btn btn-primary" href="tel:+16195718798">Call (619) 571-8798</a>
+</div>
+
+<main>
 <section class="hero">
-  <div class="wrap hero-grid">
-    <div class="copy">
-      <div class="eyebrow">
-        <span class="dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-7-4.4-7-10a4 4 0 017-2.6A4 4 0 0119 10c0 5.6-7 10-7 10z"/></svg></span>San Diego moving help
-      </div>
-      <h1>Your San Diego move, handled <em>by Gonzalez.</em></h1>
-      <p class="lead-text">From packing up the last box to hauling away what you leave behind, Gonzalez Dumpster Service helps San Diego households move with less stress.</p>
-      <div class="hero-ctas">
-        <a class="btn" href="#visit">Get a free estimate <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-        <a class="btn ghost" href="tel:6195718798">Call (619) 571-8798</a>
-      </div>
-      <div class="ticks">
-        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7"/></svg>Licensed &amp; insured</span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7"/></svg>Free in-home estimates</span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7"/></svg>No hidden fees</span>
-      </div>
-    </div>
-    <div class="visual">
-      
-      <div class="quote-panel"><div class="quote-mark">“</div><div><p>Careful, on-time movers who treat your things like their own, with honest flat-rate pricing and no surprises.</p><div class="who">Gonzalez Dumpster Service</div></div></div>
-      
-      
-      <div class="float two"><span class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><span><b>This week</b>Free in-home estimates</span></div>
-    </div>
+  <div class="hero-bg" aria-hidden="true">
+    <div class="glow a" data-par="0.18"></div>
+    <div class="glow b" data-par="-0.1"></div>
+    <div class="grid-lines"></div>
+    <svg class="route" viewBox="0 0 760 620" data-par="0.08">
+      <defs><linearGradient id="rg" x1="0" x2="1" y1="1" y2="0"><stop offset="0" stop-color="#E9C46A"/><stop offset="1" stop-color="#4FB3E8"/></linearGradient></defs>
+      <path class="dash" d="M60 560 C 200 540, 180 380, 330 360 S 520 330, 540 220 S 640 70, 700 60"/>
+      <path class="path" d="M60 560 C 200 540, 180 380, 330 360 S 520 330, 540 220 S 640 70, 700 60"/>
+      <g class="pt p1"><circle cx="60" cy="560" r="7" fill="#E9C46A"/><circle class="ring" cx="60" cy="560" r="7" fill="none" stroke="#E9C46A"/></g>
+      <g class="pt p2"><circle cx="700" cy="60" r="8" fill="#4FB3E8"/><circle class="ring" cx="700" cy="60" r="8" fill="none" stroke="#4FB3E8"/>
+        <rect x="660" y="84" width="80" height="26" rx="13" fill="#0E2840" stroke="rgba(234,242,248,.2)"/><text x="700" y="101" fill="#EAF2F8" font-family="Inter,sans-serif" font-size="11" letter-spacing="2" text-anchor="middle">DONE</text></g>
+    </svg>
   </div>
-  <template id="qp"><div class="quote-panel"><div class="quote-mark">“</div><div><p>Careful, on-time movers who treat your things like their own, with honest flat-rate pricing and no surprises.</p><div class="who">Gonzalez Dumpster Service</div></div></div></template>
-</section>
-
-<div class="trust"><div class="wrap">
-  <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.2-8 9-4.6-.8-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg>Licensed &amp; insured</div><div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.2-8 9-4.6-.8-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg>Free in-home estimates</div><div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.2-8 9-4.6-.8-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg>No hidden fees</div><div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.2-8 9-4.6-.8-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg>Same-week availability</div>
-</div></div>
-
-<section class="block" id="services">
   <div class="wrap">
-    <div class="section-head">
-      <div><div class="kicker">What we do</div><h2>Everything you need,<br>under one roof.</h2></div>
-      <p>From routine visits to the work that changes how you feel about your day, Gonzalez Dumpster Service takes care of it properly.</p>
+    <span class="label">Moving &amp; hauling · San Diego, CA</span>
+    <h1>
+      <span class="ln"><span>San Diego,</span></span>
+      <span class="ln"><span>we carry</span></span>
+      <span class="ln"><span>the <span class="cycle" aria-label="weight"><b class="on">weight.</b><b>move.</b><b>load.</b><b>haul.</b></span></span></span>
+    </h1>
+    <div class="hero-foot">
+      <p><strong>Gonzalez Dumpster Service</strong> takes the heavy lifting off your hands, from moving day to the last load out the door. One call, and it's handled.</p>
+      <div class="ctas">
+        <a class="btn btn-primary" href="tel:+16195718798"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A17 17 0 0 1 3 5a2 2 0 0 1 2-2"/></svg>Call (619) 571-8798</a>
+        <a class="btn btn-ghost" href="#services">Explore services</a>
+      </div>
     </div>
-    <div class="services">
-      
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M2 6h11v10H2zM13 9h4l4 4v3h-8"/><circle cx="6" cy="17.5" r="1.8"/><circle cx="17" cy="17.5" r="1.8"/></svg></div><h3>Local moves</h3><p>Fast, careful moves across town, often done in a single morning.</p></div>
-      
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="18" r="2.5"/><circle cx="18" cy="6" r="2.5"/><path d="M8.5 18H16a3 3 0 000-6H8a3 3 0 010-6h7.5"/></svg></div><h3>Long-distance moves</h3><p>Coast-to-coast moves with tracking and one point of contact.</p></div>
-      
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7l9-4 9 4v10l-9 4-9-4z"/><path d="M3 7l9 4 9-4M12 11v10"/></svg></div><h3>Packing &amp; unpacking</h3><p>Professional packing materials and a team that wraps everything right.</p></div>
-      
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3" width="14" height="18" rx="1"/><path d="M9 7h2M13 7h2M9 11h2M13 11h2M9 15h2M13 15h2"/></svg></div><h3>Office relocation</h3><p>After-hours business moves that keep downtime to a minimum.</p></div>
-      
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.2-8 9-4.6-.8-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg></div><h3>Fragile &amp; specialty items</h3><p>Pianos, art, antiques and TVs handled with extra care.</p></div>
-      
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11l8-7 8 7v9a1 1 0 01-1 1h-4v-6H9v6H5a1 1 0 01-1-1z"/></svg></div><h3>Storage solutions</h3><p>Clean, secure short- and long-term storage when timing doesn&#39;t line up.</p></div>
-      
+    <div class="hero-meta">
+      <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21s-7-6.2-7-12a7 7 0 0 1 14 0c0 5.8-7 12-7 12z"/><circle cx="12" cy="9" r="2.5"/></svg>3284 Newton Ave, San Diego 92113</span>
+      <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 12h16M12 4v16"/></svg>Local, family-named, San Diego based</span>
+    </div>
+    <div class="scroll-cue" aria-hidden="true">Scroll<i></i></div>
+  </div>
+</section>
+
+<div class="marquee" aria-label="What we do">
+  <div class="track">
+    <span>Moving</span><span>Hauling</span><span>Dumpster service</span><span>Heavy lifting</span><span>Clear-outs</span><span>San Diego</span>
+    <span aria-hidden="true">Moving</span><span aria-hidden="true">Hauling</span><span aria-hidden="true">Dumpster service</span><span aria-hidden="true">Heavy lifting</span><span aria-hidden="true">Clear-outs</span><span aria-hidden="true">San Diego</span>
+  </div>
+</div>
+
+<section class="statement" aria-label="Our promise">
+  <div class="wrap">
+    <p id="fill">Moving is heavy. Calling us *shouldn't* be. You tell us what needs to go, and the Gonzalez crew takes it from ^there.</p>
+  </div>
+</section>
+
+<section class="services" id="services">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="rv"><span class="label">Services</span><h2>Built for the <em>heavy</em> days.</h2></div>
+      <p class="lead rv d1">Whether you're changing addresses or clearing space, it starts with one conversation. Tell us about the job and we'll tell you how we can help.</p>
+    </div>
+    <div class="cards">
+      <article class="card rv">
+        <span class="num" aria-hidden="true">01</span>
+        <div class="ico"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><path d="M3 9h16v13H3zM19 13h5l4 5v4h-9z"/><circle cx="9" cy="24" r="2.5" fill="#071A2B"/><circle cx="23" cy="24" r="2.5" fill="#071A2B"/></svg></div>
+        <h3>Moving</h3>
+        <p>Home or business, across town or across the block. We carry your things out, load them up and get them where they're going.</p>
+        <a class="go ul" href="tel:+16195718798">Plan your move <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </article>
+      <article class="card rv d1">
+        <span class="num" aria-hidden="true">02</span>
+        <div class="ico"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><path d="M4 12h24l-2 13H6z"/><path d="M8 12l2-5h12l2 5M12 17v4M16 17v4M20 17v4"/></svg></div>
+        <h3>Dumpster service</h3>
+        <p>It's in our name. When a project leaves more behind than a trash can can take, we'll talk through what you need.</p>
+        <a class="go ul" href="tel:+16195718798">Ask about a dumpster <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </article>
+      <article class="card rv">
+        <span class="num" aria-hidden="true">03</span>
+        <div class="ico"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><path d="M6 10l10-5 10 5v12l-10 5-10-5z"/><path d="M6 10l10 5 10-5M16 15v12"/></svg></div>
+        <h3>Hauling</h3>
+        <p>The bulky, the awkward, the things that don't fit in your car. Point to it, and we'll handle the lifting and the hauling.</p>
+        <a class="go ul" href="tel:+16195718798">Book a haul <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </article>
+      <article class="card rv d1">
+        <span class="num" aria-hidden="true">04</span>
+        <div class="ico"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><path d="M5 27V12l11-7 11 7v15"/><path d="M12 27v-8h8v8M3 27h26"/></svg></div>
+        <h3>Clear-outs</h3>
+        <p>Garages, rooms and spaces that need to be empty again. A fresh start without you doing the heavy part.</p>
+        <a class="go ul" href="tel:+16195718798">Talk it through <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </article>
+      <article class="card wide rv">
+        <div class="ico"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="16" cy="16" r="11"/><path d="M16 10v6l4 3"/></svg></div>
+        <div><h3>Not sure what you need?</h3><p>Describe the job on the phone. We'll let you know what we can take on and what comes next.</p></div>
+        <a class="btn btn-primary" href="tel:+16195718798">Call (619) 571-8798</a>
+      </article>
     </div>
   </div>
 </section>
 
-<section class="block why" id="why">
-  <div class="wrap why-grid">
+<section class="about" id="about">
+  <div class="wrap about-grid">
+    <div class="monument rv" aria-hidden="true">
+      <div class="big" data-par="0.06">G</div>
+      <svg class="stack" viewBox="0 0 200 200" fill="none">
+        <rect x="40" y="110" width="120" height="60" rx="4" fill="#0E2840" stroke="#4FB3E8" stroke-opacity=".7"/>
+        <rect x="58" y="62" width="84" height="48" rx="4" fill="#12324F" stroke="#EAF2F8" stroke-opacity=".35"/>
+        <rect x="76" y="26" width="48" height="36" rx="4" fill="#0E2840" stroke="#E9C46A" stroke-opacity=".8"/>
+        <path d="M40 140h120M100 110v60M58 86h84M100 26v36" stroke="#EAF2F8" stroke-opacity=".15"/>
+      </svg>
+      <div class="tag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21s-7-6.2-7-12a7 7 0 0 1 14 0c0 5.8-7 12-7 12z"/><circle cx="12" cy="9" r="2.5"/></svg><span><strong>Newton Ave, San Diego</strong>Rooted right here in 92113</span></div>
+    </div>
     <div>
-      <div class="kicker">Why customers choose us</div>
-      <h2>The San Diego moving company people recommend to their friends.</h2>
-      <p class="intro">it still comes down to the same three things.</p>
-    </div>
-    <div class="points">
-      
-      <div class="point"><div class="num">01</div><div><h3>Flat-rate pricing</h3><p>A firm quote up front, so the price on moving day is the price you were told.</p></div></div>
-      
-      <div class="point"><div class="num">02</div><div><h3>Licensed &amp; insured</h3><p>Fully licensed and insured, with valuation coverage on everything we carry.</p></div></div>
-      
-      <div class="point"><div class="num">03</div><div><h3>On time, every time</h3><p>We show up when we say we will, with the right truck and the right crew.</p></div></div>
-      
+      <span class="label rv">About us</span>
+      <h2 class="rv d1">A name you can <em>call</em>, not a call centre.</h2>
+      <p class="lead rv d2">Gonzalez Dumpster Service is a San Diego business working out of 3284 Newton Ave. When you call, you're reaching the people who'll actually show up and do the work.</p>
+      <p class="lead rv d3">We know moving and clearing space can feel like a lot. Our job is to make it feel like less: fewer trips, fewer sore backs, fewer things to think about. You focus on what's next, and we'll carry what's now.</p>
+      <div class="ctas rv d3" style="margin-top:34px;opacity:1;animation:none"><a class="btn btn-ghost" href="#contact">Find us</a></div>
     </div>
   </div>
 </section>
 
-
-
-<section class="cta-band" id="book">
-  <div class="wrap"><div class="cta-box">
-    <div><h2>Ready when you are.</h2><p>Get a free estimate in under a minute, or give us a call and talk to a real person.</p></div>
-    <div class="actions">
-      <a class="btn" href="#visit">Get a free estimate</a>
-      <a class="btn ghost" href="tel:6195718798">Call (619) 571-8798</a>
+<section class="why" id="why">
+  <div class="wrap">
+    <div class="sec-head" style="margin-bottom:0">
+      <div class="rv"><span class="label">Why Gonzalez</span><h2>The difference is <em>personal.</em></h2></div>
+      <p class="lead rv d1">No apps, no endless forms. Just a direct line to a local crew that does the lifting.</p>
     </div>
-  </div></div>
+    <div class="why-list">
+      <div class="why-item rv"><span class="n">01</span><h3>Local to San Diego</h3><p>We're based on Newton Ave, so San Diego streets, driveways and neighbourhoods are home turf.</p></div>
+      <div class="why-item rv"><span class="n">02</span><h3>One direct line</h3><p>Call (619) 571-8798 and talk to us. Ask your questions, describe the job, and get a straight answer.</p></div>
+      <div class="why-item rv"><span class="n">03</span><h3>Moving and hauling together</h3><p>Moving out often means clearing out too. We can talk through both, so you're not juggling separate companies.</p></div>
+      <div class="why-item rv"><span class="n">04</span><h3>You don't lift a thing</h3><p>The heavy part is our part. Point the way, and let the crew handle it.</p></div>
+    </div>
+  </div>
 </section>
 
-<section class="block" id="visit" style="padding-top:0">
+<section class="steps" id="process">
   <div class="wrap">
-    <div class="kicker">Visit us</div><h2>Come say hello.</h2>
-    <div class="visit">
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11l8-7 8 7v9a1 1 0 01-1 1h-4v-6H9v6H5a1 1 0 01-1-1z"/></svg></div><h3>Address</h3><p>3284 Newton Ave, San Diego CA 92113</p></div>
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div><h3>Phone</h3><p><a href="tel:6195718798">(619) 571-8798</a></p><p style="margin-top:10px">Call or message us for today's opening hours.</p></div>
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-7-4.4-7-10a4 4 0 017-2.6A4 4 0 0119 10c0 5.6-7 10-7 10z"/></svg></div><h3>Free in-home estimates</h3><p>Get a free estimate online or by phone and we'll take care of the rest.</p></div>
+    <span class="label rv">How it works</span>
+    <h2 class="rv d1">Four steps. <em>Zero</em> heavy lifting.</h2>
+    <div class="step-grid" id="stepGrid">
+      <div class="step rv"><div class="dot">1</div><h3>Call us</h3><p>Ring (619) 571-8798 and tell us what's moving or what needs to go.</p></div>
+      <div class="step rv d1"><div class="dot">2</div><h3>Make a plan</h3><p>We talk through the job, the place and the timing that works for you.</p></div>
+      <div class="step rv d2"><div class="dot">3</div><h3>We lift &amp; load</h3><p>The crew arrives and does the carrying, loading and hauling.</p></div>
+      <div class="step rv d3"><div class="dot">4</div><h3>Breathe out</h3><p>Your things are where they belong, and your space is yours again.</p></div>
     </div>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="wrap">
+    <span class="label rv">Ready when you are</span>
+    <h2 class="rv d1">Let's get it <em>moving.</em></h2>
+    <a class="big-phone ul rv d2" href="tel:+16195718798">(619) 571-8798</a>
+    <div class="ctas rv d3">
+      <a class="btn btn-primary" href="tel:+16195718798">Call Gonzalez now</a>
+      <a class="btn btn-ghost" href="https://maps.google.com/?q=3284+Newton+Ave,+San+Diego,+CA+92113" target="_blank" rel="noopener">Get directions</a>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap contact-grid">
+    <div>
+      <span class="label rv">Contact &amp; visit</span>
+      <h2 class="rv d1">Say <em>hello.</em></h2>
+      <div class="info">
+        <a class="rv" href="tel:+16195718798"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A17 17 0 0 1 3 5a2 2 0 0 1 2-2"/></svg><span><small>Phone</small><strong>(619) 571-8798</strong><em>Tap to call</em></span></a>
+        <a class="rv d1" href="https://maps.google.com/?q=3284+Newton+Ave,+San+Diego,+CA+92113" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21s-7-6.2-7-12a7 7 0 0 1 14 0c0 5.8-7 12-7 12z"/><circle cx="12" cy="9" r="2.5"/></svg><span><small>Address</small><strong>3284 Newton Ave, San Diego CA 92113</strong><em>Open in Google Maps</em></span></a>
+        <div class="i rv d2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span><small>Hours</small><strong>Please call to check availability</strong></span></div>
+      </div>
+    </div>
+    <a class="mapcard rv d1" href="https://maps.google.com/?q=3284+Newton+Ave,+San+Diego,+CA+92113" target="_blank" rel="noopener" aria-label="Open 3284 Newton Ave, San Diego in Google Maps">
+      <svg class="map" viewBox="0 0 600 500" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+        <rect width="600" height="500" fill="#0B2236"/>
+        <path d="M0 380 C 120 360, 200 420, 330 400 S 520 340, 600 360 V500 H0z" fill="#0A2E4A"/>
+        <g stroke="rgba(234,242,248,.07)" stroke-width="10"><path d="M-20 120 L620 60M-20 250 L620 190M80 -20 L160 520M260 -20 L330 520M440 -20 L500 520"/></g>
+        <g stroke="rgba(234,242,248,.05)" stroke-width="3"><path d="M-20 185 L620 125M-20 315 L620 255M170 -20 L245 520M350 -20 L415 520"/></g>
+        <path d="M-20 300 C 150 270, 300 250, 620 140" stroke="rgba(79,179,232,.45)" stroke-width="4" fill="none" stroke-dasharray="2 10" stroke-linecap="round"/>
+        <circle cx="312" cy="230" r="80" fill="rgba(233,196,106,.08)"/>
+        <circle cx="312" cy="230" r="34" fill="rgba(233,196,106,.12)"/>
+      </svg>
+      <div class="pin"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 22s-7-6.4-7-12.2a7 7 0 0 1 14 0C19 15.6 12 22 12 22z"/><circle cx="12" cy="9.8" r="2.6" fill="#071A2B"/></svg></div>
+      <div class="cap"><span><b>Gonzalez Dumpster Service</b>3284 Newton Ave, San Diego</span><i>Directions →</i></div>
+    </a>
   </div>
 </section>
 </main>
 
-<footer><div class="wrap">
-  <span>© 2026 Gonzalez Dumpster Service</span>
-  <span>Concept design by webstudio. Not affiliated with or endorsed by Gonzalez Dumpster Service.</span>
-</div></footer>
+<footer>
+  <div class="wrap">
+    <div class="wordmark" aria-hidden="true">Gonzalez</div>
+    <div class="foot">
+      <a href="#top" class="logo"><svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="19" fill="none" stroke="#4FB3E8" stroke-opacity=".55"/><path d="M27 14.5a9 9 0 1 0 1.2 7.5H20" fill="none" stroke="#EAF2F8" stroke-width="2" stroke-linecap="round"/><circle cx="28.2" cy="22" r="1.8" fill="#E9C46A"/></svg><span>Gonzalez<small>Dumpster Service</small></span></a>
+      <nav aria-label="Footer"><a class="ul" href="#services">Services</a><a class="ul" href="#about">About</a><a class="ul" href="#process">How it works</a><a class="ul" href="tel:+16195718798">(619) 571-8798</a></nav>
+      <span>© <span id="yr">2026</span> Gonzalez Dumpster Service · San Diego, CA</span>
+    </div>
+  </div>
+</footer>
 
-<div class="mobile-bar">
-  <a class="btn ghost" href="tel:6195718798">Call</a>
-  <a class="btn" href="#visit">Free estimate</a>
+<div class="mbar" id="mbar">
+  <a class="btn btn-primary" href="tel:+16195718798">Call now</a>
+  <a class="btn btn-ghost" href="#contact">Directions</a>
 </div>
-</body>
+
+<script>
+(function(){
+  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var header=document.querySelector('header'),mbar=document.getElementById('mbar'),body=document.body;
+  document.getElementById('yr').textContent=new Date().getFullYear();
+
+  // mobile menu
+  var burger=document.querySelector('.burger'),menu=document.querySelector('.mobile-menu');
+  function setMenu(open){body.classList.toggle('menu-open',open);burger.setAttribute('aria-expanded',open);menu.setAttribute('aria-hidden',!open);body.style.overflow=open?'hidden':''}
+  burger.addEventListener('click',function(){setMenu(!body.classList.contains('menu-open'))});
+  menu.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){setMenu(false)})});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')setMenu(false)});
+
+  // cycling hero word
+  var words=document.querySelectorAll('.cycle b'),cyc=document.querySelector('.cycle'),i=0;
+  if(!reduce){setInterval(function(){
+    var cur=words[i];cur.classList.remove('on');cur.classList.add('off');
+    setTimeout(function(){cur.classList.remove('off')},800);
+    i=(i+1)%words.length;words[i].classList.add('on');cyc.setAttribute('aria-label',words[i].textContent.replace('.',''));
+  },2600)}
+
+  // statement word split (*accent*, ^gold)
+  var fill=document.getElementById('fill');
+  fill.innerHTML=fill.textContent.split(' ').map(function(w){
+    var c='w';if(/^\*.*\*/.test(w)){c+=' acc';w=w.replace(/\*/g,'')}else if(w[0]==='^'){c+=' gld';w=w.slice(1)}
+    return '<span class="'+c+'">'+w+'</span>'}).join(' ');
+  var ws=fill.querySelectorAll('.w');
+
+  // reveal
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.15,rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('.rv,#stepGrid').forEach(function(el){io.observe(el)});
+
+  // card spotlight
+  document.querySelectorAll('.card').forEach(function(c){c.addEventListener('pointermove',function(e){var r=c.getBoundingClientRect();c.style.setProperty('--mx',(e.clientX-r.left)+'px');c.style.setProperty('--my',(e.clientY-r.top)+'px')})});
+
+  // scroll: header, mobile bar, parallax, statement fill
+  var par=document.querySelectorAll('[data-par]'),ticking=false;
+  function onScroll(){
+    var y=window.scrollY,vh=window.innerHeight;
+    header.classList.toggle('scrolled',y>30);
+    mbar.classList.toggle('show',y>vh*.6);
+    if(!reduce){
+      par.forEach(function(el){var r=el.getBoundingClientRect(),off=(r.top+r.height/2-vh/2)*parseFloat(el.dataset.par);el.style.transform='translate3d(0,'+(-off).toFixed(1)+'px,0)'});
+      var r=fill.getBoundingClientRect(),p=(vh*.85-r.top)/(r.height+vh*.35);p=Math.max(0,Math.min(1,p));
+      var n=Math.round(p*ws.length);ws.forEach(function(w,k){w.classList.toggle('lit',k<n)});
+    }
+    ticking=false;
+  }
+  window.addEventListener('scroll',function(){if(!ticking){requestAnimationFrame(onScroll);ticking=true}},{passive:true});
+  window.addEventListener('resize',onScroll);
+  onScroll();
+})();
+</script>
+<div id="lm-concept" style="position:fixed;left:12px;bottom:12px;z-index:2147483647;font:500 11px/1.3 -apple-system,BlinkMacSystemFont,Segoe UI,sans-serif;letter-spacing:.02em;background:rgba(15,15,18,.82);color:#f4f1ea;padding:7px 11px;border-radius:999px;backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);pointer-events:none;max-width:70vw">Website concept for Gonzalez Dumpster Service by webstudio &middot; not the live site</div><p style="margin:0;padding:18px 16px 70px;text-align:center;font:12px/1.5 -apple-system,sans-serif;color:#8a8a8a;background:#0e0e10">Concept design by webstudio. Not affiliated with or endorsed by Gonzalez Dumpster Service.</p></body>
 </html>
