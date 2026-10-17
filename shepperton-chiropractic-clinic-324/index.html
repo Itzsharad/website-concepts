@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src * data: blob:; media-src 'self' data:; style-src 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com data:; script-src 'unsafe-inline'; connect-src 'none'; frame-src 'none'; form-action 'none'; base-uri 'none'; object-src 'none'">
+<meta name="robots" content="noindex, nofollow">
+<style>html,body{max-width:100%;overflow-x:clip}</style>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Shepperton Chiropractic Clinic | Back Pain, Neck Pain &amp; Sports Injury Care in Shepperton</title>
+<meta name="description" content="Shepperton Chiropractic Clinic: drug-free, surgery-free care for back pain, neck pain, headaches, sports injury, pregnancy and golf performance. 149 Laleham Road, Shepperton.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&family=Playfair+Display:ital,wght@0,500;0,700;0,800;1,500;1,700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#FBF3EC;--surface:#FFFFFF;--ink:#2B1D16;--ink-soft:#5a4639;
+  --accent:#C4572F;--accent-dk:#9E4322;--sun:#E9B872;--sun-lt:#F6E3C2;
+  --line:rgba(43,29,22,.14);
+  --serif:"Playfair Display",Georgia,serif;--sans:"DM Sans",system-ui,sans-serif;
+  --pad:clamp(20px,5vw,72px);--max:1320px;
+  --ease:cubic-bezier(.2,.7,.1,1);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{font-family:var(--sans);background:var(--bg);color:var(--ink);font-size:17px;line-height:1.65;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+h1,h2,h3{font-family:var(--serif);font-weight:700;line-height:1.05;letter-spacing:-.02em}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 var(--pad)}
+.label{font-family:var(--sans);font-size:12px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;display:inline-flex;align-items:center;gap:12px}
+.label::before{content:"";width:28px;height:2px;background:currentColor}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:17px 30px;font-weight:700;font-size:15px;letter-spacing:.04em;border:2px solid transparent;transition:transform .35s var(--ease),background .3s,color .3s,border-color .3s;text-align:center;line-height:1.2}
+.btn svg{width:16px;height:16px;transition:transform .35s var(--ease)}
+.btn:hover{transform:translateY(-3px)}
+.btn:hover svg{transform:translateX(4px)}
+.btn-accent{background:var(--accent);color:#fff}
+.btn-accent:hover{background:var(--accent-dk)}
+.btn-ghost{border-color:rgba(255,255,255,.7);color:#fff}
+.btn-ghost:hover{background:#fff;color:var(--ink)}
+.btn-dark{background:var(--ink);color:#fff}
+.btn-dark:hover{background:var(--accent)}
+.ulink{position:relative;font-weight:700}
+.ulink::after{content:"";position:absolute;left:0;bottom:-3px;width:100%;height:2px;background:var(--accent);transform:scaleX(0);transform-origin:right;transition:transform .4s var(--ease)}
+.ulink:hover::after{transform:scaleX(1);transform-origin:left}
+
+/* HEADER */
+.hdr{position:fixed;inset:0 0 auto;z-index:50;transition:background .4s,box-shadow .4s,padding .4s;padding:18px 0}
+.hdr.scrolled{background:rgba(251,243,236,.82);backdrop-filter:blur(16px) saturate(1.4);-webkit-backdrop-filter:blur(16px) saturate(1.4);box-shadow:0 1px 0 var(--line);padding:10px 0}
+.hdr .wrap{display:flex;align-items:center;justify-content:space-between;gap:20px}
+.brand{display:flex;align-items:center;gap:12px;min-width:0}
+.brand img{height:46px;width:auto;background:#fff;padding:5px}
+.brand span{font-family:var(--serif);font-weight:700;font-size:18px;line-height:1.1;color:#fff;transition:color .4s}
+.brand small{display:block;font-family:var(--sans);font-size:10px;letter-spacing:.24em;text-transform:uppercase;font-weight:700;opacity:.8}
+.hdr.scrolled .brand span,.hdr.scrolled .nav a{color:var(--ink)}
+.nav{display:flex;align-items:center;gap:30px}
+.nav a{color:#fff;font-size:14px;font-weight:500;transition:color .4s}
+.nav .phone{font-weight:700}
+.nav .btn{padding:12px 22px;color:#fff!important}
+.burger{display:none;width:46px;height:46px;background:var(--accent);border:0;cursor:pointer;position:relative}
+.burger i{position:absolute;left:13px;right:13px;height:2px;background:#fff;transition:transform .35s var(--ease),opacity .3s}
+.burger i:nth-child(1){top:16px}.burger i:nth-child(2){top:22px}.burger i:nth-child(3){top:28px}
+.menu-open .burger i:nth-child(1){transform:translateY(6px) rotate(45deg)}
+.menu-open .burger i:nth-child(2){opacity:0}
+.menu-open .burger i:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
+.mmenu{position:fixed;inset:0;z-index:45;background:var(--ink);color:#fff;display:flex;flex-direction:column;justify-content:center;padding:100px var(--pad) 120px;clip-path:inset(0 0 100% 0);transition:clip-path .6s var(--ease)}
+.menu-open .mmenu{clip-path:inset(0 0 0 0)}
+.mmenu a{font-family:var(--serif);font-size:clamp(34px,9vw,52px);line-height:1.25;display:flex;gap:16px;align-items:baseline}
+.mmenu a em{font-family:var(--sans);font-style:normal;font-size:12px;color:var(--sun);letter-spacing:.2em}
+.mmenu .mcall{margin-top:36px;font-family:var(--sans);font-size:18px;color:var(--sun)}
+
+/* HERO */
+.hero{position:sticky;top:0;height:100vh;height:100svh;min-height:620px;overflow:hidden;color:#fff;z-index:1}
+.hero-img{position:absolute;inset:-6% 0;will-change:transform}
+.hero-img img{width:100%;height:100%;object-fit:cover;object-position:center 30%;transform:scale(1.08);animation:zoom 2.4s var(--ease) forwards}
+@keyframes zoom{to{transform:scale(1)}}
+.hero::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(43,29,22,.55) 0%,rgba(43,29,22,.25) 35%,rgba(30,18,12,.9) 100%),linear-gradient(90deg,rgba(30,18,12,.75),rgba(30,18,12,0) 70%)}
+.hero-inner{position:relative;z-index:2;height:100%;display:flex;flex-direction:column;justify-content:flex-end;padding-bottom:clamp(60px,10vh,110px)}
+.hero-grid{display:grid;grid-template-columns:1fr auto;gap:40px;align-items:end}
+.hero .label{color:var(--sun);margin-bottom:24px}
+.hero h1{font-size:clamp(44px,8.2vw,124px);font-weight:800;max-width:11ch;letter-spacing:-.035em}
+.hero h1 em{font-style:italic;font-weight:500;color:var(--sun)}
+.hero p.sub{max-width:520px;margin:28px 0 36px;font-size:clamp(16px,1.4vw,19px);color:rgba(255,255,255,.88)}
+.hero-ctas{display:flex;flex-wrap:wrap;gap:14px}
+.hero-num{text-align:right;border-left:2px solid var(--sun);padding-left:28px}
+.hero-num b{display:block;font-family:var(--serif);font-size:clamp(90px,13vw,200px);line-height:.82;font-weight:800;color:transparent;-webkit-text-stroke:2px var(--sun)}
+.hero-num span{display:block;margin-top:14px;font-size:12px;letter-spacing:.22em;text-transform:uppercase;font-weight:700;max-width:180px;margin-left:auto}
+.hero-meta{position:absolute;top:110px;right:var(--pad);z-index:2;writing-mode:vertical-rl;font-size:11px;letter-spacing:.32em;text-transform:uppercase;font-weight:700;color:rgba(255,255,255,.75)}
+.in{opacity:0;transform:translateY(40px);animation:up 1.1s var(--ease) forwards}
+.d1{animation-delay:.2s}.d2{animation-delay:.38s}.d3{animation-delay:.56s}.d4{animation-delay:.74s}.d5{animation-delay:.92s}
+@keyframes up{to{opacity:1;transform:none}}
+
+/* PANELS SLIDE OVER HERO */
+main{position:relative;z-index:2}
+.panel{background:var(--bg);position:relative}
+.first-panel{box-shadow:0 -40px 80px rgba(20,10,5,.35)}
+
+/* MARQUEE */
+.marquee{background:var(--accent);color:#fff;overflow:hidden;padding:22px 0;border-bottom:1px solid rgba(0,0,0,.1)}
+.mq-track{display:flex;width:max-content;animation:mq 38s linear infinite}
+.mq-track span{font-family:var(--serif);font-size:clamp(22px,2.6vw,34px);font-style:italic;white-space:nowrap;padding:0 28px;display:flex;align-items:center;gap:56px}
+.mq-track span::after{content:"";width:12px;height:12px;background:var(--sun);transform:rotate(45deg)}
+@keyframes mq{to{transform:translateX(-50%)}}
+
+/* SECTIONS */
+section{padding:clamp(80px,12vw,160px) 0}
+.sec-head{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:end;margin-bottom:clamp(48px,7vw,90px)}
+.sec-head .label{color:var(--accent);margin-bottom:22px}
+.sec-head h2{font-size:clamp(38px,5.6vw,82px)}
+.sec-head h2 em{font-style:italic;font-weight:500;color:var(--accent)}
+.sec-head p{color:var(--ink-soft);max-width:480px;justify-self:end}
+
+/* SERVICES */
+.svc-grid{display:grid;grid-template-columns:repeat(4,1fr);border-top:2px solid var(--ink);border-left:1px solid var(--line)}
+.svc{background:var(--surface);padding:38px 32px 34px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);position:relative;display:flex;flex-direction:column;min-height:400px;transition:background .45s var(--ease),color .45s,transform .45s var(--ease);overflow:hidden}
+.svc .n{font-family:var(--serif);font-size:72px;font-weight:800;line-height:1;color:var(--sun-lt);transition:color .45s}
+.svc .tag{font-size:11px;letter-spacing:.2em;text-transform:uppercase;font-weight:700;color:var(--accent);margin:22px 0 10px;transition:color .45s}
+.svc h3{font-size:clamp(24px,2vw,30px);margin-bottom:14px}
+.svc p{color:var(--ink-soft);font-size:15.5px;transition:color .45s}
+.svc .go{margin-top:auto;padding-top:26px;display:flex;align-items:center;gap:10px;font-weight:700;font-size:14px}
+.svc .go svg{width:18px;transition:transform .4s var(--ease)}
+.svc:hover{background:var(--ink);color:#fff;transform:translateY(-8px);z-index:2}
+.svc:hover .n{color:var(--accent)}
+.svc:hover .tag{color:var(--sun)}
+.svc:hover p{color:rgba(255,255,255,.78)}
+.svc:hover .go svg{transform:translateX(6px)}
+.svc.wide{grid-column:span 2;background:var(--sun-lt)}
+.svc.wide:hover{background:var(--ink)}
+
+/* ABOUT / STORY */
+.story{background:var(--ink);color:#fff;overflow:hidden}
+.story-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:clamp(40px,7vw,110px);align-items:start}
+.big17{font-family:var(--serif);font-weight:800;font-size:clamp(200px,34vw,480px);line-height:.78;letter-spacing:-.06em;color:var(--accent);position:relative}
+.big17 small{position:absolute;bottom:8%;right:0;font-family:var(--sans);font-size:clamp(12px,1.1vw,14px);letter-spacing:.24em;text-transform:uppercase;color:var(--sun);font-weight:700;max-width:170px;line-height:1.5;text-align:right}
+.story .label{color:var(--sun);margin-bottom:22px}
+.story h2{font-size:clamp(36px,4.6vw,64px);margin-bottom:28px}
+.story h2 em{font-style:italic;font-weight:500;color:var(--sun)}
+.story p{color:rgba(255,255,255,.8);margin-bottom:18px}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid rgba(255,255,255,.2);margin-top:44px}
+.stats div{padding:26px 16px 0 0}
+.stats b{display:block;font-family:var(--serif);font-size:clamp(40px,4.4vw,62px);line-height:1;color:var(--sun)}
+.stats span{display:block;margin-top:10px;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.7);font-weight:500}
+.drquote{margin-top:44px;padding:30px 32px;background:var(--accent);font-family:var(--serif);font-size:clamp(20px,2vw,26px);font-style:italic;line-height:1.4}
+.drquote cite{display:block;margin-top:14px;font-family:var(--sans);font-style:normal;font-size:12px;letter-spacing:.2em;text-transform:uppercase;font-weight:700;color:var(--sun-lt)}
+
+/* WHY */
+.why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--ink)}
+.why{background:var(--bg);padding:44px 36px;transition:background .4s}
+.why:hover{background:var(--surface)}
+.why .ic{width:54px;height:54px;background:var(--accent);display:grid;place-items:center;margin-bottom:28px;transition:transform .45s var(--ease)}
+.why:hover .ic{transform:rotate(-8deg) scale(1.06)}
+.why .ic svg{width:26px;height:26px;stroke:#fff;fill:none;stroke-width:1.8}
+.why h3{font-size:25px;margin-bottom:12px}
+.why p{color:var(--ink-soft);font-size:15.5px}
+
+/* STEPS */
+.steps{background:var(--sun-lt)}
+.step-list{display:grid;grid-template-columns:repeat(4,1fr);gap:0;counter-reset:s}
+.step{padding:0 28px 0 0;position:relative}
+.step .sn{font-family:var(--serif);font-size:clamp(80px,8vw,124px);font-weight:800;line-height:.9;color:var(--accent);display:block;margin-bottom:24px}
+.step::before{content:"";position:absolute;top:calc(clamp(80px,8vw,124px)*.45);left:clamp(70px,7vw,110px);right:20px;height:2px;background:var(--accent);opacity:.25}
+.step:last-child::before{display:none}
+.step h3{font-size:24px;margin-bottom:10px}
+.step p{color:var(--ink-soft);font-size:15.5px}
+
+/* BOOK */
+.book-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(40px,7vw,110px);align-items:center}
+.cover{aspect-ratio:3/4;max-width:420px;width:100%;background:var(--accent);color:#fff;padding:40px 36px;display:flex;flex-direction:column;justify-content:space-between;position:relative;box-shadow:30px 30px 0 var(--sun);transform:rotate(-3deg);transition:transform .6s var(--ease)}
+.cover:hover{transform:rotate(0) translateY(-6px)}
+.cover::after{content:"";position:absolute;left:18px;top:0;bottom:0;width:2px;background:rgba(255,255,255,.25)}
+.cover .ctop{font-size:11px;letter-spacing:.26em;text-transform:uppercase;font-weight:700;color:var(--sun-lt)}
+.cover h3{font-size:clamp(38px,4.4vw,58px);line-height:.98}
+.cover h3 em{display:block;font-style:italic;font-weight:500;color:var(--sun)}
+.cover .cbot{display:flex;justify-content:space-between;align-items:end;font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase}
+.cover .cbot svg{width:56px;height:56px;stroke:var(--sun);fill:none;stroke-width:1.5}
+.book .label{color:var(--accent);margin-bottom:22px}
+.book h2{font-size:clamp(36px,4.8vw,66px);margin-bottom:26px}
+.book h2 em{font-style:italic;font-weight:500;color:var(--accent)}
+.book p{color:var(--ink-soft);margin-bottom:18px}
+.book-meta{display:flex;flex-wrap:wrap;gap:28px;align-items:center;margin-top:32px;padding-top:28px;border-top:1px solid var(--line)}
+.price{font-family:var(--serif);font-size:44px;font-weight:800;line-height:1;color:var(--accent)}
+.price small{display:block;font-family:var(--sans);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-soft);font-weight:700;margin-top:6px}
+.workshop{margin-top:30px;background:var(--surface);border-left:4px solid var(--accent);padding:24px 26px}
+.workshop b{font-family:var(--serif);font-size:21px;display:block;margin-bottom:6px}
+.workshop p{margin:0;font-size:15.5px}
+
+/* FAQ */
+.faq{background:var(--surface)}
+.faq-grid{display:grid;grid-template-columns:1fr 1.6fr;gap:clamp(40px,7vw,110px)}
+.faq .label{color:var(--accent);margin-bottom:22px}
+.faq h2{font-size:clamp(38px,5vw,72px)}
+.faq h2 em{font-style:italic;font-weight:500;color:var(--accent)}
+.faq-side p{color:var(--ink-soft);margin-top:24px;max-width:340px}
+details{border-top:1px solid var(--line)}
+details:last-child{border-bottom:1px solid var(--line)}
+summary{list-style:none;cursor:pointer;padding:28px 0;display:flex;justify-content:space-between;gap:24px;align-items:center;font-family:var(--serif);font-size:clamp(20px,1.9vw,26px);font-weight:500;transition:color .3s}
+summary::-webkit-details-marker{display:none}
+summary:hover{color:var(--accent)}
+summary i{flex:0 0 36px;height:36px;border:2px solid var(--ink);position:relative;transition:background .3s,border-color .3s,transform .4s var(--ease)}
+summary i::before,summary i::after{content:"";position:absolute;left:50%;top:50%;width:14px;height:2px;background:var(--ink);transform:translate(-50%,-50%);transition:background .3s}
+summary i::after{transform:translate(-50%,-50%) rotate(90deg)}
+details[open] summary i{background:var(--accent);border-color:var(--accent);transform:rotate(45deg)}
+details[open] summary i::before,details[open] summary i::after{background:#fff}
+details p{color:var(--ink-soft);padding:0 60px 28px 0;max-width:680px}
+
+/* CTA */
+.cta{background:var(--accent);color:#fff;padding:clamp(90px,13vw,170px) 0;position:relative;overflow:hidden}
+.cta::before{content:"MOVE";position:absolute;right:-2vw;bottom:-6vw;font-family:var(--serif);font-weight:800;font-size:clamp(160px,30vw,440px);line-height:1;color:rgba(255,255,255,.07);letter-spacing:-.05em;pointer-events:none}
+.cta .label{color:var(--sun-lt);margin-bottom:26px}
+.cta h2{font-size:clamp(42px,7.4vw,112px);max-width:13ch;position:relative}
+.cta h2 em{font-style:italic;font-weight:500;color:var(--ink)}
+.cta-row{display:flex;flex-wrap:wrap;gap:16px;margin-top:44px;position:relative}
+.cta .btn-light{background:#fff;color:var(--ink)}
+.cta .btn-light:hover{background:var(--ink);color:#fff}
+.cta .btn-ghost:hover{color:var(--accent)}
+
+/* CONTACT */
+.visit-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:2px;background:var(--ink);border:2px solid var(--ink)}
+.visit-main{background:var(--ink);color:#fff;padding:clamp(36px,5vw,64px)}
+.visit-main .label{color:var(--sun);margin-bottom:22px}
+.visit-main h2{font-size:clamp(36px,4.6vw,64px);margin-bottom:34px}
+.vrow{display:grid;grid-template-columns:110px 1fr;gap:20px;padding:20px 0;border-top:1px solid rgba(255,255,255,.16)}
+.vrow dt{font-size:11px;letter-spacing:.22em;text-transform:uppercase;font-weight:700;color:var(--sun);padding-top:4px}
+.vrow dd{font-size:17px;color:rgba(255,255,255,.88)}
+.vrow dd a.big{font-family:var(--serif);font-size:clamp(24px,2.6vw,34px);color:#fff;font-weight:700}
+.visit-side{background:var(--bg);display:grid;grid-template-rows:auto 1fr}
+.mapcard{position:relative;display:block;min-height:320px;background:var(--sun-lt);overflow:hidden}
+.mapcard svg{position:absolute;inset:0;width:100%;height:100%}
+.pin{position:absolute;left:52%;top:46%;transform:translate(-50%,-100%);display:flex;flex-direction:column;align-items:center}
+.pin b{background:var(--ink);color:#fff;font-size:12px;letter-spacing:.14em;text-transform:uppercase;padding:9px 14px;white-space:nowrap}
+.pin i{width:22px;height:22px;background:var(--accent);border:4px solid #fff;border-radius:50%;margin-top:8px;box-shadow:0 0 0 0 rgba(196,87,47,.5);animation:pulse 2.2s infinite}
+@keyframes pulse{70%{box-shadow:0 0 0 22px rgba(196,87,47,0)}100%{box-shadow:0 0 0 0 rgba(196,87,47,0)}}
+.mapcard .open{position:absolute;right:18px;bottom:18px;background:var(--accent);color:#fff;padding:12px 18px;font-weight:700;font-size:14px;transition:background .3s}
+.mapcard:hover .open{background:var(--ink)}
+.getting{padding:clamp(28px,4vw,44px)}
+.getting h3{font-size:26px;margin-bottom:18px}
+.getting ul{list-style:none}
+.getting li{display:flex;gap:14px;padding:12px 0;border-top:1px solid var(--line);color:var(--ink-soft);font-size:15.5px}
+.getting li b{color:var(--accent);font-family:var(--serif);font-size:18px;min-width:26px}
+
+/* FOOTER */
+footer{background:#1d130e;color:rgba(255,255,255,.7);padding:72px 0 40px}
+.f-top{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:48px;padding-bottom:52px;border-bottom:1px solid rgba(255,255,255,.12)}
+.f-brand img{height:62px;width:auto;background:#fff;padding:7px;margin-bottom:22px}
+.f-brand p{max-width:340px;font-size:15px}
+footer h4{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--sun);margin-bottom:18px}
+footer li{list-style:none;margin-bottom:10px;font-size:15px}
+footer a:hover{color:#fff}
+.f-bot{padding-top:30px;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;font-size:13px}
+.f-word{font-family:var(--serif);font-weight:800;font-size:clamp(48px,11.5vw,170px);line-height:.9;color:rgba(255,255,255,.06);letter-spacing:-.04em;margin-top:40px;white-space:nowrap;overflow:hidden}
+
+/* MOBILE CALL BAR */
+.mbar{display:none}
+
+/* REVEAL */
+.rv{opacity:0;transform:translateY(46px);transition:opacity 1s var(--ease),transform 1s var(--ease)}
+.rv.on{opacity:1;transform:none}
+.rv.s1{transition-delay:.08s}.rv.s2{transition-delay:.16s}.rv.s3{transition-delay:.24s}
+
+/* RESPONSIVE */
+@media (max-width:1100px){
+  .svc-grid{grid-template-columns:repeat(2,1fr)}
+  .step-list{grid-template-columns:repeat(2,1fr);row-gap:56px}
+  .step:nth-child(2)::before{display:none}
+  .why-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media (max-width:900px){
+  .nav{display:none}.burger{display:block}
+  .sec-head,.story-grid,.book-grid,.faq-grid,.visit-grid,.f-top{grid-template-columns:1fr}
+  .sec-head p{justify-self:start}
+  .hero-grid{grid-template-columns:1fr}
+  .hero-num{display:none}
+  .big17{font-size:clamp(180px,52vw,360px)}
+  .cover{margin:0 auto 20px}
+}
+@media (max-width:640px){
+  body{font-size:16px;padding-bottom:72px}
+  .brand img{height:40px}
+  .brand span{font-size:15px}
+  .hero-meta{display:none}
+  .hero h1{font-size:clamp(40px,11.5vw,56px)}
+  .hero-ctas .btn{flex:1 1 100%}
+  .svc-grid{grid-template-columns:1fr}
+  .svc.wide{grid-column:auto}
+  .svc{min-height:0}
+  .why-grid,.step-list{grid-template-columns:1fr}
+  .step::before{display:none}
+  .stats{grid-template-columns:1fr 1fr 1fr}
+  .stats b{font-size:34px}
+  .stats span{font-size:10px;letter-spacing:.1em}
+  .vrow{grid-template-columns:1fr;gap:6px}
+  details p{padding-right:0}
+  .cover{box-shadow:16px 16px 0 var(--sun)}
+  .cta-row .btn{flex:1 1 100%}
+  .mbar{display:grid;grid-template-columns:1fr 1fr;position:fixed;left:0;right:0;bottom:0;z-index:60;box-shadow:0 -6px 24px rgba(0,0,0,.18)}
+  .mbar a{display:flex;align-items:center;justify-content:center;gap:8px;padding:19px 10px;font-weight:700;font-size:15px}
+  .mbar a:first-child{background:var(--ink);color:#fff}
+  .mbar a:last-child{background:var(--accent);color:#fff}
+  .mbar svg{width:18px;height:18px}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important;scroll-behavior:auto!important}
+  .rv,.in{opacity:1;transform:none}
+  .mq-track{animation:none}
+}
+</style>
+</head>
+<body>
+
+<header class="hdr" id="hdr">
+  <div class="wrap">
+    <a href="#top" class="brand" aria-label="Shepperton Chiropractic Clinic home">
+      <img src="img/logo.png" alt="Shepperton Chiropractic Clinic logo">
+      <span>Shepperton Chiropractic<small>Clinic · Shepperton</small></span>
+    </a>
+    <nav class="nav" aria-label="Main">
+      <a href="#services" class="ulink">Treatments</a>
+      <a href="#about" class="ulink">The Clinic</a>
+      <a href="#book" class="ulink">Dr. Mika's Book</a>
+      <a href="#contact" class="ulink">Visit</a>
+      <a href="tel:+441932429584" class="phone">01932 429584</a>
+      <a href="#contact" class="btn btn-accent">Book a Visit</a>
+    </nav>
+    <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false"><i></i><i></i><i></i></button>
+  </div>
+</header>
+
+<div class="mmenu" id="mmenu" aria-hidden="true">
+  <a href="#services"><em>01</em>Treatments</a>
+  <a href="#about"><em>02</em>The Clinic</a>
+  <a href="#process"><em>03</em>How it works</a>
+  <a href="#book"><em>04</em>The Book</a>
+  <a href="#contact"><em>05</em>Visit us</a>
+  <a href="tel:+441932429584" class="mcall">Call 01932 429584</a>
+</div>
+
+<div class="hero" id="top">
+  <div class="hero-img" id="heroImg"><img src="img/photo-1.jpg" alt="Shepperton Chiropractic Clinic" width="1656" height="863" fetchpriority="high"></div>
+  <div class="hero-meta">149 Laleham Road · Shepperton · TW17 0AH</div>
+  <div class="wrap hero-inner">
+    <div class="hero-grid">
+      <div>
+        <span class="label in d1">Chiropractic · Shepperton, Middlesex</span>
+        <h1 class="in d2">Find the root. <em>Live</em> pain&#8209;free.</h1>
+        <p class="sub in d3">We diagnose the root cause of your back pain, neck pain, headaches or sports injury, and fix it without the need for drugs or surgery.</p>
+        <div class="hero-ctas in d4">
+          <a href="#contact" class="btn btn-accent">Book your appointment <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+          <a href="tel:+441932429584" class="btn btn-ghost">Call 01932 429584</a>
+        </div>
+      </div>
+      <div class="hero-num in d5"><b>17</b><span>Years caring for the Shepperton community</span></div>
+    </div>
+  </div>
+</div>
+
+<main>
+  <div class="panel first-panel">
+    <div class="marquee" aria-hidden="true">
+      <div class="mq-track">
+        <span>Back Pain Relief</span><span>Neck Pain</span><span>Headache Relief</span><span>Sports Injury &amp; Performance</span><span>Pregnancy Care</span><span>Optimal Performance Golf</span><span>TOG Gait Scanner</span><span>Home Visits</span>
+        <span>Back Pain Relief</span><span>Neck Pain</span><span>Headache Relief</span><span>Sports Injury &amp; Performance</span><span>Pregnancy Care</span><span>Optimal Performance Golf</span><span>TOG Gait Scanner</span><span>Home Visits</span>
+      </div>
+    </div>
+
+    <section id="services">
+      <div class="wrap">
+        <div class="sec-head">
+          <div class="rv">
+            <span class="label">Treatments &amp; Specialisms</span>
+            <h2>Care tailored to <em>your</em> body.</h2>
+          </div>
+          <p class="rv s1">From everyday aches to the demands of elite sport and pregnancy, every programme is built around your specific needs, both in the short and the long term.</p>
+        </div>
+
+        <div class="svc-grid">
+          <a href="#contact" class="svc rv">
+            <span class="n">01</span><span class="tag">Get relief</span>
+            <h3>Back Pain</h3>
+            <p>Do not suffer in silence. We find what's really driving your back pain and treat it at the source, so you can get back to living fully.</p>
+            <span class="go">Learn how we help <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span>
+          </a>
+          <a href="#contact" class="svc rv s1">
+            <span class="n">02</span><span class="tag">Put an end to it</span>
+            <h3>Neck Pain &amp; Headaches</h3>
+            <p>Suffering from neck pain or recurring headaches? Discover why your body hurts and how to get rid of it, without medication.</p>
+            <span class="go">Find out more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span>
+          </a>
+          <a href="#contact" class="svc rv s2">
+            <span class="n">03</span><span class="tag">Sports Index</span>
+            <h3>Sports Injury &amp; Performance</h3>
+            <p>A proven way to reduce sports injury and enhance performance, with running assessments, CORE workout, stretching, nutrition and hydration advice.</p>
+            <span class="go">Peak your performance <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span>
+          </a>
+          <a href="#contact" class="svc rv s3">
+            <span class="n">04</span><span class="tag">Mother &amp; baby</span>
+            <h3>Pregnancy</h3>
+            <p>More fully enjoy your pregnancy. Learn why chiropractic check-ups are important while you're expecting, and how we keep you comfortable.</p>
+            <span class="go">Learn more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span>
+          </a>
+          <a href="#contact" class="svc wide rv">
+            <span class="n">05</span><span class="tag">Optimal Performance Golf</span>
+            <h3>Take the extra shots off your card.</h3>
+            <p>Born from Dr. Mika's university dissertation, <em>The effects of an 8-week Core stability training programme on golf swing stability and club head velocity</em>. Optimal Performance Golf addresses the problems in your physique that may be costing you strokes, for recreational golfers and professionals alike.</p>
+            <span class="go">Improve your swing <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span>
+          </a>
+          <a href="#contact" class="svc rv s1">
+            <span class="n">06</span><span class="tag">New technology</span>
+            <h3>TOG Gait Scanner</h3>
+            <p>We now offer TOG Gait Scanner technology at the clinic. Find out how it can benefit you and book your appointment today.</p>
+            <span class="go">Book a scan <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span>
+          </a>
+          <a href="#contact" class="svc rv s2">
+            <span class="n">07</span><span class="tag">Mobile services</span>
+            <h3>Home Visits &amp; Weekend Cover</h3>
+            <p>Home visits are available on special request in some cases, and a chiropractor is on call throughout the weekend in case of an emergency.</p>
+            <span class="go">Enquire now <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="story" id="about">
+      <div class="wrap story-grid">
+        <div class="rv">
+          <div class="big17">17<small>Years of chiropractic care in Shepperton</small></div>
+          <blockquote class="drquote">"Our aim is to help you enjoy your life to the fullest every single day."<cite>— Shepperton Chiropractic Clinic</cite></blockquote>
+        </div>
+        <div>
+          <span class="label rv">Our story</span>
+          <h2 class="rv s1">Fresh, dynamic &amp; <em>patient-centred</em> care for the whole family.</h2>
+          <p class="rv s2">For 17 years, Shepperton Chiropractic Clinic has been delivering excellent chiropractic health care to the local community, and the list of happy patients now runs into the thousands.</p>
+          <p class="rv s2">Led by Dr. Mika (D.C.), a long-standing advocate of the patient's role in their own recovery, our team brings together two fully registered chiropractors and two qualified massage therapists, so you're supported from diagnosis and adjustment right through to recovery.</p>
+          <p class="rv s3">We're registered with most health insurance companies, making premium care simpler to access.</p>
+          <div class="stats rv s3">
+            <div><b>17</b><span>Years in practice</span></div>
+            <div><b>2</b><span>Registered chiropractors</span></div>
+            <div><b>2</b><span>Massage therapists</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="why">
+      <div class="wrap">
+        <div class="sec-head">
+          <div class="rv">
+            <span class="label">Why Shepperton Chiropractic</span>
+            <h2>Results that <em>speak</em> for themselves.</h2>
+          </div>
+          <p class="rv s1">Find out why your body suffers from pain, and how to get rid of it for good, without medication.</p>
+        </div>
+        <div class="why-grid">
+          <div class="why rv"><div class="ic"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M21 21l-5-5"/></svg></div><h3>Root-cause diagnosis</h3><p>We don't mask symptoms. We diagnose the underlying cause of your problem and fix it at the source.</p></div>
+          <div class="why rv s1"><div class="ic"><svg viewBox="0 0 24 24"><path d="M12 3v18M3 12h18"/><circle cx="12" cy="12" r="9"/></svg></div><h3>No drugs, no surgery</h3><p>Natural, hands-on chiropractic care that helps your body heal without medication or surgical intervention.</p></div>
+          <div class="why rv s2"><div class="ic"><svg viewBox="0 0 24 24"><path d="M4 20c0-4 4-7 8-7s8 3 8 7"/><circle cx="12" cy="7" r="4"/></svg></div><h3>Tailored to you</h3><p>Our patient-centred approach means a treatment programme built for your needs, short-term and long-term.</p></div>
+          <div class="why rv"><div class="ic"><svg viewBox="0 0 24 24"><path d="M3 12h4l3-8 4 16 3-8h4"/></svg></div><h3>Sport &amp; golf expertise</h3><p>Well versed in the ways of many sports, with a dedicated Optimal Performance Golf programme.</p></div>
+          <div class="why rv s1"><div class="ic"><svg viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="13"/><path d="M3 10h18M8 3v4M16 3v4"/></svg></div><h3>Insurance friendly</h3><p>Registered with most health insurance companies. Ask us about yours when you get in touch.</p></div>
+          <div class="why rv s2"><div class="ic"><svg viewBox="0 0 24 24"><path d="M5 17h14l-1.5-6h-11z"/><circle cx="8" cy="19" r="1.5"/><circle cx="16" cy="19" r="1.5"/><path d="M8 11V7h8v4"/></svg></div><h3>Easy to reach</h3><p>Ample free on-site parking, bus stops just outside, and Shepperton station a 10-minute walk away.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="steps" id="process">
+      <div class="wrap">
+        <div class="sec-head">
+          <div class="rv">
+            <span class="label">How it works</span>
+            <h2>From pain to <em>resilience</em>, in four steps.</h2>
+          </div>
+          <p class="rv s1">A clear, collaborative path that puts you firmly in the driver's seat of your own recovery.</p>
+        </div>
+        <div class="step-list">
+          <div class="step rv"><span class="sn">01</span><h3>Get in touch</h3><p>Call the clinic to book your appointment and tell us what's been holding you back.</p></div>
+          <div class="step rv s1"><span class="sn">02</span><h3>Find the cause</h3><p>We assess your body to diagnose the root cause of your pain, not just where it hurts.</p></div>
+          <div class="step rv s2"><span class="sn">03</span><h3>Tailored treatment</h3><p>A programme built around you, combining chiropractic care with massage where it helps.</p></div>
+          <div class="step rv s3"><span class="sn">04</span><h3>Move for life</h3><p>Learn healthier movement patterns so you stay resilient and injury-proof for the long term.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="book" id="book">
+      <div class="wrap book-grid">
+        <div class="rv">
+          <div class="cover">
+            <span class="ctop">Dr. Mika (D.C.)</span>
+            <h3>Survival Guide <em>to Your Home</em></h3>
+            <div class="cbot"><span>Published<br>July 2017</span><svg viewBox="0 0 64 64"><path d="M8 30L32 10l24 20v24H8z"/><path d="M26 54V38h12v16"/></svg></div>
+          </div>
+        </div>
+        <div>
+          <span class="label rv">Introducing · Dr. Mika's first book</span>
+          <h2 class="rv s1">The user's manual your body <em>never</em> came with.</h2>
+          <p class="rv s2">After 10 years in practice, Dr. Mika realised that most people injure themselves in familiar surroundings, during everyday activities at home. This book distils 10 years of tried and tested practical tips to turn your daily routine from harmful to helpful. And it's easier than you think.</p>
+          <p class="rv s2">Learn the fundamentals of posture and movement, recognise harmful patterns before they set back your recovery, and build habits that prevent injury in the future.</p>
+          <div class="book-meta rv s3">
+            <div class="price">£6.99<small>At the clinic</small></div>
+            <p style="margin:0;max-width:260px;font-size:15px">Also available via Amazon Kindle.</p>
+            <a href="#contact" class="btn btn-dark">Pick up a copy</a>
+          </div>
+          <div class="workshop rv s3">
+            <b>Free Movement Workshops</b>
+            <p>Dr. Mika runs regular movement workshops, free of charge, to help people move more confidently and correctly, even in advanced age. Get in touch by phone to enquire.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="faq" id="faq">
+      <div class="wrap faq-grid">
+        <div class="faq-side rv">
+          <span class="label">Good to know</span>
+          <h2>Questions, <em>answered.</em></h2>
+          <p>Can't see your question? Call us on <a href="tel:+441932429584" class="ulink">01932 429584</a>, we're happy to help.</p>
+        </div>
+        <div class="rv s1">
+          <details><summary>Do you treat without drugs or surgery?<i></i></summary><p>Yes. We diagnose the root cause of your problem and fix it without the need for drugs or surgery.</p></details>
+          <details><summary>What conditions do you help with?<i></i></summary><p>We specialise in back pain, neck pain, headaches, sports injury and performance, pregnancy and any other bodily aches and pains. We also offer Optimal Performance Golf and TOG Gait Scanner assessments.</p></details>
+          <details><summary>Do you accept health insurance?<i></i></summary><p>We are registered with most health insurance companies. Give us a call to check your provider.</p></details>
+          <details><summary>Can a chiropractor visit me at home?<i></i></summary><p>Home visits are available on special request in some cases. We also have a chiropractor on call throughout the weekend in case of an emergency.</p></details>
+          <details><summary>Is there parking at the clinic?<i></i></summary><p>Yes, ample free parking is available on site. Bus stops are just outside the clinic and Shepperton Rail station is only a 10-minute walk away.</p></details>
+          <details><summary>Who is on the team?<i></i></summary><p>The clinic offers the services of two fully registered chiropractors and two qualified massage therapists, led by Dr. Mika (D.C.).</p></details>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta">
+      <div class="wrap">
+        <span class="label rv">Don't suffer in silence</span>
+        <h2 class="rv s1">Your best days start with <em>one call.</em></h2>
+        <div class="cta-row rv s2">
+          <a href="tel:+441932429584" class="btn btn-light">Call 01932 429584</a>
+          <a href="https://maps.google.com/?q=149+Laleham+Rd,+Shepperton+TW17+0AH" target="_blank" rel="noopener" class="btn btn-ghost">Get directions</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="wrap">
+        <div class="visit-grid rv">
+          <div class="visit-main">
+            <span class="label">Visit the clinic</span>
+            <h2>Shepperton Chiropractic Clinic</h2>
+            <dl>
+              <div class="vrow"><dt>Call</dt><dd><a href="tel:+441932429584" class="big">01932 429584</a></dd></div>
+              <div class="vrow"><dt>Address</dt><dd>149 Laleham Road<br>Shepperton, TW17 0AH</dd></div>
+              <div class="vrow"><dt>Hours</dt><dd>By appointment, please call to book a time that suits you. Weekend on-call chiropractor for emergencies.</dd></div>
+              <div class="vrow"><dt>Nearby</dt><dd>Chertsey · Walton-on-Thames · Weybridge · Sunbury</dd></div>
+            </dl>
+          </div>
+          <div class="visit-side">
+            <a class="mapcard" href="https://maps.google.com/?q=149+Laleham+Rd,+Shepperton+TW17+0AH" target="_blank" rel="noopener" aria-label="Open Shepperton Chiropractic Clinic in Google Maps">
+              <svg viewBox="0 0 400 320" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+                <rect width="400" height="320" fill="#F6E3C2"/>
+                <path d="M-20 250 C80 220 140 280 230 240 S360 200 420 230" stroke="#E9B872" stroke-width="26" fill="none" opacity=".7"/>
+                <path d="M-10 90 L420 170" stroke="#fff" stroke-width="14"/>
+                <path d="M150 -10 L240 330" stroke="#fff" stroke-width="22"/>
+                <path d="M150 -10 L240 330" stroke="#C4572F" stroke-width="2" stroke-dasharray="10 8" opacity=".5"/>
+                <path d="M-10 30 L130 60 M260 20 L420 60 M30 320 L110 150 M300 320 L360 190" stroke="#fff" stroke-width="7"/>
+                <text x="250" y="120" font-family="DM Sans" font-size="11" font-weight="700" fill="#2B1D16" opacity=".55" letter-spacing="2">LALEHAM RD</text>
+                <text x="175" y="300" font-family="DM Sans" font-size="11" font-weight="700" fill="#2B1D16" opacity=".55" letter-spacing="2" transform="rotate(-75 175 300)">M3</text>
+              </svg>
+              <div class="pin"><b>We're here</b><i></i></div>
+              <span class="open">Open in Maps ↗</span>
+            </a>
+            <div class="getting">
+              <h3>Getting here</h3>
+              <ul>
+                <li><b>01</b>Very close to the M3 motorway bridge on Laleham Road.</li>
+                <li><b>02</b>Ample free parking on site.</li>
+                <li><b>03</b>Bus stops just outside the clinic.</li>
+                <li><b>04</b>Shepperton Rail station is a 10-minute walk.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="wrap">
+        <div class="f-top">
+          <div class="f-brand">
+            <img src="img/logo.png" alt="Shepperton Chiropractic Clinic logo">
+            <p>Premier chiropractic health care for Shepperton and the surrounding community. Relief from back pain, neck pain, headaches and sports injuries, without drugs or surgery.</p>
+          </div>
+          <div>
+            <h4>Explore</h4>
+            <ul>
+              <li><a href="#services">Treatments</a></li>
+              <li><a href="#about">The Clinic</a></li>
+              <li><a href="#process">How it works</a></li>
+              <li><a href="#book">Survival Guide to Your Home</a></li>
+              <li><a href="#faq">FAQ</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4>Contact</h4>
+            <ul>
+              <li><a href="tel:+441932429584">01932 429584</a></li>
+              <li><a href="https://maps.google.com/?q=149+Laleham+Rd,+Shepperton+TW17+0AH" target="_blank" rel="noopener">149 Laleham Road,<br>Shepperton TW17 0AH</a></li>
+              <li>Find us on Facebook, LinkedIn &amp; Twitter</li>
+            </ul>
+          </div>
+        </div>
+        <div class="f-bot">
+          <span>© <span id="yr"></span> Shepperton Chiropractic Clinic Ltd</span>
+          <a href="#top" class="ulink">Back to top ↑</a>
+        </div>
+        <div class="f-word" aria-hidden="true">Shepperton</div>
+      </div>
+    </footer>
+  </div>
+</main>
+
+<div class="mbar">
+  <a href="tel:+441932429584"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>Call now</a>
+  <a href="#contact">Book a visit</a>
+</div>
+
+<script>
+(function(){
+  var hdr=document.getElementById('hdr'),burger=document.getElementById('burger'),mm=document.getElementById('mmenu'),img=document.getElementById('heroImg');
+  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  document.getElementById('yr').textContent=new Date().getFullYear();
+
+  var ticking=false;
+  function onScroll(){
+    var y=window.scrollY;
+    hdr.classList.toggle('scrolled',y>40);
+    if(!reduce&&y<window.innerHeight*1.2){img.style.transform='translate3d(0,'+(y*0.25)+'px,0)'}
+    ticking=false;
+  }
+  window.addEventListener('scroll',function(){if(!ticking){requestAnimationFrame(onScroll);ticking=true}},{passive:true});
+  onScroll();
+
+  function toggle(open){
+    document.body.classList.toggle('menu-open',open);
+    burger.setAttribute('aria-expanded',open);
+    mm.setAttribute('aria-hidden',!open);
+    document.body.style.overflow=open?'hidden':'';
+  }
+  burger.addEventListener('click',function(){toggle(!document.body.classList.contains('menu-open'))});
+  mm.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){toggle(false)})});
+
+  var els=document.querySelectorAll('.rv');
+  if(reduce||!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('on')});return}
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(en){if(en.isIntersecting){en.target.classList.add('on');io.unobserve(en.target)}});
+  },{threshold:.12,rootMargin:'0px 0px -40px 0px'});
+  els.forEach(function(e){io.observe(e)});
+})();
+</script>
+<div id="lm-concept" style="position:fixed;left:12px;bottom:12px;z-index:2147483647;font:500 11px/1.3 -apple-system,BlinkMacSystemFont,Segoe UI,sans-serif;letter-spacing:.02em;background:rgba(15,15,18,.82);color:#f4f1ea;padding:7px 11px;border-radius:999px;backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);pointer-events:none;max-width:70vw">Website concept for Shepperton Chiropractic Clinic by webstudio &middot; not the live site</div><p style="margin:0;padding:18px 16px 70px;text-align:center;font:12px/1.5 -apple-system,sans-serif;color:#8a8a8a;background:#0e0e10">Concept design by webstudio. Not affiliated with or endorsed by Shepperton Chiropractic Clinic.</p></body>
+</html>
