@@ -1,291 +1,631 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src * data: blob:; media-src 'self' data:; style-src 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com data:; script-src 'unsafe-inline'; connect-src 'none'; frame-src 'none'; form-action 'none'; base-uri 'none'; object-src 'none'">
 <meta name="robots" content="noindex, nofollow">
-<title>Shugar Soapworks | Website concept</title>
+<style>html,body{max-width:100%;overflow-x:clip}</style>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Shugar Soapworks | House Cleaning in Los Angeles, CA</title>
+<meta name="description" content="Shugar Soapworks: house cleaning in Los Angeles, CA. Based at 724 E 61st St. Call (323) 234-2874 to book.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Karla:wght@400;500;600;700;800&family=Libre+Caslon+Display&display=swap" rel="stylesheet">
 <style>
 :root{
-  --bg:#f3f6f8;--surface:#ffffff;--ink:#14283a;--muted:#566676;
-  --accent:#2a6f97;--accent-ink:#ffffff;--gold:#e0a43a;--soft:#e3eef5;
-  --radius:22px;--max:1180px;
-  --serif:"Fraunces",Georgia,serif;--sans:"Manrope",system-ui,-apple-system,sans-serif;
+  --bg:#EDF5FB;--surface:#FFFFFF;--ink:#10314D;--ink-soft:#3C5A74;
+  --blue:#2F86C8;--blue-deep:#1C639C;--blue-pale:#D6E8F5;
+  --sand:#F6C38B;--sand-pale:#FCEBD7;
+  --line:rgba(16,49,77,.14);
+  --serif:"Libre Caslon Display",Georgia,serif;
+  --sans:"Karla",system-ui,-apple-system,sans-serif;
+  --pad:clamp(20px,4vw,56px);
+  --ease:cubic-bezier(.2,.7,.1,1);
 }
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:var(--sans);background:var(--bg);color:var(--ink);font-size:17px;line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
 a{color:inherit;text-decoration:none}
-img{max-width:100%;display:block}
-.wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
-.concept{background:var(--ink);color:var(--bg);font-size:13px;text-align:center;padding:8px 16px;letter-spacing:.02em}
-.concept b{color:var(--gold);font-weight:600}
+svg{display:block}
+h1,h2,h3{font-family:var(--serif);font-weight:400;line-height:1.02;letter-spacing:-.01em}
+.label{font-family:var(--sans);font-size:12px;font-weight:700;letter-spacing:.22em;text-transform:uppercase}
+.skip{position:absolute;left:-999px;top:0;background:var(--ink);color:#fff;padding:10px 16px;z-index:200}
+.skip:focus{left:12px;top:12px}
+:focus-visible{outline:3px solid var(--blue);outline-offset:3px}
 
-/* header */
-header{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:saturate(1.4) blur(10px);border-bottom:1px solid color-mix(in srgb,var(--ink) 8%,transparent)}
-.nav{display:flex;align-items:center;justify-content:space-between;height:76px;gap:24px}
-.brand{font-family:var(--serif);font-size:23px;font-weight:600;letter-spacing:-.01em;line-height:1.1;max-width:340px}
-.links{display:flex;gap:30px;font-size:15px;font-weight:500;color:var(--muted)}
-.links a:hover{color:var(--ink)}
-.nav-right{display:flex;align-items:center;gap:18px}
-.phone{font-weight:600;font-size:15px;white-space:nowrap}
-.btn{display:inline-flex;align-items:center;gap:10px;background:var(--accent);color:var(--accent-ink);padding:14px 26px;border-radius:999px;font-weight:600;font-size:15.5px;transition:transform .2s ease,box-shadow .2s ease;white-space:nowrap}
-.btn:hover{transform:translateY(-2px);box-shadow:0 12px 28px -12px var(--accent)}
-.btn.ghost{background:transparent;color:var(--ink);border:1.5px solid color-mix(in srgb,var(--ink) 20%,transparent)}
-.btn.ghost:hover{box-shadow:none;border-color:var(--ink)}
-.btn svg{width:18px;height:18px}
+/* Buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:12px;min-height:54px;padding:0 26px;font-family:var(--sans);font-weight:700;font-size:15px;letter-spacing:.04em;border:2px solid var(--ink);transition:transform .35s var(--ease),background .3s,color .3s,box-shadow .35s var(--ease);text-align:center;line-height:1.2}
+.btn svg{width:18px;height:18px;flex:none;transition:transform .35s var(--ease)}
+.btn:hover{transform:translateY(-3px)}
+.btn:hover svg{transform:translateX(4px)}
+.btn-primary{background:var(--ink);color:#fff;box-shadow:6px 6px 0 var(--sand)}
+.btn-primary:hover{box-shadow:9px 9px 0 var(--sand)}
+.btn-ghost{background:transparent;color:var(--ink)}
+.btn-ghost:hover{background:var(--surface)}
+.ulink{position:relative;font-weight:700;color:var(--blue-deep)}
+.ulink::after{content:"";position:absolute;left:0;right:0;bottom:-3px;height:2px;background:currentColor;transform:scaleX(0);transform-origin:right;transition:transform .45s var(--ease)}
+.ulink:hover::after{transform:scaleX(1);transform-origin:left}
 
-/* hero */
-.hero{padding:72px 0 88px}
-.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:64px;align-items:center}
-.eyebrow{display:inline-flex;align-items:center;gap:10px;background:var(--surface);border:1px solid color-mix(in srgb,var(--ink) 10%,transparent);padding:8px 16px 8px 10px;border-radius:999px;font-size:14px;font-weight:600;color:var(--muted)}
-.stars{color:var(--gold);letter-spacing:1px;font-size:14px}
-.eyebrow .dot{width:26px;height:26px;border-radius:50%;background:var(--soft);display:grid;place-items:center;color:var(--accent)}
-h1{font-family:var(--serif);font-weight:500;font-size:clamp(44px,5.6vw,74px);line-height:1.02;letter-spacing:-.025em;margin:26px 0 22px}
-h1 em{font-style:italic;color:var(--accent)}
-.lead-text{font-size:19.5px;color:var(--muted);max-width:540px}
-.hero-ctas{display:flex;gap:14px;margin-top:36px;flex-wrap:wrap}
-.ticks{display:flex;gap:22px;margin-top:34px;flex-wrap:wrap;font-size:14.5px;font-weight:600;color:var(--muted)}
-.ticks span{display:flex;align-items:center;gap:8px}
-.ticks svg{width:18px;height:18px;color:var(--accent)}
-.visual{position:relative}
-.photo{aspect-ratio:4/5;border-radius:calc(var(--radius) + 10px);overflow:hidden;background:var(--soft);box-shadow:0 40px 80px -40px color-mix(in srgb,var(--ink) 55%,transparent)}
-.photo img{width:100%;height:100%;object-fit:cover}
-.quote-panel{aspect-ratio:4/5;border-radius:calc(var(--radius) + 10px);background:linear-gradient(155deg,var(--accent),color-mix(in srgb,var(--accent) 55%,var(--ink)));color:var(--accent-ink);padding:52px 46px;display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden;box-shadow:0 40px 80px -40px color-mix(in srgb,var(--ink) 60%,transparent)}
-.quote-panel:before{content:"";position:absolute;width:420px;height:420px;border-radius:50%;right:-160px;top:-160px;background:color-mix(in srgb,var(--accent-ink) 9%,transparent)}
-.quote-panel:after{content:"";position:absolute;width:260px;height:260px;border-radius:50%;left:-90px;bottom:-110px;border:1.5px solid color-mix(in srgb,var(--accent-ink) 22%,transparent)}
-.quote-mark{font-family:var(--serif);font-size:120px;line-height:.6;opacity:.35}
-.quote-panel p{font-family:var(--serif);font-size:28px;line-height:1.3;position:relative;z-index:1}
-.quote-panel .who{font-family:var(--sans);font-size:15px;opacity:.85;margin-top:22px;font-weight:600}
-.float{position:absolute;background:var(--surface);color:var(--ink);border-radius:18px;padding:16px 20px;box-shadow:0 24px 50px -24px color-mix(in srgb,var(--ink) 50%,transparent);display:flex;align-items:center;gap:14px;font-size:14px;line-height:1.35}
-.float b{font-size:22px;font-family:var(--serif);font-weight:600;display:block}
-.float.one{left:-34px;bottom:-28px}
-.float.two{right:-22px;top:44px}
-.float .badge{width:44px;height:44px;border-radius:14px;background:var(--soft);display:grid;place-items:center;color:var(--accent)}
-.float .badge svg{width:22px;height:22px}
+/* Header */
+.header{position:fixed;inset:0 0 auto;z-index:100;height:76px;display:flex;align-items:center;justify-content:space-between;gap:20px;padding:0 var(--pad);background:rgba(237,245,251,.72);backdrop-filter:blur(16px) saturate(1.3);-webkit-backdrop-filter:blur(16px) saturate(1.3);border-bottom:1px solid var(--line);transition:background .3s}
+.header.scrolled{background:rgba(255,255,255,.88)}
+.brand{display:flex;align-items:center;gap:12px;min-width:0}
+.mark{width:40px;height:40px;flex:none;background:var(--ink);display:grid;place-items:center;position:relative}
+.mark::after{content:"";position:absolute;right:-5px;bottom:-5px;width:14px;height:14px;background:var(--sand)}
+.mark span{font-family:var(--serif);color:#fff;font-size:24px;line-height:1;transform:translateY(2px)}
+.brand-name{font-weight:800;font-size:15px;letter-spacing:.14em;text-transform:uppercase;white-space:nowrap}
+.nav{display:flex;align-items:center;gap:30px}
+.nav a.nl{font-size:14px;font-weight:600;letter-spacing:.04em;position:relative}
+.nav a.nl::after{content:"";position:absolute;left:0;right:0;bottom:-4px;height:2px;background:var(--blue);transform:scaleX(0);transform-origin:right;transition:transform .4s var(--ease)}
+.nav a.nl:hover::after{transform:scaleX(1);transform-origin:left}
+.h-phone{font-weight:700;font-size:15px;white-space:nowrap}
+.h-cta{min-height:44px;padding:0 18px;font-size:14px;box-shadow:4px 4px 0 var(--sand)}
+.burger{display:none;width:46px;height:46px;border:2px solid var(--ink);background:transparent;cursor:pointer;flex:none;position:relative}
+.burger i{position:absolute;left:11px;right:11px;height:2px;background:var(--ink);transition:transform .35s var(--ease),opacity .2s}
+.burger i:nth-child(1){top:15px}.burger i:nth-child(2){top:21px}.burger i:nth-child(3){top:27px}
+.menu-open .burger i:nth-child(1){transform:translateY(6px) rotate(45deg)}
+.menu-open .burger i:nth-child(2){opacity:0}
+.menu-open .burger i:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
+.mobile-menu{position:fixed;inset:76px 0 0;z-index:99;background:var(--ink);color:#fff;padding:40px var(--pad);display:flex;flex-direction:column;gap:6px;transform:translateY(-110%);transition:transform .55s var(--ease);visibility:hidden}
+.menu-open .mobile-menu{transform:none;visibility:visible}
+.mobile-menu a.ml{font-family:var(--serif);font-size:40px;line-height:1.25;border-bottom:1px solid rgba(255,255,255,.14);padding:8px 0;display:flex;justify-content:space-between;align-items:baseline}
+.mobile-menu a.ml small{font-family:var(--sans);font-size:12px;letter-spacing:.2em;color:var(--sand)}
+.mobile-menu .btn{margin-top:28px;background:var(--sand);color:var(--ink);border-color:var(--sand)}
 
-/* trust */
-.trust{border-top:1px solid color-mix(in srgb,var(--ink) 9%,transparent);border-bottom:1px solid color-mix(in srgb,var(--ink) 9%,transparent);background:var(--surface)}
-.trust .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;padding-top:26px;padding-bottom:26px}
-.trust div{display:flex;align-items:center;gap:12px;font-weight:600;font-size:15px}
-.trust svg{width:22px;height:22px;color:var(--accent);flex:none}
+/* Layout */
+.layout{display:grid;grid-template-columns:minmax(0,42fr) minmax(0,58fr);padding-top:76px}
+.aside{position:sticky;top:76px;height:calc(100vh - 76px);height:calc(100svh - 76px);padding:clamp(28px,4vw,56px) var(--pad);display:flex;flex-direction:column;justify-content:space-between;border-right:1px solid var(--line);overflow:hidden}
+.aside-top{display:flex;justify-content:space-between;align-items:flex-start;gap:16px}
+.aside-top .label{color:var(--blue-deep)}
+.index{display:flex;align-items:baseline;gap:10px;font-weight:800}
+.index-num{font-family:var(--sans);font-size:15px;letter-spacing:.1em;min-width:2ch}
+.index-bar{width:56px;height:2px;background:var(--line);position:relative;overflow:hidden;align-self:center}
+.index-bar i{position:absolute;inset:0;background:var(--blue);transform-origin:left;transform:scaleX(var(--p,.12));transition:transform .5s var(--ease)}
+.aside h1{font-size:clamp(46px,5.6vw,92px);margin:28px 0 22px}
+.aside h1 em{font-style:italic;color:var(--blue-deep)}
+.aside h1 .w{display:inline-block;overflow:hidden;vertical-align:bottom;padding-bottom:.06em}
+.aside h1 .w>span{display:inline-block;transform:translateY(105%);transition:transform 1.1s var(--ease)}
+.loaded .aside h1 .w>span{transform:none}
+.sub{font-size:clamp(17px,1.35vw,20px);color:var(--ink-soft);max-width:30em}
+.ctas{display:flex;flex-wrap:wrap;gap:14px;margin-top:30px}
+.aside-foot{display:grid;grid-template-columns:1fr 1fr;gap:20px;border-top:2px solid var(--ink);padding-top:18px;margin-top:28px}
+.aside-foot .label{font-size:11px;color:var(--ink-soft);display:block;margin-bottom:4px}
+.aside-foot p{font-weight:600;font-size:15px;line-height:1.4}
+.section-name{font-family:var(--serif);font-size:15px;font-style:italic;color:var(--ink-soft);margin-top:6px;min-height:1.4em;transition:opacity .3s}
+.fade-in{opacity:0;transform:translateY(22px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
+.loaded .fade-in{opacity:1;transform:none}
+.d1{transition-delay:.35s!important}.d2{transition-delay:.5s!important}.d3{transition-delay:.65s!important}.d4{transition-delay:.8s!important}
 
-/* sections */
-section.block{padding:110px 0}
-.kicker{font-size:13px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
-h2{font-family:var(--serif);font-weight:500;font-size:clamp(34px,3.8vw,52px);line-height:1.08;letter-spacing:-.02em;margin:14px 0 18px}
-.section-head{display:flex;justify-content:space-between;align-items:end;gap:40px;margin-bottom:56px}
-.section-head p{color:var(--muted);max-width:420px}
-.services{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-.card{background:var(--surface);border-radius:var(--radius);padding:34px 32px 36px;border:1px solid color-mix(in srgb,var(--ink) 7%,transparent);transition:transform .25s ease,box-shadow .25s ease}
-.card:hover{transform:translateY(-4px);box-shadow:0 30px 60px -36px color-mix(in srgb,var(--ink) 45%,transparent)}
-.icon{width:54px;height:54px;border-radius:16px;background:var(--soft);color:var(--accent);display:grid;place-items:center;margin-bottom:24px}
-.icon svg{width:26px;height:26px}
-.card h3{font-family:var(--serif);font-weight:500;font-size:23px;margin-bottom:8px;letter-spacing:-.01em}
-.card p{color:var(--muted);font-size:16px}
+/* Right column */
+.main{min-width:0}
+.sec{padding:clamp(72px,9vw,128px) var(--pad);border-bottom:1px solid var(--line);position:relative}
+.sec-head{display:grid;grid-template-columns:auto 1fr;gap:clamp(16px,3vw,40px);align-items:start;margin-bottom:clamp(40px,5vw,64px)}
+.big-num{font-family:var(--sans);font-weight:800;font-size:clamp(64px,8vw,128px);line-height:.8;letter-spacing:-.05em;color:var(--blue)}
+.sec-head .label{color:var(--blue-deep);display:block;margin-bottom:14px}
+.sec-head h2{font-size:clamp(38px,4.4vw,68px)}
+.lede{font-size:clamp(18px,1.5vw,21px);color:var(--ink-soft);max-width:34em;margin-top:18px}
 
-.why{background:var(--ink);color:var(--bg)}
-.why .kicker{color:var(--gold)}
-.why-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:80px;align-items:start}
-.why h2{color:var(--bg)}
-.why .intro{color:color-mix(in srgb,var(--bg) 70%,transparent);font-size:18px;max-width:440px}
-.points{display:grid;gap:14px}
-.point{display:grid;grid-template-columns:62px 1fr;gap:20px;padding:30px;border-radius:var(--radius);background:color-mix(in srgb,var(--bg) 6%,transparent);border:1px solid color-mix(in srgb,var(--bg) 10%,transparent)}
-.point .num{font-family:var(--serif);font-size:34px;color:var(--gold);line-height:1}
-.point h3{font-family:var(--serif);font-weight:500;font-size:24px;margin-bottom:6px}
-.point p{color:color-mix(in srgb,var(--bg) 72%,transparent);font-size:16px}
+/* Hero composition (signature) */
+.hero-art{position:relative;height:calc(100vh - 76px);height:calc(100svh - 76px);min-height:560px;overflow:hidden;background:var(--blue);border-bottom:1px solid var(--line)}
+.ha-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.14) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.14) 1px,transparent 1px);background-size:calc(100% / 6) calc(100% / 6)}
+.ha-word{position:absolute;left:-2%;bottom:-.17em;font-family:var(--serif);font-size:clamp(150px,26vw,420px);line-height:.8;color:var(--bg);letter-spacing:-.04em;white-space:nowrap;will-change:transform}
+.ha-block{position:absolute;will-change:transform}
+.ha-ink{top:0;right:0;width:38%;height:46%;background:var(--ink);transform-origin:top;clip-path:inset(0 0 100% 0);transition:clip-path 1.3s var(--ease) .4s}
+.loaded .ha-ink{clip-path:inset(0 0 0 0)}
+.ha-sun{top:16%;right:24%;width:clamp(120px,15vw,230px);aspect-ratio:1;border-radius:50%;background:var(--sand);transform:scale(0);transition:transform 1.4s var(--ease) .7s}
+.loaded .ha-sun{transform:scale(1)}
+.ha-white{left:8%;top:12%;width:22%;aspect-ratio:1;background:var(--surface);clip-path:inset(0 100% 0 0);transition:clip-path 1.2s var(--ease) .55s}
+.loaded .ha-white{clip-path:inset(0 0 0 0)}
+.ha-white svg{position:absolute;inset:18%;width:64%;height:64%}
+.ha-caption{position:absolute;top:calc(46% + 22px);right:var(--pad);color:#fff;text-align:right;max-width:240px}
+.ha-caption .label{color:#fff;display:block;margin-bottom:6px}
+.ha-caption p{font-family:var(--serif);font-size:22px;line-height:1.2;color:#fff}
+.ha-tag{position:absolute;top:22px;right:22px;color:#fff;font-weight:800;font-size:13px;letter-spacing:.2em;z-index:2}
+.bubble{position:absolute;border:2px solid rgba(255,255,255,.75);border-radius:50%;animation:rise 9s linear infinite;opacity:0}
+@keyframes rise{0%{transform:translateY(0) scale(.6);opacity:0}15%{opacity:1}100%{transform:translateY(-70vh) scale(1.1);opacity:0}}
 
-.score{display:flex;align-items:center;gap:18px;background:var(--surface);padding:16px 24px;border-radius:18px;border:1px solid color-mix(in srgb,var(--ink) 8%,transparent)}
-.score b{font-family:var(--serif);font-size:40px;font-weight:500;line-height:1}
-.score small{display:block;color:var(--muted);font-size:14px}
-.reviews{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-.review{background:var(--surface);border-radius:var(--radius);padding:34px;display:flex;flex-direction:column;gap:22px;border:1px solid color-mix(in srgb,var(--ink) 7%,transparent)}
-.review p{font-family:var(--serif);font-size:19.5px;line-height:1.45}
-.review .by{margin-top:auto;display:flex;align-items:center;gap:12px;font-weight:600;font-size:15px}
-.avatar{width:40px;height:40px;border-radius:50%;background:var(--soft);color:var(--accent);display:grid;place-items:center;font-weight:700}
-.review .src{color:var(--muted);font-weight:500;font-size:13px;display:block}
+/* Marquee */
+.marquee{background:var(--ink);color:#fff;overflow:hidden;padding:22px 0;border-bottom:1px solid var(--line)}
+.marquee-track{display:flex;width:max-content;animation:scroll 34s linear infinite}
+.marquee:hover .marquee-track{animation-play-state:paused}
+.marquee-track span{display:flex;align-items:center;gap:28px;padding-right:28px;font-family:var(--serif);font-size:clamp(24px,2.6vw,36px);white-space:nowrap}
+.marquee-track span i{width:12px;height:12px;background:var(--sand);display:inline-block;flex:none}
+.marquee-track span b{font-family:var(--sans);font-weight:700;font-size:13px;letter-spacing:.22em;text-transform:uppercase;color:var(--sand)}
+@keyframes scroll{to{transform:translateX(-50%)}}
 
-.cta-band{padding:0 0 110px}
-.cta-box{border-radius:calc(var(--radius) + 12px);background:linear-gradient(140deg,var(--accent),color-mix(in srgb,var(--accent) 60%,var(--ink)));color:var(--accent-ink);padding:76px 64px;display:grid;grid-template-columns:1.3fr 1fr;gap:40px;align-items:center;position:relative;overflow:hidden}
-.cta-box:after{content:"";position:absolute;right:-120px;bottom:-200px;width:460px;height:460px;border-radius:50%;border:1.5px solid color-mix(in srgb,var(--accent-ink) 22%,transparent)}
-.cta-box h2{color:inherit;margin:0 0 12px}
-.cta-box p{opacity:.85;font-size:18px}
-.cta-box .actions{display:flex;flex-direction:column;gap:12px;align-items:flex-start;position:relative;z-index:1}
-.cta-box .btn{background:var(--accent-ink);color:var(--accent)}
-.cta-box .btn.ghost{background:transparent;color:var(--accent-ink);border-color:color-mix(in srgb,var(--accent-ink) 40%,transparent)}
+/* Services */
+.cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:2px;background:var(--ink);border:2px solid var(--ink)}
+.card{background:var(--surface);padding:clamp(26px,3vw,40px);display:flex;flex-direction:column;min-height:330px;position:relative;overflow:hidden;transition:background .45s var(--ease),color .45s var(--ease)}
+.card::before{content:"";position:absolute;left:0;bottom:0;width:100%;height:6px;background:var(--blue);transform:scaleX(0);transform-origin:left;transition:transform .55s var(--ease)}
+.card:hover{background:var(--ink);color:#fff}
+.card:hover::before{transform:scaleX(1)}
+.card-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:auto}
+.card-num{font-weight:800;font-size:14px;letter-spacing:.18em}
+.card-icon{width:56px;height:56px;color:var(--blue-deep);transition:color .45s,transform .55s var(--ease)}
+.card:hover .card-icon{color:var(--sand);transform:rotate(-8deg) scale(1.08)}
+.card h3{font-size:clamp(28px,2.4vw,36px);margin:44px 0 12px}
+.card p{color:var(--ink-soft);font-size:16px;transition:color .45s}
+.card:hover p{color:rgba(255,255,255,.82)}
+.card-wide{grid-column:1/-1;background:var(--sand);min-height:auto;flex-direction:row;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap}
+.card-wide:hover{background:var(--sand);color:var(--ink)}
+.card-wide::before{display:none}
+.card-wide h3{margin:0 0 6px}
+.card-wide p{color:var(--ink)}
+.card-wide:hover p{color:var(--ink)}
 
-.visit{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:10px}
-.visit .card h3{font-size:20px}
-.visit a{color:var(--accent);font-weight:600}
-footer{border-top:1px solid color-mix(in srgb,var(--ink) 9%,transparent);padding:40px 0 110px;color:var(--muted);font-size:14px}
-footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
-.mobile-bar{display:none}
+/* About */
+.about{background:var(--surface)}
+.about-grid{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:clamp(32px,4vw,64px);align-items:end}
+.pull{font-family:var(--serif);font-size:clamp(30px,3.2vw,50px);line-height:1.12}
+.pull em{color:var(--blue-deep)}
+.about-copy p{color:var(--ink-soft);margin-bottom:18px}
+.about-copy p:last-child{margin-bottom:0}
+.addr-art{margin-top:clamp(48px,6vw,80px);display:grid;grid-template-columns:auto 1fr;border-top:2px solid var(--ink)}
+.addr-art .giant{font-family:var(--sans);font-weight:800;font-size:clamp(96px,14vw,220px);letter-spacing:-.06em;line-height:.85;padding:18px 24px 0 0;color:var(--ink)}
+.addr-art .giant sup{font-size:.32em;letter-spacing:0;vertical-align:top;position:relative;top:.35em;color:var(--blue)}
+.addr-art .meta{border-left:2px solid var(--ink);padding:22px 0 0 24px;display:flex;flex-direction:column;justify-content:space-between;gap:18px}
+.addr-art .meta .label{color:var(--blue-deep)}
+.addr-art .meta p{font-size:18px;font-weight:600;line-height:1.4}
 
-@keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
-.hero .copy>*{animation:rise .8s cubic-bezier(.2,.7,.2,1) both}
-.hero .copy>*:nth-child(2){animation-delay:.08s}.hero .copy>*:nth-child(3){animation-delay:.16s}
-.hero .copy>*:nth-child(4){animation-delay:.24s}.hero .copy>*:nth-child(5){animation-delay:.32s}
-.visual{animation:rise 1s .2s cubic-bezier(.2,.7,.2,1) both}
+/* Why */
+.why-list{list-style:none;border-top:2px solid var(--ink)}
+.why-list li{display:grid;grid-template-columns:72px minmax(0,1fr) minmax(0,1.2fr);gap:24px;padding:30px 0;border-bottom:1px solid var(--line);align-items:baseline;transition:padding .45s var(--ease),background .45s}
+.why-list li:hover{background:var(--surface);padding-left:18px;padding-right:18px}
+.why-list .n{font-weight:800;font-size:14px;letter-spacing:.18em;color:var(--blue-deep)}
+.why-list h3{font-size:clamp(24px,2.2vw,32px)}
+.why-list p{color:var(--ink-soft)}
 
-@media (max-width:980px){
-  .links{display:none}
-  .hero-grid,.why-grid,.cta-box{grid-template-columns:1fr}
-  .hero-grid{gap:56px}
-  .services,.reviews,.visit{grid-template-columns:1fr 1fr}
-  .trust .wrap{grid-template-columns:1fr 1fr}
-  .float.one{left:12px;bottom:-26px}.float.two{right:12px}
-  .visual{max-width:560px;margin-bottom:20px}
-  .section-head{flex-direction:column;align-items:flex-start}
+/* Process */
+.process{background:var(--ink);color:#fff;border-bottom:none}
+.process .big-num{color:var(--sand)}
+.process .sec-head .label{color:var(--sand)}
+.process .lede{color:rgba(255,255,255,.78)}
+.steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;border-top:2px solid rgba(255,255,255,.9)}
+.step{padding:30px 24px 10px 0;position:relative}
+.step+.step{padding-left:24px;border-left:1px solid rgba(255,255,255,.2)}
+.step .sn{font-weight:800;font-size:clamp(56px,6vw,96px);letter-spacing:-.05em;line-height:.9;color:var(--blue);margin-bottom:22px;display:block}
+.step h3{font-size:clamp(24px,2vw,30px);margin-bottom:10px}
+.step p{color:rgba(255,255,255,.78);font-size:16px}
+.step .ulink{color:var(--sand)}
+
+/* FAQ */
+.faq-item{border-top:2px solid var(--ink)}
+.faq-item:last-child{border-bottom:2px solid var(--ink)}
+.faq-q{width:100%;background:none;border:0;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:20px;padding:26px 0;text-align:left;font-family:var(--serif);font-size:clamp(22px,2vw,30px);color:var(--ink);line-height:1.2}
+.faq-q .pm{width:40px;height:40px;flex:none;border:2px solid var(--ink);position:relative;transition:background .3s,transform .45s var(--ease)}
+.faq-q .pm::before,.faq-q .pm::after{content:"";position:absolute;left:50%;top:50%;width:14px;height:2px;background:var(--ink);transform:translate(-50%,-50%);transition:transform .45s var(--ease),background .3s}
+.faq-q .pm::after{transform:translate(-50%,-50%) rotate(90deg)}
+.faq-q[aria-expanded="true"] .pm{background:var(--ink)}
+.faq-q[aria-expanded="true"] .pm::before,.faq-q[aria-expanded="true"] .pm::after{background:#fff}
+.faq-q[aria-expanded="true"] .pm::after{transform:translate(-50%,-50%) rotate(0)}
+.faq-a{display:grid;grid-template-rows:0fr;transition:grid-template-rows .5s var(--ease)}
+.faq-a>div{overflow:hidden}
+.faq-a p{color:var(--ink-soft);padding:0 60px 26px 0;max-width:40em}
+.faq-q[aria-expanded="true"]+.faq-a{grid-template-rows:1fr}
+
+/* Closing CTA */
+.closing{background:var(--sand);overflow:hidden;padding-bottom:0}
+.closing h2{font-size:clamp(48px,7vw,116px);line-height:.95;max-width:10ch}
+.closing h2 em{color:var(--blue-deep)}
+.closing p{font-size:clamp(18px,1.5vw,21px);max-width:30em;margin:24px 0 34px}
+.closing .btn-primary{box-shadow:6px 6px 0 var(--surface)}
+.closing .btn-primary:hover{box-shadow:9px 9px 0 var(--surface)}
+.closing .btn-ghost:hover{background:var(--sand-pale)}
+.phone-giant{display:block;margin-top:clamp(56px,7vw,96px);font-weight:800;font-size:clamp(44px,8.6vw,150px);letter-spacing:-.05em;line-height:.85;white-space:nowrap;color:var(--ink);transform:translateY(.12em);transition:color .35s}
+.phone-giant:hover{color:var(--blue-deep)}
+
+/* Contact */
+.contact-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:2px;background:var(--ink);border:2px solid var(--ink)}
+.c-cell{background:var(--surface);padding:clamp(24px,2.6vw,36px);display:flex;flex-direction:column;gap:14px;min-height:240px;transition:background .4s}
+.c-cell:hover{background:var(--blue-pale)}
+.c-cell .label{color:var(--blue-deep)}
+.c-cell .val{font-family:var(--serif);font-size:clamp(24px,2vw,30px);line-height:1.18;margin-bottom:auto;overflow-wrap:anywhere}
+.c-cell svg{width:30px;height:30px;color:var(--blue-deep)}
+.map-block{margin-top:2px;display:block;position:relative;height:260px;background:var(--blue-pale);border:2px solid var(--ink);border-top:0;overflow:hidden}
+.map-block svg.streets{position:absolute;inset:0;width:100%;height:100%}
+.pin{position:absolute;left:58%;top:46%;transform:translate(-50%,-100%);display:flex;flex-direction:column;align-items:center}
+.pin span{background:var(--ink);color:#fff;font-weight:700;font-size:13px;letter-spacing:.08em;padding:9px 14px;white-space:nowrap;transition:background .3s}
+.pin i{width:2px;height:28px;background:var(--ink)}
+.pin b{width:16px;height:16px;border-radius:50%;background:var(--sand);border:3px solid var(--ink)}
+.map-block:hover .pin span{background:var(--blue-deep)}
+.map-cta{position:absolute;left:20px;bottom:20px;background:var(--surface);border:2px solid var(--ink);padding:10px 16px;font-weight:700;font-size:14px;display:flex;align-items:center;gap:10px}
+.map-cta svg{width:16px;height:16px}
+
+/* Footer */
+.footer{padding:48px var(--pad) 40px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:20px;align-items:center;font-size:14px;color:var(--ink-soft)}
+.footer nav{display:flex;flex-wrap:wrap;gap:22px;font-weight:600;color:var(--ink)}
+
+/* Mobile call bar */
+.callbar{display:none}
+
+/* Reveal */
+.reveal{opacity:0;transform:translateY(40px);transition:opacity 1s var(--ease),transform 1s var(--ease)}
+.reveal.in{opacity:1;transform:none}
+.stagger>*{opacity:0;transform:translateY(32px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
+.stagger.in>*{opacity:1;transform:none}
+.stagger.in>*:nth-child(2){transition-delay:.1s}.stagger.in>*:nth-child(3){transition-delay:.2s}
+.stagger.in>*:nth-child(4){transition-delay:.3s}.stagger.in>*:nth-child(5){transition-delay:.4s}
+
+/* Responsive */
+@media (max-width:1180px){
+  .nav a.nl{display:none}
 }
-@media (max-width:640px){
-  body{font-size:16px}
-  .wrap{padding:0 18px}
-  .nav{height:66px}.brand{font-size:19px}
-  .phone,.nav-right .btn{display:none}
-  .hero{padding:44px 0 64px}
-  .lead-text{font-size:17.5px}
-  .hero-ctas .btn{flex:1;justify-content:center}
-  .ticks{display:none}
-  .services,.reviews,.visit,.trust .wrap{grid-template-columns:1fr}
-  section.block{padding:76px 0}
-  .quote-panel,.photo{aspect-ratio:auto;min-height:380px}.photo{aspect-ratio:4/3;min-height:0}
-  .quote-panel{padding:40px 30px 64px}.quote-panel p{font-size:23px}
-  .float{font-size:13px;padding:12px 14px}.float b{font-size:18px}
-  .float.two{display:none}
-  .cta-box{padding:52px 28px}
-  .point{grid-template-columns:44px 1fr;padding:24px}
-  .mobile-bar{display:flex;position:fixed;left:12px;right:12px;bottom:12px;z-index:30;gap:10px}
-  .mobile-bar .btn{flex:1;justify-content:center;box-shadow:0 14px 30px -14px color-mix(in srgb,var(--ink) 60%,transparent)}
-  .mobile-bar .btn.ghost{background:var(--surface)}
+@media (max-width:980px){
+  .layout{grid-template-columns:1fr}
+  .aside{position:relative;top:0;height:auto;border-right:0;border-bottom:1px solid var(--line);padding-top:40px;padding-bottom:44px}
+  .aside h1{font-size:clamp(46px,11vw,84px)}
+  .section-name,.index-bar{display:none}
+  .hero-art{height:70vh;min-height:440px}
+  .about-grid{grid-template-columns:1fr}
+}
+@media (max-width:760px){
+  body{font-size:16px;padding-bottom:76px}
+  .header{height:68px}
+  .layout{padding-top:68px}
+  .mobile-menu{inset:68px 0 0}
+  .h-phone,.h-cta{display:none}
+  .burger{display:block}
+  .brand-name{font-size:13px;letter-spacing:.12em}
+  .cards{grid-template-columns:1fr}
+  .card{min-height:260px}
+  .card-wide{flex-direction:column;align-items:flex-start}
+  .why-list li{grid-template-columns:1fr;gap:8px}
+  .steps{grid-template-columns:1fr}
+  .step,.step+.step{padding:28px 0 28px;border-left:0;border-bottom:1px solid rgba(255,255,255,.2)}
+  .contact-grid{grid-template-columns:1fr}
+  .c-cell{min-height:auto}
+  .addr-art{grid-template-columns:1fr}
+  .addr-art .giant{padding-right:0}
+  .addr-art .meta{border-left:0;border-top:1px solid var(--line);padding:20px 0 0}
+  .sec-head{grid-template-columns:1fr;gap:14px}
+  .big-num{font-size:72px}
+  .ha-caption{display:none}
+  .ha-white{width:34%;left:6%;top:9%}
+  .ha-ink{width:46%;height:40%}
+  .ha-sun{right:30%;top:20%}
+  .faq-a p{padding-right:0}
+  .ctas .btn{flex:1 1 100%}
+  .aside-foot{grid-template-columns:1fr}
+  .callbar{display:grid;grid-template-columns:1fr 1fr;position:fixed;left:0;right:0;bottom:0;z-index:90;background:var(--surface);border-top:2px solid var(--ink);padding:10px 12px calc(10px + env(safe-area-inset-bottom));gap:10px}
+  .callbar a{min-height:50px;display:flex;align-items:center;justify-content:center;gap:8px;font-weight:700;font-size:15px;border:2px solid var(--ink)}
+  .callbar a svg{width:18px;height:18px}
+  .callbar .cb-call{background:var(--ink);color:#fff}
+  .phone-giant{white-space:normal;font-size:clamp(44px,13vw,70px)}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+  .reveal,.stagger>*,.fade-in{opacity:1;transform:none}
+  .aside h1 .w>span{transform:none}
+  .ha-ink,.ha-white{clip-path:none}
+  .ha-sun{transform:none}
+  .bubble{display:none}
 }
 </style>
 </head>
 <body>
-<div class="concept">Website concept prepared for <b>Shugar Soapworks</b> by webstudio &middot; not a live site</div>
+<a href="#main" class="skip">Skip to content</a>
 
-<header>
-  <div class="wrap nav">
-    <a href="#top" class="brand">Shugar Soapworks</a>
-    <nav class="links">
-      <a href="#services">Services</a><a href="#why">Why us</a><a href="#visit">Visit</a>
-    </nav>
-    <div class="nav-right">
-      <a class="phone" href="tel:3232342874">(323) 234-2874</a>
-      <a class="btn" href="#visit">Free quote</a>
-    </div>
-  </div>
+<header class="header" id="header">
+  <a href="#top" class="brand" aria-label="Shugar Soapworks home">
+    <span class="mark" aria-hidden="true"><span>S</span></span>
+    <span class="brand-name">Shugar Soapworks</span>
+  </a>
+  <nav class="nav" aria-label="Primary">
+    <a class="nl" href="#services">Services</a>
+    <a class="nl" href="#about">About</a>
+    <a class="nl" href="#process">How it works</a>
+    <a class="nl" href="#contact">Contact</a>
+    <a class="h-phone ulink" href="tel:+13232342874">(323) 234-2874</a>
+    <a class="btn btn-primary h-cta" href="#contact">Book a clean</a>
+    <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu"><i></i><i></i><i></i></button>
+  </nav>
 </header>
 
-<main id="top">
-<section class="hero">
-  <div class="wrap hero-grid">
-    <div class="copy">
-      <div class="eyebrow">
-        <span class="dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-7-4.4-7-10a4 4 0 017-2.6A4 4 0 0119 10c0 5.6-7 10-7 10z"/></svg></span>House cleaning in Los Angeles
-      </div>
-      <h1>A spotless Los Angeles home, without lifting <em>a finger.</em></h1>
-      <p class="lead-text">Shugar Soapworks handles the scrubbing, dusting, and mopping so you can come home to a clean, calm space and spend your time on what matters.</p>
-      <div class="hero-ctas">
-        <a class="btn" href="#visit">Get a free quote <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-        <a class="btn ghost" href="tel:3232342874">Call (323) 234-2874</a>
-      </div>
-      <div class="ticks">
-        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7"/></svg>Background-checked team</span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7"/></svg>Fully insured</span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7"/></svg>Supplies included</span>
-      </div>
-    </div>
-    <div class="visual">
-      
-      <div class="quote-panel"><div class="quote-mark">“</div><div><p>Trusted, background-checked cleaners who show up on time, bring everything, and leave every room shining.</p><div class="who">Shugar Soapworks</div></div></div>
-      
-      
-      <div class="float two"><span class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><span><b>This week</b>Fully insured</span></div>
-    </div>
-  </div>
-  <template id="qp"><div class="quote-panel"><div class="quote-mark">“</div><div><p>Trusted, background-checked cleaners who show up on time, bring everything, and leave every room shining.</p><div class="who">Shugar Soapworks</div></div></div></template>
-</section>
-
-<div class="trust"><div class="wrap">
-  <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.2-8 9-4.6-.8-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg>Background-checked team</div><div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.2-8 9-4.6-.8-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg>Fully insured</div><div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.2-8 9-4.6-.8-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg>Supplies included</div><div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.2-8 9-4.6-.8-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg>100% satisfaction guarantee</div>
-</div></div>
-
-<section class="block" id="services">
-  <div class="wrap">
-    <div class="section-head">
-      <div><div class="kicker">What we do</div><h2>Everything you need,<br>under one roof.</h2></div>
-      <p>From routine visits to the work that changes how you feel about your day, Shugar Soapworks takes care of it properly.</p>
-    </div>
-    <div class="services">
-      
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11l8-7 8 7v9a1 1 0 01-1 1h-4v-6H9v6H5a1 1 0 01-1-1z"/></svg></div><h3>Regular cleaning</h3><p>Weekly or bi-weekly visits so your home always feels fresh and cared for.</p></div>
-      
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/><path d="M19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8z"/></svg></div><h3>Deep cleaning</h3><p>Top-to-bottom detail work on baseboards, grout, appliances and every corner.</p></div>
-      
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7l9-4 9 4v10l-9 4-9-4z"/><path d="M3 7l9 4 9-4M12 11v10"/></svg></div><h3>Move-in &amp; move-out</h3><p>Get your deposit back or start fresh in a home that&#39;s truly clean.</p></div>
-      
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3" width="14" height="18" rx="1"/><path d="M9 7h2M13 7h2M9 11h2M13 11h2M9 15h2M13 15h2"/></svg></div><h3>Office cleaning</h3><p>Reliable after-hours cleaning that keeps your workspace professional.</p></div>
-      
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 19c0-8 5-14 15-14 0 10-6 15-14 15"/><path d="M5 19c3-4 6-6 10-8"/></svg></div><h3>Eco-friendly products</h3><p>Safe for kids and pets, tough on dirt, and gentle on the planet.</p></div>
-      
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div><h3>Same-week booking</h3><p>Need it done fast? We usually have openings within a few days.</p></div>
-      
-    </div>
-  </div>
-</section>
-
-<section class="block why" id="why">
-  <div class="wrap why-grid">
-    <div>
-      <div class="kicker">Why clients choose us</div>
-      <h2>The Los Angeles house cleaning service people recommend to their friends.</h2>
-      <p class="intro">it still comes down to the same three things.</p>
-    </div>
-    <div class="points">
-      
-      <div class="point"><div class="num">01</div><div><h3>Vetted &amp; insured</h3><p>Every cleaner is background-checked, trained and fully insured for your peace of mind.</p></div></div>
-      
-      <div class="point"><div class="num">02</div><div><h3>Satisfaction guaranteed</h3><p>Not happy with something? We&#39;ll come back and make it right, free.</p></div></div>
-      
-      <div class="point"><div class="num">03</div><div><h3>Upfront pricing</h3><p>A clear quote before we start. No hidden fees, ever.</p></div></div>
-      
-    </div>
-  </div>
-</section>
-
-
-
-<section class="cta-band" id="book">
-  <div class="wrap"><div class="cta-box">
-    <div><h2>Ready when you are.</h2><p>Get a free quote in under a minute, or give us a call and talk to a real person.</p></div>
-    <div class="actions">
-      <a class="btn" href="#visit">Get a free quote</a>
-      <a class="btn ghost" href="tel:3232342874">Call (323) 234-2874</a>
-    </div>
-  </div></div>
-</section>
-
-<section class="block" id="visit" style="padding-top:0">
-  <div class="wrap">
-    <div class="kicker">Visit us</div><h2>Come say hello.</h2>
-    <div class="visit">
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11l8-7 8 7v9a1 1 0 01-1 1h-4v-6H9v6H5a1 1 0 01-1-1z"/></svg></div><h3>Address</h3><p>724 E 61st St, Los Angeles CA 90001</p></div>
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div><h3>Phone</h3><p><a href="tel:3232342874">(323) 234-2874</a></p><p style="margin-top:10px">Call or message us for today's opening hours.</p></div>
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-7-4.4-7-10a4 4 0 017-2.6A4 4 0 0119 10c0 5.6-7 10-7 10z"/></svg></div><h3>Fully insured</h3><p>Get a free quote online or by phone and we'll take care of the rest.</p></div>
-    </div>
-  </div>
-</section>
-</main>
-
-<footer><div class="wrap">
-  <span>© 2026 Shugar Soapworks</span>
-  <span>Concept design by webstudio. Not affiliated with or endorsed by Shugar Soapworks.</span>
-</div></footer>
-
-<div class="mobile-bar">
-  <a class="btn ghost" href="tel:3232342874">Call</a>
-  <a class="btn" href="#visit">Free quote</a>
+<div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+  <a class="ml" href="#services">Services <small>02</small></a>
+  <a class="ml" href="#about">About <small>03</small></a>
+  <a class="ml" href="#process">How it works <small>05</small></a>
+  <a class="ml" href="#contact">Contact <small>08</small></a>
+  <a class="btn" href="tel:+13232342874">Call (323) 234-2874</a>
 </div>
-</body>
+
+<div class="layout" id="top">
+  <aside class="aside">
+    <div>
+      <div class="aside-top fade-in">
+        <span class="label">House Cleaning · Los Angeles, CA</span>
+        <div>
+          <div class="index" aria-hidden="true"><span class="index-num" id="idxNum">01</span><span class="index-bar"><i id="idxBar"></i></span><span class="index-num">08</span></div>
+          <div class="section-name" id="idxName" aria-hidden="true">Introduction</div>
+        </div>
+      </div>
+      <h1>
+        <span class="w"><span>A&nbsp;home</span></span>
+        <span class="w"><span style="transition-delay:.08s">that&nbsp;feels</span></span>
+        <span class="w"><span style="transition-delay:.16s"><em>freshly</em></span></span>
+        <span class="w"><span style="transition-delay:.24s"><em>made.</em></span></span>
+      </h1>
+      <p class="sub fade-in d1">Shugar Soapworks is house cleaning for Los Angeles homes. Hand us the scrubbing, the dusting and the floors, and come back to rooms that feel calm, bright and properly looked after.</p>
+      <div class="ctas fade-in d2">
+        <a href="tel:+13232342874" class="btn btn-primary">Call (323) 234-2874
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a href="#services" class="btn btn-ghost">Explore services</a>
+      </div>
+    </div>
+    <div class="aside-foot fade-in d3">
+      <div><span class="label">Based at</span><p>724 E 61st St<br>Los Angeles, CA 90001</p></div>
+      <div><span class="label">Book by phone</span><p><a class="ulink" href="tel:+13232342874">(323) 234-2874</a></p></div>
+    </div>
+  </aside>
+
+  <main class="main" id="main">
+    <!-- 01 Hero composition -->
+    <section class="hero-art" data-name="Introduction" aria-label="Shugar Soapworks">
+      <div class="ha-grid" aria-hidden="true"></div>
+      <span class="ha-tag" aria-hidden="true">SSW / LA</span>
+      <div class="ha-block ha-ink" data-speed="-0.08" aria-hidden="true"></div>
+      <div class="ha-block ha-sun" data-speed="0.14" aria-hidden="true"></div>
+      <div class="ha-block ha-white" data-speed="0.06" aria-hidden="true">
+        <svg viewBox="0 0 64 64" fill="none" stroke="#10314D" stroke-width="2.4"><path d="M32 6l4.2 13.8L50 24l-13.8 4.2L32 42l-4.2-13.8L14 24l13.8-4.2z"/><path d="M50 40l1.8 6.2L58 48l-6.2 1.8L50 56l-1.8-6.2L42 48l6.2-1.8z"/></svg>
+      </div>
+      <div class="ha-caption"><span class="label">Est. in Los Angeles</span><p>Clean, clear, quietly brilliant.</p></div>
+      <div class="ha-word" data-speed="0.18" aria-hidden="true">Soap&amp;Shine</div>
+      <div id="bubbles" aria-hidden="true"></div>
+    </section>
+
+    <!-- Marquee -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-track">
+        <span>House cleaning <i></i></span><span><b>Los Angeles, CA</b> <i></i></span><span>Kitchens <i></i></span><span>Bathrooms <i></i></span><span>Living spaces <i></i></span><span>Bedrooms <i></i></span><span><b>(323) 234-2874</b> <i></i></span>
+        <span>House cleaning <i></i></span><span><b>Los Angeles, CA</b> <i></i></span><span>Kitchens <i></i></span><span>Bathrooms <i></i></span><span>Living spaces <i></i></span><span>Bedrooms <i></i></span><span><b>(323) 234-2874</b> <i></i></span>
+      </div>
+    </div>
+
+    <!-- 02 Services -->
+    <section class="sec" id="services" data-name="Services">
+      <div class="sec-head reveal">
+        <span class="big-num">02</span>
+        <div>
+          <span class="label">What we clean</span>
+          <h2>Every room, given its moment.</h2>
+          <p class="lede">House cleaning is what we do. Here is how we think about your home, room by room.</p>
+        </div>
+      </div>
+      <div class="cards stagger">
+        <article class="card">
+          <div class="card-top"><span class="card-num">2.1</span>
+            <svg class="card-icon" viewBox="0 0 56 56" fill="none" stroke="currentColor" stroke-width="2"><rect x="8" y="10" width="40" height="38"/><path d="M8 22h40M18 16h4M28 16h4"/><circle cx="28" cy="35" r="7"/></svg></div>
+          <h3>Kitchens</h3>
+          <p>The heart of the home, wiped down and brought back to a fresh, ready-to-cook calm.</p>
+        </article>
+        <article class="card">
+          <div class="card-top"><span class="card-num">2.2</span>
+            <svg class="card-icon" viewBox="0 0 56 56" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 28h40v6a12 12 0 0 1-12 12H20A12 12 0 0 1 8 34z"/><path d="M14 28V12a5 5 0 0 1 10 0"/><circle cx="36" cy="16" r="2.5"/><circle cx="42" cy="22" r="1.8"/></svg></div>
+          <h3>Bathrooms</h3>
+          <p>Gleaming surfaces and a space that feels crisp and clean the moment you step in.</p>
+        </article>
+        <article class="card">
+          <div class="card-top"><span class="card-num">2.3</span>
+            <svg class="card-icon" viewBox="0 0 56 56" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 40V26a6 6 0 0 1 6-6h28a6 6 0 0 1 6 6v14z"/><path d="M14 20v-6h28v6M12 40v6M44 40v6M8 32h40"/></svg></div>
+          <h3>Living spaces</h3>
+          <p>Dust lifted, floors refreshed and shared rooms restored to a place you want to unwind.</p>
+        </article>
+        <article class="card">
+          <div class="card-top"><span class="card-num">2.4</span>
+            <svg class="card-icon" viewBox="0 0 56 56" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 44V16M6 32h44v12M50 32v-6a6 6 0 0 0-6-6H24v12"/><rect x="10" y="22" width="10" height="10" rx="2"/></svg></div>
+          <h3>Bedrooms</h3>
+          <p>Quiet, tidy rooms that make the end of the day feel like an exhale.</p>
+        </article>
+        <div class="card card-wide">
+          <div><h3>Have something specific in mind?</h3><p>Call and tell us about your home. We will talk it through with you.</p></div>
+          <a href="tel:+13232342874" class="btn btn-primary">Call (323) 234-2874</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 03 About -->
+    <section class="sec about" id="about" data-name="About">
+      <div class="sec-head reveal">
+        <span class="big-num">03</span>
+        <div><span class="label">Our story</span><h2>A Los Angeles name with soap in its spirit.</h2></div>
+      </div>
+      <div class="about-grid">
+        <p class="pull reveal">Shugar Soapworks exists for one simple reason: <em>your home should feel good to come back to.</em></p>
+        <div class="about-copy reveal">
+          <p>We are a house cleaning service rooted in Los Angeles, working from East 61st Street in the 90001.</p>
+          <p>The idea is straightforward. You have a life to live, and a clean home makes all of it easier. We take the cleaning off your list so your time goes to the things and people you care about.</p>
+        </div>
+      </div>
+      <div class="addr-art reveal">
+        <div class="giant" aria-hidden="true">61<sup>st</sup></div>
+        <div class="meta">
+          <span class="label">Home base</span>
+          <p>724 E 61st St<br>Los Angeles, CA 90001</p>
+          <a class="ulink" href="https://maps.google.com/?q=724+E+61st+St,+Los+Angeles,+CA+90001" target="_blank" rel="noopener">Open in Google Maps</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 04 Why -->
+    <section class="sec" id="why" data-name="Why Shugar">
+      <div class="sec-head reveal">
+        <span class="big-num">04</span>
+        <div><span class="label">Why Shugar Soapworks</span><h2>Simple to book. Lovely to come home to.</h2></div>
+      </div>
+      <ul class="why-list stagger">
+        <li><span class="n">4.1</span><h3>Local to LA</h3><p>We are based right here in Los Angeles, on E 61st St, not a faceless call centre.</p></li>
+        <li><span class="n">4.2</span><h3>One call away</h3><p>No apps, no forms. Pick up the phone and talk to us directly about your home.</p></li>
+        <li><span class="n">4.3</span><h3>Your home, your priorities</h3><p>Tell us which rooms matter most to you, and we will start the conversation there.</p></li>
+        <li><span class="n">4.4</span><h3>Time back</h3><p>Hand over the cleaning and spend your hours on everything else.</p></li>
+      </ul>
+    </section>
+
+    <!-- 05 Process -->
+    <section class="sec process" id="process" data-name="How it works">
+      <div class="sec-head reveal">
+        <span class="big-num">05</span>
+        <div><span class="label">How it works</span><h2>Three steps to a clean home.</h2><p class="lede">Booking with Shugar Soapworks is meant to be as easy as the result is satisfying.</p></div>
+      </div>
+      <div class="steps stagger">
+        <div class="step"><span class="sn">01</span><h3>Call us</h3><p>Ring <a class="ulink" href="tel:+13232342874">(323) 234-2874</a> and tell us about your home.</p></div>
+        <div class="step"><span class="sn">02</span><h3>Plan it together</h3><p>We talk through the rooms you want cleaned and find a time that suits you.</p></div>
+        <div class="step"><span class="sn">03</span><h3>Come home fresh</h3><p>Walk back into a home that looks, feels and smells clean.</p></div>
+      </div>
+    </section>
+
+    <!-- 06 FAQ -->
+    <section class="sec" id="faq" data-name="Questions">
+      <div class="sec-head reveal">
+        <span class="big-num">06</span>
+        <div><span class="label">Good to know</span><h2>Questions, answered.</h2></div>
+      </div>
+      <div class="reveal">
+        <div class="faq-item"><button class="faq-q" aria-expanded="false">How do I book a clean?<span class="pm" aria-hidden="true"></span></button><div class="faq-a"><div><p>Call us on (323) 234-2874. We will talk through your home and what you need.</p></div></div></div>
+        <div class="faq-item"><button class="faq-q" aria-expanded="false">Where are you based?<span class="pm" aria-hidden="true"></span></button><div class="faq-a"><div><p>Shugar Soapworks is at 724 E 61st St, Los Angeles, CA 90001.</p></div></div></div>
+        <div class="faq-item"><button class="faq-q" aria-expanded="false">What are your hours?<span class="pm" aria-hidden="true"></span></button><div class="faq-a"><div><p>Please call (323) 234-2874 to check availability and find a time that works for you.</p></div></div></div>
+      </div>
+    </section>
+
+    <!-- 07 Closing CTA -->
+    <section class="sec closing" data-name="Book">
+      <div class="reveal">
+        <span class="label" style="color:var(--ink)">07 · Ready when you are</span>
+        <h2 style="margin-top:20px">Let's make your home <em>shine.</em></h2>
+        <p>One call is all it takes to hand off the cleaning. Talk to Shugar Soapworks today.</p>
+        <div class="ctas" style="margin-top:0">
+          <a href="tel:+13232342874" class="btn btn-primary">Call now
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <a href="#contact" class="btn btn-ghost">Find us</a>
+        </div>
+      </div>
+      <a class="phone-giant" href="tel:+13232342874" aria-label="Call (323) 234-2874">(323) 234-2874</a>
+    </section>
+
+    <!-- 08 Contact -->
+    <section class="sec" id="contact" data-name="Contact">
+      <div class="sec-head reveal">
+        <span class="big-num">08</span>
+        <div><span class="label">Contact &amp; visit</span><h2>Get in touch.</h2></div>
+      </div>
+      <div class="contact-grid stagger">
+        <a class="c-cell" href="tel:+13232342874">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 5a2 2 0 0 1 2-2z"/></svg>
+          <span class="label">Phone</span><span class="val">(323) 234-2874</span><span class="ulink">Tap to call</span>
+        </a>
+        <a class="c-cell" href="https://maps.google.com/?q=724+E+61st+St,+Los+Angeles,+CA+90001" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s7-7.2 7-12.5A7 7 0 0 0 5 9.5C5 14.8 12 22 12 22z"/><circle cx="12" cy="9.5" r="2.5"/></svg>
+          <span class="label">Address</span><span class="val">724 E 61st St, Los Angeles CA 90001</span><span class="ulink">Get directions</span>
+        </a>
+        <div class="c-cell">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+          <span class="label">Hours</span><span class="val">Call to confirm availability</span><a class="ulink" href="tel:+13232342874">(323) 234-2874</a>
+        </div>
+      </div>
+      <a class="map-block reveal" href="https://maps.google.com/?q=724+E+61st+St,+Los+Angeles,+CA+90001" target="_blank" rel="noopener" aria-label="Open 724 E 61st St in Google Maps">
+        <svg class="streets" viewBox="0 0 800 260" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+          <g stroke="#FFFFFF" stroke-width="14" fill="none"><path d="M0 70h800M0 190h800M120 0v260M300 0v260M640 0v260"/></g>
+          <g stroke="#FFFFFF" stroke-width="6" fill="none" opacity=".8"><path d="M0 130h800M210 0v260M470 0v260M730 0v260"/></g>
+          <path d="M0 120h800" stroke="#2F86C8" stroke-width="10"/>
+          <rect x="320" y="146" width="130" height="30" fill="#F6C38B" opacity=".7"/>
+          <text x="20" y="112" font-family="Karla,sans-serif" font-weight="700" font-size="12" letter-spacing="3" fill="#10314D">E 61ST ST</text>
+        </svg>
+        <div class="pin"><span>Shugar Soapworks</span><i></i><b></b></div>
+        <span class="map-cta">Open in Google Maps <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
+      </a>
+    </section>
+
+    <footer class="footer">
+      <a href="#top" class="brand"><span class="mark" aria-hidden="true"><span>S</span></span><span class="brand-name">Shugar Soapworks</span></a>
+      <nav aria-label="Footer"><a class="ulink" href="#services" style="color:var(--ink)">Services</a><a class="ulink" href="#about" style="color:var(--ink)">About</a><a class="ulink" href="#contact" style="color:var(--ink)">Contact</a><a class="ulink" href="tel:+13232342874" style="color:var(--ink)">(323) 234-2874</a></nav>
+      <p>© <span id="yr"></span> Shugar Soapworks · 724 E 61st St, Los Angeles CA 90001</p>
+    </footer>
+  </main>
+</div>
+
+<div class="callbar">
+  <a class="cb-call" href="tel:+13232342874"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 5a2 2 0 0 1 2-2z"/></svg>Call now</a>
+  <a href="#contact">Book a clean</a>
+</div>
+
+<script>
+(function(){
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var body = document.body;
+  document.getElementById('yr').textContent = new Date().getFullYear();
+  requestAnimationFrame(function(){ setTimeout(function(){ body.classList.add('loaded'); }, 60); });
+
+  // Header state
+  var header = document.getElementById('header');
+  function onScrollHeader(){ header.classList.toggle('scrolled', window.scrollY > 20); }
+  onScrollHeader();
+  window.addEventListener('scroll', onScrollHeader, {passive:true});
+
+  // Mobile menu
+  var burger = document.getElementById('burger'), menu = document.getElementById('mobileMenu');
+  function setMenu(open){
+    body.classList.toggle('menu-open', open);
+    burger.setAttribute('aria-expanded', open);
+    burger.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+    menu.setAttribute('aria-hidden', !open);
+  }
+  burger.addEventListener('click', function(){ setMenu(!body.classList.contains('menu-open')); });
+  menu.querySelectorAll('a').forEach(function(a){ a.addEventListener('click', function(){ setMenu(false); }); });
+  document.addEventListener('keydown', function(e){ if(e.key === 'Escape') setMenu(false); });
+
+  // Reveal on scroll
+  var els = document.querySelectorAll('.reveal, .stagger');
+  if('IntersectionObserver' in window && !reduce){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){ if(en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); } });
+    }, {threshold:.14, rootMargin:'0px 0px -40px 0px'});
+    els.forEach(function(el){ io.observe(el); });
+  } else { els.forEach(function(el){ el.classList.add('in'); }); }
+
+  // Section index in sticky column
+  var secs = document.querySelectorAll('[data-name]');
+  var idxNum = document.getElementById('idxNum'), idxName = document.getElementById('idxName'), idxBar = document.getElementById('idxBar');
+  if('IntersectionObserver' in window){
+    var so = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if(en.isIntersecting){
+          var i = Array.prototype.indexOf.call(secs, en.target) + 1;
+          idxNum.textContent = (i < 10 ? '0' : '') + i;
+          idxName.textContent = en.target.getAttribute('data-name');
+          idxBar.style.setProperty('--p', i / secs.length);
+        }
+      });
+    }, {rootMargin:'-45% 0px -50% 0px'});
+    secs.forEach(function(s){ so.observe(s); });
+  }
+
+  // FAQ
+  document.querySelectorAll('.faq-q').forEach(function(q){
+    q.addEventListener('click', function(){
+      q.setAttribute('aria-expanded', q.getAttribute('aria-expanded') !== 'true');
+    });
+  });
+
+  if(reduce) return;
+
+  // Bubbles
+  var bw = document.getElementById('bubbles');
+  for(var b = 0; b < 9; b++){
+    var s = document.createElement('span'), size = 14 + Math.random() * 36;
+    s.className = 'bubble';
+    s.style.cssText = 'width:'+size+'px;height:'+size+'px;left:'+(5+Math.random()*85)+'%;bottom:'+(-4+Math.random()*10)+'%;animation-delay:'+(Math.random()*9)+'s;animation-duration:'+(7+Math.random()*6)+'s';
+    bw.appendChild(s);
+  }
+
+  // Parallax on hero shapes
+  var layers = document.querySelectorAll('[data-speed]'), ticking = false;
+  function parallax(){
+    var y = window.scrollY;
+    layers.forEach(function(l){ l.style.translate = '0 ' + (y * parseFloat(l.dataset.speed)) + 'px'; });
+    ticking = false;
+  }
+  window.addEventListener('scroll', function(){ if(!ticking){ requestAnimationFrame(parallax); ticking = true; } }, {passive:true});
+})();
+</script>
+<div id="lm-concept" style="position:fixed;left:12px;bottom:12px;z-index:2147483647;font:500 11px/1.3 -apple-system,BlinkMacSystemFont,Segoe UI,sans-serif;letter-spacing:.02em;background:rgba(15,15,18,.82);color:#f4f1ea;padding:7px 11px;border-radius:999px;backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);pointer-events:none;max-width:70vw">Website concept for Shugar Soapworks by webstudio &middot; not the live site</div><p style="margin:0;padding:18px 16px 70px;text-align:center;font:12px/1.5 -apple-system,sans-serif;color:#8a8a8a;background:#0e0e10">Concept design by webstudio. Not affiliated with or endorsed by Shugar Soapworks.</p></body>
 </html>
