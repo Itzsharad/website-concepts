@@ -1,291 +1,582 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src * data: blob:; media-src 'self' data:; style-src 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com data:; script-src 'unsafe-inline'; connect-src 'none'; frame-src 'none'; form-action 'none'; base-uri 'none'; object-src 'none'">
 <meta name="robots" content="noindex, nofollow">
-<title>Cedar Park Chiropractic &amp; Acupuncture | Website concept</title>
+<style>html,body{max-width:100%;overflow-x:clip}</style>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Cedar Park Chiropractor | Dr. Jeff Swanson | Cedar Park Chiropractic &amp; Acupuncture</title>
+<meta name="description" content="Cedar Park Chiropractic & Acupuncture: Dr. Jeff Swanson, DC, CSCS, FASA provides chiropractic care, acupuncture, SoftWave therapy, auto accident, pregnancy and pediatric care in Cedar Park, TX. Call (512) 335-0641.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
-:root{
-  --bg:#f5f3ee;--surface:#ffffff;--ink:#1c2a22;--muted:#5f6b63;
-  --accent:#2f5a43;--accent-ink:#ffffff;--gold:#b8955a;--soft:#e6ece6;
-  --radius:22px;--max:1180px;
-  --serif:"Fraunces",Georgia,serif;--sans:"Manrope",system-ui,-apple-system,sans-serif;
-}
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+:root{--bg:#071A2B;--bg2:#0A2236;--sf:#0E2840;--sf2:#133352;--tx:#EAF2F8;--mu:rgba(234,242,248,.72);--ln:rgba(234,242,248,.12);--ac:#4FB3E8;--gd:#E9C46A;--br:#3569b4;--r:22px;--ease:cubic-bezier(.2,.8,.2,1)}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--bg);color:var(--tx);font:300 17px/1.65 Outfit,system-ui,sans-serif;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
 a{color:inherit;text-decoration:none}
-img{max-width:100%;display:block}
-.wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
-.concept{background:var(--ink);color:var(--bg);font-size:13px;text-align:center;padding:8px 16px;letter-spacing:.02em}
-.concept b{color:var(--gold);font-weight:600}
+h1,h2,h3{font-family:"DM Serif Display",Georgia,serif;font-weight:400;line-height:1.02;letter-spacing:-.01em}
+em{font-style:italic;color:var(--ac)}
+.wrap{width:min(1240px,100% - 48px);margin-inline:auto}
+.lbl{display:inline-flex;align-items:center;gap:12px;font:500 12px/1 Outfit;letter-spacing:.28em;text-transform:uppercase;color:var(--gd)}
+.lbl::before{content:"";width:28px;height:1px;background:currentColor}
+.h2{font-size:clamp(40px,6vw,84px);margin:18px 0 22px}
+.lead{color:var(--mu);font-size:clamp(17px,1.4vw,20px);max-width:620px}
+section{position:relative}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:16px 28px;border-radius:999px;font:500 15px/1.2 Outfit;letter-spacing:.02em;transition:transform .4s var(--ease),background .3s,color .3s,box-shadow .4s;text-align:center}
+.btn-p{background:var(--ac);color:var(--bg);box-shadow:0 10px 30px -10px rgba(79,179,232,.6)}
+.btn-p:hover{transform:translateY(-3px);background:#7cc8f0;box-shadow:0 18px 40px -12px rgba(79,179,232,.7)}
+.btn-g{border:1px solid rgba(234,242,248,.3);color:var(--tx)}
+.btn-g:hover{transform:translateY(-3px);border-color:var(--gd);color:var(--gd)}
+.btn svg{width:16px;height:16px;flex:none}
+.ul{background:linear-gradient(currentColor,currentColor) 0 100%/0 1px no-repeat;transition:background-size .4s var(--ease)}
+.ul:hover{background-size:100% 1px}
 
 /* header */
-header{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:saturate(1.4) blur(10px);border-bottom:1px solid color-mix(in srgb,var(--ink) 8%,transparent)}
-.nav{display:flex;align-items:center;justify-content:space-between;height:76px;gap:24px}
-.brand{font-family:var(--serif);font-size:23px;font-weight:600;letter-spacing:-.01em;line-height:1.1;max-width:340px}
-.links{display:flex;gap:30px;font-size:15px;font-weight:500;color:var(--muted)}
-.links a:hover{color:var(--ink)}
-.nav-right{display:flex;align-items:center;gap:18px}
-.phone{font-weight:600;font-size:15px;white-space:nowrap}
-.btn{display:inline-flex;align-items:center;gap:10px;background:var(--accent);color:var(--accent-ink);padding:14px 26px;border-radius:999px;font-weight:600;font-size:15.5px;transition:transform .2s ease,box-shadow .2s ease;white-space:nowrap}
-.btn:hover{transform:translateY(-2px);box-shadow:0 12px 28px -12px var(--accent)}
-.btn.ghost{background:transparent;color:var(--ink);border:1.5px solid color-mix(in srgb,var(--ink) 20%,transparent)}
-.btn.ghost:hover{box-shadow:none;border-color:var(--ink)}
-.btn svg{width:18px;height:18px}
+.hd{position:fixed;inset:0 0 auto;z-index:50;transition:background .4s,border-color .4s,padding .4s;padding:18px 0;border-bottom:1px solid transparent}
+.hd.s{background:rgba(7,26,43,.72);backdrop-filter:blur(18px) saturate(1.4);-webkit-backdrop-filter:blur(18px) saturate(1.4);border-color:var(--ln);padding:12px 0}
+.hd .wrap{display:flex;align-items:center;justify-content:space-between;gap:20px}
+.logo{display:flex;align-items:center;gap:12px;min-width:0}
+.logo svg{width:42px;height:42px;flex:none}
+.logo b{display:block;font:400 21px/1 "DM Serif Display",serif}
+.logo small{display:block;font:500 10px/1.4 Outfit;letter-spacing:.2em;text-transform:uppercase;color:var(--mu);margin-top:4px}
+.nav{display:flex;gap:30px;font-size:14px;font-weight:400}
+.nav a{color:var(--mu);transition:color .3s}.nav a:hover{color:var(--tx)}
+.hd-r{display:flex;align-items:center;gap:18px}
+.hd-ph{font-size:14px;font-weight:500;white-space:nowrap}
+.hd .btn{padding:12px 22px;font-size:14px}
+.burger{display:none;width:44px;height:44px;border-radius:50%;border:1px solid var(--ln);background:none;color:var(--tx);cursor:pointer;position:relative}
+.burger i{position:absolute;left:13px;right:13px;height:1.5px;background:currentColor;transition:transform .4s var(--ease),opacity .3s}
+.burger i:nth-child(1){top:16px}.burger i:nth-child(2){top:21px}.burger i:nth-child(3){top:26px}
+.mm-open .burger i:nth-child(1){transform:translateY(5px) rotate(45deg)}
+.mm-open .burger i:nth-child(2){opacity:0}
+.mm-open .burger i:nth-child(3){transform:translateY(-5px) rotate(-45deg)}
+.mm{position:fixed;inset:0;z-index:45;background:var(--bg);padding:110px 28px 40px;display:flex;flex-direction:column;gap:6px;opacity:0;pointer-events:none;transition:opacity .4s}
+.mm a{font:400 40px/1.25 "DM Serif Display",serif;border-bottom:1px solid var(--ln);padding:10px 0}
+.mm .btn{margin-top:24px;font-family:Outfit;font-size:16px;border:0}
+.mm-open .mm{opacity:1;pointer-events:auto}
 
 /* hero */
-.hero{padding:72px 0 88px}
-.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:64px;align-items:center}
-.eyebrow{display:inline-flex;align-items:center;gap:10px;background:var(--surface);border:1px solid color-mix(in srgb,var(--ink) 10%,transparent);padding:8px 16px 8px 10px;border-radius:999px;font-size:14px;font-weight:600;color:var(--muted)}
-.stars{color:var(--gold);letter-spacing:1px;font-size:14px}
-.eyebrow .dot{width:26px;height:26px;border-radius:50%;background:var(--soft);display:grid;place-items:center;color:var(--accent)}
-h1{font-family:var(--serif);font-weight:500;font-size:clamp(44px,5.6vw,74px);line-height:1.02;letter-spacing:-.025em;margin:26px 0 22px}
-h1 em{font-style:italic;color:var(--accent)}
-.lead-text{font-size:19.5px;color:var(--muted);max-width:540px}
-.hero-ctas{display:flex;gap:14px;margin-top:36px;flex-wrap:wrap}
-.ticks{display:flex;gap:22px;margin-top:34px;flex-wrap:wrap;font-size:14.5px;font-weight:600;color:var(--muted)}
-.ticks span{display:flex;align-items:center;gap:8px}
-.ticks svg{width:18px;height:18px;color:var(--accent)}
-.visual{position:relative}
-.photo{aspect-ratio:4/5;border-radius:calc(var(--radius) + 10px);overflow:hidden;background:var(--soft);box-shadow:0 40px 80px -40px color-mix(in srgb,var(--ink) 55%,transparent)}
-.photo img{width:100%;height:100%;object-fit:cover}
-.quote-panel{aspect-ratio:4/5;border-radius:calc(var(--radius) + 10px);background:linear-gradient(155deg,var(--accent),color-mix(in srgb,var(--accent) 55%,var(--ink)));color:var(--accent-ink);padding:52px 46px;display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden;box-shadow:0 40px 80px -40px color-mix(in srgb,var(--ink) 60%,transparent)}
-.quote-panel:before{content:"";position:absolute;width:420px;height:420px;border-radius:50%;right:-160px;top:-160px;background:color-mix(in srgb,var(--accent-ink) 9%,transparent)}
-.quote-panel:after{content:"";position:absolute;width:260px;height:260px;border-radius:50%;left:-90px;bottom:-110px;border:1.5px solid color-mix(in srgb,var(--accent-ink) 22%,transparent)}
-.quote-mark{font-family:var(--serif);font-size:120px;line-height:.6;opacity:.35}
-.quote-panel p{font-family:var(--serif);font-size:28px;line-height:1.3;position:relative;z-index:1}
-.quote-panel .who{font-family:var(--sans);font-size:15px;opacity:.85;margin-top:22px;font-weight:600}
-.float{position:absolute;background:var(--surface);color:var(--ink);border-radius:18px;padding:16px 20px;box-shadow:0 24px 50px -24px color-mix(in srgb,var(--ink) 50%,transparent);display:flex;align-items:center;gap:14px;font-size:14px;line-height:1.35}
-.float b{font-size:22px;font-family:var(--serif);font-weight:600;display:block}
-.float.one{left:-34px;bottom:-28px}
-.float.two{right:-22px;top:44px}
-.float .badge{width:44px;height:44px;border-radius:14px;background:var(--soft);display:grid;place-items:center;color:var(--accent)}
-.float .badge svg{width:22px;height:22px}
+.hero{min-height:100vh;min-height:100svh;padding:140px 0 90px;overflow:hidden;background:radial-gradient(1100px 700px at 85% 20%,rgba(53,105,180,.35),transparent 60%),radial-gradient(800px 600px at 0% 100%,rgba(79,179,232,.12),transparent 60%),var(--bg)}
+.hero .wrap{display:grid;grid-template-columns:1.05fr 1fr;align-items:center;gap:40px;position:relative;z-index:2}
+.hero h1{font-size:clamp(54px,8.6vw,138px);line-height:.92;position:relative;z-index:3;margin:26px -22% 30px 0}
+.hero h1 span{display:block}
+.hero h1 .o{color:transparent;-webkit-text-stroke:1.5px var(--tx);font-style:italic}
+.hero p.lead{margin-bottom:38px}
+.cta{display:flex;flex-wrap:wrap;gap:14px}
+.hmeta{display:flex;flex-wrap:wrap;gap:10px 28px;margin-top:44px;font-size:13px;color:var(--mu);letter-spacing:.04em}
+.hmeta span{display:flex;align-items:center;gap:8px}
+.hmeta span::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--gd)}
+.collage{position:relative;aspect-ratio:1/1.08;width:100%}
+.fr{position:absolute;border-radius:18px;overflow:hidden;transform:translate3d(0,var(--py,0px),0) rotate(var(--rt));box-shadow:0 40px 80px -30px rgba(0,0,0,.7),0 0 0 1px rgba(234,242,248,.08);will-change:transform}
+.fr img{width:100%;height:100%;object-fit:cover;transform:scale(1.08)}
+.fr::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(7,26,43,.35))}
+.f1{--rt:-6deg;left:0;top:8%;width:60%;height:58%}
+.f2{--rt:5deg;right:0;top:0;width:44%;height:64%;z-index:2}
+.f3{--rt:-2deg;left:20%;bottom:0;width:52%;height:46%;z-index:3}
+.seal{position:absolute;z-index:4;right:4%;bottom:6%;width:132px;height:132px;border-radius:50%;background:var(--gd);color:var(--bg);display:grid;place-items:center}
+.seal svg{position:absolute;inset:0;width:100%;height:100%;animation:spin 22s linear infinite}
+.seal b{font:400 30px/1 "DM Serif Display",serif;text-align:center}
+.seal b small{display:block;font:600 9px/1 Outfit;letter-spacing:.2em;margin-bottom:4px}
+.ghost{position:absolute;left:0;bottom:-.18em;white-space:nowrap;font:italic 400 clamp(120px,22vw,340px)/1 "DM Serif Display",serif;color:transparent;-webkit-text-stroke:1px rgba(234,242,248,.07);z-index:1;pointer-events:none;transform:translateX(var(--gx,0))}
+@keyframes spin{to{transform:rotate(360deg)}}
+.hi{opacity:0;transform:translateY(34px);animation:up 1.1s var(--ease) forwards;animation-delay:calc(var(--d,0) * .12s + .15s)}
+.fr.hi{transform:translateY(60px) rotate(0);animation-name:frIn}
+@keyframes up{to{opacity:1;transform:none}}
+@keyframes frIn{to{opacity:1;transform:translate3d(0,var(--py,0px),0) rotate(var(--rt))}}
 
-/* trust */
-.trust{border-top:1px solid color-mix(in srgb,var(--ink) 9%,transparent);border-bottom:1px solid color-mix(in srgb,var(--ink) 9%,transparent);background:var(--surface)}
-.trust .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;padding-top:26px;padding-bottom:26px}
-.trust div{display:flex;align-items:center;gap:12px;font-weight:600;font-size:15px}
-.trust svg{width:22px;height:22px;color:var(--accent);flex:none}
+/* marquee */
+.mq{background:var(--ac);color:var(--bg);overflow:hidden;padding:22px 0;transform:rotate(-1.2deg);margin:-26px -10px 0;position:relative;z-index:5;box-shadow:0 20px 50px -20px rgba(0,0,0,.6)}
+.mq-t{display:flex;width:max-content;animation:mq 38s linear infinite}
+.mq-t span{font:400 clamp(24px,2.6vw,36px)/1 "DM Serif Display",serif;padding:0 26px;white-space:nowrap;display:flex;align-items:center;gap:52px}
+.mq-t span::after{content:"✦";font-size:.55em;color:var(--bg)}
+@keyframes mq{to{transform:translateX(-50%)}}
 
-/* sections */
-section.block{padding:110px 0}
-.kicker{font-size:13px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
-h2{font-family:var(--serif);font-weight:500;font-size:clamp(34px,3.8vw,52px);line-height:1.08;letter-spacing:-.02em;margin:14px 0 18px}
-.section-head{display:flex;justify-content:space-between;align-items:end;gap:40px;margin-bottom:56px}
-.section-head p{color:var(--muted);max-width:420px}
-.services{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-.card{background:var(--surface);border-radius:var(--radius);padding:34px 32px 36px;border:1px solid color-mix(in srgb,var(--ink) 7%,transparent);transition:transform .25s ease,box-shadow .25s ease}
-.card:hover{transform:translateY(-4px);box-shadow:0 30px 60px -36px color-mix(in srgb,var(--ink) 45%,transparent)}
-.icon{width:54px;height:54px;border-radius:16px;background:var(--soft);color:var(--accent);display:grid;place-items:center;margin-bottom:24px}
-.icon svg{width:26px;height:26px}
-.card h3{font-family:var(--serif);font-weight:500;font-size:23px;margin-bottom:8px;letter-spacing:-.01em}
-.card p{color:var(--muted);font-size:16px}
+/* facts */
+.facts{padding:120px 0 40px}
+.fg{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--ln)}
+.fg div{padding:34px 26px 10px 0;border-right:1px solid var(--ln);padding-left:26px}
+.fg div:first-child{padding-left:0}.fg div:last-child{border-right:0}
+.fg b{display:block;font:400 clamp(44px,5vw,72px)/1 "DM Serif Display",serif;color:var(--gd)}
+.fg span{display:block;color:var(--mu);font-size:15px;margin-top:12px;max-width:220px}
 
-.why{background:var(--ink);color:var(--bg)}
-.why .kicker{color:var(--gold)}
-.why-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:80px;align-items:start}
-.why h2{color:var(--bg)}
-.why .intro{color:color-mix(in srgb,var(--bg) 70%,transparent);font-size:18px;max-width:440px}
-.points{display:grid;gap:14px}
-.point{display:grid;grid-template-columns:62px 1fr;gap:20px;padding:30px;border-radius:var(--radius);background:color-mix(in srgb,var(--bg) 6%,transparent);border:1px solid color-mix(in srgb,var(--bg) 10%,transparent)}
-.point .num{font-family:var(--serif);font-size:34px;color:var(--gold);line-height:1}
-.point h3{font-family:var(--serif);font-weight:500;font-size:24px;margin-bottom:6px}
-.point p{color:color-mix(in srgb,var(--bg) 72%,transparent);font-size:16px}
+/* services stack */
+.svc{padding:100px 0 60px}
+.svc-h{display:flex;justify-content:space-between;align-items:flex-end;gap:40px;margin-bottom:60px;flex-wrap:wrap}
+.stack{display:grid;gap:28px}
+.pn{position:sticky;top:calc(96px + var(--i) * 22px);display:grid;grid-template-columns:1fr 1.1fr;min-height:540px;background:var(--sf);border-radius:var(--r);overflow:hidden;border:1px solid var(--ln);box-shadow:0 -30px 60px -30px rgba(0,0,0,.6)}
+.pn:nth-child(even){background:var(--sf2)}
+.pn-i{position:relative;overflow:hidden}
+.pn-i img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform 1.4s var(--ease)}
+.pn:hover .pn-i img{transform:scale(1.05)}
+.pn-i::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,transparent 60%,rgba(14,40,64,.5))}
+.pn-b{padding:clamp(32px,5vw,64px);display:flex;flex-direction:column;justify-content:center}
+.pn-n{font:400 14px/1 Outfit;letter-spacing:.26em;color:var(--ac);margin-bottom:22px}
+.pn h3{font-size:clamp(38px,4.6vw,64px);margin-bottom:20px}
+.pn p{color:var(--mu);max-width:500px}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:28px}
+.tags span{font-size:13px;padding:8px 14px;border:1px solid var(--ln);border-radius:999px;color:var(--tx)}
+.pn .lk{margin-top:32px;color:var(--gd);font-weight:500;align-self:flex-start;display:inline-flex;gap:10px;align-items:center}
+.lists{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:80px}
+.ls{background:linear-gradient(160deg,var(--sf),var(--bg2));border:1px solid var(--ln);border-radius:var(--r);padding:44px}
+.ls h3{font-size:36px;margin-bottom:8px}
+.ls>p{color:var(--mu);font-size:15px;margin-bottom:24px}
+.ls ul{list-style:none}
+.ls li{padding:13px 0 13px 30px;border-top:1px solid var(--ln);position:relative;font-size:15.5px}
+.ls li::before{content:"";position:absolute;left:0;top:22px;width:14px;height:1px;background:var(--ac)}
 
-.score{display:flex;align-items:center;gap:18px;background:var(--surface);padding:16px 24px;border-radius:18px;border:1px solid color-mix(in srgb,var(--ink) 8%,transparent)}
-.score b{font-family:var(--serif);font-size:40px;font-weight:500;line-height:1}
-.score small{display:block;color:var(--muted);font-size:14px}
-.reviews{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-.review{background:var(--surface);border-radius:var(--radius);padding:34px;display:flex;flex-direction:column;gap:22px;border:1px solid color-mix(in srgb,var(--ink) 7%,transparent)}
-.review p{font-family:var(--serif);font-size:19.5px;line-height:1.45}
-.review .by{margin-top:auto;display:flex;align-items:center;gap:12px;font-weight:600;font-size:15px}
-.avatar{width:40px;height:40px;border-radius:50%;background:var(--soft);color:var(--accent);display:grid;place-items:center;font-weight:700}
-.review .src{color:var(--muted);font-weight:500;font-size:13px;display:block}
+/* about */
+.ab{padding:140px 0;background:linear-gradient(180deg,var(--bg),var(--bg2))}
+.ab .wrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(40px,7vw,110px);align-items:start}
+.ab-img{position:sticky;top:110px}
+.ab-img .pic{border-radius:var(--r);overflow:hidden;aspect-ratio:4/5;position:relative}
+.ab-img img{width:100%;height:100%;object-fit:cover}
+.ab-img .cap{position:absolute;left:-24px;bottom:40px;background:var(--gd);color:var(--bg);padding:18px 24px;border-radius:14px;font:400 22px/1.15 "DM Serif Display",serif;max-width:260px;box-shadow:0 20px 40px -15px rgba(0,0,0,.5)}
+.ab-img .cap small{display:block;font:600 10px/1 Outfit;letter-spacing:.2em;text-transform:uppercase;margin-bottom:8px}
+.ab h2 small{display:block;font:500 15px/1 Outfit;letter-spacing:.2em;color:var(--ac);margin-top:16px}
+.ab p{color:var(--mu);margin-bottom:20px}
+.quote{font:italic 400 clamp(26px,2.6vw,36px)/1.25 "DM Serif Display",serif;color:var(--tx);border-left:2px solid var(--br);padding-left:26px;margin:40px 0}
+.cred{display:grid;grid-template-columns:1fr 1fr;gap:0 28px;margin-top:30px}
+.cred div{padding:16px 0;border-top:1px solid var(--ln);font-size:15px;display:flex;gap:14px}
+.cred div::before{content:"✦";color:var(--gd);font-size:11px;padding-top:4px}
+.team{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:60px}
+.tm{background:var(--sf);border:1px solid var(--ln);border-radius:18px;padding:28px;transition:transform .5s var(--ease),border-color .4s}
+.tm:hover{transform:translateY(-6px);border-color:rgba(79,179,232,.45)}
+.tm .av{width:52px;height:52px;border-radius:50%;background:linear-gradient(135deg,var(--ac),var(--br));display:grid;place-items:center;font:400 24px/1 "DM Serif Display",serif;color:var(--bg);margin-bottom:18px}
+.tm h3{font-size:24px}
+.tm span{display:block;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--gd);margin:8px 0 12px}
+.tm p{font-size:14.5px;margin:0}
 
-.cta-band{padding:0 0 110px}
-.cta-box{border-radius:calc(var(--radius) + 12px);background:linear-gradient(140deg,var(--accent),color-mix(in srgb,var(--accent) 60%,var(--ink)));color:var(--accent-ink);padding:76px 64px;display:grid;grid-template-columns:1.3fr 1fr;gap:40px;align-items:center;position:relative;overflow:hidden}
-.cta-box:after{content:"";position:absolute;right:-120px;bottom:-200px;width:460px;height:460px;border-radius:50%;border:1.5px solid color-mix(in srgb,var(--accent-ink) 22%,transparent)}
-.cta-box h2{color:inherit;margin:0 0 12px}
-.cta-box p{opacity:.85;font-size:18px}
-.cta-box .actions{display:flex;flex-direction:column;gap:12px;align-items:flex-start;position:relative;z-index:1}
-.cta-box .btn{background:var(--accent-ink);color:var(--accent)}
-.cta-box .btn.ghost{background:transparent;color:var(--accent-ink);border-color:color-mix(in srgb,var(--accent-ink) 40%,transparent)}
+/* why */
+.why{padding:140px 0}
+.wg{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--ln);border:1px solid var(--ln);border-radius:var(--r);overflow:hidden;margin-top:60px}
+.wc{background:var(--bg);padding:44px 36px;transition:background .5s}
+.wc:hover{background:var(--sf)}
+.wc svg{width:38px;height:38px;color:var(--ac);margin-bottom:26px}
+.wc h3{font-size:28px;margin-bottom:12px}
+.wc p{color:var(--mu);font-size:15.5px}
 
-.visit{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:10px}
-.visit .card h3{font-size:20px}
-.visit a{color:var(--accent);font-weight:600}
-footer{border-top:1px solid color-mix(in srgb,var(--ink) 9%,transparent);padding:40px 0 110px;color:var(--muted);font-size:14px}
-footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
-.mobile-bar{display:none}
+/* steps */
+.how{padding:140px 0;background:var(--sf);border-radius:48px 48px 0 0;overflow:hidden}
+.how .wrap{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(40px,6vw,90px)}
+.how-l{position:sticky;top:120px;align-self:start}
+.steps{counter-reset:s}
+.st{display:grid;grid-template-columns:90px 1fr;gap:20px;padding:40px 0;border-top:1px solid var(--ln)}
+.st:last-child{border-bottom:1px solid var(--ln)}
+.st b{font:italic 400 64px/1 "DM Serif Display",serif;color:transparent;-webkit-text-stroke:1px var(--ac)}
+.st h3{font-size:30px;margin-bottom:10px}
+.st p{color:var(--mu)}
 
-@keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
-.hero .copy>*{animation:rise .8s cubic-bezier(.2,.7,.2,1) both}
-.hero .copy>*:nth-child(2){animation-delay:.08s}.hero .copy>*:nth-child(3){animation-delay:.16s}
-.hero .copy>*:nth-child(4){animation-delay:.24s}.hero .copy>*:nth-child(5){animation-delay:.32s}
-.visual{animation:rise 1s .2s cubic-bezier(.2,.7,.2,1) both}
+/* gallery */
+.gal{padding:0 0 140px;background:var(--sf)}
+.gg{display:grid;grid-template-columns:1.4fr 1fr;grid-template-rows:280px 280px;gap:18px}
+.gg figure{border-radius:var(--r);overflow:hidden;position:relative}
+.gg figure:first-child{grid-row:span 2}
+.gg img{width:100%;height:100%;object-fit:cover;transition:transform 1.4s var(--ease)}
+.gg figure:hover img{transform:scale(1.06)}
+.gg figcaption{position:absolute;left:20px;bottom:18px;font-size:12px;letter-spacing:.2em;text-transform:uppercase;background:rgba(7,26,43,.78);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);padding:9px 14px;border-radius:999px}
 
-@media (max-width:980px){
-  .links{display:none}
-  .hero-grid,.why-grid,.cta-box{grid-template-columns:1fr}
-  .hero-grid{gap:56px}
-  .services,.reviews,.visit{grid-template-columns:1fr 1fr}
-  .trust .wrap{grid-template-columns:1fr 1fr}
-  .float.one{left:12px;bottom:-26px}.float.two{right:12px}
-  .visual{max-width:560px;margin-bottom:20px}
-  .section-head{flex-direction:column;align-items:flex-start}
+/* community */
+.com{padding:140px 0}
+.com .wrap{display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,6vw,90px);align-items:center}
+.com-img{border-radius:var(--r);overflow:hidden;aspect-ratio:5/4;position:relative}
+.com-img img{width:100%;height:100%;object-fit:cover}
+.com-img b{position:absolute;right:20px;top:20px;background:var(--bg);color:var(--gd);font:400 34px/1 "DM Serif Display",serif;padding:16px 20px;border-radius:14px}
+.orgs{display:flex;flex-wrap:wrap;gap:10px;margin-top:30px}
+.orgs span{padding:10px 16px;border-radius:999px;background:var(--sf);border:1px solid var(--ln);font-size:14px}
+
+/* faq */
+.faq{padding:40px 0 140px}
+.faq .wrap{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(40px,6vw,90px)}
+details{border-top:1px solid var(--ln)}
+details:last-child{border-bottom:1px solid var(--ln)}
+summary{list-style:none;cursor:pointer;padding:26px 50px 26px 0;font:400 clamp(21px,2vw,26px)/1.3 "DM Serif Display",serif;position:relative;transition:color .3s}
+summary::-webkit-details-marker{display:none}
+summary:hover{color:var(--ac)}
+summary::after{content:"";position:absolute;right:6px;top:50%;width:16px;height:16px;margin-top:-8px;background:linear-gradient(var(--ac),var(--ac)) center/16px 1.5px no-repeat,linear-gradient(var(--ac),var(--ac)) center/1.5px 16px no-repeat;transition:transform .4s var(--ease)}
+details[open] summary::after{transform:rotate(135deg)}
+details p{color:var(--mu);padding:0 40px 28px 0;max-width:640px}
+
+/* cta band */
+.band{background:var(--ac);color:var(--bg);padding:clamp(80px,10vw,140px) 0;overflow:hidden}
+.band h2{font-size:clamp(50px,9vw,150px);line-height:.92;max-width:1100px}
+.band h2 em{color:var(--bg);font-style:italic;opacity:.75}
+.band p{font-size:20px;max-width:560px;margin:30px 0 40px;font-weight:400}
+.band .btn-p{background:var(--bg);color:var(--tx);box-shadow:none}
+.band .btn-p:hover{background:var(--sf)}
+.band .btn-g{border-color:rgba(7,26,43,.4);color:var(--bg)}
+.band .btn-g:hover{border-color:var(--bg);color:var(--bg)}
+.band-row{display:flex;justify-content:space-between;align-items:flex-end;gap:40px;flex-wrap:wrap}
+.band svg.sp{width:min(260px,40vw);height:auto;color:var(--bg);opacity:.85}
+
+/* visit */
+.vis{padding:140px 0}
+.vg{display:grid;grid-template-columns:1fr 1fr 1fr;gap:18px;margin-top:60px}
+.vc{background:var(--sf);border:1px solid var(--ln);border-radius:var(--r);padding:36px;display:flex;flex-direction:column}
+.vc .lbl{margin-bottom:20px}
+.vc .big{font:400 clamp(28px,2.6vw,36px)/1.15 "DM Serif Display",serif}
+.vc p{color:var(--mu);font-size:15px;margin-top:14px}
+.vc .lk{margin-top:auto;padding-top:26px;color:var(--ac);font-weight:500}
+.hrs{list-style:none;font-size:15.5px}
+.hrs li{display:flex;justify-content:space-between;gap:14px;padding:11px 0;border-bottom:1px solid var(--ln)}
+.hrs li span:last-child{text-align:right;color:var(--mu)}
+.map{position:relative;border-radius:var(--r);overflow:hidden;min-height:100%;background:var(--bg2);border:1px solid var(--ln)}
+.map svg{position:absolute;inset:0;width:100%;height:100%}
+
+/* footer */
+.ft{border-top:1px solid var(--ln);padding:80px 0 40px}
+.ft-g{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px}
+.ft p,.ft li{color:var(--mu);font-size:15px}
+.ft ul{list-style:none;display:grid;gap:8px}
+.ft h4{font:500 12px/1 Outfit;letter-spacing:.24em;text-transform:uppercase;color:var(--gd);margin-bottom:20px}
+.ft-b{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;margin-top:70px;padding-top:28px;border-top:1px solid var(--ln);font-size:13px;color:var(--mu)}
+
+/* mobile bar */
+.mbar{display:none}
+
+/* reveal */
+.rv{opacity:0;transform:translateY(40px);transition:opacity 1s var(--ease),transform 1s var(--ease);transition-delay:calc(var(--d,0) * .1s)}
+.rv.in{opacity:1;transform:none}
+
+@media (max-width:1060px){
+.nav,.hd-ph{display:none}
+.burger{display:block}
+.hero .wrap{grid-template-columns:1fr}
+.hero h1{margin-right:0}
+.collage{max-width:560px;margin:10px auto 0}
+.pn{grid-template-columns:1fr;min-height:0}
+.pn-i{aspect-ratio:16/9}
+.ab .wrap,.how .wrap,.com .wrap,.faq .wrap{grid-template-columns:1fr}
+.ab-img,.how-l{position:relative;top:0}
+.ab-img .pic{aspect-ratio:4/3}
+.ab-img .cap{left:16px}
+.wg{grid-template-columns:1fr 1fr}
+.vg{grid-template-columns:1fr 1fr}
+.map{min-height:300px;grid-column:span 2}
 }
-@media (max-width:640px){
-  body{font-size:16px}
-  .wrap{padding:0 18px}
-  .nav{height:66px}.brand{font-size:19px}
-  .phone,.nav-right .btn{display:none}
-  .hero{padding:44px 0 64px}
-  .lead-text{font-size:17.5px}
-  .hero-ctas .btn{flex:1;justify-content:center}
-  .ticks{display:none}
-  .services,.reviews,.visit,.trust .wrap{grid-template-columns:1fr}
-  section.block{padding:76px 0}
-  .quote-panel,.photo{aspect-ratio:auto;min-height:380px}.photo{aspect-ratio:4/3;min-height:0}
-  .quote-panel{padding:40px 30px 64px}.quote-panel p{font-size:23px}
-  .float{font-size:13px;padding:12px 14px}.float b{font-size:18px}
-  .float.two{display:none}
-  .cta-box{padding:52px 28px}
-  .point{grid-template-columns:44px 1fr;padding:24px}
-  .mobile-bar{display:flex;position:fixed;left:12px;right:12px;bottom:12px;z-index:30;gap:10px}
-  .mobile-bar .btn{flex:1;justify-content:center;box-shadow:0 14px 30px -14px color-mix(in srgb,var(--ink) 60%,transparent)}
-  .mobile-bar .btn.ghost{background:var(--surface)}
+@media (max-width:760px){
+body{font-size:16px}
+.wrap{width:calc(100% - 40px)}
+.hd .btn{display:none}
+.logo small{font-size:9px;letter-spacing:.14em}
+.hero{padding:120px 0 80px}
+.hero h1{font-size:clamp(50px,15vw,74px)}
+.cta .btn{flex:1 1 100%}
+.seal{width:100px;height:100px;right:0}
+.seal b{font-size:22px}
+.fg{grid-template-columns:1fr 1fr}
+.fg div{padding:28px 14px 18px 0!important;border-right:0;border-bottom:1px solid var(--ln)}
+.pn{position:relative;top:0}
+.lists,.team,.cred,.wg,.vg{grid-template-columns:1fr}
+.ls{padding:30px 24px}
+.map{grid-column:auto}
+.st{grid-template-columns:1fr;gap:6px}
+.gg{grid-template-columns:1fr;grid-template-rows:260px 200px 200px}
+.gg figure:first-child{grid-row:auto}
+.how{border-radius:32px 32px 0 0}
+.ft-g{grid-template-columns:1fr}
+.band .btn{flex:1 1 100%}
+.mbar{display:grid;grid-template-columns:1fr 1fr;gap:10px;position:fixed;left:12px;right:12px;bottom:12px;z-index:40;padding:10px;background:rgba(7,26,43,.86);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid var(--ln);border-radius:999px;transform:translateY(140%);transition:transform .5s var(--ease)}
+.mbar.on{transform:none}
+.mbar .btn{padding:13px 10px;font-size:14px}
+.ft{padding-bottom:110px}
+}
+@media (prefers-reduced-motion:reduce){
+*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+.hi,.rv{opacity:1!important;transform:none!important}
+.fr.hi{transform:rotate(var(--rt))!important}
 }
 </style>
 </head>
 <body>
-<div class="concept">Website concept prepared for <b>Cedar Park Chiropractic &amp; Acupuncture</b> by webstudio &middot; not a live site</div>
 
-<header>
-  <div class="wrap nav">
-    <a href="#top" class="brand">Cedar Park Chiropractic &amp; Acupuncture</a>
-    <nav class="links">
-      <a href="#services">Services</a><a href="#why">Why us</a><a href="#visit">Visit</a>
-    </nav>
-    <div class="nav-right">
-      <a class="phone" href="tel:5123350641">(512) 335-0641</a>
-      <a class="btn" href="#visit">Book now</a>
-    </div>
-  </div>
+<header class="hd" id="hd">
+<div class="wrap">
+<a href="#top" class="logo" aria-label="Cedar Park Chiropractic & Acupuncture home">
+<svg viewBox="0 0 42 42" fill="none" aria-hidden="true"><circle cx="21" cy="21" r="20" stroke="#4FB3E8" stroke-width="1.2"/><path d="M21 7c-3 3-3 5 0 7s3 4 0 7-3 5 0 7 3 4 0 7" stroke="#E9C46A" stroke-width="1.6" stroke-linecap="round"/><circle cx="21" cy="10.5" r="1.6" fill="#EAF2F8"/><circle cx="21" cy="17.5" r="1.6" fill="#EAF2F8"/><circle cx="21" cy="24.5" r="1.6" fill="#EAF2F8"/><circle cx="21" cy="31.5" r="1.6" fill="#EAF2F8"/></svg>
+<span><b>Cedar Park</b><small>Chiropractic &amp; Acupuncture</small></span>
+</a>
+<nav class="nav" aria-label="Main">
+<a href="#services" class="ul">Services</a><a href="#about" class="ul">Dr. Swanson</a><a href="#approach" class="ul">Approach</a><a href="#community" class="ul">Community</a><a href="#contact" class="ul">Visit</a>
+</nav>
+<div class="hd-r">
+<a href="tel:+15123350641" class="hd-ph ul">(512) 335-0641</a>
+<a href="#contact" class="btn btn-p">Book a visit</a>
+<button class="burger" id="burger" aria-label="Open menu" aria-expanded="false"><i></i><i></i><i></i></button>
+</div>
+</div>
 </header>
 
+<div class="mm" id="mm">
+<a href="#services">Services</a><a href="#about">Dr. Swanson</a><a href="#approach">Approach</a><a href="#community">Community</a><a href="#faq">FAQ</a><a href="#contact">Visit</a>
+<a href="tel:+15123350641" class="btn btn-p">Call (512) 335-0641</a>
+</div>
+
 <main id="top">
+
 <section class="hero">
-  <div class="wrap hero-grid">
-    <div class="copy">
-      <div class="eyebrow">
-        <span class="dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-7-4.4-7-10a4 4 0 017-2.6A4 4 0 0119 10c0 5.6-7 10-7 10z"/></svg></span>Chiropractic &amp; acupuncture in Austin
-      </div>
-      <h1>Chiropractic and acupuncture that help Austin <em>move freely.</em></h1>
-      <p class="lead-text">Chiropractic adjustments and acupuncture under one roof, with simple online booking so you can schedule your visit from your phone in minutes.</p>
-      <div class="hero-ctas">
-        <a class="btn" href="#visit">Book your first visit <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-        <a class="btn ghost" href="tel:5123350641">Call (512) 335-0641</a>
-      </div>
-      <div class="ticks">
-        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7"/></svg>New patients welcome</span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7"/></svg>Most insurance accepted</span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7"/></svg>Same-day visits</span>
-      </div>
-    </div>
-    <div class="visual">
-      
-      <div class="quote-panel"><div class="quote-mark">“</div><div><p>Gentle, evidence-based chiropractic care that gets to the root of your pain, not just the symptoms.</p><div class="who">Cedar Park Chiropractic &amp; Acupuncture</div></div></div>
-      
-      
-      <div class="float two"><span class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><span><b>This week</b>Most insurance accepted</span></div>
-    </div>
-  </div>
-  <template id="qp"><div class="quote-panel"><div class="quote-mark">“</div><div><p>Gentle, evidence-based chiropractic care that gets to the root of your pain, not just the symptoms.</p><div class="who">Cedar Park Chiropractic &amp; Acupuncture</div></div></div></template>
+<div class="wrap">
+<div>
+<span class="lbl hi" style="--d:0">Cedar Park, Texas · Since 1999</span>
+<h1><span class="hi" style="--d:1">Move freely.</span><span class="hi o" style="--d:2">Heal naturally.</span><span class="hi" style="--d:3">Feel <em>aligned.</em></span></h1>
+<p class="lead hi" style="--d:4">Dr. Jeff Swanson, DC, CSCS, FASA brings prompt, passionate and personalized chiropractic and acupuncture care to Cedar Park and Austin, for back and neck pain, headaches, sports injuries, whiplash and more. No drugs. No surgery.</p>
+<div class="cta hi" style="--d:5">
+<a href="#contact" class="btn btn-p">Book your appointment <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6"/></svg></a>
+<a href="tel:+15123350641" class="btn btn-g"><svg viewBox="0 0 16 16" fill="none"><path d="M3.5 2h2.6l1.2 3-1.6 1.1a8 8 0 0 0 4.2 4.2L11 8.7l3 1.2v2.6c0 .8-.7 1.5-1.5 1.5A11.5 11.5 0 0 1 2 3.5C2 2.7 2.7 2 3.5 2Z" stroke="currentColor" stroke-width="1.3"/></svg>(512) 335-0641</a>
+</div>
+<div class="hmeta hi" style="--d:6"><span>Same-day appointments when possible</span><span>Minutes from Lakeline Mall</span></div>
+</div>
+<div class="collage" aria-hidden="false">
+<figure class="fr f1 hi" style="--d:2" data-sp=".06"><img src="img/photo-1.jpg" alt="Inside Cedar Park Chiropractic &amp; Acupuncture" width="2000" height="1334" fetchpriority="high"></figure>
+<figure class="fr f2 hi" style="--d:3" data-sp="-.05"><img src="img/photo-11.jpg" alt="Chiropractor performing spinal manipulation on a patient lying face down on a treatment table" width="683" height="1024"></figure>
+<figure class="fr f3 hi" style="--d:4" data-sp=".1"><img src="img/photo-9.jpg" alt="Patient care at Cedar Park Chiropractic" width="683" height="1024"></figure>
+<div class="seal hi" style="--d:6">
+<svg viewBox="0 0 132 132" aria-hidden="true"><defs><path id="c" d="M66 66m-50 0a50 50 0 1 1 100 0a50 50 0 1 1-100 0"/></defs><text font-family="Outfit" font-size="9.5" font-weight="600" letter-spacing="3.2" fill="#071A2B"><textPath href="#c">CHIROPRACTIC · ACUPUNCTURE · CEDAR PARK · </textPath></text></svg>
+<b><small>SINCE</small>1999</b>
+</div>
+</div>
+</div>
+<div class="ghost" id="ghost" aria-hidden="true">Cedar Park · Austin ·</div>
 </section>
 
-<div class="trust"><div class="wrap">
-  <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.2-8 9-4.6-.8-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg>New patients welcome</div><div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.2-8 9-4.6-.8-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg>Most insurance accepted</div><div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.2-8 9-4.6-.8-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg>Same-day visits</div><div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.2-8 9-4.6-.8-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg>Gentle techniques</div>
-</div></div>
+<div class="mq" aria-label="Conditions we help with">
+<div class="mq-t">
+<span>Back pain</span><span>Neck pain</span><span>Headaches &amp; migraines</span><span>Sports injuries</span><span>Whiplash</span><span>Spinal decompression</span><span>SoftWave therapy</span><span>Acupuncture</span><span>Pregnancy care</span><span>Pediatrics</span>
+<span aria-hidden="true">Back pain</span><span aria-hidden="true">Neck pain</span><span aria-hidden="true">Headaches &amp; migraines</span><span aria-hidden="true">Sports injuries</span><span aria-hidden="true">Whiplash</span><span aria-hidden="true">Spinal decompression</span><span aria-hidden="true">SoftWave therapy</span><span aria-hidden="true">Acupuncture</span><span aria-hidden="true">Pregnancy care</span><span aria-hidden="true">Pediatrics</span>
+</div>
+</div>
 
-<section class="block" id="services">
-  <div class="wrap">
-    <div class="section-head">
-      <div><div class="kicker">What we do</div><h2>Everything you need,<br>under one roof.</h2></div>
-      <p>From routine visits to the work that changes how you feel about your day, Cedar Park Chiropractic &amp; Acupuncture takes care of it properly.</p>
-    </div>
-    <div class="services">
-      
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-7-4.4-7-10a4 4 0 017-2.6A4 4 0 0119 10c0 5.6-7 10-7 10z"/></svg></div><h3>Back &amp; neck pain</h3><p>Relief that lasts, from a plan built around you.</p></div>
-      
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1-4.4-4.3 6.1-.9z"/></svg></div><h3>Sports injuries</h3><p>Get back in the game faster and stronger.</p></div>
-      
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 19c0-8 5-14 15-14 0 10-6 15-14 15"/><path d="M5 19c3-4 6-6 10-8"/></svg></div><h3>Headaches</h3><p>Address the tension and alignment issues behind them.</p></div>
-      
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 14s1.5 2.5 4 2.5 4-2.5 4-2.5"/><path d="M9 9.5h.01M15 9.5h.01"/></svg></div><h3>Prenatal care</h3><p>Gentle, safe adjustments for moms-to-be.</p></div>
-      
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.2-8 9-4.6-.8-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg></div><h3>Auto injuries</h3><p>Care and documentation after car accidents.</p></div>
-      
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div><h3>Same-day visits</h3><p>In pain today? We&#39;ll see you today.</p></div>
-      
-    </div>
-  </div>
+<section class="facts">
+<div class="wrap">
+<div class="fg">
+<div class="rv"><b>1999</b><span>Serving Austin and Cedar Park families since</span></div>
+<div class="rv" style="--d:1"><b>40+</b><span>Doctors of chiropractic in the Swanson family</span></div>
+<div class="rv" style="--d:2"><b>$100K+</b><span>Given back in community service</span></div>
+<div class="rv" style="--d:3"><b>5,000</b><span>Years of acupuncture tradition, delivered with or without needles</span></div>
+</div>
+</div>
 </section>
 
-<section class="block why" id="why">
-  <div class="wrap why-grid">
-    <div>
-      <div class="kicker">Why patients choose us</div>
-      <h2>The Austin chiropractor people recommend to their friends.</h2>
-      <p class="intro">it still comes down to the same three things.</p>
-    </div>
-    <div class="points">
-      
-      <div class="point"><div class="num">01</div><div><h3>Root-cause care</h3><p>We find out why it hurts, not just where.</p></div></div>
-      
-      <div class="point"><div class="num">02</div><div><h3>Gentle techniques</h3><p>Comfortable adjustments for every age and condition.</p></div></div>
-      
-      <div class="point"><div class="num">03</div><div><h3>Clear plans</h3><p>You&#39;ll know your plan, timeline and costs from day one.</p></div></div>
-      
-    </div>
-  </div>
+<section class="svc" id="services">
+<div class="wrap">
+<div class="svc-h">
+<div class="rv"><span class="lbl">Our Austin health services</span><h2 class="h2">Care for every <em>chapter</em><br>of your life.</h2></div>
+<p class="lead rv" style="--d:1">From a first adjustment to recovery after a car accident, from pregnancy to childhood, each plan is built around you and the results you want to feel.</p>
+</div>
+<div class="stack">
+<article class="pn" style="--i:0">
+<div class="pn-i"><img src="img/photo-7.jpg" alt="Chiropractic care at Cedar Park Chiropractic" loading="lazy" width="1360" height="1020"></div>
+<div class="pn-b"><span class="pn-n">01 / 06</span><h3>Chiropractic Care</h3><p>Gentle, effective chiropractic care that relieves pain, improves mobility and supports your body's natural alignment for overall health and wellness, whether it's your lower back, your neck or the headaches that keep coming back.</p><div class="tags"><span>Spinal adjustments</span><span>Extremity adjustments</span><span>Flexion distraction</span><span>Active Release Technique</span></div><a href="#contact" class="lk ul">Book chiropractic care →</a></div>
+</article>
+<article class="pn" style="--i:1">
+<div class="pn-i"><img src="img/photo-8.jpg" alt="Acupuncture at Cedar Park Chiropractic &amp; Acupuncture" loading="lazy" width="1360" height="906"></div>
+<div class="pn-b"><span class="pn-n">02 / 06</span><h3>Acupuncture</h3><p>A 5,000-year-old Chinese system of natural healing: no drugs, no surgery. Choose needle-less acupuncture or traditional needle acupuncture, with electrical acupuncture also available, guided by a Fellow of the Acupuncture Society of America.</p><div class="tags"><span>Needle-less</span><span>Traditional needle</span><span>Electrical</span></div><a href="#contact" class="lk ul">Explore acupuncture →</a></div>
+</article>
+<article class="pn" style="--i:2">
+<div class="pn-i"><img src="img/photo-12.jpg" alt="SoftWave therapy treatment" loading="lazy" width="1000" height="667"></div>
+<div class="pn-b"><span class="pn-n">03 / 06</span><h3>SoftWave Therapy</h3><p>A non-invasive treatment that reduces pain, stimulates healing and improves mobility, helping your body recover naturally and effectively. Sessions are designed to feel comfortable from start to finish.</p><div class="tags"><span>Non-invasive</span><span>Knees, hips &amp; shoulders</span><span>Natural recovery</span></div><a href="#contact" class="lk ul">Ask about SoftWave →</a></div>
+</article>
+<article class="pn" style="--i:3">
+<div class="pn-i"><img src="img/photo-14.jpg" alt="Auto accident and whiplash care" loading="lazy" width="768" height="640"></div>
+<div class="pn-b"><span class="pn-n">04 / 06</span><h3>Auto Accident Care</h3><p>Recover faster after a car accident. Gentle, expert treatment relieves pain, restores mobility and supports your body's natural healing, from a doctor with Whiplash Masters' Certification from the Spine Research Institute of San Diego.</p><div class="tags"><span>Whiplash</span><span>Drug-free</span><span>Non-invasive</span></div><a href="#contact" class="lk ul">Start your recovery →</a></div>
+</article>
+<article class="pn" style="--i:4">
+<div class="pn-i"><img src="img/photo-3.jpg" alt="Gentle pregnancy chiropractic care" loading="lazy" width="2000" height="1334"></div>
+<div class="pn-b"><span class="pn-n">05 / 06</span><h3>Pregnancy Care</h3><p>Gentle care that relieves discomfort, supports proper spinal alignment and improves mobility, for a healthier, more comfortable pregnancy journey.</p><div class="tags"><span>Spinal alignment</span><span>Comfort</span><span>Mobility</span></div><a href="#contact" class="lk ul">Book pregnancy care →</a></div>
+</article>
+<article class="pn" style="--i:5">
+<div class="pn-i"><img src="img/photo-6.jpg" alt="Chiropractic care for children and families" loading="lazy" width="2000" height="769"></div>
+<div class="pn-b"><span class="pn-n">06 / 06</span><h3>Chiropractic Pediatrics</h3><p>Gentle pediatric care to support healthy growth, ease discomfort, improve posture and promote long-term spinal health, from infancy through adolescence.</p><div class="tags"><span>Infancy to adolescence</span><span>Posture</span><span>Healthy growth</span></div><a href="#contact" class="lk ul">Care for your kids →</a></div>
+</article>
+</div>
+
+<div class="lists">
+<div class="ls rv"><h3>On-Site Services</h3><p>Everything in one Cedar Park clinic.</p>
+<ul><li>Acupuncture: electrical and needle acupuncture</li><li>Chiropractic spinal adjustments (spinal manipulation)</li><li>Diagnostic X-ray and interpretation</li><li>Orthopedic and neurologic examination</li><li>Flexion distraction disc management techniques</li><li>Myofascial release and Active Release Technique</li><li>Kinesiotape, TENS, electric stimulation, interferential therapy &amp; exercise rehabilitation</li><li>Complete laboratory services</li></ul></div>
+<div class="ls rv" style="--d:1"><h3>Off-Site Services</h3><p>For lasting health, recovery and peak physical performance.</p>
+<ul><li>Comprehensive scans and evaluations</li><li>Laboratory services</li><li>Internal medicine consultations</li><li>Rehabilitation programs</li><li>Personalized training plans</li><li>Nutritional support</li></ul></div>
+</div>
+</div>
 </section>
 
-
-
-<section class="cta-band" id="book">
-  <div class="wrap"><div class="cta-box">
-    <div><h2>Ready when you are.</h2><p>Book your first visit in under a minute, or give us a call and talk to a real person.</p></div>
-    <div class="actions">
-      <a class="btn" href="#visit">Book your first visit</a>
-      <a class="btn ghost" href="tel:5123350641">Call (512) 335-0641</a>
-    </div>
-  </div></div>
+<section class="ab" id="about">
+<div class="wrap">
+<div class="ab-img rv">
+<div class="pic"><img src="img/photo-10.jpg" alt="Cedar Park Chiropractic &amp; Acupuncture clinic" loading="lazy" width="683" height="1024"></div>
+<div class="cap"><small>A family of chiropractors</small>Over 40 doctors of chiropractic in the Swanson family.</div>
+</div>
+<div>
+<span class="lbl rv">Meet your doctor</span>
+<h2 class="h2 rv">Dr. Jeffrey L. Swanson<small>D.C., CSCS, FASA</small></h2>
+<p class="rv">Born and raised in Sioux City, Iowa, Dr. Swanson found his calling in 7th grade, when his uncle, Dr. Cliff Meylor, treated him for a sports injury. After seeing the remarkable results, he knew chiropractic would be his life's work.</p>
+<p class="rv">He studied at Iowa State University, then earned his Bachelor of Science and Doctor of Chiropractic degrees from Palmer College of Chiropractic in Davenport, Iowa, the first chiropractic college in the world. Today he lives in Cedar Park with his wife, Darla, and their children, Carly and Bennett. His brothers, Dr. Jon Swanson and Dr. Justin Swanson, also practice in the Austin area.</p>
+<blockquote class="quote rv">“Competent, courteous, convenient and cost-effective care that gets results.”</blockquote>
+<span class="lbl rv">Credentials</span>
+<div class="cred">
+<div class="rv">Palmer College of Chiropractic, Dean's List</div>
+<div class="rv">Team Chiropractor, Texas Stars Hockey Team</div>
+<div class="rv">Certified Strength &amp; Conditioning Specialist (C.S.C.S.)</div>
+<div class="rv">Fellow, Acupuncture Society of America (FASA)</div>
+<div class="rv">Whiplash Masters' Certification, Spine Research Institute of San Diego</div>
+<div class="rv">Official Chiropractor, 1998 Ironman Triathlon World Championships</div>
+<div class="rv">Chiropractor, Nike Golf Tour, 1998 Dakota Dunes Open</div>
+<div class="rv">Athletic Training, Iowa State University</div>
+</div>
+<div class="team">
+<div class="tm rv"><div class="av">J</div><h3>Dr. Jeff Swanson</h3><span>DC, CSCS, FASA</span><p>Continually striving to deliver the care each patient deserves, through postgraduate training in pediatrics, acupuncture, sports injuries and whiplash.</p></div>
+<div class="tm rv" style="--d:1"><div class="av">E</div><h3>Emily</h3><span>Our team</span><p>Originally from Columbus, Ohio. Five years in childcare and a love for helping others inspired her chiropractic career.</p></div>
+<div class="tm rv" style="--d:2"><div class="av">J</div><h3>Jaide</h3><span>Chiropractic assistant</span><p>Specializes in SoftWave therapy and focuses on making every session comfortable and effective.</p></div>
+</div>
+</div>
+</div>
 </section>
 
-<section class="block" id="visit" style="padding-top:0">
-  <div class="wrap">
-    <div class="kicker">Visit us</div><h2>Come say hello.</h2>
-    <div class="visit">
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11l8-7 8 7v9a1 1 0 01-1 1h-4v-6H9v6H5a1 1 0 01-1-1z"/></svg></div><h3>Address</h3><p>345 Cypress Creek Rd, Cedar Park TX 78613-4483</p></div>
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div><h3>Phone</h3><p><a href="tel:5123350641">(512) 335-0641</a></p><p style="margin-top:10px">Call or message us for today's opening hours.</p></div>
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-7-4.4-7-10a4 4 0 017-2.6A4 4 0 0119 10c0 5.6-7 10-7 10z"/></svg></div><h3>Most insurance accepted</h3><p>Book your first visit online or by phone and we'll take care of the rest.</p></div>
-    </div>
-  </div>
+<section class="why">
+<div class="wrap">
+<span class="lbl rv">Why Cedar Park Chiropractic</span>
+<h2 class="h2 rv">Prompt. Passionate.<br><em>Personal.</em></h2>
+<div class="wg">
+<div class="wc rv"><svg viewBox="0 0 38 38" fill="none" stroke="currentColor" stroke-width="1.3"><circle cx="19" cy="19" r="15"/><path d="M19 10v9l6 4"/></svg><h3>Same-day appointments</h3><p>Seen by Dr. Swanson the same day whenever possible, with follow-ups easy to schedule weeks or months ahead.</p></div>
+<div class="wc rv" style="--d:1"><svg viewBox="0 0 38 38" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M19 4c-4 5-4 8 0 11s4 6 0 9-4 6 0 10"/><path d="M11 12h16M11 26h16"/></svg><h3>Drug-free, non-invasive</h3><p>Every Swanson brother shares one goal: helping you improve your health naturally, without drugs or surgery.</p></div>
+<div class="wc rv" style="--d:2"><svg viewBox="0 0 38 38" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M19 4v30M8 10l22 18M30 10 8 28"/></svg><h3>Two disciplines, one clinic</h3><p>Chiropractic and acupuncture under one roof, needle-less or traditional, so your plan fits how you like to heal.</p></div>
+<div class="wc rv"><svg viewBox="0 0 38 38" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M6 30 14 18l6 6 12-16"/><path d="M24 8h8v8"/></svg><h3>Athlete-level expertise</h3><p>Team chiropractor for the Texas Stars and a Certified Strength &amp; Conditioning Specialist, trusted from weekend runs to competition.</p></div>
+<div class="wc rv" style="--d:1"><svg viewBox="0 0 38 38" fill="none" stroke="currentColor" stroke-width="1.3"><circle cx="13" cy="12" r="5"/><circle cx="26" cy="15" r="4"/><path d="M4 32c1-7 5-10 9-10s8 3 9 10M20 32c1-5 3-8 6-8s5 3 6 8"/></svg><h3>Care for the whole family</h3><p>From pregnancy to infancy through adolescence, gentle care tailored to each stage of life.</p></div>
+<div class="wc rv" style="--d:2"><svg viewBox="0 0 38 38" fill="none" stroke="currentColor" stroke-width="1.3"><rect x="6" y="6" width="26" height="26" rx="4"/><path d="M12 19h14M19 12v14"/></svg><h3>Complete diagnostics</h3><p>Digital X-rays, orthopedic and neurological evaluations and complete testing, so care starts with real answers.</p></div>
+</div>
+</div>
 </section>
+
+<section class="how" id="approach">
+<div class="wrap">
+<div class="how-l">
+<span class="lbl rv">How it works</span>
+<h2 class="h2 rv">From first call<br>to <em>feeling better.</em></h2>
+<p class="lead rv">A clear, unhurried path designed around your health, your schedule and lasting results.</p>
+</div>
+<div class="steps">
+<div class="st rv"><b>01</b><div><h3>Call or book</h3><p>Reach us at (512) 335-0641. Same-day appointments with Dr. Swanson are available whenever possible.</p></div></div>
+<div class="st rv"><b>02</b><div><h3>A thorough evaluation</h3><p>Orthopedic and neurological examination, with diagnostic X-ray and interpretation where needed, to understand what's really going on.</p></div></div>
+<div class="st rv"><b>03</b><div><h3>Your personalized plan</h3><p>Adjustments, acupuncture, SoftWave therapy, manual therapy or physiotherapy, combined around your body and your goals.</p></div></div>
+<div class="st rv"><b>04</b><div><h3>Ongoing wellness</h3><p>Schedule follow-ups weeks or months in advance for consistent care and reliable access to patient-centered service.</p></div></div>
+</div>
+</div>
+</section>
+
+<section class="gal" aria-label="Inside the clinic">
+<div class="wrap">
+<div class="gg">
+<figure class="rv"><img src="img/photo-2.jpg" alt="Inside Cedar Park Chiropractic &amp; Acupuncture" loading="lazy" width="2000" height="1334"><figcaption>Cedar Park, TX</figcaption></figure>
+<figure class="rv" style="--d:1"><img src="img/photo-13.jpg" alt="Treatment at Cedar Park Chiropractic" loading="lazy" width="1000" height="527"><figcaption>Personalized care</figcaption></figure>
+<figure class="rv" style="--d:2"><img src="img/photo-5.jpg" alt="Cedar Park Chiropractic &amp; Acupuncture patient care" loading="lazy" width="2000" height="1231"><figcaption>Since 1999</figcaption></figure>
+</div>
+</div>
+</section>
+
+<section class="com" id="community">
+<div class="wrap">
+<div class="com-img rv"><img src="img/photo-4.jpg" alt="Texas Stars Foundation" loading="lazy" width="2000" height="1265"><b>$100K+</b></div>
+<div>
+<span class="lbl rv">Community involvement</span>
+<h2 class="h2 rv">Rooted in <em>Cedar Park.</em></h2>
+<p class="lead rv">Cedar Park Chiropractic &amp; Acupuncture has contributed more than $100K in community service, supporting the neighbours, schools and causes that make this place home.</p>
+<div class="orgs rv">
+<span>Therapeutic Horse Riding</span><span>Jail To Jobs</span><span>Texas Stars Foundation</span><span>Twin Lakes Family YMCA</span><span>Cedar Park 5 Miler &amp; Kids 1K</span><span>Hill Country Community Ministries</span><span>Samaritan Health Ministries</span><span>Cypress Creek Elementary Paw Partner</span><span>Cedar Park Chamber of Commerce</span><span>Cedar Park Breakfast Club</span>
+</div>
+</div>
+</div>
+</section>
+
+<section class="faq" id="faq">
+<div class="wrap">
+<div><span class="lbl rv">Questions</span><h2 class="h2 rv">Good to <em>know.</em></h2></div>
+<div class="rv">
+<details open><summary>Can I be seen the same day?</summary><p>Same-day appointments with Dr. Swanson are available whenever possible. Give us a call at (512) 335-0641 and we'll find the soonest time. Follow-up visits can be scheduled weeks or months in advance.</p></details>
+<details><summary>Do I have to have needles for acupuncture?</summary><p>No. We offer needle-less acupuncture as well as traditional needle acupuncture and electrical acupuncture. Dr. Swanson is certified in acupuncture and a Fellow of the Acupuncture Society of America.</p></details>
+<details><summary>Should I see a chiropractor after a car accident?</summary><p>Our Auto Accident Care offers gentle, drug-free and non-invasive treatment for whiplash and other injuries, helping relieve pain, reduce swelling and inflammation, and restore mobility. Dr. Swanson holds a Whiplash Masters' Certification.</p></details>
+<details><summary>Do you treat children and expecting mothers?</summary><p>Yes. Our chiropractic pediatrics care supports patients from infancy through adolescence, and our gentle pregnancy care helps relieve discomfort and support proper spinal alignment.</p></details>
+<details><summary>What is SoftWave therapy?</summary><p>SoftWave is a non-invasive treatment that reduces pain, stimulates healing and improves mobility, helping your body recover naturally. Jaide, our chiropractic assistant, specializes in SoftWave sessions.</p></details>
+<details><summary>Where are you located?</summary><p>We're at 345 Cypress Creek Rd #103 in Cedar Park, near the Hwy 183 and Cypress Creek intersection, just minutes from Lakeline Mall and easily reached from Round Rock, Bee Cave, Leander, Georgetown, Lago Vista, Lakeway and Austin.</p></details>
+</div>
+</div>
+</section>
+
+<section class="band">
+<div class="wrap">
+<h2 class="rv">Your best days<br>start with <em>one visit.</em></h2>
+<div class="band-row">
+<div>
+<p class="rv">Rest assured: your health is our primary concern. Book your appointment and feel the difference personalized care makes.</p>
+<div class="cta rv"><a href="tel:+15123350641" class="btn btn-p">Call (512) 335-0641</a><a href="#contact" class="btn btn-g">Hours &amp; location</a></div>
+</div>
+<svg class="sp rv" viewBox="0 0 260 120" fill="none" aria-hidden="true"><path d="M4 60c22-40 44-40 64 0s42 40 64 0 42-40 64 0 42 40 60 0" stroke="currentColor" stroke-width="2"/><g fill="currentColor"><circle cx="36" cy="30" r="5"/><circle cx="100" cy="90" r="5"/><circle cx="164" cy="30" r="5"/><circle cx="228" cy="90" r="5"/></g></svg>
+</div>
+</div>
+</section>
+
+<section class="vis" id="contact">
+<div class="wrap">
+<span class="lbl rv">Make an appointment</span>
+<h2 class="h2 rv">Visit us in <em>Cedar Park.</em></h2>
+<p class="lead rv">Conveniently located near Hwy 183 and Cypress Creek, just minutes from Lakeline Mall. Serving Cedar Park, Leander, Round Rock, Bee Cave and Austin.</p>
+<div class="vg">
+<div class="vc rv"><span class="lbl">Call</span><a href="tel:+15123350641" class="big ul">(512) 335-0641</a><p>Same-day appointments available whenever possible.</p><a href="tel:+15123350641" class="lk ul">Tap to call →</a></div>
+<div class="vc rv" style="--d:1"><span class="lbl">Office hours</span>
+<ul class="hrs"><li><span>Monday</span><span>9–12:30 &amp; 3–6</span></li><li><span>Tuesday</span><span>9–12:30 &amp; 3–6</span></li><li><span>Wednesday</span><span>9–12:30 &amp; 3–6</span></li><li><span>Thursday</span><span>9:00–1:00</span></li></ul></div>
+<div class="vc rv" style="--d:2"><span class="lbl">Address</span><address class="big" style="font-style:normal">345 Cypress Creek Rd #103<br>Cedar Park, TX 78613</address><p>Near the Hwy 183 &amp; Cypress Creek intersection.</p><a href="https://maps.google.com/?q=345+Cypress+Creek+Rd+%23103+Cedar+Park+TX+78613" target="_blank" rel="noopener" class="lk ul">Get directions →</a></div>
+<a class="map rv" href="https://maps.google.com/?q=345+Cypress+Creek+Rd+%23103+Cedar+Park+TX+78613" target="_blank" rel="noopener" aria-label="Open location in Google Maps" style="grid-column:1/-1;min-height:280px">
+<svg viewBox="0 0 1200 280" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><defs><pattern id="g" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M40 0H0v40" fill="none" stroke="rgba(234,242,248,.05)"/></pattern></defs><rect width="1200" height="280" fill="url(#g)"/><path d="M-20 210C200 190 380 120 600 140S980 60 1220 40" stroke="#3569b4" stroke-width="16" fill="none" opacity=".55"/><path d="M560 -10C580 90 610 180 640 300" stroke="rgba(234,242,248,.18)" stroke-width="8" fill="none"/><path d="M0 90h1200" stroke="rgba(234,242,248,.08)" stroke-width="4"/><text x="80" y="232" fill="rgba(234,242,248,.5)" font-family="Outfit" font-size="14" letter-spacing="3">HWY 183</text><text x="650" y="40" fill="rgba(234,242,248,.5)" font-family="Outfit" font-size="14" letter-spacing="3">CYPRESS CREEK RD</text><circle cx="612" cy="138" r="46" fill="rgba(79,179,232,.15)"><animate attributeName="r" values="20;56;20" dur="3s" repeatCount="indefinite"/></circle><circle cx="612" cy="138" r="12" fill="#4FB3E8" stroke="#071A2B" stroke-width="4"/><text x="640" y="176" fill="#EAF2F8" font-family="DM Serif Display" font-size="24">Cedar Park Chiropractic &amp; Acupuncture</text></svg>
+</a>
+</div>
+</div>
+</section>
+
 </main>
 
-<footer><div class="wrap">
-  <span>© 2026 Cedar Park Chiropractic &amp; Acupuncture</span>
-  <span>Concept design by webstudio. Not affiliated with or endorsed by Cedar Park Chiropractic &amp; Acupuncture.</span>
-</div></footer>
-
-<div class="mobile-bar">
-  <a class="btn ghost" href="tel:5123350641">Call</a>
-  <a class="btn" href="#visit">Book now</a>
+<footer class="ft">
+<div class="wrap">
+<div class="ft-g">
+<div>
+<a href="#top" class="logo" aria-label="Cedar Park Chiropractic & Acupuncture">
+<svg viewBox="0 0 42 42" fill="none" aria-hidden="true"><circle cx="21" cy="21" r="20" stroke="#4FB3E8" stroke-width="1.2"/><path d="M21 7c-3 3-3 5 0 7s3 4 0 7-3 5 0 7 3 4 0 7" stroke="#E9C46A" stroke-width="1.6" stroke-linecap="round"/><circle cx="21" cy="10.5" r="1.6" fill="#EAF2F8"/><circle cx="21" cy="17.5" r="1.6" fill="#EAF2F8"/><circle cx="21" cy="24.5" r="1.6" fill="#EAF2F8"/><circle cx="21" cy="31.5" r="1.6" fill="#EAF2F8"/></svg>
+<span><b>Cedar Park</b><small>Chiropractic &amp; Acupuncture</small></span>
+</a>
+<p style="margin-top:22px;max-width:380px">Prompt, passionate and personalized care from Dr. Jeff Swanson, DC, CSCS, FASA, serving Cedar Park, Leander, Round Rock, Bee Cave and Austin since 1999.</p>
 </div>
-</body>
+<div><h4>Services</h4><ul><li><a href="#services" class="ul">Chiropractic Care</a></li><li><a href="#services" class="ul">Acupuncture</a></li><li><a href="#services" class="ul">SoftWave Therapy</a></li><li><a href="#services" class="ul">Auto Accident Care</a></li><li><a href="#services" class="ul">Pregnancy Care</a></li><li><a href="#services" class="ul">Chiropractic Pediatrics</a></li></ul></div>
+<div><h4>Visit</h4><ul><li><a href="tel:+15123350641" class="ul">(512) 335-0641</a></li><li>345 Cypress Creek Rd #103<br>Cedar Park, TX 78613</li><li>Mon–Wed 9–12:30 &amp; 3–6</li><li>Thu 9:00–1:00</li><li><a href="https://maps.google.com/?q=345+Cypress+Creek+Rd+%23103+Cedar+Park+TX+78613" target="_blank" rel="noopener" class="ul">Google Maps →</a></li></ul></div>
+</div>
+<div class="ft-b"><span>© <span id="yr">2026</span> Cedar Park Chiropractic &amp; Acupuncture</span><a href="#top" class="ul">Back to top ↑</a></div>
+</div>
+</footer>
+
+<div class="mbar" id="mbar">
+<a href="tel:+15123350641" class="btn btn-g">Call now</a>
+<a href="#contact" class="btn btn-p">Book a visit</a>
+</div>
+
+<script>
+(()=>{
+const d=document,hd=d.getElementById('hd'),mb=d.getElementById('mbar'),gh=d.getElementById('ghost'),
+rm=matchMedia('(prefers-reduced-motion: reduce)').matches,frs=[...d.querySelectorAll('.fr[data-sp]')];
+d.getElementById('yr').textContent=new Date().getFullYear();
+let tk=false;
+const onS=()=>{const y=scrollY;hd.classList.toggle('s',y>30);mb.classList.toggle('on',y>innerHeight*.6);
+if(!rm&&y<innerHeight*1.4){frs.forEach(f=>f.style.setProperty('--py',(y*parseFloat(f.dataset.sp)).toFixed(1)+'px'));gh.style.setProperty('--gx',(-y*.25).toFixed(1)+'px')}tk=false};
+addEventListener('scroll',()=>{if(!tk){tk=true;requestAnimationFrame(onS)}},{passive:true});onS();
+const b=d.getElementById('burger'),mm=d.getElementById('mm');
+const tg=o=>{d.body.classList.toggle('mm-open',o);b.setAttribute('aria-expanded',o);b.setAttribute('aria-label',o?'Close menu':'Open menu');d.body.style.overflow=o?'hidden':''};
+b.addEventListener('click',()=>tg(!d.body.classList.contains('mm-open')));
+mm.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>tg(false)));
+addEventListener('keydown',e=>{if(e.key==='Escape')tg(false)});
+const rv=d.querySelectorAll('.rv');
+if(rm||!('IntersectionObserver' in window)){rv.forEach(e=>e.classList.add('in'));return}
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12,rootMargin:'0px 0px -40px 0px'});
+rv.forEach(e=>io.observe(e));
+})();
+</script>
+<div id="lm-concept" style="position:fixed;left:12px;bottom:12px;z-index:2147483647;font:500 11px/1.3 -apple-system,BlinkMacSystemFont,Segoe UI,sans-serif;letter-spacing:.02em;background:rgba(15,15,18,.82);color:#f4f1ea;padding:7px 11px;border-radius:999px;backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);pointer-events:none;max-width:70vw">Website concept for Cedar Park Chiropractic &amp; Acupuncture by webstudio &middot; not the live site</div><p style="margin:0;padding:18px 16px 70px;text-align:center;font:12px/1.5 -apple-system,sans-serif;color:#8a8a8a;background:#0e0e10">Concept design by webstudio. Not affiliated with or endorsed by Cedar Park Chiropractic &amp; Acupuncture.</p></body>
 </html>
