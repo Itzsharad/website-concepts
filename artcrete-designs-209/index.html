@@ -1,291 +1,677 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src * data: blob:; media-src 'self' data:; style-src 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com data:; script-src 'unsafe-inline'; connect-src 'none'; frame-src 'none'; form-action 'none'; base-uri 'none'; object-src 'none'">
 <meta name="robots" content="noindex, nofollow">
-<title>Artcrete Designs | Website concept</title>
+<style>html,body{max-width:100%;overflow-x:clip}</style>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Artcrete Designs | Remodeling in Austin, TX</title>
+<meta name="description" content="Artcrete Designs is a remodeling company in Austin, TX. Call (512) 694-9397 or visit us at 8127 Mesa Dr b206, Austin TX 78759.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 :root{
-  --bg:#f5f3ee;--surface:#ffffff;--ink:#1c2a22;--muted:#5f6b63;
-  --accent:#2f5a43;--accent-ink:#ffffff;--gold:#b8955a;--soft:#e6ece6;
-  --radius:22px;--max:1180px;
-  --serif:"Fraunces",Georgia,serif;--sans:"Manrope",system-ui,-apple-system,sans-serif;
+  --bg:#F6EEE4;--bg2:#EFE3D4;--sand:#E6D5C1;--surface:#FFFFFF;
+  --ink:#2E2620;--ink2:#5A4D42;--accent:#9C6B3D;--accent-d:#7A5129;--slate:#5F7A87;--slate-d:#43596A;
+  --brand-r:#fc574a;--brand-g:#2db35e;
+  --serif:"Instrument Serif",Georgia,serif;--sans:"Inter",system-ui,-apple-system,sans-serif;
+  --r:28px;--ease:cubic-bezier(.22,.8,.24,1);
 }
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:var(--sans);background:var(--bg);color:var(--ink);line-height:1.65;font-size:17px;overflow-x:hidden;-webkit-font-smoothing:antialiased}
 a{color:inherit;text-decoration:none}
-img{max-width:100%;display:block}
-.wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
-.concept{background:var(--ink);color:var(--bg);font-size:13px;text-align:center;padding:8px 16px;letter-spacing:.02em}
-.concept b{color:var(--gold);font-weight:600}
+svg{display:block}
+.wrap{width:min(1240px,100% - 48px);margin-inline:auto}
+.label{font-size:12px;letter-spacing:.24em;text-transform:uppercase;font-weight:600;color:var(--accent-d);display:inline-flex;align-items:center;gap:12px}
+.label::before{content:"";width:28px;height:1px;background:currentColor}
+h1,h2,h3{font-family:var(--serif);font-weight:400;line-height:1.02;letter-spacing:-.01em}
+h2{font-size:clamp(42px,6vw,84px)}
+h2 em,h1 em{font-style:italic;color:var(--accent)}
+p{color:var(--ink2)}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:17px 30px;border-radius:999px;font-weight:500;font-size:15px;letter-spacing:.01em;transition:transform .4s var(--ease),background .3s,color .3s,box-shadow .4s;white-space:nowrap;text-align:center}
+.btn-dark{background:var(--ink);color:var(--bg)}
+.btn-dark:hover{background:var(--accent-d);transform:translateY(-3px);box-shadow:0 14px 30px -12px rgba(122,81,41,.6)}
+.btn-line{border:1px solid rgba(46,38,32,.25);color:var(--ink)}
+.btn-line:hover{border-color:var(--ink);transform:translateY(-3px)}
+.btn svg{width:16px;height:16px;transition:transform .4s var(--ease)}
+.btn:hover svg{transform:translateX(4px)}
+.ul{position:relative}
+.ul::after{content:"";position:absolute;left:0;bottom:-3px;height:1px;width:100%;background:currentColor;transform:scaleX(0);transform-origin:right;transition:transform .5s var(--ease)}
+.ul:hover::after{transform:scaleX(1);transform-origin:left}
 
 /* header */
-header{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:saturate(1.4) blur(10px);border-bottom:1px solid color-mix(in srgb,var(--ink) 8%,transparent)}
-.nav{display:flex;align-items:center;justify-content:space-between;height:76px;gap:24px}
-.brand{font-family:var(--serif);font-size:23px;font-weight:600;letter-spacing:-.01em;line-height:1.1;max-width:340px}
-.links{display:flex;gap:30px;font-size:15px;font-weight:500;color:var(--muted)}
-.links a:hover{color:var(--ink)}
+header{position:fixed;inset:16px 0 auto;z-index:50;pointer-events:none}
+.nav{pointer-events:auto;display:flex;align-items:center;justify-content:space-between;gap:20px;padding:10px 10px 10px 26px;border-radius:999px;background:rgba(246,238,228,.72);backdrop-filter:blur(18px) saturate(1.4);-webkit-backdrop-filter:blur(18px) saturate(1.4);border:1px solid rgba(46,38,32,.08);transition:box-shadow .4s}
+header.scrolled .nav{box-shadow:0 18px 40px -24px rgba(46,38,32,.35)}
+.logo{display:flex;align-items:center;gap:12px;font-family:var(--serif);font-size:25px;line-height:1}
+.logo-mark{width:34px;height:34px;flex:none}
+.logo small{display:block;font-family:var(--sans);font-size:9.5px;letter-spacing:.3em;text-transform:uppercase;color:var(--ink2);margin-top:3px}
+.nav-links{display:flex;gap:32px;font-size:14px;font-weight:500}
 .nav-right{display:flex;align-items:center;gap:18px}
-.phone{font-weight:600;font-size:15px;white-space:nowrap}
-.btn{display:inline-flex;align-items:center;gap:10px;background:var(--accent);color:var(--accent-ink);padding:14px 26px;border-radius:999px;font-weight:600;font-size:15.5px;transition:transform .2s ease,box-shadow .2s ease;white-space:nowrap}
-.btn:hover{transform:translateY(-2px);box-shadow:0 12px 28px -12px var(--accent)}
-.btn.ghost{background:transparent;color:var(--ink);border:1.5px solid color-mix(in srgb,var(--ink) 20%,transparent)}
-.btn.ghost:hover{box-shadow:none;border-color:var(--ink)}
-.btn svg{width:18px;height:18px}
+.nav-phone{font-size:14px;font-weight:500}
+.nav .btn{padding:13px 22px}
+.burger{display:none;width:46px;height:46px;border-radius:50%;background:var(--ink);border:0;cursor:pointer;position:relative}
+.burger span{position:absolute;left:14px;right:14px;height:1.5px;background:var(--bg);transition:transform .4s var(--ease),top .4s var(--ease)}
+.burger span:nth-child(1){top:19px}.burger span:nth-child(2){top:26px}
+.menu-open .burger span:nth-child(1){top:22.5px;transform:rotate(45deg)}
+.menu-open .burger span:nth-child(2){top:22.5px;transform:rotate(-45deg)}
+.mobile-menu{position:fixed;inset:0;z-index:40;background:var(--bg);display:flex;flex-direction:column;justify-content:center;padding:100px 32px 120px;gap:8px;opacity:0;visibility:hidden;transition:opacity .45s var(--ease),visibility .45s}
+.mobile-menu a.m{font-family:var(--serif);font-size:52px;line-height:1.15;transform:translateY(20px);opacity:0;transition:transform .6s var(--ease),opacity .6s}
+.menu-open .mobile-menu{opacity:1;visibility:visible}
+.menu-open .mobile-menu a.m{transform:none;opacity:1}
+.menu-open .mobile-menu a.m:nth-child(2){transition-delay:.05s}.menu-open .mobile-menu a.m:nth-child(3){transition-delay:.1s}.menu-open .mobile-menu a.m:nth-child(4){transition-delay:.15s}.menu-open .mobile-menu a.m:nth-child(5){transition-delay:.2s}
+.mobile-menu .mm-foot{margin-top:28px;font-size:15px;color:var(--ink2)}
 
 /* hero */
-.hero{padding:72px 0 88px}
-.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:64px;align-items:center}
-.eyebrow{display:inline-flex;align-items:center;gap:10px;background:var(--surface);border:1px solid color-mix(in srgb,var(--ink) 10%,transparent);padding:8px 16px 8px 10px;border-radius:999px;font-size:14px;font-weight:600;color:var(--muted)}
-.stars{color:var(--gold);letter-spacing:1px;font-size:14px}
-.eyebrow .dot{width:26px;height:26px;border-radius:50%;background:var(--soft);display:grid;place-items:center;color:var(--accent)}
-h1{font-family:var(--serif);font-weight:500;font-size:clamp(44px,5.6vw,74px);line-height:1.02;letter-spacing:-.025em;margin:26px 0 22px}
-h1 em{font-style:italic;color:var(--accent)}
-.lead-text{font-size:19.5px;color:var(--muted);max-width:540px}
-.hero-ctas{display:flex;gap:14px;margin-top:36px;flex-wrap:wrap}
-.ticks{display:flex;gap:22px;margin-top:34px;flex-wrap:wrap;font-size:14.5px;font-weight:600;color:var(--muted)}
-.ticks span{display:flex;align-items:center;gap:8px}
-.ticks svg{width:18px;height:18px;color:var(--accent)}
-.visual{position:relative}
-.photo{aspect-ratio:4/5;border-radius:calc(var(--radius) + 10px);overflow:hidden;background:var(--soft);box-shadow:0 40px 80px -40px color-mix(in srgb,var(--ink) 55%,transparent)}
-.photo img{width:100%;height:100%;object-fit:cover}
-.quote-panel{aspect-ratio:4/5;border-radius:calc(var(--radius) + 10px);background:linear-gradient(155deg,var(--accent),color-mix(in srgb,var(--accent) 55%,var(--ink)));color:var(--accent-ink);padding:52px 46px;display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden;box-shadow:0 40px 80px -40px color-mix(in srgb,var(--ink) 60%,transparent)}
-.quote-panel:before{content:"";position:absolute;width:420px;height:420px;border-radius:50%;right:-160px;top:-160px;background:color-mix(in srgb,var(--accent-ink) 9%,transparent)}
-.quote-panel:after{content:"";position:absolute;width:260px;height:260px;border-radius:50%;left:-90px;bottom:-110px;border:1.5px solid color-mix(in srgb,var(--accent-ink) 22%,transparent)}
-.quote-mark{font-family:var(--serif);font-size:120px;line-height:.6;opacity:.35}
-.quote-panel p{font-family:var(--serif);font-size:28px;line-height:1.3;position:relative;z-index:1}
-.quote-panel .who{font-family:var(--sans);font-size:15px;opacity:.85;margin-top:22px;font-weight:600}
-.float{position:absolute;background:var(--surface);color:var(--ink);border-radius:18px;padding:16px 20px;box-shadow:0 24px 50px -24px color-mix(in srgb,var(--ink) 50%,transparent);display:flex;align-items:center;gap:14px;font-size:14px;line-height:1.35}
-.float b{font-size:22px;font-family:var(--serif);font-weight:600;display:block}
-.float.one{left:-34px;bottom:-28px}
-.float.two{right:-22px;top:44px}
-.float .badge{width:44px;height:44px;border-radius:14px;background:var(--soft);display:grid;place-items:center;color:var(--accent)}
-.float .badge svg{width:22px;height:22px}
+.hero{position:relative;min-height:100vh;min-height:100svh;display:flex;flex-direction:column;justify-content:center;padding:150px 0 60px;overflow:hidden}
+.hero-bg{position:absolute;inset:0;pointer-events:none;z-index:0}
+.blob{position:absolute;border-radius:50%;filter:blur(2px)}
+.b1{width:620px;height:620px;right:-160px;top:-120px;background:radial-gradient(circle at 35% 35%,#EBD3B8,#E2C4A3 55%,transparent 72%)}
+.b2{width:460px;height:460px;left:-180px;bottom:-140px;background:radial-gradient(circle at 60% 40%,#D7E0E3,#C7D3D8 50%,transparent 72%)}
+.hero-arch{position:absolute;right:6%;top:50%;width:min(34vw,440px);aspect-ratio:3/4.2;transform:translateY(-46%);border-radius:999px 999px 30px 30px;overflow:hidden;background:linear-gradient(160deg,#C9A27C,#9C6B3D 55%,#6E4A2A);box-shadow:0 50px 80px -40px rgba(78,50,25,.55);z-index:1}
+.hero-arch .grain{position:absolute;inset:0;opacity:.35;mix-blend-mode:overlay}
+.hero-arch .inner{position:absolute;inset:18px;border-radius:999px 999px 18px 18px;border:1px solid rgba(255,255,255,.35)}
+.hero-arch .rings{position:absolute;inset:0;display:grid;place-items:center}
+.hero-arch .rings svg{width:78%;animation:spin 60s linear infinite}
+.hero-arch .cap{position:absolute;left:0;right:0;bottom:30px;text-align:center;color:#FBF4EA;font-family:var(--serif);font-style:italic;font-size:22px}
+.hero-arch .cap small{display:block;font-family:var(--sans);font-style:normal;font-size:10px;letter-spacing:.3em;text-transform:uppercase;opacity:.85;margin-top:6px}
+.hero-pebble{position:absolute;right:calc(6% + min(34vw,440px) - 70px);bottom:14%;width:150px;height:150px;border-radius:52% 48% 44% 56%/56% 44% 56% 44%;background:var(--slate);z-index:2;display:grid;place-items:center;color:#F6EEE4;text-align:center;font-size:11px;letter-spacing:.22em;text-transform:uppercase;font-weight:600;line-height:1.5;box-shadow:0 30px 50px -25px rgba(67,89,106,.7);animation:morph 12s ease-in-out infinite}
+@keyframes morph{50%{border-radius:44% 56% 58% 42%/46% 58% 42% 54%}}
+@keyframes spin{to{transform:rotate(360deg)}}
+.hero .wrap{position:relative;z-index:3}
+.hero .label{margin-bottom:28px}
+.hero h1{font-size:clamp(64px,12.6vw,196px);line-height:.88;letter-spacing:-.025em;max-width:11ch}
+.hero h1 .line{display:block;overflow:hidden;padding-bottom:.06em}
+.hero h1 .line span{display:inline-block;transform:translateY(105%);transition:transform 1.3s var(--ease)}
+.hero h1 .line:nth-child(2) span{transition-delay:.12s}
+.hero h1 .line:nth-child(3) span{transition-delay:.24s}
+.loaded .hero h1 .line span{transform:none}
+.hero h1 .indent{padding-left:1.1em}
+.hero h1 .dot{color:var(--brand-r)}
+.rot{display:inline-grid;vertical-align:top}
+.rot i{grid-area:1/1;font-style:italic;color:var(--accent);opacity:0;transform:translateY(40%);transition:opacity .7s var(--ease),transform .9s var(--ease)}
+.rot i.on{opacity:1;transform:none}
+.rot i.out{opacity:0;transform:translateY(-40%)}
+.hero-foot{display:flex;flex-wrap:wrap;align-items:flex-end;gap:36px 60px;margin-top:48px}
+.hero-sub{max-width:440px;font-size:18px}
+.hero-cta{display:flex;flex-wrap:wrap;gap:12px}
+.fade{opacity:0;transform:translateY(24px);transition:opacity 1s var(--ease),transform 1s var(--ease)}
+.loaded .fade{opacity:1;transform:none}
+.loaded .d1{transition-delay:.55s}.loaded .d2{transition-delay:.7s}.loaded .d3{transition-delay:.85s}.loaded .d4{transition-delay:1s}
+.scroll-cue{position:absolute;left:24px;bottom:30px;z-index:3;font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:var(--ink2);writing-mode:vertical-rl;display:flex;align-items:center;gap:14px}
+.scroll-cue::after{content:"";width:1px;height:60px;background:linear-gradient(var(--ink2),transparent);animation:cue 2.4s var(--ease) infinite}
+@keyframes cue{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}51%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
 
-/* trust */
-.trust{border-top:1px solid color-mix(in srgb,var(--ink) 9%,transparent);border-bottom:1px solid color-mix(in srgb,var(--ink) 9%,transparent);background:var(--surface)}
-.trust .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;padding-top:26px;padding-bottom:26px}
-.trust div{display:flex;align-items:center;gap:12px;font-weight:600;font-size:15px}
-.trust svg{width:22px;height:22px;color:var(--accent);flex:none}
+/* marquee */
+.marquee{background:var(--ink);color:var(--bg);padding:26px 0;overflow:hidden;position:relative;transform:rotate(-1.4deg);margin:10px -20px 0;z-index:4}
+.marquee-track{display:flex;width:max-content;animation:mq 38s linear infinite}
+.marquee:hover .marquee-track{animation-play-state:paused}
+.marquee span{font-family:var(--serif);font-size:clamp(30px,4vw,52px);white-space:nowrap;display:flex;align-items:center;gap:36px;padding-right:36px}
+.marquee span i{font-style:italic;color:#E4C49F}
+.marquee svg{width:22px;height:22px;flex:none}
+@keyframes mq{to{transform:translateX(-50%)}}
 
-/* sections */
-section.block{padding:110px 0}
-.kicker{font-size:13px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
-h2{font-family:var(--serif);font-weight:500;font-size:clamp(34px,3.8vw,52px);line-height:1.08;letter-spacing:-.02em;margin:14px 0 18px}
-.section-head{display:flex;justify-content:space-between;align-items:end;gap:40px;margin-bottom:56px}
-.section-head p{color:var(--muted);max-width:420px}
-.services{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-.card{background:var(--surface);border-radius:var(--radius);padding:34px 32px 36px;border:1px solid color-mix(in srgb,var(--ink) 7%,transparent);transition:transform .25s ease,box-shadow .25s ease}
-.card:hover{transform:translateY(-4px);box-shadow:0 30px 60px -36px color-mix(in srgb,var(--ink) 45%,transparent)}
-.icon{width:54px;height:54px;border-radius:16px;background:var(--soft);color:var(--accent);display:grid;place-items:center;margin-bottom:24px}
-.icon svg{width:26px;height:26px}
-.card h3{font-family:var(--serif);font-weight:500;font-size:23px;margin-bottom:8px;letter-spacing:-.01em}
-.card p{color:var(--muted);font-size:16px}
+section{position:relative}
+.pad{padding:clamp(100px,13vw,170px) 0}
 
-.why{background:var(--ink);color:var(--bg)}
-.why .kicker{color:var(--gold)}
-.why-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:80px;align-items:start}
+/* intro statement */
+.intro{text-align:center}
+.intro .big{font-family:var(--serif);font-size:clamp(34px,4.6vw,64px);line-height:1.12;max-width:20ch;margin:30px auto 0;color:var(--ink)}
+.intro .big em{font-style:italic;color:var(--accent)}
+.intro .big .pill{display:inline-block;vertical-align:middle;width:1.6em;height:.8em;border-radius:999px;margin:0 .1em;background:linear-gradient(120deg,var(--slate),#8AA1AC)}
+.intro .big .pill.w{background:linear-gradient(120deg,#C9A27C,var(--accent))}
+
+/* services */
+.sec-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:30px;margin-bottom:64px}
+.sec-head h2{margin-top:20px;max-width:13ch}
+.sec-head p{max-width:400px}
+.services{background:var(--bg2);border-radius:60px 60px 0 0}
+.svc-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:22px}
+.svc{grid-column:span 4;background:var(--surface);border-radius:var(--r);padding:38px 34px 34px;position:relative;overflow:hidden;transition:transform .6s var(--ease),box-shadow .6s var(--ease);display:flex;flex-direction:column;min-height:400px}
+.svc:hover{transform:translateY(-8px);box-shadow:0 40px 60px -40px rgba(46,38,32,.4)}
+.svc.wide{grid-column:span 8}
+.svc .num{font-size:12px;letter-spacing:.2em;color:var(--ink2);font-weight:600}
+.svc .ico{width:84px;height:84px;margin:34px 0 auto;border-radius:999px 999px 18px 18px;background:var(--bg);display:grid;place-items:center;transition:background .5s,transform .6s var(--ease)}
+.svc .ico svg{width:40px;height:40px;stroke:var(--accent-d);transition:stroke .5s}
+.svc:hover .ico{background:var(--accent);transform:rotate(-6deg)}
+.svc:hover .ico svg{stroke:#fff}
+.svc h3{font-size:clamp(34px,3vw,44px);margin:34px 0 12px}
+.svc p{font-size:15.5px}
+.svc .more{margin-top:22px;font-size:14px;font-weight:500;display:inline-flex;align-items:center;gap:8px;color:var(--accent-d);align-self:flex-start}
+.svc.dark{background:var(--ink);color:var(--bg)}
+.svc.dark p{color:#D9CCBD}.svc.dark .num{color:#BBAA97}
+.svc.dark .ico{background:#40352D}.svc.dark .ico svg{stroke:#E4C49F}
+.svc.dark .more{color:#E4C49F}
+.svc.slate{background:var(--slate);color:#fff}
+.svc.slate p{color:#EAF0F2}.svc.slate .num{color:#D3DEE3}
+.svc.slate .ico{background:rgba(255,255,255,.14)}.svc.slate .ico svg{stroke:#fff}
+.svc.slate .more{color:#fff}
+.svc .deco{position:absolute;right:-60px;bottom:-60px;width:260px;height:260px;border-radius:50%;border:1px solid rgba(156,107,61,.18);pointer-events:none}
+.svc .deco::after{content:"";position:absolute;inset:30px;border-radius:50%;border:1px solid rgba(156,107,61,.14)}
+.svc.dark .deco,.svc.slate .deco{border-color:rgba(255,255,255,.12)}
+
+/* about */
+.about-grid{display:grid;grid-template-columns:1fr 1.05fr;gap:clamp(40px,7vw,110px);align-items:center}
+.arch-stack{position:relative;aspect-ratio:4/5;max-width:520px}
+.arch-a{position:absolute;inset:0 18% 8% 0;border-radius:999px 999px 26px 26px;background:linear-gradient(170deg,#DCC2A4,#B98A5E 70%);overflow:hidden}
+.arch-a svg{position:absolute;inset:0;width:100%;height:100%}
+.arch-b{position:absolute;right:0;bottom:0;width:48%;aspect-ratio:3/4;border-radius:26px 26px 999px 999px;background:linear-gradient(200deg,#8AA1AC,var(--slate-d));border:10px solid var(--bg);overflow:hidden;display:grid;place-items:center}
+.arch-b span{font-family:var(--serif);font-style:italic;color:#fff;font-size:clamp(28px,3vw,40px);text-align:center;line-height:1.05}
+.arch-word{position:absolute;left:8%;top:12%;font-family:var(--serif);font-size:clamp(70px,9vw,130px);color:rgba(255,250,243,.9);line-height:.85}
+.arch-word i{display:block;font-style:italic;padding-left:.4em}
+.about h2{margin:20px 0 28px}
+.about p+p{margin-top:18px}
+.about-list{margin-top:36px;border-top:1px solid rgba(46,38,32,.14)}
+.about-list div{display:flex;gap:18px;align-items:baseline;padding:18px 0;border-bottom:1px solid rgba(46,38,32,.14)}
+.about-list b{font-family:var(--serif);font-weight:400;font-style:italic;color:var(--accent);font-size:24px;min-width:40px}
+.about-list span{font-weight:500}
+
+/* why */
+.why{background:var(--ink);color:var(--bg);border-radius:60px;margin:0 16px}
+.why .label{color:#E4C49F}
 .why h2{color:var(--bg)}
-.why .intro{color:color-mix(in srgb,var(--bg) 70%,transparent);font-size:18px;max-width:440px}
-.points{display:grid;gap:14px}
-.point{display:grid;grid-template-columns:62px 1fr;gap:20px;padding:30px;border-radius:var(--radius);background:color-mix(in srgb,var(--bg) 6%,transparent);border:1px solid color-mix(in srgb,var(--bg) 10%,transparent)}
-.point .num{font-family:var(--serif);font-size:34px;color:var(--gold);line-height:1}
-.point h3{font-family:var(--serif);font-weight:500;font-size:24px;margin-bottom:6px}
-.point p{color:color-mix(in srgb,var(--bg) 72%,transparent);font-size:16px}
+.why h2 em{color:#E4C49F}
+.why .sec-head p{color:#D9CCBD}
+.why-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(246,238,228,.14);border-radius:var(--r);overflow:hidden}
+.why-item{background:var(--ink);padding:44px 32px 48px;transition:background .5s}
+.why-item:hover{background:#3A3029}
+.why-item svg{width:44px;height:44px;stroke:#E4C49F;margin-bottom:60px}
+.why-item h3{font-size:32px;color:var(--bg);margin-bottom:12px}
+.why-item p{color:#D9CCBD;font-size:15.5px}
 
-.score{display:flex;align-items:center;gap:18px;background:var(--surface);padding:16px 24px;border-radius:18px;border:1px solid color-mix(in srgb,var(--ink) 8%,transparent)}
-.score b{font-family:var(--serif);font-size:40px;font-weight:500;line-height:1}
-.score small{display:block;color:var(--muted);font-size:14px}
-.reviews{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-.review{background:var(--surface);border-radius:var(--radius);padding:34px;display:flex;flex-direction:column;gap:22px;border:1px solid color-mix(in srgb,var(--ink) 7%,transparent)}
-.review p{font-family:var(--serif);font-size:19.5px;line-height:1.45}
-.review .by{margin-top:auto;display:flex;align-items:center;gap:12px;font-weight:600;font-size:15px}
-.avatar{width:40px;height:40px;border-radius:50%;background:var(--soft);color:var(--accent);display:grid;place-items:center;font-weight:700}
-.review .src{color:var(--muted);font-weight:500;font-size:13px;display:block}
+/* process */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;position:relative}
+.steps::before{content:"";position:absolute;top:44px;left:6%;right:6%;height:1px;background:repeating-linear-gradient(90deg,var(--accent) 0 6px,transparent 6px 14px);opacity:.5}
+.step{position:relative;text-align:left}
+.step .circ{width:88px;height:88px;border-radius:50%;background:var(--bg);border:1px solid var(--accent);display:grid;place-items:center;font-family:var(--serif);font-size:38px;font-style:italic;color:var(--accent-d);margin-bottom:30px;transition:background .5s,color .5s,transform .6s var(--ease)}
+.step:hover .circ{background:var(--accent);color:#fff;transform:scale(1.06)}
+.step h3{font-size:34px;margin-bottom:10px}
+.step p{font-size:15.5px;max-width:28ch}
 
-.cta-band{padding:0 0 110px}
-.cta-box{border-radius:calc(var(--radius) + 12px);background:linear-gradient(140deg,var(--accent),color-mix(in srgb,var(--accent) 60%,var(--ink)));color:var(--accent-ink);padding:76px 64px;display:grid;grid-template-columns:1.3fr 1fr;gap:40px;align-items:center;position:relative;overflow:hidden}
-.cta-box:after{content:"";position:absolute;right:-120px;bottom:-200px;width:460px;height:460px;border-radius:50%;border:1.5px solid color-mix(in srgb,var(--accent-ink) 22%,transparent)}
-.cta-box h2{color:inherit;margin:0 0 12px}
-.cta-box p{opacity:.85;font-size:18px}
-.cta-box .actions{display:flex;flex-direction:column;gap:12px;align-items:flex-start;position:relative;z-index:1}
-.cta-box .btn{background:var(--accent-ink);color:var(--accent)}
-.cta-box .btn.ghost{background:transparent;color:var(--accent-ink);border-color:color-mix(in srgb,var(--accent-ink) 40%,transparent)}
+/* faq */
+.faq-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(40px,6vw,100px)}
+.faq h2{margin-top:20px}
+.qa{border-bottom:1px solid rgba(46,38,32,.16)}
+.qa button{width:100%;background:none;border:0;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:20px;padding:28px 0;text-align:left;font-family:var(--serif);font-size:clamp(24px,2.4vw,32px);color:var(--ink);line-height:1.2}
+.qa .pm{flex:none;width:40px;height:40px;border-radius:50%;border:1px solid rgba(46,38,32,.25);position:relative;transition:background .4s,transform .5s var(--ease)}
+.qa .pm::before,.qa .pm::after{content:"";position:absolute;left:50%;top:50%;width:13px;height:1.5px;background:var(--ink);transform:translate(-50%,-50%);transition:transform .5s var(--ease),background .4s}
+.qa .pm::after{transform:translate(-50%,-50%) rotate(90deg)}
+.qa.open .pm{background:var(--ink);transform:rotate(180deg)}
+.qa.open .pm::before,.qa.open .pm::after{background:var(--bg)}
+.qa.open .pm::after{transform:translate(-50%,-50%) rotate(0)}
+.qa .ans{display:grid;grid-template-rows:0fr;transition:grid-template-rows .6s var(--ease)}
+.qa.open .ans{grid-template-rows:1fr}
+.qa .ans>div{overflow:hidden}
+.qa .ans p{padding-bottom:28px;max-width:56ch}
+.qa .ans a{color:var(--accent-d);font-weight:500}
 
-.visit{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:10px}
-.visit .card h3{font-size:20px}
-.visit a{color:var(--accent);font-weight:600}
-footer{border-top:1px solid color-mix(in srgb,var(--ink) 9%,transparent);padding:40px 0 110px;color:var(--muted);font-size:14px}
-footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
-.mobile-bar{display:none}
+/* cta band */
+.cta-band{margin:0 16px;border-radius:60px;background:var(--accent);color:#fff;overflow:hidden;text-align:center;position:relative}
+.cta-band::before,.cta-band::after{content:"";position:absolute;border-radius:50%;pointer-events:none}
+.cta-band::before{width:640px;height:640px;left:-220px;top:-300px;background:radial-gradient(circle,rgba(255,255,255,.16),transparent 65%)}
+.cta-band::after{width:520px;height:520px;right:-160px;bottom:-260px;background:radial-gradient(circle,rgba(46,38,32,.28),transparent 65%)}
+.cta-band .wrap{position:relative;z-index:1}
+.cta-band h2{font-size:clamp(56px,10vw,150px);line-height:.9;color:#fff}
+.cta-band h2 em{color:#2E2620}
+.cta-band p{color:#FBF1E5;max-width:480px;margin:28px auto 40px;font-size:18px}
+.cta-band .btn-dark:hover{background:#fff;color:var(--ink)}
+.cta-band .btn-line{border-color:rgba(255,255,255,.55);color:#fff}
+.cta-band .btn-line:hover{border-color:#fff}
+.cta-band .hero-cta{justify-content:center}
+.cta-phone{display:block;font-family:var(--serif);font-size:clamp(34px,4.4vw,60px);margin-top:44px;color:#fff;font-style:italic}
 
-@keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
-.hero .copy>*{animation:rise .8s cubic-bezier(.2,.7,.2,1) both}
-.hero .copy>*:nth-child(2){animation-delay:.08s}.hero .copy>*:nth-child(3){animation-delay:.16s}
-.hero .copy>*:nth-child(4){animation-delay:.24s}.hero .copy>*:nth-child(5){animation-delay:.32s}
-.visual{animation:rise 1s .2s cubic-bezier(.2,.7,.2,1) both}
+/* contact */
+.contact-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:22px}
+.c-card{background:var(--surface);border-radius:var(--r);padding:clamp(32px,4vw,52px);position:relative;overflow:hidden}
+.c-card h2{margin:20px 0 34px}
+.c-rows{display:grid;gap:4px}
+.c-row{display:flex;gap:20px;padding:22px 0;border-top:1px solid rgba(46,38,32,.12);align-items:flex-start}
+.c-row svg{width:22px;height:22px;stroke:var(--accent-d);flex:none;margin-top:3px}
+.c-row small{display:block;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--ink2);font-weight:600;margin-bottom:4px}
+.c-row a,.c-row div>span{font-size:19px;font-weight:500;color:var(--ink);word-break:break-word}
+.map-card{background:var(--slate);color:#fff;display:flex;flex-direction:column;justify-content:space-between;min-height:460px}
+.map-card .mapsvg{position:absolute;inset:0;width:100%;height:100%;opacity:.5}
+.map-card>*{position:relative}
+.map-card .label{color:#fff}
+.pin{width:70px;height:70px;border-radius:50% 50% 50% 0;transform:rotate(-45deg);background:var(--bg);display:grid;place-items:center;margin:40px 0;box-shadow:0 20px 40px -14px rgba(0,0,0,.4);animation:bob 3s ease-in-out infinite}
+.pin::after{content:"";width:22px;height:22px;border-radius:50%;background:var(--brand-r)}
+@keyframes bob{50%{transform:rotate(-45deg) translate(6px,-6px)}}
+.map-card h3{font-size:clamp(36px,3.6vw,52px);color:#fff}
+.map-card p{color:#EAF0F2;margin:10px 0 28px}
+.map-card .btn{background:var(--bg);color:var(--ink);align-self:flex-start}
+.map-card .btn:hover{background:#fff;transform:translateY(-3px)}
 
-@media (max-width:980px){
-  .links{display:none}
-  .hero-grid,.why-grid,.cta-box{grid-template-columns:1fr}
-  .hero-grid{gap:56px}
-  .services,.reviews,.visit{grid-template-columns:1fr 1fr}
-  .trust .wrap{grid-template-columns:1fr 1fr}
-  .float.one{left:12px;bottom:-26px}.float.two{right:12px}
-  .visual{max-width:560px;margin-bottom:20px}
-  .section-head{flex-direction:column;align-items:flex-start}
+/* footer */
+footer{padding:90px 0 40px}
+.f-top{display:flex;flex-wrap:wrap;justify-content:space-between;gap:40px;padding-bottom:60px;border-bottom:1px solid rgba(46,38,32,.14)}
+.f-word{font-family:var(--serif);font-size:clamp(64px,13vw,200px);line-height:.85;letter-spacing:-.02em}
+.f-word i{color:var(--accent)}
+.f-cols{display:flex;gap:60px;flex-wrap:wrap;font-size:15px}
+.f-cols h4{font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--ink2);margin-bottom:16px;font-weight:600}
+.f-cols a,.f-cols span{display:block;margin-bottom:8px}
+.f-bot{display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px;padding-top:28px;font-size:13px;color:var(--ink2)}
+.dots{display:inline-flex;gap:6px;vertical-align:middle;margin-left:8px}
+.dots i{width:8px;height:8px;border-radius:50%;display:block}
+
+/* mobile call bar */
+.callbar{display:none}
+
+/* reveal */
+.rv{opacity:0;transform:translateY(40px);transition:opacity 1.1s var(--ease),transform 1.1s var(--ease)}
+.rv.in{opacity:1;transform:none}
+.rv.d1{transition-delay:.1s}.rv.d2{transition-delay:.2s}.rv.d3{transition-delay:.3s}
+
+@media (max-width:1080px){
+  .nav-links{display:none}
+  .hero-arch{opacity:.9;width:min(38vw,360px);right:3%}
+  .hero-pebble{display:none}
+  .svc,.svc.wide{grid-column:span 6}
+  .why-grid{grid-template-columns:repeat(2,1fr)}
+  .steps{grid-template-columns:repeat(2,1fr);row-gap:56px}
+  .steps::before{display:none}
 }
-@media (max-width:640px){
+@media (max-width:820px){
   body{font-size:16px}
-  .wrap{padding:0 18px}
-  .nav{height:66px}.brand{font-size:19px}
-  .phone,.nav-right .btn{display:none}
-  .hero{padding:44px 0 64px}
-  .lead-text{font-size:17.5px}
-  .hero-ctas .btn{flex:1;justify-content:center}
-  .ticks{display:none}
-  .services,.reviews,.visit,.trust .wrap{grid-template-columns:1fr}
-  section.block{padding:76px 0}
-  .quote-panel,.photo{aspect-ratio:auto;min-height:380px}.photo{aspect-ratio:4/3;min-height:0}
-  .quote-panel{padding:40px 30px 64px}.quote-panel p{font-size:23px}
-  .float{font-size:13px;padding:12px 14px}.float b{font-size:18px}
-  .float.two{display:none}
-  .cta-box{padding:52px 28px}
-  .point{grid-template-columns:44px 1fr;padding:24px}
-  .mobile-bar{display:flex;position:fixed;left:12px;right:12px;bottom:12px;z-index:30;gap:10px}
-  .mobile-bar .btn{flex:1;justify-content:center;box-shadow:0 14px 30px -14px color-mix(in srgb,var(--ink) 60%,transparent)}
-  .mobile-bar .btn.ghost{background:var(--surface)}
+  .nav-phone,.nav .btn{display:none}
+  .burger{display:block}
+  .nav{padding:8px 8px 8px 20px}
+  .hero{padding:130px 0 70px;justify-content:flex-start}
+  .hero-arch{position:relative;right:auto;top:auto;transform:none;width:62%;max-width:280px;margin:0 0 0 auto;order:3}
+  .hero-wrap-flex{display:flex;flex-direction:column}
+  .hero h1{max-width:none}
+  .hero h1 .indent{padding-left:.5em}
+  .hero-foot{margin-top:34px;gap:28px}
+  .scroll-cue{display:none}
+  .about-grid,.faq-grid,.contact-grid{grid-template-columns:1fr}
+  .arch-stack{max-width:440px;width:100%;margin-inline:auto}
+  .svc,.svc.wide{grid-column:span 12;min-height:auto}
+  .services{border-radius:40px 40px 0 0}
+  .why,.cta-band{border-radius:40px;margin:0 10px}
+  .callbar{display:flex;position:fixed;left:12px;right:12px;bottom:12px;z-index:45;gap:8px;padding:8px;border-radius:999px;background:rgba(46,38,32,.92);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);box-shadow:0 20px 40px -16px rgba(0,0,0,.5)}
+  .callbar a{flex:1;display:flex;align-items:center;justify-content:center;gap:8px;padding:14px 10px;border-radius:999px;font-size:14px;font-weight:500;color:var(--bg)}
+  .callbar a:first-child{background:var(--accent)}
+  .callbar svg{width:16px;height:16px}
+  footer{padding-bottom:110px}
+}
+@media (max-width:520px){
+  .wrap{width:calc(100% - 36px)}
+  .hero h1{font-size:clamp(56px,17vw,86px)}
+  .hero-cta{width:100%}
+  .hero-cta .btn{flex:1 1 100%}
+  .why-grid,.steps{grid-template-columns:1fr}
+  .why-item svg{margin-bottom:30px}
+  .svc{padding:32px 26px}
+  .c-row a,.c-row div>span{font-size:17px}
+  .f-cols{gap:36px}
+  .mobile-menu a.m{font-size:44px}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+  .rv,.fade,.hero h1 .line span{opacity:1!important;transform:none!important}
 }
 </style>
 </head>
 <body>
-<div class="concept">Website concept prepared for <b>Artcrete Designs</b> by webstudio &middot; not a live site</div>
 
-<header>
-  <div class="wrap nav">
-    <a href="#top" class="brand">Artcrete Designs</a>
-    <nav class="links">
-      <a href="#services">Services</a><a href="#why">Why us</a><a href="#visit">Visit</a>
+<header id="top-header">
+  <div class="wrap">
+    <nav class="nav" aria-label="Main">
+      <a href="#top" class="logo" aria-label="Artcrete Designs home">
+        <svg class="logo-mark" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+          <path d="M6 36V20a14 14 0 0 1 28 0v16" stroke="#2E2620" stroke-width="2"/>
+          <path d="M13 36V21a7 7 0 0 1 14 0v15" stroke="#9C6B3D" stroke-width="2"/>
+          <circle cx="20" cy="9" r="2.2" fill="#fc574a"/>
+        </svg>
+        <span>Artcrete<small>Designs · Austin</small></span>
+      </a>
+      <div class="nav-links">
+        <a class="ul" href="#services">Services</a>
+        <a class="ul" href="#about">Studio</a>
+        <a class="ul" href="#process">Process</a>
+        <a class="ul" href="#contact">Visit</a>
+      </div>
+      <div class="nav-right">
+        <a class="nav-phone ul" href="tel:+15126949397">(512) 694-9397</a>
+        <a class="btn btn-dark" href="#contact">Start a project</a>
+        <button class="burger" aria-label="Open menu" aria-expanded="false"><span></span><span></span></button>
+      </div>
     </nav>
-    <div class="nav-right">
-      <a class="phone" href="tel:5126949397">(512) 694-9397</a>
-      <a class="btn" href="#visit">Get a quote</a>
-    </div>
   </div>
 </header>
 
+<div class="mobile-menu" aria-hidden="true">
+  <a class="m" href="#services">Services</a>
+  <a class="m" href="#about">Studio</a>
+  <a class="m" href="#process">Process</a>
+  <a class="m" href="#faq">Questions</a>
+  <a class="m" href="#contact">Visit</a>
+  <div class="mm-foot"><a href="tel:+15126949397">(512) 694-9397</a><br>8127 Mesa Dr b206, Austin TX 78759</div>
+</div>
+
 <main id="top">
 <section class="hero">
-  <div class="wrap hero-grid">
-    <div class="copy">
-      <div class="eyebrow">
-        <span class="dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-7-4.4-7-10a4 4 0 017-2.6A4 4 0 0119 10c0 5.6-7 10-7 10z"/></svg></span>Kitchen &amp; bath remodeling
-      </div>
-      <h1>The home you love, <em>finally finished.</em></h1>
-      <p class="lead-text">Design-build remodeling with one team from first sketch to final walkthrough, on time and on budget.</p>
-      <div class="hero-ctas">
-        <a class="btn" href="#visit">Book a design consult <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-        <a class="btn ghost" href="tel:5126949397">Call (512) 694-9397</a>
-      </div>
-      <div class="ticks">
-        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7"/></svg>Licensed &amp; insured</span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7"/></svg>3D design previews</span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7"/></svg>Fixed-price quotes</span>
+  <div class="hero-bg" aria-hidden="true">
+    <div class="blob b1" data-px="0.12"></div>
+    <div class="blob b2" data-px="-0.08"></div>
+  </div>
+  <div class="wrap hero-wrap-flex">
+    <span class="label fade d1">Remodeling · Austin, Texas</span>
+    <h1>
+      <span class="line"><span>Your home,</span></span>
+      <span class="line indent"><span><span class="rot" aria-hidden="true"><i class="on">reimagined</i><i>refined</i><i>rebuilt</i><i>reborn</i></span><span style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">reimagined</span></span></span>
+      <span class="line"><span>by hand<span class="dot">.</span></span></span>
+    </h1>
+    <div class="hero-foot">
+      <p class="hero-sub fade d2">Artcrete Designs is a remodeling studio in North Austin, turning the rooms you live in every day into spaces that feel considered, crafted and entirely yours.</p>
+      <div class="hero-cta fade d3">
+        <a class="btn btn-dark" href="#contact">Plan your remodel <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 8h12M9 3l5 5-5 5"/></svg></a>
+        <a class="btn btn-line" href="tel:+15126949397">Call (512) 694-9397</a>
       </div>
     </div>
-    <div class="visual">
-      
-      <div class="quote-panel"><div class="quote-mark">“</div><div><p>Design-build remodeling with one team from first sketch to final walkthrough, on time and on budget.</p><div class="who">Artcrete Designs</div></div></div>
-      
-      
-      <div class="float two"><span class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><span><b>This week</b>3D design previews</span></div>
+    <div class="hero-arch fade d4" data-px="0.06" aria-hidden="true">
+      <svg class="grain" width="100%" height="100%"><filter id="n"><feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="3" stitchTiles="stitch"/></filter><rect width="100%" height="100%" filter="url(#n)"/></svg>
+      <div class="inner"></div>
+      <div class="rings">
+        <svg viewBox="0 0 200 200"><defs><path id="c" d="M100 100m-78 0a78 78 0 1 1 156 0a78 78 0 1 1-156 0"/></defs>
+          <text fill="#FBF4EA" font-family="Inter,sans-serif" font-size="11.5" letter-spacing="5.2"><textPath href="#c">ARTCRETE DESIGNS · REMODELING · AUSTIN TX ·</textPath></text>
+          <circle cx="100" cy="100" r="46" fill="none" stroke="#FBF4EA" stroke-opacity=".5"/>
+          <path d="M80 122V100a20 20 0 0 1 40 0v22" fill="none" stroke="#FBF4EA" stroke-width="1.5"/>
+        </svg>
+      </div>
+      <div class="cap">Crafted in Austin<small>8127 Mesa Dr</small></div>
     </div>
   </div>
-  <template id="qp"><div class="quote-panel"><div class="quote-mark">“</div><div><p>Design-build remodeling with one team from first sketch to final walkthrough, on time and on budget.</p><div class="who">Artcrete Designs</div></div></div></template>
+  <div class="hero-pebble" aria-hidden="true">Mesa Dr<br>Austin<br>78759</div>
+  <div class="scroll-cue" aria-hidden="true">Scroll</div>
 </section>
 
-<div class="trust"><div class="wrap">
-  <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.2-8 9-4.6-.8-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg>Licensed &amp; insured</div><div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.2-8 9-4.6-.8-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg>3D design previews</div><div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.2-8 9-4.6-.8-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg>Fixed-price quotes</div><div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.2-8 9-4.6-.8-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg>Financing available</div>
-</div></div>
+<div class="marquee" aria-label="What we remodel">
+  <div class="marquee-track">
+    <span>Remodeling <svg viewBox="0 0 24 24" fill="#E4C49F"><path d="M12 0l2.6 9.4L24 12l-9.4 2.6L12 24l-2.6-9.4L0 12l9.4-2.6z"/></svg> <i>Kitchens</i> <svg viewBox="0 0 24 24" fill="#E4C49F"><path d="M12 0l2.6 9.4L24 12l-9.4 2.6L12 24l-2.6-9.4L0 12l9.4-2.6z"/></svg> Bathrooms <svg viewBox="0 0 24 24" fill="#E4C49F"><path d="M12 0l2.6 9.4L24 12l-9.4 2.6L12 24l-2.6-9.4L0 12l9.4-2.6z"/></svg> <i>Living spaces</i> <svg viewBox="0 0 24 24" fill="#E4C49F"><path d="M12 0l2.6 9.4L24 12l-9.4 2.6L12 24l-2.6-9.4L0 12l9.4-2.6z"/></svg> Custom design <svg viewBox="0 0 24 24" fill="#E4C49F"><path d="M12 0l2.6 9.4L24 12l-9.4 2.6L12 24l-2.6-9.4L0 12l9.4-2.6z"/></svg> <i>Austin, Texas</i> <svg viewBox="0 0 24 24" fill="#E4C49F"><path d="M12 0l2.6 9.4L24 12l-9.4 2.6L12 24l-2.6-9.4L0 12l9.4-2.6z"/></svg></span>
+    <span aria-hidden="true">Remodeling <svg viewBox="0 0 24 24" fill="#E4C49F"><path d="M12 0l2.6 9.4L24 12l-9.4 2.6L12 24l-2.6-9.4L0 12l9.4-2.6z"/></svg> <i>Kitchens</i> <svg viewBox="0 0 24 24" fill="#E4C49F"><path d="M12 0l2.6 9.4L24 12l-9.4 2.6L12 24l-2.6-9.4L0 12l9.4-2.6z"/></svg> Bathrooms <svg viewBox="0 0 24 24" fill="#E4C49F"><path d="M12 0l2.6 9.4L24 12l-9.4 2.6L12 24l-2.6-9.4L0 12l9.4-2.6z"/></svg> <i>Living spaces</i> <svg viewBox="0 0 24 24" fill="#E4C49F"><path d="M12 0l2.6 9.4L24 12l-9.4 2.6L12 24l-2.6-9.4L0 12l9.4-2.6z"/></svg> Custom design <svg viewBox="0 0 24 24" fill="#E4C49F"><path d="M12 0l2.6 9.4L24 12l-9.4 2.6L12 24l-2.6-9.4L0 12l9.4-2.6z"/></svg> <i>Austin, Texas</i> <svg viewBox="0 0 24 24" fill="#E4C49F"><path d="M12 0l2.6 9.4L24 12l-9.4 2.6L12 24l-2.6-9.4L0 12l9.4-2.6z"/></svg></span>
+  </div>
+</div>
 
-<section class="block" id="services">
+<section class="intro pad">
   <div class="wrap">
-    <div class="section-head">
-      <div><div class="kicker">What we do</div><h2>Everything you need,<br>under one roof.</h2></div>
-      <p>From routine visits to the work that changes how you feel about your day, Artcrete Designs takes care of it properly.</p>
+    <span class="label rv">The Artcrete approach</span>
+    <p class="big rv d1">Great remodels start with <em>listening</em> <span class="pill" aria-hidden="true"></span> and end with rooms that feel <span class="pill w" aria-hidden="true"></span> <em>made for you.</em></p>
+  </div>
+</section>
+
+<section class="services pad" id="services">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <span class="label rv">What we do</span>
+        <h2 class="rv d1">Remodeling, <em>designed</em> around your life.</h2>
+      </div>
+      <p class="rv d2">Whatever room is asking for change, bring it to us. We'll talk through how you use it, what's not working, and what it could become.</p>
     </div>
-    <div class="services">
-      
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11l8-7 8 7v9a1 1 0 01-1 1h-4v-6H9v6H5a1 1 0 01-1-1z"/></svg></div><h3>Kitchen remodels</h3><p>Beautiful, functional kitchens built around how you cook and live.</p></div>
-      
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/><path d="M19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8z"/></svg></div><h3>Bathroom remodels</h3><p>Spa-like bathrooms with craftsmanship that lasts.</p></div>
-      
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3" width="14" height="18" rx="1"/><path d="M9 7h2M13 7h2M9 11h2M13 11h2M9 15h2M13 15h2"/></svg></div><h3>Home additions</h3><p>More space without the move.</p></div>
-      
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 19c0-8 5-14 15-14 0 10-6 15-14 15"/><path d="M5 19c3-4 6-6 10-8"/></svg></div><h3>Basements</h3><p>Turn unused space into your favourite room.</p></div>
-      
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1-4.4-4.3 6.1-.9z"/></svg></div><h3>Design services</h3><p>3D designs so you see it before we build it.</p></div>
-      
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.2-8 9-4.6-.8-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg></div><h3>Warranty</h3><p>Workmanship guaranteed long after we leave.</p></div>
-      
+    <div class="svc-grid">
+      <article class="svc wide dark rv">
+        <span class="num">01 — REMODELING</span>
+        <div class="ico"><svg viewBox="0 0 48 48" fill="none" stroke-width="1.6"><path d="M6 42V22L24 8l18 14v20"/><path d="M18 42V28h12v14"/></svg></div>
+        <h3>Thoughtful home remodeling</h3>
+        <p>From a single tired room to a fresh direction for your home, every Artcrete project begins with your vision and is shaped with care, detail and a designer's eye.</p>
+        <a class="more ul" href="#contact">Talk about your home →</a>
+        <span class="deco"></span>
+      </article>
+      <article class="svc rv d1">
+        <span class="num">02 — KITCHENS</span>
+        <div class="ico"><svg viewBox="0 0 48 48" fill="none" stroke-width="1.6"><rect x="7" y="20" width="34" height="22" rx="2"/><path d="M7 30h34M18 20v22M14 8v8M24 6v10M34 8v8"/></svg></div>
+        <h3>The heart of home</h3>
+        <p>Tell us how you cook, gather and host, and let's explore a kitchen that works as beautifully as it looks.</p>
+        <a class="more ul" href="#contact">Discuss a kitchen →</a>
+        <span class="deco"></span>
+      </article>
+      <article class="svc rv">
+        <span class="num">03 — BATHROOMS</span>
+        <div class="ico"><svg viewBox="0 0 48 48" fill="none" stroke-width="1.6"><path d="M6 24h36v6a10 10 0 0 1-10 10H16A10 10 0 0 1 6 30z"/><path d="M12 24V10a4 4 0 0 1 8 0M13 40l-2 4M35 40l2 4"/></svg></div>
+        <h3>Your daily retreat</h3>
+        <p>A bathroom should feel calm from the moment you step in. Share what you'd love yours to be.</p>
+        <a class="more ul" href="#contact">Discuss a bathroom →</a>
+        <span class="deco"></span>
+      </article>
+      <article class="svc slate rv d1">
+        <span class="num">04 — LIVING SPACES</span>
+        <div class="ico"><svg viewBox="0 0 48 48" fill="none" stroke-width="1.6"><path d="M8 34V24a4 4 0 0 1 8 0v4h16v-4a4 4 0 0 1 8 0v10z"/><path d="M12 34v6M36 34v6M14 22v-6a4 4 0 0 1 4-4h12a4 4 0 0 1 4 4v6"/></svg></div>
+        <h3>Rooms to live in</h3>
+        <p>Open it up, warm it up, or simply make it make sense. Let's talk about the spaces you share.</p>
+        <a class="more ul" href="#contact">Discuss a room →</a>
+        <span class="deco"></span>
+      </article>
+      <article class="svc rv d2">
+        <span class="num">05 — DESIGN</span>
+        <div class="ico"><svg viewBox="0 0 48 48" fill="none" stroke-width="1.6"><path d="M10 38L34 14l4 4-24 24H10z"/><path d="M30 18l4 4M8 10h12M8 16h7"/></svg></div>
+        <h3>Design-led thinking</h3>
+        <p>"Designs" is in our name for a reason: we care how every finish, line and material comes together.</p>
+        <a class="more ul" href="#contact">Start the conversation →</a>
+        <span class="deco"></span>
+      </article>
     </div>
   </div>
 </section>
 
-<section class="block why" id="why">
-  <div class="wrap why-grid">
+<section class="about pad" id="about">
+  <div class="wrap about-grid">
+    <div class="arch-stack rv" aria-hidden="true">
+      <div class="arch-a">
+        <svg viewBox="0 0 400 500" preserveAspectRatio="xMidYMid slice"><g fill="none" stroke="#FFF7EC" stroke-opacity=".28"><path d="M-20 420 C 100 360, 220 470, 420 380"/><path d="M-20 450 C 120 390, 240 500, 420 410"/><path d="M-20 480 C 140 420, 260 530, 420 440"/></g><circle cx="300" cy="120" r="60" fill="#FFF7EC" fill-opacity=".14"/></svg>
+        <div class="arch-word">Art<i>crete</i></div>
+      </div>
+      <div class="arch-b"><span>Austin<br>made</span></div>
+    </div>
     <div>
-      <div class="kicker">Why homeowners choose us</div>
-      <h2>The Austin remodeling company people recommend to their friends.</h2>
-      <p class="intro">it still comes down to the same three things.</p>
-    </div>
-    <div class="points">
-      
-      <div class="point"><div class="num">01</div><div><h3>Design-build</h3><p>One team, one contract, one point of contact.</p></div></div>
-      
-      <div class="point"><div class="num">02</div><div><h3>Fixed pricing</h3><p>A clear, detailed quote with no surprise change orders.</p></div></div>
-      
-      <div class="point"><div class="num">03</div><div><h3>Clean job sites</h3><p>We respect your home like it&#39;s our own.</p></div></div>
-      
+      <span class="label rv">The studio</span>
+      <h2 class="rv d1">Where art meets <em>craft.</em></h2>
+      <p class="rv d2">Artcrete Designs is an Austin remodeling company working from our studio on Mesa Drive in North Austin. Our name says what we believe: a remodel should be as much art as it is construction.</p>
+      <p class="rv d2">We take the time to understand your home and the way you live in it, then bring the project to life with attention to every detail along the way. No cookie-cutter rooms, just spaces designed for the people who use them.</p>
+      <div class="about-list rv d3">
+        <div><b>i.</b><span>Local to Austin, based at 8127 Mesa Dr</span></div>
+        <div><b>ii.</b><span>Design and remodeling under one roof</span></div>
+        <div><b>iii.</b><span>A direct line to the team: (512) 694-9397</span></div>
+      </div>
     </div>
   </div>
 </section>
 
-
-
-<section class="cta-band" id="book">
-  <div class="wrap"><div class="cta-box">
-    <div><h2>Ready when you are.</h2><p>Book a design consult in under a minute, or give us a call and talk to a real person.</p></div>
-    <div class="actions">
-      <a class="btn" href="#visit">Book a design consult</a>
-      <a class="btn ghost" href="tel:5126949397">Call (512) 694-9397</a>
+<section class="why pad">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <span class="label rv">Why Artcrete</span>
+        <h2 class="rv d1">A remodel that feels <em>personal.</em></h2>
+      </div>
+      <p class="rv d2">Hiring a remodeler means inviting someone into your home. Here's what we bring with us.</p>
     </div>
-  </div></div>
+    <div class="why-grid">
+      <div class="why-item rv">
+        <svg viewBox="0 0 48 48" fill="none" stroke-width="1.5"><path d="M8 40V22a16 16 0 0 1 32 0v18"/><path d="M16 40V24a8 8 0 0 1 16 0v16"/></svg>
+        <h3>Design first</h3>
+        <p>We start with ideas and intent, so the finished space has a point of view, not just new surfaces.</p>
+      </div>
+      <div class="why-item rv d1">
+        <svg viewBox="0 0 48 48" fill="none" stroke-width="1.5"><circle cx="24" cy="20" r="8"/><path d="M24 44s14-12 14-24a14 14 0 0 0-28 0c0 12 14 24 14 24z"/></svg>
+        <h3>Truly local</h3>
+        <p>Based right here in North Austin, close to the neighborhoods and homes we work in.</p>
+      </div>
+      <div class="why-item rv d2">
+        <svg viewBox="0 0 48 48" fill="none" stroke-width="1.5"><path d="M8 12h32v22H20l-8 8v-8H8z"/><path d="M16 21h16M16 27h10"/></svg>
+        <h3>Real conversations</h3>
+        <p>Pick up the phone and talk to us directly about your plans, questions and ideas.</p>
+      </div>
+      <div class="why-item rv d3">
+        <svg viewBox="0 0 48 48" fill="none" stroke-width="1.5"><path d="M10 26l9 9 19-21"/><circle cx="24" cy="24" r="20"/></svg>
+        <h3>Detail obsessed</h3>
+        <p>The small things, edges, joins and finishes, are what make a remodel feel premium. We sweat them.</p>
+      </div>
+    </div>
+  </div>
 </section>
 
-<section class="block" id="visit" style="padding-top:0">
+<section class="pad" id="process">
   <div class="wrap">
-    <div class="kicker">Visit us</div><h2>Come say hello.</h2>
-    <div class="visit">
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11l8-7 8 7v9a1 1 0 01-1 1h-4v-6H9v6H5a1 1 0 01-1-1z"/></svg></div><h3>Address</h3><p>8127 Mesa Dr b206, Austin TX 78759</p></div>
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div><h3>Phone</h3><p><a href="tel:5126949397">(512) 694-9397</a></p><p style="margin-top:10px">Call or message us for today's opening hours.</p></div>
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-7-4.4-7-10a4 4 0 017-2.6A4 4 0 0119 10c0 5.6-7 10-7 10z"/></svg></div><h3>3D design previews</h3><p>Book a design consult online or by phone and we'll take care of the rest.</p></div>
+    <div class="sec-head">
+      <div>
+        <span class="label rv">How it works</span>
+        <h2 class="rv d1">From first call to <em>finished room.</em></h2>
+      </div>
+      <p class="rv d2">A clear, calm path from idea to completion, so you always know what comes next.</p>
+    </div>
+    <div class="steps">
+      <div class="step rv"><div class="circ">1</div><h3>Reach out</h3><p>Call (512) 694-9397 and tell us about the space you want to change.</p></div>
+      <div class="step rv d1"><div class="circ">2</div><h3>Listen &amp; plan</h3><p>We get to know your home, your goals and how you want the room to feel.</p></div>
+      <div class="step rv d2"><div class="circ">3</div><h3>Design</h3><p>Ideas become a clear direction for layout, materials and finishes.</p></div>
+      <div class="step rv d3"><div class="circ">4</div><h3>Build</h3><p>Our team brings the design to life, carefully and with attention to detail.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="faq pad" id="faq" style="padding-top:0">
+  <div class="wrap faq-grid">
+    <div>
+      <span class="label rv">Good to know</span>
+      <h2 class="rv d1">Questions, <em>answered.</em></h2>
+    </div>
+    <div class="rv d2">
+      <div class="qa open">
+        <button aria-expanded="true">Where is Artcrete Designs located?<span class="pm" aria-hidden="true"></span></button>
+        <div class="ans"><div><p>Our studio is at 8127 Mesa Dr b206, Austin TX 78759, in North Austin. <a class="ul" href="https://maps.google.com/?q=8127+Mesa+Dr+b206,+Austin+TX+78759" target="_blank" rel="noopener">Open in Google Maps</a>.</p></div></div>
+      </div>
+      <div class="qa">
+        <button aria-expanded="false">What kind of company are you?<span class="pm" aria-hidden="true"></span></button>
+        <div class="ans"><div><p>Artcrete Designs is a remodeling company serving homeowners in Austin, Texas, with a design-minded approach to every project.</p></div></div>
+      </div>
+      <div class="qa">
+        <button aria-expanded="false">How do I start a project?<span class="pm" aria-hidden="true"></span></button>
+        <div class="ans"><div><p>The quickest way is to call us at <a class="ul" href="tel:+15126949397">(512) 694-9397</a> and tell us about your home and what you have in mind.</p></div></div>
+      </div>
+      <div class="qa">
+        <button aria-expanded="false">What are your hours?<span class="pm" aria-hidden="true"></span></button>
+        <div class="ans"><div><p>Please give us a call before visiting the studio so we can confirm a time that works for you.</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band pad">
+  <div class="wrap">
+    <span class="label rv" style="color:#fff">Let's begin</span>
+    <h2 class="rv d1" style="margin-top:24px">The room you've<br>been <em>imagining.</em></h2>
+    <p class="rv d2">It starts with one conversation. Tell us about your space and let's see what it could become.</p>
+    <div class="hero-cta rv d3">
+      <a class="btn btn-dark" href="tel:+15126949397">Call the studio <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 8h12M9 3l5 5-5 5"/></svg></a>
+      <a class="btn btn-line" href="#contact">Visit us</a>
+    </div>
+    <a class="cta-phone ul rv" href="tel:+15126949397">(512) 694-9397</a>
+  </div>
+</section>
+
+<section class="pad" id="contact">
+  <div class="wrap contact-grid">
+    <div class="c-card rv">
+      <span class="label">Contact &amp; visit</span>
+      <h2>Come say <em>hello.</em></h2>
+      <div class="c-rows">
+        <div class="c-row">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 5a2 2 0 0 1 2-2"/></svg>
+          <div><small>Phone</small><a class="ul" href="tel:+15126949397">(512) 694-9397</a></div>
+        </div>
+        <div class="c-row">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M12 22s7-6 7-12a7 7 0 0 0-14 0c0 6 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg>
+          <div><small>Studio</small><span>8127 Mesa Dr b206<br>Austin, TX 78759</span></div>
+        </div>
+        <div class="c-row">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+          <div><small>Hours</small><span>Please call to confirm</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="c-card map-card rv d1">
+      <svg class="mapsvg" viewBox="0 0 400 460" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><g fill="none" stroke="#fff" stroke-opacity=".35"><path d="M-10 120 L410 80"/><path d="M-10 260 C 120 240, 260 300, 410 250"/><path d="M120 -10 L160 470"/><path d="M290 -10 C 270 140, 330 300, 300 470"/><path d="M-10 380 L410 360" stroke-dasharray="4 6"/><path d="M40 -10 L60 470" stroke-opacity=".18"/></g></svg>
+      <span class="label">Find us</span>
+      <div>
+        <div class="pin" aria-hidden="true"></div>
+        <h3>Mesa Drive,<br>North Austin</h3>
+        <p>8127 Mesa Dr b206, Austin TX 78759</p>
+        <a class="btn" href="https://maps.google.com/?q=8127+Mesa+Dr+b206,+Austin+TX+78759" target="_blank" rel="noopener">Get directions <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 8h12M9 3l5 5-5 5"/></svg></a>
+      </div>
     </div>
   </div>
 </section>
 </main>
 
-<footer><div class="wrap">
-  <span>© 2026 Artcrete Designs</span>
-  <span>Concept design by webstudio. Not affiliated with or endorsed by Artcrete Designs.</span>
-</div></footer>
+<footer>
+  <div class="wrap">
+    <div class="f-top">
+      <div class="f-word">Artcrete<br><i>Designs.</i></div>
+      <div class="f-cols">
+        <div><h4>Explore</h4><a class="ul" href="#services">Services</a><a class="ul" href="#about">Studio</a><a class="ul" href="#process">Process</a><a class="ul" href="#faq">FAQ</a></div>
+        <div><h4>Studio</h4><span>8127 Mesa Dr b206</span><span>Austin, TX 78759</span><a class="ul" href="tel:+15126949397">(512) 694-9397</a></div>
+      </div>
+    </div>
+    <div class="f-bot">
+      <span>© <span id="yr">2026</span> Artcrete Designs · Remodeling in Austin, TX <span class="dots" aria-hidden="true"><i style="background:#fc574a"></i><i style="background:#2db35e"></i><i style="background:#4693ff"></i></span></span>
+      <a class="ul" href="#top">Back to top ↑</a>
+    </div>
+  </div>
+</footer>
 
-<div class="mobile-bar">
-  <a class="btn ghost" href="tel:5126949397">Call</a>
-  <a class="btn" href="#visit">Get a quote</a>
+<div class="callbar">
+  <a href="tel:+15126949397"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 5a2 2 0 0 1 2-2"/></svg>Call now</a>
+  <a href="#contact">Visit studio</a>
 </div>
-</body>
+
+<script>
+(function(){
+  var d=document,b=d.body,reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  requestAnimationFrame(function(){setTimeout(function(){b.classList.add('loaded')},60)});
+  d.getElementById('yr').textContent=new Date().getFullYear();
+
+  var hdr=d.getElementById('top-header');
+  addEventListener('scroll',function(){hdr.classList.toggle('scrolled',scrollY>30)},{passive:true});
+
+  var burger=d.querySelector('.burger'),mm=d.querySelector('.mobile-menu');
+  function setMenu(o){b.classList.toggle('menu-open',o);burger.setAttribute('aria-expanded',o);mm.setAttribute('aria-hidden',!o);b.style.overflow=o?'hidden':''}
+  burger.addEventListener('click',function(){setMenu(!b.classList.contains('menu-open'))});
+  mm.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){setMenu(false)})});
+
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.15,rootMargin:'0px 0px -40px 0px'});
+  d.querySelectorAll('.rv').forEach(function(el){io.observe(el)});
+
+  d.querySelectorAll('.qa button').forEach(function(btn){
+    btn.addEventListener('click',function(){
+      var q=btn.parentNode,o=q.classList.toggle('open');btn.setAttribute('aria-expanded',o);
+    });
+  });
+
+  if(reduce)return;
+
+  var words=d.querySelectorAll('.rot i'),i=0;
+  setInterval(function(){
+    var cur=words[i];cur.classList.remove('on');cur.classList.add('out');
+    setTimeout(function(){cur.classList.remove('out')},900);
+    i=(i+1)%words.length;words[i].classList.add('on');
+  },2600);
+
+  var px=d.querySelectorAll('[data-px]'),ticking=false;
+  function par(){
+    var y=scrollY;
+    if(y<innerHeight*1.2)px.forEach(function(el){
+      var s=parseFloat(el.dataset.px),base=el.classList.contains('hero-arch')&&innerWidth>820?'translateY(-46%) ':'';
+      el.style.transform=base+'translate3d(0,'+(y*s)+'px,0)';
+    });
+    ticking=false;
+  }
+  addEventListener('scroll',function(){if(!ticking){requestAnimationFrame(par);ticking=true}},{passive:true});
+})();
+</script>
+<div id="lm-concept" style="position:fixed;left:12px;bottom:12px;z-index:2147483647;font:500 11px/1.3 -apple-system,BlinkMacSystemFont,Segoe UI,sans-serif;letter-spacing:.02em;background:rgba(15,15,18,.82);color:#f4f1ea;padding:7px 11px;border-radius:999px;backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);pointer-events:none;max-width:70vw">Website concept for Artcrete Designs by webstudio &middot; not the live site</div><p style="margin:0;padding:18px 16px 70px;text-align:center;font:12px/1.5 -apple-system,sans-serif;color:#8a8a8a;background:#0e0e10">Concept design by webstudio. Not affiliated with or endorsed by Artcrete Designs.</p></body>
 </html>
