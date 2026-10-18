@@ -1,291 +1,745 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src * data: blob:; media-src 'self' data:; style-src 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com data:; script-src 'unsafe-inline'; connect-src 'none'; frame-src 'none'; form-action 'none'; base-uri 'none'; object-src 'none'">
 <meta name="robots" content="noindex, nofollow">
-<title>marriott_palace | Website concept</title>
+<style>html,body{max-width:100%;overflow-x:clip}</style>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Marriott Palace | Warehousing, 3PL & Contracting · Farwaniya, Kuwait</title>
+<meta name="description" content="Marriott Palace General Trading and Contracting Company, Kuwait. Warehouse rental, end-to-end 3PL, construction, epoxy painting, louver windows, Moca Cream limestone, equipment rental, PPE and industrial consumables. Established 1985.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..700;1,6..96,400..600&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 :root{
-  --bg:#0d0d0f;--surface:#16161a;--ink:#f3efe7;--muted:#a8a39a;
-  --accent:#c9a96e;--accent-ink:#0d0d0f;--gold:#c9a96e;--soft:#1f1e22;
-  --radius:22px;--max:1180px;
-  --serif:"Fraunces",Georgia,serif;--sans:"Manrope",system-ui,-apple-system,sans-serif;
+  --bg:#F6EEE4;--bg2:#EFE3D5;--surf:#FFFFFF;--ink:#2E2620;--ink2:#5A4D43;
+  --acc:#9C6B3D;--accd:#7A522D;--sl:#5F7A87;--sld:#46606D;--brand:#ee4c0f;--brand2:#e9997b;
+  --rule:rgba(46,38,32,.16);--serif:"Bodoni Moda",Georgia,"Times New Roman",serif;--sans:"Jost",system-ui,-apple-system,sans-serif;
+  --ease:cubic-bezier(.2,.7,.1,1);--wrap:1280px;--hh:84px
 }
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:var(--hh)}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-weight:400;font-size:17px;line-height:1.65;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+@supports (overflow:clip){body{overflow-x:clip}}
+img{display:block;max-width:100%}
 a{color:inherit;text-decoration:none}
-img{max-width:100%;display:block}
-.wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
-.concept{background:var(--ink);color:var(--bg);font-size:13px;text-align:center;padding:8px 16px;letter-spacing:.02em}
-.concept b{color:var(--gold);font-weight:600}
+.wrap{width:min(var(--wrap),100% - 48px);margin-inline:auto}
+h1,h2,h3{font-family:var(--serif);font-weight:500;line-height:1.04;letter-spacing:-.01em}
+em{font-style:italic}
+.label{font-family:var(--sans);font-size:12px;font-weight:500;letter-spacing:.22em;text-transform:uppercase;color:var(--accd)}
+.num{font-family:var(--serif);font-style:italic;color:var(--accd)}
+.rule{height:1px;background:var(--rule);border:0}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:12px;padding:17px 30px;font:500 13px/1.2 var(--sans);letter-spacing:.16em;text-transform:uppercase;border:1px solid var(--ink);transition:background .4s var(--ease),color .4s var(--ease),transform .4s var(--ease),border-color .4s;text-align:center}
+.btn-dark{background:var(--ink);color:#fff}
+.btn-dark:hover{background:var(--accd);border-color:var(--accd);transform:translateY(-2px)}
+.btn-line{color:var(--ink);background:transparent}
+.btn-line:hover{background:var(--ink);color:#fff;transform:translateY(-2px)}
+.btn .arr{transition:transform .4s var(--ease)}
+.btn:hover .arr{transform:translateX(4px)}
+.ulink{position:relative;display:inline-block;padding-bottom:3px}
+.ulink::after{content:"";position:absolute;left:0;bottom:0;width:100%;height:1px;background:currentColor;transform:scaleX(0);transform-origin:right;transition:transform .5s var(--ease)}
+.ulink:hover::after{transform:scaleX(1);transform-origin:left}
 
 /* header */
-header{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:saturate(1.4) blur(10px);border-bottom:1px solid color-mix(in srgb,var(--ink) 8%,transparent)}
-.nav{display:flex;align-items:center;justify-content:space-between;height:76px;gap:24px}
-.brand{font-family:var(--serif);font-size:23px;font-weight:600;letter-spacing:-.01em;line-height:1.1;max-width:340px}
-.links{display:flex;gap:30px;font-size:15px;font-weight:500;color:var(--muted)}
-.links a:hover{color:var(--ink)}
-.nav-right{display:flex;align-items:center;gap:18px}
-.phone{font-weight:600;font-size:15px;white-space:nowrap}
-.btn{display:inline-flex;align-items:center;gap:10px;background:var(--accent);color:var(--accent-ink);padding:14px 26px;border-radius:999px;font-weight:600;font-size:15.5px;transition:transform .2s ease,box-shadow .2s ease;white-space:nowrap}
-.btn:hover{transform:translateY(-2px);box-shadow:0 12px 28px -12px var(--accent)}
-.btn.ghost{background:transparent;color:var(--ink);border:1.5px solid color-mix(in srgb,var(--ink) 20%,transparent)}
-.btn.ghost:hover{box-shadow:none;border-color:var(--ink)}
-.btn svg{width:18px;height:18px}
+.hdr{position:fixed;inset:0 0 auto;z-index:50;height:var(--hh);transition:background .4s,box-shadow .4s,height .4s}
+.hdr.scrolled{background:rgba(246,238,228,.82);backdrop-filter:blur(16px) saturate(1.3);-webkit-backdrop-filter:blur(16px) saturate(1.3);box-shadow:0 1px 0 var(--rule);--hh:72px;height:72px}
+.hdr .wrap{height:100%;display:flex;align-items:center;justify-content:space-between;gap:24px}
+.brand{display:flex;align-items:center;gap:12px;min-width:0}
+.brand img{height:44px;width:auto}
+.brand span{font-family:var(--serif);font-size:21px;font-weight:500;white-space:nowrap}
+.brand span i{display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--brand);margin-left:4px;vertical-align:middle}
+.nav{display:flex;gap:30px;font-size:13px;letter-spacing:.14em;text-transform:uppercase;font-weight:500}
+.hdr-r{display:flex;align-items:center;gap:22px}
+.hdr-tel{font-size:15px;font-weight:500;white-space:nowrap}
+.hdr .btn{padding:13px 22px;font-size:12px}
+.burger{display:none;width:44px;height:44px;border:1px solid var(--rule);background:transparent;cursor:pointer;position:relative}
+.burger span{position:absolute;left:12px;right:12px;height:1.5px;background:var(--ink);transition:transform .4s var(--ease),opacity .3s}
+.burger span:nth-child(1){top:16px}.burger span:nth-child(2){top:21px}.burger span:nth-child(3){top:26px}
+.menu-open .burger span:nth-child(1){transform:translateY(5px) rotate(45deg)}
+.menu-open .burger span:nth-child(2){opacity:0}
+.menu-open .burger span:nth-child(3){transform:translateY(-5px) rotate(-45deg)}
+.mnav{position:fixed;inset:0;z-index:45;background:var(--bg);padding:110px 28px 40px;display:flex;flex-direction:column;gap:6px;opacity:0;visibility:hidden;transition:opacity .45s var(--ease),visibility .45s}
+.mnav a.m{font-family:var(--serif);font-size:38px;line-height:1.25;border-bottom:1px solid var(--rule);padding:8px 0;display:flex;justify-content:space-between;align-items:baseline}
+.mnav a.m small{font:italic 15px var(--serif);color:var(--accd)}
+.mnav .btn{margin-top:26px}
+.menu-open .mnav{opacity:1;visibility:visible}
 
 /* hero */
-.hero{padding:72px 0 88px}
-.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:64px;align-items:center}
-.eyebrow{display:inline-flex;align-items:center;gap:10px;background:var(--surface);border:1px solid color-mix(in srgb,var(--ink) 10%,transparent);padding:8px 16px 8px 10px;border-radius:999px;font-size:14px;font-weight:600;color:var(--muted)}
-.stars{color:var(--gold);letter-spacing:1px;font-size:14px}
-.eyebrow .dot{width:26px;height:26px;border-radius:50%;background:var(--soft);display:grid;place-items:center;color:var(--accent)}
-h1{font-family:var(--serif);font-weight:500;font-size:clamp(44px,5.6vw,74px);line-height:1.02;letter-spacing:-.025em;margin:26px 0 22px}
-h1 em{font-style:italic;color:var(--accent)}
-.lead-text{font-size:19.5px;color:var(--muted);max-width:540px}
-.hero-ctas{display:flex;gap:14px;margin-top:36px;flex-wrap:wrap}
-.ticks{display:flex;gap:22px;margin-top:34px;flex-wrap:wrap;font-size:14.5px;font-weight:600;color:var(--muted)}
-.ticks span{display:flex;align-items:center;gap:8px}
-.ticks svg{width:18px;height:18px;color:var(--accent)}
-.visual{position:relative}
-.photo{aspect-ratio:4/5;border-radius:calc(var(--radius) + 10px);overflow:hidden;background:var(--soft);box-shadow:0 40px 80px -40px color-mix(in srgb,var(--ink) 55%,transparent)}
-.photo img{width:100%;height:100%;object-fit:cover}
-.quote-panel{aspect-ratio:4/5;border-radius:calc(var(--radius) + 10px);background:linear-gradient(155deg,var(--accent),color-mix(in srgb,var(--accent) 55%,var(--ink)));color:var(--accent-ink);padding:52px 46px;display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden;box-shadow:0 40px 80px -40px color-mix(in srgb,var(--ink) 60%,transparent)}
-.quote-panel:before{content:"";position:absolute;width:420px;height:420px;border-radius:50%;right:-160px;top:-160px;background:color-mix(in srgb,var(--accent-ink) 9%,transparent)}
-.quote-panel:after{content:"";position:absolute;width:260px;height:260px;border-radius:50%;left:-90px;bottom:-110px;border:1.5px solid color-mix(in srgb,var(--accent-ink) 22%,transparent)}
-.quote-mark{font-family:var(--serif);font-size:120px;line-height:.6;opacity:.35}
-.quote-panel p{font-family:var(--serif);font-size:28px;line-height:1.3;position:relative;z-index:1}
-.quote-panel .who{font-family:var(--sans);font-size:15px;opacity:.85;margin-top:22px;font-weight:600}
-.float{position:absolute;background:var(--surface);color:var(--ink);border-radius:18px;padding:16px 20px;box-shadow:0 24px 50px -24px color-mix(in srgb,var(--ink) 50%,transparent);display:flex;align-items:center;gap:14px;font-size:14px;line-height:1.35}
-.float b{font-size:22px;font-family:var(--serif);font-weight:600;display:block}
-.float.one{left:-34px;bottom:-28px}
-.float.two{right:-22px;top:44px}
-.float .badge{width:44px;height:44px;border-radius:14px;background:var(--soft);display:grid;place-items:center;color:var(--accent)}
-.float .badge svg{width:22px;height:22px}
+.hero{position:relative;min-height:100svh;padding:calc(var(--hh) + 40px) 0 60px;overflow:hidden;display:flex;align-items:center}
+.hero::before{content:"";position:absolute;right:-10vw;top:-10vw;width:60vw;height:60vw;border-radius:50%;background:radial-gradient(circle,rgba(156,107,61,.14),transparent 65%);pointer-events:none}
+.hero .wrap{display:grid;grid-template-columns:1.05fr 1fr;gap:64px;align-items:center;position:relative}
+.hero h1{font-size:clamp(52px,7.6vw,118px);margin:26px 0 30px;line-height:.98}
+.hero h1 em{color:var(--acc);font-weight:400}
+.hero h1 .ln{display:block;overflow:hidden;padding-bottom:.06em}
+.hero h1 .ln>span{display:block}
+.hero .sub{font-size:19px;font-weight:300;color:var(--ink2);max-width:520px}
+.hero .ctas{display:flex;flex-wrap:wrap;gap:14px;margin:38px 0 46px}
+.hero-meta{display:grid;grid-template-columns:repeat(3,auto);gap:0;border-top:1px solid var(--rule);max-width:560px}
+.hero-meta div{padding:18px 20px 0 0}
+.hero-meta div+div{padding-left:20px;border-left:1px solid var(--rule)}
+.hero-meta b{display:block;font-family:var(--serif);font-size:26px;font-weight:500}
+.hero-meta span{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink2)}
 
-/* trust */
-.trust{border-top:1px solid color-mix(in srgb,var(--ink) 9%,transparent);border-bottom:1px solid color-mix(in srgb,var(--ink) 9%,transparent);background:var(--surface)}
-.trust .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;padding-top:26px;padding-bottom:26px}
-.trust div{display:flex;align-items:center;gap:12px;font-weight:600;font-size:15px}
-.trust svg{width:22px;height:22px;color:var(--accent);flex:none}
+.collage{position:relative;height:min(78vh,700px);min-height:520px}
+.ph{position:absolute;margin:0;background:#fff;padding:10px 10px 38px;box-shadow:0 30px 60px -20px rgba(46,38,32,.35),0 2px 6px rgba(46,38,32,.08);transform:translate3d(0,var(--py,0px),0) rotate(var(--r));will-change:transform}
+.ph .in{width:100%;height:100%;overflow:hidden}
+.ph img{width:100%;height:100%;object-fit:cover}
+.ph figcaption{position:absolute;left:12px;right:12px;bottom:10px;font:italic 13px var(--serif);color:var(--ink2);display:flex;justify-content:space-between}
+.ph1{--r:3deg;top:0;right:0;width:68%;height:66%}
+.ph2{--r:-6deg;left:0;top:34%;width:54%;height:46%;z-index:2}
+.ph3{--r:5deg;right:6%;bottom:0;width:44%;height:36%;z-index:3}
+.seal{position:absolute;left:8%;top:6%;width:132px;height:132px;z-index:4;color:var(--ink)}
+.seal svg{width:100%;height:100%;animation:spin 28s linear infinite}
+.seal b{position:absolute;inset:0;display:grid;place-items:center;font:italic 500 26px var(--serif);color:var(--accd)}
+.seal::before{content:"";position:absolute;inset:22px;border-radius:50%;background:var(--bg);box-shadow:0 0 0 1px var(--rule)}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+/* entrance */
+.ent{opacity:0;animation:fadeUp 1.1s var(--ease) forwards;animation-delay:var(--d,0s)}
+.hero h1 .ln>span{transform:translateY(105%);animation:lineUp 1.2s var(--ease) forwards;animation-delay:var(--d,0s)}
+.ph{opacity:0;animation:fade 1.2s var(--ease) forwards;animation-delay:var(--d)}
+.ph img{transform:scale(1.18);animation:unzoom 2s var(--ease) forwards;animation-delay:var(--d)}
+@keyframes fadeUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:none}}
+@keyframes lineUp{to{transform:none}}
+@keyframes fade{to{opacity:1}}
+@keyframes unzoom{to{transform:scale(1)}}
+
+/* marquee */
+.marquee{border-block:1px solid var(--rule);background:var(--surf);overflow:hidden;padding:22px 0}
+.mq-track{display:flex;width:max-content;animation:mq 46s linear infinite}
+.mq-track span{font-family:var(--serif);font-size:clamp(22px,2.4vw,32px);white-space:nowrap;padding:0 28px;display:flex;align-items:center;gap:56px}
+.mq-track span:nth-child(even){font-style:italic;color:var(--sld)}
+.mq-track span::after{content:"";width:8px;height:8px;transform:rotate(45deg);background:var(--brand);opacity:.85}
+@keyframes mq{to{transform:translateX(-50%)}}
 
 /* sections */
-section.block{padding:110px 0}
-.kicker{font-size:13px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
-h2{font-family:var(--serif);font-weight:500;font-size:clamp(34px,3.8vw,52px);line-height:1.08;letter-spacing:-.02em;margin:14px 0 18px}
-.section-head{display:flex;justify-content:space-between;align-items:end;gap:40px;margin-bottom:56px}
-.section-head p{color:var(--muted);max-width:420px}
-.services{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-.card{background:var(--surface);border-radius:var(--radius);padding:34px 32px 36px;border:1px solid color-mix(in srgb,var(--ink) 7%,transparent);transition:transform .25s ease,box-shadow .25s ease}
-.card:hover{transform:translateY(-4px);box-shadow:0 30px 60px -36px color-mix(in srgb,var(--ink) 45%,transparent)}
-.icon{width:54px;height:54px;border-radius:16px;background:var(--soft);color:var(--accent);display:grid;place-items:center;margin-bottom:24px}
-.icon svg{width:26px;height:26px}
-.card h3{font-family:var(--serif);font-weight:500;font-size:23px;margin-bottom:8px;letter-spacing:-.01em}
-.card p{color:var(--muted);font-size:16px}
+section{position:relative}
+.sec{padding:clamp(90px,12vw,160px) 0}
+.sec-head{display:grid;grid-template-columns:200px 1fr;gap:40px;margin-bottom:clamp(50px,7vw,90px);align-items:start}
+.sec-head .idx{border-top:1px solid var(--ink);padding-top:14px;display:flex;flex-direction:column;gap:6px}
+.sec-head .idx .num{font-size:30px}
+.sec-head h2{font-size:clamp(40px,5.6vw,84px)}
+.sec-head h2 em{color:var(--acc);font-weight:400}
+.sec-head p{margin-top:22px;max-width:620px;color:var(--ink2);font-size:18px;font-weight:300}
 
-.why{background:var(--ink);color:var(--bg)}
-.why .kicker{color:var(--gold)}
-.why-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:80px;align-items:start}
-.why h2{color:var(--bg)}
-.why .intro{color:color-mix(in srgb,var(--bg) 70%,transparent);font-size:18px;max-width:440px}
-.points{display:grid;gap:14px}
-.point{display:grid;grid-template-columns:62px 1fr;gap:20px;padding:30px;border-radius:var(--radius);background:color-mix(in srgb,var(--bg) 6%,transparent);border:1px solid color-mix(in srgb,var(--bg) 10%,transparent)}
-.point .num{font-family:var(--serif);font-size:34px;color:var(--gold);line-height:1}
-.point h3{font-family:var(--serif);font-weight:500;font-size:24px;margin-bottom:6px}
-.point p{color:color-mix(in srgb,var(--bg) 72%,transparent);font-size:16px}
+/* manifesto */
+.manifesto{padding:clamp(90px,11vw,150px) 0 0}
+.manifesto blockquote{font-family:var(--serif);font-size:clamp(30px,3.9vw,58px);line-height:1.18;max-width:1080px;font-weight:400}
+.manifesto blockquote em{color:var(--acc)}
+.manifesto blockquote::first-letter{font-size:2.4em;float:left;line-height:.8;margin:.06em .1em 0 0;color:var(--acc)}
+.manifesto .by{margin-top:34px;display:flex;align-items:center;gap:18px}
+.manifesto .by::before{content:"";width:60px;height:1px;background:var(--ink)}
 
-.score{display:flex;align-items:center;gap:18px;background:var(--surface);padding:16px 24px;border-radius:18px;border:1px solid color-mix(in srgb,var(--ink) 8%,transparent)}
-.score b{font-family:var(--serif);font-size:40px;font-weight:500;line-height:1}
-.score small{display:block;color:var(--muted);font-size:14px}
-.reviews{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-.review{background:var(--surface);border-radius:var(--radius);padding:34px;display:flex;flex-direction:column;gap:22px;border:1px solid color-mix(in srgb,var(--ink) 7%,transparent)}
-.review p{font-family:var(--serif);font-size:19.5px;line-height:1.45}
-.review .by{margin-top:auto;display:flex;align-items:center;gap:12px;font-weight:600;font-size:15px}
-.avatar{width:40px;height:40px;border-radius:50%;background:var(--soft);color:var(--accent);display:grid;place-items:center;font-weight:700}
-.review .src{color:var(--muted);font-weight:500;font-size:13px;display:block}
+/* services */
+.svc-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:28px}
+.card{grid-column:span 2;background:var(--surf);display:flex;flex-direction:column;transition:transform .6s var(--ease),box-shadow .6s var(--ease)}
+.card.wide{grid-column:span 3}
+.card:hover{transform:translateY(-8px);box-shadow:0 40px 60px -30px rgba(46,38,32,.35)}
+.card .im{aspect-ratio:4/5;overflow:hidden;position:relative}
+.card.wide .im{aspect-ratio:16/10}
+.card .im img{width:100%;height:100%;object-fit:cover;transition:transform 1.4s var(--ease)}
+.card:hover .im img{transform:scale(1.06)}
+.card .im .tag{position:absolute;left:16px;top:16px;background:rgba(255,255,255,.92);padding:7px 12px;font-size:11px;letter-spacing:.18em;text-transform:uppercase;font-weight:500}
+.card .bd{padding:28px 28px 32px;display:flex;flex-direction:column;flex:1}
+.card .bd .num{font-size:20px}
+.card h3{font-size:clamp(26px,2.3vw,34px);margin:6px 0 14px}
+.card p{color:var(--ink2);font-size:16px;flex:1}
+.card .go{margin-top:22px;font-size:12px;letter-spacing:.18em;text-transform:uppercase;font-weight:500;align-self:flex-start}
 
-.cta-band{padding:0 0 110px}
-.cta-box{border-radius:calc(var(--radius) + 12px);background:linear-gradient(140deg,var(--accent),color-mix(in srgb,var(--accent) 60%,var(--ink)));color:var(--accent-ink);padding:76px 64px;display:grid;grid-template-columns:1.3fr 1fr;gap:40px;align-items:center;position:relative;overflow:hidden}
-.cta-box:after{content:"";position:absolute;right:-120px;bottom:-200px;width:460px;height:460px;border-radius:50%;border:1.5px solid color-mix(in srgb,var(--accent-ink) 22%,transparent)}
-.cta-box h2{color:inherit;margin:0 0 12px}
-.cta-box p{opacity:.85;font-size:18px}
-.cta-box .actions{display:flex;flex-direction:column;gap:12px;align-items:flex-start;position:relative;z-index:1}
-.cta-box .btn{background:var(--accent-ink);color:var(--accent)}
-.cta-box .btn.ghost{background:transparent;color:var(--accent-ink);border-color:color-mix(in srgb,var(--accent-ink) 40%,transparent)}
+.index{margin-top:80px;border-top:1px solid var(--ink)}
+.index-h{display:flex;justify-content:space-between;padding:16px 0;border-bottom:1px solid var(--rule)}
+.row{display:grid;grid-template-columns:80px 1.1fr 1.5fr 50px;gap:30px;align-items:baseline;padding:34px 0;border-bottom:1px solid var(--rule);position:relative;transition:padding .5s var(--ease)}
+.row::before{content:"";position:absolute;inset:0;background:var(--surf);transform:scaleY(0);transform-origin:bottom;transition:transform .5s var(--ease);z-index:-1}
+.row:hover::before{transform:scaleY(1)}
+.row:hover{padding-left:18px;padding-right:18px}
+.row .num{font-size:22px}
+.row h3{font-size:clamp(24px,2.4vw,36px)}
+.row p{color:var(--ink2);font-size:16px}
+.row .ar{font-size:22px;justify-self:end;transition:transform .5s var(--ease);color:var(--accd)}
+.row:hover .ar{transform:translateX(6px) rotate(-45deg)}
+.index-wrap{isolation:isolate}
 
-.visit{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:10px}
-.visit .card h3{font-size:20px}
-.visit a{color:var(--accent);font-weight:600}
-footer{border-top:1px solid color-mix(in srgb,var(--ink) 9%,transparent);padding:40px 0 110px;color:var(--muted);font-size:14px}
-footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
-.mobile-bar{display:none}
+/* story */
+.story{background:var(--surf)}
+.story-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(40px,7vw,110px);align-items:center}
+.story-img{position:relative;padding:0 0 40px 40px}
+.story-img::before{content:"";position:absolute;left:0;bottom:0;width:78%;height:82%;border:1px solid var(--acc)}
+.story-img .in{position:relative;aspect-ratio:3/4;overflow:hidden}
+.story-img img{width:100%;height:115%;object-fit:cover;transform:translateY(var(--py,0px))}
+.year{position:absolute;right:-30px;top:-46px;font:500 clamp(90px,11vw,170px)/1 var(--serif);color:transparent;-webkit-text-stroke:1px var(--acc);pointer-events:none;letter-spacing:-.03em}
+.story h2{font-size:clamp(38px,4.6vw,68px);margin:22px 0 28px}
+.story h2 em{color:var(--acc);font-weight:400}
+.story p{color:var(--ink2);font-weight:300;font-size:18px;margin-bottom:18px;max-width:600px}
+.vals{margin-top:44px;border-top:1px solid var(--rule)}
+.val{display:grid;grid-template-columns:44px 1fr;gap:16px;padding:22px 0;border-bottom:1px solid var(--rule)}
+.val svg{width:30px;height:30px;color:var(--acc);margin-top:4px}
+.val h3{font-size:24px;margin-bottom:4px}
+.val p{font-size:16px;margin:0}
 
-@keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
-.hero .copy>*{animation:rise .8s cubic-bezier(.2,.7,.2,1) both}
-.hero .copy>*:nth-child(2){animation-delay:.08s}.hero .copy>*:nth-child(3){animation-delay:.16s}
-.hero .copy>*:nth-child(4){animation-delay:.24s}.hero .copy>*:nth-child(5){animation-delay:.32s}
-.visual{animation:rise 1s .2s cubic-bezier(.2,.7,.2,1) both}
+/* statement band (signature transition) */
+.band{position:relative;color:#fff;padding:clamp(110px,14vw,190px) 0;overflow:hidden;background:#2E2620}
+.band .bgimg{position:absolute;inset:-12% 0;background:url(img/photo-4.jpg) center/cover no-repeat;transform:translateY(var(--py,0px));opacity:.45}
+.band::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(46,38,32,.78),rgba(46,38,32,.55) 50%,rgba(46,38,32,.85))}
+.band .wrap{position:relative;z-index:2}
+.band .label{color:var(--brand2)}
+.words{margin:30px 0 40px}
+.words span{display:block;font:500 clamp(54px,10vw,160px)/.94 var(--serif);letter-spacing:-.025em}
+.words span:nth-child(even){font-style:italic;font-weight:400;color:transparent;-webkit-text-stroke:1.2px #fff;padding-left:clamp(20px,12vw,220px)}
+.band p{max-width:560px;font-size:19px;font-weight:300;color:rgba(255,255,255,.9);margin-left:auto}
+.band .and{font:italic 22px var(--serif);color:var(--brand2);margin-left:auto;max-width:560px;margin-top:20px}
 
-@media (max-width:980px){
-  .links{display:none}
-  .hero-grid,.why-grid,.cta-box{grid-template-columns:1fr}
-  .hero-grid{gap:56px}
-  .services,.reviews,.visit{grid-template-columns:1fr 1fr}
-  .trust .wrap{grid-template-columns:1fr 1fr}
-  .float.one{left:12px;bottom:-26px}.float.two{right:12px}
-  .visual{max-width:560px;margin-bottom:20px}
-  .section-head{flex-direction:column;align-items:flex-start}
+/* why */
+.why-grid{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--ink)}
+.why{padding:38px 30px 44px;border-right:1px solid var(--rule);transition:background .5s var(--ease)}
+.why:first-child{padding-left:0}
+.why:last-child{border-right:0}
+.why:hover{background:rgba(255,255,255,.6)}
+.why .num{font-size:44px;line-height:1;display:block;margin-bottom:34px}
+.why h3{font-size:27px;margin-bottom:14px}
+.why p{color:var(--ink2);font-size:16px}
+
+/* process */
+.proc{background:var(--bg2)}
+.proc-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,7vw,110px);align-items:start}
+.proc-img{position:sticky;top:110px;overflow:hidden;aspect-ratio:4/5}
+.proc-img img{width:100%;height:100%;object-fit:cover}
+.proc-img .cap{position:absolute;left:0;right:0;bottom:0;padding:70px 28px 26px;background:linear-gradient(transparent,rgba(46,38,32,.85));color:#fff;font:italic 22px/1.3 var(--serif)}
+.steps{list-style:none;counter-reset:s}
+.step{display:grid;grid-template-columns:90px 1fr;gap:20px;padding:40px 0;border-top:1px solid var(--rule)}
+.step:last-child{border-bottom:1px solid var(--rule)}
+.step .n{font:italic 400 64px/1 var(--serif);color:var(--acc)}
+.step h3{font-size:30px;margin-bottom:10px}
+.step p{color:var(--ink2);font-size:16px}
+
+/* faq */
+.faq-grid{display:grid;grid-template-columns:200px 1fr;gap:40px}
+.faq{border-top:1px solid var(--ink)}
+.faq details{border-bottom:1px solid var(--rule)}
+.faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;gap:24px;align-items:center;padding:28px 0;font:500 clamp(21px,2.1vw,28px)/1.25 var(--serif)}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary .pm{flex:0 0 36px;height:36px;border:1px solid var(--rule);border-radius:50%;position:relative;transition:transform .5s var(--ease),background .4s}
+.faq summary .pm::before,.faq summary .pm::after{content:"";position:absolute;left:50%;top:50%;width:12px;height:1.5px;background:var(--ink);transform:translate(-50%,-50%)}
+.faq summary .pm::after{transform:translate(-50%,-50%) rotate(90deg);transition:transform .4s var(--ease)}
+.faq details[open] .pm{background:var(--ink)}
+.faq details[open] .pm::before{background:#fff}
+.faq details[open] .pm::after{transform:translate(-50%,-50%) rotate(0);background:#fff}
+.faq summary:hover{color:var(--accd)}
+.faq .ans{padding:0 60px 30px 0;color:var(--ink2);font-size:17px;max-width:780px}
+
+/* cta */
+.cta{background:var(--ink);color:#fff;text-align:center;padding:clamp(100px,12vw,170px) 0;overflow:hidden;position:relative}
+.cta::before{content:"";position:absolute;left:50%;top:50%;width:900px;height:900px;transform:translate(-50%,-50%);border-radius:50%;border:1px solid rgba(233,153,123,.25);box-shadow:0 0 0 120px rgba(255,255,255,.015),0 0 0 240px rgba(255,255,255,.012)}
+.cta .wrap{position:relative}
+.cta .label{color:var(--brand2)}
+.cta h2{font-size:clamp(44px,7vw,110px);margin:26px auto 24px;max-width:1000px}
+.cta h2 em{color:#D9A877;font-weight:400}
+.cta p{font-size:19px;font-weight:300;color:rgba(255,255,255,.85);max-width:560px;margin:0 auto 42px}
+.cta .ctas{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.cta .btn-dark{background:#fff;color:var(--ink);border-color:#fff}
+.cta .btn-dark:hover{background:var(--acc);color:#fff;border-color:var(--acc)}
+.cta .btn-line{color:#fff;border-color:rgba(255,255,255,.6)}
+.cta .btn-line:hover{background:#fff;color:var(--ink)}
+
+/* contact */
+.c-trio{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-bottom:28px}
+.c-card{background:var(--surf);padding:38px 34px;display:flex;flex-direction:column;transition:transform .5s var(--ease),box-shadow .5s var(--ease)}
+.c-card:hover{transform:translateY(-6px);box-shadow:0 30px 50px -30px rgba(46,38,32,.3)}
+.c-card .num{font-size:20px}
+.c-card h3{font-size:28px;margin:10px 0 14px}
+.c-card p{color:var(--ink2);font-size:16px;flex:1;margin-bottom:24px}
+.c-card .lnk{font-weight:500;color:var(--ink);word-break:break-word}
+.visit{display:grid;grid-template-columns:1.2fr 1fr;background:var(--surf)}
+.visit .info{padding:clamp(34px,5vw,60px)}
+.visit h3{font-size:clamp(32px,3.4vw,48px);margin:16px 0 30px}
+.visit dl{display:grid;grid-template-columns:120px 1fr;gap:18px 24px;border-top:1px solid var(--rule);padding-top:28px}
+.visit dt{font-size:12px;letter-spacing:.18em;text-transform:uppercase;font-weight:500;color:var(--accd);padding-top:3px}
+.visit dd{font-size:17px}
+.visit dd a{border-bottom:1px solid var(--rule)}
+.visit dd a:hover{border-color:var(--ink)}
+.visit .ar-addr{direction:rtl;text-align:right;display:block;margin-top:6px;color:var(--ink2)}
+.visit .btns{display:flex;gap:12px;flex-wrap:wrap;margin-top:34px}
+.mapcard{position:relative;min-height:420px;background:var(--sld);color:#fff;overflow:hidden;display:flex;align-items:flex-end}
+.mapcard svg{position:absolute;inset:0;width:100%;height:100%}
+.mapcard .pin{position:absolute;left:52%;top:42%;transform:translate(-50%,-100%)}
+.mapcard .pin i{display:block;width:20px;height:20px;border-radius:50%;background:var(--brand);box-shadow:0 0 0 8px rgba(238,76,15,.25),0 0 0 18px rgba(238,76,15,.12);animation:pulse 2.6s ease-out infinite}
+@keyframes pulse{50%{box-shadow:0 0 0 12px rgba(238,76,15,.18),0 0 0 26px rgba(238,76,15,.06)}}
+.mapcard .mc{position:relative;padding:34px;width:100%;background:linear-gradient(transparent,rgba(30,40,46,.85))}
+.mapcard .mc b{display:block;font:500 30px var(--serif)}
+.mapcard .mc a{display:inline-block;margin-top:12px;font-size:12px;letter-spacing:.18em;text-transform:uppercase;font-weight:500}
+
+/* footer */
+.ftr{background:#231D18;color:rgba(255,255,255,.78);padding:90px 0 40px}
+.ftr-top{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:50px;padding-bottom:60px;border-bottom:1px solid rgba(255,255,255,.12)}
+.ftr .brand span{color:#fff}
+.ftr .logo-pl{background:#F6EEE4;padding:8px 12px;display:inline-flex}
+.ftr .logo-pl img{height:40px;width:auto}
+.ftr p.tag{margin-top:24px;font:italic 24px/1.35 var(--serif);color:#fff;max-width:380px}
+.ftr h4{font:500 12px var(--sans);letter-spacing:.2em;text-transform:uppercase;color:var(--brand2);margin-bottom:20px}
+.ftr ul{list-style:none;display:grid;gap:9px;font-size:15px}
+.ftr a:hover{color:#fff}
+.ftr-bot{display:flex;justify-content:space-between;gap:20px;padding-top:30px;font-size:13px;flex-wrap:wrap}
+.ftr-big{font:500 clamp(48px,11vw,180px)/1 var(--serif);color:transparent;-webkit-text-stroke:1px rgba(255,255,255,.18);white-space:nowrap;margin:50px 0 10px;text-align:center;letter-spacing:-.02em}
+
+/* mobile bar */
+.mbar{display:none}
+
+/* reveal */
+.rv{opacity:0;transform:translateY(40px);transition:opacity 1.1s var(--ease),transform 1.1s var(--ease);transition-delay:var(--d,0s)}
+.rv.in{opacity:1;transform:none}
+
+/* responsive */
+@media (max-width:1100px){
+  .nav{display:none}.burger{display:block}
+  .hdr-tel{display:none}
+  .hero .wrap{grid-template-columns:1fr;gap:56px}
+  .collage{height:620px;max-width:640px;width:100%;margin-inline:auto}
+  .card,.card.wide{grid-column:span 3}
+  .card:last-child{grid-column:span 6}
+  .card:last-child .im{aspect-ratio:16/8}
+  .why-grid{grid-template-columns:1fr 1fr}
+  .why{border-bottom:1px solid var(--rule)}
+  .why:nth-child(2){border-right:0}
+  .why:nth-child(3){padding-left:0}
+  .ftr-top{grid-template-columns:1fr 1fr}
+  .ftr-top>div:first-child{grid-column:1/-1}
+}
+@media (max-width:860px){
+  .sec-head,.faq-grid{grid-template-columns:1fr;gap:22px}
+  .sec-head .idx{flex-direction:row;align-items:baseline;gap:14px;max-width:240px}
+  .story-grid,.proc-grid,.visit{grid-template-columns:1fr}
+  .proc-img{position:relative;top:0;aspect-ratio:16/11}
+  .row{grid-template-columns:50px 1fr 30px;gap:8px 16px}
+  .row p{grid-column:2/3}
+  .row .ar{grid-row:1;grid-column:3}
+  .c-trio{grid-template-columns:1fr}
+  .story-img{max-width:520px}
 }
 @media (max-width:640px){
-  body{font-size:16px}
-  .wrap{padding:0 18px}
-  .nav{height:66px}.brand{font-size:19px}
-  .phone,.nav-right .btn{display:none}
-  .hero{padding:44px 0 64px}
-  .lead-text{font-size:17.5px}
-  .hero-ctas .btn{flex:1;justify-content:center}
-  .ticks{display:none}
-  .services,.reviews,.visit,.trust .wrap{grid-template-columns:1fr}
-  section.block{padding:76px 0}
-  .quote-panel,.photo{aspect-ratio:auto;min-height:380px}.photo{aspect-ratio:4/3;min-height:0}
-  .quote-panel{padding:40px 30px 64px}.quote-panel p{font-size:23px}
-  .float{font-size:13px;padding:12px 14px}.float b{font-size:18px}
-  .float.two{display:none}
-  .cta-box{padding:52px 28px}
-  .point{grid-template-columns:44px 1fr;padding:24px}
-  .mobile-bar{display:flex;position:fixed;left:12px;right:12px;bottom:12px;z-index:30;gap:10px}
-  .mobile-bar .btn{flex:1;justify-content:center;box-shadow:0 14px 30px -14px color-mix(in srgb,var(--ink) 60%,transparent)}
-  .mobile-bar .btn.ghost{background:var(--surface)}
+  :root{--hh:68px}
+  body{font-size:16px;padding-bottom:70px}
+  .wrap{width:calc(100% - 40px)}
+  .brand img{height:36px}.brand span{font-size:18px}
+  .hdr .btn{display:none}
+  .hero{padding-top:calc(var(--hh) + 28px)}
+  .hero h1{font-size:clamp(46px,13.4vw,64px)}
+  .hero .sub{font-size:17px}
+  .hero .ctas .btn{flex:1 1 100%}
+  .hero-meta{grid-template-columns:1fr 1fr 1fr}
+  .hero-meta div,.hero-meta div+div{padding:14px 10px 0}
+  .hero-meta div:first-child{padding-left:0}
+  .hero-meta b{font-size:20px}
+  .hero-meta span{font-size:10px;letter-spacing:.1em}
+  .collage{height:450px;min-height:0}
+  .ph{padding:6px 6px 26px}
+  .ph figcaption{font-size:11px;bottom:6px;left:8px;right:8px}
+  .seal{width:96px;height:96px;left:2%;top:2%}
+  .seal::before{inset:16px}
+  .seal b{font-size:19px}
+  .svc-grid{grid-template-columns:1fr;gap:22px}
+  .card,.card.wide,.card:last-child{grid-column:auto}
+  .card .im,.card.wide .im,.card:last-child .im{aspect-ratio:4/3}
+  .card .bd{padding:24px 22px 28px}
+  .row{padding:26px 0}
+  .row:hover{padding-left:0;padding-right:0}
+  .why-grid{grid-template-columns:1fr}
+  .why,.why:first-child,.why:nth-child(3){padding:30px 0;border-right:0}
+  .why .num{margin-bottom:16px}
+  .step{grid-template-columns:56px 1fr;padding:30px 0}
+  .step .n{font-size:44px}
+  .step h3{font-size:25px}
+  .faq .ans{padding-right:0}
+  .story-img{padding:0 0 24px 24px}
+  .year{right:-6px;top:-34px}
+  .visit dl{grid-template-columns:1fr;gap:6px}
+  .visit dd{margin-bottom:14px}
+  .visit .btns .btn{flex:1 1 100%}
+  .mapcard{min-height:320px}
+  .c-card{padding:30px 24px}
+  .ftr-top{grid-template-columns:1fr}
+  .words span:nth-child(even){padding-left:0}
+  .cta .ctas .btn{flex:1 1 100%}
+  .mbar{display:grid;grid-template-columns:1fr 1fr;position:fixed;left:0;right:0;bottom:0;z-index:40;background:rgba(246,238,228,.94);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-top:1px solid var(--rule);padding:10px 12px calc(10px + env(safe-area-inset-bottom));gap:10px}
+  .mbar a{display:flex;align-items:center;justify-content:center;gap:8px;padding:14px 8px;font:500 12px var(--sans);letter-spacing:.14em;text-transform:uppercase}
+  .mbar a:first-child{background:var(--ink);color:#fff}
+  .mbar a:last-child{border:1px solid var(--ink)}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
+  .ent,.ph,.rv{opacity:1!important;transform:none}
+  .hero h1 .ln>span,.ph img{transform:none!important}
+  .mq-track{animation:none!important}
 }
 </style>
 </head>
 <body>
-<div class="concept">Website concept prepared for <b>marriott_palace</b> by webstudio &middot; not a live site</div>
 
-<header>
-  <div class="wrap nav">
-    <a href="#top" class="brand">marriott_palace</a>
-    <nav class="links">
-      <a href="#services">Services</a><a href="#why">Why us</a><a href="#visit">Visit</a>
+<header class="hdr" id="top">
+  <div class="wrap">
+    <a href="#top" class="brand" aria-label="Marriott Palace home">
+      <img src="img/logo.png" alt="Marriott Palace logo" width="88" height="44">
+      <span>Marriott Palace<i></i></span>
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <a class="ulink" href="#services">Services</a>
+      <a class="ulink" href="#story">Our Story</a>
+      <a class="ulink" href="#why">Why Us</a>
+      <a class="ulink" href="#process">Process</a>
+      <a class="ulink" href="#faq">FAQ</a>
+      <a class="ulink" href="#contact">Contact</a>
     </nav>
-    <div class="nav-right">
-      <a class="phone" href="tel:+96599423693">+96599423693</a>
-      <a class="btn" href="#visit">Let&#39;s talk</a>
+    <div class="hdr-r">
+      <a class="hdr-tel ulink" href="tel:+96599423693">+965 9942 3693</a>
+      <a class="btn btn-dark" href="#contact">Talk to Our Team</a>
+      <button class="burger" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
     </div>
   </div>
 </header>
 
-<main id="top">
+<nav class="mnav" aria-label="Mobile">
+  <a class="m" href="#services">Services <small>02</small></a>
+  <a class="m" href="#story">Our Story <small>03</small></a>
+  <a class="m" href="#why">Why Us <small>04</small></a>
+  <a class="m" href="#process">Process <small>05</small></a>
+  <a class="m" href="#faq">FAQ <small>06</small></a>
+  <a class="m" href="#contact">Contact <small>07</small></a>
+  <a class="btn btn-dark" href="tel:+96599423693">Call +965 9942 3693</a>
+</nav>
+
+<main>
+<!-- HERO -->
 <section class="hero">
-  <div class="wrap hero-grid">
-    <div class="copy">
-      <div class="eyebrow">
-        <span class="dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-7-4.4-7-10a4 4 0 017-2.6A4 4 0 0119 10c0 5.6-7 10-7 10z"/></svg></span>Real estate
-      </div>
-      <h1>Find home. Sell for <em>more.</em></h1>
-      <p class="lead-text">Local expertise, honest advice and a marketing plan that gets your home seen by the right buyers.</p>
-      <div class="hero-ctas">
-        <a class="btn" href="#visit">Book a consultation <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-        <a class="btn ghost" href="tel:+96599423693">Call +96599423693</a>
-      </div>
-      <div class="ticks">
-        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7"/></svg>Free home valuation</span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7"/></svg>Local market expert</span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7"/></svg>Premium marketing</span>
-      </div>
-    </div>
-    <div class="visual">
-      
-      <div class="quote-panel"><div class="quote-mark">“</div><div><p>Local expertise, honest advice and a marketing plan that gets your home seen by the right buyers.</p><div class="who">marriott_palace</div></div></div>
-      
-      
-      <div class="float two"><span class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><span><b>This week</b>Local market expert</span></div>
-    </div>
-  </div>
-  <template id="qp"><div class="quote-panel"><div class="quote-mark">“</div><div><p>Local expertise, honest advice and a marketing plan that gets your home seen by the right buyers.</p><div class="who">marriott_palace</div></div></div></template>
-</section>
-
-<div class="trust"><div class="wrap">
-  <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.2-8 9-4.6-.8-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg>Free home valuation</div><div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.2-8 9-4.6-.8-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg>Local market expert</div><div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.2-8 9-4.6-.8-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg>Premium marketing</div><div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.2-8 9-4.6-.8-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg>5-star client service</div>
-</div></div>
-
-<section class="block" id="services">
   <div class="wrap">
-    <div class="section-head">
-      <div><div class="kicker">What we do</div><h2>Everything you need,<br>under one roof.</h2></div>
-      <p>From routine visits to the work that changes how you feel about your day, marriott_palace takes care of it properly.</p>
-    </div>
-    <div class="services">
-      
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11l8-7 8 7v9a1 1 0 01-1 1h-4v-6H9v6H5a1 1 0 01-1-1z"/></svg></div><h3>Selling</h3><p>Pricing strategy, staging advice and premium marketing.</p></div>
-      
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1-4.4-4.3 6.1-.9z"/></svg></div><h3>Buying</h3><p>Off-market access and expert negotiation.</p></div>
-      
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3" width="14" height="18" rx="1"/><path d="M9 7h2M13 7h2M9 11h2M13 11h2M9 15h2M13 15h2"/></svg></div><h3>Luxury homes</h3><p>Discreet representation for high-end properties.</p></div>
-      
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="18" r="2.5"/><circle cx="18" cy="6" r="2.5"/><path d="M8.5 18H16a3 3 0 000-6H8a3 3 0 010-6h7.5"/></svg></div><h3>Relocation</h3><p>Moving to the area? We make it easy.</p></div>
-      
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/><path d="M19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8z"/></svg></div><h3>Home valuation</h3><p>Find out what your home is worth today.</p></div>
-      
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-7-4.4-7-10a4 4 0 017-2.6A4 4 0 0119 10c0 5.6-7 10-7 10z"/></svg></div><h3>First-time buyers</h3><p>Patient guidance from first viewing to keys.</p></div>
-      
-    </div>
-  </div>
-</section>
-
-<section class="block why" id="why">
-  <div class="wrap why-grid">
     <div>
-      <div class="kicker">Why clients choose us</div>
-      <h2>The Kuwait City real estate agent people recommend to their friends.</h2>
-      <p class="intro">it still comes down to the same three things.</p>
+      <p class="label ent" style="--d:.1s">N° 01 &nbsp;·&nbsp; Farwaniya, Kuwait &nbsp;·&nbsp; Est. 1985</p>
+      <h1>
+        <span class="ln"><span style="--d:.2s">Confidence,</span></span>
+        <span class="ln"><span style="--d:.32s"><em>warehoused.</em></span></span>
+      </h1>
+      <p class="sub ent" style="--d:.55s">Warehouse rental, end-to-end 3PL, construction and industrial supply from one trusted Kuwaiti partner: flexible when you need it, scalable as your business grows.</p>
+      <div class="ctas ent" style="--d:.7s">
+        <a class="btn btn-dark" href="#services">Explore Our Services <span class="arr">→</span></a>
+        <a class="btn btn-line" href="tel:+96599423693">Call +965 9942 3693</a>
+      </div>
+      <div class="hero-meta ent" style="--d:.85s">
+        <div><b>1985</b><span>Established</span></div>
+        <div><b>9</b><span>Disciplines</span></div>
+        <div><b>All sizes</b><span>Of business</span></div>
+      </div>
     </div>
-    <div class="points">
-      
-      <div class="point"><div class="num">01</div><div><h3>Local expert</h3><p>Deep knowledge of every neighbourhood we serve.</p></div></div>
-      
-      <div class="point"><div class="num">02</div><div><h3>Premium marketing</h3><p>Professional photography, video and targeted promotion.</p></div></div>
-      
-      <div class="point"><div class="num">03</div><div><h3>Skilled negotiator</h3><p>We protect your interests at every step.</p></div></div>
-      
+
+    <div class="collage" aria-label="Marriott Palace facilities">
+      <div class="seal ent" style="--d:1.1s" aria-hidden="true">
+        <svg viewBox="0 0 120 120"><defs><path id="c" d="M60,60 m-50,0 a50,50 0 1,1 100,0 a50,50 0 1,1 -100,0"/></defs><text font-family="Jost,sans-serif" font-size="10.4" letter-spacing="3.2" fill="currentColor"><textPath href="#c">MARRIOTT PALACE · KUWAIT · SINCE 1985 ·</textPath></text></svg>
+        <b>MP</b>
+      </div>
+      <figure class="ph ph1" data-speed="-0.06" style="--d:.4s"><div class="in"><img src="img/photo-1.jpg" alt="Marriott Palace warehouse facility" width="2000" height="1334" fetchpriority="high"></div><figcaption><span>Plate I</span><span>The facility</span></figcaption></figure>
+      <figure class="ph ph2" data-speed="0.05" style="--d:.6s"><div class="in"><img src="img/photo-3.jpg" alt="Inside a Marriott Palace warehouse" width="1920" height="1280"></div><figcaption><span>Plate II</span><span>Managed space</span></figcaption></figure>
+      <figure class="ph ph3" data-speed="0.12" style="--d:.8s"><div class="in"><img src="img/photo-10.jpg" alt="Flexible warehousing" width="1000" height="667"></div><figcaption><span>Plate III</span><span>Flexible</span></figcaption></figure>
     </div>
   </div>
 </section>
 
+<!-- MARQUEE -->
+<div class="marquee" aria-hidden="true">
+  <div class="mq-track">
+    <span>Warehouse Rental</span><span>3PL Services</span><span>Construction</span><span>Epoxy Painting</span><span>Louver Windows</span><span>Moca Cream Limestone</span><span>Rental Equipment &amp; Transportation</span><span>Equipment &amp; PPE Solutions</span><span>Industrial Consumables</span>
+    <span>Warehouse Rental</span><span>3PL Services</span><span>Construction</span><span>Epoxy Painting</span><span>Louver Windows</span><span>Moca Cream Limestone</span><span>Rental Equipment &amp; Transportation</span><span>Equipment &amp; PPE Solutions</span><span>Industrial Consumables</span>
+  </div>
+</div>
 
-
-<section class="cta-band" id="book">
-  <div class="wrap"><div class="cta-box">
-    <div><h2>Ready when you are.</h2><p>Book a consultation in under a minute, or give us a call and talk to a real person.</p></div>
-    <div class="actions">
-      <a class="btn" href="#visit">Book a consultation</a>
-      <a class="btn ghost" href="tel:+96599423693">Call +96599423693</a>
-    </div>
-  </div></div>
+<!-- MANIFESTO -->
+<section class="manifesto">
+  <div class="wrap">
+    <blockquote class="rv">We take the pain out of designing and sourcing your fulfilment solution, so that you can <em>focus on growing your business.</em></blockquote>
+    <p class="by label rv" style="--d:.15s">Marriott Palace General Trading &amp; Contracting Co.</p>
+  </div>
 </section>
 
-<section class="block" id="visit" style="padding-top:0">
+<!-- SERVICES -->
+<section class="sec" id="services">
   <div class="wrap">
-    <div class="kicker">Visit us</div><h2>Come say hello.</h2>
-    <div class="visit">
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11l8-7 8 7v9a1 1 0 01-1 1h-4v-6H9v6H5a1 1 0 01-1-1z"/></svg></div><h3>Address</h3><p>شارع 1-جادة 3 49, الفروانية</p></div>
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div><h3>Phone</h3><p><a href="tel:+96599423693">+96599423693</a></p><p style="margin-top:10px">Call or message us for today's opening hours.</p></div>
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-7-4.4-7-10a4 4 0 017-2.6A4 4 0 0119 10c0 5.6-7 10-7 10z"/></svg></div><h3>Local market expert</h3><p>Book a consultation online or by phone and we'll take care of the rest.</p></div>
+    <div class="sec-head">
+      <div class="idx rv"><span class="num">N° 02</span><span class="label">Our Services</span></div>
+      <div class="rv" style="--d:.1s">
+        <h2>Nine disciplines.<br><em>One accountable partner.</em></h2>
+        <p>From the warehouse floor to the finishing stone, every part of your operation handled by a single team that knows who to trust and how to deliver.</p>
+      </div>
+    </div>
+
+    <div class="svc-grid">
+      <article class="card rv">
+        <div class="im"><img src="img/photo-9.jpg" alt="Complete warehousing solution" width="1000" height="667" loading="lazy"><span class="tag">Warehousing</span></div>
+        <div class="bd"><span class="num">01</span><h3>Warehouse Rental</h3><p>Customised warehousing shaped around your unique needs: secure, safe and presentable facilities for your product, with space that flexes as your business grows.</p><a class="go ulink" href="#contact">Enquire →</a></div>
+      </article>
+      <article class="card rv" style="--d:.1s">
+        <div class="im"><img src="img/photo-11.jpg" alt="Scalable warehousing and 3PL" width="1000" height="667" loading="lazy"><span class="tag">Logistics</span></div>
+        <div class="bd"><span class="num">02</span><h3>3PL Services</h3><p>A purpose-built 3PL operation that streamlines your supply: fast, efficient receipting, picking and despatching. Not simply a 3PL, but a proven extension of your fulfilment.</p><a class="go ulink" href="#contact">Enquire →</a></div>
+      </article>
+      <article class="card rv" style="--d:.2s">
+        <div class="im"><img src="img/photo-5.jpg" alt="Construction project by Marriott Palace" width="1080" height="648" loading="lazy"><span class="tag">Contracting</span></div>
+        <div class="bd"><span class="num">03</span><h3>Construction</h3><p>High-quality construction built on trust. We stick to our delivery timelines and complete projects well within schedule, which is why our clients come back to us.</p><a class="go ulink" href="#contact">Enquire →</a></div>
+      </article>
+      <article class="card wide rv">
+        <div class="im"><img src="img/photo-6.jpg" alt="Epoxy painted floor" width="1080" height="648" loading="lazy"><span class="tag">Finishes</span></div>
+        <div class="bd"><span class="num">04</span><h3>Epoxy Painting</h3><p>Fast, precise and flawlessly applied, from decorative retail finishes to warehouse floor paint for busy distribution centres and essential markings. Always sleek, long-lasting and durable.</p><a class="go ulink" href="#contact">Enquire →</a></div>
+      </article>
+      <article class="card wide rv" style="--d:.1s">
+        <div class="im"><img src="img/photo-7.jpg" alt="Louver windows installation" width="1080" height="648" loading="lazy"><span class="tag">Architecture</span></div>
+        <div class="bd"><span class="num">05</span><h3>Louver Windows</h3><p>Horizontal blades of glass, timber or aluminium fixed within the frame, allowing more ventilation than any other window type for naturally comfortable buildings.</p><a class="go ulink" href="#contact">Enquire →</a></div>
+      </article>
+    </div>
+
+    <div class="index index-wrap rv">
+      <div class="index-h"><span class="label">Supply &amp; Equipment</span><span class="label">06 — 09</span></div>
+      <a class="row" href="#contact"><span class="num">06</span><h3>Moca Cream Limestone</h3><p>Natural stone quarried primarily in Portugal: warm, neutral beige tones with distinctive linear and wavy veining for a refined, elegant look.</p><span class="ar">→</span></a>
+      <a class="row" href="#contact"><span class="num">07</span><h3>Rental Equipment &amp; Transportation</h3><p>Buses, excavators, loaders, lifting platforms, generators and specialised tools: a fleet chosen for safety, efficiency and high performance on every project.</p><span class="ar">→</span></a>
+      <a class="row" href="#contact"><span class="num">08</span><h3>Equipment &amp; PPE Solutions</h3><p>Certified helmets, goggles, respirators, gloves, safety footwear, protective clothing and fall protection, in full compliance with industry standards.</p><span class="ar">→</span></a>
+      <a class="row" href="#contact"><span class="num">09</span><h3>Supply of Industrial Consumables</h3><p>A complete range of MEP consumables: pipes, fittings, valves, cables, welding materials and maintenance products for durable, compliant projects.</p><span class="ar">→</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- STORY -->
+<section class="sec story" id="story">
+  <div class="wrap story-grid">
+    <div class="story-img rv">
+      <div class="in"><img src="img/photo-2.jpg" alt="Marriott Palace facility exterior" width="2000" height="1334" loading="lazy" data-speed="-0.05"></div>
+      <span class="year" aria-hidden="true">1985</span>
+    </div>
+    <div>
+      <p class="label rv">N° 03 &nbsp;·&nbsp; Our Story</p>
+      <h2 class="rv" style="--d:.1s">A name to be <em>reckoned with</em>, since 1985.</h2>
+      <p class="rv" style="--d:.15s">Established in 1985, Marriott Palace General Trading and Contracting Company has built its reputation on high-quality work and an uncompromising standard of service. Our relationships are based on trust.</p>
+      <p class="rv" style="--d:.2s">We're dedicated to offering the fastest and most accurate services for entrepreneurs and retailers of all sizes, from small independent producers to large chain stores. If you're looking for a smarter 3PL warehousing or distribution solution, you'll find it with us.</p>
+      <div class="vals">
+        <div class="val rv"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M3 14 16 5l13 9v13H3z"/><path d="M9 27V17h14v10M9 21h14"/></svg><div><h3>Purpose-Built Facilities</h3><p>Modern, high-quality facilities that give your product a secure, safe and presentable environment.</p></div></div>
+        <div class="val rv" style="--d:.08s"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="4" y="6" width="24" height="16" rx="1"/><path d="M11 27h10M16 22v5M9 17l4-5 4 3 6-6"/></svg><div><h3>Advanced Technology Suite</h3><p>Since 2000 we've continuously developed technology for complete visibility, with customised system options for your inventory and ordering.</p></div></div>
+        <div class="val rv" style="--d:.16s"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.2"><circle cx="16" cy="16" r="11"/><path d="M16 9v7l5 3"/></svg><div><h3>Industry Experience</h3><p>Experience handling different profiles and industries, so your operation is never our first of its kind.</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SIGNATURE BAND -->
+<section class="band" aria-label="Our managed warehousing solution">
+  <div class="bgimg" data-speed="-0.08"></div>
+  <div class="wrap">
+    <p class="label rv">Our managed warehousing solution is</p>
+    <div class="words">
+      <span class="rv">Flexible.</span>
+      <span class="rv" style="--d:.08s">Scalable.</span>
+      <span class="rv" style="--d:.16s">Reliable.</span>
+      <span class="rv" style="--d:.24s">Cost effective.</span>
+    </div>
+    <p class="rv">We're committed to fast and efficient receipting, picking and despatching of orders, and we're constantly strengthening our IT services to stay robust and competitive.</p>
+    <p class="and rv" style="--d:.1s">…and more.</p>
+  </div>
+</section>
+
+<!-- WHY -->
+<section class="sec" id="why">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="idx rv"><span class="num">N° 04</span><span class="label">Why Choose Us</span></div>
+      <div class="rv" style="--d:.1s">
+        <h2>We make the complex <em>simple.</em></h2>
+        <p>We help our customers grow and compete while increasing their profitability through world-class service.</p>
+      </div>
+    </div>
+    <div class="why-grid">
+      <div class="why rv"><span class="num">i.</span><h3>Experience</h3><p>We've helped hundreds of retailers, including start-ups, small and medium businesses and large enterprises.</p></div>
+      <div class="why rv" style="--d:.08s"><span class="num">ii.</span><h3>Relationships</h3><p>We know who to trust in the market, and who has the systems and management team to provide a reliable solution.</p></div>
+      <div class="why rv" style="--d:.16s"><span class="num">iii.</span><h3>Buying Power</h3><p>We get you the best rates by using our buying power and the strength of our partnerships.</p></div>
+      <div class="why rv" style="--d:.24s"><span class="num">iv.</span><h3>Simplicity</h3><p>We design and source your fulfilment solution end to end, so you can focus on growing your business.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="sec proc" id="process">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="idx rv"><span class="num">N° 05</span><span class="label">How It Works</span></div>
+      <div class="rv" style="--d:.1s"><h2>From first call to <em>full flow.</em></h2></div>
+    </div>
+    <div class="proc-grid">
+      <div class="proc-img rv"><img src="img/photo-8.jpg" alt="Marriott Palace construction work" width="1080" height="648" loading="lazy"><p class="cap">"It costs you nothing to engage our experts."</p></div>
+      <ol class="steps">
+        <li class="step rv"><span class="n">1</span><div><h3>Tell us your challenge</h3><p>Call our team or visit our Farwaniya office. Got a logistics challenge? We'd love to work with you to create a solution.</p></div></li>
+        <li class="step rv"><span class="n">2</span><div><h3>We design &amp; source</h3><p>We shape a customised solution around your unique needs, drawing on trusted partners and our buying power for the best rates.</p></div></li>
+        <li class="step rv"><span class="n">3</span><div><h3>We run the operation</h3><p>Fast, efficient receipting, picking and despatching of orders, in secure, safe and presentable facilities.</p></div></li>
+        <li class="step rv"><span class="n">4</span><div><h3>You see everything &amp; grow</h3><p>Our systems give you complete visibility of your inventory, while you focus on growing your business.</p></div></li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="sec" id="faq">
+  <div class="wrap faq-grid">
+    <div class="sec-head" style="display:block;margin:0">
+      <div class="idx rv"><span class="num">N° 06</span><span class="label">Questions</span></div>
+    </div>
+    <div>
+      <h2 class="rv" style="font-size:clamp(40px,5.6vw,84px);margin-bottom:50px">Asked &amp; <em style="color:var(--acc);font-weight:400">answered.</em></h2>
+      <div class="faq rv">
+        <details><summary>What does Marriott Palace offer?<span class="pm"></span></summary><p class="ans">Warehouse rental, 3PL services, construction, epoxy painting, louver windows, Moca Cream limestone, rental equipment and transportation, equipment and PPE solutions, and the supply of industrial consumables.</p></details>
+        <details><summary>Do you work with smaller businesses?<span class="pm"></span></summary><p class="ans">Yes. We develop end-to-end 3PL solutions for businesses of every size, from small independent producers and start-ups to large chain stores and enterprises.</p></details>
+        <details><summary>Does it cost anything to speak to your team?<span class="pm"></span></summary><p class="ans">No. It costs you nothing to engage our experts. Call us on +965 9942 3693 to discuss how we can help with your warehousing and 3PL needs.</p></details>
+        <details><summary>How will I keep track of my inventory?<span class="pm"></span></summary><p class="ans">Our systems provide complete visibility, with the option of customised system solutions to further enhance your inventory management, ordering process and business.</p></details>
+        <details><summary>Can you help with international shipping?<span class="pm"></span></summary><p class="ans">Yes. Ask for an international shipping quote and our Air &amp; Ocean team will get back to you.</p></details>
+        <details><summary>How long have you been operating?<span class="pm"></span></summary><p class="ans">Marriott Palace was established in 1985, and we have been continuously developing our technology since 2000.</p></details>
+        <details><summary>Where is your office?<span class="pm"></span></summary><p class="ans">Al-Arbeed Plaza Complex, Block 04, Street #55, 2nd Tower, 7th Floor, Office #36, Farwaniya, Kuwait.</p></details>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+  <div class="wrap">
+    <p class="label rv">Got a logistics challenge?</p>
+    <h2 class="rv" style="--d:.1s">Let's build the solution <em>together.</em></h2>
+    <p class="rv" style="--d:.2s">It costs you nothing to engage our experts. One conversation is all it takes to start.</p>
+    <div class="ctas rv" style="--d:.3s">
+      <a class="btn btn-dark" href="tel:+96599423693">Call +965 9942 3693 <span class="arr">→</span></a>
+      <a class="btn btn-line" href="#contact">Visit Our Office</a>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="sec" id="contact">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="idx rv"><span class="num">N° 07</span><span class="label">Contact Us</span></div>
+      <div class="rv" style="--d:.1s">
+        <h2>Feel free to contact us <em>for more details.</em></h2>
+        <p>Please call to discuss how we can help your company with your warehousing and 3PL needs.</p>
+      </div>
+    </div>
+
+    <div class="c-trio">
+      <div class="c-card rv"><span class="num">a.</span><h3>Ready to start shipping with us?</h3><p>Ask for an international shipping quote and our Air &amp; Ocean team will get back to you.</p><a class="lnk ulink" href="tel:+96599423693">+965 9942 3693</a></div>
+      <div class="c-card rv" style="--d:.08s"><span class="num">b.</span><h3>A question for our team?</h3><p>Send us your enquiry and our team will get back to you.</p><span class="lnk">marriottpalacekwt@gmail.com</span></div>
+      <div class="c-card rv" style="--d:.16s"><span class="num">c.</span><h3>Get in touch with us</h3><p>To learn more about our services, talk to our team in person at our Farwaniya office.</p><a class="lnk ulink" href="https://maps.google.com/?q=Al-Arbeed%20Plaza%20Complex%2C%20Farwaniya%2C%20Kuwait" target="_blank" rel="noopener">Get directions →</a></div>
+    </div>
+
+    <div class="visit rv">
+      <div class="info">
+        <p class="label">Get In Touch Today</p>
+        <h3>Marriott Palace General Trading &amp; Contracting Co.</h3>
+        <dl>
+          <dt>Office</dt>
+          <dd>Al-Arbeed Plaza Complex, Block 04, Street #55,<br>2nd Tower, 7th Floor, Office #36,<br>Farwaniya, Kuwait<span class="ar-addr" lang="ar">شارع 1-جادة 3 49, الفروانية</span></dd>
+          <dt>Phone</dt>
+          <dd><a href="tel:+96599423693">+965 9942 3693</a></dd>
+          <dt>Email</dt>
+          <dd>marriottpalacekwt@gmail.com</dd>
+          <dt>Hours</dt>
+          <dd>Please call ahead to arrange your visit.</dd>
+        </dl>
+        <div class="btns">
+          <a class="btn btn-dark" href="tel:+96599423693">Call Now <span class="arr">→</span></a>
+          <a class="btn btn-line" href="https://maps.google.com/?q=Al-Arbeed%20Plaza%20Complex%2C%20Farwaniya%2C%20Kuwait" target="_blank" rel="noopener">Open in Maps</a>
+        </div>
+      </div>
+      <a class="mapcard" href="https://maps.google.com/?q=Al-Arbeed%20Plaza%20Complex%2C%20Farwaniya%2C%20Kuwait" target="_blank" rel="noopener" aria-label="Open our location in Google Maps">
+        <svg viewBox="0 0 400 420" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+          <g fill="none" stroke="rgba(255,255,255,.14)" stroke-width="1">
+            <path d="M-20 80 L420 140M-20 220 L420 190M-20 330 L420 380M60 -20 L120 440M210 -20 L190 440M330 -20 L300 440"/>
+          </g>
+          <g fill="none" stroke="rgba(255,255,255,.3)" stroke-width="6">
+            <path d="M-20 260 C120 230 260 210 420 160"/><path d="M150 -20 C170 140 230 280 250 440"/>
+          </g>
+          <g fill="rgba(255,255,255,.06)"><rect x="70" y="100" width="90" height="70"/><rect x="250" y="60" width="70" height="90"/><rect x="40" y="300" width="110" height="60"/><rect x="270" y="270" width="90" height="80"/></g>
+        </svg>
+        <span class="pin"><i></i></span>
+        <span class="mc"><b>Farwaniya, Kuwait</b><span class="ulink" style="margin-top:12px;font-size:12px;letter-spacing:.18em;text-transform:uppercase;font-weight:500">View on Google Maps →</span></span>
+      </a>
     </div>
   </div>
 </section>
 </main>
 
-<footer><div class="wrap">
-  <span>© 2026 marriott_palace</span>
-  <span>Concept design by webstudio. Not affiliated with or endorsed by marriott_palace.</span>
-</div></footer>
+<footer class="ftr">
+  <div class="wrap">
+    <div class="ftr-top">
+      <div>
+        <a href="#top" class="brand"><span class="logo-pl"><img src="img/logo.png" alt="Marriott Palace logo" width="80" height="40" loading="lazy"></span><span>Marriott Palace</span></a>
+        <p class="tag">Bringing confidence back to warehousing and inventory management.</p>
+      </div>
+      <div>
+        <h4>Services</h4>
+        <ul>
+          <li><a href="#services">Warehouse Rental</a></li><li><a href="#services">3PL Services</a></li><li><a href="#services">Construction</a></li><li><a href="#services">Epoxy Painting</a></li><li><a href="#services">Louver Windows</a></li><li><a href="#services">Moca Cream Limestone</a></li><li><a href="#services">Equipment, PPE &amp; Consumables</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Visit &amp; Call</h4>
+        <ul>
+          <li>Al-Arbeed Plaza Complex, 2nd Tower,<br>7th Floor, Office #36, Farwaniya</li>
+          <li><a href="tel:+96599423693">+965 9942 3693</a></li>
+          <li>marriottpalacekwt@gmail.com</li>
+          <li><a href="https://maps.google.com/?q=Al-Arbeed%20Plaza%20Complex%2C%20Farwaniya%2C%20Kuwait" target="_blank" rel="noopener">Directions →</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="ftr-big" aria-hidden="true">Marriott Palace</div>
+    <div class="ftr-bot">
+      <span>© <span id="yr"></span> Marriott Palace General Trading and Contracting Company, Kuwait</span>
+      <a href="#top" class="ulink">Back to top ↑</a>
+    </div>
+  </div>
+</footer>
 
-<div class="mobile-bar">
-  <a class="btn ghost" href="tel:+96599423693">Call</a>
-  <a class="btn" href="#visit">Let&#39;s talk</a>
+<div class="mbar">
+  <a href="tel:+96599423693">Call Now</a>
+  <a href="#contact">Enquire</a>
 </div>
-</body>
+
+<script>
+(function(){
+  var d=document,b=d.body,h=d.querySelector('.hdr'),bg=d.querySelector('.burger');
+  d.getElementById('yr').textContent=new Date().getFullYear();
+
+  function onScroll(){h.classList.toggle('scrolled',window.scrollY>30)}
+  onScroll();window.addEventListener('scroll',onScroll,{passive:true});
+
+  bg.addEventListener('click',function(){
+    var o=b.classList.toggle('menu-open');bg.setAttribute('aria-expanded',o);
+    bg.setAttribute('aria-label',o?'Close menu':'Open menu');
+  });
+  d.querySelectorAll('.mnav a').forEach(function(a){a.addEventListener('click',function(){b.classList.remove('menu-open');bg.setAttribute('aria-expanded','false')})});
+
+  var rm=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var rv=d.querySelectorAll('.rv');
+  if(rm||!('IntersectionObserver' in window)){rv.forEach(function(e){e.classList.add('in')})}
+  else{
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12,rootMargin:'0px 0px -6% 0px'});
+    rv.forEach(function(e){io.observe(e)});
+  }
+
+  if(!rm){
+    var px=[].slice.call(d.querySelectorAll('[data-speed]')),tk=false;
+    function par(){
+      var vh=window.innerHeight;
+      px.forEach(function(el){
+        var r=el.getBoundingClientRect();
+        if(r.bottom<-200||r.top>vh+200)return;
+        var c=r.top+r.height/2-vh/2;
+        el.style.setProperty('--py',(c*parseFloat(el.dataset.speed)).toFixed(1)+'px');
+      });
+      tk=false;
+    }
+    window.addEventListener('scroll',function(){if(!tk){tk=true;requestAnimationFrame(par)}},{passive:true});
+    window.addEventListener('resize',par);par();
+  }
+})();
+</script>
+<div id="lm-concept" style="position:fixed;left:12px;bottom:12px;z-index:2147483647;font:500 11px/1.3 -apple-system,BlinkMacSystemFont,Segoe UI,sans-serif;letter-spacing:.02em;background:rgba(15,15,18,.82);color:#f4f1ea;padding:7px 11px;border-radius:999px;backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);pointer-events:none;max-width:70vw">Website concept for marriott_palace by webstudio &middot; not the live site</div><p style="margin:0;padding:18px 16px 70px;text-align:center;font:12px/1.5 -apple-system,sans-serif;color:#8a8a8a;background:#0e0e10">Concept design by webstudio. Not affiliated with or endorsed by marriott_palace.</p></body>
 </html>
