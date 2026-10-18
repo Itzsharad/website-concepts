@@ -1,291 +1,606 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src * data: blob:; media-src 'self' data:; style-src 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com data:; script-src 'unsafe-inline'; connect-src 'none'; frame-src 'none'; form-action 'none'; base-uri 'none'; object-src 'none'">
 <meta name="robots" content="noindex, nofollow">
-<title>Uhod Real Estate Company | Website concept</title>
+<style>html,body{max-width:100%;overflow-x:clip}</style>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Uhod Real Estate Company | Al-Dajeej, Farwaniya, Kuwait</title>
+<meta name="description" content="Uhod Real Estate Company: a real estate agent based at Tala Mall, Al-Dajeej, Farwaniya, Kuwait. Call +965 2434 5450.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{
-  --bg:#0d0d0f;--surface:#16161a;--ink:#f3efe7;--muted:#a8a39a;
-  --accent:#c9a96e;--accent-ink:#0d0d0f;--gold:#c9a96e;--soft:#1f1e22;
-  --radius:22px;--max:1180px;
-  --serif:"Fraunces",Georgia,serif;--sans:"Manrope",system-ui,-apple-system,sans-serif;
+  --bg:#F6F5F2;--surface:#FFFFFF;--ink:#0D1B2A;--ink-2:#3a4756;--ink-3:#5d6773;
+  --crimson:#A11D24;--crimson-d:#7d151b;--gold:#C9A227;--gold-l:#e7d48f;
+  --rule:rgba(13,27,42,.14);--rule-2:rgba(13,27,42,.28);
+  --ease:cubic-bezier(.2,.7,.1,1);
+  --pad:clamp(20px,5vw,72px);
 }
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:"Space Grotesk",system-ui,sans-serif;background:var(--bg);color:var(--ink);font-size:17px;line-height:1.65;overflow-x:hidden;-webkit-font-smoothing:antialiased}
 a{color:inherit;text-decoration:none}
-img{max-width:100%;display:block}
-.wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
-.concept{background:var(--ink);color:var(--bg);font-size:13px;text-align:center;padding:8px 16px;letter-spacing:.02em}
-.concept b{color:var(--gold);font-weight:600}
+svg{display:block}
+.wrap{max-width:1320px;margin:0 auto;padding:0 var(--pad)}
+.label{font-size:12px;font-weight:500;letter-spacing:.24em;text-transform:uppercase}
+.rule{height:1px;background:var(--rule);border:0}
 
-/* header */
-header{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:saturate(1.4) blur(10px);border-bottom:1px solid color-mix(in srgb,var(--ink) 8%,transparent)}
-.nav{display:flex;align-items:center;justify-content:space-between;height:76px;gap:24px}
-.brand{font-family:var(--serif);font-size:23px;font-weight:600;letter-spacing:-.01em;line-height:1.1;max-width:340px}
-.links{display:flex;gap:30px;font-size:15px;font-weight:500;color:var(--muted)}
-.links a:hover{color:var(--ink)}
-.nav-right{display:flex;align-items:center;gap:18px}
-.phone{font-weight:600;font-size:15px;white-space:nowrap}
-.btn{display:inline-flex;align-items:center;gap:10px;background:var(--accent);color:var(--accent-ink);padding:14px 26px;border-radius:999px;font-weight:600;font-size:15.5px;transition:transform .2s ease,box-shadow .2s ease;white-space:nowrap}
-.btn:hover{transform:translateY(-2px);box-shadow:0 12px 28px -12px var(--accent)}
-.btn.ghost{background:transparent;color:var(--ink);border:1.5px solid color-mix(in srgb,var(--ink) 20%,transparent)}
-.btn.ghost:hover{box-shadow:none;border-color:var(--ink)}
-.btn svg{width:18px;height:18px}
+/* Buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:12px;padding:17px 28px;font:500 14px/1.2 "Space Grotesk",sans-serif;letter-spacing:.12em;text-transform:uppercase;border:1px solid transparent;transition:transform .4s var(--ease),background .4s,color .4s,border-color .4s;text-align:center;cursor:pointer}
+.btn svg{width:16px;height:16px;flex:none;transition:transform .4s var(--ease)}
+.btn:hover svg{transform:translateX(4px)}
+.btn-primary{background:var(--crimson);color:#fff}
+.btn-primary:hover{background:var(--ink);transform:translateY(-2px)}
+.btn-ghost{border-color:var(--ink);color:var(--ink)}
+.btn-ghost:hover{background:var(--ink);color:var(--bg);transform:translateY(-2px)}
+.ul{position:relative}
+.ul::after{content:"";position:absolute;left:0;bottom:-3px;height:1px;width:100%;background:currentColor;transform:scaleX(0);transform-origin:right;transition:transform .5s var(--ease)}
+.ul:hover::after{transform:scaleX(1);transform-origin:left}
 
-/* hero */
-.hero{padding:72px 0 88px}
-.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:64px;align-items:center}
-.eyebrow{display:inline-flex;align-items:center;gap:10px;background:var(--surface);border:1px solid color-mix(in srgb,var(--ink) 10%,transparent);padding:8px 16px 8px 10px;border-radius:999px;font-size:14px;font-weight:600;color:var(--muted)}
-.stars{color:var(--gold);letter-spacing:1px;font-size:14px}
-.eyebrow .dot{width:26px;height:26px;border-radius:50%;background:var(--soft);display:grid;place-items:center;color:var(--accent)}
-h1{font-family:var(--serif);font-weight:500;font-size:clamp(44px,5.6vw,74px);line-height:1.02;letter-spacing:-.025em;margin:26px 0 22px}
-h1 em{font-style:italic;color:var(--accent)}
-.lead-text{font-size:19.5px;color:var(--muted);max-width:540px}
-.hero-ctas{display:flex;gap:14px;margin-top:36px;flex-wrap:wrap}
-.ticks{display:flex;gap:22px;margin-top:34px;flex-wrap:wrap;font-size:14.5px;font-weight:600;color:var(--muted)}
-.ticks span{display:flex;align-items:center;gap:8px}
-.ticks svg{width:18px;height:18px;color:var(--accent)}
-.visual{position:relative}
-.photo{aspect-ratio:4/5;border-radius:calc(var(--radius) + 10px);overflow:hidden;background:var(--soft);box-shadow:0 40px 80px -40px color-mix(in srgb,var(--ink) 55%,transparent)}
-.photo img{width:100%;height:100%;object-fit:cover}
-.quote-panel{aspect-ratio:4/5;border-radius:calc(var(--radius) + 10px);background:linear-gradient(155deg,var(--accent),color-mix(in srgb,var(--accent) 55%,var(--ink)));color:var(--accent-ink);padding:52px 46px;display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden;box-shadow:0 40px 80px -40px color-mix(in srgb,var(--ink) 60%,transparent)}
-.quote-panel:before{content:"";position:absolute;width:420px;height:420px;border-radius:50%;right:-160px;top:-160px;background:color-mix(in srgb,var(--accent-ink) 9%,transparent)}
-.quote-panel:after{content:"";position:absolute;width:260px;height:260px;border-radius:50%;left:-90px;bottom:-110px;border:1.5px solid color-mix(in srgb,var(--accent-ink) 22%,transparent)}
-.quote-mark{font-family:var(--serif);font-size:120px;line-height:.6;opacity:.35}
-.quote-panel p{font-family:var(--serif);font-size:28px;line-height:1.3;position:relative;z-index:1}
-.quote-panel .who{font-family:var(--sans);font-size:15px;opacity:.85;margin-top:22px;font-weight:600}
-.float{position:absolute;background:var(--surface);color:var(--ink);border-radius:18px;padding:16px 20px;box-shadow:0 24px 50px -24px color-mix(in srgb,var(--ink) 50%,transparent);display:flex;align-items:center;gap:14px;font-size:14px;line-height:1.35}
-.float b{font-size:22px;font-family:var(--serif);font-weight:600;display:block}
-.float.one{left:-34px;bottom:-28px}
-.float.two{right:-22px;top:44px}
-.float .badge{width:44px;height:44px;border-radius:14px;background:var(--soft);display:grid;place-items:center;color:var(--accent)}
-.float .badge svg{width:22px;height:22px}
+/* Header */
+header{position:fixed;inset:0 0 auto 0;z-index:50;transition:background .4s,box-shadow .4s,padding .4s;padding:18px 0}
+header.scrolled{background:rgba(246,245,242,.82);backdrop-filter:saturate(160%) blur(16px);-webkit-backdrop-filter:saturate(160%) blur(16px);box-shadow:0 1px 0 var(--rule);padding:10px 0}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:24px}
+.brand{display:flex;align-items:center;gap:12px}
+.mark{width:42px;height:42px;background:var(--ink);color:var(--bg);display:grid;place-items:center;font-weight:700;font-size:20px;position:relative}
+.mark::after{content:"";position:absolute;right:-4px;bottom:-4px;width:12px;height:12px;background:var(--crimson)}
+.brand b{display:block;font-size:19px;font-weight:600;letter-spacing:.02em;line-height:1.1}
+.brand small{display:block;font-size:10px;letter-spacing:.26em;text-transform:uppercase;color:var(--ink-3)}
+.links{display:flex;gap:34px;list-style:none;font-size:14px;font-weight:500}
+.nav-right{display:flex;align-items:center;gap:22px}
+.tel{font-size:14px;font-weight:500;letter-spacing:.04em;white-space:nowrap}
+.nav .btn{padding:13px 20px;font-size:12px}
+.burger{display:none;width:44px;height:44px;background:none;border:1px solid var(--rule-2);cursor:pointer;position:relative}
+.burger span{position:absolute;left:12px;right:12px;height:1.5px;background:var(--ink);transition:transform .4s var(--ease),opacity .3s}
+.burger span:nth-child(1){top:16px}.burger span:nth-child(2){top:21px}.burger span:nth-child(3){top:26px}
+.menu-open .burger span:nth-child(1){transform:translateY(5px) rotate(45deg)}
+.menu-open .burger span:nth-child(2){opacity:0}
+.menu-open .burger span:nth-child(3){transform:translateY(-5px) rotate(-45deg)}
+.mobile-menu{position:fixed;inset:0;z-index:45;background:var(--ink);color:var(--bg);padding:120px var(--pad) 40px;display:flex;flex-direction:column;justify-content:space-between;clip-path:inset(0 0 100% 0);transition:clip-path .7s var(--ease)}
+.menu-open .mobile-menu{clip-path:inset(0 0 0 0)}
+.menu-open header{background:transparent;box-shadow:none;backdrop-filter:none}
+.menu-open header .brand,.menu-open header .burger{filter:invert(1)}
+.mobile-menu ol{list-style:none;counter-reset:m}
+.mobile-menu li{border-bottom:1px solid rgba(246,245,242,.15)}
+.mobile-menu li a{display:flex;align-items:baseline;gap:18px;padding:18px 0;font-size:clamp(30px,9vw,44px);font-weight:500;letter-spacing:-.02em}
+.mobile-menu li a::before{counter-increment:m;content:"0" counter(m);font-size:12px;letter-spacing:.2em;color:var(--gold)}
+.mobile-menu .btn{width:100%}
 
-/* trust */
-.trust{border-top:1px solid color-mix(in srgb,var(--ink) 9%,transparent);border-bottom:1px solid color-mix(in srgb,var(--ink) 9%,transparent);background:var(--surface)}
-.trust .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;padding-top:26px;padding-bottom:26px}
-.trust div{display:flex;align-items:center;gap:12px;font-weight:600;font-size:15px}
-.trust svg{width:22px;height:22px;color:var(--accent);flex:none}
+/* Hero */
+.hero{position:relative;min-height:100vh;min-height:100svh;display:flex;flex-direction:column;justify-content:center;padding:140px 0 70px;overflow:hidden;text-align:center}
+.hero-bg{position:absolute;inset:0;pointer-events:none;z-index:0}
+.hero-bg svg{position:absolute;left:50%;bottom:-2%;width:min(1500px,170vw);transform:translateX(-50%);will-change:transform}
+.ghost{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);font-size:clamp(150px,34vw,520px);font-weight:700;letter-spacing:-.06em;line-height:.8;color:transparent;-webkit-text-stroke:1px rgba(13,27,42,.07);white-space:nowrap;will-change:transform}
+.hero .wrap{position:relative;z-index:2}
+.meta{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:14px 0;border-top:1px solid var(--rule-2);border-bottom:1px solid var(--rule);margin-bottom:clamp(40px,7vw,80px);color:var(--ink-2)}
+.meta .dot{width:6px;height:6px;background:var(--crimson);border-radius:50%;display:inline-block;margin-right:10px;vertical-align:middle}
+h1{font-size:clamp(52px,11.5vw,184px);font-weight:600;line-height:.9;letter-spacing:-.055em}
+h1 .line{display:block;overflow:hidden;padding-bottom:.06em}
+h1 .line>span{display:inline-block}
+h1 .accent{color:var(--crimson);position:relative}
+h1 .accent::after{content:"";position:absolute;left:2%;right:2%;bottom:.04em;height:.045em;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:transform 1.4s var(--ease) 1.1s}
+.loaded h1 .accent::after{transform:scaleX(1)}
+.hero-sub{max-width:620px;margin:clamp(28px,4vw,44px) auto 0;font-size:clamp(17px,1.6vw,20px);color:var(--ink-2)}
+.hero-ctas{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:38px}
+.scroll-cue{display:flex;align-items:center;justify-content:center;gap:14px;margin-top:clamp(48px,7vw,90px);color:var(--ink-3)}
+.scroll-cue i{width:1px;height:46px;background:var(--rule-2);position:relative;overflow:hidden}
+.scroll-cue i::after{content:"";position:absolute;inset:0;background:var(--crimson);animation:drip 2.2s var(--ease) infinite}
+@keyframes drip{0%{transform:translateY(-100%)}100%{transform:translateY(100%)}}
+.stg{opacity:0;transform:translateY(28px);transition:opacity 1s var(--ease),transform 1.1s var(--ease)}
+h1 .line>span.stg{transform:translateY(105%)}
+.loaded .stg{opacity:1;transform:none}
 
-/* sections */
-section.block{padding:110px 0}
-.kicker{font-size:13px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
-h2{font-family:var(--serif);font-weight:500;font-size:clamp(34px,3.8vw,52px);line-height:1.08;letter-spacing:-.02em;margin:14px 0 18px}
-.section-head{display:flex;justify-content:space-between;align-items:end;gap:40px;margin-bottom:56px}
-.section-head p{color:var(--muted);max-width:420px}
-.services{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-.card{background:var(--surface);border-radius:var(--radius);padding:34px 32px 36px;border:1px solid color-mix(in srgb,var(--ink) 7%,transparent);transition:transform .25s ease,box-shadow .25s ease}
-.card:hover{transform:translateY(-4px);box-shadow:0 30px 60px -36px color-mix(in srgb,var(--ink) 45%,transparent)}
-.icon{width:54px;height:54px;border-radius:16px;background:var(--soft);color:var(--accent);display:grid;place-items:center;margin-bottom:24px}
-.icon svg{width:26px;height:26px}
-.card h3{font-family:var(--serif);font-weight:500;font-size:23px;margin-bottom:8px;letter-spacing:-.01em}
-.card p{color:var(--muted);font-size:16px}
+/* Band */
+.band{background:var(--crimson);color:#fff;position:relative;overflow:hidden}
+.band::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,var(--crimson-d),transparent 30%,transparent 70%,var(--crimson-d));opacity:.6}
+.band-top{display:grid;grid-template-columns:1fr auto;gap:28px;align-items:end;padding:clamp(48px,7vw,96px) 0 clamp(36px,5vw,56px);position:relative}
+.band-top p{font-size:clamp(26px,3.8vw,54px);font-weight:500;line-height:1.08;letter-spacing:-.03em;max-width:980px}
+.band-top p em{font-style:normal;color:var(--gold-l)}
+.band-top .label{color:rgba(255,255,255,.75);text-align:right}
+.marquee{border-top:1px solid rgba(255,255,255,.25);padding:22px 0;display:flex;overflow:hidden;position:relative;user-select:none}
+.marquee-track{display:flex;flex:none;gap:48px;padding-right:48px;animation:mq 38s linear infinite;white-space:nowrap}
+.marquee span{font-size:clamp(18px,2vw,24px);font-weight:500;letter-spacing:.04em;display:flex;align-items:center;gap:48px}
+.marquee span::after{content:"";width:10px;height:10px;background:var(--gold);transform:rotate(45deg)}
+.marquee .ar{font-weight:400}
+@keyframes mq{to{transform:translateX(-100%)}}
 
-.why{background:var(--ink);color:var(--bg)}
-.why .kicker{color:var(--gold)}
-.why-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:80px;align-items:start}
-.why h2{color:var(--bg)}
-.why .intro{color:color-mix(in srgb,var(--bg) 70%,transparent);font-size:18px;max-width:440px}
-.points{display:grid;gap:14px}
-.point{display:grid;grid-template-columns:62px 1fr;gap:20px;padding:30px;border-radius:var(--radius);background:color-mix(in srgb,var(--bg) 6%,transparent);border:1px solid color-mix(in srgb,var(--bg) 10%,transparent)}
-.point .num{font-family:var(--serif);font-size:34px;color:var(--gold);line-height:1}
-.point h3{font-family:var(--serif);font-weight:500;font-size:24px;margin-bottom:6px}
-.point p{color:color-mix(in srgb,var(--bg) 72%,transparent);font-size:16px}
+/* Sections */
+section{position:relative}
+.sec{padding:clamp(90px,12vw,170px) 0}
+.sec-head{display:flex;align-items:baseline;gap:20px;padding-bottom:20px;border-bottom:1px solid var(--rule-2);margin-bottom:clamp(44px,6vw,80px)}
+.sec-head .num{font-size:13px;font-weight:600;letter-spacing:.2em;color:var(--crimson)}
+.sec-head .label{color:var(--ink-3)}
+.sec-head .label:last-child{margin-left:auto}
+h2{font-size:clamp(40px,6.4vw,96px);font-weight:600;line-height:.95;letter-spacing:-.045em}
+h2 .c{color:var(--crimson)}
+h3{font-size:clamp(22px,2.2vw,30px);font-weight:600;line-height:1.15;letter-spacing:-.02em}
+.split{display:grid;grid-template-columns:5fr 7fr;gap:clamp(40px,7vw,120px);align-items:start}
+.sticky{position:sticky;top:120px}
+.lead{font-size:clamp(18px,1.6vw,21px);color:var(--ink-2);margin-top:28px;max-width:460px}
 
-.score{display:flex;align-items:center;gap:18px;background:var(--surface);padding:16px 24px;border-radius:18px;border:1px solid color-mix(in srgb,var(--ink) 8%,transparent)}
-.score b{font-family:var(--serif);font-size:40px;font-weight:500;line-height:1}
-.score small{display:block;color:var(--muted);font-size:14px}
-.reviews{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-.review{background:var(--surface);border-radius:var(--radius);padding:34px;display:flex;flex-direction:column;gap:22px;border:1px solid color-mix(in srgb,var(--ink) 7%,transparent)}
-.review p{font-family:var(--serif);font-size:19.5px;line-height:1.45}
-.review .by{margin-top:auto;display:flex;align-items:center;gap:12px;font-weight:600;font-size:15px}
-.avatar{width:40px;height:40px;border-radius:50%;background:var(--soft);color:var(--accent);display:grid;place-items:center;font-weight:700}
-.review .src{color:var(--muted);font-weight:500;font-size:13px;display:block}
+/* Services */
+.svc{display:grid;gap:0;border-top:1px solid var(--rule)}
+.card{background:var(--surface);border:1px solid var(--rule);border-top:0;padding:clamp(28px,3.4vw,46px);display:grid;grid-template-columns:auto 1fr auto;gap:clamp(18px,3vw,36px);align-items:start;position:relative;overflow:hidden;transition:transform .55s var(--ease),box-shadow .55s var(--ease)}
+.card::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--crimson);transform:scaleY(0);transform-origin:bottom;transition:transform .55s var(--ease)}
+.card:hover{transform:translateY(-4px);box-shadow:0 30px 60px -30px rgba(13,27,42,.35);z-index:2}
+.card:hover::before{transform:scaleY(1)}
+.card .n{font-size:13px;font-weight:600;letter-spacing:.18em;color:var(--crimson);padding-top:6px}
+.card p{color:var(--ink-2);margin-top:10px;max-width:520px}
+.card .ico{width:54px;height:54px;border:1px solid var(--rule-2);display:grid;place-items:center;color:var(--ink);transition:background .5s,color .5s,border-color .5s}
+.card .ico svg{width:24px;height:24px}
+.card:hover .ico{background:var(--ink);color:var(--gold);border-color:var(--ink)}
 
-.cta-band{padding:0 0 110px}
-.cta-box{border-radius:calc(var(--radius) + 12px);background:linear-gradient(140deg,var(--accent),color-mix(in srgb,var(--accent) 60%,var(--ink)));color:var(--accent-ink);padding:76px 64px;display:grid;grid-template-columns:1.3fr 1fr;gap:40px;align-items:center;position:relative;overflow:hidden}
-.cta-box:after{content:"";position:absolute;right:-120px;bottom:-200px;width:460px;height:460px;border-radius:50%;border:1.5px solid color-mix(in srgb,var(--accent-ink) 22%,transparent)}
-.cta-box h2{color:inherit;margin:0 0 12px}
-.cta-box p{opacity:.85;font-size:18px}
-.cta-box .actions{display:flex;flex-direction:column;gap:12px;align-items:flex-start;position:relative;z-index:1}
-.cta-box .btn{background:var(--accent-ink);color:var(--accent)}
-.cta-box .btn.ghost{background:transparent;color:var(--accent-ink);border-color:color-mix(in srgb,var(--accent-ink) 40%,transparent)}
+/* About */
+.about{background:var(--surface);border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);overflow:hidden}
+.about-grid{display:grid;grid-template-columns:7fr 5fr;gap:clamp(40px,7vw,120px);align-items:center}
+.quote{font-size:clamp(30px,4.2vw,62px);font-weight:500;line-height:1.05;letter-spacing:-.035em}
+.quote .c{color:var(--crimson)}
+.quote .g{background:linear-gradient(transparent 62%,rgba(201,162,39,.38) 62%)}
+.about-copy p{color:var(--ink-2);margin-bottom:20px}
+.about-copy p:first-child::first-letter{float:left;font-size:76px;line-height:.8;font-weight:600;color:var(--crimson);margin:8px 12px 0 0}
+.plate{margin-top:34px;border:1px solid var(--rule-2);padding:24px;display:grid;gap:4px;position:relative}
+.plate::before{content:"";position:absolute;top:-1px;left:-1px;width:28px;height:28px;border-top:3px solid var(--gold);border-left:3px solid var(--gold)}
+.plate .ar{font-size:20px;font-weight:500;direction:rtl;text-align:left;unicode-bidi:isolate}
+.plate small{color:var(--ink-3);font-size:14px}
 
-.visit{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:10px}
-.visit .card h3{font-size:20px}
-.visit a{color:var(--accent);font-weight:600}
-footer{border-top:1px solid color-mix(in srgb,var(--ink) 9%,transparent);padding:40px 0 110px;color:var(--muted);font-size:14px}
-footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
-.mobile-bar{display:none}
+/* Why */
+.why-grid{display:grid;grid-template-columns:repeat(2,1fr);border-top:1px solid var(--rule-2);border-left:1px solid var(--rule)}
+.why{padding:clamp(30px,4vw,56px);border-right:1px solid var(--rule);border-bottom:1px solid var(--rule);position:relative;transition:background .5s}
+.why:hover{background:var(--surface)}
+.why .big{font-size:clamp(64px,7vw,110px);font-weight:300;line-height:.8;letter-spacing:-.06em;color:transparent;-webkit-text-stroke:1px var(--crimson);margin-bottom:28px}
+.why p{color:var(--ink-2);margin-top:12px;max-width:440px}
+.why:nth-child(2){margin-top:clamp(0px,6vw,90px)}
+.why:nth-child(4){margin-top:clamp(0px,6vw,90px)}
 
-@keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
-.hero .copy>*{animation:rise .8s cubic-bezier(.2,.7,.2,1) both}
-.hero .copy>*:nth-child(2){animation-delay:.08s}.hero .copy>*:nth-child(3){animation-delay:.16s}
-.hero .copy>*:nth-child(4){animation-delay:.24s}.hero .copy>*:nth-child(5){animation-delay:.32s}
-.visual{animation:rise 1s .2s cubic-bezier(.2,.7,.2,1) both}
+/* Process */
+.process{background:var(--ink);color:var(--bg);overflow:hidden}
+.process .sec-head{border-color:rgba(246,245,242,.25)}
+.process .sec-head .label{color:rgba(246,245,242,.6)}
+.process .sec-head .num{color:var(--gold)}
+.process h2 .c{color:var(--gold)}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:clamp(50px,7vw,90px);counter-reset:s}
+.step{padding:34px 28px 10px 0;border-top:1px solid rgba(246,245,242,.25);position:relative}
+.step::before{content:"";position:absolute;top:-5px;left:0;width:9px;height:9px;background:var(--gold);transform:rotate(45deg)}
+.step .k{font-size:13px;letter-spacing:.22em;color:var(--gold);font-weight:600}
+.step h3{margin:18px 0 12px;color:#fff}
+.step p{color:rgba(246,245,242,.75);font-size:16px}
+.process .lead{color:rgba(246,245,242,.75)}
 
-@media (max-width:980px){
-  .links{display:none}
-  .hero-grid,.why-grid,.cta-box{grid-template-columns:1fr}
-  .hero-grid{gap:56px}
-  .services,.reviews,.visit{grid-template-columns:1fr 1fr}
-  .trust .wrap{grid-template-columns:1fr 1fr}
-  .float.one{left:12px;bottom:-26px}.float.two{right:12px}
-  .visual{max-width:560px;margin-bottom:20px}
-  .section-head{flex-direction:column;align-items:flex-start}
+/* FAQ */
+.faq details{border-bottom:1px solid var(--rule-2)}
+.faq details:first-child{border-top:1px solid var(--rule-2)}
+.faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:24px;padding:28px 0;font-size:clamp(19px,1.9vw,25px);font-weight:500;letter-spacing:-.015em}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary i{flex:none;width:36px;height:36px;border:1px solid var(--rule-2);position:relative;transition:background .4s,transform .5s var(--ease)}
+.faq summary i::before,.faq summary i::after{content:"";position:absolute;left:50%;top:50%;width:12px;height:1.5px;background:var(--ink);transform:translate(-50%,-50%)}
+.faq summary i::after{transform:translate(-50%,-50%) rotate(90deg);transition:transform .4s var(--ease)}
+.faq details[open] summary i{background:var(--crimson);border-color:var(--crimson)}
+.faq details[open] summary i::before,.faq details[open] summary i::after{background:#fff}
+.faq details[open] summary i::after{transform:translate(-50%,-50%) rotate(0)}
+.faq summary:hover{color:var(--crimson)}
+.faq .ans{padding:0 60px 30px 0;color:var(--ink-2);max-width:720px}
+.faq .ans a{color:var(--crimson);font-weight:500}
+
+/* CTA band */
+.cta{background:var(--crimson);color:#fff;text-align:center;overflow:hidden;padding:clamp(100px,13vw,180px) 0}
+.cta svg.rings{position:absolute;left:50%;top:50%;width:min(1100px,160vw);transform:translate(-50%,-50%);opacity:.18;pointer-events:none}
+.cta .wrap{position:relative}
+.cta h2{font-size:clamp(46px,9vw,140px)}
+.cta h2 span{color:var(--gold-l)}
+.cta p{max-width:560px;margin:28px auto 40px;color:rgba(255,255,255,.88);font-size:clamp(17px,1.5vw,20px)}
+.cta .btn-primary{background:#fff;color:var(--crimson)}
+.cta .btn-primary:hover{background:var(--ink);color:#fff}
+.cta .btn-ghost{border-color:#fff;color:#fff}
+.cta .btn-ghost:hover{background:#fff;color:var(--crimson)}
+.cta .hero-ctas{margin-top:0}
+
+/* Contact */
+.contact-grid{display:grid;grid-template-columns:5fr 7fr;gap:clamp(40px,7vw,120px)}
+.info{display:grid;border-top:1px solid var(--rule-2)}
+.row{display:grid;grid-template-columns:160px 1fr auto;gap:24px;align-items:center;padding:30px 0;border-bottom:1px solid var(--rule)}
+.row .label{color:var(--ink-3)}
+.row .v{font-size:clamp(19px,2vw,26px);font-weight:500;letter-spacing:-.015em;line-height:1.3;min-width:0;overflow-wrap:anywhere}
+.row .v small{display:block;font-size:15px;color:var(--ink-3);font-weight:400;margin-top:6px;letter-spacing:0}
+.row .v .ar{direction:rtl;unicode-bidi:isolate}
+.row a.go{width:48px;height:48px;border:1px solid var(--rule-2);display:grid;place-items:center;transition:background .4s,color .4s,transform .4s var(--ease)}
+.row a.go svg{width:18px;height:18px}
+.row a.go:hover{background:var(--crimson);color:#fff;border-color:var(--crimson);transform:rotate(-45deg)}
+.mapcard{display:block;margin-top:40px;background:var(--surface);border:1px solid var(--rule);position:relative;overflow:hidden;aspect-ratio:16/9;transition:box-shadow .5s}
+.mapcard:hover{box-shadow:0 30px 60px -30px rgba(13,27,42,.35)}
+.mapcard svg{width:100%;height:100%}
+.mapcard .pin{position:absolute;left:50%;top:46%;transform:translate(-50%,-100%);display:flex;flex-direction:column;align-items:center}
+.mapcard .pin b{background:var(--ink);color:#fff;font-size:12px;letter-spacing:.18em;text-transform:uppercase;padding:9px 14px;white-space:nowrap;font-weight:500}
+.mapcard .pin i{width:14px;height:14px;background:var(--crimson);border-radius:50%;margin-top:10px;box-shadow:0 0 0 0 rgba(161,29,36,.5);animation:pulse 2.4s infinite}
+@keyframes pulse{70%{box-shadow:0 0 0 22px rgba(161,29,36,0)}100%{box-shadow:0 0 0 0 rgba(161,29,36,0)}}
+.mapcard .open{position:absolute;right:18px;bottom:16px;font-size:12px;letter-spacing:.2em;text-transform:uppercase;font-weight:600;color:var(--crimson)}
+
+/* Footer */
+footer{background:var(--ink);color:rgba(246,245,242,.75);padding:80px 0 40px;overflow:hidden}
+.foot-word{font-size:clamp(80px,22vw,340px);font-weight:700;letter-spacing:-.07em;line-height:.78;color:var(--bg);margin-bottom:50px}
+.foot-word span{color:var(--crimson)}
+.foot-row{display:flex;justify-content:space-between;flex-wrap:wrap;gap:20px;border-top:1px solid rgba(246,245,242,.18);padding-top:26px;font-size:14px}
+.foot-row a{color:var(--bg)}
+
+/* Mobile call bar */
+.callbar{display:none}
+
+/* Reveal */
+.rv{opacity:0;transform:translateY(40px);transition:opacity 1s var(--ease),transform 1.1s var(--ease)}
+.rv.in{opacity:1;transform:none}
+.d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}
+
+@media (max-width:1080px){
+  .links,.tel{display:none}
+  .steps{grid-template-columns:repeat(2,1fr);row-gap:40px}
+}
+@media (max-width:860px){
+  .split,.about-grid,.contact-grid{grid-template-columns:1fr}
+  .sticky{position:static}
+  .band-top{grid-template-columns:1fr}
+  .band-top .label{text-align:left}
 }
 @media (max-width:640px){
-  body{font-size:16px}
-  .wrap{padding:0 18px}
-  .nav{height:66px}.brand{font-size:19px}
-  .phone,.nav-right .btn{display:none}
-  .hero{padding:44px 0 64px}
-  .lead-text{font-size:17.5px}
-  .hero-ctas .btn{flex:1;justify-content:center}
-  .ticks{display:none}
-  .services,.reviews,.visit,.trust .wrap{grid-template-columns:1fr}
-  section.block{padding:76px 0}
-  .quote-panel,.photo{aspect-ratio:auto;min-height:380px}.photo{aspect-ratio:4/3;min-height:0}
-  .quote-panel{padding:40px 30px 64px}.quote-panel p{font-size:23px}
-  .float{font-size:13px;padding:12px 14px}.float b{font-size:18px}
-  .float.two{display:none}
-  .cta-box{padding:52px 28px}
-  .point{grid-template-columns:44px 1fr;padding:24px}
-  .mobile-bar{display:flex;position:fixed;left:12px;right:12px;bottom:12px;z-index:30;gap:10px}
-  .mobile-bar .btn{flex:1;justify-content:center;box-shadow:0 14px 30px -14px color-mix(in srgb,var(--ink) 60%,transparent)}
-  .mobile-bar .btn.ghost{background:var(--surface)}
+  body{font-size:16px;padding-bottom:72px}
+  .nav .btn{display:none}
+  .burger{display:block}
+  .meta{flex-direction:column;gap:6px;text-align:center}
+  .hero{padding-top:120px}
+  .hero-ctas .btn{width:100%}
+  .card{grid-template-columns:1fr;gap:14px}
+  .card .ico{order:-1}
+  .card .n{padding:0}
+  .why-grid{grid-template-columns:1fr}
+  .why:nth-child(n){margin-top:0}
+  .steps{grid-template-columns:1fr}
+  .row{grid-template-columns:1fr auto;gap:8px 16px}
+  .row .label{grid-column:1/-1}
+  .faq .ans{padding-right:0}
+  .sec-head .label:last-child{display:none}
+  .callbar{display:grid;grid-template-columns:1fr 1fr;position:fixed;left:0;right:0;bottom:0;z-index:40;background:var(--ink);box-shadow:0 -10px 30px rgba(13,27,42,.25)}
+  .callbar a{display:flex;align-items:center;justify-content:center;gap:10px;padding:20px 10px;color:#fff;font-size:13px;font-weight:500;letter-spacing:.14em;text-transform:uppercase}
+  .callbar a:first-child{background:var(--crimson)}
+  .callbar svg{width:16px;height:16px}
+  .mapcard{aspect-ratio:4/3}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+  .rv,.stg,h1 .line>span.stg{opacity:1;transform:none}
+  h1 .accent::after{transform:scaleX(1)}
 }
 </style>
 </head>
 <body>
-<div class="concept">Website concept prepared for <b>Uhod Real Estate Company</b> by webstudio &middot; not a live site</div>
 
-<header>
+<header id="top-bar">
   <div class="wrap nav">
-    <a href="#top" class="brand">Uhod Real Estate Company</a>
-    <nav class="links">
-      <a href="#services">Services</a><a href="#why">Why us</a><a href="#visit">Visit</a>
-    </nav>
+    <a href="#top" class="brand" aria-label="Uhod Real Estate Company, back to top">
+      <span class="mark">U</span>
+      <span><b>Uhod</b><small>Real Estate Company</small></span>
+    </a>
+    <ul class="links">
+      <li><a class="ul" href="#services">Services</a></li>
+      <li><a class="ul" href="#about">About</a></li>
+      <li><a class="ul" href="#process">Process</a></li>
+      <li><a class="ul" href="#contact">Visit</a></li>
+    </ul>
     <div class="nav-right">
-      <a class="phone" href="tel:+96524345450">+96524345450</a>
-      <a class="btn" href="#visit">Let&#39;s talk</a>
+      <a class="tel ul" href="tel:+96524345450">+965 2434 5450</a>
+      <a class="btn btn-primary" href="#contact">Book a Meeting</a>
+      <button class="burger" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
     </div>
   </div>
 </header>
 
+<nav class="mobile-menu" aria-label="Mobile">
+  <ol>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#process">Process</a></li>
+    <li><a href="#faq">Questions</a></li>
+    <li><a href="#contact">Visit</a></li>
+  </ol>
+  <a class="btn btn-primary" href="tel:+96524345450">Call +965 2434 5450</a>
+</nav>
+
 <main id="top">
-<section class="hero">
-  <div class="wrap hero-grid">
-    <div class="copy">
-      <div class="eyebrow">
-        <span class="dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-7-4.4-7-10a4 4 0 017-2.6A4 4 0 0119 10c0 5.6-7 10-7 10z"/></svg></span>Real estate
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-bg" aria-hidden="true">
+      <div class="ghost" data-par="0.18">UHOD</div>
+      <svg data-par="-0.08" viewBox="0 0 1500 420" fill="none" stroke="#0D1B2A" stroke-width="1">
+        <g opacity=".16">
+          <path d="M0 420V330h70v90M90 420V250h60v170M170 420V300h80v120M270 420V180h50v240M340 420V270h90v150M450 420V120h40l10-30 10 30h40v300M560 420V230h70v190M650 420V310h60v110M730 420V200h46v220M790 420V150h80v270M890 420V260h60v160M970 420V90l30-40 30 40v330M1050 420V290h70v130M1140 420V210h56v210M1216 420V160h70v260M1306 420V280h80v140M1406 420V230h94v190"/>
+          <path d="M460 160h70M460 200h70M460 240h70M460 280h70M460 320h70M800 190h60M800 230h60M800 270h60M800 310h60M980 130h40M980 170h40M980 210h40M980 250h40M980 290h40M1226 200h50M1226 240h50M1226 280h50"/>
+        </g>
+        <path d="M970 90l30-40 30 40" stroke="#A11D24" stroke-width="2" opacity=".55"/>
+        <line x1="0" y1="419.5" x2="1500" y2="419.5" stroke="#C9A227" stroke-width="2" opacity=".7"/>
+      </svg>
+    </div>
+    <div class="wrap">
+      <div class="meta label stg" style="transition-delay:.05s">
+        <span><span class="dot"></span>Uhod Real Estate Company</span>
+        <span>Tala Mall · Al-Dajeej · Farwaniya</span>
       </div>
-      <h1>Find home. Sell for <em>more.</em></h1>
-      <p class="lead-text">Local expertise, honest advice and a marketing plan that gets your home seen by the right buyers.</p>
-      <div class="hero-ctas">
-        <a class="btn" href="#visit">Book a consultation <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-        <a class="btn ghost" href="tel:+96524345450">Call +96524345450</a>
+      <h1>
+        <span class="line"><span class="stg" style="transition-delay:.15s">Where you</span></span>
+        <span class="line"><span class="stg" style="transition-delay:.3s">live, <span class="accent">decided</span></span></span>
+        <span class="line"><span class="stg" style="transition-delay:.45s">with care.</span></span>
+      </h1>
+      <p class="hero-sub stg" style="transition-delay:.7s">Uhod is a real estate agent in Kuwait, receiving clients at our office in Tala Mall, Al-Dajeej. Bring us your plans to buy, sell or lease, and we'll walk through them with you, one considered step at a time.</p>
+      <div class="hero-ctas stg" style="transition-delay:.85s">
+        <a class="btn btn-primary" href="tel:+96524345450">Call +965 2434 5450
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a class="btn btn-ghost" href="#contact">Visit the Office</a>
       </div>
-      <div class="ticks">
-        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7"/></svg>Free home valuation</span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7"/></svg>Local market expert</span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7"/></svg>Premium marketing</span>
+      <div class="scroll-cue label stg" style="transition-delay:1.1s"><i></i>Scroll</div>
+    </div>
+  </section>
+
+  <!-- COLOUR BAND -->
+  <section class="band" aria-label="Introduction">
+    <div class="wrap band-top">
+      <p class="rv">Property is the largest decision most families make. <em>It deserves an agent who listens first.</em></p>
+      <span class="label rv d1">Uhod · Kuwait</span>
+    </div>
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-track">
+        <span>Buying</span><span>Selling</span><span>Leasing</span><span>Advisory</span><span>Al-Dajeej</span><span>Farwaniya</span><span class="ar">الضجيج</span><span class="ar">الفروانية</span><span>Tala Mall</span>
+      </div>
+      <div class="marquee-track">
+        <span>Buying</span><span>Selling</span><span>Leasing</span><span>Advisory</span><span>Al-Dajeej</span><span>Farwaniya</span><span class="ar">الضجيج</span><span class="ar">الفروانية</span><span>Tala Mall</span>
       </div>
     </div>
-    <div class="visual">
-      
-      <div class="quote-panel"><div class="quote-mark">“</div><div><p>Local expertise, honest advice and a marketing plan that gets your home seen by the right buyers.</p><div class="who">Uhod Real Estate Company</div></div></div>
-      
-      
-      <div class="float two"><span class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><span><b>This week</b>Local market expert</span></div>
-    </div>
-  </div>
-  <template id="qp"><div class="quote-panel"><div class="quote-mark">“</div><div><p>Local expertise, honest advice and a marketing plan that gets your home seen by the right buyers.</p><div class="who">Uhod Real Estate Company</div></div></div></template>
-</section>
+  </section>
 
-<div class="trust"><div class="wrap">
-  <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.2-8 9-4.6-.8-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg>Free home valuation</div><div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.2-8 9-4.6-.8-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg>Local market expert</div><div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.2-8 9-4.6-.8-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg>Premium marketing</div><div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.2-8 9-4.6-.8-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg>5-star client service</div>
-</div></div>
-
-<section class="block" id="services">
-  <div class="wrap">
-    <div class="section-head">
-      <div><div class="kicker">What we do</div><h2>Everything you need,<br>under one roof.</h2></div>
-      <p>From routine visits to the work that changes how you feel about your day, Uhod Real Estate Company takes care of it properly.</p>
+  <!-- SERVICES -->
+  <section class="sec" id="services">
+    <div class="wrap">
+      <div class="sec-head rv"><span class="num">01</span><span class="label">How we help</span><span class="label">Services</span></div>
+      <div class="split">
+        <div class="sticky">
+          <h2 class="rv">A single desk for every <span class="c">move.</span></h2>
+          <p class="lead rv d1">Whether you are taking your first step into the market or your next, the conversation starts the same way: with a call, and with your goals on the table.</p>
+          <div class="hero-ctas rv d2" style="justify-content:flex-start;margin-top:32px">
+            <a class="btn btn-ghost" href="tel:+96524345450">Discuss Your Plans</a>
+          </div>
+        </div>
+        <div class="svc">
+          <article class="card rv">
+            <span class="n">01</span>
+            <div><h3>Buying</h3><p>Tell us how you want to live and what matters most. We help you focus the search and move forward with clarity.</p></div>
+            <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M3 11l9-7 9 7M5 10v10h14V10M10 20v-6h4v6"/></svg></span>
+          </article>
+          <article class="card rv d1">
+            <span class="n">02</span>
+            <div><h3>Selling</h3><p>Your property, presented with the care it deserves, and a calm, well-informed hand guiding you through to the close.</p></div>
+            <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M4 20V9l8-5 8 5v11M4 20h16M9 13h6M9 16h6"/></svg></span>
+          </article>
+          <article class="card rv d2">
+            <span class="n">03</span>
+            <div><h3>Leasing</h3><p>For tenants and landlords alike: clear terms, honest conversations and a straightforward route to the right agreement.</p></div>
+            <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="8" cy="12" r="4"/><path d="M12 12h9M18 12v3M21 12v2"/></svg></span>
+          </article>
+          <article class="card rv d3">
+            <span class="n">04</span>
+            <div><h3>Advisory</h3><p>Not ready to commit yet? Sit down with us at Tala Mall and talk it through before you make a move.</p></div>
+            <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M4 5h16v11H9l-5 4V5z"/><path d="M8 9h8M8 12h5"/></svg></span>
+          </article>
+        </div>
+      </div>
     </div>
-    <div class="services">
-      
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11l8-7 8 7v9a1 1 0 01-1 1h-4v-6H9v6H5a1 1 0 01-1-1z"/></svg></div><h3>Selling</h3><p>Pricing strategy, staging advice and premium marketing.</p></div>
-      
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1-4.4-4.3 6.1-.9z"/></svg></div><h3>Buying</h3><p>Off-market access and expert negotiation.</p></div>
-      
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3" width="14" height="18" rx="1"/><path d="M9 7h2M13 7h2M9 11h2M13 11h2M9 15h2M13 15h2"/></svg></div><h3>Luxury homes</h3><p>Discreet representation for high-end properties.</p></div>
-      
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="18" r="2.5"/><circle cx="18" cy="6" r="2.5"/><path d="M8.5 18H16a3 3 0 000-6H8a3 3 0 010-6h7.5"/></svg></div><h3>Relocation</h3><p>Moving to the area? We make it easy.</p></div>
-      
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/><path d="M19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8z"/></svg></div><h3>Home valuation</h3><p>Find out what your home is worth today.</p></div>
-      
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-7-4.4-7-10a4 4 0 017-2.6A4 4 0 0119 10c0 5.6-7 10-7 10z"/></svg></div><h3>First-time buyers</h3><p>Patient guidance from first viewing to keys.</p></div>
-      
-    </div>
-  </div>
-</section>
+  </section>
 
-<section class="block why" id="why">
-  <div class="wrap why-grid">
-    <div>
-      <div class="kicker">Why clients choose us</div>
-      <h2>The Kuwait City real estate agent people recommend to their friends.</h2>
-      <p class="intro">it still comes down to the same three things.</p>
+  <!-- ABOUT -->
+  <section class="sec about" id="about">
+    <div class="wrap">
+      <div class="sec-head rv"><span class="num">02</span><span class="label">The company</span><span class="label">About Uhod</span></div>
+      <div class="about-grid">
+        <p class="quote rv">A good agent doesn't sell you a property. They help you <span class="g">find your place</span> in the <span class="c">city.</span></p>
+        <div class="about-copy rv d1">
+          <p>Uhod Real Estate Company is a real estate agent serving clients in Kuwait from an office in the Tala Mall complex in Al-Dajeej, Farwaniya.</p>
+          <p>We believe a property decision should never feel rushed. Every conversation begins with what you need, and every next step is one you understand.</p>
+          <div class="plate">
+            <span class="label" style="color:var(--crimson)">Find us at</span>
+            <span class="ar" lang="ar" dir="rtl">الضجيج مجمع تالا مول، الفروانية 32073</span>
+            <small>Tala Mall complex, Al-Dajeej, Farwaniya 32073</small>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="points">
-      
-      <div class="point"><div class="num">01</div><div><h3>Local expert</h3><p>Deep knowledge of every neighbourhood we serve.</p></div></div>
-      
-      <div class="point"><div class="num">02</div><div><h3>Premium marketing</h3><p>Professional photography, video and targeted promotion.</p></div></div>
-      
-      <div class="point"><div class="num">03</div><div><h3>Skilled negotiator</h3><p>We protect your interests at every step.</p></div></div>
-      
+  </section>
+
+  <!-- WHY -->
+  <section class="sec" id="why">
+    <div class="wrap">
+      <div class="sec-head rv"><span class="num">03</span><span class="label">Our approach</span><span class="label">Why Uhod</span></div>
+      <h2 class="rv" style="max-width:900px;margin-bottom:clamp(44px,6vw,80px)">Quiet confidence, <span class="c">every step.</span></h2>
+      <div class="why-grid">
+        <div class="why rv"><div class="big">i.</div><h3>We listen first</h3><p>Your priorities set the brief. We ask the right questions before we offer a single suggestion.</p></div>
+        <div class="why rv d1"><div class="big">ii.</div><h3>A real office, a real door</h3><p>Meet us face to face at Tala Mall in Al-Dajeej, an easy place to sit down and talk things through.</p></div>
+        <div class="why rv"><div class="big">iii.</div><h3>A direct line</h3><p>One number, +965 2434 5450, straight to the people handling your enquiry.</p></div>
+        <div class="why rv d1"><div class="big">iv.</div><h3>Discretion, always</h3><p>Property is personal. Your plans and your details are treated with the respect they deserve.</p></div>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-
-
-<section class="cta-band" id="book">
-  <div class="wrap"><div class="cta-box">
-    <div><h2>Ready when you are.</h2><p>Book a consultation in under a minute, or give us a call and talk to a real person.</p></div>
-    <div class="actions">
-      <a class="btn" href="#visit">Book a consultation</a>
-      <a class="btn ghost" href="tel:+96524345450">Call +96524345450</a>
+  <!-- PROCESS -->
+  <section class="sec process" id="process">
+    <div class="wrap">
+      <div class="sec-head rv"><span class="num">04</span><span class="label">How it works</span><span class="label">Process</span></div>
+      <div class="split" style="align-items:end">
+        <h2 class="rv">Four steps. <span class="c">No guesswork.</span></h2>
+        <p class="lead rv d1" style="margin-top:0">A clear path from first call to final signature, so you always know where things stand.</p>
+      </div>
+      <div class="steps">
+        <div class="step rv"><span class="k">Step 01</span><h3>Call us</h3><p>Ring +965 2434 5450 and tell us whether you are buying, selling or leasing.</p></div>
+        <div class="step rv d1"><span class="k">Step 02</span><h3>Meet</h3><p>Visit our office at Tala Mall, Al-Dajeej, to talk through your goals in detail.</p></div>
+        <div class="step rv d2"><span class="k">Step 03</span><h3>Plan</h3><p>Together we shape a focused plan around your needs, your timing and your budget.</p></div>
+        <div class="step rv d3"><span class="k">Step 04</span><h3>Move forward</h3><p>We guide you through each decision until the keys, or the contract, are in hand.</p></div>
+      </div>
     </div>
-  </div></div>
-</section>
+  </section>
 
-<section class="block" id="visit" style="padding-top:0">
-  <div class="wrap">
-    <div class="kicker">Visit us</div><h2>Come say hello.</h2>
-    <div class="visit">
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11l8-7 8 7v9a1 1 0 01-1 1h-4v-6H9v6H5a1 1 0 01-1-1z"/></svg></div><h3>Address</h3><p>الضجيج مجمع تالا مول, الفروانية 32073</p></div>
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div><h3>Phone</h3><p><a href="tel:+96524345450">+96524345450</a></p><p style="margin-top:10px">Call or message us for today's opening hours.</p></div>
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-7-4.4-7-10a4 4 0 017-2.6A4 4 0 0119 10c0 5.6-7 10-7 10z"/></svg></div><h3>Local market expert</h3><p>Book a consultation online or by phone and we'll take care of the rest.</p></div>
+  <!-- FAQ -->
+  <section class="sec faq" id="faq">
+    <div class="wrap">
+      <div class="sec-head rv"><span class="num">05</span><span class="label">Good to know</span><span class="label">Questions</span></div>
+      <div class="split">
+        <h2 class="rv sticky">Before you <span class="c">visit.</span></h2>
+        <div class="rv d1">
+          <details>
+            <summary>Where is the Uhod office?<i></i></summary>
+            <div class="ans">We are in the Tala Mall complex in Al-Dajeej, Farwaniya 32073 (الضجيج مجمع تالا مول، الفروانية). <a class="ul" href="https://maps.google.com/?q=Uhod+Real+Estate+Company+Tala+Mall+Al+Dajeej+Farwaniya+Kuwait" target="_blank" rel="noopener">Open in Google Maps</a>.</div>
+          </details>
+          <details>
+            <summary>What are your opening hours?<i></i></summary>
+            <div class="ans">Please call us on <a class="ul" href="tel:+96524345450">+965 2434 5450</a> before visiting so we can confirm a time and make sure the right person is ready to meet you.</div>
+          </details>
+          <details>
+            <summary>What's the best way to get started?<i></i></summary>
+            <div class="ans">A phone call. Tell us what you are looking for and we will arrange the next step, whether that is a conversation by phone or a meeting at our office.</div>
+          </details>
+        </div>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta" aria-label="Get in touch">
+    <svg class="rings" viewBox="0 0 800 800" fill="none" stroke="#fff" aria-hidden="true">
+      <circle cx="400" cy="400" r="120"/><circle cx="400" cy="400" r="200"/><circle cx="400" cy="400" r="280"/><circle cx="400" cy="400" r="360"/><path d="M0 400h800M400 0v800" stroke-dasharray="2 8"/>
+    </svg>
+    <div class="wrap">
+      <span class="label rv" style="color:rgba(255,255,255,.8)">Your next address starts here</span>
+      <h2 class="rv d1" style="margin-top:22px">Let's talk <span>property.</span></h2>
+      <p class="rv d2">One call to Uhod Real Estate Company and your plans are in experienced, attentive hands.</p>
+      <div class="hero-ctas rv d3">
+        <a class="btn btn-primary" href="tel:+96524345450">Call +965 2434 5450</a>
+        <a class="btn btn-ghost" href="https://maps.google.com/?q=Uhod+Real+Estate+Company+Tala+Mall+Al+Dajeej+Farwaniya+Kuwait" target="_blank" rel="noopener">Get Directions</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="sec" id="contact">
+    <div class="wrap">
+      <div class="sec-head rv"><span class="num">06</span><span class="label">Visit &amp; call</span><span class="label">Contact</span></div>
+      <div class="contact-grid">
+        <div>
+          <h2 class="rv">Come by. <span class="c">Or call.</span></h2>
+          <p class="lead rv d1">Our door is in Tala Mall, Al-Dajeej. Our line is open to your questions.</p>
+        </div>
+        <div>
+          <div class="info">
+            <div class="row rv">
+              <span class="label">Telephone</span>
+              <a class="v" href="tel:+96524345450">+965 2434 5450</a>
+              <a class="go" href="tel:+96524345450" aria-label="Call Uhod"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+            </div>
+            <div class="row rv d1">
+              <span class="label">Address</span>
+              <span class="v"><span class="ar" lang="ar" dir="rtl">الضجيج مجمع تالا مول، الفروانية 32073</span><small>Tala Mall complex, Al-Dajeej, Farwaniya 32073, Kuwait</small></span>
+              <a class="go" href="https://maps.google.com/?q=Uhod+Real+Estate+Company+Tala+Mall+Al+Dajeej+Farwaniya+Kuwait" target="_blank" rel="noopener" aria-label="Open map"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+            </div>
+            <div class="row rv d2">
+              <span class="label">Hours</span>
+              <span class="v">By appointment<small>Please call ahead to confirm a time.</small></span>
+              <span></span>
+            </div>
+          </div>
+          <a class="mapcard rv" href="https://maps.google.com/?q=Uhod+Real+Estate+Company+Tala+Mall+Al+Dajeej+Farwaniya+Kuwait" target="_blank" rel="noopener" aria-label="Open Uhod location in Google Maps">
+            <svg viewBox="0 0 640 360" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+              <rect width="640" height="360" fill="#FFFFFF"/>
+              <g stroke="#0D1B2A" stroke-opacity=".08" stroke-width="1">
+                <path d="M0 40h640M0 80h640M0 120h640M0 160h640M0 200h640M0 240h640M0 280h640M0 320h640M40 0v360M80 0v360M120 0v360M160 0v360M200 0v360M240 0v360M280 0v360M320 0v360M360 0v360M400 0v360M440 0v360M480 0v360M520 0v360M560 0v360M600 0v360"/>
+              </g>
+              <g stroke="#0D1B2A" stroke-opacity=".22" fill="none">
+                <path d="M-10 250C120 220 220 230 330 170S540 90 650 110" stroke-width="10" stroke="#F6F5F2" stroke-opacity="1"/>
+                <path d="M-10 250C120 220 220 230 330 170S540 90 650 110" stroke-width="1.5"/>
+                <path d="M210 -10L270 370" stroke-width="10" stroke="#F6F5F2" stroke-opacity="1"/>
+                <path d="M210 -10L270 370" stroke-width="1.5"/>
+                <path d="M420 -10C400 120 440 240 400 370" stroke-width="1.5" stroke-dasharray="4 6"/>
+              </g>
+              <rect x="290" y="140" width="64" height="44" fill="#C9A227" fill-opacity=".22" stroke="#C9A227"/>
+            </svg>
+            <span class="pin"><b>Uhod · Tala Mall</b><i></i></span>
+            <span class="open">Open in Maps →</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
 </main>
 
-<footer><div class="wrap">
-  <span>© 2026 Uhod Real Estate Company</span>
-  <span>Concept design by webstudio. Not affiliated with or endorsed by Uhod Real Estate Company.</span>
-</div></footer>
+<footer>
+  <div class="wrap">
+    <div class="foot-word">Uhod<span>.</span></div>
+    <div class="foot-row">
+      <span>Uhod Real Estate Company · Al-Dajeej, Farwaniya, Kuwait</span>
+      <a class="ul" href="tel:+96524345450">+965 2434 5450</a>
+      <span>© <span id="yr"></span> Uhod Real Estate Company</span>
+    </div>
+  </div>
+</footer>
 
-<div class="mobile-bar">
-  <a class="btn ghost" href="tel:+96524345450">Call</a>
-  <a class="btn" href="#visit">Let&#39;s talk</a>
+<div class="callbar">
+  <a href="tel:+96524345450"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 4h4l2 5-3 2a11 11 0 006 6l2-3 5 2v4a2 2 0 01-2 2A17 17 0 013 6a2 2 0 012-2z"/></svg>Call Now</a>
+  <a href="#contact"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21s-7-6.2-7-11a7 7 0 0114 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>Visit Us</a>
 </div>
-</body>
+
+<script>
+(function(){
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var body = document.body;
+  document.getElementById('yr').textContent = new Date().getFullYear();
+
+  requestAnimationFrame(function(){ setTimeout(function(){ body.classList.add('loaded'); }, 60); });
+
+  var header = document.getElementById('top-bar');
+  var onScroll = function(){ header.classList.toggle('scrolled', window.scrollY > 30); };
+  onScroll();
+
+  var burger = document.querySelector('.burger');
+  var toggleMenu = function(open){
+    body.classList.toggle('menu-open', open);
+    burger.setAttribute('aria-expanded', open);
+    burger.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+    body.style.overflow = open ? 'hidden' : '';
+  };
+  burger.addEventListener('click', function(){ toggleMenu(!body.classList.contains('menu-open')); });
+  document.querySelectorAll('.mobile-menu a').forEach(function(a){ a.addEventListener('click', function(){ toggleMenu(false); }); });
+
+  var items = document.querySelectorAll('.rv');
+  if (reduce || !('IntersectionObserver' in window)) {
+    items.forEach(function(el){ el.classList.add('in'); });
+  } else {
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){ if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    items.forEach(function(el){ io.observe(el); });
+  }
+
+  var par = document.querySelectorAll('[data-par]');
+  var ticking = false;
+  var parallax = function(){
+    var y = window.scrollY;
+    if (y < window.innerHeight * 1.2) {
+      par.forEach(function(el){
+        var s = parseFloat(el.getAttribute('data-par'));
+        var base = el.classList.contains('ghost') ? 'translate(-50%,-50%)' : 'translateX(-50%)';
+        el.style.transform = base + ' translate3d(0,' + (y * s).toFixed(1) + 'px,0)';
+      });
+    }
+    ticking = false;
+  };
+  window.addEventListener('scroll', function(){
+    onScroll();
+    if (!reduce && !ticking){ ticking = true; requestAnimationFrame(parallax); }
+  }, { passive: true });
+})();
+</script>
+<div id="lm-concept" style="position:fixed;left:12px;bottom:12px;z-index:2147483647;font:500 11px/1.3 -apple-system,BlinkMacSystemFont,Segoe UI,sans-serif;letter-spacing:.02em;background:rgba(15,15,18,.82);color:#f4f1ea;padding:7px 11px;border-radius:999px;backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);pointer-events:none;max-width:70vw">Website concept for Uhod Real Estate Company by webstudio &middot; not the live site</div><p style="margin:0;padding:18px 16px 70px;text-align:center;font:12px/1.5 -apple-system,sans-serif;color:#8a8a8a;background:#0e0e10">Concept design by webstudio. Not affiliated with or endorsed by Uhod Real Estate Company.</p></body>
 </html>

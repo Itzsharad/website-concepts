@@ -1,291 +1,616 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src * data: blob:; media-src 'self' data:; style-src 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com data:; script-src 'unsafe-inline'; connect-src 'none'; frame-src 'none'; form-action 'none'; base-uri 'none'; object-src 'none'">
 <meta name="robots" content="noindex, nofollow">
-<title>Elite Homes Real Estate | Website concept</title>
+<style>html,body{max-width:100%;overflow-x:clip}</style>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Elite Homes Real Estate | Real Estate Agent in Sharq, Kuwait City</title>
+<meta name="description" content="Elite Homes Real Estate: a real estate agent in Sharq, Kuwait City. Visit us at Dar Alawadi Complex, Ahmed Al-Jaber Street, or call +965 9551 6178.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{
-  --bg:#0d0d0f;--surface:#16161a;--ink:#f3efe7;--muted:#a8a39a;
-  --accent:#c9a96e;--accent-ink:#0d0d0f;--gold:#c9a96e;--soft:#1f1e22;
-  --radius:22px;--max:1180px;
-  --serif:"Fraunces",Georgia,serif;--sans:"Manrope",system-ui,-apple-system,sans-serif;
+  --bg:#F3F0E8;
+  --surface:#FFFFFF;
+  --ink:#1F2A24;
+  --ink-soft:#4A544E;
+  --sage:#5E7D63;
+  --sage-deep:#3F5945;
+  --forest:#22332A;
+  --brass:#C9B79C;
+  --brass-deep:#7A6646;
+  --line:rgba(31,42,36,.12);
+  --radius:22px;
+  --ease:cubic-bezier(.2,.7,.1,1);
+  --head-h:78px;
 }
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:calc(var(--head-h) + 12px)}
+body{font-family:"Sora",system-ui,sans-serif;background:var(--bg);color:var(--ink);font-weight:300;line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden}
 a{color:inherit;text-decoration:none}
-img{max-width:100%;display:block}
-.wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
-.concept{background:var(--ink);color:var(--bg);font-size:13px;text-align:center;padding:8px 16px;letter-spacing:.02em}
-.concept b{color:var(--gold);font-weight:600}
+svg{display:block}
+h1,h2,h3{font-weight:500;line-height:1.05;letter-spacing:-.03em}
+.label{font-size:.72rem;font-weight:500;letter-spacing:.28em;text-transform:uppercase;color:var(--brass-deep);display:inline-flex;align-items:center;gap:.8rem}
+.label::before{content:"";width:28px;height:1px;background:currentColor}
 
-/* header */
-header{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:saturate(1.4) blur(10px);border-bottom:1px solid color-mix(in srgb,var(--ink) 8%,transparent)}
-.nav{display:flex;align-items:center;justify-content:space-between;height:76px;gap:24px}
-.brand{font-family:var(--serif);font-size:23px;font-weight:600;letter-spacing:-.01em;line-height:1.1;max-width:340px}
-.links{display:flex;gap:30px;font-size:15px;font-weight:500;color:var(--muted)}
-.links a:hover{color:var(--ink)}
-.nav-right{display:flex;align-items:center;gap:18px}
-.phone{font-weight:600;font-size:15px;white-space:nowrap}
-.btn{display:inline-flex;align-items:center;gap:10px;background:var(--accent);color:var(--accent-ink);padding:14px 26px;border-radius:999px;font-weight:600;font-size:15.5px;transition:transform .2s ease,box-shadow .2s ease;white-space:nowrap}
-.btn:hover{transform:translateY(-2px);box-shadow:0 12px 28px -12px var(--accent)}
-.btn.ghost{background:transparent;color:var(--ink);border:1.5px solid color-mix(in srgb,var(--ink) 20%,transparent)}
-.btn.ghost:hover{box-shadow:none;border-color:var(--ink)}
-.btn svg{width:18px;height:18px}
+/* grain texture */
+body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;opacity:.35;
+  background-image:radial-gradient(rgba(31,42,36,.05) 1px,transparent 1px);background-size:4px 4px}
 
-/* hero */
-.hero{padding:72px 0 88px}
-.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:64px;align-items:center}
-.eyebrow{display:inline-flex;align-items:center;gap:10px;background:var(--surface);border:1px solid color-mix(in srgb,var(--ink) 10%,transparent);padding:8px 16px 8px 10px;border-radius:999px;font-size:14px;font-weight:600;color:var(--muted)}
-.stars{color:var(--gold);letter-spacing:1px;font-size:14px}
-.eyebrow .dot{width:26px;height:26px;border-radius:50%;background:var(--soft);display:grid;place-items:center;color:var(--accent)}
-h1{font-family:var(--serif);font-weight:500;font-size:clamp(44px,5.6vw,74px);line-height:1.02;letter-spacing:-.025em;margin:26px 0 22px}
-h1 em{font-style:italic;color:var(--accent)}
-.lead-text{font-size:19.5px;color:var(--muted);max-width:540px}
-.hero-ctas{display:flex;gap:14px;margin-top:36px;flex-wrap:wrap}
-.ticks{display:flex;gap:22px;margin-top:34px;flex-wrap:wrap;font-size:14.5px;font-weight:600;color:var(--muted)}
-.ticks span{display:flex;align-items:center;gap:8px}
-.ticks svg{width:18px;height:18px;color:var(--accent)}
-.visual{position:relative}
-.photo{aspect-ratio:4/5;border-radius:calc(var(--radius) + 10px);overflow:hidden;background:var(--soft);box-shadow:0 40px 80px -40px color-mix(in srgb,var(--ink) 55%,transparent)}
-.photo img{width:100%;height:100%;object-fit:cover}
-.quote-panel{aspect-ratio:4/5;border-radius:calc(var(--radius) + 10px);background:linear-gradient(155deg,var(--accent),color-mix(in srgb,var(--accent) 55%,var(--ink)));color:var(--accent-ink);padding:52px 46px;display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden;box-shadow:0 40px 80px -40px color-mix(in srgb,var(--ink) 60%,transparent)}
-.quote-panel:before{content:"";position:absolute;width:420px;height:420px;border-radius:50%;right:-160px;top:-160px;background:color-mix(in srgb,var(--accent-ink) 9%,transparent)}
-.quote-panel:after{content:"";position:absolute;width:260px;height:260px;border-radius:50%;left:-90px;bottom:-110px;border:1.5px solid color-mix(in srgb,var(--accent-ink) 22%,transparent)}
-.quote-mark{font-family:var(--serif);font-size:120px;line-height:.6;opacity:.35}
-.quote-panel p{font-family:var(--serif);font-size:28px;line-height:1.3;position:relative;z-index:1}
-.quote-panel .who{font-family:var(--sans);font-size:15px;opacity:.85;margin-top:22px;font-weight:600}
-.float{position:absolute;background:var(--surface);color:var(--ink);border-radius:18px;padding:16px 20px;box-shadow:0 24px 50px -24px color-mix(in srgb,var(--ink) 50%,transparent);display:flex;align-items:center;gap:14px;font-size:14px;line-height:1.35}
-.float b{font-size:22px;font-family:var(--serif);font-weight:600;display:block}
-.float.one{left:-34px;bottom:-28px}
-.float.two{right:-22px;top:44px}
-.float .badge{width:44px;height:44px;border-radius:14px;background:var(--soft);display:grid;place-items:center;color:var(--accent)}
-.float .badge svg{width:22px;height:22px}
+/* ===== Header ===== */
+.top{position:fixed;inset:0 0 auto 0;height:var(--head-h);z-index:50;display:flex;align-items:center;justify-content:space-between;
+  padding:0 clamp(18px,4vw,56px);transition:background .4s,box-shadow .4s,backdrop-filter .4s}
+.top.scrolled{background:rgba(243,240,232,.78);backdrop-filter:blur(16px) saturate(1.3);-webkit-backdrop-filter:blur(16px) saturate(1.3);box-shadow:0 1px 0 var(--line)}
+.brand{display:flex;align-items:center;gap:.8rem}
+.brand-mark{width:40px;height:44px}
+.brand-name{display:flex;flex-direction:column;line-height:1.1}
+.brand-name b{font-weight:600;font-size:1rem;letter-spacing:.04em}
+.brand-name small{font-size:.6rem;letter-spacing:.32em;text-transform:uppercase;color:var(--brass-deep);font-weight:500}
+.nav{display:flex;align-items:center;gap:2rem}
+.nav a.link{font-size:.82rem;font-weight:400;position:relative;padding:.3rem 0}
+.nav a.link::after,.ul::after{content:"";position:absolute;left:0;bottom:0;height:1px;width:100%;background:currentColor;transform:scaleX(0);transform-origin:right;transition:transform .5s var(--ease)}
+.nav a.link:hover::after,.ul:hover::after{transform:scaleX(1);transform-origin:left}
+.ul{position:relative}
+.head-phone{font-size:.82rem;font-weight:500;color:var(--sage-deep);white-space:nowrap}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.6rem;padding:1rem 1.6rem;border-radius:999px;font-size:.82rem;font-weight:500;letter-spacing:.04em;
+  transition:transform .4s var(--ease),background .3s,color .3s,box-shadow .4s;white-space:nowrap;text-align:center}
+.btn svg{width:16px;height:16px;flex:none}
+.btn-dark{background:var(--forest);color:#F3F0E8}
+.btn-dark:hover{background:var(--sage-deep);transform:translateY(-3px);box-shadow:0 14px 30px -12px rgba(34,51,42,.6)}
+.btn-line{border:1px solid var(--ink);color:var(--ink)}
+.btn-line:hover{background:var(--ink);color:var(--bg);transform:translateY(-3px)}
+.btn-sm{padding:.75rem 1.2rem}
+.burger{display:none;width:46px;height:46px;border-radius:50%;border:1px solid var(--line);background:var(--surface);align-items:center;justify-content:center;cursor:pointer}
+.burger span{display:block;width:18px;height:1.5px;background:var(--ink);position:relative;transition:.3s}
+.burger span::before,.burger span::after{content:"";position:absolute;left:0;width:18px;height:1.5px;background:var(--ink);transition:.3s}
+.burger span::before{top:-6px}.burger span::after{top:6px}
+.menu-open .burger span{background:transparent}
+.menu-open .burger span::before{top:0;transform:rotate(45deg)}
+.menu-open .burger span::after{top:0;transform:rotate(-45deg)}
+.mobile-menu{position:fixed;inset:0;z-index:40;background:var(--forest);color:#F3F0E8;display:flex;flex-direction:column;justify-content:center;padding:100px 28px 40px;gap:1.2rem;
+  clip-path:circle(0% at calc(100% - 40px) 40px);transition:clip-path .7s var(--ease);visibility:hidden}
+.menu-open .mobile-menu{clip-path:circle(150% at calc(100% - 40px) 40px);visibility:visible}
+.menu-open .top{background:transparent;box-shadow:none;backdrop-filter:none}
+.menu-open .top .brand-name b,.menu-open .burger{color:#F3F0E8}
+.mobile-menu a{font-size:2.2rem;font-weight:400;letter-spacing:-.02em}
+.mobile-menu .mm-foot{margin-top:2rem;font-size:.85rem;opacity:.85;line-height:1.8}
+.mobile-menu .mm-foot a{font-size:1rem;color:var(--brass)}
 
-/* trust */
-.trust{border-top:1px solid color-mix(in srgb,var(--ink) 9%,transparent);border-bottom:1px solid color-mix(in srgb,var(--ink) 9%,transparent);background:var(--surface)}
-.trust .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;padding-top:26px;padding-bottom:26px}
-.trust div{display:flex;align-items:center;gap:12px;font-weight:600;font-size:15px}
-.trust svg{width:22px;height:22px;color:var(--accent);flex:none}
+/* ===== Layout ===== */
+.wrap{position:relative;z-index:1;display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(30px,5vw,90px);padding:0 clamp(18px,4vw,56px)}
+.left{position:sticky;top:0;height:100vh;display:flex;flex-direction:column;justify-content:center;padding-top:var(--head-h);padding-bottom:40px}
+.left .label{margin-bottom:1.8rem}
+.hero-title{font-size:clamp(2.7rem,5.2vw,5.4rem);font-weight:400;letter-spacing:-.045em;line-height:.98}
+.hero-title .stroke{color:transparent;-webkit-text-stroke:1.2px var(--sage-deep);font-weight:300}
+.hero-title .brassy{color:var(--sage-deep);font-weight:600}
+.hero-sub{margin-top:1.8rem;max-width:30rem;font-size:1.02rem;color:var(--ink-soft)}
+.hero-ctas{margin-top:2.2rem;display:flex;flex-wrap:wrap;gap:.8rem}
+.hero-meta{margin-top:2.6rem;padding-top:1.4rem;border-top:1px solid var(--line);display:flex;gap:2rem;flex-wrap:wrap;font-size:.78rem;color:var(--ink-soft)}
+.hero-meta strong{display:block;font-weight:500;color:var(--ink);font-size:.85rem}
+.hero-meta span.k{font-size:.62rem;letter-spacing:.24em;text-transform:uppercase;color:var(--brass-deep);font-weight:500}
 
-/* sections */
-section.block{padding:110px 0}
-.kicker{font-size:13px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
-h2{font-family:var(--serif);font-weight:500;font-size:clamp(34px,3.8vw,52px);line-height:1.08;letter-spacing:-.02em;margin:14px 0 18px}
-.section-head{display:flex;justify-content:space-between;align-items:end;gap:40px;margin-bottom:56px}
-.section-head p{color:var(--muted);max-width:420px}
-.services{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-.card{background:var(--surface);border-radius:var(--radius);padding:34px 32px 36px;border:1px solid color-mix(in srgb,var(--ink) 7%,transparent);transition:transform .25s ease,box-shadow .25s ease}
-.card:hover{transform:translateY(-4px);box-shadow:0 30px 60px -36px color-mix(in srgb,var(--ink) 45%,transparent)}
-.icon{width:54px;height:54px;border-radius:16px;background:var(--soft);color:var(--accent);display:grid;place-items:center;margin-bottom:24px}
-.icon svg{width:26px;height:26px}
-.card h3{font-family:var(--serif);font-weight:500;font-size:23px;margin-bottom:8px;letter-spacing:-.01em}
-.card p{color:var(--muted);font-size:16px}
+.right{padding-top:calc(var(--head-h) + 30px);padding-bottom:80px;min-width:0}
+section{position:relative;margin-bottom:clamp(90px,12vw,150px)}
 
-.why{background:var(--ink);color:var(--bg)}
-.why .kicker{color:var(--gold)}
-.why-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:80px;align-items:start}
-.why h2{color:var(--bg)}
-.why .intro{color:color-mix(in srgb,var(--bg) 70%,transparent);font-size:18px;max-width:440px}
-.points{display:grid;gap:14px}
-.point{display:grid;grid-template-columns:62px 1fr;gap:20px;padding:30px;border-radius:var(--radius);background:color-mix(in srgb,var(--bg) 6%,transparent);border:1px solid color-mix(in srgb,var(--bg) 10%,transparent)}
-.point .num{font-family:var(--serif);font-size:34px;color:var(--gold);line-height:1}
-.point h3{font-family:var(--serif);font-weight:500;font-size:24px;margin-bottom:6px}
-.point p{color:color-mix(in srgb,var(--bg) 72%,transparent);font-size:16px}
+/* ===== Signature: the arched window ===== */
+.window{position:relative;height:min(86vh,780px);min-height:520px}
+.arch{position:absolute;inset:0 6% 0 6%;border-radius:999px 999px 18px 18px;overflow:hidden;
+  background:linear-gradient(180deg,#2C4235 0%,#3F5945 38%,#7E9A82 72%,#D9CBB2 100%);
+  box-shadow:0 50px 80px -40px rgba(31,42,36,.55)}
+.arch-frame{position:absolute;inset:-14px calc(6% - 14px) -14px calc(6% - 14px);border-radius:999px 999px 26px 26px;border:1px solid var(--brass-deep);pointer-events:none}
+.arch-frame.two{inset:-26px calc(6% - 26px) -26px calc(6% - 26px);border-color:rgba(122,102,70,.35);border-radius:999px 999px 34px 34px}
+.arch .sun{position:absolute;left:50%;top:44%;width:42%;aspect-ratio:1;border-radius:50%;transform:translate(-50%,-50%);
+  background:radial-gradient(circle,#F3E6CC 0%,#C9B79C 45%,rgba(201,183,156,0) 70%);opacity:.9}
+.arch .skyline{position:absolute;left:0;right:0;bottom:0;width:100%;height:62%}
+.arch .stars{position:absolute;inset:0}
+.arch .stars i{position:absolute;width:2px;height:2px;border-radius:50%;background:#F3F0E8;opacity:.6;animation:twinkle 4s infinite}
+@keyframes twinkle{50%{opacity:.15}}
+.arch-copy{position:absolute;left:0;right:0;bottom:8%;text-align:center;color:#FFFFFF;z-index:2;padding:0 12%}
+.arch-copy .ar{font-size:clamp(1.6rem,3vw,2.4rem);font-weight:300;letter-spacing:0;display:block;text-shadow:0 2px 20px rgba(0,0,0,.35)}
+.arch-copy .en{font-size:.68rem;letter-spacing:.38em;text-transform:uppercase;font-weight:500;display:block;margin-top:.4rem}
+.arch::after{content:"";position:absolute;inset:auto 0 0 0;height:40%;background:linear-gradient(180deg,transparent,rgba(31,42,36,.55));z-index:1}
+.seal{position:absolute;right:-1%;top:12%;width:150px;height:150px;z-index:3;background:var(--bg);border-radius:50%;display:grid;place-items:center;box-shadow:0 20px 40px -20px rgba(31,42,36,.35)}
+.seal svg.ring{position:absolute;inset:8px;width:calc(100% - 16px);height:calc(100% - 16px);animation:spin 26s linear infinite}
+.seal .core{width:54px;height:54px;border-radius:50%;background:var(--forest);display:grid;place-items:center}
+@keyframes spin{to{transform:rotate(360deg)}}
+.coord{position:absolute;left:0;bottom:4%;z-index:3;background:var(--surface);padding:1rem 1.2rem;border-radius:14px;font-size:.72rem;line-height:1.5;box-shadow:0 20px 40px -24px rgba(31,42,36,.4)}
+.coord b{display:block;font-weight:600;font-size:.82rem}
+.coord span{color:var(--brass-deep);letter-spacing:.2em;text-transform:uppercase;font-size:.6rem;font-weight:500}
 
-.score{display:flex;align-items:center;gap:18px;background:var(--surface);padding:16px 24px;border-radius:18px;border:1px solid color-mix(in srgb,var(--ink) 8%,transparent)}
-.score b{font-family:var(--serif);font-size:40px;font-weight:500;line-height:1}
-.score small{display:block;color:var(--muted);font-size:14px}
-.reviews{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-.review{background:var(--surface);border-radius:var(--radius);padding:34px;display:flex;flex-direction:column;gap:22px;border:1px solid color-mix(in srgb,var(--ink) 7%,transparent)}
-.review p{font-family:var(--serif);font-size:19.5px;line-height:1.45}
-.review .by{margin-top:auto;display:flex;align-items:center;gap:12px;font-weight:600;font-size:15px}
-.avatar{width:40px;height:40px;border-radius:50%;background:var(--soft);color:var(--accent);display:grid;place-items:center;font-weight:700}
-.review .src{color:var(--muted);font-weight:500;font-size:13px;display:block}
+/* ===== Marquee ===== */
+.marquee{overflow:hidden;border-block:1px solid var(--line);padding:1.3rem 0;margin-bottom:clamp(90px,12vw,150px);
+  mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent);-webkit-mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent)}
+.marquee-track{display:flex;width:max-content;animation:marq 38s linear infinite}
+.marquee-track span{font-size:clamp(1.3rem,2.4vw,2rem);font-weight:300;letter-spacing:-.02em;padding:0 1.6rem;display:flex;align-items:center;gap:3.2rem;white-space:nowrap}
+.marquee-track span::after{content:"";width:9px;height:9px;transform:rotate(45deg);background:var(--brass);flex:none}
+@keyframes marq{to{transform:translateX(-50%)}}
 
-.cta-band{padding:0 0 110px}
-.cta-box{border-radius:calc(var(--radius) + 12px);background:linear-gradient(140deg,var(--accent),color-mix(in srgb,var(--accent) 60%,var(--ink)));color:var(--accent-ink);padding:76px 64px;display:grid;grid-template-columns:1.3fr 1fr;gap:40px;align-items:center;position:relative;overflow:hidden}
-.cta-box:after{content:"";position:absolute;right:-120px;bottom:-200px;width:460px;height:460px;border-radius:50%;border:1.5px solid color-mix(in srgb,var(--accent-ink) 22%,transparent)}
-.cta-box h2{color:inherit;margin:0 0 12px}
-.cta-box p{opacity:.85;font-size:18px}
-.cta-box .actions{display:flex;flex-direction:column;gap:12px;align-items:flex-start;position:relative;z-index:1}
-.cta-box .btn{background:var(--accent-ink);color:var(--accent)}
-.cta-box .btn.ghost{background:transparent;color:var(--accent-ink);border-color:color-mix(in srgb,var(--accent-ink) 40%,transparent)}
+/* ===== Section heads ===== */
+.sec-head{margin-bottom:3rem;max-width:40rem}
+.sec-head h2{font-size:clamp(2.1rem,4vw,3.6rem);font-weight:400;margin-top:1.2rem}
+.sec-head h2 em{font-style:normal;color:var(--sage-deep);font-weight:600}
+.sec-head p{margin-top:1.2rem;color:var(--ink-soft);max-width:34rem}
 
-.visit{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:10px}
-.visit .card h3{font-size:20px}
-.visit a{color:var(--accent);font-weight:600}
-footer{border-top:1px solid color-mix(in srgb,var(--ink) 9%,transparent);padding:40px 0 110px;color:var(--muted);font-size:14px}
-footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
-.mobile-bar{display:none}
+/* ===== Services ===== */
+.services{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+.card{position:relative;background:var(--surface);border-radius:var(--radius);padding:2.2rem 2rem 2rem;overflow:hidden;border:1px solid var(--line);
+  transition:transform .6s var(--ease),box-shadow .6s var(--ease)}
+.card:hover{transform:translateY(-8px);box-shadow:0 34px 60px -34px rgba(31,42,36,.45)}
+.card .num{font-size:.7rem;letter-spacing:.25em;color:var(--brass-deep);font-weight:500}
+.card .ico{width:58px;height:58px;border-radius:50% 50% 8px 8px;background:var(--bg);display:grid;place-items:center;margin:1.4rem 0 1.6rem;transition:background .5s}
+.card .ico svg{width:26px;height:26px;stroke:var(--sage-deep);transition:stroke .5s}
+.card:hover .ico{background:var(--forest)}
+.card:hover .ico svg{stroke:var(--brass)}
+.card h3{font-size:1.45rem;font-weight:500;margin-bottom:.7rem}
+.card p{font-size:.92rem;color:var(--ink-soft)}
+.card .more{margin-top:1.6rem;display:inline-flex;align-items:center;gap:.5rem;font-size:.78rem;font-weight:500;color:var(--sage-deep)}
+.card .more svg{width:14px;height:14px;transition:transform .4s var(--ease)}
+.card:hover .more svg{transform:translateX(5px)}
+.card.feature{grid-column:span 2;background:var(--forest);color:#F3F0E8;border:none;display:grid;grid-template-columns:1.2fr 1fr;gap:2rem;align-items:end}
+.card.feature p{color:rgba(243,240,232,.82)}
+.card.feature .num{color:var(--brass)}
+.card.feature .ico{background:rgba(243,240,232,.08)}
+.card.feature .ico svg{stroke:var(--brass)}
+.card.feature .more{color:var(--brass)}
+.card.feature h3{font-size:clamp(1.7rem,2.6vw,2.3rem);font-weight:400}
+.card.feature .deco{position:absolute;right:-40px;top:-40px;width:240px;height:240px;opacity:.14}
 
-@keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
-.hero .copy>*{animation:rise .8s cubic-bezier(.2,.7,.2,1) both}
-.hero .copy>*:nth-child(2){animation-delay:.08s}.hero .copy>*:nth-child(3){animation-delay:.16s}
-.hero .copy>*:nth-child(4){animation-delay:.24s}.hero .copy>*:nth-child(5){animation-delay:.32s}
-.visual{animation:rise 1s .2s cubic-bezier(.2,.7,.2,1) both}
+/* ===== About ===== */
+.about{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);gap:clamp(24px,4vw,56px);align-items:center}
+.about-art{position:relative;aspect-ratio:3/4;border-radius:999px 999px 18px 18px;background:linear-gradient(160deg,#5E7D63,#2C4235);overflow:hidden}
+.about-art::before{content:"";position:absolute;inset:12px;border:1px solid rgba(201,183,156,.6);border-radius:999px 999px 10px 10px}
+.about-art .big{position:absolute;inset:0;display:grid;place-items:center;font-size:clamp(5rem,11vw,9rem);font-weight:200;color:rgba(243,240,232,.92);letter-spacing:-.08em}
+.about-art .cap{position:absolute;left:0;right:0;bottom:1.6rem;text-align:center;font-size:.6rem;letter-spacing:.36em;text-transform:uppercase;color:var(--brass);font-weight:500}
+.about p{color:var(--ink-soft);margin-top:1.1rem}
+.about .quote{margin-top:1.8rem;padding-left:1.4rem;border-left:2px solid var(--brass);font-size:1.15rem;color:var(--ink);font-weight:400;line-height:1.5}
 
+/* ===== Why ===== */
+.why{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));border-top:1px solid var(--line)}
+.why-item{padding:2.2rem 2rem 2.2rem 0;border-bottom:1px solid var(--line);position:relative}
+.why-item:nth-child(odd){border-right:1px solid var(--line)}
+.why-item:nth-child(even){padding-left:2rem;padding-right:0}
+.why-item h3{font-size:1.2rem;font-weight:500;margin:.9rem 0 .5rem;display:flex;align-items:center;gap:.7rem}
+.why-item p{font-size:.9rem;color:var(--ink-soft)}
+.why-item .k{font-size:.68rem;letter-spacing:.25em;color:var(--brass-deep);font-weight:500}
+
+/* ===== Process ===== */
+.steps{display:flex;flex-direction:column;gap:14px;counter-reset:s}
+.step{display:grid;grid-template-columns:auto 1fr;gap:1.6rem;align-items:start;padding:1.8rem;background:var(--surface);border-radius:var(--radius);border:1px solid var(--line);transition:transform .5s var(--ease),border-color .5s}
+.step:hover{transform:translateX(8px);border-color:var(--sage)}
+.step .n{width:62px;height:62px;border-radius:50%;border:1px solid var(--brass-deep);display:grid;place-items:center;font-size:1.1rem;font-weight:500;color:var(--brass-deep);flex:none}
+.step h3{font-size:1.2rem;font-weight:500;margin-bottom:.35rem}
+.step p{font-size:.9rem;color:var(--ink-soft)}
+
+/* ===== CTA band ===== */
+.band{background:var(--forest);color:#F3F0E8;border-radius:28px;padding:clamp(2.6rem,6vw,5rem) clamp(1.6rem,5vw,4rem);overflow:hidden;position:relative}
+.band h2{font-size:clamp(2.2rem,5vw,4.4rem);font-weight:300;max-width:14ch;position:relative;z-index:1}
+.band h2 b{font-weight:600;color:var(--brass)}
+.band p{margin-top:1.3rem;max-width:30rem;color:rgba(243,240,232,.85);position:relative;z-index:1}
+.band .hero-ctas{position:relative;z-index:1}
+.band .btn-light{background:#F3F0E8;color:var(--forest)}
+.band .btn-light:hover{background:var(--brass);transform:translateY(-3px)}
+.band .btn-ghost{border:1px solid rgba(243,240,232,.5);color:#F3F0E8}
+.band .btn-ghost:hover{background:#F3F0E8;color:var(--forest);transform:translateY(-3px)}
+.band .arches{position:absolute;right:-60px;bottom:-60px;width:380px;opacity:.18}
+
+/* ===== Contact ===== */
+.contact-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+.info{background:var(--surface);border-radius:var(--radius);padding:2rem;border:1px solid var(--line);transition:transform .5s var(--ease),box-shadow .5s}
+.info:hover{transform:translateY(-6px);box-shadow:0 28px 50px -30px rgba(31,42,36,.4)}
+.info.wide{grid-column:span 2}
+.info .k{font-size:.66rem;letter-spacing:.28em;text-transform:uppercase;color:var(--brass-deep);font-weight:500}
+.info .v{margin-top:.8rem;font-size:1.25rem;font-weight:400;line-height:1.4;overflow-wrap:anywhere}
+.info .v.big{font-size:clamp(1.5rem,3vw,2.2rem);font-weight:500;letter-spacing:-.02em}
+.info .ar{display:block;margin-top:.5rem;font-size:1rem;color:var(--ink-soft)}
+.info .act{margin-top:1.4rem}
+
+/* ===== Footer ===== */
+footer{position:relative;z-index:1;background:var(--ink);color:#E9E4D8;padding:clamp(3rem,6vw,5rem) clamp(18px,4vw,56px) 2rem}
+.foot-big{font-size:clamp(3rem,11vw,10rem);font-weight:200;letter-spacing:-.06em;line-height:.9;color:#F3F0E8}
+.foot-big b{font-weight:600;color:var(--brass)}
+.foot-row{margin-top:3rem;padding-top:1.6rem;border-top:1px solid rgba(233,228,216,.18);display:flex;flex-wrap:wrap;gap:1.2rem 2.4rem;justify-content:space-between;font-size:.82rem}
+.foot-row nav{display:flex;flex-wrap:wrap;gap:1.6rem}
+.foot-row a:hover{color:var(--brass)}
+
+/* ===== Phone bar ===== */
+.callbar{display:none;position:fixed;left:12px;right:12px;bottom:12px;z-index:45;background:rgba(31,42,36,.94);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-radius:999px;padding:6px;gap:6px;box-shadow:0 18px 40px -14px rgba(0,0,0,.5)}
+.callbar a{flex:1;display:flex;align-items:center;justify-content:center;gap:.5rem;padding:.85rem .6rem;border-radius:999px;font-size:.82rem;font-weight:500;color:#F3F0E8}
+.callbar a.primary{background:var(--brass);color:var(--ink)}
+.callbar svg{width:16px;height:16px}
+
+/* ===== Motion ===== */
+.reveal{opacity:0;transform:translateY(40px);transition:opacity 1s var(--ease),transform 1s var(--ease)}
+.reveal.in{opacity:1;transform:none}
+.reveal.d1{transition-delay:.1s}.reveal.d2{transition-delay:.2s}.reveal.d3{transition-delay:.3s}
+.intro>*{opacity:0;transform:translateY(30px)}
+.loaded .intro>*{animation:rise 1.1s var(--ease) forwards}
+.loaded .intro>*:nth-child(2){animation-delay:.12s}
+.loaded .intro>*:nth-child(3){animation-delay:.24s}
+.loaded .intro>*:nth-child(4){animation-delay:.36s}
+.loaded .intro>*:nth-child(5){animation-delay:.48s}
+.window{opacity:0;transform:scale(.96)}
+.loaded .window{animation:rise 1.4s .3s var(--ease) forwards}
+@keyframes rise{to{opacity:1;transform:none}}
+
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .reveal,.intro>*,.window{opacity:1!important;transform:none!important}
+}
+
+/* ===== Responsive ===== */
+@media (max-width:1100px){
+  .nav .link{display:none}
+}
 @media (max-width:980px){
-  .links{display:none}
-  .hero-grid,.why-grid,.cta-box{grid-template-columns:1fr}
-  .hero-grid{gap:56px}
-  .services,.reviews,.visit{grid-template-columns:1fr 1fr}
-  .trust .wrap{grid-template-columns:1fr 1fr}
-  .float.one{left:12px;bottom:-26px}.float.two{right:12px}
-  .visual{max-width:560px;margin-bottom:20px}
-  .section-head{flex-direction:column;align-items:flex-start}
+  :root{--head-h:68px}
+  .wrap{grid-template-columns:1fr;gap:0}
+  .left{position:relative;height:auto;padding-top:calc(var(--head-h) + 48px);padding-bottom:56px}
+  .right{padding-top:0}
+  .nav .head-phone,.nav .btn{display:none}
+  .burger{display:flex}
+  .callbar{display:flex}
+  body{padding-bottom:84px}
+  .window{height:auto;aspect-ratio:3/3.6;min-height:0}
 }
 @media (max-width:640px){
-  body{font-size:16px}
-  .wrap{padding:0 18px}
-  .nav{height:66px}.brand{font-size:19px}
-  .phone,.nav-right .btn{display:none}
-  .hero{padding:44px 0 64px}
-  .lead-text{font-size:17.5px}
-  .hero-ctas .btn{flex:1;justify-content:center}
-  .ticks{display:none}
-  .services,.reviews,.visit,.trust .wrap{grid-template-columns:1fr}
-  section.block{padding:76px 0}
-  .quote-panel,.photo{aspect-ratio:auto;min-height:380px}.photo{aspect-ratio:4/3;min-height:0}
-  .quote-panel{padding:40px 30px 64px}.quote-panel p{font-size:23px}
-  .float{font-size:13px;padding:12px 14px}.float b{font-size:18px}
-  .float.two{display:none}
-  .cta-box{padding:52px 28px}
-  .point{grid-template-columns:44px 1fr;padding:24px}
-  .mobile-bar{display:flex;position:fixed;left:12px;right:12px;bottom:12px;z-index:30;gap:10px}
-  .mobile-bar .btn{flex:1;justify-content:center;box-shadow:0 14px 30px -14px color-mix(in srgb,var(--ink) 60%,transparent)}
-  .mobile-bar .btn.ghost{background:var(--surface)}
+  .services,.contact-grid,.about,.why{grid-template-columns:1fr}
+  .card.feature{grid-column:auto;grid-template-columns:1fr}
+  .info.wide{grid-column:auto}
+  .why-item,.why-item:nth-child(even){padding:1.8rem 0;border-right:none}
+  .why-item:nth-child(odd){border-right:none}
+  .seal{width:112px;height:112px;right:-2%}
+  .seal .core{width:40px;height:40px}
+  .coord{left:-2%}
+  .hero-ctas .btn{flex:1 1 100%}
+  .step{grid-template-columns:1fr;gap:1rem;padding:1.5rem}
+  .step:hover{transform:none}
+  .about-art{max-width:300px;width:100%;margin:0 auto}
+  .card{padding:1.8rem 1.5rem}
+  .info{padding:1.6rem}
+  .brand-name small{letter-spacing:.24em}
 }
 </style>
 </head>
 <body>
-<div class="concept">Website concept prepared for <b>Elite Homes Real Estate</b> by webstudio &middot; not a live site</div>
 
-<header>
-  <div class="wrap nav">
-    <a href="#top" class="brand">Elite Homes Real Estate</a>
-    <nav class="links">
-      <a href="#services">Services</a><a href="#why">Why us</a><a href="#visit">Visit</a>
-    </nav>
-    <div class="nav-right">
-      <a class="phone" href="tel:+96595516178">+96595516178</a>
-      <a class="btn" href="#visit">Let&#39;s talk</a>
-    </div>
-  </div>
+<header class="top" id="top">
+  <a href="#home" class="brand" aria-label="Elite Homes Real Estate, home">
+    <svg class="brand-mark" viewBox="0 0 40 44" fill="none" aria-hidden="true">
+      <path d="M2 43V20C2 10 10 2 20 2s18 8 18 18v23" stroke="#7A6646" stroke-width="1.5"/>
+      <path d="M8 43V21c0-6.6 5.4-12 12-12s12 5.4 12 12v22" stroke="#5E7D63" stroke-width="1.5"/>
+      <text x="20" y="33" text-anchor="middle" font-family="Sora,sans-serif" font-size="11" font-weight="600" fill="#1F2A24" letter-spacing=".5">EH</text>
+    </svg>
+    <span class="brand-name"><b>Elite Homes</b><small>Real Estate</small></span>
+  </a>
+  <nav class="nav" aria-label="Main">
+    <a class="link" href="#services">Services</a>
+    <a class="link" href="#about">About</a>
+    <a class="link" href="#process">Process</a>
+    <a class="link" href="#contact">Visit</a>
+    <a class="head-phone ul" href="tel:+96595516178">+965 9551 6178</a>
+    <a class="btn btn-dark btn-sm" href="#contact">Book a consultation</a>
+    <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false"><span></span></button>
+  </nav>
 </header>
 
-<main id="top">
-<section class="hero">
-  <div class="wrap hero-grid">
-    <div class="copy">
-      <div class="eyebrow">
-        <span class="dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-7-4.4-7-10a4 4 0 017-2.6A4 4 0 0119 10c0 5.6-7 10-7 10z"/></svg></span>Real estate
-      </div>
-      <h1>Find home. Sell for <em>more.</em></h1>
-      <p class="lead-text">Local expertise, honest advice and a marketing plan that gets your home seen by the right buyers.</p>
-      <div class="hero-ctas">
-        <a class="btn" href="#visit">Book a consultation <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-        <a class="btn ghost" href="tel:+96595516178">Call +96595516178</a>
-      </div>
-      <div class="ticks">
-        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7"/></svg>Free home valuation</span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7"/></svg>Local market expert</span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7"/></svg>Premium marketing</span>
-      </div>
-    </div>
-    <div class="visual">
-      
-      <div class="quote-panel"><div class="quote-mark">“</div><div><p>Local expertise, honest advice and a marketing plan that gets your home seen by the right buyers.</p><div class="who">Elite Homes Real Estate</div></div></div>
-      
-      
-      <div class="float two"><span class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><span><b>This week</b>Local market expert</span></div>
-    </div>
+<div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+  <a href="#services">Services</a>
+  <a href="#about">About</a>
+  <a href="#process">Process</a>
+  <a href="#contact">Visit us</a>
+  <div class="mm-foot">
+    Dar Alawadi Complex, Floor M1, Office M12<br>Ahmed Al-Jaber Street, Sharq<br>
+    <a href="tel:+96595516178">+965 9551 6178</a>
   </div>
-  <template id="qp"><div class="quote-panel"><div class="quote-mark">“</div><div><p>Local expertise, honest advice and a marketing plan that gets your home seen by the right buyers.</p><div class="who">Elite Homes Real Estate</div></div></div></template>
-</section>
-
-<div class="trust"><div class="wrap">
-  <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.2-8 9-4.6-.8-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg>Free home valuation</div><div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.2-8 9-4.6-.8-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg>Local market expert</div><div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.2-8 9-4.6-.8-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg>Premium marketing</div><div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.2-8 9-4.6-.8-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg>5-star client service</div>
-</div></div>
-
-<section class="block" id="services">
-  <div class="wrap">
-    <div class="section-head">
-      <div><div class="kicker">What we do</div><h2>Everything you need,<br>under one roof.</h2></div>
-      <p>From routine visits to the work that changes how you feel about your day, Elite Homes Real Estate takes care of it properly.</p>
-    </div>
-    <div class="services">
-      
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11l8-7 8 7v9a1 1 0 01-1 1h-4v-6H9v6H5a1 1 0 01-1-1z"/></svg></div><h3>Selling</h3><p>Pricing strategy, staging advice and premium marketing.</p></div>
-      
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1-4.4-4.3 6.1-.9z"/></svg></div><h3>Buying</h3><p>Off-market access and expert negotiation.</p></div>
-      
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3" width="14" height="18" rx="1"/><path d="M9 7h2M13 7h2M9 11h2M13 11h2M9 15h2M13 15h2"/></svg></div><h3>Luxury homes</h3><p>Discreet representation for high-end properties.</p></div>
-      
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="18" r="2.5"/><circle cx="18" cy="6" r="2.5"/><path d="M8.5 18H16a3 3 0 000-6H8a3 3 0 010-6h7.5"/></svg></div><h3>Relocation</h3><p>Moving to the area? We make it easy.</p></div>
-      
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/><path d="M19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8z"/></svg></div><h3>Home valuation</h3><p>Find out what your home is worth today.</p></div>
-      
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-7-4.4-7-10a4 4 0 017-2.6A4 4 0 0119 10c0 5.6-7 10-7 10z"/></svg></div><h3>First-time buyers</h3><p>Patient guidance from first viewing to keys.</p></div>
-      
-    </div>
-  </div>
-</section>
-
-<section class="block why" id="why">
-  <div class="wrap why-grid">
-    <div>
-      <div class="kicker">Why clients choose us</div>
-      <h2>The Kuwait City real estate agent people recommend to their friends.</h2>
-      <p class="intro">it still comes down to the same three things.</p>
-    </div>
-    <div class="points">
-      
-      <div class="point"><div class="num">01</div><div><h3>Local expert</h3><p>Deep knowledge of every neighbourhood we serve.</p></div></div>
-      
-      <div class="point"><div class="num">02</div><div><h3>Premium marketing</h3><p>Professional photography, video and targeted promotion.</p></div></div>
-      
-      <div class="point"><div class="num">03</div><div><h3>Skilled negotiator</h3><p>We protect your interests at every step.</p></div></div>
-      
-    </div>
-  </div>
-</section>
-
-
-
-<section class="cta-band" id="book">
-  <div class="wrap"><div class="cta-box">
-    <div><h2>Ready when you are.</h2><p>Book a consultation in under a minute, or give us a call and talk to a real person.</p></div>
-    <div class="actions">
-      <a class="btn" href="#visit">Book a consultation</a>
-      <a class="btn ghost" href="tel:+96595516178">Call +96595516178</a>
-    </div>
-  </div></div>
-</section>
-
-<section class="block" id="visit" style="padding-top:0">
-  <div class="wrap">
-    <div class="kicker">Visit us</div><h2>Come say hello.</h2>
-    <div class="visit">
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11l8-7 8 7v9a1 1 0 01-1 1h-4v-6H9v6H5a1 1 0 01-1-1z"/></svg></div><h3>Address</h3><p>Dar Alawadi Complex– Floor M1 Office M12 Ahmed Al-Jaber Street – Sharq Kuwait City Sharq, Kuwait City Sharq, مدينة الكويت 15300</p></div>
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div><h3>Phone</h3><p><a href="tel:+96595516178">+96595516178</a></p><p style="margin-top:10px">Call or message us for today's opening hours.</p></div>
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-7-4.4-7-10a4 4 0 017-2.6A4 4 0 0119 10c0 5.6-7 10-7 10z"/></svg></div><h3>Local market expert</h3><p>Book a consultation online or by phone and we'll take care of the rest.</p></div>
-    </div>
-  </div>
-</section>
-</main>
-
-<footer><div class="wrap">
-  <span>© 2026 Elite Homes Real Estate</span>
-  <span>Concept design by webstudio. Not affiliated with or endorsed by Elite Homes Real Estate.</span>
-</div></footer>
-
-<div class="mobile-bar">
-  <a class="btn ghost" href="tel:+96595516178">Call</a>
-  <a class="btn" href="#visit">Let&#39;s talk</a>
 </div>
-</body>
+
+<div class="wrap" id="home">
+  <!-- Sticky left column -->
+  <aside class="left">
+    <div class="intro">
+      <span class="label">Real Estate · Sharq, Kuwait City</span>
+      <h1 class="hero-title">Your next <span class="stroke">address</span> in Kuwait, <span class="brassy">chosen with care.</span></h1>
+      <p class="hero-sub">Elite Homes Real Estate guides buyers, sellers and tenants through Kuwait's property market with a calm, personal approach, from our office in the heart of Sharq.</p>
+      <div class="hero-ctas">
+        <a class="btn btn-dark" href="tel:+96595516178">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>
+          Call +965 9551 6178
+        </a>
+        <a class="btn btn-line" href="#services">Explore our services</a>
+      </div>
+      <div class="hero-meta">
+        <div><span class="k">Office</span><strong>Dar Alawadi Complex, M12</strong></div>
+        <div><span class="k">Street</span><strong>Ahmed Al-Jaber St, Sharq</strong></div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Scrolling right column -->
+  <main class="right">
+
+    <!-- Signature arched window -->
+    <section class="window" aria-label="Kuwait City at dusk, illustration">
+      <div class="arch-frame two"></div>
+      <div class="arch-frame"></div>
+      <div class="arch" id="arch">
+        <div class="stars" id="stars"></div>
+        <div class="sun" data-parallax="0.12"></div>
+        <svg class="skyline" data-parallax="0.05" viewBox="0 0 600 400" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
+          <g fill="#2C4235" opacity=".55">
+            <rect x="20" y="210" width="50" height="190"/><rect x="80" y="170" width="38" height="230"/>
+            <rect x="420" y="190" width="46" height="210"/><rect x="480" y="150" width="34" height="250"/><rect x="525" y="230" width="60" height="170"/>
+          </g>
+          <g fill="#22332A">
+            <!-- towers, abstracted -->
+            <path d="M130 400V140l22-30 22 30v260z"/>
+            <rect x="190" y="200" width="54" height="200"/>
+            <path d="M262 400V120c0-28 14-50 14-50s14 22 14 50v280z"/>
+            <!-- domed tower silhouettes -->
+            <rect x="327" y="40" width="5" height="360"/>
+            <circle cx="329.5" cy="140" r="26"/>
+            <circle cx="329.5" cy="95" r="13"/>
+            <rect x="358" y="160" width="4" height="240"/>
+            <circle cx="360" cy="215" r="18"/>
+            <rect x="380" y="230" width="44" height="170"/>
+            <rect x="0" y="330" width="600" height="70"/>
+          </g>
+          <g fill="#C9B79C" opacity=".75">
+            <rect x="198" y="215" width="4" height="4"/><rect x="210" y="235" width="4" height="4"/><rect x="226" y="215" width="4" height="4"/><rect x="198" y="255" width="4" height="4"/><rect x="226" y="275" width="4" height="4"/>
+            <rect x="388" y="250" width="4" height="4"/><rect x="404" y="270" width="4" height="4"/><rect x="388" y="290" width="4" height="4"/>
+            <rect x="148" y="180" width="3" height="3"/><rect x="148" y="220" width="3" height="3"/><rect x="155" y="260" width="3" height="3"/>
+          </g>
+          <path d="M0 360h600" stroke="#C9B79C" stroke-opacity=".5"/>
+        </svg>
+        <div class="arch-copy">
+          <span class="ar" lang="ar">مدينة الكويت</span>
+          <span class="en">Kuwait City · Sharq</span>
+        </div>
+      </div>
+      <div class="seal" aria-hidden="true">
+        <svg class="ring" viewBox="0 0 120 120">
+          <defs><path id="circ" d="M60 60m-46 0a46 46 0 1 1 92 0a46 46 0 1 1 -92 0"/></defs>
+          <text font-family="Sora,sans-serif" font-size="9.6" font-weight="500" letter-spacing="3.1" fill="#1F2A24">
+            <textPath href="#circ">ELITE HOMES · REAL ESTATE · KUWAIT ·</textPath>
+          </text>
+        </svg>
+        <div class="core">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#C9B79C" stroke-width="1.5"><path d="M3 11l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></svg>
+        </div>
+      </div>
+      <div class="coord">
+        <span>Find us</span>
+        <b>Floor M1, Office M12</b>
+        Dar Alawadi Complex
+      </div>
+    </section>
+
+    <!-- Marquee -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-track">
+        <span>Buying</span><span>Selling</span><span>Renting</span><span>Sharq</span><span>Kuwait City</span><span>Ahmed Al-Jaber Street</span><span>Dar Alawadi Complex</span>
+        <span>Buying</span><span>Selling</span><span>Renting</span><span>Sharq</span><span>Kuwait City</span><span>Ahmed Al-Jaber Street</span><span>Dar Alawadi Complex</span>
+      </div>
+    </div>
+
+    <!-- Services -->
+    <section id="services">
+      <div class="sec-head reveal">
+        <span class="label">What we do</span>
+        <h2>Every move, <em>handled personally.</em></h2>
+        <p>Whether you are stepping into a new home, letting go of one, or finding the right place to rent, we bring the same attention to every conversation.</p>
+      </div>
+      <div class="services">
+        <article class="card feature reveal">
+          <svg class="deco" viewBox="0 0 200 200" fill="none" stroke="#C9B79C" stroke-width="1"><path d="M20 200V90a80 80 0 0 1 160 0v110"/><path d="M45 200V95a55 55 0 0 1 110 0v105"/><path d="M70 200V100a30 30 0 0 1 60 0v100"/></svg>
+          <div>
+            <span class="num">01 — BUYING</span>
+            <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><path d="M3 11l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></svg></div>
+            <h3>Finding the home that fits your life.</h3>
+          </div>
+          <div>
+            <p>Tell us how you live, where you need to be and what matters most. We listen first, then help you look at homes in Kuwait City that genuinely suit you, so your time is spent only on the right viewings.</p>
+            <a class="more ul" href="#contact">Start your search <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          </div>
+        </article>
+        <article class="card reveal d1">
+          <span class="num">02 — SELLING</span>
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><path d="M20.6 13.4l-7.2 7.2a2 2 0 0 1-2.8 0L3 13V3h10l7.6 7.6a2 2 0 0 1 0 2.8z"/><circle cx="7.5" cy="7.5" r="1.5"/></svg></div>
+          <h3>Presenting your property well.</h3>
+          <p>Thinking of selling? Talk to us about positioning your property clearly and reaching the right people, with honest guidance at every stage.</p>
+          <a class="more ul" href="#contact">Discuss a sale <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </article>
+        <article class="card reveal d2">
+          <span class="num">03 — RENTING</span>
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><circle cx="8" cy="15" r="4"/><path d="M10.8 12.2L20 3M16 7l3 3M14 9l2 2"/></svg></div>
+          <h3>Renting without the runaround.</h3>
+          <p>Looking for a place to rent, or a tenant for yours? We help both sides find a good match and keep the process clear and straightforward.</p>
+          <a class="more ul" href="#contact">Ask about rentals <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </article>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about">
+      <div class="about">
+        <div class="about-art reveal" aria-hidden="true">
+          <div class="big">EH</div>
+          <div class="cap">Sharq · Kuwait City</div>
+        </div>
+        <div class="reveal d1">
+          <span class="label">About Elite Homes</span>
+          <div class="sec-head" style="margin-bottom:0">
+            <h2>A Kuwait City agency, <em>right in Sharq.</em></h2>
+          </div>
+          <p>Elite Homes Real Estate works from Dar Alawadi Complex on Ahmed Al-Jaber Street, in the centre of Sharq. It is a place you can walk into, sit down and talk through your plans face to face.</p>
+          <p>We believe a property decision deserves patience and clarity. That means listening properly, explaining your options plainly and staying with you until the keys change hands.</p>
+          <p class="quote">"The right home is personal. Our job is to make finding it feel that way too."</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why -->
+    <section id="why">
+      <div class="sec-head reveal">
+        <span class="label">Why Elite Homes</span>
+        <h2>The quiet confidence of <em>a trusted advisor.</em></h2>
+      </div>
+      <div class="why">
+        <div class="why-item reveal"><span class="k">I</span><h3>Central and easy to reach</h3><p>Our office sits on Ahmed Al-Jaber Street in Sharq, in the heart of Kuwait City.</p></div>
+        <div class="why-item reveal d1"><span class="k">II</span><h3>A real conversation</h3><p>You speak with people, not a portal. Call us directly and talk through what you need.</p></div>
+        <div class="why-item reveal"><span class="k">III</span><h3>Buy, sell or rent</h3><p>One agency for every side of a move, so your plans stay joined up from start to finish.</p></div>
+        <div class="why-item reveal d1"><span class="k">IV</span><h3>Clarity at every step</h3><p>We explain your options plainly so you can decide with confidence, never under pressure.</p></div>
+      </div>
+    </section>
+
+    <!-- Process -->
+    <section id="process">
+      <div class="sec-head reveal">
+        <span class="label">How it works</span>
+        <h2>Four simple steps <em>to your next address.</em></h2>
+      </div>
+      <div class="steps">
+        <div class="step reveal"><div class="n">01</div><div><h3>Call or visit us</h3><p>Ring +965 9551 6178 or come to our office at Dar Alawadi Complex, Floor M1, Office M12.</p></div></div>
+        <div class="step reveal d1"><div class="n">02</div><div><h3>Tell us what you need</h3><p>Buying, selling or renting: share your plans, your timing and what matters most to you.</p></div></div>
+        <div class="step reveal d2"><div class="n">03</div><div><h3>Explore your options</h3><p>We help you weigh up the right properties or the right approach, with honest advice along the way.</p></div></div>
+        <div class="step reveal d3"><div class="n">04</div><div><h3>Move forward with confidence</h3><p>We stay with you through the details until your move is complete.</p></div></div>
+      </div>
+    </section>
+
+    <!-- CTA band -->
+    <section>
+      <div class="band reveal">
+        <svg class="arches" viewBox="0 0 300 300" fill="none" stroke="#C9B79C" stroke-width="1.2" aria-hidden="true"><path d="M10 300V150a140 140 0 0 1 280 0v150"/><path d="M50 300V155a100 100 0 0 1 200 0v145"/><path d="M90 300V160a60 60 0 0 1 120 0v140"/><path d="M130 300V165a20 20 0 0 1 40 0v135"/></svg>
+        <span class="label" style="color:var(--brass)">Let's talk</span>
+        <h2 style="margin-top:1.2rem">Your next chapter starts with <b>one call.</b></h2>
+        <p>Speak with Elite Homes Real Estate today about buying, selling or renting in Kuwait City.</p>
+        <div class="hero-ctas">
+          <a class="btn btn-light" href="tel:+96595516178">Call +965 9551 6178</a>
+          <a class="btn btn-ghost" href="https://maps.google.com/?q=Dar+Alawadi+Complex+Ahmed+Al-Jaber+Street+Sharq+Kuwait+City" target="_blank" rel="noopener">Get directions</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" style="margin-bottom:40px">
+      <div class="sec-head reveal">
+        <span class="label">Visit &amp; contact</span>
+        <h2>Come and see us <em>in Sharq.</em></h2>
+      </div>
+      <div class="contact-grid">
+        <div class="info wide reveal">
+          <span class="k">Phone</span>
+          <a class="v big ul" href="tel:+96595516178" style="display:inline-block">+965 9551 6178</a>
+          <div class="act"><a class="btn btn-dark btn-sm" href="tel:+96595516178">Call now</a></div>
+        </div>
+        <div class="info reveal">
+          <span class="k">Address</span>
+          <p class="v">Dar Alawadi Complex, Floor M1, Office M12<br>Ahmed Al-Jaber Street, Sharq<br>Kuwait City 15300</p>
+          <span class="ar" lang="ar" dir="rtl">شرق، مدينة الكويت</span>
+          <div class="act"><a class="btn btn-line btn-sm" href="https://maps.google.com/?q=Dar+Alawadi+Complex+Ahmed+Al-Jaber+Street+Sharq+Kuwait+City" target="_blank" rel="noopener">Open in Google Maps</a></div>
+        </div>
+        <div class="info reveal d1">
+          <span class="k">Opening hours</span>
+          <p class="v">Please call ahead to arrange a time to visit.</p>
+          <div class="act"><a class="btn btn-line btn-sm" href="tel:+96595516178">Arrange a visit</a></div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<footer>
+  <div class="foot-big">Elite <b>Homes</b></div>
+  <div class="foot-row">
+    <span>© <span id="yr"></span> Elite Homes Real Estate · Sharq, Kuwait City</span>
+    <nav aria-label="Footer">
+      <a href="#services">Services</a><a href="#about">About</a><a href="#process">Process</a><a href="#contact">Contact</a>
+      <a href="tel:+96595516178">+965 9551 6178</a>
+    </nav>
+  </div>
+</footer>
+
+<div class="callbar">
+  <a class="primary" href="tel:+96595516178"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>Call us</a>
+  <a href="https://maps.google.com/?q=Dar+Alawadi+Complex+Ahmed+Al-Jaber+Street+Sharq+Kuwait+City" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s7-6.1 7-12a7 7 0 0 0-14 0c0 5.9 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg>Directions</a>
+</div>
+
+<script>
+(function(){
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var body = document.body;
+
+  // staggered entrance
+  requestAnimationFrame(function(){ body.classList.add('loaded'); });
+
+  // year
+  document.getElementById('yr').textContent = new Date().getFullYear();
+
+  // header state
+  var top = document.getElementById('top');
+  function onScroll(){ top.classList.toggle('scrolled', window.scrollY > 20); }
+  onScroll();
+  window.addEventListener('scroll', onScroll, {passive:true});
+
+  // mobile menu
+  var burger = document.getElementById('burger'), menu = document.getElementById('mobileMenu');
+  function setMenu(open){
+    body.classList.toggle('menu-open', open);
+    burger.setAttribute('aria-expanded', open);
+    burger.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+    menu.setAttribute('aria-hidden', !open);
+    body.style.overflow = open ? 'hidden' : '';
+  }
+  burger.addEventListener('click', function(){ setMenu(!body.classList.contains('menu-open')); });
+  menu.querySelectorAll('a').forEach(function(a){ a.addEventListener('click', function(){ setMenu(false); }); });
+  document.addEventListener('keydown', function(e){ if(e.key === 'Escape') setMenu(false); });
+
+  // stars in the arch
+  var stars = document.getElementById('stars');
+  for (var i = 0; i < 26; i++){
+    var s = document.createElement('i');
+    s.style.left = (Math.random()*100) + '%';
+    s.style.top = (Math.random()*38) + '%';
+    s.style.animationDelay = (Math.random()*4) + 's';
+    stars.appendChild(s);
+  }
+
+  // reveal on scroll
+  var items = document.querySelectorAll('.reveal');
+  if (reduce || !('IntersectionObserver' in window)){
+    items.forEach(function(el){ el.classList.add('in'); });
+  } else {
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if (en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); }
+      });
+    }, {threshold:.15, rootMargin:'0px 0px -40px 0px'});
+    items.forEach(function(el){ io.observe(el); });
+  }
+
+  // subtle parallax inside the arch
+  if (!reduce){
+    var layers = document.querySelectorAll('[data-parallax]');
+    var ticking = false;
+    function para(){
+      var y = window.scrollY;
+      layers.forEach(function(el){
+        var f = parseFloat(el.getAttribute('data-parallax'));
+        var base = el.classList.contains('sun') ? 'translate(-50%,-50%) ' : '';
+        el.style.transform = base + 'translate3d(0,' + (y * f) + 'px,0)';
+      });
+      ticking = false;
+    }
+    window.addEventListener('scroll', function(){
+      if (!ticking){ requestAnimationFrame(para); ticking = true; }
+    }, {passive:true});
+  }
+})();
+</script>
+<div id="lm-concept" style="position:fixed;left:12px;bottom:12px;z-index:2147483647;font:500 11px/1.3 -apple-system,BlinkMacSystemFont,Segoe UI,sans-serif;letter-spacing:.02em;background:rgba(15,15,18,.82);color:#f4f1ea;padding:7px 11px;border-radius:999px;backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);pointer-events:none;max-width:70vw">Website concept for Elite Homes Real Estate by webstudio &middot; not the live site</div><p style="margin:0;padding:18px 16px 70px;text-align:center;font:12px/1.5 -apple-system,sans-serif;color:#8a8a8a;background:#0e0e10">Concept design by webstudio. Not affiliated with or endorsed by Elite Homes Real Estate.</p></body>
 </html>
