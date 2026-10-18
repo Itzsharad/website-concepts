@@ -1,291 +1,708 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src * data: blob:; media-src 'self' data:; style-src 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com data:; script-src 'unsafe-inline'; connect-src 'none'; frame-src 'none'; form-action 'none'; base-uri 'none'; object-src 'none'">
 <meta name="robots" content="noindex, nofollow">
-<title>Zaina Clinic | Website concept</title>
+<style>html,body{max-width:100%;overflow-x:clip}</style>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Zaina Clinic | Real Estate in Hawally, Kuwait City</title>
+<meta name="description" content="Zaina Clinic is a real estate agent on Street 7, Hawally, Kuwait City. Call +965 2532 2343 for buying, selling and leasing advice.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Karla:wght@300;400;500;600;700&family=Libre+Caslon+Display&display=swap" rel="stylesheet">
 <style>
 :root{
-  --bg:#0d0d0f;--surface:#16161a;--ink:#f3efe7;--muted:#a8a39a;
-  --accent:#c9a96e;--accent-ink:#0d0d0f;--gold:#c9a96e;--soft:#1f1e22;
-  --radius:22px;--max:1180px;
-  --serif:"Fraunces",Georgia,serif;--sans:"Manrope",system-ui,-apple-system,sans-serif;
+  --bg:#F6F5F2;--surface:#FFFFFF;--ink:#0D1B2A;--ink-soft:#3A4655;--ink-mute:#5E6873;
+  --crimson:#A11D24;--crimson-deep:#7E141A;--gold:#C9A227;--gold-soft:#E9DDB0;
+  --rule:rgba(13,27,42,.14);--rule-strong:rgba(13,27,42,.32);
+  --serif:"Libre Caslon Display",Georgia,"Times New Roman",serif;
+  --sans:"Karla",system-ui,-apple-system,sans-serif;
+  --ease:cubic-bezier(.2,.7,.1,1);
+  --head:76px;
 }
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:calc(var(--head) + 16px)}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
 a{color:inherit;text-decoration:none}
-img{max-width:100%;display:block}
-.wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
-.concept{background:var(--ink);color:var(--bg);font-size:13px;text-align:center;padding:8px 16px;letter-spacing:.02em}
-.concept b{color:var(--gold);font-weight:600}
+svg{display:block}
+::selection{background:var(--crimson);color:#fff}
+.skip{position:absolute;left:-999px;top:8px;background:var(--ink);color:#fff;padding:10px 16px;z-index:100}
+.skip:focus{left:8px}
+:focus-visible{outline:2px solid var(--crimson);outline-offset:3px}
 
-/* header */
-header{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:saturate(1.4) blur(10px);border-bottom:1px solid color-mix(in srgb,var(--ink) 8%,transparent)}
-.nav{display:flex;align-items:center;justify-content:space-between;height:76px;gap:24px}
-.brand{font-family:var(--serif);font-size:23px;font-weight:600;letter-spacing:-.01em;line-height:1.1;max-width:340px}
-.links{display:flex;gap:30px;font-size:15px;font-weight:500;color:var(--muted)}
-.links a:hover{color:var(--ink)}
-.nav-right{display:flex;align-items:center;gap:18px}
-.phone{font-weight:600;font-size:15px;white-space:nowrap}
-.btn{display:inline-flex;align-items:center;gap:10px;background:var(--accent);color:var(--accent-ink);padding:14px 26px;border-radius:999px;font-weight:600;font-size:15.5px;transition:transform .2s ease,box-shadow .2s ease;white-space:nowrap}
-.btn:hover{transform:translateY(-2px);box-shadow:0 12px 28px -12px var(--accent)}
-.btn.ghost{background:transparent;color:var(--ink);border:1.5px solid color-mix(in srgb,var(--ink) 20%,transparent)}
-.btn.ghost:hover{box-shadow:none;border-color:var(--ink)}
-.btn svg{width:18px;height:18px}
+/* ---------- Labels & type ---------- */
+.label{font-size:11.5px;font-weight:600;letter-spacing:.24em;text-transform:uppercase;color:var(--ink-soft)}
+.label b{color:var(--crimson);font-weight:700}
+.serif{font-family:var(--serif);font-weight:400}
+h1,h2,h3{font-family:var(--serif);font-weight:400;line-height:1.02;letter-spacing:-.01em}
+em.accent{font-style:italic;color:var(--crimson)}
 
-/* hero */
-.hero{padding:72px 0 88px}
-.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:64px;align-items:center}
-.eyebrow{display:inline-flex;align-items:center;gap:10px;background:var(--surface);border:1px solid color-mix(in srgb,var(--ink) 10%,transparent);padding:8px 16px 8px 10px;border-radius:999px;font-size:14px;font-weight:600;color:var(--muted)}
-.stars{color:var(--gold);letter-spacing:1px;font-size:14px}
-.eyebrow .dot{width:26px;height:26px;border-radius:50%;background:var(--soft);display:grid;place-items:center;color:var(--accent)}
-h1{font-family:var(--serif);font-weight:500;font-size:clamp(44px,5.6vw,74px);line-height:1.02;letter-spacing:-.025em;margin:26px 0 22px}
-h1 em{font-style:italic;color:var(--accent)}
-.lead-text{font-size:19.5px;color:var(--muted);max-width:540px}
-.hero-ctas{display:flex;gap:14px;margin-top:36px;flex-wrap:wrap}
-.ticks{display:flex;gap:22px;margin-top:34px;flex-wrap:wrap;font-size:14.5px;font-weight:600;color:var(--muted)}
-.ticks span{display:flex;align-items:center;gap:8px}
-.ticks svg{width:18px;height:18px;color:var(--accent)}
-.visual{position:relative}
-.photo{aspect-ratio:4/5;border-radius:calc(var(--radius) + 10px);overflow:hidden;background:var(--soft);box-shadow:0 40px 80px -40px color-mix(in srgb,var(--ink) 55%,transparent)}
-.photo img{width:100%;height:100%;object-fit:cover}
-.quote-panel{aspect-ratio:4/5;border-radius:calc(var(--radius) + 10px);background:linear-gradient(155deg,var(--accent),color-mix(in srgb,var(--accent) 55%,var(--ink)));color:var(--accent-ink);padding:52px 46px;display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden;box-shadow:0 40px 80px -40px color-mix(in srgb,var(--ink) 60%,transparent)}
-.quote-panel:before{content:"";position:absolute;width:420px;height:420px;border-radius:50%;right:-160px;top:-160px;background:color-mix(in srgb,var(--accent-ink) 9%,transparent)}
-.quote-panel:after{content:"";position:absolute;width:260px;height:260px;border-radius:50%;left:-90px;bottom:-110px;border:1.5px solid color-mix(in srgb,var(--accent-ink) 22%,transparent)}
-.quote-mark{font-family:var(--serif);font-size:120px;line-height:.6;opacity:.35}
-.quote-panel p{font-family:var(--serif);font-size:28px;line-height:1.3;position:relative;z-index:1}
-.quote-panel .who{font-family:var(--sans);font-size:15px;opacity:.85;margin-top:22px;font-weight:600}
-.float{position:absolute;background:var(--surface);color:var(--ink);border-radius:18px;padding:16px 20px;box-shadow:0 24px 50px -24px color-mix(in srgb,var(--ink) 50%,transparent);display:flex;align-items:center;gap:14px;font-size:14px;line-height:1.35}
-.float b{font-size:22px;font-family:var(--serif);font-weight:600;display:block}
-.float.one{left:-34px;bottom:-28px}
-.float.two{right:-22px;top:44px}
-.float .badge{width:44px;height:44px;border-radius:14px;background:var(--soft);display:grid;place-items:center;color:var(--accent)}
-.float .badge svg{width:22px;height:22px}
+/* ---------- Buttons ---------- */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 26px;font-family:var(--sans);font-size:13px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;border:1px solid transparent;transition:background .35s var(--ease),color .35s var(--ease),transform .35s var(--ease),box-shadow .35s var(--ease),border-color .35s;text-align:center;white-space:nowrap}
+.btn svg{width:16px;height:16px;flex:none;transition:transform .35s var(--ease)}
+.btn-primary{background:var(--crimson);color:#fff}
+.btn-primary:hover{background:var(--crimson-deep);transform:translateY(-2px);box-shadow:0 14px 30px -14px rgba(161,29,36,.65)}
+.btn-primary:hover svg{transform:translateX(4px)}
+.btn-ghost{border-color:var(--rule-strong);color:var(--ink);background:transparent}
+.btn-ghost:hover{border-color:var(--ink);background:var(--ink);color:#fff;transform:translateY(-2px)}
+.link-u{position:relative;display:inline-block}
+.link-u::after{content:"";position:absolute;left:0;right:0;bottom:-3px;height:1px;background:currentColor;transform:scaleX(0);transform-origin:right;transition:transform .45s var(--ease)}
+.link-u:hover::after{transform:scaleX(1);transform-origin:left}
 
-/* trust */
-.trust{border-top:1px solid color-mix(in srgb,var(--ink) 9%,transparent);border-bottom:1px solid color-mix(in srgb,var(--ink) 9%,transparent);background:var(--surface)}
-.trust .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;padding-top:26px;padding-bottom:26px}
-.trust div{display:flex;align-items:center;gap:12px;font-weight:600;font-size:15px}
-.trust svg{width:22px;height:22px;color:var(--accent);flex:none}
+/* ---------- Header ---------- */
+.header{position:fixed;inset:0 0 auto 0;height:var(--head);z-index:50;display:flex;align-items:center;justify-content:space-between;gap:24px;padding:0 clamp(20px,4vw,56px);background:rgba(246,245,242,.72);backdrop-filter:saturate(1.4) blur(14px);-webkit-backdrop-filter:saturate(1.4) blur(14px);border-bottom:1px solid transparent;transition:border-color .4s,background .4s}
+.header.scrolled{border-bottom-color:var(--rule);background:rgba(246,245,242,.9)}
+.brand{display:flex;align-items:center;gap:12px;flex:none}
+.brand-mark{width:40px;height:40px;flex:none}
+.brand-name{font-family:var(--serif);font-size:24px;line-height:1;letter-spacing:.01em}
+.brand-name small{display:block;font-family:var(--sans);font-size:9.5px;letter-spacing:.3em;text-transform:uppercase;color:var(--ink-mute);margin-top:4px;font-weight:600}
+.nav{display:flex;align-items:center;gap:30px;font-size:13px;font-weight:600;letter-spacing:.12em;text-transform:uppercase}
+.nav a.link-u{color:var(--ink)}
+.head-right{display:flex;align-items:center;gap:22px}
+.head-phone{font-size:14px;font-weight:600;letter-spacing:.04em;display:flex;align-items:center;gap:8px}
+.head-phone svg{width:15px;height:15px;color:var(--crimson)}
+.header .btn{min-height:44px;padding:0 20px;font-size:12px}
+.burger{display:none;width:46px;height:46px;border:1px solid var(--rule-strong);background:transparent;cursor:pointer;position:relative}
+.burger span{position:absolute;left:12px;right:12px;height:1.5px;background:var(--ink);transition:transform .4s var(--ease),opacity .3s}
+.burger span:nth-child(1){top:17px}.burger span:nth-child(2){top:23px}.burger span:nth-child(3){top:29px}
+.menu-open .burger span:nth-child(1){transform:translateY(6px) rotate(45deg)}
+.menu-open .burger span:nth-child(2){opacity:0}
+.menu-open .burger span:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
+.mobile-menu{position:fixed;inset:var(--head) 0 0 0;z-index:49;background:var(--bg);padding:36px 24px 120px;display:flex;flex-direction:column;gap:6px;transform:translateY(-12px);opacity:0;visibility:hidden;transition:opacity .4s var(--ease),transform .4s var(--ease),visibility .4s}
+.menu-open .mobile-menu{opacity:1;transform:none;visibility:visible}
+.mobile-menu a.m-link{font-family:var(--serif);font-size:40px;line-height:1.25;border-bottom:1px solid var(--rule);padding:10px 0;display:flex;justify-content:space-between;align-items:baseline}
+.mobile-menu a.m-link span{font-family:var(--sans);font-size:12px;letter-spacing:.2em;color:var(--crimson);font-weight:700}
+.mobile-menu .btn{margin-top:26px}
 
-/* sections */
-section.block{padding:110px 0}
-.kicker{font-size:13px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
-h2{font-family:var(--serif);font-weight:500;font-size:clamp(34px,3.8vw,52px);line-height:1.08;letter-spacing:-.02em;margin:14px 0 18px}
-.section-head{display:flex;justify-content:space-between;align-items:end;gap:40px;margin-bottom:56px}
-.section-head p{color:var(--muted);max-width:420px}
-.services{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-.card{background:var(--surface);border-radius:var(--radius);padding:34px 32px 36px;border:1px solid color-mix(in srgb,var(--ink) 7%,transparent);transition:transform .25s ease,box-shadow .25s ease}
-.card:hover{transform:translateY(-4px);box-shadow:0 30px 60px -36px color-mix(in srgb,var(--ink) 45%,transparent)}
-.icon{width:54px;height:54px;border-radius:16px;background:var(--soft);color:var(--accent);display:grid;place-items:center;margin-bottom:24px}
-.icon svg{width:26px;height:26px}
-.card h3{font-family:var(--serif);font-weight:500;font-size:23px;margin-bottom:8px;letter-spacing:-.01em}
-.card p{color:var(--muted);font-size:16px}
+/* ---------- Layout ---------- */
+.layout{display:grid;grid-template-columns:minmax(360px,40%) 1fr;min-height:100vh}
+.aside{position:sticky;top:0;height:100vh;padding:calc(var(--head) + 48px) clamp(28px,4vw,64px) 44px;display:flex;flex-direction:column;justify-content:space-between;border-right:1px solid var(--rule);overflow:hidden}
+.aside::before{content:"";position:absolute;inset:auto -30% -40% -30%;height:70%;background:radial-gradient(closest-side,rgba(201,162,39,.16),transparent 70%);pointer-events:none}
+.aside-top{position:relative}
+.aside h1{font-size:clamp(46px,5.4vw,88px);margin:26px 0 26px}
+.aside h1 .line{display:block;overflow:hidden;padding-bottom:.06em}
+.aside h1 .line>span{display:inline-block}
+.aside .sub{font-size:18px;color:var(--ink-soft);max-width:30ch;line-height:1.6}
+.ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:34px}
+.aside-foot{position:relative;display:grid;grid-template-columns:1fr 1fr;gap:20px;border-top:1px solid var(--rule);padding-top:22px;font-size:14px}
+.aside-foot .label{display:block;margin-bottom:6px;font-size:10.5px}
+.aside-foot a{font-weight:600}
+.ar{font-family:"Geeza Pro","Noto Naskh Arabic","Arial",sans-serif;direction:rtl;unicode-bidi:isolate}
 
-.why{background:var(--ink);color:var(--bg)}
-.why .kicker{color:var(--gold)}
-.why-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:80px;align-items:start}
-.why h2{color:var(--bg)}
-.why .intro{color:color-mix(in srgb,var(--bg) 70%,transparent);font-size:18px;max-width:440px}
-.points{display:grid;gap:14px}
-.point{display:grid;grid-template-columns:62px 1fr;gap:20px;padding:30px;border-radius:var(--radius);background:color-mix(in srgb,var(--bg) 6%,transparent);border:1px solid color-mix(in srgb,var(--bg) 10%,transparent)}
-.point .num{font-family:var(--serif);font-size:34px;color:var(--gold);line-height:1}
-.point h3{font-family:var(--serif);font-weight:500;font-size:24px;margin-bottom:6px}
-.point p{color:color-mix(in srgb,var(--bg) 72%,transparent);font-size:16px}
+.main{min-width:0}
+.section{padding:clamp(80px,10vw,140px) clamp(24px,5vw,80px);border-bottom:1px solid var(--rule);position:relative}
+.sec-head{display:grid;grid-template-columns:auto 1fr;gap:18px 28px;align-items:end;margin-bottom:clamp(44px,6vw,72px)}
+.sec-num{font-family:var(--serif);font-size:clamp(64px,8vw,120px);line-height:.8;color:transparent;-webkit-text-stroke:1px var(--crimson)}
+.sec-head h2{font-size:clamp(38px,4.6vw,68px)}
+.sec-head .label{grid-column:1/-1;display:flex;align-items:center;gap:14px}
+.sec-head .label::after{content:"";flex:1;height:1px;background:var(--rule)}
+.lead{font-size:clamp(19px,1.6vw,23px);line-height:1.6;color:var(--ink-soft);max-width:44ch}
 
-.score{display:flex;align-items:center;gap:18px;background:var(--surface);padding:16px 24px;border-radius:18px;border:1px solid color-mix(in srgb,var(--ink) 8%,transparent)}
-.score b{font-family:var(--serif);font-size:40px;font-weight:500;line-height:1}
-.score small{display:block;color:var(--muted);font-size:14px}
-.reviews{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-.review{background:var(--surface);border-radius:var(--radius);padding:34px;display:flex;flex-direction:column;gap:22px;border:1px solid color-mix(in srgb,var(--ink) 7%,transparent)}
-.review p{font-family:var(--serif);font-size:19.5px;line-height:1.45}
-.review .by{margin-top:auto;display:flex;align-items:center;gap:12px;font-weight:600;font-size:15px}
-.avatar{width:40px;height:40px;border-radius:50%;background:var(--soft);color:var(--accent);display:grid;place-items:center;font-weight:700}
-.review .src{color:var(--muted);font-weight:500;font-size:13px;display:block}
+/* ---------- Hero composition (signature) ---------- */
+.hero{min-height:100vh;padding:calc(var(--head) + 40px) clamp(24px,5vw,80px) 60px;display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden;background:linear-gradient(180deg,var(--bg) 0%,#EFECE5 100%)}
+.hero-meta{display:flex;justify-content:space-between;gap:20px;border-bottom:1px solid var(--rule);padding-bottom:16px}
+.hero-stage{position:relative;flex:1;display:grid;place-items:center;margin:30px 0}
+.plate{position:relative;width:min(100%,560px);aspect-ratio:3/4;background:var(--ink);overflow:hidden;box-shadow:0 50px 90px -50px rgba(13,27,42,.6)}
+.plate::after{content:"";position:absolute;inset:14px;border:1px solid rgba(201,162,39,.45);pointer-events:none}
+.plate svg{position:absolute;inset:0;width:100%;height:100%}
+.plate-cap{position:absolute;left:30px;right:30px;bottom:28px;color:#F6F5F2;display:flex;justify-content:space-between;align-items:end;gap:12px;z-index:2}
+.plate-cap .label{color:var(--gold-soft)}
+.plate-cap .serif{font-size:clamp(26px,3vw,38px);line-height:1}
+.giant{position:absolute;font-family:var(--serif);line-height:.78;color:var(--crimson);pointer-events:none;user-select:none;z-index:3;white-space:nowrap}
+.giant-n{font-size:clamp(150px,20vw,320px);left:-1%;bottom:4%;mix-blend-mode:multiply}
+.giant-n sup{font-size:.28em;vertical-align:top;position:relative;top:.35em;margin-right:.04em;font-style:italic}
+.giant-ar{font-size:clamp(46px,6vw,92px);right:2%;top:2%;color:var(--ink);opacity:.92}
+.hero-foot{display:flex;justify-content:space-between;align-items:end;gap:24px;border-top:1px solid var(--rule);padding-top:18px}
+.scroll-cue{display:flex;align-items:center;gap:12px}
+.scroll-cue i{width:1px;height:44px;background:var(--rule-strong);position:relative;overflow:hidden}
+.scroll-cue i::after{content:"";position:absolute;left:0;top:-50%;width:1px;height:50%;background:var(--crimson);animation:cue 2.2s var(--ease) infinite}
+@keyframes cue{to{top:100%}}
 
-.cta-band{padding:0 0 110px}
-.cta-box{border-radius:calc(var(--radius) + 12px);background:linear-gradient(140deg,var(--accent),color-mix(in srgb,var(--accent) 60%,var(--ink)));color:var(--accent-ink);padding:76px 64px;display:grid;grid-template-columns:1.3fr 1fr;gap:40px;align-items:center;position:relative;overflow:hidden}
-.cta-box:after{content:"";position:absolute;right:-120px;bottom:-200px;width:460px;height:460px;border-radius:50%;border:1.5px solid color-mix(in srgb,var(--accent-ink) 22%,transparent)}
-.cta-box h2{color:inherit;margin:0 0 12px}
-.cta-box p{opacity:.85;font-size:18px}
-.cta-box .actions{display:flex;flex-direction:column;gap:12px;align-items:flex-start;position:relative;z-index:1}
-.cta-box .btn{background:var(--accent-ink);color:var(--accent)}
-.cta-box .btn.ghost{background:transparent;color:var(--accent-ink);border-color:color-mix(in srgb,var(--accent-ink) 40%,transparent)}
+/* ---------- Marquee ---------- */
+.marquee{background:var(--ink);color:#F6F5F2;overflow:hidden;padding:22px 0;border-bottom:1px solid var(--ink)}
+.marquee-track{display:flex;width:max-content;animation:marquee 38s linear infinite}
+.marquee:hover .marquee-track{animation-play-state:paused}
+.marquee-group{display:flex;align-items:center;flex:none}
+.marquee-item{font-family:var(--serif);font-size:clamp(24px,2.6vw,36px);padding:0 30px;white-space:nowrap}
+.marquee-item.it{font-style:italic;color:var(--gold)}
+.marquee-star{width:14px;height:14px;color:var(--crimson);flex:none}
+@keyframes marquee{to{transform:translateX(-50%)}}
 
-.visit{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:10px}
-.visit .card h3{font-size:20px}
-.visit a{color:var(--accent);font-weight:600}
-footer{border-top:1px solid color-mix(in srgb,var(--ink) 9%,transparent);padding:40px 0 110px;color:var(--muted);font-size:14px}
-footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
-.mobile-bar{display:none}
+/* ---------- Services ---------- */
+.cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1px;background:var(--rule);border:1px solid var(--rule)}
+.card{background:var(--surface);padding:clamp(28px,3vw,44px);position:relative;display:flex;flex-direction:column;gap:18px;min-height:340px;transition:transform .5s var(--ease),box-shadow .5s var(--ease);overflow:hidden}
+.card::before{content:"";position:absolute;left:0;top:0;height:3px;width:100%;background:var(--crimson);transform:scaleX(0);transform-origin:left;transition:transform .6s var(--ease)}
+.card:hover{transform:translateY(-6px);box-shadow:0 30px 60px -36px rgba(13,27,42,.45);z-index:2}
+.card:hover::before{transform:scaleX(1)}
+.card-top{display:flex;justify-content:space-between;align-items:start}
+.card-num{font-family:var(--serif);font-size:15px;color:var(--crimson);letter-spacing:.06em}
+.card-ico{width:54px;height:54px;color:var(--ink)}
+.card h3{font-size:clamp(28px,2.6vw,36px);margin-top:auto}
+.card p{color:var(--ink-soft);font-size:16px}
+.card .more{font-size:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--crimson);display:inline-flex;gap:8px;align-items:center}
+.card .more svg{width:14px;height:14px;transition:transform .4s var(--ease)}
+.card:hover .more svg{transform:translateX(5px)}
 
-@keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
-.hero .copy>*{animation:rise .8s cubic-bezier(.2,.7,.2,1) both}
-.hero .copy>*:nth-child(2){animation-delay:.08s}.hero .copy>*:nth-child(3){animation-delay:.16s}
-.hero .copy>*:nth-child(4){animation-delay:.24s}.hero .copy>*:nth-child(5){animation-delay:.32s}
-.visual{animation:rise 1s .2s cubic-bezier(.2,.7,.2,1) both}
+/* ---------- About ---------- */
+.about-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(36px,5vw,72px);align-items:start}
+.pull{font-family:var(--serif);font-size:clamp(32px,3.6vw,52px);line-height:1.12;margin-bottom:32px}
+.pull::before{content:"\201C";display:block;color:var(--gold);font-size:1.8em;line-height:.6;margin-bottom:12px}
+.about-copy p+p{margin-top:18px}
+.about-copy p{color:var(--ink-soft)}
+.dropcap::first-letter{font-family:var(--serif);float:left;font-size:4.4em;line-height:.82;padding:6px 12px 0 0;color:var(--crimson)}
+.tall{position:relative;aspect-ratio:2/3;background:linear-gradient(160deg,#13263A 0%,var(--ink) 60%,#0A1520 100%);overflow:hidden}
+.tall svg{position:absolute;inset:0;width:100%;height:100%}
+.tall .tag{position:absolute;left:22px;bottom:22px;right:22px;color:#F6F5F2;border-top:1px solid rgba(201,162,39,.5);padding-top:14px;display:flex;justify-content:space-between;gap:10px;font-size:13px;letter-spacing:.16em;text-transform:uppercase;font-weight:600}
+.tall .tag span:last-child{color:var(--gold-soft)}
 
-@media (max-width:980px){
-  .links{display:none}
-  .hero-grid,.why-grid,.cta-box{grid-template-columns:1fr}
-  .hero-grid{gap:56px}
-  .services,.reviews,.visit{grid-template-columns:1fr 1fr}
-  .trust .wrap{grid-template-columns:1fr 1fr}
-  .float.one{left:12px;bottom:-26px}.float.two{right:12px}
-  .visual{max-width:560px;margin-bottom:20px}
-  .section-head{flex-direction:column;align-items:flex-start}
+/* ---------- Why ---------- */
+.why{background:var(--ink);color:#F6F5F2;border-bottom-color:var(--ink)}
+.why .label{color:#B9C1CA}
+.why .sec-head .label::after{background:rgba(246,245,242,.18)}
+.why .sec-num{-webkit-text-stroke-color:var(--gold)}
+.why .lead{color:#C9D0D7}
+.why-list{list-style:none;border-top:1px solid rgba(246,245,242,.18)}
+.why-list li{display:grid;grid-template-columns:70px 1fr 1.2fr;gap:24px;padding:34px 0;border-bottom:1px solid rgba(246,245,242,.18);align-items:baseline;transition:padding .5s var(--ease)}
+.why-list li:hover{padding-left:14px}
+.why-list .n{font-family:var(--serif);font-style:italic;color:var(--gold);font-size:22px}
+.why-list h3{font-size:clamp(26px,2.6vw,38px)}
+.why-list p{color:#C9D0D7;font-size:16px}
+
+/* ---------- Process ---------- */
+.steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;counter-reset:s;position:relative}
+.step{padding:0 24px 0 0;position:relative}
+.step-line{height:1px;background:var(--rule-strong);position:relative;margin:26px 0 30px}
+.step-line::before{content:"";position:absolute;left:0;top:-5px;width:11px;height:11px;border-radius:50%;background:var(--bg);border:1.5px solid var(--crimson)}
+.step-line::after{content:"";position:absolute;left:0;top:0;height:1px;width:100%;background:var(--crimson);transform:scaleX(0);transform-origin:left;transition:transform 1.2s var(--ease)}
+.step.in .step-line::after{transform:scaleX(1)}
+.step .big{font-family:var(--serif);font-size:62px;line-height:.9;color:var(--ink)}
+.step h3{font-size:26px;margin-bottom:10px}
+.step p{color:var(--ink-soft);font-size:15.5px}
+
+/* ---------- Details / FAQ ---------- */
+.faq{border-top:1px solid var(--rule)}
+.faq details{border-bottom:1px solid var(--rule)}
+.faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:20px;padding:28px 0;font-family:var(--serif);font-size:clamp(23px,2.2vw,31px);line-height:1.2}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary .pm{width:36px;height:36px;flex:none;border:1px solid var(--rule-strong);border-radius:50%;position:relative;transition:background .3s,border-color .3s}
+.faq summary .pm::before,.faq summary .pm::after{content:"";position:absolute;left:50%;top:50%;width:12px;height:1.5px;background:var(--ink);transform:translate(-50%,-50%);transition:transform .4s var(--ease),background .3s}
+.faq summary .pm::after{transform:translate(-50%,-50%) rotate(90deg)}
+.faq details[open] .pm{background:var(--crimson);border-color:var(--crimson)}
+.faq details[open] .pm::before,.faq details[open] .pm::after{background:#fff}
+.faq details[open] .pm::after{transform:translate(-50%,-50%) rotate(0)}
+.faq summary:hover{color:var(--crimson)}
+.faq .ans{padding:0 60px 30px 0;color:var(--ink-soft);max-width:60ch}
+.faq .ans a{color:var(--crimson);font-weight:600;border-bottom:1px solid currentColor}
+
+/* ---------- CTA band ---------- */
+.band{background:var(--crimson);color:#fff;padding:clamp(90px,12vw,170px) clamp(24px,5vw,80px);position:relative;overflow:hidden;border-bottom:none}
+.band svg.bg{position:absolute;right:-8%;top:50%;transform:translateY(-50%);width:min(70%,620px);height:auto;opacity:.22;color:var(--gold-soft)}
+.band .label{color:#F6DADB}
+.band h2{font-size:clamp(46px,6.4vw,104px);margin:22px 0 40px;max-width:12ch;position:relative}
+.band h2 em{font-style:italic;color:var(--gold-soft)}
+.band .ctas{position:relative}
+.band .btn-primary{background:#fff;color:var(--crimson)}
+.band .btn-primary:hover{background:var(--ink);color:#fff}
+.band .btn-ghost{border-color:rgba(255,255,255,.6);color:#fff}
+.band .btn-ghost:hover{background:#fff;color:var(--crimson);border-color:#fff}
+
+/* ---------- Contact ---------- */
+.contact-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1px;background:var(--rule);border:1px solid var(--rule)}
+.c-cell{background:var(--surface);padding:clamp(28px,3vw,42px);display:flex;flex-direction:column;gap:12px;min-width:0}
+.c-cell.wide{grid-column:1/-1}
+.c-cell .val{font-family:var(--serif);font-size:clamp(28px,2.8vw,40px);line-height:1.15;overflow-wrap:anywhere}
+.c-cell .val.ar{font-size:clamp(28px,3vw,42px);text-align:right}
+.c-cell p{color:var(--ink-soft);font-size:15.5px}
+.c-cell .act{margin-top:auto;padding-top:10px;font-size:12.5px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--crimson)}
+.mapbox{position:relative;background:#EDE9E0;min-height:300px;overflow:hidden;display:block}
+.mapbox svg{position:absolute;inset:0;width:100%;height:100%}
+.mapbox .pin{position:absolute;left:50%;top:46%;transform:translate(-50%,-100%);width:44px;color:var(--crimson);filter:drop-shadow(0 10px 12px rgba(161,29,36,.35));transition:transform .5s var(--ease)}
+.mapbox:hover .pin{transform:translate(-50%,-112%)}
+.mapbox .open{position:absolute;left:22px;bottom:22px;background:var(--ink);color:#fff;padding:12px 18px;font-size:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;display:flex;gap:10px;align-items:center}
+.mapbox .open svg{position:static;width:14px;height:14px}
+
+/* ---------- Footer ---------- */
+.footer{padding:60px clamp(24px,5vw,80px) 50px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:28px;align-items:end}
+.footer .brand-name{font-size:40px}
+.footer nav{display:flex;flex-wrap:wrap;gap:22px;font-size:13px;font-weight:600;letter-spacing:.12em;text-transform:uppercase}
+.footer small{color:var(--ink-mute);font-size:13px;display:block;width:100%;border-top:1px solid var(--rule);padding-top:22px}
+
+/* ---------- Mobile bar ---------- */
+.mbar{display:none}
+
+/* ---------- Reveal ---------- */
+.js .reveal{opacity:0;transform:translateY(34px);transition:opacity 1s var(--ease),transform 1s var(--ease);transition-delay:var(--d,0s)}
+.js .reveal.in{opacity:1;transform:none}
+.js .h-in{opacity:0;transform:translateY(105%)}
+.js .h-fade{opacity:0;transform:translateY(18px)}
+.loaded .h-in{opacity:1;transform:none;transition:transform 1.2s var(--ease),opacity 1.2s var(--ease);transition-delay:var(--d,0s)}
+.loaded .h-fade{opacity:1;transform:none;transition:transform 1s var(--ease),opacity 1s var(--ease);transition-delay:var(--d,0s)}
+.js .plate{clip-path:inset(100% 0 0 0)}
+.loaded .plate{clip-path:inset(0 0 0 0);transition:clip-path 1.6s var(--ease) .35s}
+
+/* ---------- Responsive ---------- */
+@media (max-width:1180px){
+  .nav{display:none}
+  .head-phone{display:none}
 }
-@media (max-width:640px){
-  body{font-size:16px}
-  .wrap{padding:0 18px}
-  .nav{height:66px}.brand{font-size:19px}
-  .phone,.nav-right .btn{display:none}
-  .hero{padding:44px 0 64px}
-  .lead-text{font-size:17.5px}
-  .hero-ctas .btn{flex:1;justify-content:center}
-  .ticks{display:none}
-  .services,.reviews,.visit,.trust .wrap{grid-template-columns:1fr}
-  section.block{padding:76px 0}
-  .quote-panel,.photo{aspect-ratio:auto;min-height:380px}.photo{aspect-ratio:4/3;min-height:0}
-  .quote-panel{padding:40px 30px 64px}.quote-panel p{font-size:23px}
-  .float{font-size:13px;padding:12px 14px}.float b{font-size:18px}
-  .float.two{display:none}
-  .cta-box{padding:52px 28px}
-  .point{grid-template-columns:44px 1fr;padding:24px}
-  .mobile-bar{display:flex;position:fixed;left:12px;right:12px;bottom:12px;z-index:30;gap:10px}
-  .mobile-bar .btn{flex:1;justify-content:center;box-shadow:0 14px 30px -14px color-mix(in srgb,var(--ink) 60%,transparent)}
-  .mobile-bar .btn.ghost{background:var(--surface)}
+@media (max-width:1024px){
+  .layout{grid-template-columns:1fr}
+  .aside{position:relative;height:auto;min-height:0;border-right:none;border-bottom:1px solid var(--rule);padding:calc(var(--head) + 44px) 24px 48px;gap:44px}
+  .hero{min-height:auto;padding-top:48px}
+  .hero-meta .label:last-child{display:none}
+  .steps{grid-template-columns:repeat(2,minmax(0,1fr));gap:44px 0}
+}
+@media (max-width:760px){
+  :root{--head:68px}
+  body{font-size:16px;padding-bottom:76px}
+  .header .btn{display:none}
+  .burger{display:block}
+  .brand-name{font-size:21px}
+  .aside h1{font-size:clamp(44px,12.5vw,60px)}
+  .ctas .btn{flex:1 1 100%}
+  .aside-foot{grid-template-columns:1fr}
+  .section{padding:76px 22px}
+  .hero{padding:36px 22px 40px}
+  .hero-foot{flex-direction:column;align-items:start}
+  .giant-n{font-size:clamp(120px,40vw,170px)}
+  .giant-ar{font-size:clamp(40px,13vw,60px)}
+  .plate-cap{left:22px;right:22px;bottom:22px}
+  .sec-head{grid-template-columns:1fr;gap:12px}
+  .sec-num{font-size:64px}
+  .cards,.contact-grid{grid-template-columns:1fr}
+  .card{min-height:0}
+  .about-grid{grid-template-columns:1fr}
+  .tall{aspect-ratio:4/5}
+  .why-list li{grid-template-columns:1fr;gap:8px;padding:28px 0}
+  .why-list li:hover{padding-left:0}
+  .steps{grid-template-columns:1fr;gap:36px}
+  .step{padding:0}
+  .faq .ans{padding-right:0}
+  .band svg.bg{width:110%;right:-40%;opacity:.15}
+  .band .btn{flex:1 1 100%}
+  .mbar{display:grid;grid-template-columns:1fr 1fr;position:fixed;left:0;right:0;bottom:0;z-index:60;background:var(--ink);border-top:1px solid rgba(201,162,39,.4);padding:10px 12px calc(10px + env(safe-area-inset-bottom));gap:10px}
+  .mbar a{display:flex;align-items:center;justify-content:center;gap:8px;min-height:50px;font-size:12.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase}
+  .mbar a svg{width:16px;height:16px}
+  .mbar .call{background:var(--crimson);color:#fff}
+  .mbar .map{border:1px solid rgba(246,245,242,.4);color:#fff}
+  .footer .brand-name{font-size:32px}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+  .js .reveal,.js .h-in,.js .h-fade{opacity:1!important;transform:none!important}
+  .js .plate{clip-path:none!important}
 }
 </style>
 </head>
 <body>
-<div class="concept">Website concept prepared for <b>Zaina Clinic</b> by webstudio &middot; not a live site</div>
+<a class="skip" href="#main">Skip to content</a>
 
-<header>
-  <div class="wrap nav">
-    <a href="#top" class="brand">Zaina Clinic</a>
-    <nav class="links">
-      <a href="#services">Services</a><a href="#why">Why us</a><a href="#visit">Visit</a>
-    </nav>
-    <div class="nav-right">
-      <a class="phone" href="tel:+96525322343">+96525322343</a>
-      <a class="btn" href="#visit">Let&#39;s talk</a>
-    </div>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4 12h15M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="square"/></symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A17 17 0 0 1 3 5a2 2 0 0 1 2-2z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 22s7-6.6 7-12.5A7 7 0 0 0 5 9.5C5 15.4 12 22 12 22z" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="9.5" r="2.5" fill="none" stroke="currentColor" stroke-width="1.6"/></symbol>
+    <symbol id="i-star" viewBox="0 0 24 24"><path d="M12 0l2.6 9.4L24 12l-9.4 2.6L12 24l-2.6-9.4L0 12l9.4-2.6z" fill="currentColor"/></symbol>
+  </defs>
+</svg>
+
+<header class="header" id="top">
+  <a href="#top" class="brand" aria-label="Zaina Clinic, back to top">
+    <svg class="brand-mark" viewBox="0 0 40 40" aria-hidden="true">
+      <rect x=".5" y=".5" width="39" height="39" fill="none" stroke="#0D1B2A" stroke-opacity=".35"/>
+      <path d="M8 34V17a12 12 0 0 1 24 0v17" fill="none" stroke="#A11D24" stroke-width="1.6"/>
+      <path d="M14 15h12L14 29h12" fill="none" stroke="#0D1B2A" stroke-width="1.6"/>
+      <circle cx="20" cy="9" r="1.4" fill="#C9A227"/>
+    </svg>
+    <span class="brand-name">Zaina Clinic<small>Real Estate · Hawally</small></span>
+  </a>
+  <nav class="nav" aria-label="Primary">
+    <a class="link-u" href="#services">Services</a>
+    <a class="link-u" href="#about">About</a>
+    <a class="link-u" href="#process">Process</a>
+    <a class="link-u" href="#contact">Visit</a>
+  </nav>
+  <div class="head-right">
+    <a class="head-phone link-u" href="tel:+96525322343"><svg aria-hidden="true"><use href="#i-phone"/></svg>+965 2532 2343</a>
+    <a class="btn btn-primary" href="#contact">Book a consultation</a>
+    <button class="burger" aria-label="Open menu" aria-expanded="false" aria-controls="mmenu"><span></span><span></span><span></span></button>
   </div>
 </header>
 
-<main id="top">
-<section class="hero">
-  <div class="wrap hero-grid">
-    <div class="copy">
-      <div class="eyebrow">
-        <span class="dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-7-4.4-7-10a4 4 0 017-2.6A4 4 0 0119 10c0 5.6-7 10-7 10z"/></svg></span>Real estate
-      </div>
-      <h1>Find home. Sell for <em>more.</em></h1>
-      <p class="lead-text">Local expertise, honest advice and a marketing plan that gets your home seen by the right buyers.</p>
-      <div class="hero-ctas">
-        <a class="btn" href="#visit">Book a consultation <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-        <a class="btn ghost" href="tel:+96525322343">Call +96525322343</a>
-      </div>
-      <div class="ticks">
-        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7"/></svg>Free home valuation</span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7"/></svg>Local market expert</span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7"/></svg>Premium marketing</span>
-      </div>
-    </div>
-    <div class="visual">
-      
-      <div class="quote-panel"><div class="quote-mark">“</div><div><p>Local expertise, honest advice and a marketing plan that gets your home seen by the right buyers.</p><div class="who">Zaina Clinic</div></div></div>
-      
-      
-      <div class="float two"><span class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><span><b>This week</b>Local market expert</span></div>
-    </div>
-  </div>
-  <template id="qp"><div class="quote-panel"><div class="quote-mark">“</div><div><p>Local expertise, honest advice and a marketing plan that gets your home seen by the right buyers.</p><div class="who">Zaina Clinic</div></div></div></template>
-</section>
-
-<div class="trust"><div class="wrap">
-  <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.2-8 9-4.6-.8-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg>Free home valuation</div><div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.2-8 9-4.6-.8-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg>Local market expert</div><div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.2-8 9-4.6-.8-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg>Premium marketing</div><div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.2-8 9-4.6-.8-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg>5-star client service</div>
-</div></div>
-
-<section class="block" id="services">
-  <div class="wrap">
-    <div class="section-head">
-      <div><div class="kicker">What we do</div><h2>Everything you need,<br>under one roof.</h2></div>
-      <p>From routine visits to the work that changes how you feel about your day, Zaina Clinic takes care of it properly.</p>
-    </div>
-    <div class="services">
-      
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11l8-7 8 7v9a1 1 0 01-1 1h-4v-6H9v6H5a1 1 0 01-1-1z"/></svg></div><h3>Selling</h3><p>Pricing strategy, staging advice and premium marketing.</p></div>
-      
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1-4.4-4.3 6.1-.9z"/></svg></div><h3>Buying</h3><p>Off-market access and expert negotiation.</p></div>
-      
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3" width="14" height="18" rx="1"/><path d="M9 7h2M13 7h2M9 11h2M13 11h2M9 15h2M13 15h2"/></svg></div><h3>Luxury homes</h3><p>Discreet representation for high-end properties.</p></div>
-      
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="18" r="2.5"/><circle cx="18" cy="6" r="2.5"/><path d="M8.5 18H16a3 3 0 000-6H8a3 3 0 010-6h7.5"/></svg></div><h3>Relocation</h3><p>Moving to the area? We make it easy.</p></div>
-      
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/><path d="M19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8z"/></svg></div><h3>Home valuation</h3><p>Find out what your home is worth today.</p></div>
-      
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-7-4.4-7-10a4 4 0 017-2.6A4 4 0 0119 10c0 5.6-7 10-7 10z"/></svg></div><h3>First-time buyers</h3><p>Patient guidance from first viewing to keys.</p></div>
-      
-    </div>
-  </div>
-</section>
-
-<section class="block why" id="why">
-  <div class="wrap why-grid">
-    <div>
-      <div class="kicker">Why clients choose us</div>
-      <h2>The Kuwait City real estate agent people recommend to their friends.</h2>
-      <p class="intro">it still comes down to the same three things.</p>
-    </div>
-    <div class="points">
-      
-      <div class="point"><div class="num">01</div><div><h3>Local expert</h3><p>Deep knowledge of every neighbourhood we serve.</p></div></div>
-      
-      <div class="point"><div class="num">02</div><div><h3>Premium marketing</h3><p>Professional photography, video and targeted promotion.</p></div></div>
-      
-      <div class="point"><div class="num">03</div><div><h3>Skilled negotiator</h3><p>We protect your interests at every step.</p></div></div>
-      
-    </div>
-  </div>
-</section>
-
-
-
-<section class="cta-band" id="book">
-  <div class="wrap"><div class="cta-box">
-    <div><h2>Ready when you are.</h2><p>Book a consultation in under a minute, or give us a call and talk to a real person.</p></div>
-    <div class="actions">
-      <a class="btn" href="#visit">Book a consultation</a>
-      <a class="btn ghost" href="tel:+96525322343">Call +96525322343</a>
-    </div>
-  </div></div>
-</section>
-
-<section class="block" id="visit" style="padding-top:0">
-  <div class="wrap">
-    <div class="kicker">Visit us</div><h2>Come say hello.</h2>
-    <div class="visit">
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11l8-7 8 7v9a1 1 0 01-1 1h-4v-6H9v6H5a1 1 0 01-1-1z"/></svg></div><h3>Address</h3><p>شارع 7 41, حولى</p></div>
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div><h3>Phone</h3><p><a href="tel:+96525322343">+96525322343</a></p><p style="margin-top:10px">Call or message us for today's opening hours.</p></div>
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-7-4.4-7-10a4 4 0 017-2.6A4 4 0 0119 10c0 5.6-7 10-7 10z"/></svg></div><h3>Local market expert</h3><p>Book a consultation online or by phone and we'll take care of the rest.</p></div>
-    </div>
-  </div>
-</section>
-</main>
-
-<footer><div class="wrap">
-  <span>© 2026 Zaina Clinic</span>
-  <span>Concept design by webstudio. Not affiliated with or endorsed by Zaina Clinic.</span>
-</div></footer>
-
-<div class="mobile-bar">
-  <a class="btn ghost" href="tel:+96525322343">Call</a>
-  <a class="btn" href="#visit">Let&#39;s talk</a>
+<div class="mobile-menu" id="mmenu" aria-hidden="true">
+  <a class="m-link" href="#services">Services <span>01</span></a>
+  <a class="m-link" href="#about">About <span>02</span></a>
+  <a class="m-link" href="#why">Approach <span>03</span></a>
+  <a class="m-link" href="#process">Process <span>04</span></a>
+  <a class="m-link" href="#contact">Visit <span>06</span></a>
+  <a class="btn btn-primary" href="tel:+96525322343"><svg aria-hidden="true"><use href="#i-phone"/></svg>Call +965 2532 2343</a>
 </div>
-</body>
+
+<div class="layout">
+  <!-- ===== Sticky left column ===== -->
+  <aside class="aside">
+    <div class="aside-top">
+      <p class="label h-fade" style="--d:.1s"><b>Zaina Clinic</b> &nbsp;·&nbsp; Real Estate, Hawally</p>
+      <h1>
+        <span class="line"><span class="h-in" style="--d:.2s">Property,</span></span>
+        <span class="line"><span class="h-in" style="--d:.32s">handled with</span></span>
+        <span class="line"><span class="h-in" style="--d:.44s"><em class="accent">care.</em></span></span>
+      </h1>
+      <p class="sub h-fade" style="--d:.7s">A real estate agent on Street 7, Hawally. Buying, selling or renting in Kuwait City, it starts with one honest conversation.</p>
+      <div class="ctas h-fade" style="--d:.85s">
+        <a class="btn btn-primary" href="tel:+96525322343">Call the office <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        <a class="btn btn-ghost" href="#services">Our services</a>
+      </div>
+    </div>
+    <div class="aside-foot h-fade" style="--d:1s">
+      <div><span class="label">Telephone</span><a class="link-u" href="tel:+96525322343">+965 2532 2343</a></div>
+      <div><span class="label">Office</span><a class="link-u" href="https://maps.google.com/?q=Zaina%20Clinic%2C%20Street%207%2C%20Hawally%2C%20Kuwait" target="_blank" rel="noopener"><span class="ar">شارع 7 41, حولى</span></a></div>
+    </div>
+  </aside>
+
+  <!-- ===== Scrolling right column ===== -->
+  <main class="main" id="main">
+
+    <section class="hero" aria-label="Introduction">
+      <div class="hero-meta h-fade" style="--d:.3s">
+        <span class="label">The Hawally Edition</span>
+        <span class="label">Kuwait City · <b>Real Estate</b></span>
+      </div>
+      <div class="hero-stage">
+        <div class="plate" data-parallax>
+          <svg viewBox="0 0 300 400" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+            <defs>
+              <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1A3048"/><stop offset=".7" stop-color="#0D1B2A"/></linearGradient>
+              <linearGradient id="sun" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#E7C75A"/><stop offset="1" stop-color="#A11D24"/></linearGradient>
+            </defs>
+            <rect width="300" height="400" fill="url(#sky)"/>
+            <circle cx="210" cy="120" r="54" fill="url(#sun)" opacity=".92"/>
+            <g fill="none" stroke="#C9A227" stroke-opacity=".55" stroke-width=".8">
+              <path d="M40 400V190a60 60 0 0 1 120 0v210"/>
+              <path d="M56 400V194a44 44 0 0 1 88 0v206"/>
+              <path d="M100 150v250"/>
+              <path d="M56 250h88M56 310h88"/>
+            </g>
+            <g fill="#0A1520">
+              <rect x="170" y="210" width="38" height="190"/>
+              <rect x="212" y="170" width="30" height="230"/>
+              <rect x="246" y="235" width="54" height="165"/>
+              <rect x="0" y="300" width="36" height="100"/>
+            </g>
+            <g fill="#C9A227" opacity=".7">
+              <rect x="177" y="226" width="5" height="8"/><rect x="190" y="226" width="5" height="8"/><rect x="177" y="250" width="5" height="8"/><rect x="196" y="274" width="5" height="8"/>
+              <rect x="218" y="190" width="4" height="7"/><rect x="230" y="206" width="4" height="7"/><rect x="218" y="238" width="4" height="7"/>
+              <rect x="256" y="252" width="5" height="8"/><rect x="276" y="276" width="5" height="8"/><rect x="256" y="300" width="5" height="8"/>
+            </g>
+            <path d="M0 360h300" stroke="#C9A227" stroke-opacity=".35"/>
+          </svg>
+          <div class="plate-cap">
+            <div><span class="label">Plate I</span><div class="serif">Street 7,<br>Hawally</div></div>
+            <span class="label">Est. Kuwait City</span>
+          </div>
+        </div>
+        <div class="giant giant-n h-fade" style="--d:1s" aria-hidden="true" data-drift="-0.08"><sup>Nº</sup>41</div>
+        <div class="giant giant-ar ar h-fade" style="--d:1.15s" aria-hidden="true" data-drift="0.06">حولى</div>
+      </div>
+      <div class="hero-foot h-fade" style="--d:1.2s">
+        <p class="lead" style="font-size:18px;max-width:38ch">Every address has a story. We help you write the next chapter of yours.</p>
+        <span class="scroll-cue label"><i></i>Scroll</span>
+      </div>
+    </section>
+
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-track">
+        <div class="marquee-group">
+          <span class="marquee-item">Buy</span><svg class="marquee-star"><use href="#i-star"/></svg>
+          <span class="marquee-item it">Sell</span><svg class="marquee-star"><use href="#i-star"/></svg>
+          <span class="marquee-item">Rent</span><svg class="marquee-star"><use href="#i-star"/></svg>
+          <span class="marquee-item it">Hawally</span><svg class="marquee-star"><use href="#i-star"/></svg>
+          <span class="marquee-item">Kuwait City</span><svg class="marquee-star"><use href="#i-star"/></svg>
+          <span class="marquee-item it">Street 7</span><svg class="marquee-star"><use href="#i-star"/></svg>
+        </div>
+        <div class="marquee-group">
+          <span class="marquee-item">Buy</span><svg class="marquee-star"><use href="#i-star"/></svg>
+          <span class="marquee-item it">Sell</span><svg class="marquee-star"><use href="#i-star"/></svg>
+          <span class="marquee-item">Rent</span><svg class="marquee-star"><use href="#i-star"/></svg>
+          <span class="marquee-item it">Hawally</span><svg class="marquee-star"><use href="#i-star"/></svg>
+          <span class="marquee-item">Kuwait City</span><svg class="marquee-star"><use href="#i-star"/></svg>
+          <span class="marquee-item it">Street 7</span><svg class="marquee-star"><use href="#i-star"/></svg>
+        </div>
+      </div>
+    </div>
+
+    <!-- 01 Services -->
+    <section class="section" id="services">
+      <div class="sec-head reveal">
+        <span class="label">Services</span>
+        <span class="sec-num">01</span>
+        <h2>Where we <em class="accent">help</em></h2>
+      </div>
+      <div class="cards">
+        <article class="card reveal" style="--d:0s">
+          <div class="card-top"><span class="card-num">I.</span>
+            <svg class="card-ico" viewBox="0 0 54 54" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M8 48V24L27 8l19 16v24z"/><path d="M21 48V33h12v15"/><circle cx="27" cy="21" r="3" stroke="#A11D24"/></svg>
+          </div>
+          <h3>Buying a home</h3>
+          <p>Tell us how you want to live. We listen first, then help you find a property that fits your family, your budget and your plans.</p>
+          <a class="more" href="#contact">Start your search <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        </article>
+        <article class="card reveal" style="--d:.1s">
+          <div class="card-top"><span class="card-num">II.</span>
+            <svg class="card-ico" viewBox="0 0 54 54" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><rect x="10" y="12" width="34" height="36"/><path d="M10 22h34M20 12V6h14v6"/><path d="M18 34l6 6 12-12" stroke="#A11D24"/></svg>
+          </div>
+          <h3>Selling your property</h3>
+          <p>Your property, presented with the respect it deserves. Clear advice, careful presentation and steady guidance until the keys change hands.</p>
+          <a class="more" href="#contact">Talk about selling <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        </article>
+        <article class="card reveal" style="--d:.2s">
+          <div class="card-top"><span class="card-num">III.</span>
+            <svg class="card-ico" viewBox="0 0 54 54" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><circle cx="18" cy="27" r="9"/><path d="M27 27h20M40 27v7M46 27v5"/><circle cx="18" cy="27" r="3" stroke="#A11D24"/></svg>
+          </div>
+          <h3>Renting &amp; leasing</h3>
+          <p>Whether you are looking for a place to rent or a tenant for your own, we keep the process simple, clear and fair for both sides.</p>
+          <a class="more" href="#contact">Find a rental <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        </article>
+        <article class="card reveal" style="--d:.3s">
+          <div class="card-top"><span class="card-num">IV.</span>
+            <svg class="card-ico" viewBox="0 0 54 54" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M8 44h38M12 44V30M22 44V20M32 44V26M42 44V12"/><path d="M12 24l10-10 10 6 10-12" stroke="#A11D24"/></svg>
+          </div>
+          <h3>Property advice</h3>
+          <p>Not sure where to begin? Sit down with us in Hawally and talk it through. A straight answer, before you commit to anything.</p>
+          <a class="more" href="tel:+96525322343">Call for advice <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        </article>
+      </div>
+    </section>
+
+    <!-- 02 About -->
+    <section class="section" id="about">
+      <div class="sec-head reveal">
+        <span class="label">Our story</span>
+        <span class="sec-num">02</span>
+        <h2>Rooted in <em class="accent">Hawally</em></h2>
+      </div>
+      <div class="about-grid">
+        <div class="about-copy">
+          <p class="pull reveal">A home is the biggest decision most of us make. It deserves an agent who treats it that way.</p>
+          <p class="dropcap reveal">Zaina Clinic is a real estate agent working from Street 7 in Hawally, in the heart of Kuwait City. We believe property should feel personal, so every conversation starts with you, not with a listing.</p>
+          <p class="reveal">Visit us at the office or simply pick up the phone. You will speak with people who know the neighbourhood, take time to understand what you need, and tell you plainly what they think.</p>
+          <div class="ctas reveal">
+            <a class="btn btn-ghost" href="https://maps.google.com/?q=Zaina%20Clinic%2C%20Street%207%2C%20Hawally%2C%20Kuwait" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-pin"/></svg>Find the office</a>
+          </div>
+        </div>
+        <figure class="tall reveal" style="--d:.15s" data-parallax-soft>
+          <svg viewBox="0 0 200 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+            <g fill="none" stroke="#C9A227" stroke-opacity=".5" stroke-width=".7">
+              <path d="M30 300V120a70 70 0 0 1 140 0v180"/>
+              <path d="M46 300V124a54 54 0 0 1 108 0v176"/>
+              <path d="M62 300V128a38 38 0 0 1 76 0v172"/>
+            </g>
+            <path d="M78 300V132a22 22 0 0 1 44 0v168z" fill="#A11D24"/>
+            <circle cx="100" cy="70" r="4" fill="#C9A227"/>
+            <path d="M0 270h200" stroke="#F6F5F2" stroke-opacity=".2"/>
+          </svg>
+          <figcaption class="tag"><span>Street 7</span><span class="ar">حولى</span></figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- 03 Why -->
+    <section class="section why" id="why">
+      <div class="sec-head reveal">
+        <span class="label">Our approach</span>
+        <span class="sec-num">03</span>
+        <h2>Why clients <em style="font-style:italic;color:var(--gold)">call us</em></h2>
+      </div>
+      <ul class="why-list">
+        <li class="reveal"><span class="n">i.</span><h3>You are heard first</h3><p>We start with your needs, your timing and your budget, then shape the search or sale around them.</p></li>
+        <li class="reveal"><span class="n">ii.</span><h3>Local, in person</h3><p>An office on Street 7 in Hawally, so you can sit across the table from us rather than chase an inbox.</p></li>
+        <li class="reveal"><span class="n">iii.</span><h3>Straight talk</h3><p>Honest guidance at every step, including when the right answer is to wait.</p></li>
+        <li class="reveal"><span class="n">iv.</span><h3>Discretion</h3><p>Property is private. Your plans, your finances and your decisions stay between us.</p></li>
+      </ul>
+    </section>
+
+    <!-- 04 Process -->
+    <section class="section" id="process">
+      <div class="sec-head reveal">
+        <span class="label">How it works</span>
+        <span class="sec-num">04</span>
+        <h2>Four quiet <em class="accent">steps</em></h2>
+      </div>
+      <div class="steps">
+        <div class="step reveal" style="--d:0s"><span class="big">I</span><div class="step-line"></div><h3>Call us</h3><p>Ring +965 2532 2343 and tell us what you are looking for.</p></div>
+        <div class="step reveal" style="--d:.12s"><span class="big">II</span><div class="step-line"></div><h3>Meet</h3><p>Visit the Hawally office and talk through your plans in detail.</p></div>
+        <div class="step reveal" style="--d:.24s"><span class="big">III</span><div class="step-line"></div><h3>Shortlist</h3><p>We bring you options or buyers that genuinely match your brief.</p></div>
+        <div class="step reveal" style="--d:.36s"><span class="big">IV</span><div class="step-line"></div><h3>Move forward</h3><p>We guide you through to the finish, so the final step feels easy.</p></div>
+      </div>
+    </section>
+
+    <!-- 05 Practical details -->
+    <section class="section" id="faq">
+      <div class="sec-head reveal">
+        <span class="label">Good to know</span>
+        <span class="sec-num">05</span>
+        <h2>Practical <em class="accent">details</em></h2>
+      </div>
+      <div class="faq reveal">
+        <details>
+          <summary>Where is the office? <span class="pm" aria-hidden="true"></span></summary>
+          <div class="ans">You will find us at <span class="ar">شارع 7 41, حولى</span> (Street 7, Hawally), Kuwait City. <a href="https://maps.google.com/?q=Zaina%20Clinic%2C%20Street%207%2C%20Hawally%2C%20Kuwait" target="_blank" rel="noopener">Open in Google Maps</a>.</div>
+        </details>
+        <details>
+          <summary>What are your opening hours? <span class="pm" aria-hidden="true"></span></summary>
+          <div class="ans">Our hours are not listed online yet, so please <a href="tel:+96525322343">call +965 2532 2343</a> before you visit and we will confirm a good time.</div>
+        </details>
+        <details>
+          <summary>What can you help me with? <span class="pm" aria-hidden="true"></span></summary>
+          <div class="ans">Zaina Clinic is a real estate agent. Call us about buying, selling or renting property in Kuwait City and we will tell you how we can help.</div>
+        </details>
+        <details>
+          <summary>What is the fastest way to reach you? <span class="pm" aria-hidden="true"></span></summary>
+          <div class="ans">A phone call. Dial <a href="tel:+96525322343">+965 2532 2343</a> and speak to us directly.</div>
+        </details>
+      </div>
+    </section>
+
+    <!-- CTA band -->
+    <section class="section band" aria-label="Get in touch">
+      <svg class="bg" viewBox="0 0 200 240" fill="none" stroke="currentColor" stroke-width=".8" aria-hidden="true">
+        <path d="M10 240V100a90 90 0 0 1 180 0v140"/><path d="M30 240V104a70 70 0 0 1 140 0v136"/><path d="M50 240V108a50 50 0 0 1 100 0v132"/><path d="M70 240V112a30 30 0 0 1 60 0v128"/>
+      </svg>
+      <p class="label reveal">Your next address</p>
+      <h2 class="reveal">Let's find the <em>right</em> place.</h2>
+      <div class="ctas reveal">
+        <a class="btn btn-primary" href="tel:+96525322343"><svg aria-hidden="true"><use href="#i-phone"/></svg>+965 2532 2343</a>
+        <a class="btn btn-ghost" href="https://maps.google.com/?q=Zaina%20Clinic%2C%20Street%207%2C%20Hawally%2C%20Kuwait" target="_blank" rel="noopener">Get directions</a>
+      </div>
+    </section>
+
+    <!-- 06 Contact -->
+    <section class="section" id="contact">
+      <div class="sec-head reveal">
+        <span class="label">Visit &amp; contact</span>
+        <span class="sec-num">06</span>
+        <h2>Come and <em class="accent">see us</em></h2>
+      </div>
+      <div class="contact-grid reveal">
+        <a class="c-cell" href="tel:+96525322343">
+          <span class="label">Telephone</span>
+          <span class="val">+965 2532 2343</span>
+          <p>The quickest way to reach us.</p>
+          <span class="act link-u">Call now →</span>
+        </a>
+        <div class="c-cell">
+          <span class="label">Address</span>
+          <span class="val ar">شارع 7 41, حولى</span>
+          <p>Street 7, Hawally, Kuwait City</p>
+          <a class="act link-u" href="https://maps.google.com/?q=Zaina%20Clinic%2C%20Street%207%2C%20Hawally%2C%20Kuwait" target="_blank" rel="noopener">Directions →</a>
+        </div>
+        <div class="c-cell">
+          <span class="label">Hours</span>
+          <span class="val">By phone</span>
+          <p>Opening hours are not published. Please call ahead to confirm before visiting.</p>
+        </div>
+        <div class="c-cell">
+          <span class="label">Specialism</span>
+          <span class="val">Real estate</span>
+          <p>Buying, selling and renting in Kuwait City.</p>
+        </div>
+        <a class="c-cell wide mapbox" href="https://maps.google.com/?q=Zaina%20Clinic%2C%20Street%207%2C%20Hawally%2C%20Kuwait" target="_blank" rel="noopener" aria-label="Open Zaina Clinic location in Google Maps">
+          <svg viewBox="0 0 600 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+            <rect width="600" height="300" fill="#EDE9E0"/>
+            <g stroke="#FFFFFF" stroke-width="14" fill="none"><path d="M-20 140 Q200 120 620 170"/><path d="M300 -20 L280 320"/></g>
+            <g stroke="#FFFFFF" stroke-width="6" fill="none"><path d="M-20 60H620M-20 230H620M120 -20V320M460 -20V320M40 300 L560 0"/></g>
+            <g fill="#E1DACB"><rect x="140" y="72" width="120" height="50"/><rect x="320" y="72" width="120" height="50"/><rect x="140" y="160" width="120" height="58"/><rect x="480" y="180" width="110" height="40"/><rect x="0" y="160" width="100" height="58"/></g>
+            <path d="M-20 140 Q200 120 620 170" stroke="#C9A227" stroke-width="2" stroke-dasharray="6 8" fill="none"/>
+            <text x="560" y="160" text-anchor="end" font-family="Karla,sans-serif" font-size="11" letter-spacing="3" fill="#5E6873">STREET 7</text>
+          </svg>
+          <svg class="pin" viewBox="0 0 24 30" aria-hidden="true"><path d="M12 30S2 18.5 2 11a10 10 0 0 1 20 0c0 7.5-10 19-10 19z" fill="currentColor"/><circle cx="12" cy="11" r="3.6" fill="#fff"/></svg>
+          <span class="open">Open in Google Maps <svg aria-hidden="true"><use href="#i-arrow"/></svg></span>
+        </a>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div>
+        <span class="brand-name">Zaina Clinic</span>
+        <p class="label" style="margin-top:10px">Real Estate · Hawally · Kuwait City</p>
+      </div>
+      <nav aria-label="Footer">
+        <a class="link-u" href="#services">Services</a>
+        <a class="link-u" href="#about">About</a>
+        <a class="link-u" href="#process">Process</a>
+        <a class="link-u" href="tel:+96525322343">+965 2532 2343</a>
+      </nav>
+      <small>© <span id="yr">2026</span> Zaina Clinic. <span class="ar">شارع 7 41, حولى</span></small>
+    </footer>
+  </main>
+</div>
+
+<nav class="mbar" aria-label="Quick contact">
+  <a class="call" href="tel:+96525322343"><svg aria-hidden="true"><use href="#i-phone"/></svg>Call</a>
+  <a class="map" href="https://maps.google.com/?q=Zaina%20Clinic%2C%20Street%207%2C%20Hawally%2C%20Kuwait" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-pin"/></svg>Directions</a>
+</nav>
+
+<script>
+(function(){
+  var d=document,root=d.documentElement,body=d.body;
+  root.classList.add('js');
+  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  d.getElementById('yr').textContent=new Date().getFullYear();
+
+  requestAnimationFrame(function(){requestAnimationFrame(function(){root.classList.add('loaded')})});
+
+  var header=d.querySelector('.header');
+  var burger=d.querySelector('.burger');
+  var menu=d.getElementById('mmenu');
+  function setMenu(open){
+    body.classList.toggle('menu-open',open);
+    burger.setAttribute('aria-expanded',open);
+    burger.setAttribute('aria-label',open?'Close menu':'Open menu');
+    menu.setAttribute('aria-hidden',!open);
+    body.style.overflow=open?'hidden':'';
+  }
+  burger.addEventListener('click',function(){setMenu(!body.classList.contains('menu-open'))});
+  menu.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){setMenu(false)})});
+  d.addEventListener('keydown',function(e){if(e.key==='Escape')setMenu(false)});
+
+  var items=d.querySelectorAll('.reveal');
+  if('IntersectionObserver' in window && !reduce){
+    var io=new IntersectionObserver(function(es){
+      es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}});
+    },{threshold:.15,rootMargin:'0px 0px -6% 0px'});
+    items.forEach(function(el){io.observe(el)});
+  }else{items.forEach(function(el){el.classList.add('in')})}
+
+  var plate=d.querySelector('[data-parallax]');
+  var drifts=d.querySelectorAll('[data-drift]');
+  var soft=d.querySelector('[data-parallax-soft] svg');
+  var ticking=false;
+  function onScroll(){
+    var y=window.scrollY;
+    header.classList.toggle('scrolled',y>10);
+    if(reduce)return;
+    if(!ticking){
+      ticking=true;
+      requestAnimationFrame(function(){
+        if(y<window.innerHeight*1.4){
+          if(plate)plate.style.transform='translate3d(0,'+(y*.12).toFixed(1)+'px,0)';
+          drifts.forEach(function(el){el.style.transform='translate3d(0,'+(y*parseFloat(el.dataset.drift)*-3).toFixed(1)+'px,0)'});
+        }
+        if(soft){
+          var r=soft.parentNode.getBoundingClientRect();
+          if(r.top<window.innerHeight&&r.bottom>0){
+            soft.style.transform='translate3d(0,'+((r.top-window.innerHeight/2)*-.06).toFixed(1)+'px,0) scale(1.12)';
+          }
+        }
+        ticking=false;
+      });
+    }
+  }
+  window.addEventListener('scroll',onScroll,{passive:true});
+  onScroll();
+})();
+</script>
+<div id="lm-concept" style="position:fixed;left:12px;bottom:12px;z-index:2147483647;font:500 11px/1.3 -apple-system,BlinkMacSystemFont,Segoe UI,sans-serif;letter-spacing:.02em;background:rgba(15,15,18,.82);color:#f4f1ea;padding:7px 11px;border-radius:999px;backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);pointer-events:none;max-width:70vw">Website concept for Zaina Clinic by webstudio &middot; not the live site</div><p style="margin:0;padding:18px 16px 70px;text-align:center;font:12px/1.5 -apple-system,sans-serif;color:#8a8a8a;background:#0e0e10">Concept design by webstudio. Not affiliated with or endorsed by Zaina Clinic.</p></body>
 </html>
