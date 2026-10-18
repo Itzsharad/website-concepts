@@ -1,291 +1,722 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src * data: blob:; media-src 'self' data:; style-src 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com data:; script-src 'unsafe-inline'; connect-src 'none'; frame-src 'none'; form-action 'none'; base-uri 'none'; object-src 'none'">
 <meta name="robots" content="noindex, nofollow">
-<title>West Coast Washers | Website concept</title>
+<style>html,body{max-width:100%;overflow-x:clip}</style>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>West Coast Washers | Pressure Washing, Window Washing &amp; Gutter Cleaning in the San Gabriel Valley</title>
+<meta name="description" content="Insured, locally owned exterior cleaning in Pasadena, South Pasadena, San Marino, Alhambra and San Gabriel. Pressure washing, window washing, gutter cleaning and more. Free estimates: (626) 803-0278.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap" rel="stylesheet">
 <style>
 :root{
-  --bg:#f3f6f8;--surface:#ffffff;--ink:#14283a;--muted:#566676;
-  --accent:#2a6f97;--accent-ink:#ffffff;--gold:#e0a43a;--soft:#e3eef5;
-  --radius:22px;--max:1180px;
-  --serif:"Fraunces",Georgia,serif;--sans:"Manrope",system-ui,-apple-system,sans-serif;
+  --bg:#EDF5FB;--card:#fff;--ink:#10314D;--ink-2:#3d5a74;--acc:#2F86C8;--acc-d:#1d5f94;--acc-l:#d9eaf7;
+  --sand:#F6C38B;--sand-l:#fbeedd;--brand:#00d084;
+  --r:22px;--sh:0 1px 2px rgba(16,49,77,.05),0 12px 32px -12px rgba(16,49,77,.18);
+  --sh-lg:0 2px 4px rgba(16,49,77,.05),0 30px 60px -20px rgba(16,49,77,.28);
+  --serif:"Playfair Display",Georgia,serif;--sans:"DM Sans",system-ui,-apple-system,sans-serif;
+  --ease:cubic-bezier(.2,.7,.2,1);
 }
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
-a{color:inherit;text-decoration:none}
-img{max-width:100%;display:block}
-.wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
-.concept{background:var(--ink);color:var(--bg);font-size:13px;text-align:center;padding:8px 16px;letter-spacing:.02em}
-.concept b{color:var(--gold);font-weight:600}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.65 var(--sans);overflow-x:hidden}
+img{display:block;max-width:100%}
+a{color:inherit}
+h1,h2,h3{font-family:var(--serif);font-weight:600;line-height:1.08;margin:0;letter-spacing:-.01em}
+h2{font-size:clamp(2.1rem,4.6vw,3.6rem)}
+h2 em,h1 em{font-style:italic;color:var(--acc)}
+p{margin:0 0 1em}
+.wrap{width:min(1220px,100% - 40px);margin-inline:auto}
+section{padding:clamp(80px,11vw,140px) 0;position:relative}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;font:700 .74rem/1 var(--sans);letter-spacing:.22em;text-transform:uppercase;color:var(--acc-d);margin-bottom:22px}
+.eyebrow::before{content:"";width:28px;height:1px;background:currentColor}
+.lead{font-size:1.12rem;color:var(--ink-2);max-width:60ch}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+
+/* buttons */
+.btn{--b:var(--ink);display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:16px 28px;border-radius:999px;font:700 .95rem/1.2 var(--sans);letter-spacing:.02em;text-decoration:none;border:1.5px solid var(--b);transition:transform .35s var(--ease),box-shadow .35s var(--ease),background .3s,color .3s;text-align:center}
+.btn-p{background:var(--ink);color:#fff}
+.btn-p:hover{background:var(--acc-d);border-color:var(--acc-d);transform:translateY(-3px);box-shadow:0 14px 30px -10px rgba(29,95,148,.6)}
+.btn-g{background:rgba(255,255,255,.6);color:var(--ink)}
+.btn-g:hover{background:#fff;transform:translateY(-3px);box-shadow:var(--sh)}
+.btn svg{width:18px;height:18px;flex:none}
+.ul{text-decoration:none;background:linear-gradient(currentColor,currentColor) 0 100%/0 1.5px no-repeat;transition:background-size .4s var(--ease);padding-bottom:2px}
+.ul:hover{background-size:100% 1.5px}
 
 /* header */
-header{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:saturate(1.4) blur(10px);border-bottom:1px solid color-mix(in srgb,var(--ink) 8%,transparent)}
-.nav{display:flex;align-items:center;justify-content:space-between;height:76px;gap:24px}
-.brand{font-family:var(--serif);font-size:23px;font-weight:600;letter-spacing:-.01em;line-height:1.1;max-width:340px}
-.links{display:flex;gap:30px;font-size:15px;font-weight:500;color:var(--muted)}
-.links a:hover{color:var(--ink)}
-.nav-right{display:flex;align-items:center;gap:18px}
-.phone{font-weight:600;font-size:15px;white-space:nowrap}
-.btn{display:inline-flex;align-items:center;gap:10px;background:var(--accent);color:var(--accent-ink);padding:14px 26px;border-radius:999px;font-weight:600;font-size:15.5px;transition:transform .2s ease,box-shadow .2s ease;white-space:nowrap}
-.btn:hover{transform:translateY(-2px);box-shadow:0 12px 28px -12px var(--accent)}
-.btn.ghost{background:transparent;color:var(--ink);border:1.5px solid color-mix(in srgb,var(--ink) 20%,transparent)}
-.btn.ghost:hover{box-shadow:none;border-color:var(--ink)}
-.btn svg{width:18px;height:18px}
+.hdr{position:fixed;inset:14px 0 auto;z-index:50;transition:inset .4s var(--ease)}
+.hdr .bar{display:flex;align-items:center;gap:24px;padding:10px 12px 10px 18px;border-radius:999px;background:rgba(255,255,255,.62);backdrop-filter:blur(18px) saturate(1.4);-webkit-backdrop-filter:blur(18px) saturate(1.4);border:1px solid rgba(255,255,255,.8);box-shadow:0 10px 30px -18px rgba(16,49,77,.35)}
+.logo{display:flex;align-items:center;gap:12px;text-decoration:none;flex:none}
+.logo img{height:42px;width:auto}
+.logo b{font:600 1.12rem/1 var(--serif);white-space:nowrap}
+.nav{display:flex;gap:26px;margin-left:auto;font-size:.92rem;font-weight:500}
+.nav a{text-decoration:none}
+.hdr .tel{font-weight:700;font-size:.92rem;text-decoration:none;white-space:nowrap}
+.hdr .btn{padding:12px 20px;font-size:.86rem}
+.burger{display:none;margin-left:auto;width:46px;height:46px;border-radius:50%;border:0;background:var(--ink);color:#fff;cursor:pointer;place-items:center}
+.burger span,.burger span::before,.burger span::after{display:block;width:18px;height:1.5px;background:currentColor;position:relative;transition:.3s}
+.burger span::before,.burger span::after{content:"";position:absolute;left:0}
+.burger span::before{top:-6px}.burger span::after{top:6px}
+.menu-open .burger span{background:transparent}
+.menu-open .burger span::before{top:0;transform:rotate(45deg)}
+.menu-open .burger span::after{top:0;transform:rotate(-45deg)}
+.mnav{position:fixed;inset:0;z-index:40;background:rgba(237,245,251,.97);backdrop-filter:blur(10px);display:flex;flex-direction:column;justify-content:center;padding:100px 32px 40px;gap:6px;opacity:0;visibility:hidden;transition:.4s var(--ease)}
+.mnav a{font:600 2rem/1.4 var(--serif);text-decoration:none}
+.mnav .btn{margin-top:24px;font:700 1rem/1.2 var(--sans)}
+.menu-open .mnav{opacity:1;visibility:visible}
 
 /* hero */
-.hero{padding:72px 0 88px}
-.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:64px;align-items:center}
-.eyebrow{display:inline-flex;align-items:center;gap:10px;background:var(--surface);border:1px solid color-mix(in srgb,var(--ink) 10%,transparent);padding:8px 16px 8px 10px;border-radius:999px;font-size:14px;font-weight:600;color:var(--muted)}
-.stars{color:var(--gold);letter-spacing:1px;font-size:14px}
-.eyebrow .dot{width:26px;height:26px;border-radius:50%;background:var(--soft);display:grid;place-items:center;color:var(--accent)}
-h1{font-family:var(--serif);font-weight:500;font-size:clamp(44px,5.6vw,74px);line-height:1.02;letter-spacing:-.025em;margin:26px 0 22px}
-h1 em{font-style:italic;color:var(--accent)}
-.lead-text{font-size:19.5px;color:var(--muted);max-width:540px}
-.hero-ctas{display:flex;gap:14px;margin-top:36px;flex-wrap:wrap}
-.ticks{display:flex;gap:22px;margin-top:34px;flex-wrap:wrap;font-size:14.5px;font-weight:600;color:var(--muted)}
-.ticks span{display:flex;align-items:center;gap:8px}
-.ticks svg{width:18px;height:18px;color:var(--accent)}
-.visual{position:relative}
-.photo{aspect-ratio:4/5;border-radius:calc(var(--radius) + 10px);overflow:hidden;background:var(--soft);box-shadow:0 40px 80px -40px color-mix(in srgb,var(--ink) 55%,transparent)}
-.photo img{width:100%;height:100%;object-fit:cover}
-.quote-panel{aspect-ratio:4/5;border-radius:calc(var(--radius) + 10px);background:linear-gradient(155deg,var(--accent),color-mix(in srgb,var(--accent) 55%,var(--ink)));color:var(--accent-ink);padding:52px 46px;display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden;box-shadow:0 40px 80px -40px color-mix(in srgb,var(--ink) 60%,transparent)}
-.quote-panel:before{content:"";position:absolute;width:420px;height:420px;border-radius:50%;right:-160px;top:-160px;background:color-mix(in srgb,var(--accent-ink) 9%,transparent)}
-.quote-panel:after{content:"";position:absolute;width:260px;height:260px;border-radius:50%;left:-90px;bottom:-110px;border:1.5px solid color-mix(in srgb,var(--accent-ink) 22%,transparent)}
-.quote-mark{font-family:var(--serif);font-size:120px;line-height:.6;opacity:.35}
-.quote-panel p{font-family:var(--serif);font-size:28px;line-height:1.3;position:relative;z-index:1}
-.quote-panel .who{font-family:var(--sans);font-size:15px;opacity:.85;margin-top:22px;font-weight:600}
-.float{position:absolute;background:var(--surface);color:var(--ink);border-radius:18px;padding:16px 20px;box-shadow:0 24px 50px -24px color-mix(in srgb,var(--ink) 50%,transparent);display:flex;align-items:center;gap:14px;font-size:14px;line-height:1.35}
-.float b{font-size:22px;font-family:var(--serif);font-weight:600;display:block}
-.float.one{left:-34px;bottom:-28px}
-.float.two{right:-22px;top:44px}
-.float .badge{width:44px;height:44px;border-radius:14px;background:var(--soft);display:grid;place-items:center;color:var(--accent)}
-.float .badge svg{width:22px;height:22px}
+.hero{min-height:100vh;min-height:100svh;padding:140px 0 90px;display:flex;align-items:center;overflow:hidden;background:
+  radial-gradient(900px 500px at 85% 15%,rgba(246,195,139,.32),transparent 60%),
+  radial-gradient(800px 600px at 0% 100%,rgba(47,134,200,.16),transparent 60%),var(--bg)}
+.hero .wrap{display:grid;grid-template-columns:1.02fr .98fr;gap:clamp(30px,5vw,70px);align-items:center}
+.hero h1{font-size:clamp(2.8rem,6.6vw,5.6rem);line-height:1.02;letter-spacing:-.025em;margin-bottom:28px}
+.hero h1 .ln{display:block}
+.hero h1 em{position:relative;white-space:nowrap}
+.hero h1 em svg{position:absolute;left:-2%;bottom:-.12em;width:104%;height:.32em;color:var(--sand)}
+.hero .lead{margin-bottom:36px}
+.ctas{display:flex;flex-wrap:wrap;gap:14px}
+.proof{display:flex;flex-wrap:wrap;gap:12px 28px;margin-top:42px;font-size:.88rem;color:var(--ink-2);font-weight:500}
+.proof span{display:flex;align-items:center;gap:8px}
+.proof svg{width:17px;height:17px;color:var(--acc)}
+.in{opacity:0;animation:rise 1.1s var(--ease) forwards;animation-delay:var(--d,0s)}
+@keyframes rise{from{opacity:0;translate:0 40px}to{opacity:1;translate:0 0}}
 
-/* trust */
-.trust{border-top:1px solid color-mix(in srgb,var(--ink) 9%,transparent);border-bottom:1px solid color-mix(in srgb,var(--ink) 9%,transparent);background:var(--surface)}
-.trust .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;padding-top:26px;padding-bottom:26px}
-.trust div{display:flex;align-items:center;gap:12px;font-weight:600;font-size:15px}
-.trust svg{width:22px;height:22px;color:var(--accent);flex:none}
+.collage{position:relative;aspect-ratio:1/1.02;width:100%;max-width:600px;justify-self:end}
+.ph{position:absolute;will-change:transform}
+.ph figure{margin:0;background:#fff;padding:10px;border-radius:20px;box-shadow:var(--sh-lg);opacity:0;animation:rise 1.3s var(--ease) forwards}
+.ph img{width:100%;height:100%;object-fit:cover;border-radius:12px}
+.ph1{left:0;top:6%;width:50%;z-index:2}
+.ph1 figure{rotate:-7deg;animation-delay:.35s}.ph1 img{aspect-ratio:3/4}
+.ph2{right:0;top:0;width:52%;z-index:1}
+.ph2 figure{rotate:5deg;animation-delay:.5s}.ph2 img{aspect-ratio:1}
+.ph3{left:20%;bottom:2%;width:68%;z-index:3}
+.ph3 figure{rotate:-1.5deg;animation-delay:.65s}.ph3 img{aspect-ratio:16/10}
+.chip{position:absolute;z-index:5;display:flex;align-items:center;gap:12px;background:rgba(255,255,255,.88);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);padding:12px 18px;border-radius:16px;box-shadow:var(--sh);font-size:.84rem;line-height:1.3;font-weight:500;opacity:0;animation:rise 1s var(--ease) forwards}
+.chip b{display:block;font:700 1.1rem/1.1 var(--serif)}
+.chip-r{right:-2%;top:46%;animation-delay:.95s}
+.chip-o{left:-4%;bottom:6%;animation-delay:1.1s}
+.stars{color:#e3a252;letter-spacing:2px;font-size:.95rem}
+.dot{width:10px;height:10px;border-radius:50%;background:var(--brand);box-shadow:0 0 0 4px rgba(0,208,132,.18);flex:none}
+.word{position:absolute;right:-1%;bottom:-6%;font:italic 600 clamp(5rem,16vw,15rem)/1 var(--serif);color:transparent;-webkit-text-stroke:1.2px rgba(47,134,200,.28);pointer-events:none;z-index:0;letter-spacing:-.03em;user-select:none}
 
-/* sections */
-section.block{padding:110px 0}
-.kicker{font-size:13px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
-h2{font-family:var(--serif);font-weight:500;font-size:clamp(34px,3.8vw,52px);line-height:1.08;letter-spacing:-.02em;margin:14px 0 18px}
-.section-head{display:flex;justify-content:space-between;align-items:end;gap:40px;margin-bottom:56px}
-.section-head p{color:var(--muted);max-width:420px}
-.services{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-.card{background:var(--surface);border-radius:var(--radius);padding:34px 32px 36px;border:1px solid color-mix(in srgb,var(--ink) 7%,transparent);transition:transform .25s ease,box-shadow .25s ease}
-.card:hover{transform:translateY(-4px);box-shadow:0 30px 60px -36px color-mix(in srgb,var(--ink) 45%,transparent)}
-.icon{width:54px;height:54px;border-radius:16px;background:var(--soft);color:var(--accent);display:grid;place-items:center;margin-bottom:24px}
-.icon svg{width:26px;height:26px}
-.card h3{font-family:var(--serif);font-weight:500;font-size:23px;margin-bottom:8px;letter-spacing:-.01em}
-.card p{color:var(--muted);font-size:16px}
+/* marquee */
+.marq{background:var(--ink);color:#fff;padding:22px 0;overflow:hidden;position:relative;z-index:2}
+.marq .track{display:flex;width:max-content;animation:mq 42s linear infinite}
+.marq:hover .track{animation-play-state:paused}
+.marq ul{display:flex;list-style:none;margin:0;padding:0}
+.marq li{display:flex;align-items:center;gap:30px;padding-right:30px;font:500 1.35rem/1 var(--serif);white-space:nowrap}
+.marq li:nth-child(even){font-style:italic;color:var(--sand)}
+.marq li::after{content:"";width:7px;height:7px;border-radius:50%;background:var(--acc)}
+@keyframes mq{to{transform:translateX(-50%)}}
 
-.why{background:var(--ink);color:var(--bg)}
-.why .kicker{color:var(--gold)}
-.why-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:80px;align-items:start}
-.why h2{color:var(--bg)}
-.why .intro{color:color-mix(in srgb,var(--bg) 70%,transparent);font-size:18px;max-width:440px}
-.points{display:grid;gap:14px}
-.point{display:grid;grid-template-columns:62px 1fr;gap:20px;padding:30px;border-radius:var(--radius);background:color-mix(in srgb,var(--bg) 6%,transparent);border:1px solid color-mix(in srgb,var(--bg) 10%,transparent)}
-.point .num{font-family:var(--serif);font-size:34px;color:var(--gold);line-height:1}
-.point h3{font-family:var(--serif);font-weight:500;font-size:24px;margin-bottom:6px}
-.point p{color:color-mix(in srgb,var(--bg) 72%,transparent);font-size:16px}
+/* intro / before-after */
+.intro .wrap{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(36px,6vw,90px);align-items:center}
+.ba{position:relative;border-radius:28px;overflow:hidden;box-shadow:var(--sh-lg);aspect-ratio:4/3;background:#cfe2f1;--p:50%}
+.ba img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.ba .after{clip-path:inset(0 0 0 var(--p))}
+.ba .line{position:absolute;top:0;bottom:0;left:var(--p);width:2px;background:#fff;transform:translateX(-1px);pointer-events:none}
+.ba .knob{position:absolute;top:50%;left:var(--p);width:56px;height:56px;border-radius:50%;background:#fff;transform:translate(-50%,-50%);display:grid;place-items:center;box-shadow:0 8px 24px rgba(16,49,77,.3);pointer-events:none;color:var(--ink)}
+.ba input{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:ew-resize;margin:0}
+.ba .tag{position:absolute;top:18px;padding:8px 14px;border-radius:999px;font:700 .7rem/1 var(--sans);letter-spacing:.2em;text-transform:uppercase;background:rgba(16,49,77,.78);color:#fff;pointer-events:none}
+.ba .t1{left:18px}.ba .t2{right:18px;background:rgba(255,255,255,.9);color:var(--ink)}
+.ba input:focus-visible~.knob{outline:3px solid var(--sand);outline-offset:3px}
 
-.score{display:flex;align-items:center;gap:18px;background:var(--surface);padding:16px 24px;border-radius:18px;border:1px solid color-mix(in srgb,var(--ink) 8%,transparent)}
-.score b{font-family:var(--serif);font-size:40px;font-weight:500;line-height:1}
-.score small{display:block;color:var(--muted);font-size:14px}
-.reviews{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-.review{background:var(--surface);border-radius:var(--radius);padding:34px;display:flex;flex-direction:column;gap:22px;border:1px solid color-mix(in srgb,var(--ink) 7%,transparent)}
-.review p{font-family:var(--serif);font-size:19.5px;line-height:1.45}
-.review .by{margin-top:auto;display:flex;align-items:center;gap:12px;font-weight:600;font-size:15px}
-.avatar{width:40px;height:40px;border-radius:50%;background:var(--soft);color:var(--accent);display:grid;place-items:center;font-weight:700}
-.review .src{color:var(--muted);font-weight:500;font-size:13px;display:block}
+/* services */
+.svc{background:linear-gradient(180deg,var(--bg),#fff 30%,#fff 70%,var(--bg))}
+.head{display:flex;justify-content:space-between;align-items:end;gap:30px;flex-wrap:wrap;margin-bottom:60px}
+.head .lead{margin:0;max-width:46ch}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.card{background:var(--card);border-radius:var(--r);padding:34px 30px 32px;box-shadow:var(--sh);border:1px solid rgba(16,49,77,.06);transition:transform .45s var(--ease),box-shadow .45s var(--ease);position:relative;overflow:hidden}
+.card:hover{transform:translateY(-8px);box-shadow:var(--sh-lg)}
+.svc .card::after{content:"";position:absolute;left:30px;right:30px;bottom:0;height:3px;border-radius:3px 3px 0 0;background:linear-gradient(90deg,var(--acc),var(--sand));transform:scaleX(0);transform-origin:left;transition:transform .5s var(--ease)}
+.svc .card:hover::after{transform:scaleX(1)}
+.ic{width:56px;height:56px;border-radius:16px;background:var(--acc-l);color:var(--acc-d);display:grid;place-items:center;margin-bottom:26px}
+.ic svg{width:26px;height:26px}
+.num{position:absolute;top:28px;right:30px;font:italic 500 .95rem/1 var(--serif);color:#8aa3b8}
+.card h3{font-size:1.55rem;margin-bottom:12px}
+.card p{color:var(--ink-2);font-size:.98rem;margin:0}
+.card ul{margin:16px 0 0;padding:0;list-style:none;font-size:.9rem;color:var(--ink-2)}
+.card li{padding:6px 0 6px 22px;position:relative;border-top:1px dashed rgba(16,49,77,.12)}
+.card li::before{content:"";position:absolute;left:2px;top:15px;width:8px;height:8px;border-radius:50%;background:var(--sand)}
+.card.feat{background:var(--ink);color:#fff}
+.card.feat p,.card.feat li{color:#c9d8e6}
+.card.feat .ic{background:rgba(255,255,255,.1);color:var(--sand)}
+.card.feat .num{color:#8fb0cc}
+.card.feat li{border-color:rgba(255,255,255,.14)}
 
-.cta-band{padding:0 0 110px}
-.cta-box{border-radius:calc(var(--radius) + 12px);background:linear-gradient(140deg,var(--accent),color-mix(in srgb,var(--accent) 60%,var(--ink)));color:var(--accent-ink);padding:76px 64px;display:grid;grid-template-columns:1.3fr 1fr;gap:40px;align-items:center;position:relative;overflow:hidden}
-.cta-box:after{content:"";position:absolute;right:-120px;bottom:-200px;width:460px;height:460px;border-radius:50%;border:1.5px solid color-mix(in srgb,var(--accent-ink) 22%,transparent)}
-.cta-box h2{color:inherit;margin:0 0 12px}
-.cta-box p{opacity:.85;font-size:18px}
-.cta-box .actions{display:flex;flex-direction:column;gap:12px;align-items:flex-start;position:relative;z-index:1}
-.cta-box .btn{background:var(--accent-ink);color:var(--accent)}
-.cta-box .btn.ghost{background:transparent;color:var(--accent-ink);border-color:color-mix(in srgb,var(--accent-ink) 40%,transparent)}
+/* about */
+.about .wrap{display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,7vw,100px);align-items:center}
+.stack{position:relative;padding:0 14% 16% 0}
+.stack img{border-radius:24px;object-fit:cover;box-shadow:var(--sh-lg)}
+.stack .a{aspect-ratio:3/4;width:100%}
+.stack .b{position:absolute;right:0;bottom:0;width:52%;aspect-ratio:1;border:10px solid var(--bg);border-radius:28px}
+.since{position:absolute;left:-14px;top:30px;background:var(--sand);color:var(--ink);padding:14px 18px;border-radius:16px;font:700 .72rem/1.3 var(--sans);letter-spacing:.18em;text-transform:uppercase;box-shadow:var(--sh);rotate:-4deg}
+.since b{display:block;font:600 1.9rem/1 var(--serif);letter-spacing:0}
+.team{display:grid;gap:14px;margin-top:34px}
+.mate{display:flex;gap:18px;align-items:flex-start;background:#fff;border-radius:18px;padding:18px 20px;box-shadow:var(--sh);transition:transform .4s var(--ease)}
+.mate:hover{transform:translateX(6px)}
+.mono{flex:none;width:52px;height:52px;border-radius:50%;display:grid;place-items:center;font:600 1.1rem/1 var(--serif);color:var(--ink);background:linear-gradient(135deg,var(--sand-l),var(--sand))}
+.mate:nth-child(2) .mono{background:linear-gradient(135deg,#e5f1fa,#a9d0ee)}
+.mate:nth-child(3) .mono{background:linear-gradient(135deg,#e6f7f0,#a6e3cb)}
+.mate h3{font-size:1.15rem;margin-bottom:4px}
+.mate small{display:block;font-weight:700;font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;color:var(--acc-d);margin-bottom:4px}
+.mate p{margin:0;font-size:.92rem;color:var(--ink-2)}
 
-.visit{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:10px}
-.visit .card h3{font-size:20px}
-.visit a{color:var(--accent);font-weight:600}
-footer{border-top:1px solid color-mix(in srgb,var(--ink) 9%,transparent);padding:40px 0 110px;color:var(--muted);font-size:14px}
-footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
-.mobile-bar{display:none}
+/* why */
+.why{background:#fff}
+.why .grid3{gap:0;border-top:1px solid rgba(16,49,77,.1)}
+.val{padding:44px 34px 40px;border-bottom:1px solid rgba(16,49,77,.1);transition:background .4s}
+.val:not(:nth-child(3n)){border-right:1px solid rgba(16,49,77,.1)}
+.val:hover{background:var(--bg)}
+.val i{font:italic 500 2.6rem/1 var(--serif);color:var(--sand);display:block;margin-bottom:22px;-webkit-text-stroke:.5px #d9985a}
+.val h3{font-size:1.4rem;margin-bottom:10px}
+.val p{color:var(--ink-2);font-size:.97rem;margin:0}
 
-@keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
-.hero .copy>*{animation:rise .8s cubic-bezier(.2,.7,.2,1) both}
-.hero .copy>*:nth-child(2){animation-delay:.08s}.hero .copy>*:nth-child(3){animation-delay:.16s}
-.hero .copy>*:nth-child(4){animation-delay:.24s}.hero .copy>*:nth-child(5){animation-delay:.32s}
-.visual{animation:rise 1s .2s cubic-bezier(.2,.7,.2,1) both}
+/* steps */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;counter-reset:s;position:relative}
+.step{background:#fff;border-radius:var(--r);padding:38px 32px;box-shadow:var(--sh);position:relative}
+.step::before{counter-increment:s;content:"0" counter(s);font:italic 600 4.4rem/1 var(--serif);color:var(--acc);opacity:.18;position:absolute;top:18px;right:24px}
+.step h3{font-size:1.6rem;margin:46px 0 12px}
+.step p{color:var(--ink-2);margin:0;font-size:.98rem}
+.step .pill{display:inline-block;font:700 .7rem/1 var(--sans);letter-spacing:.18em;text-transform:uppercase;padding:8px 12px;border-radius:999px;background:var(--sand-l);color:#8a4f12}
 
-@media (max-width:980px){
-  .links{display:none}
-  .hero-grid,.why-grid,.cta-box{grid-template-columns:1fr}
-  .hero-grid{gap:56px}
-  .services,.reviews,.visit{grid-template-columns:1fr 1fr}
-  .trust .wrap{grid-template-columns:1fr 1fr}
-  .float.one{left:12px;bottom:-26px}.float.two{right:12px}
-  .visual{max-width:560px;margin-bottom:20px}
-  .section-head{flex-direction:column;align-items:flex-start}
+/* rating */
+.rate{padding:0}
+.rbox{display:grid;grid-template-columns:auto 1fr auto;gap:40px;align-items:center;background:linear-gradient(120deg,#fff,var(--sand-l));border-radius:30px;padding:46px 52px;box-shadow:var(--sh)}
+.big{font:600 5.4rem/1 var(--serif);letter-spacing:-.03em}
+.rbox .stars{font-size:1.5rem}
+.rbox h2{font-size:clamp(1.6rem,3vw,2.3rem)}
+
+/* gallery */
+.gal{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:clamp(150px,19vw,250px);gap:16px}
+.gal figure{margin:0;overflow:hidden;border-radius:20px;position:relative;background:#cfe2f1}
+.gal img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s var(--ease)}
+.gal figure:hover img{transform:scale(1.06)}
+.gal .t{grid-row:span 2}
+.gal .w{grid-column:span 2}
+
+/* areas */
+.areas{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+.areas span{padding:12px 20px;border-radius:999px;background:#fff;box-shadow:var(--sh);font-weight:500;display:flex;gap:8px;align-items:center}
+.areas svg{width:16px;height:16px;color:var(--acc)}
+
+/* faq */
+.faq .wrap{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(36px,6vw,90px)}
+details{background:#fff;border-radius:18px;margin-bottom:12px;box-shadow:var(--sh);overflow:hidden}
+summary{list-style:none;cursor:pointer;padding:22px 26px;font:600 1.15rem/1.35 var(--serif);display:flex;justify-content:space-between;gap:20px;align-items:center}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font:400 1.6rem/1 var(--sans);color:var(--acc);transition:transform .35s var(--ease);flex:none}
+details[open] summary::after{transform:rotate(45deg)}
+details p{padding:0 26px 22px;margin:0;color:var(--ink-2)}
+
+/* cta */
+.cta{padding:0}
+.cband{position:relative;overflow:hidden;border-radius:36px;padding:clamp(56px,8vw,110px) clamp(28px,6vw,90px);background:linear-gradient(135deg,#123a5c 0%,#1d5f94 60%,#2470ad 100%);color:#fff;text-align:center}
+.cband::before{content:"";position:absolute;width:520px;height:520px;border-radius:50%;background:radial-gradient(circle,rgba(246,195,139,.45),transparent 65%);top:-220px;right:-120px}
+.cband::after{content:"";position:absolute;width:420px;height:420px;border-radius:50%;border:1px solid rgba(255,255,255,.18);bottom:-260px;left:-80px;box-shadow:0 0 0 60px rgba(255,255,255,.04),0 0 0 120px rgba(255,255,255,.03)}
+.cband>*{position:relative;z-index:1}
+.cband h2{font-size:clamp(2.3rem,5.4vw,4.4rem);max-width:16ch;margin:0 auto 22px}
+.cband h2 em{color:var(--sand)}
+.cband p{color:#d8e6f2;max-width:52ch;margin:0 auto 36px;font-size:1.1rem}
+.cband .btn-p{background:#fff;color:var(--ink);border-color:#fff}
+.cband .btn-p:hover{background:var(--sand);border-color:var(--sand)}
+.cband .btn-g{background:transparent;color:#fff;border-color:rgba(255,255,255,.55)}
+.cband .btn-g:hover{background:rgba(255,255,255,.12)}
+.cband .ctas{justify-content:center}
+
+/* contact */
+.contact .wrap{display:grid;grid-template-columns:1fr 1fr;gap:clamp(36px,6vw,80px);align-items:start}
+.cinfo{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.ci{background:#fff;border-radius:20px;padding:26px;box-shadow:var(--sh);text-decoration:none;transition:transform .4s var(--ease),box-shadow .4s var(--ease);min-width:0}
+a.ci:hover{transform:translateY(-5px);box-shadow:var(--sh-lg)}
+.ci small{display:block;font:700 .7rem/1 var(--sans);letter-spacing:.2em;text-transform:uppercase;color:var(--acc-d);margin-bottom:12px}
+.ci b{display:block;font:600 1.2rem/1.35 var(--serif);overflow-wrap:anywhere}
+.ci span{display:block;font-size:.9rem;color:var(--ink-2);margin-top:6px}
+.ci.wide{grid-column:span 2;display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;background:var(--ink);color:#fff}
+.ci.wide small{color:var(--sand)}
+.ci.wide span{color:#c9d8e6}
+.arrow{width:48px;height:48px;border-radius:50%;background:var(--sand);color:var(--ink);display:grid;place-items:center;flex:none;transition:transform .4s var(--ease)}
+a.ci:hover .arrow{transform:rotate(-45deg)}
+
+/* footer */
+footer{background:var(--ink);color:#c9d8e6;padding:80px 0 40px;margin-top:clamp(80px,10vw,130px);font-size:.94rem}
+.fgrid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px}
+footer .logo{margin-bottom:20px}
+footer .logo img{background:#fff;border-radius:14px;padding:6px;height:54px}
+footer .logo b{color:#fff;font-size:1.3rem}
+footer h4{font:700 .72rem/1 var(--sans);letter-spacing:.2em;text-transform:uppercase;color:var(--sand);margin:6px 0 18px}
+footer ul{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+footer a{text-decoration:none;color:#fff}
+.fbot{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;border-top:1px solid rgba(255,255,255,.12);margin-top:60px;padding-top:26px;font-size:.84rem;color:#9fb6cb}
+
+/* mobile bar */
+.mbar{display:none}
+
+/* reveal */
+.rv{opacity:0;transform:translateY(36px);transition:opacity 1s var(--ease),transform 1s var(--ease);transition-delay:var(--d,0s)}
+.rv.on{opacity:1;transform:none}
+
+@media (max-width:1060px){
+  .nav,.hdr .tel{display:none}
+  .burger{display:grid}
+  .hdr .btn{display:none}
+  .grid3{grid-template-columns:1fr 1fr}
+  .val:not(:nth-child(3n)){border-right:0}
+  .val:nth-child(odd){border-right:1px solid rgba(16,49,77,.1)}
+  .fgrid{grid-template-columns:1fr 1fr}
+}
+@media (max-width:880px){
+  .hero{padding-top:120px}
+  .hero .wrap,.intro .wrap,.about .wrap,.faq .wrap,.contact .wrap{grid-template-columns:1fr}
+  .collage{justify-self:center;max-width:520px}
+  .steps{grid-template-columns:1fr}
+  .rbox{grid-template-columns:1fr;text-align:center;gap:16px;padding:40px 28px}
+  .gal{grid-template-columns:1fr 1fr}
+  .gal .w{grid-column:span 2}
 }
 @media (max-width:640px){
-  body{font-size:16px}
-  .wrap{padding:0 18px}
-  .nav{height:66px}.brand{font-size:19px}
-  .phone,.nav-right .btn{display:none}
-  .hero{padding:44px 0 64px}
-  .lead-text{font-size:17.5px}
-  .hero-ctas .btn{flex:1;justify-content:center}
-  .ticks{display:none}
-  .services,.reviews,.visit,.trust .wrap{grid-template-columns:1fr}
-  section.block{padding:76px 0}
-  .quote-panel,.photo{aspect-ratio:auto;min-height:380px}.photo{aspect-ratio:4/3;min-height:0}
-  .quote-panel{padding:40px 30px 64px}.quote-panel p{font-size:23px}
-  .float{font-size:13px;padding:12px 14px}.float b{font-size:18px}
-  .float.two{display:none}
-  .cta-box{padding:52px 28px}
-  .point{grid-template-columns:44px 1fr;padding:24px}
-  .mobile-bar{display:flex;position:fixed;left:12px;right:12px;bottom:12px;z-index:30;gap:10px}
-  .mobile-bar .btn{flex:1;justify-content:center;box-shadow:0 14px 30px -14px color-mix(in srgb,var(--ink) 60%,transparent)}
-  .mobile-bar .btn.ghost{background:var(--surface)}
+  body{font-size:16px;padding-bottom:76px}
+  .wrap{width:calc(100% - 32px)}
+  .hdr{inset:10px 0 auto}
+  .logo b{font-size:1rem}
+  .logo img{height:36px}
+  .hero h1{font-size:clamp(2.5rem,11vw,3.2rem)}
+  .ctas .btn{flex:1 1 100%}
+  .chip{padding:10px 12px;font-size:.76rem}
+  .chip b{font-size:.95rem}
+  .chip-r{right:0;top:42%}
+  .chip-o{left:0;bottom:0}
+  .grid3{grid-template-columns:1fr}
+  .val{border-right:0!important;padding:34px 6px}
+  .card{padding:30px 24px}
+  .cinfo{grid-template-columns:1fr}
+  .ci.wide{grid-column:auto}
+  .big{font-size:4.2rem}
+  .gal{grid-auto-rows:150px;gap:10px}
+  .since{left:-6px}
+  .fgrid{grid-template-columns:1fr}
+  .cband{border-radius:26px}
+  .mbar{display:grid;grid-template-columns:1fr 1.3fr;gap:10px;position:fixed;left:10px;right:10px;bottom:10px;z-index:45;padding:8px;border-radius:999px;background:rgba(255,255,255,.85);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);box-shadow:0 10px 30px -10px rgba(16,49,77,.4)}
+  .mbar .btn{padding:13px 10px;font-size:.88rem}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation-duration:.001ms!important;animation-delay:0s!important;animation-iteration-count:1!important;transition-duration:.001ms!important}
+  .rv{opacity:1;transform:none}
+  .marq .track{animation:none}
 }
 </style>
 </head>
 <body>
-<div class="concept">Website concept prepared for <b>West Coast Washers</b> by webstudio &middot; not a live site</div>
 
-<header>
-  <div class="wrap nav">
-    <a href="#top" class="brand">West Coast Washers</a>
-    <nav class="links">
-      <a href="#services">Services</a><a href="#why">Why us</a><a href="#visit">Visit</a>
+<header class="hdr" id="top">
+  <div class="wrap bar">
+    <a href="#top" class="logo" aria-label="West Coast Washers home">
+      <img src="img/logo.png" alt="West Coast Washers logo" width="84" height="42">
+      <b>West Coast Washers</b>
+    </a>
+    <nav class="nav" aria-label="Main">
+      <a class="ul" href="#services">Services</a>
+      <a class="ul" href="#about">Our Story</a>
+      <a class="ul" href="#process">How It Works</a>
+      <a class="ul" href="#gallery">Gallery</a>
+      <a class="ul" href="#faq">FAQ</a>
     </nav>
-    <div class="nav-right">
-      <a class="phone" href="tel:6268030278">(626) 803-0278</a>
-      <a class="btn" href="#visit">Free quote</a>
-    </div>
+    <a class="tel ul" href="tel:+16268030278">(626) 803-0278</a>
+    <a class="btn btn-p" href="#contact">Free Estimate</a>
+    <button class="burger" aria-label="Open menu" aria-expanded="false" aria-controls="mnav"><span></span></button>
   </div>
 </header>
 
-<main id="top">
+<nav class="mnav" id="mnav" aria-label="Mobile">
+  <a href="#services">Services</a>
+  <a href="#about">Our Story</a>
+  <a href="#process">How It Works</a>
+  <a href="#gallery">Gallery</a>
+  <a href="#faq">FAQ</a>
+  <a href="#contact">Contact</a>
+  <a class="btn btn-p" href="tel:+16268030278">Call (626) 803-0278</a>
+</nav>
+
+<main>
+<!-- HERO -->
 <section class="hero">
-  <div class="wrap hero-grid">
-    <div class="copy">
-      <div class="eyebrow">
-        <span class="dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-7-4.4-7-10a4 4 0 017-2.6A4 4 0 0119 10c0 5.6-7 10-7 10z"/></svg></span>House cleaning in Los Angeles
-      </div>
-      <h1>A spotless Los Angeles home, without lifting <em>a finger.</em></h1>
-      <p class="lead-text">West Coast Washers handles the scrubbing, dusting, and mopping so you can come home to a clean, calm space and get your weekends back.</p>
-      <div class="hero-ctas">
-        <a class="btn" href="#visit">Get a free quote <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-        <a class="btn ghost" href="tel:6268030278">Call (626) 803-0278</a>
-      </div>
-      <div class="ticks">
-        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7"/></svg>Background-checked team</span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7"/></svg>Fully insured</span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7"/></svg>Supplies included</span>
-      </div>
-    </div>
-    <div class="visual">
-      
-      <div class="quote-panel"><div class="quote-mark">“</div><div><p>Trusted, background-checked cleaners who show up on time, bring everything, and leave every room shining.</p><div class="who">West Coast Washers</div></div></div>
-      
-      
-      <div class="float two"><span class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><span><b>This week</b>Fully insured</span></div>
-    </div>
-  </div>
-  <template id="qp"><div class="quote-panel"><div class="quote-mark">“</div><div><p>Trusted, background-checked cleaners who show up on time, bring everything, and leave every room shining.</p><div class="who">West Coast Washers</div></div></div></template>
-</section>
-
-<div class="trust"><div class="wrap">
-  <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.2-8 9-4.6-.8-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg>Background-checked team</div><div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.2-8 9-4.6-.8-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg>Fully insured</div><div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.2-8 9-4.6-.8-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg>Supplies included</div><div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.2-8 9-4.6-.8-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg>100% satisfaction guarantee</div>
-</div></div>
-
-<section class="block" id="services">
   <div class="wrap">
-    <div class="section-head">
-      <div><div class="kicker">What we do</div><h2>Everything you need,<br>under one roof.</h2></div>
-      <p>From routine visits to the work that changes how you feel about your day, West Coast Washers takes care of it properly.</p>
-    </div>
-    <div class="services">
-      
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11l8-7 8 7v9a1 1 0 01-1 1h-4v-6H9v6H5a1 1 0 01-1-1z"/></svg></div><h3>Regular cleaning</h3><p>Weekly or bi-weekly visits so your home always feels fresh and cared for.</p></div>
-      
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/><path d="M19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8z"/></svg></div><h3>Deep cleaning</h3><p>Top-to-bottom detail work on baseboards, grout, appliances and every corner.</p></div>
-      
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7l9-4 9 4v10l-9 4-9-4z"/><path d="M3 7l9 4 9-4M12 11v10"/></svg></div><h3>Move-in &amp; move-out</h3><p>Get your deposit back or start fresh in a home that&#39;s truly clean.</p></div>
-      
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3" width="14" height="18" rx="1"/><path d="M9 7h2M13 7h2M9 11h2M13 11h2M9 15h2M13 15h2"/></svg></div><h3>Office cleaning</h3><p>Reliable after-hours cleaning that keeps your workspace professional.</p></div>
-      
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 19c0-8 5-14 15-14 0 10-6 15-14 15"/><path d="M5 19c3-4 6-6 10-8"/></svg></div><h3>Eco-friendly products</h3><p>Safe for kids and pets, tough on dirt, and gentle on the planet.</p></div>
-      
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div><h3>Same-week booking</h3><p>Need it done fast? We usually have openings within a few days.</p></div>
-      
-    </div>
-  </div>
-</section>
-
-<section class="block why" id="why">
-  <div class="wrap why-grid">
     <div>
-      <div class="kicker">Why clients choose us</div>
-      <h2>The Los Angeles house cleaning service people recommend to their friends.</h2>
-      <p class="intro">it still comes down to the same three things.</p>
+      <p class="eyebrow in" style="--d:.05s">Insured · Locally owned · San Gabriel Valley</p>
+      <h1>
+        <span class="ln in" style="--d:.15s">Your home,</span>
+        <span class="ln in" style="--d:.27s">washed back to</span>
+        <span class="ln in" style="--d:.39s"><em>brilliant.<svg viewBox="0 0 200 20" preserveAspectRatio="none" aria-hidden="true"><path d="M2 14C40 4 90 2 198 9" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round"/></svg></em></span>
+      </h1>
+      <p class="lead in" style="--d:.5s">Expert pressure washing, window washing and gutter cleaning that protects your investment and restores your curb appeal, for homes and businesses across Pasadena, South Pasadena, San Marino, Alhambra and San Gabriel.</p>
+      <div class="ctas in" style="--d:.62s">
+        <a class="btn btn-p" href="#contact">Get a Free Estimate
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a class="btn btn-g" href="tel:+16268030278">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>
+          (626) 803-0278</a>
+      </div>
+      <div class="proof in" style="--d:.75s">
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Fully insured</span>
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Quote within 24 hours</span>
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.5 19 2c1 2 2 4.2 2 8 0 5.5-4.8 10-10 10z"/><path d="M2 21c0-3 1.9-5.4 5-6"/></svg>Eco-friendly solutions</span>
+      </div>
     </div>
-    <div class="points">
-      
-      <div class="point"><div class="num">01</div><div><h3>Vetted &amp; insured</h3><p>Every cleaner is background-checked, trained and fully insured for your peace of mind.</p></div></div>
-      
-      <div class="point"><div class="num">02</div><div><h3>Satisfaction guaranteed</h3><p>Not happy with something? We&#39;ll come back and make it right, free.</p></div></div>
-      
-      <div class="point"><div class="num">03</div><div><h3>Upfront pricing</h3><p>A clear quote before we start. No hidden fees, ever.</p></div></div>
-      
+
+    <div class="collage" aria-label="Recent West Coast Washers projects">
+      <span class="word" aria-hidden="true">shine</span>
+      <div class="ph ph2" data-px="-0.05"><figure><img src="img/photo-6.jpg" alt="A clean building exterior with sparkling windows" width="1920" height="1920" fetchpriority="high"></figure></div>
+      <div class="ph ph1" data-px="0.07"><figure><img src="img/photo-10.jpg" alt="West Coast Washers exterior cleaning project" width="1500" height="2000" fetchpriority="high"></figure></div>
+      <div class="ph ph3" data-px="-0.11"><figure><img src="img/photo-4.jpg" alt="Freshly washed property by West Coast Washers" width="2000" height="1125" fetchpriority="high"></figure></div>
+      <div class="chip chip-r"><div><b>5.0 <span class="stars" aria-hidden="true">★★★★★</span></b>from 20 reviews</div></div>
+      <div class="chip chip-o"><span class="dot" aria-hidden="true"></span><div><b>Open 24/7</b>Every day of the week</div></div>
     </div>
   </div>
 </section>
 
+<!-- MARQUEE -->
+<div class="marq" aria-label="Highlights">
+  <div class="track">
+    <ul>
+      <li>Pressure Washing</li><li>Insured &amp; locally owned</li><li>Window Washing</li><li>Free, no-obligation quotes</li><li>Gutter Cleaning</li><li>Eco-friendly cleaning solutions</li><li>Solar Panel Cleaning</li><li>100% satisfaction guarantee</li><li>Soft Washing</li><li>No hidden fees</li>
+    </ul>
+    <ul aria-hidden="true">
+      <li>Pressure Washing</li><li>Insured &amp; locally owned</li><li>Window Washing</li><li>Free, no-obligation quotes</li><li>Gutter Cleaning</li><li>Eco-friendly cleaning solutions</li><li>Solar Panel Cleaning</li><li>100% satisfaction guarantee</li><li>Soft Washing</li><li>No hidden fees</li>
+    </ul>
+  </div>
+</div>
 
-
-<section class="cta-band" id="book">
-  <div class="wrap"><div class="cta-box">
-    <div><h2>Ready when you are.</h2><p>Get a free quote in under a minute, or give us a call and talk to a real person.</p></div>
-    <div class="actions">
-      <a class="btn" href="#visit">Get a free quote</a>
-      <a class="btn ghost" href="tel:6268030278">Call (626) 803-0278</a>
+<!-- INTRO + BEFORE/AFTER -->
+<section class="intro">
+  <div class="wrap">
+    <div class="rv">
+      <p class="eyebrow">Restore your property’s beauty</p>
+      <h2>The difference is <em>visible</em> from the curb.</h2>
+      <p class="lead" style="margin-top:24px">We pair professional-grade equipment with genuinely personal service. Every surface gets the right pressure and the right technique, so stains, grime and buildup disappear while your materials stay in pristine condition.</p>
+      <p style="color:var(--ink-2)">From residential homes to commercial properties, our cleaning is designed to tackle the toughest exterior challenges and create a healthier environment for your family or business.</p>
+      <a class="btn btn-p" href="#services" style="margin-top:12px">Explore our services</a>
     </div>
-  </div></div>
+    <div class="ba rv" style="--d:.15s" id="ba">
+      <img src="img/photo-2.jpg" alt="Before image" width="2000" height="1500" loading="lazy">
+      <img class="after" src="img/photo-1.jpg" alt="After image" width="2000" height="1500" loading="lazy">
+      <span class="tag t1">Before</span><span class="tag t2">After</span>
+      <span class="line"></span>
+      <label class="sr" for="baR">Drag to compare before and after</label>
+      <input type="range" id="baR" min="0" max="100" value="50">
+      <span class="knob" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l-6 6 6 6M15 6l6 6-6 6"/></svg></span>
+    </div>
+  </div>
 </section>
 
-<section class="block" id="visit" style="padding-top:0">
+<!-- SERVICES -->
+<section class="svc" id="services">
   <div class="wrap">
-    <div class="kicker">Visit us</div><h2>Come say hello.</h2>
-    <div class="visit">
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11l8-7 8 7v9a1 1 0 01-1 1h-4v-6H9v6H5a1 1 0 01-1-1z"/></svg></div><h3>Address</h3><p>4029 Barrett Road, Los Angeles, CA 90032</p></div>
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div><h3>Phone</h3><p><a href="tel:6268030278">(626) 803-0278</a></p><p style="margin-top:10px">Call or message us for today's opening hours.</p></div>
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-7-4.4-7-10a4 4 0 017-2.6A4 4 0 0119 10c0 5.6-7 10-7 10z"/></svg></div><h3>Fully insured</h3><p>Get a free quote online or by phone and we'll take care of the rest.</p></div>
+    <div class="head">
+      <div class="rv"><p class="eyebrow">Professional exterior cleaning</p><h2>Nine services.<br><em>One spotless finish.</em></h2></div>
+      <p class="lead rv" style="--d:.1s">Different surfaces need different approaches. Our team is trained in the latest cleaning techniques and safety protocols, so every job gets consistent, high-quality results.</p>
+    </div>
+    <div class="grid3">
+      <article class="card feat rv">
+        <span class="num">01</span>
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M3 10h9l3-3h4v6h-4l-3-3"/><path d="M19 10h2M5 10v8M3 18h4M17 14l-1 3M20 14l1 3M18.5 14v4"/></svg></div>
+        <h3>Pressure Washing</h3>
+        <p>High-powered cleaning that lifts stubborn stains, oil spots and embedded dirt, with pressure adjusted to every surface.</p>
+        <ul><li>Concrete driveways &amp; walkways</li><li>Pool decks &amp; surroundings</li><li>Parking lots &amp; commercial spaces</li><li>Stone &amp; masonry surfaces</li></ul>
+      </article>
+      <article class="card rv" style="--d:.08s">
+        <span class="num">02</span>
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M12 3v18M3 12h18"/></svg></div>
+        <h3>Window Washing</h3>
+        <p>Streak-free, crystal-clear glass that maximizes natural light and frames your views beautifully.</p>
+        <ul><li>Exterior windows of all sizes</li><li>Window screens &amp; frames</li><li>Water spots &amp; residue removed</li></ul>
+      </article>
+      <article class="card rv" style="--d:.16s">
+        <span class="num">03</span>
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M2 8h20l-2 4H4z"/><path d="M18 12v8M15 20h6M7 16c0 1.5-1 2-1 3s1 1 1 1 1 0 1-1-1-1.5-1-3z"/></svg></div>
+        <h3>Gutter Cleaning</h3>
+        <p>We clear out leaves and debris so rainwater flows where it should, leaving your property tidy when we leave.</p>
+        <ul><li>Debris removed &amp; hauled</li><li>Clean-up included</li><li>Pairs well with roof cleaning</li></ul>
+      </article>
+      <article class="card rv">
+        <span class="num">04</span>
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M4 14 7 4h10l3 10z"/><path d="M5.5 9h13M10 4l-1 10M14 4l1 10M12 14v4M8 20h8"/></svg></div>
+        <h3>Solar Panel Cleaning</h3>
+        <p>Purified water and soft brushes remove dust, pollen and droppings so your system can perform at its best.</p>
+        <ul><li>Spot-free finish</li><li>Follows manufacturer guidelines</li><li>Inspection for potential issues</li></ul>
+      </article>
+      <article class="card rv" style="--d:.08s">
+        <span class="num">05</span>
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M12 3s6 6.5 6 11a6 6 0 0 1-12 0c0-4.5 6-11 6-11z"/><path d="M9 14a3 3 0 0 0 3 3"/></svg></div>
+        <h3>Soft Washing</h3>
+        <p>A gentler approach for surfaces that need a lighter touch, part of our tailored method for every material on your home.</p>
+      </article>
+      <article class="card rv" style="--d:.16s">
+        <span class="num">06</span>
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.5 2.5-2.4-.6-.6-2.4z"/></svg></div>
+        <h3>Gutter Repair</h3>
+        <p>When your gutters need more than a clean-out, our crew can help get them back in working order.</p>
+      </article>
+      <article class="card rv">
+        <span class="num">07</span>
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M2 12 12 4l10 8"/><path d="M5 10v10h14V10"/><path d="M10 20v-6h4v6"/></svg></div>
+        <h3>Roof Cleaning</h3>
+        <p>Careful removal of the dirt and debris that collects up top, finished with a thorough clean-up below.</p>
+      </article>
+      <article class="card rv" style="--d:.08s">
+        <span class="num">08</span>
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M3 20h18M5 20V9l7-5 7 5v11"/><path d="M9 20v-4M15 20v-4M9 12h6"/></svg></div>
+        <h3>Surface Cleaning</h3>
+        <p>Even, consistent cleaning for patios, walkways and flatwork, with a uniform result and no streaks.</p>
+      </article>
+      <article class="card rv" style="--d:.16s">
+        <span class="num">09</span>
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M3 7h10a4 4 0 0 1 4 4v10"/><path d="M3 11h8a2 2 0 0 1 2 2v8"/><path d="M19 5l2-2M17 3l1-1M21 7l1-1"/></svg></div>
+        <h3>Hydro Jetting</h3>
+        <p>High-pressure water jetting for lines that need a deeper clean, handled with the same professional-grade equipment.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="wrap">
+    <div class="stack rv">
+      <img class="a" src="img/photo-8.jpg" alt="West Coast Washers crew at work" width="1500" height="2000" loading="lazy">
+      <img class="b" src="img/photo-7.jpg" alt="Exterior cleaning detail by West Coast Washers" width="1826" height="1920" loading="lazy">
+      <div class="since">Founded<b>2023</b></div>
+    </div>
+    <div>
+      <div class="rv">
+        <p class="eyebrow">Our story</p>
+        <h2>Lifelong friends. <em>Local roots.</em></h2>
+        <p class="lead" style="margin-top:24px">West Coast Washers was founded by a group of high school friends who went off to college, earned their degrees, and came back home to build something together on trust, hard work and a shared vision.</p>
+        <p style="color:var(--ink-2)">Since 2023 we’ve become a trusted name in exterior cleaning throughout South Pasadena, San Marino, Pasadena, Alhambra and San Gabriel, delivering exceptional results with the personal touch only a local, family-oriented company can offer.</p>
+      </div>
+      <div class="team">
+        <div class="mate rv"><span class="mono">ZT</span><div><h3>Zachary R. Trevino</h3><small>Media &amp; Advertising</small><p>Films, creates engaging media and makes sure our story reaches the right neighbors.</p></div></div>
+        <div class="mate rv" style="--d:.08s"><span class="mono">AL</span><div><h3>Austin Longwell</h3><small>Chief Operations Officer</small><p>Leads operations with pride, keeping crews aligned and clients satisfied, in the office or the field.</p></div></div>
+        <div class="mate rv" style="--d:.16s"><span class="mono">JE</span><div><h3>Joseph Esquivel</h3><small>Finance</small><p>Joey is the financial backbone, with smart spending that keeps the business thriving.</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY -->
+<section class="why">
+  <div class="wrap">
+    <div class="head">
+      <div class="rv"><p class="eyebrow">Values &amp; mission</p><h2>Why homeowners &amp; businesses <em>choose us</em></h2></div>
+      <p class="lead rv" style="--d:.1s">We beautify our community one property at a time and build lasting relationships with our neighbors.</p>
+    </div>
+    <div class="grid3">
+      <div class="val rv"><i>i.</i><h3>Locally Owned &amp; Operated</h3><p>Founded by lifelong friends with deep roots in the community. We take pride in serving our San Gabriel Valley neighbors.</p></div>
+      <div class="val rv" style="--d:.08s"><i>ii.</i><h3>Professional Equipment</h3><p>We invest in commercial-grade equipment and the best products for superior results that protect your property.</p></div>
+      <div class="val rv" style="--d:.16s"><i>iii.</i><h3>Satisfaction Guarantee</h3><p>We stand behind our work with a 100% satisfaction guarantee on all our services.</p></div>
+      <div class="val rv"><i>iv.</i><h3>What We Quote Is What You Pay</h3><p>Honest communication, fair pricing and transparent, detailed estimates. No hidden fees or unexpected charges.</p></div>
+      <div class="val rv" style="--d:.08s"><i>v.</i><h3>Environmental Responsibility</h3><p>Eco-friendly cleaning solutions and water conservation techniques that clean beautifully with minimal impact.</p></div>
+      <div class="val rv" style="--d:.16s"><i>vi.</i><h3>Residential &amp; Commercial</h3><p>From homes to a wide range of commercial properties, a complete range of exterior services under one roof.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section id="process">
+  <div class="wrap">
+    <div class="head">
+      <div class="rv"><p class="eyebrow">How it works</p><h2>Easy as <em>1‑2‑3.</em></h2></div>
+      <p class="lead rv" style="--d:.1s">Booking a spotless exterior shouldn’t take effort. Here’s the whole process.</p>
+    </div>
+    <div class="steps">
+      <div class="step rv"><span class="pill">Within 24 hours</span><h3>Request a free estimate</h3><p>Call or reach out and we’ll put together a complimentary, tailored quote, delivered within 24 hours.</p></div>
+      <div class="step rv" style="--d:.1s"><span class="pill">Your schedule</span><h3>Pick a day</h3><p>Tell us which days suit you best, and we’ll adjust our schedule to fit your convenience.</p></div>
+      <div class="step rv" style="--d:.2s"><span class="pill">Zero effort</span><h3>Sit back &amp; relax</h3><p>Our team shows up punctually and leaves your exterior spotless, without you lifting a finger.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- RATING -->
+<section class="rate" aria-label="Customer rating">
+  <div class="wrap">
+    <div class="rbox rv">
+      <div class="big">5.0</div>
+      <div><div class="stars" aria-label="5 out of 5 stars">★★★★★</div><h2>Rated five stars by <em>our neighbors.</em></h2><p style="margin:8px 0 0;color:var(--ink-2)">A perfect 5.0 average from 20 customer reviews.</p></div>
+      <a class="btn btn-p" href="#contact">Join them</a>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section id="gallery">
+  <div class="wrap">
+    <div class="head">
+      <div class="rv"><p class="eyebrow">Recent work</p><h2>Properties that <em>shine.</em></h2></div>
+      <p class="lead rv" style="--d:.1s">A look at real West Coast Washers projects across the San Gabriel Valley.</p>
+    </div>
+    <div class="gal">
+      <figure class="w rv"><img src="img/photo-3.jpg" alt="Exterior cleaning project by West Coast Washers" width="2000" height="1500" loading="lazy"></figure>
+      <figure class="t rv" style="--d:.08s"><img src="img/photo-11.jpg" alt="West Coast Washers project detail" width="1500" height="2000" loading="lazy"></figure>
+      <figure class="t rv" style="--d:.16s"><img src="img/photo-12.jpg" alt="Freshly cleaned exterior surface" width="1500" height="2000" loading="lazy"></figure>
+      <figure class="rv"><img src="img/photo-5.jpg" alt="A building with windows and a sign" width="1920" height="1920" loading="lazy"></figure>
+      <figure class="rv" style="--d:.08s"><img src="img/photo-13.jpg" alt="West Coast Washers crew on the job" width="1500" height="2000" loading="lazy"></figure>
+      <figure class="w rv"><img src="img/photo-9.jpg" alt="Clean property exterior in the San Gabriel Valley" width="2000" height="1500" loading="lazy"></figure>
+      <figure class="w rv" style="--d:.08s"><img src="img/photo-14.jpg" alt="Exterior cleaning result by West Coast Washers" width="1500" height="2000" loading="lazy" style="object-position:center 40%"></figure>
+    </div>
+    <div class="rv" style="margin-top:70px">
+      <p class="eyebrow">Proudly serving the San Gabriel Valley</p>
+      <div class="areas">
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 22s7-6.2 7-12a7 7 0 0 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg>Pasadena</span>
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 22s7-6.2 7-12a7 7 0 0 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg>South Pasadena</span>
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 22s7-6.2 7-12a7 7 0 0 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg>San Marino</span>
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 22s7-6.2 7-12a7 7 0 0 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg>Alhambra</span>
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 22s7-6.2 7-12a7 7 0 0 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg>San Gabriel</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq" id="faq" style="padding-top:0">
+  <div class="wrap">
+    <div class="rv">
+      <p class="eyebrow">Good questions</p>
+      <h2>Before you <em>book.</em></h2>
+      <p class="lead" style="margin-top:22px">Anything else? Call us at <a class="ul" href="tel:+16268030278" style="font-weight:700;color:var(--ink)">(626) 803-0278</a>.</p>
+    </div>
+    <div class="rv" style="--d:.1s">
+      <details open><summary>How quickly will I get my quote?</summary><p>Estimates are free and come with no obligation. Reach out with your project, and we’ll provide your tailored quote within 24 hours.</p></details>
+      <details><summary>Are you insured?</summary><p>Yes. West Coast Washers is an insured, locally owned and operated company serving the greater San Gabriel Valley.</p></details>
+      <details><summary>Which areas do you serve?</summary><p>We serve homes and businesses throughout Pasadena, South Pasadena, San Marino, Alhambra and San Gabriel.</p></details>
+      <details><summary>Will there be any hidden fees?</summary><p>No. We believe in honest communication and fair pricing: what we quote is what you pay, with no hidden fees or unexpected charges.</p></details>
+      <details><summary>Is pressure washing safe for my surfaces?</summary><p>Our technicians adjust pressure and technique to the specific surface being cleaned, removing dirt and stains without causing damage. For more delicate surfaces, we offer soft washing.</p></details>
+      <details><summary>Are your cleaning products eco-friendly?</summary><p>Yes. We use eco-friendly cleaning solutions and water conservation techniques that clean your property effectively while minimizing environmental impact.</p></details>
+      <details><summary>Do you clean commercial properties?</summary><p>Absolutely. We work with residential homes and a wide range of commercial properties, from storefronts and offices to parking lots.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+  <div class="wrap">
+    <div class="cband rv">
+      <p class="eyebrow" style="color:var(--sand);justify-content:center">Ready to transform your property?</p>
+      <h2>Let’s make your property <em>shine</em> together.</h2>
+      <p>Get a free, no-obligation quote on pressure washing, window washing, gutter cleaning and more. We’ll get back to you shortly.</p>
+      <div class="ctas">
+        <a class="btn btn-p" href="tel:+16268030278">Call (626) 803-0278</a>
+        <a class="btn btn-g" href="mailto:westcoastwashersllc@gmail.com">Email us</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact" style="padding-bottom:0">
+  <div class="wrap">
+    <div class="rv">
+      <p class="eyebrow">Get in touch</p>
+      <h2>Request your <em>free estimate.</em></h2>
+      <p class="lead" style="margin-top:22px">Call, email or stop by. Tell us about your property and which days work best, and we’ll take it from there.</p>
+      <p style="color:var(--ink-2);display:flex;align-items:center;gap:10px;font-weight:500"><span class="dot" aria-hidden="true"></span>Open 24 hours, Monday through Sunday</p>
+    </div>
+    <div class="cinfo rv" style="--d:.1s">
+      <a class="ci" href="tel:+16268030278"><small>Phone</small><b>(626) 803-0278</b><span>Tap to call</span></a>
+      <a class="ci" href="mailto:westcoastwashersllc@gmail.com"><small>Email</small><b>westcoastwashersllc@gmail.com</b></a>
+      <div class="ci"><small>Hours</small><b>Open 24/7</b><span>Mon – Sun · 00:00 – 24:00</span></div>
+      <div class="ci"><small>Service area</small><b>San Gabriel Valley</b><span>Pasadena · South Pasadena · San Marino · Alhambra · San Gabriel</span></div>
+      <a class="ci wide" href="https://maps.google.com/?q=4029+Barrett+Road,+Los+Angeles,+CA+90032" target="_blank" rel="noopener">
+        <div><small>Address</small><b>4029 Barrett Road</b><span>Los Angeles, CA 90032 · Open in Google Maps</span></div>
+        <span class="arrow" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
     </div>
   </div>
 </section>
 </main>
 
-<footer><div class="wrap">
-  <span>© 2026 West Coast Washers</span>
-  <span>Concept design by webstudio. Not affiliated with or endorsed by West Coast Washers.</span>
-</div></footer>
+<footer>
+  <div class="wrap">
+    <div class="fgrid">
+      <div>
+        <a href="#top" class="logo"><img src="img/logo.png" alt="West Coast Washers logo" width="108" height="54"><b>West Coast Washers</b></a>
+        <p>West Coast Washers, LLC. San Gabriel Valley’s trusted exterior cleaning experts. Insured, locally owned and operated.</p>
+      </div>
+      <div><h4>Services</h4><ul><li><a class="ul" href="#services">Pressure Washing</a></li><li><a class="ul" href="#services">Window Washing</a></li><li><a class="ul" href="#services">Gutter Cleaning</a></li><li><a class="ul" href="#services">Solar Panel Cleaning</a></li><li><a class="ul" href="#services">Soft Washing</a></li></ul></div>
+      <div><h4>Company</h4><ul><li><a class="ul" href="#about">Our Story</a></li><li><a class="ul" href="#process">How It Works</a></li><li><a class="ul" href="#gallery">Gallery</a></li><li><a class="ul" href="#faq">FAQ</a></li></ul></div>
+      <div><h4>Contact</h4><ul><li><a class="ul" href="tel:+16268030278">(626) 803-0278</a></li><li><a class="ul" href="mailto:westcoastwashersllc@gmail.com" style="overflow-wrap:anywhere">westcoastwashersllc@gmail.com</a></li><li><a class="ul" href="https://maps.google.com/?q=4029+Barrett+Road,+Los+Angeles,+CA+90032" target="_blank" rel="noopener">4029 Barrett Road, Los Angeles, CA 90032</a></li><li>Open 24/7</li></ul></div>
+    </div>
+    <div class="fbot"><span>© <span id="yr">2026</span> West Coast Washers, LLC</span><a class="ul" href="#top">Back to top ↑</a></div>
+  </div>
+</footer>
 
-<div class="mobile-bar">
-  <a class="btn ghost" href="tel:6268030278">Call</a>
-  <a class="btn" href="#visit">Free quote</a>
+<div class="mbar">
+  <a class="btn btn-g" href="tel:+16268030278">Call now</a>
+  <a class="btn btn-p" href="#contact">Free Estimate</a>
 </div>
-</body>
+
+<script>
+(function(){
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  document.getElementById('yr').textContent = new Date().getFullYear();
+
+  // mobile menu
+  var burger = document.querySelector('.burger');
+  function setMenu(open){
+    document.body.classList.toggle('menu-open', open);
+    burger.setAttribute('aria-expanded', open);
+    burger.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+    document.body.style.overflow = open ? 'hidden' : '';
+  }
+  burger.addEventListener('click', function(){ setMenu(!document.body.classList.contains('menu-open')); });
+  document.querySelectorAll('.mnav a').forEach(function(a){ a.addEventListener('click', function(){ setMenu(false); }); });
+  document.addEventListener('keydown', function(e){ if (e.key === 'Escape') setMenu(false); });
+
+  // reveal on scroll
+  var els = document.querySelectorAll('.rv');
+  if (reduce || !('IntersectionObserver' in window)) {
+    els.forEach(function(el){ el.classList.add('on'); });
+  } else {
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if (en.isIntersecting) { en.target.classList.add('on'); io.unobserve(en.target); }
+      });
+    }, {threshold: .12, rootMargin: '0px 0px -40px 0px'});
+    els.forEach(function(el){ io.observe(el); });
+  }
+
+  // before / after
+  var ba = document.getElementById('ba'), range = document.getElementById('baR');
+  range.addEventListener('input', function(){ ba.style.setProperty('--p', range.value + '%'); });
+
+  // hero parallax
+  if (!reduce) {
+    var layers = document.querySelectorAll('.ph'), ticking = false, mx = 0, my = 0;
+    function update(){
+      var y = window.scrollY;
+      if (y < window.innerHeight * 1.2) {
+        layers.forEach(function(l){
+          var f = parseFloat(l.dataset.px);
+          l.style.transform = 'translate3d(' + (mx * f * 120) + 'px,' + (y * f + my * f * 120) + 'px,0)';
+        });
+      }
+      ticking = false;
+    }
+    function req(){ if (!ticking) { ticking = true; requestAnimationFrame(update); } }
+    window.addEventListener('scroll', req, {passive: true});
+    if (window.matchMedia('(pointer: fine)').matches) {
+      document.querySelector('.hero').addEventListener('mousemove', function(e){
+        mx = e.clientX / window.innerWidth - .5;
+        my = e.clientY / window.innerHeight - .5;
+        req();
+      });
+    }
+  }
+})();
+</script>
+<div id="lm-concept" style="position:fixed;left:12px;bottom:12px;z-index:2147483647;font:500 11px/1.3 -apple-system,BlinkMacSystemFont,Segoe UI,sans-serif;letter-spacing:.02em;background:rgba(15,15,18,.82);color:#f4f1ea;padding:7px 11px;border-radius:999px;backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);pointer-events:none;max-width:70vw">Website concept for West Coast Washers by webstudio &middot; not the live site</div><p style="margin:0;padding:18px 16px 70px;text-align:center;font:12px/1.5 -apple-system,sans-serif;color:#8a8a8a;background:#0e0e10">Concept design by webstudio. Not affiliated with or endorsed by West Coast Washers.</p></body>
 </html>
