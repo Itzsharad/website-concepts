@@ -1,291 +1,572 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src * data: blob:; media-src 'self' data:; style-src 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com data:; script-src 'unsafe-inline'; connect-src 'none'; frame-src 'none'; form-action 'none'; base-uri 'none'; object-src 'none'">
 <meta name="robots" content="noindex, nofollow">
-<title>Kholood Dental clinic,Citymart building,Al bustan,Ajman | Website concept</title>
+<style>html,body{max-width:100%;overflow-x:clip}</style>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kholood Dental Clinic · Citymart Building, Al Bustan, Ajman</title>
+<meta name="description" content="Kholood Dental Clinic, your neighbourhood dentist in the Citymart Building, Al Bustan, Ajman. Call 06 747 1113.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=Marcellus&display=swap" rel="stylesheet">
 <style>
 :root{
-  --bg:#f7f3ec;--surface:#ffffff;--ink:#12302c;--muted:#5b6b67;
-  --accent:#1f5c53;--accent-ink:#ffffff;--gold:#b8915a;--soft:#e8efe9;
-  --radius:22px;--max:1180px;
-  --serif:"Fraunces",Georgia,serif;--sans:"Manrope",system-ui,-apple-system,sans-serif;
+  --bg:#FBF3EC;--surface:#FFFFFF;--ink:#2B1D16;--ink-2:#5A463B;
+  --accent:#C4572F;--accent-d:#A8461F;--accent-dd:#7E3315;--sun:#E9B872;--sun-l:#F6E3C2;
+  --line:rgba(43,29,22,.14);--pad:clamp(20px,5vw,72px);--max:1360px;
+  --ease:cubic-bezier(.2,.7,.1,1);
 }
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:"Figtree",system-ui,sans-serif;background:var(--bg);color:var(--ink);font-size:17px;line-height:1.65;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+h1,h2,h3,.serif{font-family:"Marcellus",Georgia,serif;font-weight:400;line-height:1.02;letter-spacing:-.01em}
 a{color:inherit;text-decoration:none}
-img{max-width:100%;display:block}
-.wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
-.concept{background:var(--ink);color:var(--bg);font-size:13px;text-align:center;padding:8px 16px;letter-spacing:.02em}
-.concept b{color:var(--gold);font-weight:600}
+svg{display:block}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 var(--pad)}
+.label{font-size:12px;font-weight:600;letter-spacing:.22em;text-transform:uppercase}
+.label.acc{color:var(--accent-d)}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
 
-/* header */
-header{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:saturate(1.4) blur(10px);border-bottom:1px solid color-mix(in srgb,var(--ink) 8%,transparent)}
-.nav{display:flex;align-items:center;justify-content:space-between;height:76px;gap:24px}
-.brand{font-family:var(--serif);font-size:23px;font-weight:600;letter-spacing:-.01em;line-height:1.1;max-width:340px}
-.links{display:flex;gap:30px;font-size:15px;font-weight:500;color:var(--muted)}
-.links a:hover{color:var(--ink)}
-.nav-right{display:flex;align-items:center;gap:18px}
-.phone{font-weight:600;font-size:15px;white-space:nowrap}
-.btn{display:inline-flex;align-items:center;gap:10px;background:var(--accent);color:var(--accent-ink);padding:14px 26px;border-radius:999px;font-weight:600;font-size:15.5px;transition:transform .2s ease,box-shadow .2s ease;white-space:nowrap}
-.btn:hover{transform:translateY(-2px);box-shadow:0 12px 28px -12px var(--accent)}
-.btn.ghost{background:transparent;color:var(--ink);border:1.5px solid color-mix(in srgb,var(--ink) 20%,transparent)}
-.btn.ghost:hover{box-shadow:none;border-color:var(--ink)}
-.btn svg{width:18px;height:18px}
+/* Buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:12px;padding:18px 28px;font-weight:600;font-size:15px;letter-spacing:.04em;border:1.5px solid transparent;transition:transform .4s var(--ease),background .3s,color .3s,box-shadow .4s var(--ease);text-align:center;line-height:1.2}
+.btn svg{width:18px;height:18px;flex:none;transition:transform .4s var(--ease)}
+.btn-primary{background:var(--accent-d);color:#fff}
+.btn-primary:hover{background:var(--accent-dd);transform:translateY(-3px);box-shadow:0 14px 30px -12px rgba(126,51,21,.55)}
+.btn-primary:hover svg{transform:translateX(4px)}
+.btn-ghost{border-color:var(--ink);color:var(--ink)}
+.btn-ghost:hover{background:var(--ink);color:var(--bg);transform:translateY(-3px)}
+.ulink{background:linear-gradient(currentColor,currentColor) 0 100%/0 1.5px no-repeat;transition:background-size .45s var(--ease);padding-bottom:2px}
+.ulink:hover{background-size:100% 1.5px}
 
-/* hero */
-.hero{padding:72px 0 88px}
-.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:64px;align-items:center}
-.eyebrow{display:inline-flex;align-items:center;gap:10px;background:var(--surface);border:1px solid color-mix(in srgb,var(--ink) 10%,transparent);padding:8px 16px 8px 10px;border-radius:999px;font-size:14px;font-weight:600;color:var(--muted)}
-.stars{color:var(--gold);letter-spacing:1px;font-size:14px}
-.eyebrow .dot{width:26px;height:26px;border-radius:50%;background:var(--soft);display:grid;place-items:center;color:var(--accent)}
-h1{font-family:var(--serif);font-weight:500;font-size:clamp(44px,5.6vw,74px);line-height:1.02;letter-spacing:-.025em;margin:26px 0 22px}
-h1 em{font-style:italic;color:var(--accent)}
-.lead-text{font-size:19.5px;color:var(--muted);max-width:540px}
-.hero-ctas{display:flex;gap:14px;margin-top:36px;flex-wrap:wrap}
-.ticks{display:flex;gap:22px;margin-top:34px;flex-wrap:wrap;font-size:14.5px;font-weight:600;color:var(--muted)}
-.ticks span{display:flex;align-items:center;gap:8px}
-.ticks svg{width:18px;height:18px;color:var(--accent)}
-.visual{position:relative}
-.photo{aspect-ratio:4/5;border-radius:calc(var(--radius) + 10px);overflow:hidden;background:var(--soft);box-shadow:0 40px 80px -40px color-mix(in srgb,var(--ink) 55%,transparent)}
-.photo img{width:100%;height:100%;object-fit:cover}
-.quote-panel{aspect-ratio:4/5;border-radius:calc(var(--radius) + 10px);background:linear-gradient(155deg,var(--accent),color-mix(in srgb,var(--accent) 55%,var(--ink)));color:var(--accent-ink);padding:52px 46px;display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden;box-shadow:0 40px 80px -40px color-mix(in srgb,var(--ink) 60%,transparent)}
-.quote-panel:before{content:"";position:absolute;width:420px;height:420px;border-radius:50%;right:-160px;top:-160px;background:color-mix(in srgb,var(--accent-ink) 9%,transparent)}
-.quote-panel:after{content:"";position:absolute;width:260px;height:260px;border-radius:50%;left:-90px;bottom:-110px;border:1.5px solid color-mix(in srgb,var(--accent-ink) 22%,transparent)}
-.quote-mark{font-family:var(--serif);font-size:120px;line-height:.6;opacity:.35}
-.quote-panel p{font-family:var(--serif);font-size:28px;line-height:1.3;position:relative;z-index:1}
-.quote-panel .who{font-family:var(--sans);font-size:15px;opacity:.85;margin-top:22px;font-weight:600}
-.float{position:absolute;background:var(--surface);color:var(--ink);border-radius:18px;padding:16px 20px;box-shadow:0 24px 50px -24px color-mix(in srgb,var(--ink) 50%,transparent);display:flex;align-items:center;gap:14px;font-size:14px;line-height:1.35}
-.float b{font-size:22px;font-family:var(--serif);font-weight:600;display:block}
-.float.one{left:-34px;bottom:-28px}
-.float.two{right:-22px;top:44px}
-.float .badge{width:44px;height:44px;border-radius:14px;background:var(--soft);display:grid;place-items:center;color:var(--accent)}
-.float .badge svg{width:22px;height:22px}
+/* Header */
+.hdr{position:fixed;inset:0 0 auto;z-index:50;transition:background .4s,box-shadow .4s,backdrop-filter .4s}
+.hdr.scrolled{background:rgba(251,243,236,.78);backdrop-filter:blur(16px) saturate(1.4);-webkit-backdrop-filter:blur(16px) saturate(1.4);box-shadow:0 1px 0 var(--line)}
+.hdr .wrap{display:flex;align-items:center;justify-content:space-between;height:84px;gap:24px}
+.logo{display:flex;align-items:center;gap:14px}
+.logo-mark{width:42px;height:42px;background:var(--accent-d);color:#fff;display:grid;place-items:center;font-family:"Marcellus",serif;font-size:24px;flex:none}
+.logo-txt{display:flex;flex-direction:column;line-height:1.1}
+.logo-txt b{font-family:"Marcellus",serif;font-weight:400;font-size:20px}
+.logo-txt span{font-size:10.5px;letter-spacing:.24em;text-transform:uppercase;color:var(--ink-2);margin-top:3px}
+.nav{display:flex;align-items:center;gap:34px;font-size:14.5px;font-weight:500}
+.hdr-cta{display:flex;align-items:center;gap:22px}
+.hdr-phone{font-weight:600;font-size:15px;display:flex;align-items:center;gap:8px}
+.hdr-phone svg{width:16px;height:16px;color:var(--accent-d)}
+.hdr .btn{padding:13px 22px}
+.burger{display:none;width:46px;height:46px;border:1.5px solid var(--ink);background:none;cursor:pointer;position:relative}
+.burger i{position:absolute;left:12px;right:12px;height:1.5px;background:var(--ink);transition:transform .4s var(--ease),opacity .3s}
+.burger i:nth-child(1){top:16px}.burger i:nth-child(2){top:22px}.burger i:nth-child(3){top:28px}
+.menu-open .burger i:nth-child(1){transform:translateY(6px) rotate(45deg)}
+.menu-open .burger i:nth-child(2){opacity:0}
+.menu-open .burger i:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
+.mmenu{position:fixed;inset:0;z-index:40;background:var(--accent-d);color:#fff;display:flex;flex-direction:column;justify-content:center;padding:110px var(--pad) 40px;clip-path:inset(0 0 100% 0);transition:clip-path .7s var(--ease);visibility:hidden}
+.menu-open .mmenu{clip-path:inset(0 0 0 0);visibility:visible}
+.mmenu a{font-family:"Marcellus",serif;font-size:clamp(40px,12vw,64px);line-height:1.15;display:flex;gap:18px;align-items:baseline}
+.mmenu a small{font-family:"Figtree",sans-serif;font-size:12px;letter-spacing:.2em;opacity:.7}
+.mmenu .mfoot{margin-top:40px;font-size:15px;opacity:.9}
+.menu-open .hdr{background:transparent;box-shadow:none;backdrop-filter:none;color:#fff}
+.menu-open .burger{border-color:#fff}.menu-open .burger i{background:#fff}
+.menu-open .logo-mark{background:#fff;color:var(--accent-d)}
+.menu-open .logo-txt span{color:rgba(255,255,255,.8)}
 
-/* trust */
-.trust{border-top:1px solid color-mix(in srgb,var(--ink) 9%,transparent);border-bottom:1px solid color-mix(in srgb,var(--ink) 9%,transparent);background:var(--surface)}
-.trust .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;padding-top:26px;padding-bottom:26px}
-.trust div{display:flex;align-items:center;gap:12px;font-weight:600;font-size:15px}
-.trust svg{width:22px;height:22px;color:var(--accent);flex:none}
+/* Hero */
+.hero{min-height:100vh;min-height:100svh;padding:124px 0 0;display:flex;flex-direction:column;position:relative;overflow:hidden}
+.hero-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:0 24px;flex:1;align-items:end;padding-bottom:56px}
+.hero-meta{grid-column:1/-1;display:flex;justify-content:space-between;border-top:1.5px solid var(--ink);padding-top:14px;margin-bottom:clamp(28px,5vw,56px);gap:16px;flex-wrap:wrap}
+.hero-copy{grid-column:1/8;position:relative;z-index:2}
+.h1{font-size:clamp(3.1rem,9.6vw,9.6rem);line-height:.92;letter-spacing:-.025em}
+.h1 .ln{display:block;overflow:hidden;padding-bottom:.08em;margin-bottom:-.08em}
+.h1 .ln>span{display:inline-block;transform:translateY(110%);transition:transform 1.2s var(--ease)}
+.h1 em{font-style:normal;color:var(--accent)}
+.h1 .dot{display:inline-block;width:.16em;height:.16em;background:var(--sun);margin-left:.06em;vertical-align:baseline}
+.loaded .h1 .ln>span{transform:none}
+.loaded .h1 .ln:nth-child(2)>span{transition-delay:.12s}
+.loaded .h1 .ln:nth-child(3)>span{transition-delay:.24s}
+.hero-sub{max-width:520px;font-size:clamp(17px,1.4vw,19px);color:var(--ink-2);margin:34px 0 36px}
+.hero-ctas{display:flex;gap:14px;flex-wrap:wrap}
+.fade{opacity:0;transform:translateY(24px);transition:opacity 1s var(--ease),transform 1s var(--ease)}
+.loaded .fade{opacity:1;transform:none}
+.loaded .d1{transition-delay:.5s}.loaded .d2{transition-delay:.65s}.loaded .d3{transition-delay:.8s}.loaded .d4{transition-delay:.35s}
 
-/* sections */
-section.block{padding:110px 0}
-.kicker{font-size:13px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
-h2{font-family:var(--serif);font-weight:500;font-size:clamp(34px,3.8vw,52px);line-height:1.08;letter-spacing:-.02em;margin:14px 0 18px}
-.section-head{display:flex;justify-content:space-between;align-items:end;gap:40px;margin-bottom:56px}
-.section-head p{color:var(--muted);max-width:420px}
-.services{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-.card{background:var(--surface);border-radius:var(--radius);padding:34px 32px 36px;border:1px solid color-mix(in srgb,var(--ink) 7%,transparent);transition:transform .25s ease,box-shadow .25s ease}
-.card:hover{transform:translateY(-4px);box-shadow:0 30px 60px -36px color-mix(in srgb,var(--ink) 45%,transparent)}
-.icon{width:54px;height:54px;border-radius:16px;background:var(--soft);color:var(--accent);display:grid;place-items:center;margin-bottom:24px}
-.icon svg{width:26px;height:26px}
-.card h3{font-family:var(--serif);font-weight:500;font-size:23px;margin-bottom:8px;letter-spacing:-.01em}
-.card p{color:var(--muted);font-size:16px}
+/* Signature block */
+.hero-art{grid-column:8/13;align-self:stretch;position:relative;min-height:520px}
+.block{position:absolute;inset:0;background:var(--accent-d);overflow:hidden;clip-path:inset(100% 0 0 0);transition:clip-path 1.4s var(--ease) .2s}
+.loaded .block{clip-path:inset(0 0 0 0)}
+.block-sun{position:absolute;width:62%;aspect-ratio:1;border-radius:50%;background:var(--sun);right:-14%;top:-10%;will-change:transform}
+.block-num{position:absolute;left:-4%;bottom:-6%;font-family:"Marcellus",serif;font-size:clamp(170px,19vw,300px);line-height:.8;color:transparent;-webkit-text-stroke:1.5px rgba(255,255,255,.85);letter-spacing:-.04em;will-change:transform}
+.block-tooth{position:absolute;left:12%;top:16%;width:34%;color:#fff;will-change:transform}
+.block-tooth path{stroke-dasharray:900;stroke-dashoffset:900;transition:stroke-dashoffset 2.4s var(--ease) 1s}
+.loaded .block-tooth path{stroke-dashoffset:0}
+.block-lbl{position:absolute;right:22px;bottom:22px;color:#fff;text-align:right;font-size:11px;letter-spacing:.22em;text-transform:uppercase;line-height:1.8}
+.ring{position:absolute;left:-58px;top:50%;width:132px;height:132px;margin-top:-66px;background:var(--bg);border-radius:50%;display:grid;place-items:center;z-index:3;box-shadow:0 0 0 1.5px var(--ink)}
+.ring svg{width:116px;height:116px;animation:spin 22s linear infinite}
+.ring text{font-size:10.4px;letter-spacing:.32em;font-weight:600;fill:var(--ink);text-transform:uppercase}
+.ring b{position:absolute;width:12px;height:12px;background:var(--accent)}
+@keyframes spin{to{transform:rotate(360deg)}}
 
-.why{background:var(--ink);color:var(--bg)}
-.why .kicker{color:var(--gold)}
-.why-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:80px;align-items:start}
-.why h2{color:var(--bg)}
-.why .intro{color:color-mix(in srgb,var(--bg) 70%,transparent);font-size:18px;max-width:440px}
-.points{display:grid;gap:14px}
-.point{display:grid;grid-template-columns:62px 1fr;gap:20px;padding:30px;border-radius:var(--radius);background:color-mix(in srgb,var(--bg) 6%,transparent);border:1px solid color-mix(in srgb,var(--bg) 10%,transparent)}
-.point .num{font-family:var(--serif);font-size:34px;color:var(--gold);line-height:1}
-.point h3{font-family:var(--serif);font-weight:500;font-size:24px;margin-bottom:6px}
-.point p{color:color-mix(in srgb,var(--bg) 72%,transparent);font-size:16px}
+/* Marquee */
+.marquee{background:var(--ink);color:var(--bg);overflow:hidden;padding:22px 0;position:relative;z-index:2}
+.mq-track{display:flex;width:max-content;animation:mq 38s linear infinite}
+.mq-track span{display:flex;align-items:center;gap:36px;padding-right:36px;font-family:"Marcellus",serif;font-size:clamp(24px,3vw,40px);white-space:nowrap}
+.mq-track i{width:10px;height:10px;background:var(--sun);flex:none;transform:rotate(45deg)}
+.marquee:hover .mq-track{animation-play-state:paused}
+@keyframes mq{to{transform:translateX(-50%)}}
 
-.score{display:flex;align-items:center;gap:18px;background:var(--surface);padding:16px 24px;border-radius:18px;border:1px solid color-mix(in srgb,var(--ink) 8%,transparent)}
-.score b{font-family:var(--serif);font-size:40px;font-weight:500;line-height:1}
-.score small{display:block;color:var(--muted);font-size:14px}
-.reviews{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-.review{background:var(--surface);border-radius:var(--radius);padding:34px;display:flex;flex-direction:column;gap:22px;border:1px solid color-mix(in srgb,var(--ink) 7%,transparent)}
-.review p{font-family:var(--serif);font-size:19.5px;line-height:1.45}
-.review .by{margin-top:auto;display:flex;align-items:center;gap:12px;font-weight:600;font-size:15px}
-.avatar{width:40px;height:40px;border-radius:50%;background:var(--soft);color:var(--accent);display:grid;place-items:center;font-weight:700}
-.review .src{color:var(--muted);font-weight:500;font-size:13px;display:block}
+/* Sections */
+section{position:relative}
+.sec{padding:clamp(88px,12vw,168px) 0}
+.sec-head{display:grid;grid-template-columns:repeat(12,1fr);gap:24px;margin-bottom:clamp(48px,7vw,88px);align-items:end}
+.sec-head .label{grid-column:1/4;border-top:1.5px solid var(--ink);padding-top:12px;align-self:start}
+.sec-head h2{grid-column:4/11;font-size:clamp(2.4rem,5.6vw,5.2rem)}
+.sec-head p{grid-column:4/10;color:var(--ink-2);font-size:18px;margin-top:-8px}
+.h2 em,.sec-head h2 em{font-style:normal;color:var(--accent)}
 
-.cta-band{padding:0 0 110px}
-.cta-box{border-radius:calc(var(--radius) + 12px);background:linear-gradient(140deg,var(--accent),color-mix(in srgb,var(--accent) 60%,var(--ink)));color:var(--accent-ink);padding:76px 64px;display:grid;grid-template-columns:1.3fr 1fr;gap:40px;align-items:center;position:relative;overflow:hidden}
-.cta-box:after{content:"";position:absolute;right:-120px;bottom:-200px;width:460px;height:460px;border-radius:50%;border:1.5px solid color-mix(in srgb,var(--accent-ink) 22%,transparent)}
-.cta-box h2{color:inherit;margin:0 0 12px}
-.cta-box p{opacity:.85;font-size:18px}
-.cta-box .actions{display:flex;flex-direction:column;gap:12px;align-items:flex-start;position:relative;z-index:1}
-.cta-box .btn{background:var(--accent-ink);color:var(--accent)}
-.cta-box .btn.ghost{background:transparent;color:var(--accent-ink);border-color:color-mix(in srgb,var(--accent-ink) 40%,transparent)}
+/* Services */
+.svc-grid{display:grid;grid-template-columns:repeat(4,1fr);border-top:1.5px solid var(--ink);border-left:1px solid var(--line)}
+.svc{background:var(--surface);padding:36px 30px 40px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);position:relative;overflow:hidden;min-height:400px;display:flex;flex-direction:column;transition:transform .5s var(--ease),box-shadow .5s var(--ease);isolation:isolate}
+.svc::before{content:"";position:absolute;inset:auto 0 0;height:0;background:var(--sun-l);z-index:-1;transition:height .6s var(--ease)}
+.svc:hover{transform:translateY(-8px);box-shadow:0 30px 50px -30px rgba(43,29,22,.35);z-index:2}
+.svc:hover::before{height:100%}
+.svc-num{font-family:"Marcellus",serif;font-size:88px;line-height:.8;color:var(--accent);letter-spacing:-.04em}
+.svc-ico{width:44px;height:44px;color:var(--ink);margin:auto 0 26px;margin-top:auto}
+.svc h3{font-size:28px;margin-bottom:12px}
+.svc p{color:var(--ink-2);font-size:15.5px}
+.svc-note{margin-top:28px;font-size:14.5px;color:var(--ink-2);display:flex;gap:10px;align-items:center}
+.svc-note::before{content:"";width:28px;height:1.5px;background:var(--accent);flex:none}
 
-.visit{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:10px}
-.visit .card h3{font-size:20px}
-.visit a{color:var(--accent);font-weight:600}
-footer{border-top:1px solid color-mix(in srgb,var(--ink) 9%,transparent);padding:40px 0 110px;color:var(--muted);font-size:14px}
-footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
-.mobile-bar{display:none}
+/* About */
+.about{background:var(--ink);color:var(--bg);overflow:hidden}
+.about .label{color:var(--sun)}
+.about-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:24px;align-items:center}
+.about-word{grid-column:1/7;position:relative}
+.arabic{font-family:"Marcellus",serif;font-size:clamp(130px,20vw,300px);line-height:1;color:var(--sun);direction:rtl;text-align:left;display:block}
+.about-word .gloss{display:flex;gap:18px;align-items:center;margin-top:18px;border-top:1px solid rgba(251,243,236,.25);padding-top:16px;font-size:15px;color:rgba(251,243,236,.8)}
+.about-copy{grid-column:8/13}
+.about-copy h2{font-size:clamp(2.2rem,4.4vw,4rem);margin:18px 0 26px}
+.about-copy h2 em{font-style:normal;color:var(--sun)}
+.about-copy p{color:rgba(251,243,236,.82);margin-bottom:18px}
+.about-copy .btn-ghost{border-color:var(--bg);color:var(--bg);margin-top:14px}
+.about-copy .btn-ghost:hover{background:var(--bg);color:var(--ink)}
 
-@keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
-.hero .copy>*{animation:rise .8s cubic-bezier(.2,.7,.2,1) both}
-.hero .copy>*:nth-child(2){animation-delay:.08s}.hero .copy>*:nth-child(3){animation-delay:.16s}
-.hero .copy>*:nth-child(4){animation-delay:.24s}.hero .copy>*:nth-child(5){animation-delay:.32s}
-.visual{animation:rise 1s .2s cubic-bezier(.2,.7,.2,1) both}
+/* Why */
+.why-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:24px}
+.why-lead{grid-column:1/6;position:sticky;top:120px;align-self:start}
+.why-lead h2{font-size:clamp(2.4rem,5vw,4.6rem);margin:18px 0 22px}
+.why-lead h2 em{font-style:normal;color:var(--accent)}
+.why-lead p{color:var(--ink-2);max-width:420px}
+.why-list{grid-column:7/13;list-style:none}
+.why-list li{display:grid;grid-template-columns:72px 1fr;gap:20px;padding:34px 0;border-top:1.5px solid var(--ink)}
+.why-list li:last-child{border-bottom:1.5px solid var(--ink)}
+.why-list .k{font-family:"Marcellus",serif;font-size:40px;line-height:1;color:var(--accent)}
+.why-list h3{font-size:30px;margin-bottom:8px}
+.why-list p{color:var(--ink-2)}
 
-@media (max-width:980px){
-  .links{display:none}
-  .hero-grid,.why-grid,.cta-box{grid-template-columns:1fr}
-  .hero-grid{gap:56px}
-  .services,.reviews,.visit{grid-template-columns:1fr 1fr}
-  .trust .wrap{grid-template-columns:1fr 1fr}
-  .float.one{left:12px;bottom:-26px}.float.two{right:12px}
-  .visual{max-width:560px;margin-bottom:20px}
-  .section-head{flex-direction:column;align-items:flex-start}
+/* Steps */
+.steps{background:var(--sun-l)}
+.step-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0}
+.step{padding:0 28px 0 0;position:relative}
+.step-n{font-family:"Marcellus",serif;font-size:clamp(90px,10vw,150px);line-height:.85;color:var(--ink);letter-spacing:-.05em}
+.step-bar{height:6px;background:var(--ink);margin:26px 0 26px;position:relative;overflow:hidden}
+.step-bar::after{content:"";position:absolute;inset:0;background:var(--accent);transform:scaleX(0);transform-origin:left;transition:transform 1.2s var(--ease)}
+.step.in .step-bar::after{transform:scaleX(1)}
+.step:nth-child(2) .step-bar::after{transition-delay:.25s}
+.step:nth-child(3) .step-bar::after{transition-delay:.5s}
+.step:nth-child(4) .step-bar::after{transition-delay:.75s}
+.step h3{font-size:26px;margin-bottom:10px}
+.step p{color:var(--ink-2);font-size:15.5px}
+.step a{color:var(--accent-d);font-weight:600}
+
+/* FAQ */
+.faq-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:24px}
+.faq-grid .sec-head{grid-column:1/5;display:block;margin:0}
+.faq-grid .sec-head h2{margin-top:18px;font-size:clamp(2.4rem,4.6vw,4.2rem)}
+.faq-list{grid-column:6/13}
+details{border-top:1.5px solid var(--ink)}
+details:last-child{border-bottom:1.5px solid var(--ink)}
+summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:20px;padding:28px 0;font-family:"Marcellus",serif;font-size:clamp(22px,2.2vw,28px);line-height:1.2}
+summary::-webkit-details-marker{display:none}
+summary .pm{width:34px;height:34px;flex:none;border:1.5px solid var(--ink);position:relative;transition:background .3s,transform .4s var(--ease)}
+summary .pm::before,summary .pm::after{content:"";position:absolute;left:9px;right:9px;top:50%;height:1.5px;margin-top:-.75px;background:var(--ink);transition:transform .4s var(--ease)}
+summary .pm::after{transform:rotate(90deg)}
+details[open] summary .pm{background:var(--accent-d);border-color:var(--accent-d)}
+details[open] summary .pm::before,details[open] summary .pm::after{background:#fff}
+details[open] summary .pm::after{transform:rotate(0)}
+details p{padding:0 60px 30px 0;color:var(--ink-2)}
+details p a{color:var(--accent-d);font-weight:600}
+
+/* CTA */
+.cta{background:var(--accent-d);color:#fff;overflow:hidden;padding:clamp(90px,12vw,170px) 0}
+.cta-sun{position:absolute;width:min(56vw,680px);aspect-ratio:1;border-radius:50%;background:var(--accent);right:-12%;top:50%;transform:translateY(-50%)}
+.cta-sun::after{content:"";position:absolute;inset:22%;border-radius:50%;background:var(--sun);opacity:.9}
+.cta .wrap{position:relative;z-index:2}
+.cta .label{color:var(--sun-l)}
+.cta h2{font-size:clamp(3rem,9vw,8.6rem);line-height:.92;margin:24px 0 44px;max-width:11ch}
+.cta-phone{display:inline-flex;align-items:baseline;gap:20px;font-family:"Marcellus",serif;font-size:clamp(32px,5vw,64px);border-bottom:2px solid #fff;padding-bottom:6px;transition:gap .4s var(--ease)}
+.cta-phone:hover{gap:32px}
+.cta-phone small{font-family:"Figtree",sans-serif;font-size:13px;letter-spacing:.22em;text-transform:uppercase}
+
+/* Contact */
+.contact-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:24px;align-items:stretch}
+.c-info{grid-column:1/6;display:flex;flex-direction:column}
+.c-info h2{font-size:clamp(2.4rem,5vw,4.6rem);margin:18px 0 40px}
+.c-row{border-top:1.5px solid var(--ink);padding:22px 0;display:grid;grid-template-columns:110px 1fr;gap:16px}
+.c-row:last-of-type{border-bottom:1.5px solid var(--ink)}
+.c-row .label{padding-top:4px;color:var(--ink-2)}
+.c-row .v{font-size:19px;font-weight:500}
+.c-row .v a{color:var(--accent-d)}
+.c-info .hero-ctas{margin-top:36px}
+.c-map{grid-column:7/13;background:var(--surface);position:relative;min-height:520px;overflow:hidden;display:block;border:1.5px solid var(--ink);transition:transform .5s var(--ease)}
+.c-map:hover{transform:translateY(-6px)}
+.c-map svg.grid{position:absolute;inset:0;width:100%;height:100%}
+.pin{position:absolute;left:54%;top:46%;transform:translate(-50%,-100%);display:flex;flex-direction:column;align-items:center}
+.pin-card{background:var(--ink);color:var(--bg);padding:14px 18px;font-size:13px;line-height:1.45;white-space:nowrap}
+.pin-card b{font-family:"Marcellus",serif;font-weight:400;font-size:18px;display:block}
+.pin-stem{width:2px;height:40px;background:var(--ink)}
+.pin-dot{width:18px;height:18px;background:var(--accent);border-radius:50%;box-shadow:0 0 0 0 rgba(196,87,47,.5);animation:pulse 2.4s infinite}
+@keyframes pulse{70%{box-shadow:0 0 0 22px rgba(196,87,47,0)}100%{box-shadow:0 0 0 0 rgba(196,87,47,0)}}
+.map-open{position:absolute;left:0;right:0;bottom:0;background:var(--accent-d);color:#fff;padding:18px 24px;display:flex;justify-content:space-between;align-items:center;font-weight:600;font-size:15px}
+.map-open svg{width:20px;height:20px;transition:transform .4s var(--ease)}
+.c-map:hover .map-open svg{transform:translate(4px,-4px)}
+
+/* Footer */
+footer{background:var(--ink);color:rgba(251,243,236,.8);padding:80px 0 40px;overflow:hidden}
+.f-big{font-family:"Marcellus",serif;font-size:clamp(64px,15vw,240px);line-height:.85;color:var(--bg);letter-spacing:-.03em;white-space:nowrap}
+.f-big em{font-style:normal;color:var(--sun)}
+.f-row{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;border-top:1px solid rgba(251,243,236,.2);margin-top:48px;padding-top:28px;font-size:14.5px}
+.f-row nav{display:flex;gap:26px;flex-wrap:wrap}
+.f-row a:hover{color:var(--sun)}
+
+/* Mobile bar */
+.mbar{display:none}
+
+/* Reveal */
+.rv{opacity:0;transform:translateY(40px);transition:opacity 1s var(--ease),transform 1s var(--ease)}
+.rv.in{opacity:1;transform:none}
+.rv.d1{transition-delay:.1s}.rv.d2{transition-delay:.2s}.rv.d3{transition-delay:.3s}
+
+/* Responsive */
+@media (max-width:1100px){
+  .nav{display:none}
+  .svc-grid{grid-template-columns:repeat(2,1fr)}
+  .step-grid{grid-template-columns:repeat(2,1fr);gap:56px 0}
+}
+@media (max-width:900px){
+  .hdr-phone,.hdr .btn{display:none}
+  .burger{display:block}
+  .hero-copy,.hero-art{grid-column:1/-1}
+  .hero-art{min-height:360px;margin-top:56px}
+  .ring{left:auto;right:24px;top:-56px;margin-top:0;width:112px;height:112px}
+  .ring svg{width:98px;height:98px}
+  .sec-head .label,.sec-head h2,.sec-head p{grid-column:1/-1}
+  .about-word,.about-copy,.why-lead,.why-list,.faq-grid .sec-head,.faq-list,.c-info,.c-map{grid-column:1/-1}
+  .why-lead{position:static;margin-bottom:24px}
+  .c-map{min-height:420px;margin-top:24px}
+  .arabic{text-align:left}
 }
 @media (max-width:640px){
-  body{font-size:16px}
-  .wrap{padding:0 18px}
-  .nav{height:66px}.brand{font-size:19px}
-  .phone,.nav-right .btn{display:none}
-  .hero{padding:44px 0 64px}
-  .lead-text{font-size:17.5px}
-  .hero-ctas .btn{flex:1;justify-content:center}
-  .ticks{display:none}
-  .services,.reviews,.visit,.trust .wrap{grid-template-columns:1fr}
-  section.block{padding:76px 0}
-  .quote-panel,.photo{aspect-ratio:auto;min-height:380px}.photo{aspect-ratio:4/3;min-height:0}
-  .quote-panel{padding:40px 30px 64px}.quote-panel p{font-size:23px}
-  .float{font-size:13px;padding:12px 14px}.float b{font-size:18px}
-  .float.two{display:none}
-  .cta-box{padding:52px 28px}
-  .point{grid-template-columns:44px 1fr;padding:24px}
-  .mobile-bar{display:flex;position:fixed;left:12px;right:12px;bottom:12px;z-index:30;gap:10px}
-  .mobile-bar .btn{flex:1;justify-content:center;box-shadow:0 14px 30px -14px color-mix(in srgb,var(--ink) 60%,transparent)}
-  .mobile-bar .btn.ghost{background:var(--surface)}
+  body{font-size:16px;padding-bottom:72px}
+  .hdr .wrap{height:72px}
+  .logo-txt b{font-size:18px}
+  .logo-txt span{font-size:9.5px;letter-spacing:.18em}
+  .hero{padding-top:100px}
+  .hero-meta .hide-s{display:none}
+  .hero-ctas .btn{flex:1 1 100%}
+  .svc-grid{grid-template-columns:1fr}
+  .svc{min-height:0}
+  .svc-ico{margin-top:40px}
+  .step-grid{grid-template-columns:1fr;gap:48px}
+  .why-list li{grid-template-columns:52px 1fr;gap:14px}
+  .why-list h3{font-size:25px}
+  details p{padding-right:0}
+  .c-row{grid-template-columns:1fr;gap:6px}
+  .pin-card{white-space:normal;width:200px}
+  .pin{left:50%}
+  .cta-phone{gap:12px;flex-wrap:wrap}
+  .mbar{display:grid;grid-template-columns:1fr 1fr;position:fixed;left:0;right:0;bottom:0;z-index:45;background:rgba(43,29,22,.96);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);padding:10px;gap:10px;padding-bottom:max(10px,env(safe-area-inset-bottom))}
+  .mbar a{display:flex;align-items:center;justify-content:center;gap:10px;padding:15px 10px;font-weight:600;font-size:15px}
+  .mbar svg{width:18px;height:18px}
+  .mbar .call{background:var(--accent-d);color:#fff}
+  .mbar .dir{border:1.5px solid rgba(251,243,236,.5);color:var(--bg)}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+  .h1 .ln>span,.fade,.rv{transform:none!important;opacity:1!important}
+  .block{clip-path:none!important}
+  .block-tooth path{stroke-dashoffset:0!important}
 }
 </style>
 </head>
 <body>
-<div class="concept">Website concept prepared for <b>Kholood Dental clinic,Citymart building,Al bustan,Ajman</b> by webstudio &middot; not a live site</div>
 
-<header>
-  <div class="wrap nav">
-    <a href="#top" class="brand">Kholood Dental clinic,Citymart building,Al bustan,Ajman</a>
-    <nav class="links">
-      <a href="#services">Services</a><a href="#why">Why us</a><a href="#visit">Visit</a>
+<header class="hdr" id="top">
+  <div class="wrap">
+    <a href="#top" class="logo" aria-label="Kholood Dental Clinic, home">
+      <span class="logo-mark" aria-hidden="true">K</span>
+      <span class="logo-txt"><b>Kholood</b><span>Dental Clinic · Ajman</span></span>
+    </a>
+    <nav class="nav" aria-label="Main">
+      <a class="ulink" href="#services">Care</a>
+      <a class="ulink" href="#about">The Clinic</a>
+      <a class="ulink" href="#visit">Your Visit</a>
+      <a class="ulink" href="#faq">FAQ</a>
+      <a class="ulink" href="#contact">Contact</a>
     </nav>
-    <div class="nav-right">
-      <a class="phone" href="tel:067471113">067471113</a>
-      <a class="btn" href="#visit">Book now</a>
+    <div class="hdr-cta">
+      <a class="hdr-phone ulink" href="tel:+97167471113"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 5a2 2 0 0 1 2-2"/></svg>06 747 1113</a>
+      <a class="btn btn-primary" href="#contact">Book a visit</a>
+      <button class="burger" aria-label="Open menu" aria-expanded="false"><i></i><i></i><i></i></button>
     </div>
   </div>
 </header>
 
-<main id="top">
+<div class="mmenu" aria-hidden="true">
+  <a href="#services"><small>01</small>Care</a>
+  <a href="#about"><small>02</small>The Clinic</a>
+  <a href="#visit"><small>03</small>Your Visit</a>
+  <a href="#faq"><small>04</small>FAQ</a>
+  <a href="#contact"><small>05</small>Contact</a>
+  <p class="mfoot">302, Citymart Building, Al Bustan, Ajman<br><a href="tel:+97167471113" style="font-family:inherit;font-size:inherit">06 747 1113</a></p>
+</div>
+
+<main>
 <section class="hero">
   <div class="wrap hero-grid">
-    <div class="copy">
-      <div class="eyebrow">
-        <span class="dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-7-4.4-7-10a4 4 0 017-2.6A4 4 0 0119 10c0 5.6-7 10-7 10z"/></svg></span>Family &amp; cosmetic dentistry
-      </div>
-      <h1>Dentistry that feels as good as <em>it looks.</em></h1>
-      <p class="lead-text">Gentle, modern care for the whole family, with same-week appointments and a team that actually takes time to listen.</p>
-      <div class="hero-ctas">
-        <a class="btn" href="#visit">Book your visit <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-        <a class="btn ghost" href="tel:067471113">Call 067471113</a>
-      </div>
-      <div class="ticks">
-        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7"/></svg>Most insurance accepted</span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7"/></svg>New patients welcome</span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7"/></svg>Flexible payment plans</span>
+    <div class="hero-meta label fade d4">
+      <span>N° 302 — Citymart Building</span>
+      <span class="hide-s">Dental Clinic</span>
+      <span>Al Bustan · Ajman · UAE</span>
+    </div>
+    <div class="hero-copy">
+      <h1 class="h1">
+        <span class="ln"><span>Quiet</span></span>
+        <span class="ln"><span><em>precision</em></span></span>
+        <span class="ln"><span>for your smile<i class="dot"></i></span></span>
+      </h1>
+      <p class="hero-sub fade d1">Kholood Dental Clinic is your neighbourhood dentist in the Citymart Building, Al Bustan. A calm, considered place to look after your teeth, close to home in Ajman.</p>
+      <div class="hero-ctas fade d2">
+        <a class="btn btn-primary" href="tel:+97167471113">Call 06 747 1113 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 12h15M13 6l6 6-6 6"/></svg></a>
+        <a class="btn btn-ghost" href="#contact">Plan your visit</a>
       </div>
     </div>
-    <div class="visual">
-      
-      <div class="quote-panel"><div class="quote-mark">“</div><div><p>Gentle, modern care for the whole family, with same-week appointments and a team that actually takes time to listen.</p><div class="who">Kholood Dental clinic,Citymart building,Al bustan,Ajman</div></div></div>
-      
-      
-      <div class="float two"><span class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><span><b>This week</b>New patients welcome</span></div>
+    <div class="hero-art fade d3" aria-hidden="true">
+      <div class="block">
+        <div class="block-sun" data-px="-0.08"></div>
+        <svg class="block-tooth" data-px="0.05" viewBox="0 0 200 240" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M100 40c-22-22-78-22-82 30-3 38 14 58 20 96 5 34 14 58 28 58 16 0 14-58 34-58s18 58 34 58c14 0 23-24 28-58 6-38 23-58 20-96-4-52-60-52-82-30z"/></svg>
+        <div class="block-num" data-px="0.12">302</div>
+        <div class="block-lbl">Kholood<br>Dental Clinic</div>
+      </div>
+      <div class="ring">
+        <svg viewBox="0 0 120 120"><defs><path id="c" d="M60 60m-46 0a46 46 0 1 1 92 0a46 46 0 1 1-92 0"/></defs><text><textPath href="#c">Kholood Dental · Al Bustan · Ajman ·</textPath></text></svg>
+        <b></b>
+      </div>
     </div>
   </div>
-  <template id="qp"><div class="quote-panel"><div class="quote-mark">“</div><div><p>Gentle, modern care for the whole family, with same-week appointments and a team that actually takes time to listen.</p><div class="who">Kholood Dental clinic,Citymart building,Al bustan,Ajman</div></div></div></template>
+
+  <div class="marquee" aria-label="Kholood Dental Clinic, Al Bustan, Ajman">
+    <div class="mq-track">
+      <span>Consultations<i></i>Check-ups<i></i>Cleaning &amp; hygiene<i></i>Treatment planning<i></i>Citymart Building<i></i>Al Bustan, Ajman<i></i>06 747 1113<i></i></span>
+      <span aria-hidden="true">Consultations<i></i>Check-ups<i></i>Cleaning &amp; hygiene<i></i>Treatment planning<i></i>Citymart Building<i></i>Al Bustan, Ajman<i></i>06 747 1113<i></i></span>
+    </div>
+  </div>
 </section>
 
-<div class="trust"><div class="wrap">
-  <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.2-8 9-4.6-.8-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg>Most insurance accepted</div><div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.2-8 9-4.6-.8-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg>New patients welcome</div><div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.2-8 9-4.6-.8-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg>Flexible payment plans</div><div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.2-8 9-4.6-.8-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg>Evening appointments</div>
-</div></div>
-
-<section class="block" id="services">
+<section class="sec" id="services">
   <div class="wrap">
-    <div class="section-head">
-      <div><div class="kicker">What we do</div><h2>Everything you need,<br>under one roof.</h2></div>
-      <p>From routine visits to the work that changes how you feel about your day, Kholood Dental clinic,Citymart building,Al bustan,Ajman takes care of it properly.</p>
+    <div class="sec-head">
+      <span class="label rv">01 — Care</span>
+      <h2 class="rv d1">Thoughtful dentistry, <em>close to home.</em></h2>
+      <p class="rv d2">From your first conversation to the care that follows, every visit is about understanding your teeth and what you want from your smile.</p>
     </div>
-    <div class="services">
-      
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3c-2.5 0-4 2-4 4.5 0 3 1.5 4.5 2 7.5.4 2.4.8 6 2.5 6 1.6 0 1.6-4.5 4.5-4.5s2.9 4.5 4.5 4.5c1.7 0 2.1-3.6 2.5-6 .5-3 2-4.5 2-7.5C21 5 19.5 3 17 3c-2 0-3 1-5 1S9 3 7 3z"/></svg></div><h3>Checkups &amp; cleanings</h3><p>Thorough, comfortable exams that keep small problems from becoming big ones.</p></div>
-      
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/><path d="M19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8z"/></svg></div><h3>Teeth whitening</h3><p>Professional whitening that brightens your smile safely in a single visit.</p></div>
-      
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 14s1.5 2.5 4 2.5 4-2.5 4-2.5"/><path d="M9 9.5h.01M15 9.5h.01"/></svg></div><h3>Invisalign &amp; aligners</h3><p>Straighten your teeth discreetly with clear aligners planned around your life.</p></div>
-      
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.2-8 9-4.6-.8-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg></div><h3>Dental implants</h3><p>Permanent, natural-looking replacements that feel and work like your own teeth.</p></div>
-      
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-7-4.4-7-10a4 4 0 017-2.6A4 4 0 0119 10c0 5.6-7 10-7 10z"/></svg></div><h3>Kids&#39; dentistry</h3><p>A calm, friendly first experience that helps children love their checkups.</p></div>
-      
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div><h3>Emergency care</h3><p>Same-day help for toothaches, chips and broken teeth when you need it most.</p></div>
-      
+    <div class="svc-grid">
+      <article class="svc rv">
+        <span class="svc-num">01</span>
+        <svg class="svc-ico" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="24" cy="24" r="19"/><path d="M16 22c0-5 4-8 8-8s8 3 8 8M17 30h14"/></svg>
+        <h3>Consultations</h3>
+        <p>Sit down, talk it through. Tell us what's on your mind and leave with a clear picture of where you stand.</p>
+      </article>
+      <article class="svc rv d1">
+        <span class="svc-num">02</span>
+        <svg class="svc-ico" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M24 10c-5-5-17-5-18 7-1 9 3 13 4 22 1 6 3 9 6 9 4 0 3-11 8-11s4 11 8 11c3 0 5-3 6-9 1-9 5-13 4-22-1-12-13-12-18-7z"/></svg>
+        <h3>Check-ups</h3>
+        <p>Regular, careful look-ins that keep small things small and give you peace of mind between visits.</p>
+      </article>
+      <article class="svc rv d2">
+        <span class="svc-num">03</span>
+        <svg class="svc-ico" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M24 6l3 9 9 3-9 3-3 9-3-9-9-3 9-3zM37 30l1.5 4.5L43 36l-4.5 1.5L37 42l-1.5-4.5L31 36l4.5-1.5z"/></svg>
+        <h3>Cleaning &amp; hygiene</h3>
+        <p>That fresh, just-polished feeling, with simple guidance to keep it going at home.</p>
+      </article>
+      <article class="svc rv d3">
+        <span class="svc-num">04</span>
+        <svg class="svc-ico" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="9" y="7" width="30" height="36"/><path d="M16 17h16M16 25h16M16 33h9"/></svg>
+        <h3>Treatment planning</h3>
+        <p>If something needs attention, you'll understand the options and the next steps before anything begins.</p>
+      </article>
+    </div>
+    <p class="svc-note rv">Treatments vary from person to person. Call 06 747 1113 to discuss what's right for you.</p>
+  </div>
+</section>
+
+<section class="sec about" id="about">
+  <div class="wrap about-grid">
+    <div class="about-word rv">
+      <span class="arabic" lang="ar">خلود</span>
+      <div class="gloss"><span class="label">Kholood</span><span>Arabic for “eternity”</span></div>
+    </div>
+    <div class="about-copy">
+      <span class="label rv">02 — The Clinic</span>
+      <h2 class="rv d1">A name that speaks of care <em>meant to last.</em></h2>
+      <p class="rv d2">Kholood Dental Clinic sits on the third floor of the Citymart Building in Al Bustan, a short trip for families across Ajman.</p>
+      <p class="rv d2">Good dentistry isn't rushed. It's attentive, honest and focused on the long view: healthy teeth today and a smile you're still proud of years from now.</p>
+      <a class="btn btn-ghost rv d3" href="#contact">Find the clinic</a>
     </div>
   </div>
 </section>
 
-<section class="block why" id="why">
+<section class="sec" id="why">
   <div class="wrap why-grid">
-    <div>
-      <div class="kicker">Why patients choose us</div>
-      <h2>The Dubai dentist people recommend to their friends.</h2>
-      <p class="intro">it still comes down to the same three things.</p>
+    <div class="why-lead">
+      <span class="label acc rv">03 — Why Kholood</span>
+      <h2 class="rv d1">Small details. <em>Lasting</em> difference.</h2>
+      <p class="rv d2">The things that make a dental visit feel easy, from the moment you call to the moment you leave.</p>
     </div>
-    <div class="points">
-      
-      <div class="point"><div class="num">01</div><div><h3>Comfort first</h3><p>Numbing that works, warm blankets, and no lectures. Anxious patients are welcome here.</p></div></div>
-      
-      <div class="point"><div class="num">02</div><div><h3>Modern technology</h3><p>Digital X-rays and 3D scans mean less radiation, fewer goopy impressions and faster results.</p></div></div>
-      
-      <div class="point"><div class="num">03</div><div><h3>Clear pricing</h3><p>We explain costs and insurance before treatment, so there are never any surprises.</p></div></div>
-      
+    <ul class="why-list">
+      <li class="rv"><span class="k">A</span><div><h3>In your neighbourhood</h3><p>Right in Al Bustan, inside the Citymart Building: easy to find and easy to fit into your day.</p></div></li>
+      <li class="rv"><span class="k">B</span><div><h3>One call away</h3><p>No apps, no forms. Just ring 06 747 1113 and speak to the clinic directly.</p></div></li>
+      <li class="rv"><span class="k">C</span><div><h3>Clear conversations</h3><p>You'll know what's happening and why, so every decision about your smile is yours.</p></div></li>
+      <li class="rv"><span class="k">D</span><div><h3>The long view</h3><p>Care shaped around keeping your teeth healthy for the future, not just fixing today.</p></div></li>
+    </ul>
+  </div>
+</section>
+
+<section class="sec steps" id="visit">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="label rv">04 — Your Visit</span>
+      <h2 class="rv d1">Four simple steps to a <em>healthier smile.</em></h2>
+    </div>
+    <div class="step-grid">
+      <div class="step rv"><div class="step-n">01</div><div class="step-bar"></div><h3>Call the clinic</h3><p>Ring <a href="tel:+97167471113">06 747 1113</a> to arrange a time that suits you.</p></div>
+      <div class="step rv d1"><div class="step-n">02</div><div class="step-bar"></div><h3>Find us</h3><p>Head to the Citymart Building in Al Bustan, Ajman. We're at 302.</p></div>
+      <div class="step rv d2"><div class="step-n">03</div><div class="step-bar"></div><h3>Talk it through</h3><p>Share your concerns and goals. Your teeth are examined with care.</p></div>
+      <div class="step rv d3"><div class="step-n">04</div><div class="step-bar"></div><h3>Your plan</h3><p>Leave knowing exactly what comes next for your smile.</p></div>
     </div>
   </div>
 </section>
 
-
-
-<section class="cta-band" id="book">
-  <div class="wrap"><div class="cta-box">
-    <div><h2>Ready when you are.</h2><p>Book your visit in under a minute, or give us a call and talk to a real person.</p></div>
-    <div class="actions">
-      <a class="btn" href="#visit">Book your visit</a>
-      <a class="btn ghost" href="tel:067471113">Call 067471113</a>
+<section class="sec" id="faq">
+  <div class="wrap faq-grid">
+    <div class="sec-head">
+      <span class="label rv">05 — FAQ</span>
+      <h2 class="rv d1">Good to know.</h2>
     </div>
-  </div></div>
+    <div class="faq-list rv d1">
+      <details open><summary>Where is Kholood Dental Clinic?<span class="pm"></span></summary><p>You'll find us at 302, Citymart Building, Al Bustan, Ajman. <a href="https://maps.google.com/?q=Kholood+Dental+Clinic+Citymart+Building+Al+Bustan+Ajman" target="_blank" rel="noopener">Open in Google Maps</a>.</p></details>
+      <details><summary>How do I book an appointment?<span class="pm"></span></summary><p>Simply call the clinic on <a href="tel:+97167471113">06 747 1113</a> and the team will help you find a suitable time.</p></details>
+      <details><summary>What are your opening hours?<span class="pm"></span></summary><p>Please call <a href="tel:+97167471113">06 747 1113</a> to confirm current opening hours before your visit.</p></details>
+      <details><summary>Which treatments do you offer?<span class="pm"></span></summary><p>The best way to find out whether a particular treatment is available is to call the clinic and describe what you need.</p></details>
+    </div>
+  </div>
 </section>
 
-<section class="block" id="visit" style="padding-top:0">
+<section class="cta">
+  <div class="cta-sun" aria-hidden="true" data-px="-0.06"></div>
   <div class="wrap">
-    <div class="kicker">Visit us</div><h2>Come say hello.</h2>
-    <div class="visit">
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11l8-7 8 7v9a1 1 0 01-1 1h-4v-6H9v6H5a1 1 0 01-1-1z"/></svg></div><h3>Address</h3><p>302 Al bustan, 6355</p></div>
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div><h3>Phone</h3><p><a href="tel:067471113">067471113</a></p><p style="margin-top:10px">Call or message us for today's opening hours.</p></div>
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-7-4.4-7-10a4 4 0 017-2.6A4 4 0 0119 10c0 5.6-7 10-7 10z"/></svg></div><h3>New patients welcome</h3><p>Book your visit online or by phone and we'll take care of the rest.</p></div>
+    <span class="label rv">Kholood Dental Clinic · Al Bustan</span>
+    <h2 class="rv d1">Your next smile starts with one call.</h2>
+    <a class="cta-phone rv d2" href="tel:+97167471113"><small>Call</small>06 747 1113</a>
+  </div>
+</section>
+
+<section class="sec" id="contact">
+  <div class="wrap contact-grid">
+    <div class="c-info">
+      <span class="label acc rv">06 — Visit</span>
+      <h2 class="rv d1">Come and see us in <em style="font-style:normal;color:var(--accent)">Al Bustan.</em></h2>
+      <div class="c-row rv"><span class="label">Phone</span><span class="v"><a class="ulink" href="tel:+97167471113">06 747 1113</a></span></div>
+      <div class="c-row rv"><span class="label">Address</span><span class="v">302, Citymart Building<br>Al Bustan, Ajman<br>United Arab Emirates</span></div>
+      <div class="c-row rv"><span class="label">Hours</span><span class="v">Please call to confirm</span></div>
+      <div class="hero-ctas rv">
+        <a class="btn btn-primary" href="tel:+97167471113">Call the clinic <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 12h15M13 6l6 6-6 6"/></svg></a>
+        <a class="btn btn-ghost" href="https://maps.google.com/?q=Kholood+Dental+Clinic+Citymart+Building+Al+Bustan+Ajman" target="_blank" rel="noopener">Get directions</a>
+      </div>
     </div>
+    <a class="c-map rv d2" href="https://maps.google.com/?q=Kholood+Dental+Clinic+Citymart+Building+Al+Bustan+Ajman" target="_blank" rel="noopener" aria-label="Open Kholood Dental Clinic in Google Maps">
+      <svg class="grid" viewBox="0 0 600 520" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+        <rect width="600" height="520" fill="#FFFFFF"/>
+        <g stroke="#2B1D16" stroke-opacity=".08"><path d="M0 60h600M0 130h600M0 200h600M0 270h600M0 340h600M0 410h600M0 480h600M60 0v520M150 0v520M240 0v520M330 0v520M420 0v520M510 0v520"/></g>
+        <path d="M-20 300 C 150 260, 260 330, 620 180" stroke="#E9B872" stroke-width="26" fill="none"/>
+        <path d="M200 -20 L 380 540" stroke="#F6E3C2" stroke-width="18" fill="none"/>
+        <path d="M-20 420 L 620 360" stroke="#F6E3C2" stroke-width="12" fill="none"/>
+        <rect x="290" y="150" width="90" height="70" fill="#C4572F" fill-opacity=".14"/>
+        <rect x="430" y="250" width="70" height="90" fill="#2B1D16" fill-opacity=".06"/>
+        <rect x="70" y="80" width="110" height="60" fill="#2B1D16" fill-opacity=".06"/>
+      </svg>
+      <div class="pin"><div class="pin-card"><b>Kholood Dental</b>Citymart Building · Al Bustan</div><div class="pin-stem"></div><div class="pin-dot"></div></div>
+      <span class="map-open">Open in Google Maps <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M8 7h9v9"/></svg></span>
+    </a>
   </div>
 </section>
 </main>
 
-<footer><div class="wrap">
-  <span>© 2026 Kholood Dental clinic,Citymart building,Al bustan,Ajman</span>
-  <span>Concept design by webstudio. Not affiliated with or endorsed by Kholood Dental clinic,Citymart building,Al bustan,Ajman.</span>
-</div></footer>
+<footer>
+  <div class="wrap">
+    <div class="f-big" aria-hidden="true">Kholood<em>.</em></div>
+    <div class="f-row">
+      <span>Kholood Dental Clinic · 302, Citymart Building, Al Bustan, Ajman · <a class="ulink" href="tel:+97167471113">06 747 1113</a></span>
+      <nav aria-label="Footer"><a href="#services">Care</a><a href="#about">The Clinic</a><a href="#visit">Your Visit</a><a href="#contact">Contact</a></nav>
+    </div>
+    <div class="f-row" style="border:0;margin-top:0;padding-top:12px;opacity:.6"><span>© <span id="yr"></span> Kholood Dental Clinic</span><a href="#top">Back to top ↑</a></div>
+  </div>
+</footer>
 
-<div class="mobile-bar">
-  <a class="btn ghost" href="tel:067471113">Call</a>
-  <a class="btn" href="#visit">Book now</a>
+<div class="mbar">
+  <a class="call" href="tel:+97167471113"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 5a2 2 0 0 1 2-2"/></svg>Call now</a>
+  <a class="dir" href="https://maps.google.com/?q=Kholood+Dental+Clinic+Citymart+Building+Al+Bustan+Ajman" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s-7-6.5-7-12a7 7 0 0 1 14 0c0 5.5-7 12-7 12z"/><circle cx="12" cy="9" r="2.5"/></svg>Directions</a>
 </div>
-</body>
+
+<script>
+(function(){
+  var d=document,b=d.body,hdr=d.querySelector('.hdr'),burger=d.querySelector('.burger'),menu=d.querySelector('.mmenu');
+  d.getElementById('yr').textContent=new Date().getFullYear();
+  requestAnimationFrame(function(){setTimeout(function(){b.classList.add('loaded')},60)});
+
+  function toggle(open){
+    b.classList.toggle('menu-open',open);
+    burger.setAttribute('aria-expanded',open);
+    burger.setAttribute('aria-label',open?'Close menu':'Open menu');
+    menu.setAttribute('aria-hidden',!open);
+    b.style.overflow=open?'hidden':'';
+  }
+  burger.addEventListener('click',function(){toggle(!b.classList.contains('menu-open'))});
+  menu.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){toggle(false)})});
+  d.addEventListener('keydown',function(e){if(e.key==='Escape')toggle(false)});
+
+  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var els=d.querySelectorAll('.rv,.step');
+  if('IntersectionObserver' in window&&!reduce){
+    var io=new IntersectionObserver(function(en){en.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.15,rootMargin:'0px 0px -40px 0px'});
+    els.forEach(function(el){io.observe(el)});
+  }else{els.forEach(function(el){el.classList.add('in')})}
+
+  var px=d.querySelectorAll('[data-px]'),ticking=false;
+  function onScroll(){
+    var y=window.scrollY;
+    hdr.classList.toggle('scrolled',y>20);
+    if(!reduce){
+      px.forEach(function(el){
+        var r=el.parentElement.getBoundingClientRect();
+        var off=(r.top+r.height/2-window.innerHeight/2)*parseFloat(el.dataset.px);
+        el.style.transform=el.classList.contains('cta-sun')?'translateY(calc(-50% + '+off+'px))':'translate3d(0,'+off+'px,0)';
+      });
+    }
+    ticking=false;
+  }
+  window.addEventListener('scroll',function(){if(!ticking){requestAnimationFrame(onScroll);ticking=true}},{passive:true});
+  onScroll();
+})();
+</script>
+<div id="lm-concept" style="position:fixed;left:12px;bottom:12px;z-index:2147483647;font:500 11px/1.3 -apple-system,BlinkMacSystemFont,Segoe UI,sans-serif;letter-spacing:.02em;background:rgba(15,15,18,.82);color:#f4f1ea;padding:7px 11px;border-radius:999px;backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);pointer-events:none;max-width:70vw">Website concept for Kholood Dental clinic,Citymart building,Al bustan,Ajman by webstudio &middot; not the live site</div><p style="margin:0;padding:18px 16px 70px;text-align:center;font:12px/1.5 -apple-system,sans-serif;color:#8a8a8a;background:#0e0e10">Concept design by webstudio. Not affiliated with or endorsed by Kholood Dental clinic,Citymart building,Al bustan,Ajman.</p></body>
 </html>
