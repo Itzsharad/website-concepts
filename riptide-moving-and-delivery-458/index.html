@@ -1,291 +1,660 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src * data: blob:; media-src 'self' data:; style-src 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com data:; script-src 'unsafe-inline'; connect-src 'none'; frame-src 'none'; form-action 'none'; base-uri 'none'; object-src 'none'">
 <meta name="robots" content="noindex, nofollow">
-<title>Riptide Moving and Delivery | Website concept</title>
+<style>html,body{max-width:100%;overflow-x:clip}</style>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Riptide Moving and Delivery | Family-Owned Movers in San Diego &amp; Imperial Beach</title>
+<meta name="description" content="Riptide Moving and Delivery is a family owned and operated moving company in Imperial Beach serving the San Diego area. Moving, delivery and packing services. Fully licensed and insured. Call (619) 609-3183.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{
-  --bg:#f6f4f0;--surface:#ffffff;--ink:#1d2433;--muted:#5f6675;
-  --accent:#c4512b;--accent-ink:#ffffff;--gold:#d79a3e;--soft:#f3e6de;
-  --radius:22px;--max:1180px;
-  --serif:"Fraunces",Georgia,serif;--sans:"Manrope",system-ui,-apple-system,sans-serif;
+  --bg:#FFFBEF;--surface:#FFFFFF;--ink:#1E1B14;--ink-2:#4A4535;--gold:#E0A100;--gold-soft:#F6E3A8;--gold-tint:#FBF1D2;
+  --blue:#2F5D8A;--blue-deep:#1F4266;--brand:#ff7f00;--line:rgba(30,27,20,.14);
+  --serif:"DM Serif Display",Georgia,serif;--sans:"Outfit",system-ui,-apple-system,sans-serif;
+  --pad:clamp(20px,5vw,72px);--max:1320px;--ease:cubic-bezier(.2,.7,.1,1);
 }
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:88px}
+body{font-family:var(--sans);background:var(--bg);color:var(--ink);font-size:17px;line-height:1.65;font-weight:400;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
 a{color:inherit;text-decoration:none}
-img{max-width:100%;display:block}
-.wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
-.concept{background:var(--ink);color:var(--bg);font-size:13px;text-align:center;padding:8px 16px;letter-spacing:.02em}
-.concept b{color:var(--gold);font-weight:600}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 var(--pad)}
+.label{font-size:12px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;display:inline-flex;align-items:center;gap:12px}
+.label::before{content:"";width:28px;height:2px;background:currentColor}
+.label.blue{color:var(--blue)}
+h1,h2,h3{font-family:var(--serif);font-weight:400;line-height:1.02;letter-spacing:-.01em}
+h2{font-size:clamp(40px,6vw,84px)}
+h2 em,h1 em{font-style:italic;color:var(--blue)}
+.lead{font-size:clamp(17px,1.4vw,20px);color:var(--ink-2);max-width:56ch}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:12px;padding:17px 28px;font-weight:600;font-size:15px;letter-spacing:.04em;border:2px solid var(--ink);transition:transform .35s var(--ease),background .3s,color .3s,box-shadow .35s var(--ease);text-align:center;line-height:1.2}
+.btn svg{width:18px;height:18px;flex:none;transition:transform .35s var(--ease)}
+.btn:hover{transform:translateY(-3px)}
+.btn:hover svg{transform:translateX(4px)}
+.btn-dark{background:var(--ink);color:var(--bg)}
+.btn-dark:hover{box-shadow:6px 6px 0 var(--gold)}
+.btn-gold{background:var(--gold);color:var(--ink);border-color:var(--gold)}
+.btn-gold:hover{box-shadow:6px 6px 0 var(--ink)}
+.btn-line{background:transparent;color:var(--ink)}
+.btn-line:hover{background:var(--ink);color:var(--bg)}
+.ulink{background:linear-gradient(currentColor,currentColor) 0 100%/0 2px no-repeat;transition:background-size .4s var(--ease);padding-bottom:2px}
+.ulink:hover{background-size:100% 2px}
 
 /* header */
-header{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:saturate(1.4) blur(10px);border-bottom:1px solid color-mix(in srgb,var(--ink) 8%,transparent)}
-.nav{display:flex;align-items:center;justify-content:space-between;height:76px;gap:24px}
-.brand{font-family:var(--serif);font-size:23px;font-weight:600;letter-spacing:-.01em;line-height:1.1;max-width:340px}
-.links{display:flex;gap:30px;font-size:15px;font-weight:500;color:var(--muted)}
-.links a:hover{color:var(--ink)}
-.nav-right{display:flex;align-items:center;gap:18px}
-.phone{font-weight:600;font-size:15px;white-space:nowrap}
-.btn{display:inline-flex;align-items:center;gap:10px;background:var(--accent);color:var(--accent-ink);padding:14px 26px;border-radius:999px;font-weight:600;font-size:15.5px;transition:transform .2s ease,box-shadow .2s ease;white-space:nowrap}
-.btn:hover{transform:translateY(-2px);box-shadow:0 12px 28px -12px var(--accent)}
-.btn.ghost{background:transparent;color:var(--ink);border:1.5px solid color-mix(in srgb,var(--ink) 20%,transparent)}
-.btn.ghost:hover{box-shadow:none;border-color:var(--ink)}
-.btn svg{width:18px;height:18px}
+.hdr{position:fixed;inset:0 0 auto 0;z-index:50;transition:background .3s,box-shadow .3s,backdrop-filter .3s}
+.hdr.scrolled{background:rgba(255,251,239,.78);backdrop-filter:blur(16px) saturate(1.4);-webkit-backdrop-filter:blur(16px) saturate(1.4);box-shadow:0 1px 0 var(--line)}
+.hdr .wrap{display:flex;align-items:center;justify-content:space-between;height:80px;gap:20px}
+.logo{display:flex;align-items:center;gap:12px;font-weight:700;letter-spacing:.02em;line-height:1}
+.logo-mark{width:42px;height:42px;background:var(--ink);display:grid;place-items:center;flex:none}
+.logo-mark svg{width:28px;height:28px}
+.logo b{display:block;font-family:var(--serif);font-weight:400;font-size:22px;letter-spacing:0}
+.logo small{display:block;font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:var(--ink-2);margin-top:4px;font-weight:600}
+.nav{display:flex;gap:30px;font-size:14px;font-weight:500}
+.hdr-cta{display:flex;align-items:center;gap:20px}
+.hdr-phone{font-weight:600;font-size:15px;display:flex;align-items:center;gap:8px}
+.hdr-phone svg{width:16px;height:16px;color:var(--blue)}
+.hdr .btn{padding:12px 20px;font-size:14px}
+.burger{display:none;width:46px;height:46px;border:2px solid var(--ink);background:transparent;cursor:pointer;position:relative}
+.burger span{position:absolute;left:11px;right:11px;height:2px;background:var(--ink);transition:transform .3s,opacity .3s}
+.burger span:nth-child(1){top:15px}.burger span:nth-child(2){top:21px}.burger span:nth-child(3){top:27px}
+.menu-open .burger span:nth-child(1){transform:translateY(6px) rotate(45deg)}
+.menu-open .burger span:nth-child(2){opacity:0}
+.menu-open .burger span:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
+.mmenu{position:fixed;inset:80px 0 0 0;background:var(--bg);z-index:49;padding:32px var(--pad);display:flex;flex-direction:column;gap:6px;transform:translateY(-12px);opacity:0;visibility:hidden;transition:.35s var(--ease)}
+.menu-open .mmenu{transform:none;opacity:1;visibility:visible}
+.mmenu a{font-family:var(--serif);font-size:38px;padding:8px 0;border-bottom:1px solid var(--line)}
+.mmenu .btn{font-family:var(--sans);font-size:16px;margin-top:24px;border-bottom:2px solid var(--ink)}
 
 /* hero */
-.hero{padding:72px 0 88px}
-.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:64px;align-items:center}
-.eyebrow{display:inline-flex;align-items:center;gap:10px;background:var(--surface);border:1px solid color-mix(in srgb,var(--ink) 10%,transparent);padding:8px 16px 8px 10px;border-radius:999px;font-size:14px;font-weight:600;color:var(--muted)}
-.stars{color:var(--gold);letter-spacing:1px;font-size:14px}
-.eyebrow .dot{width:26px;height:26px;border-radius:50%;background:var(--soft);display:grid;place-items:center;color:var(--accent)}
-h1{font-family:var(--serif);font-weight:500;font-size:clamp(44px,5.6vw,74px);line-height:1.02;letter-spacing:-.025em;margin:26px 0 22px}
-h1 em{font-style:italic;color:var(--accent)}
-.lead-text{font-size:19.5px;color:var(--muted);max-width:540px}
-.hero-ctas{display:flex;gap:14px;margin-top:36px;flex-wrap:wrap}
-.ticks{display:flex;gap:22px;margin-top:34px;flex-wrap:wrap;font-size:14.5px;font-weight:600;color:var(--muted)}
-.ticks span{display:flex;align-items:center;gap:8px}
-.ticks svg{width:18px;height:18px;color:var(--accent)}
-.visual{position:relative}
-.photo{aspect-ratio:4/5;border-radius:calc(var(--radius) + 10px);overflow:hidden;background:var(--soft);box-shadow:0 40px 80px -40px color-mix(in srgb,var(--ink) 55%,transparent)}
-.photo img{width:100%;height:100%;object-fit:cover}
-.quote-panel{aspect-ratio:4/5;border-radius:calc(var(--radius) + 10px);background:linear-gradient(155deg,var(--accent),color-mix(in srgb,var(--accent) 55%,var(--ink)));color:var(--accent-ink);padding:52px 46px;display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden;box-shadow:0 40px 80px -40px color-mix(in srgb,var(--ink) 60%,transparent)}
-.quote-panel:before{content:"";position:absolute;width:420px;height:420px;border-radius:50%;right:-160px;top:-160px;background:color-mix(in srgb,var(--accent-ink) 9%,transparent)}
-.quote-panel:after{content:"";position:absolute;width:260px;height:260px;border-radius:50%;left:-90px;bottom:-110px;border:1.5px solid color-mix(in srgb,var(--accent-ink) 22%,transparent)}
-.quote-mark{font-family:var(--serif);font-size:120px;line-height:.6;opacity:.35}
-.quote-panel p{font-family:var(--serif);font-size:28px;line-height:1.3;position:relative;z-index:1}
-.quote-panel .who{font-family:var(--sans);font-size:15px;opacity:.85;margin-top:22px;font-weight:600}
-.float{position:absolute;background:var(--surface);color:var(--ink);border-radius:18px;padding:16px 20px;box-shadow:0 24px 50px -24px color-mix(in srgb,var(--ink) 50%,transparent);display:flex;align-items:center;gap:14px;font-size:14px;line-height:1.35}
-.float b{font-size:22px;font-family:var(--serif);font-weight:600;display:block}
-.float.one{left:-34px;bottom:-28px}
-.float.two{right:-22px;top:44px}
-.float .badge{width:44px;height:44px;border-radius:14px;background:var(--soft);display:grid;place-items:center;color:var(--accent)}
-.float .badge svg{width:22px;height:22px}
+.hero{min-height:100vh;padding:120px 0 64px;position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;inset:0;background-image:linear-gradient(var(--line) 1px,transparent 1px);background-size:100% 120px;opacity:.35;pointer-events:none;mask-image:linear-gradient(transparent,#000 30%,#000 70%,transparent)}
+.hero .wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(32px,5vw,80px);align-items:center;position:relative}
+.hero h1{font-size:clamp(52px,7.6vw,118px);margin:26px 0 28px}
+.hero h1 .hl{position:relative;display:inline-block;z-index:0}
+.hero h1 .hl::after{content:"";position:absolute;left:-2%;right:-2%;bottom:.1em;height:.28em;background:var(--gold);z-index:-1;transform-origin:left;animation:sweep 1s .9s var(--ease) both}
+@keyframes sweep{from{transform:scaleX(0)}}
+.hero-ctas{display:flex;flex-wrap:wrap;gap:14px;margin-top:36px}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);margin-top:56px;border-top:2px solid var(--ink)}
+.stat{padding:20px 18px 0 0}
+.stat+.stat{padding-left:18px;border-left:1px solid var(--line)}
+.stat b{display:block;font-family:var(--serif);font-weight:400;font-size:clamp(34px,3.6vw,52px);line-height:1}
+.stat span{display:block;font-size:13px;color:var(--ink-2);margin-top:8px;line-height:1.4}
+.hero-media{position:relative;justify-self:end;width:100%;max-width:520px}
+.frame{border-radius:260px 260px 28px 28px;overflow:hidden;aspect-ratio:4/5.4;position:relative;background:var(--gold-soft);box-shadow:0 40px 80px -40px rgba(30,27,20,.45)}
+.frame img{width:100%;height:118%;object-fit:cover;object-position:center;will-change:transform}
+.frame::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(30,27,20,.35))}
+.tag{position:absolute;left:-36px;bottom:48px;background:var(--gold);color:var(--ink);padding:22px 26px;z-index:2;box-shadow:10px 10px 0 var(--ink)}
+.tag small{display:block;font-size:11px;letter-spacing:.22em;text-transform:uppercase;font-weight:600}
+.tag b{display:block;font-family:var(--serif);font-weight:400;font-size:44px;line-height:1;margin-top:4px}
+.tag span{display:block;font-size:13px;font-weight:500;margin-top:4px}
+.badge{position:absolute;top:28px;right:-20px;width:120px;height:120px;z-index:2;animation:spin 22s linear infinite}
+.badge text{font:600 10.5px var(--sans);letter-spacing:.24em;fill:var(--ink);text-transform:uppercase}
+@keyframes spin{to{transform:rotate(360deg)}}
+.badge-core{position:absolute;top:66px;right:22px;width:36px;height:36px;background:var(--brand);border-radius:50%;z-index:3}
+.vert{position:absolute;right:calc(-1 * var(--pad) + 14px);top:50%;transform:translateY(-50%) rotate(90deg);transform-origin:center;font-size:11px;letter-spacing:.32em;text-transform:uppercase;font-weight:600;color:var(--ink-2);white-space:nowrap}
+.in{opacity:0;transform:translateY(28px);animation:rise 1s var(--ease) forwards}
+.d1{animation-delay:.1s}.d2{animation-delay:.22s}.d3{animation-delay:.36s}.d4{animation-delay:.5s}.d5{animation-delay:.64s}.d6{animation-delay:.4s}
+@keyframes rise{to{opacity:1;transform:none}}
 
-/* trust */
-.trust{border-top:1px solid color-mix(in srgb,var(--ink) 9%,transparent);border-bottom:1px solid color-mix(in srgb,var(--ink) 9%,transparent);background:var(--surface)}
-.trust .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;padding-top:26px;padding-bottom:26px}
-.trust div{display:flex;align-items:center;gap:12px;font-weight:600;font-size:15px}
-.trust svg{width:22px;height:22px;color:var(--accent);flex:none}
+/* marquee */
+.marquee{background:var(--ink);color:var(--bg);overflow:hidden;padding:22px 0;border-top:6px solid var(--gold)}
+.track{display:flex;width:max-content;animation:mq 38s linear infinite}
+.track span{font-family:var(--serif);font-size:clamp(24px,3vw,38px);white-space:nowrap;display:flex;align-items:center;gap:40px;padding-right:40px}
+.track i{width:12px;height:12px;background:var(--gold);display:inline-block;transform:rotate(45deg)}
+.track span:nth-child(4n) i{background:var(--brand)}
+@keyframes mq{to{transform:translateX(-50%)}}
 
-/* sections */
-section.block{padding:110px 0}
-.kicker{font-size:13px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
-h2{font-family:var(--serif);font-weight:500;font-size:clamp(34px,3.8vw,52px);line-height:1.08;letter-spacing:-.02em;margin:14px 0 18px}
-.section-head{display:flex;justify-content:space-between;align-items:end;gap:40px;margin-bottom:56px}
-.section-head p{color:var(--muted);max-width:420px}
-.services{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-.card{background:var(--surface);border-radius:var(--radius);padding:34px 32px 36px;border:1px solid color-mix(in srgb,var(--ink) 7%,transparent);transition:transform .25s ease,box-shadow .25s ease}
-.card:hover{transform:translateY(-4px);box-shadow:0 30px 60px -36px color-mix(in srgb,var(--ink) 45%,transparent)}
-.icon{width:54px;height:54px;border-radius:16px;background:var(--soft);color:var(--accent);display:grid;place-items:center;margin-bottom:24px}
-.icon svg{width:26px;height:26px}
-.card h3{font-family:var(--serif);font-weight:500;font-size:23px;margin-bottom:8px;letter-spacing:-.01em}
-.card p{color:var(--muted);font-size:16px}
+section{position:relative}
+.sec{padding:clamp(88px,11vw,160px) 0}
+.sec-head{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:end;margin-bottom:clamp(48px,6vw,88px)}
+.sec-head h2{margin-top:20px}
 
-.why{background:var(--ink);color:var(--bg)}
-.why .kicker{color:var(--gold)}
-.why-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:80px;align-items:start}
-.why h2{color:var(--bg)}
-.why .intro{color:color-mix(in srgb,var(--bg) 70%,transparent);font-size:18px;max-width:440px}
-.points{display:grid;gap:14px}
-.point{display:grid;grid-template-columns:62px 1fr;gap:20px;padding:30px;border-radius:var(--radius);background:color-mix(in srgb,var(--bg) 6%,transparent);border:1px solid color-mix(in srgb,var(--bg) 10%,transparent)}
-.point .num{font-family:var(--serif);font-size:34px;color:var(--gold);line-height:1}
-.point h3{font-family:var(--serif);font-weight:500;font-size:24px;margin-bottom:6px}
-.point p{color:color-mix(in srgb,var(--bg) 72%,transparent);font-size:16px}
+/* services */
+.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);border-top:2px solid var(--ink);border-left:1px solid var(--line)}
+.svc{background:var(--surface);padding:clamp(28px,3vw,44px);border-right:1px solid var(--line);border-bottom:1px solid var(--line);position:relative;transition:transform .45s var(--ease),box-shadow .45s var(--ease),background .3s;display:flex;flex-direction:column;min-height:440px}
+.svc:hover{transform:translateY(-8px);box-shadow:0 30px 60px -30px rgba(30,27,20,.35);z-index:2}
+.svc .num{font-family:var(--serif);font-size:96px;line-height:.8;color:var(--gold)}
+.svc h3{font-size:clamp(30px,2.6vw,40px);margin:36px 0 14px}
+.svc p{color:var(--ink-2);font-size:16px}
+.svc ul{list-style:none;margin-top:auto;padding-top:28px;font-size:14px;font-weight:500}
+.svc li{padding:10px 0;border-top:1px solid var(--line);display:flex;gap:10px}
+.svc li::before{content:"";width:8px;height:8px;background:var(--blue);margin-top:7px;flex:none}
+.svc.feat{background:var(--blue);color:#fff}
+.svc.feat p{color:rgba(255,255,255,.86)}
+.svc.feat .num{color:var(--gold)}
+.svc.feat li{border-color:rgba(255,255,255,.22)}
+.svc.feat li::before{background:var(--gold)}
 
-.score{display:flex;align-items:center;gap:18px;background:var(--surface);padding:16px 24px;border-radius:18px;border:1px solid color-mix(in srgb,var(--ink) 8%,transparent)}
-.score b{font-family:var(--serif);font-size:40px;font-weight:500;line-height:1}
-.score small{display:block;color:var(--muted);font-size:14px}
-.reviews{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-.review{background:var(--surface);border-radius:var(--radius);padding:34px;display:flex;flex-direction:column;gap:22px;border:1px solid color-mix(in srgb,var(--ink) 7%,transparent)}
-.review p{font-family:var(--serif);font-size:19.5px;line-height:1.45}
-.review .by{margin-top:auto;display:flex;align-items:center;gap:12px;font-weight:600;font-size:15px}
-.avatar{width:40px;height:40px;border-radius:50%;background:var(--soft);color:var(--accent);display:grid;place-items:center;font-weight:700}
-.review .src{color:var(--muted);font-weight:500;font-size:13px;display:block}
+.free{margin-top:48px;display:grid;grid-template-columns:auto 1fr 1fr 1fr;gap:0;background:var(--gold-tint);border:2px solid var(--ink)}
+.free>div{padding:28px 26px;border-left:1px solid rgba(30,27,20,.18)}
+.free>div:first-child{border:0;background:var(--ink);color:var(--bg);display:flex;flex-direction:column;justify-content:center}
+.free h4{font-family:var(--serif);font-weight:400;font-size:26px;line-height:1.1}
+.free b{display:inline-block;background:var(--gold);font-size:11px;letter-spacing:.2em;padding:4px 8px;margin-bottom:12px}
+.free p{font-size:15px;color:var(--ink-2)}
 
-.cta-band{padding:0 0 110px}
-.cta-box{border-radius:calc(var(--radius) + 12px);background:linear-gradient(140deg,var(--accent),color-mix(in srgb,var(--accent) 60%,var(--ink)));color:var(--accent-ink);padding:76px 64px;display:grid;grid-template-columns:1.3fr 1fr;gap:40px;align-items:center;position:relative;overflow:hidden}
-.cta-box:after{content:"";position:absolute;right:-120px;bottom:-200px;width:460px;height:460px;border-radius:50%;border:1.5px solid color-mix(in srgb,var(--accent-ink) 22%,transparent)}
-.cta-box h2{color:inherit;margin:0 0 12px}
-.cta-box p{opacity:.85;font-size:18px}
-.cta-box .actions{display:flex;flex-direction:column;gap:12px;align-items:flex-start;position:relative;z-index:1}
-.cta-box .btn{background:var(--accent-ink);color:var(--accent)}
-.cta-box .btn.ghost{background:transparent;color:var(--accent-ink);border-color:color-mix(in srgb,var(--accent-ink) 40%,transparent)}
+/* rate - signature */
+.rate{background:var(--gold);color:var(--ink);overflow:hidden}
+.rate::before{content:"";position:absolute;inset:0;background-image:linear-gradient(90deg,rgba(30,27,20,.1) 1px,transparent 1px);background-size:calc(100%/12) 100%;pointer-events:none}
+.rate .wrap{position:relative}
+.rate-top{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:end;border-bottom:2px solid var(--ink);padding-bottom:28px}
+.rate .label::before{background:var(--ink)}
+.big{font-family:var(--serif);font-size:clamp(130px,26vw,400px);line-height:.78;letter-spacing:-.04em;display:flex;align-items:flex-start;margin:40px 0 20px}
+.big sup{font-size:.3em;line-height:1;margin-top:.12em}
+.big small{font-family:var(--sans);font-size:clamp(16px,2vw,26px);font-weight:600;letter-spacing:.12em;text-transform:uppercase;align-self:flex-end;margin:0 0 .4em .4em;line-height:1.2}
+.rate-inc{display:grid;grid-template-columns:repeat(4,1fr);border-top:2px solid var(--ink)}
+.rate-inc div{padding:22px 20px 0 0;font-size:15px;font-weight:500}
+.rate-inc div+div{padding-left:20px;border-left:1px solid rgba(30,27,20,.25)}
+.rate-inc span{display:block;font-family:var(--serif);font-size:34px;line-height:1;font-weight:400;margin-bottom:8px}
+.disc{margin-top:56px;background:var(--ink);color:var(--bg);display:flex;flex-wrap:wrap;align-items:center;gap:24px 40px;padding:28px 32px}
+.disc b{font-family:var(--serif);font-weight:400;font-size:64px;line-height:1;color:var(--gold)}
+.disc p{flex:1;min-width:240px;font-size:17px}
+.disc p small{display:block;opacity:.72;font-size:13px;margin-top:4px}
 
-.visit{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:10px}
-.visit .card h3{font-size:20px}
-.visit a{color:var(--accent);font-weight:600}
-footer{border-top:1px solid color-mix(in srgb,var(--ink) 9%,transparent);padding:40px 0 110px;color:var(--muted);font-size:14px}
-footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
-.mobile-bar{display:none}
+/* supplies */
+.supplies{display:grid;grid-template-columns:1fr 1.3fr;gap:clamp(40px,6vw,96px);align-items:start}
+.price-list{list-style:none;border-top:2px solid var(--ink)}
+.price-list li{display:grid;grid-template-columns:1fr auto;gap:16px;align-items:baseline;padding:20px 0;border-bottom:1px solid var(--line);transition:padding .35s var(--ease),background .3s}
+.price-list li:hover{padding-left:14px;background:var(--surface)}
+.price-list strong{font-weight:600;font-size:17px;display:block}
+.price-list em{font-style:normal;font-size:13px;color:var(--ink-2);letter-spacing:.04em}
+.price-list span{font-family:var(--serif);font-size:30px;white-space:nowrap}
+.price-list span small{font-family:var(--sans);font-size:12px;color:var(--ink-2);margin-left:4px}
 
-@keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
-.hero .copy>*{animation:rise .8s cubic-bezier(.2,.7,.2,1) both}
-.hero .copy>*:nth-child(2){animation-delay:.08s}.hero .copy>*:nth-child(3){animation-delay:.16s}
-.hero .copy>*:nth-child(4){animation-delay:.24s}.hero .copy>*:nth-child(5){animation-delay:.32s}
-.visual{animation:rise 1s .2s cubic-bezier(.2,.7,.2,1) both}
+/* about */
+.about{background:var(--surface);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.about-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(40px,6vw,100px)}
+.quote{position:sticky;top:120px;align-self:start}
+.quote blockquote{font-family:var(--serif);font-size:clamp(34px,3.8vw,56px);line-height:1.08;margin:24px 0 28px}
+.quote blockquote::before{content:"\201C";display:block;font-size:2.4em;line-height:.6;color:var(--gold);margin-bottom:10px}
+.quote cite{font-style:normal;font-weight:600;font-size:14px;letter-spacing:.14em;text-transform:uppercase}
+.quote cite span{display:block;color:var(--ink-2);font-weight:400;letter-spacing:.04em;text-transform:none;font-size:15px;margin-top:4px}
+.story p{color:var(--ink-2);margin-bottom:22px;font-size:18px}
+.story p:first-child::first-letter{font-family:var(--serif);float:left;font-size:96px;line-height:.82;padding:6px 14px 0 0;color:var(--blue)}
+.timeline{display:grid;grid-template-columns:repeat(3,1fr);margin:48px 0;border-top:2px solid var(--ink)}
+.timeline div{padding:22px 18px 0 0}
+.timeline div+div{padding-left:18px;border-left:1px solid var(--line)}
+.timeline b{display:block;font-family:var(--serif);font-weight:400;font-size:clamp(40px,4vw,60px);line-height:1;color:var(--blue)}
+.timeline span{font-size:14px;color:var(--ink-2);display:block;margin-top:8px;line-height:1.45}
 
-@media (max-width:980px){
-  .links{display:none}
-  .hero-grid,.why-grid,.cta-box{grid-template-columns:1fr}
-  .hero-grid{gap:56px}
-  .services,.reviews,.visit{grid-template-columns:1fr 1fr}
-  .trust .wrap{grid-template-columns:1fr 1fr}
-  .float.one{left:12px;bottom:-26px}.float.two{right:12px}
-  .visual{max-width:560px;margin-bottom:20px}
-  .section-head{flex-direction:column;align-items:flex-start}
+/* why */
+.why-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.why{padding:32px 26px 30px;background:var(--surface);border:1px solid var(--line);border-top:4px solid var(--ink);transition:transform .4s var(--ease),border-color .3s,box-shadow .4s var(--ease)}
+.why:hover{transform:translateY(-6px);border-top-color:var(--gold);box-shadow:0 24px 48px -28px rgba(30,27,20,.35)}
+.why svg{width:40px;height:40px;color:var(--blue);margin-bottom:28px}
+.why h3{font-size:26px;margin-bottom:12px;line-height:1.1}
+.why p{font-size:15px;color:var(--ink-2)}
+
+/* steps */
+.steps{background:var(--blue);color:#fff;overflow:hidden}
+.steps .label{color:var(--gold)}
+.steps h2 em{color:var(--gold)}
+.steps .lead{color:rgba(255,255,255,.84)}
+.step-grid{display:grid;grid-template-columns:repeat(4,1fr);border-top:2px solid #fff}
+.step{padding:32px 24px 0 0;position:relative}
+.step+.step{padding-left:24px;border-left:1px solid rgba(255,255,255,.22)}
+.step b{display:block;font-family:var(--serif);font-weight:400;font-size:clamp(80px,9vw,140px);line-height:.8;color:transparent;-webkit-text-stroke:1.5px var(--gold);margin-bottom:28px;transition:color .4s}
+.step:hover b{color:var(--gold)}
+.step h3{font-size:28px;margin-bottom:12px}
+.step p{font-size:15px;color:rgba(255,255,255,.84)}
+
+/* coverage */
+.cov-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.cov{background:var(--surface);border:1px solid var(--line);padding:36px 30px;display:flex;flex-direction:column;transition:transform .4s var(--ease),box-shadow .4s var(--ease)}
+.cov:hover{transform:translateY(-6px);box-shadow:0 30px 60px -32px rgba(30,27,20,.35)}
+.cov .pill{align-self:flex-start;font-size:11px;letter-spacing:.2em;text-transform:uppercase;font-weight:600;padding:6px 10px;border:1.5px solid var(--ink);margin-bottom:28px}
+.cov.inc .pill{background:var(--gold);border-color:var(--gold)}
+.cov h3{font-size:32px;margin-bottom:6px}
+.cov .val{font-family:var(--serif);font-size:20px;color:var(--blue);margin-bottom:18px}
+.cov p{font-size:15px;color:var(--ink-2)}
+
+/* faq */
+.faq-wrap{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(40px,6vw,100px)}
+.faq{border-top:2px solid var(--ink)}
+.faq details{border-bottom:1px solid var(--line)}
+.faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;gap:20px;align-items:center;padding:26px 0;font-weight:600;font-size:19px;line-height:1.35}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary i{width:36px;height:36px;border:1.5px solid var(--ink);flex:none;position:relative;transition:background .3s,transform .4s var(--ease)}
+.faq summary i::before,.faq summary i::after{content:"";position:absolute;left:50%;top:50%;width:12px;height:2px;background:var(--ink);transform:translate(-50%,-50%)}
+.faq summary i::after{transform:translate(-50%,-50%) rotate(90deg);transition:transform .3s}
+.faq details[open] summary i{background:var(--gold);border-color:var(--gold)}
+.faq details[open] summary i::after{transform:translate(-50%,-50%) rotate(0)}
+.faq details p{padding:0 56px 26px 0;color:var(--ink-2)}
+
+/* cta */
+.cta{background:var(--ink);color:var(--bg);overflow:hidden;padding:clamp(88px,11vw,150px) 0}
+.cta::after{content:"";position:absolute;right:-8vw;top:-20%;width:46vw;height:140%;background:var(--gold);transform:skewX(-14deg);opacity:.96}
+.cta .wrap{position:relative;z-index:1;display:grid;grid-template-columns:1.2fr .8fr;gap:40px;align-items:center}
+.cta h2{font-size:clamp(46px,7vw,104px)}
+.cta h2 em{color:var(--gold)}
+.cta p{color:rgba(255,251,239,.8);margin-top:24px;max-width:44ch;font-size:18px}
+.cta-card{background:var(--bg);color:var(--ink);padding:36px 32px;box-shadow:12px 12px 0 var(--ink);border:2px solid var(--ink)}
+.cta-card small{font-size:12px;letter-spacing:.22em;text-transform:uppercase;font-weight:600;color:var(--blue)}
+.cta-card a.ph{display:block;font-family:var(--serif);font-size:clamp(34px,3.4vw,46px);line-height:1.05;margin:10px 0 22px}
+.cta-card .btn{width:100%}
+
+/* contact */
+.contact-grid{display:grid;grid-template-columns:repeat(3,1fr);border-top:2px solid var(--ink);border-left:1px solid var(--line)}
+.c-item{padding:36px 30px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--surface)}
+.c-item small{display:block;font-size:12px;letter-spacing:.22em;text-transform:uppercase;font-weight:600;color:var(--blue);margin-bottom:16px}
+.c-item h3{font-size:clamp(26px,2.4vw,34px);line-height:1.15;margin-bottom:14px;overflow-wrap:anywhere}
+.c-item p{color:var(--ink-2);font-size:15px}
+.c-item .ulink{font-weight:600;font-size:15px;display:inline-block;margin-top:16px;color:var(--ink)}
+.c-item.dark{background:var(--ink);color:var(--bg)}
+.c-item.dark small{color:var(--gold)}
+.c-item.dark p{color:rgba(255,251,239,.78)}
+.c-item.dark .ulink{color:var(--bg)}
+
+footer{padding:72px 0 40px;border-top:6px solid var(--gold)}
+.ft{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px;padding-bottom:56px;border-bottom:1px solid var(--line)}
+.ft p{color:var(--ink-2);font-size:15px;margin-top:20px;max-width:38ch}
+.ft h4{font-size:12px;letter-spacing:.22em;text-transform:uppercase;font-weight:600;margin-bottom:18px}
+.ft ul{list-style:none;font-size:15px}
+.ft li{margin-bottom:10px}
+.fb{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;padding-top:28px;font-size:13px;color:var(--ink-2)}
+.ft-word{font-family:var(--serif);font-size:clamp(64px,15vw,230px);line-height:.85;letter-spacing:-.03em;margin-top:48px;color:var(--ink);white-space:nowrap;overflow:hidden}
+.ft-word span{color:var(--gold)}
+
+.mbar{display:none}
+
+/* reveal */
+.rv{opacity:0;transform:translateY(40px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
+.rv.on{opacity:1;transform:none}
+.rv-d1{transition-delay:.08s}.rv-d2{transition-delay:.16s}.rv-d3{transition-delay:.24s}
+
+@media (max-width:1100px){
+  .nav{display:none}
+  .why-grid{grid-template-columns:repeat(2,1fr)}
+  .step-grid{grid-template-columns:repeat(2,1fr)}
+  .step:nth-child(3){padding-left:0;border-left:0}
+  .step{padding-bottom:40px}
+  .free{grid-template-columns:1fr 1fr}
+  .free>div:first-child{grid-column:1/-1}
+  .free>div:nth-child(2){border-left:0}
+  .vert{display:none}
+}
+@media (max-width:900px){
+  .hero .wrap,.sec-head,.rate-top,.supplies,.about-grid,.faq-wrap,.cta .wrap{grid-template-columns:1fr}
+  .hero{padding-top:110px}
+  .hero-media{justify-self:center;max-width:460px}
+  .tag{left:-12px}
+  .badge{right:-6px}.badge-core{right:36px}
+  .svc-grid,.cov-grid,.contact-grid{grid-template-columns:1fr}
+  .svc{min-height:0}
+  .rate-inc{grid-template-columns:1fr 1fr}
+  .rate-inc div:nth-child(3){padding-left:0;border-left:0}
+  .rate-inc div{padding-bottom:22px}
+  .quote{position:static}
+  .ft{grid-template-columns:1fr 1fr}
+  .ft>div:first-child{grid-column:1/-1}
+  .cta::after{right:-40vw;width:80vw;opacity:.18}
+  .hdr-phone{display:none}
 }
 @media (max-width:640px){
   body{font-size:16px}
-  .wrap{padding:0 18px}
-  .nav{height:66px}.brand{font-size:19px}
-  .phone,.nav-right .btn{display:none}
-  .hero{padding:44px 0 64px}
-  .lead-text{font-size:17.5px}
-  .hero-ctas .btn{flex:1;justify-content:center}
-  .ticks{display:none}
-  .services,.reviews,.visit,.trust .wrap{grid-template-columns:1fr}
-  section.block{padding:76px 0}
-  .quote-panel,.photo{aspect-ratio:auto;min-height:380px}.photo{aspect-ratio:4/3;min-height:0}
-  .quote-panel{padding:40px 30px 64px}.quote-panel p{font-size:23px}
-  .float{font-size:13px;padding:12px 14px}.float b{font-size:18px}
-  .float.two{display:none}
-  .cta-box{padding:52px 28px}
-  .point{grid-template-columns:44px 1fr;padding:24px}
-  .mobile-bar{display:flex;position:fixed;left:12px;right:12px;bottom:12px;z-index:30;gap:10px}
-  .mobile-bar .btn{flex:1;justify-content:center;box-shadow:0 14px 30px -14px color-mix(in srgb,var(--ink) 60%,transparent)}
-  .mobile-bar .btn.ghost{background:var(--surface)}
+  .hdr .wrap{height:72px}
+  .mmenu{inset:72px 0 0 0}
+  .hdr .btn{display:none}
+  .burger{display:block}
+  .logo b{font-size:19px}
+  .logo-mark{width:38px;height:38px}
+  .hero h1{font-size:clamp(46px,13vw,64px)}
+  .hero-ctas .btn{flex:1 1 100%}
+  .stats{grid-template-columns:1fr 1fr 1fr}
+  .stat{padding-right:10px}.stat+.stat{padding-left:10px}
+  .stat b{font-size:30px}
+  .stat span{font-size:12px}
+  .badge{width:96px;height:96px;top:16px}.badge-core{top:46px;right:28px;width:28px;height:28px}
+  .tag{left:0;bottom:24px;padding:16px 18px;box-shadow:6px 6px 0 var(--ink)}
+  .tag b{font-size:34px}
+  .free{grid-template-columns:1fr}
+  .free>div{border-left:0;border-top:1px solid rgba(30,27,20,.18)}
+  .rate-inc{grid-template-columns:1fr}
+  .rate-inc div,.rate-inc div+div{padding-left:0;border-left:0;border-bottom:1px solid rgba(30,27,20,.25)}
+  .big small{letter-spacing:.06em}
+  .disc{padding:24px}
+  .disc b{font-size:52px}
+  .why-grid,.step-grid,.timeline{grid-template-columns:1fr}
+  .step,.step+.step{padding-left:0;border-left:0}
+  .timeline div,.timeline div+div{padding-left:0;border-left:0;padding-bottom:18px;border-bottom:1px solid var(--line)}
+  .price-list span{font-size:24px}
+  .faq summary{font-size:17px}
+  .faq details p{padding-right:0}
+  .cta-card{padding:28px 22px;box-shadow:8px 8px 0 var(--gold)}
+  .ft{grid-template-columns:1fr}
+  footer{padding-bottom:110px}
+  .mbar{display:grid;grid-template-columns:1fr 1fr;position:fixed;left:12px;right:12px;bottom:12px;z-index:60;box-shadow:0 18px 40px -12px rgba(30,27,20,.5)}
+  .mbar a{display:flex;align-items:center;justify-content:center;gap:8px;padding:16px 10px;font-weight:600;font-size:15px}
+  .mbar a:first-child{background:var(--ink);color:var(--bg)}
+  .mbar a:last-child{background:var(--gold);color:var(--ink)}
+  .mbar svg{width:18px;height:18px}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  html{scroll-behavior:auto}
+  .in,.rv{opacity:1;transform:none}
 }
 </style>
 </head>
 <body>
-<div class="concept">Website concept prepared for <b>Riptide Moving and Delivery</b> by webstudio &middot; not a live site</div>
 
-<header>
-  <div class="wrap nav">
-    <a href="#top" class="brand">Riptide Moving and Delivery</a>
-    <nav class="links">
-      <a href="#services">Services</a><a href="#why">Why us</a><a href="#visit">Visit</a>
+<header class="hdr" id="hdr">
+  <div class="wrap">
+    <a href="#top" class="logo" aria-label="Riptide Moving and Delivery home">
+      <span class="logo-mark"><svg viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M3 20c3.5 0 3.5-3 7-3s3.5 3 7 3 3.5-3 7-3 3.5 3 5 3" stroke="#E0A100" stroke-width="2.4" stroke-linecap="round"/><path d="M3 25.5c3.5 0 3.5-3 7-3s3.5 3 7 3 3.5-3 7-3 3.5 3 5 3" stroke="#FFFBEF" stroke-width="2.4" stroke-linecap="round"/><path d="M8 14V7h9l5 5v2" stroke="#FFFBEF" stroke-width="2.2" stroke-linejoin="round"/><circle cx="25.5" cy="6.5" r="2" fill="#ff7f00"/></svg></span>
+      <span><b>Riptide</b><small>Moving &amp; Delivery</small></span>
+    </a>
+    <nav class="nav" aria-label="Main">
+      <a class="ulink" href="#services">Services</a>
+      <a class="ulink" href="#rates">Rates</a>
+      <a class="ulink" href="#about">Our Family</a>
+      <a class="ulink" href="#coverage">Coverage</a>
+      <a class="ulink" href="#faq">FAQ</a>
     </nav>
-    <div class="nav-right">
-      <a class="phone" href="tel:6196093183">(619) 609-3183</a>
-      <a class="btn" href="#visit">Free estimate</a>
+    <div class="hdr-cta">
+      <a class="hdr-phone" href="tel:+16196093183"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>(619) 609-3183</a>
+      <a class="btn btn-dark" href="#contact">Free Estimate</a>
+      <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
     </div>
   </div>
 </header>
 
+<nav class="mmenu" id="mmenu" aria-label="Mobile">
+  <a href="#services">Services</a>
+  <a href="#rates">Rates</a>
+  <a href="#about">Our Family</a>
+  <a href="#coverage">Coverage</a>
+  <a href="#faq">FAQ</a>
+  <a href="#contact">Contact</a>
+  <a class="btn btn-gold" href="tel:+16196093183">Call (619) 609-3183</a>
+</nav>
+
 <main id="top">
+
 <section class="hero">
-  <div class="wrap hero-grid">
-    <div class="copy">
-      <div class="eyebrow">
-        <span class="dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-7-4.4-7-10a4 4 0 017-2.6A4 4 0 0119 10c0 5.6-7 10-7 10z"/></svg></span>San Diego moving and delivery
-      </div>
-      <h1>Your San Diego move, handled <em>with care.</em></h1>
-      <p class="lead-text">From apartment moves to single-item deliveries, Riptide gets your belongings where they need to go across San Diego, safely and on schedule.</p>
-      <div class="hero-ctas">
-        <a class="btn" href="#visit">Get a free estimate <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-        <a class="btn ghost" href="tel:6196093183">Call (619) 609-3183</a>
-      </div>
-      <div class="ticks">
-        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7"/></svg>Licensed &amp; insured</span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7"/></svg>Free in-home estimates</span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7"/></svg>No hidden fees</span>
-      </div>
-    </div>
-    <div class="visual">
-      
-      <div class="quote-panel"><div class="quote-mark">“</div><div><p>Careful, on-time movers who treat your things like their own, with honest flat-rate pricing and no surprises.</p><div class="who">Riptide Moving and Delivery</div></div></div>
-      
-      
-      <div class="float two"><span class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><span><b>This week</b>Free in-home estimates</span></div>
-    </div>
-  </div>
-  <template id="qp"><div class="quote-panel"><div class="quote-mark">“</div><div><p>Careful, on-time movers who treat your things like their own, with honest flat-rate pricing and no surprises.</p><div class="who">Riptide Moving and Delivery</div></div></div></template>
-</section>
-
-<div class="trust"><div class="wrap">
-  <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.2-8 9-4.6-.8-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg>Licensed &amp; insured</div><div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.2-8 9-4.6-.8-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg>Free in-home estimates</div><div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.2-8 9-4.6-.8-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg>No hidden fees</div><div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.2-8 9-4.6-.8-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg>Same-week availability</div>
-</div></div>
-
-<section class="block" id="services">
   <div class="wrap">
-    <div class="section-head">
-      <div><div class="kicker">What we do</div><h2>Everything you need,<br>under one roof.</h2></div>
-      <p>From routine visits to the work that changes how you feel about your day, Riptide Moving and Delivery takes care of it properly.</p>
-    </div>
-    <div class="services">
-      
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M2 6h11v10H2zM13 9h4l4 4v3h-8"/><circle cx="6" cy="17.5" r="1.8"/><circle cx="17" cy="17.5" r="1.8"/></svg></div><h3>Local moves</h3><p>Fast, careful moves across town, often done in a single morning.</p></div>
-      
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="18" r="2.5"/><circle cx="18" cy="6" r="2.5"/><path d="M8.5 18H16a3 3 0 000-6H8a3 3 0 010-6h7.5"/></svg></div><h3>Long-distance moves</h3><p>Coast-to-coast moves with tracking and one point of contact.</p></div>
-      
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7l9-4 9 4v10l-9 4-9-4z"/><path d="M3 7l9 4 9-4M12 11v10"/></svg></div><h3>Packing &amp; unpacking</h3><p>Professional packing materials and a team that wraps everything right.</p></div>
-      
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3" width="14" height="18" rx="1"/><path d="M9 7h2M13 7h2M9 11h2M13 11h2M9 15h2M13 15h2"/></svg></div><h3>Office relocation</h3><p>After-hours business moves that keep downtime to a minimum.</p></div>
-      
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.2-8 9-4.6-.8-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg></div><h3>Fragile &amp; specialty items</h3><p>Pianos, art, antiques and TVs handled with extra care.</p></div>
-      
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11l8-7 8 7v9a1 1 0 01-1 1h-4v-6H9v6H5a1 1 0 01-1-1z"/></svg></div><h3>Storage solutions</h3><p>Clean, secure short- and long-term storage when timing doesn&#39;t line up.</p></div>
-      
-    </div>
-  </div>
-</section>
-
-<section class="block why" id="why">
-  <div class="wrap why-grid">
     <div>
-      <div class="kicker">Why customers choose us</div>
-      <h2>The San Diego moving company people recommend to their friends.</h2>
-      <p class="intro">it still comes down to the same three things.</p>
+      <span class="label blue in d1">Family owned &amp; operated · Imperial Beach, San Diego</span>
+      <h1 class="in d2">Our family moves <span class="hl"><em>your</em></span> family.</h1>
+      <p class="lead in d3">Safe, qualified movers who drape, wrap and protect every piece, from your couch to your hardwood floors, so it all arrives in exactly the condition it left. Moving, delivery and packing across the San Diego area.</p>
+      <div class="hero-ctas in d4">
+        <a class="btn btn-dark" href="tel:+16196093183">Call (619) 609-3183 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a class="btn btn-line" href="#rates">See our rates</a>
+      </div>
+      <div class="stats in d5">
+        <div class="stat"><b>1997</b><span>The year Richard started moving furniture</span></div>
+        <div class="stat"><b>$125</b><span>Per hour: truck + 2 pro movers</span></div>
+        <div class="stat"><b>10%</b><span>Off for military &amp; seniors</span></div>
+      </div>
     </div>
-    <div class="points">
-      
-      <div class="point"><div class="num">01</div><div><h3>Flat-rate pricing</h3><p>A firm quote up front, so the price on moving day is the price you were told.</p></div></div>
-      
-      <div class="point"><div class="num">02</div><div><h3>Licensed &amp; insured</h3><p>Fully licensed and insured, with valuation coverage on everything we carry.</p></div></div>
-      
-      <div class="point"><div class="num">03</div><div><h3>On time, every time</h3><p>We show up when we say we will, with the right truck and the right crew.</p></div></div>
-      
+    <div class="hero-media in d6">
+      <svg class="badge" viewBox="0 0 120 120" aria-hidden="true"><defs><path id="c" d="M60 60m-46 0a46 46 0 1 1 92 0a46 46 0 1 1-92 0"/></defs><circle cx="60" cy="60" r="58" fill="#FFFBEF" stroke="#1E1B14" stroke-width="1.5"/><text><textPath href="#c">Licensed · Insured · Family Run ·</textPath></text></svg>
+      <span class="badge-core" aria-hidden="true"></span>
+      <div class="frame"><img id="heroImg" src="img/photo-1.jpg" alt="Riptide Moving and Delivery at work in San Diego" width="726" height="521"></div>
+      <div class="tag"><small>Est.</small><b>2015</b><span>by Richard &amp; Mary Mullins</span></div>
     </div>
+    <span class="vert" aria-hidden="true">847 Elm Ave · Imperial Beach · CA</span>
   </div>
 </section>
 
+<div class="marquee" aria-hidden="true">
+  <div class="track">
+    <span>Moving <i></i></span><span>Delivery <i></i></span><span>Packing <i></i></span><span>Fully licensed &amp; insured <i></i></span><span>Free in-home estimates <i></i></span><span>Unlimited shrink wrap &amp; pads <i></i></span><span>Imperial Beach · San Diego <i></i></span><span>Family owned since 2015 <i></i></span>
+    <span>Moving <i></i></span><span>Delivery <i></i></span><span>Packing <i></i></span><span>Fully licensed &amp; insured <i></i></span><span>Free in-home estimates <i></i></span><span>Unlimited shrink wrap &amp; pads <i></i></span><span>Imperial Beach · San Diego <i></i></span><span>Family owned since 2015 <i></i></span>
+  </div>
+</div>
 
-
-<section class="cta-band" id="book">
-  <div class="wrap"><div class="cta-box">
-    <div><h2>Ready when you are.</h2><p>Get a free estimate in under a minute, or give us a call and talk to a real person.</p></div>
-    <div class="actions">
-      <a class="btn" href="#visit">Get a free estimate</a>
-      <a class="btn ghost" href="tel:6196093183">Call (619) 609-3183</a>
-    </div>
-  </div></div>
-</section>
-
-<section class="block" id="visit" style="padding-top:0">
+<section class="sec" id="services">
   <div class="wrap">
-    <div class="kicker">Visit us</div><h2>Come say hello.</h2>
-    <div class="visit">
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11l8-7 8 7v9a1 1 0 01-1 1h-4v-6H9v6H5a1 1 0 01-1-1z"/></svg></div><h3>Address</h3><p>847 Elm Ave, Imperial Beach CA 91932-2133</p></div>
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div><h3>Phone</h3><p><a href="tel:6196093183">(619) 609-3183</a></p><p style="margin-top:10px">Call or message us for today's opening hours.</p></div>
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-7-4.4-7-10a4 4 0 017-2.6A4 4 0 0119 10c0 5.6-7 10-7 10z"/></svg></div><h3>Free in-home estimates</h3><p>Get a free estimate online or by phone and we'll take care of the rest.</p></div>
+    <div class="sec-head">
+      <div class="rv"><span class="label blue">Moving, Delivery &amp; Packing Services</span><h2>Everything it takes to move a <em>home.</em></h2></div>
+      <p class="lead rv rv-d1">Not just furniture, but family homes. Every Riptide job comes with a personalised experience: your moving-day needs acknowledged, your precious cargo treated like our own.</p>
+    </div>
+    <div class="svc-grid">
+      <article class="svc rv">
+        <span class="num">01</span>
+        <h3>Moving</h3>
+        <p>Local moves across the San Diego area, handled by movers trained in the hard stuff, including hoisting couches into difficult buildings when the stairs simply won't do.</p>
+        <ul><li>26-foot box truck</li><li>2 professional movers</li><li>Furniture disassembly tools</li></ul>
+      </article>
+      <article class="svc feat rv rv-d1">
+        <span class="num">02</span>
+        <h3>Delivery</h3>
+        <p>Fully equipped trucks with ramps, dollies, pads and shrink wrap: everything needed to get your possessions from A to B, damage free and on your terms.</p>
+        <ul><li>Ramps &amp; dollies on every truck</li><li>Draped &amp; wrapped on request</li><li>Safe on hardwood &amp; designer laminate</li></ul>
+      </article>
+      <article class="svc rv rv-d2">
+        <span class="num">03</span>
+        <h3>Packing</h3>
+        <p>Richard spent 20+ years learning how to properly pack and protect furniture. Let our family pack yours, or pick up boxes, tape and paper from us.</p>
+        <ul><li>Professional packing service</li><li>Boxes from small to wardrobe</li><li>Packing tape &amp; paper</li></ul>
+      </article>
+    </div>
+    <div class="free rv">
+      <div><h4>Included in our regular rate</h4></div>
+      <div><b>FREE</b><p>Unlimited shrink wrap and furniture pad use to keep your valuables covered and secured (upon request).</p></div>
+      <div><b>FREE</b><p>Basic Valuation Coverage at $.60 per pound per article.</p></div>
+      <div><b>FREE</b><p>Fully equipped moving trucks with ramps, dollies, pads and shrink wrap.</p></div>
     </div>
   </div>
 </section>
+
+<section class="sec rate" id="rates">
+  <div class="wrap">
+    <div class="rate-top">
+      <div class="rv"><span class="label">Moving &amp; Packing Services</span><h2 style="margin-top:20px">One honest hourly rate.</h2></div>
+      <p class="rv rv-d1" style="font-size:18px;max-width:46ch">No mystery line items. Your rate covers the truck, the crew and the tools to get the job done right.</p>
+    </div>
+    <div class="big rv" aria-label="125 dollars per hour"><sup>$</sup>125<small>/ hour</small></div>
+    <div class="rate-inc rv">
+      <div><span>26 ft</span>Box truck</div>
+      <div><span>2</span>Professional movers</div>
+      <div><span>Tools</span>To disassemble furniture</div>
+      <div><span>Pads</span>&amp; shrink wrap upon request</div>
+    </div>
+    <div class="disc rv">
+      <b>10%</b>
+      <p>Discount to active/retired military and senior citizens.<small>Discounts cannot be combined at the time of invoice.</small></p>
+      <a class="btn btn-gold" href="tel:+16196093183">Book your move</a>
+    </div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="wrap supplies">
+    <div class="rv">
+      <span class="label blue">Packing &amp; Moving Supplies</span>
+      <h2 style="margin-top:20px">Pack it <em>properly.</em></h2>
+      <p class="lead" style="margin-top:24px">Pro-grade supplies, straight from the movers who use them every day. Ask for what you need when you schedule.</p>
+      <a class="btn btn-dark" href="#contact" style="margin-top:32px">Order supplies</a>
+    </div>
+    <ul class="price-list rv rv-d1">
+      <li><div><strong>Packing Tape</strong><em>1.88 in × 56.6 yds</em></div><span>$7.00<small>/roll</small></span></li>
+      <li><div><strong>Packing Paper</strong><em>24 in × 30 in · 500 sheets</em></div><span>$50.00<small>/bundle</small></span></li>
+      <li><div><strong>Small Box</strong><em>16 in × 12 in</em></div><span>$2.00<small>/box</small></span></li>
+      <li><div><strong>Medium Box</strong><em>18 in × 18 in</em></div><span>$3.50<small>/box</small></span></li>
+      <li><div><strong>Large Box</strong><em>18 in × 18 in × 24 in</em></div><span>$4.00<small>/box</small></span></li>
+      <li><div><strong>Extra Large Box</strong><em>22 in × 22 in</em></div><span>$5.50<small>/box</small></span></li>
+      <li><div><strong>Tall Wardrobe</strong><em>With metal hanging bar</em></div><span>$20.00<small>/box</small></span></li>
+    </ul>
+  </div>
+</section>
+
+<section class="sec about" id="about">
+  <div class="wrap about-grid">
+    <div class="quote rv">
+      <span class="label blue">About our company</span>
+      <blockquote>I loved the industry so much that I knew one day I would run a moving business of my own.</blockquote>
+      <cite>Richard Mullins<span>Owner, Riptide Moving and Delivery</span></cite>
+    </div>
+    <div class="story rv rv-d1">
+      <p>Richard Mullins started moving furniture in 1997, working for a long distance moving company in San Diego named Sullivan United. Over the 20+ years that followed, he worked for many reputable moving companies, learning the tricks of the trade.</p>
+      <p>He learned how to properly pack and protect furniture, and mastered the more extreme techniques too, like hoisting couches into difficult buildings.</p>
+      <div class="timeline">
+        <div><b>1997</b><span>Richard's first job moving furniture with Sullivan United</span></div>
+        <div><b>20+</b><span>Years learning from reputable moving companies</span></div>
+        <div><b>2015</b><span>Richard &amp; Mary launch Riptide Moving and Delivery</span></div>
+      </div>
+      <p>In 2015, Richard and his wife Mary launched Riptide from Imperial Beach. Together they're proud to be in the community, helping move not just furniture but family homes.</p>
+      <p>"Thank you for letting our family move your family!"</p>
+    </div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="rv"><span class="label blue">Why Riptide</span><h2>Same condition, start to <em>finish.</em></h2></div>
+      <p class="lead rv rv-d1">Keeping your cargo damage free is our highest priority. Here's how a family-owned crew makes that happen.</p>
+    </div>
+    <div class="why-grid">
+      <div class="why rv"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 4l13 5v10c0 8-5.5 14-13 17C12.5 33 7 27 7 19V9z"/><path d="M14 20l4 4 8-9"/></svg><h3>Fully licensed &amp; insured</h3><p>Proper protection on every job, with Basic Valuation Coverage included in the hourly rate.</p></div>
+      <div class="why rv rv-d1"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2"><rect x="6" y="10" width="28" height="20"/><path d="M6 16h28M6 24h28M14 10v20M26 10v20"/></svg><h3>Draped &amp; wrapped</h3><p>On request we completely drape and wrap your furniture, with unlimited pads and shrink wrap at no extra cost.</p></div>
+      <div class="why rv rv-d2"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 32h32M8 32V20l12-10 12 10v12"/><path d="M16 32v-8h8v8"/></svg><h3>Floors stay beautiful</h3><p>Experienced on every flooring material, hardwood or designer laminate, taking every step to keep it damage free.</p></div>
+      <div class="why rv rv-d3"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2"><circle cx="14" cy="14" r="5"/><circle cx="27" cy="16" r="4"/><path d="M4 32c0-6 4.5-10 10-10s10 4 10 10M23 26c1-2.5 2.5-4 5-4 4 0 7 3 7 8"/></svg><h3>A family, not a franchise</h3><p>Richard and Mary's business truly cares about your specific needs, and your precious cargo.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec steps">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="rv"><span class="label">How it works</span><h2>Four steps to a <em>calm</em> moving day.</h2></div>
+      <p class="lead rv rv-d1">From the first call to the last piece of furniture set down in your new home.</p>
+    </div>
+    <div class="step-grid">
+      <div class="step rv"><b>1</b><h3>Call us</h3><p>Ring (619) 609-3183 to talk through your move and schedule a time.</p></div>
+      <div class="step rv rv-d1"><b>2</b><h3>Free in-home estimate</h3><p>We come to you, see what's moving and help you choose the coverage that suits.</p></div>
+      <div class="step rv rv-d2"><b>3</b><h3>Wrap &amp; protect</h3><p>Pads, shrink wrap and disassembly on request, plus care for every floor on the way out.</p></div>
+      <div class="step rv rv-d3"><b>4</b><h3>Welcome home</h3><p>Everything arrives in the exact same condition it left, ready for your family's next chapter.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="coverage">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="rv"><span class="label blue">Insurance coverage available to you</span><h2>Covered, <em>clearly.</em></h2></div>
+      <p class="lead rv rv-d1">We work hard so accidents don't happen. But if one does, you should know your options. Protection is included in our rates, and additional coverage is available upon request.</p>
+    </div>
+    <div class="cov-grid">
+      <div class="cov inc rv"><span class="pill">Included</span><h3>Basic Valuation</h3><div class="val">60¢ per pound, per article</div><p>Ensures recovery at 60 cents multiplied by the weight of the item. This coverage is included in the hourly rate.</p></div>
+      <div class="cov rv rv-d1"><span class="pill">Additional cost</span><h3>Actual Cash Value</h3><div class="val">Fair market value</div><p>Ensures recovery at the actual cash value of your lost or damaged item(s), up to the total value you declare. Please speak with your representative for more information.</p></div>
+      <div class="cov rv rv-d2"><span class="pill">Additional cost</span><h3>Full Value</h3><div class="val">Replacement value</div><p>Insures recovery at the full replacement value of your lost or damaged item(s), up to the total value you declare. Deductibles may be offered in combination. Speak with your representative for details.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="faq" style="padding-top:0">
+  <div class="wrap faq-wrap">
+    <div class="rv"><span class="label blue">FAQ</span><h2 style="margin-top:20px">Good <em>questions.</em></h2><p class="lead" style="margin-top:24px">Anything else? Richard and Mary are a phone call away.</p></div>
+    <div class="faq rv rv-d1">
+      <details open><summary>What's included in the $125/hour rate?<i></i></summary><p>A 26-foot box truck, 2 professional movers, tools to disassemble furniture, and furniture pads and shrink wrap upon request. Basic Valuation Coverage ($.60 per pound per article) is included too.</p></details>
+      <details><summary>Do you offer any discounts?<i></i></summary><p>Yes, 10% off for active/retired military and senior citizens. Discounts cannot be combined at the time of invoice.</p></details>
+      <details><summary>Are you licensed and insured?<i></i></summary><p>We are fully licensed and insured. Additional coverage, Actual Cash Value or Full Value protection, is available at an additional cost.</p></details>
+      <details><summary>Will you protect my floors?<i></i></summary><p>Absolutely. We're experienced in moving furniture across all flooring, hardwood or designer laminate, and take all appropriate steps to keep your floors beautiful and damage free.</p></details>
+      <details><summary>Can you handle awkward pieces and tricky buildings?<i></i></summary><p>Richard has spent 20+ years learning advanced techniques, including hoisting couches into difficult buildings. Tell us about it during your estimate.</p></details>
+      <details><summary>How do I get an estimate?<i></i></summary><p>Call (619) 609-3183 to schedule your free in-home estimate. If you email us, you'll hear back within 48–72 hours if needed.</p></details>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <div class="rv">
+      <h2>Let our family move <em>yours.</em></h2>
+      <p>We'd love the opportunity to give your family the customer service experience only a family-owned business can offer. Call to schedule your free in-home estimate.</p>
+    </div>
+    <div class="cta-card rv rv-d1">
+      <small>Call Richard &amp; Mary</small>
+      <a class="ph" href="tel:+16196093183">(619) 609-3183</a>
+      <a class="btn btn-dark" href="tel:+16196093183">Schedule a free estimate <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="contact">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="rv"><span class="label blue">Contact info</span><h2>Get in <em>touch.</em></h2></div>
+      <p class="lead rv rv-d1">Based in Imperial Beach and moving families across the San Diego area. Hours vary by booking, so give us a call to find a time that works for you.</p>
+    </div>
+    <div class="contact-grid">
+      <div class="c-item dark rv"><small>Phone</small><h3><a href="tel:+16196093183">(619) 609-3183</a></h3><p>The fastest way to book your free in-home estimate.</p><a class="ulink" href="tel:+16196093183">Call now →</a></div>
+      <div class="c-item rv rv-d1"><small>Visit</small><h3>847 Elm Ave<br>Imperial Beach, CA 91932</h3><p>Richard Mullins &amp; Mary Mullins</p><a class="ulink" href="https://maps.google.com/?q=847+Elm+Ave,+Imperial+Beach,+CA+91932" target="_blank" rel="noopener">Open in Google Maps →</a></div>
+      <div class="c-item rv rv-d2"><small>Email</small><h3><a href="mailto:richardmullins229@gmail.com">richardmullins229@gmail.com</a></h3><p>If needed, you'll hear back within 48–72 hours.</p><a class="ulink" href="mailto:richardmullins229@gmail.com">Send an email →</a></div>
+    </div>
+  </div>
+</section>
+
 </main>
 
-<footer><div class="wrap">
-  <span>© 2026 Riptide Moving and Delivery</span>
-  <span>Concept design by webstudio. Not affiliated with or endorsed by Riptide Moving and Delivery.</span>
-</div></footer>
+<footer>
+  <div class="wrap">
+    <div class="ft">
+      <div>
+        <a href="#top" class="logo" aria-label="Riptide Moving and Delivery home">
+          <span class="logo-mark"><svg viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M3 20c3.5 0 3.5-3 7-3s3.5 3 7 3 3.5-3 7-3 3.5 3 5 3" stroke="#E0A100" stroke-width="2.4" stroke-linecap="round"/><path d="M3 25.5c3.5 0 3.5-3 7-3s3.5 3 7 3 3.5-3 7-3 3.5 3 5 3" stroke="#FFFBEF" stroke-width="2.4" stroke-linecap="round"/><path d="M8 14V7h9l5 5v2" stroke="#FFFBEF" stroke-width="2.2" stroke-linejoin="round"/><circle cx="25.5" cy="6.5" r="2" fill="#ff7f00"/></svg></span>
+          <span><b>Riptide</b><small>Moving &amp; Delivery</small></span>
+        </a>
+        <p>A family owned and operated moving business in the San Diego area. Fully licensed and insured.</p>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <ul><li><a class="ulink" href="#services">Services</a></li><li><a class="ulink" href="#rates">Rates &amp; supplies</a></li><li><a class="ulink" href="#about">Our family</a></li><li><a class="ulink" href="#coverage">Coverage</a></li><li><a class="ulink" href="#faq">FAQ</a></li></ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul><li><a class="ulink" href="tel:+16196093183">(619) 609-3183</a></li><li><a class="ulink" href="mailto:richardmullins229@gmail.com">Email us</a></li><li><a class="ulink" href="https://maps.google.com/?q=847+Elm+Ave,+Imperial+Beach,+CA+91932" target="_blank" rel="noopener">847 Elm Ave, Imperial Beach CA 91932</a></li></ul>
+      </div>
+    </div>
+    <div class="ft-word" aria-hidden="true">Riptide<span>.</span></div>
+    <div class="fb"><span>Riptide Moving and Delivery © <span id="yr">2026</span></span><span>Thank you for letting our family move your family!</span></div>
+  </div>
+</footer>
 
-<div class="mobile-bar">
-  <a class="btn ghost" href="tel:6196093183">Call</a>
-  <a class="btn" href="#visit">Free estimate</a>
+<div class="mbar">
+  <a href="tel:+16196093183"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>Call now</a>
+  <a href="#contact">Free estimate</a>
 </div>
-</body>
+
+<script>
+(function(){
+  var hdr=document.getElementById('hdr'),burger=document.getElementById('burger'),menu=document.getElementById('mmenu'),img=document.getElementById('heroImg');
+  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  document.getElementById('yr').textContent=new Date().getFullYear();
+
+  function toggle(open){
+    document.body.classList.toggle('menu-open',open);
+    burger.setAttribute('aria-expanded',open);
+    burger.setAttribute('aria-label',open?'Close menu':'Open menu');
+  }
+  burger.addEventListener('click',function(){toggle(!document.body.classList.contains('menu-open'))});
+  menu.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){toggle(false)})});
+
+  var ticking=false;
+  function onScroll(){
+    var y=window.scrollY;
+    hdr.classList.toggle('scrolled',y>20);
+    if(!reduce&&img&&y<window.innerHeight*1.2){img.style.transform='translateY('+(-y*0.08)+'px)'}
+    ticking=false;
+  }
+  window.addEventListener('scroll',function(){if(!ticking){requestAnimationFrame(onScroll);ticking=true}},{passive:true});
+  onScroll();
+
+  var els=document.querySelectorAll('.rv');
+  if(reduce||!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('on')});return}
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(en){if(en.isIntersecting){en.target.classList.add('on');io.unobserve(en.target)}});
+  },{threshold:.12,rootMargin:'0px 0px -40px 0px'});
+  els.forEach(function(e){io.observe(e)});
+})();
+</script>
+<div id="lm-concept" style="position:fixed;left:12px;bottom:12px;z-index:2147483647;font:500 11px/1.3 -apple-system,BlinkMacSystemFont,Segoe UI,sans-serif;letter-spacing:.02em;background:rgba(15,15,18,.82);color:#f4f1ea;padding:7px 11px;border-radius:999px;backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);pointer-events:none;max-width:70vw">Website concept for Riptide Moving and Delivery by webstudio &middot; not the live site</div><p style="margin:0;padding:18px 16px 70px;text-align:center;font:12px/1.5 -apple-system,sans-serif;color:#8a8a8a;background:#0e0e10">Concept design by webstudio. Not affiliated with or endorsed by Riptide Moving and Delivery.</p></body>
 </html>
