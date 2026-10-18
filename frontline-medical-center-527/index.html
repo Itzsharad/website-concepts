@@ -1,291 +1,677 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src * data: blob:; media-src 'self' data:; style-src 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com data:; script-src 'unsafe-inline'; connect-src 'none'; frame-src 'none'; form-action 'none'; base-uri 'none'; object-src 'none'">
 <meta name="robots" content="noindex, nofollow">
-<title>Frontline Medical Center | Website concept</title>
+<style>html,body{max-width:100%;overflow-x:clip}</style>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Frontline Medical Center | Orthodontist &amp; Dental Clinic in Al Karama, Dubai</title>
+<meta name="description" content="Frontline Medical Center: a multispeciality dental clinic in Al Karama, Dubai. Orthodontics, cosmetic dentistry, laser dentistry, prosthodontics and general dentistry. Call 04 397 9702.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Syne:wght@500;600;700;800&display=swap" rel="stylesheet">
 <style>
 :root{
-  --bg:#f7f3ec;--surface:#ffffff;--ink:#12302c;--muted:#5b6b67;
-  --accent:#1f5c53;--accent-ink:#ffffff;--gold:#b8915a;--soft:#e8efe9;
-  --radius:22px;--max:1180px;
-  --serif:"Fraunces",Georgia,serif;--sans:"Manrope",system-ui,-apple-system,sans-serif;
+  --bg:#EFF7F7;--card:#FFFFFF;--ink:#0F2F33;--ink2:#3d5a5e;--teal:#0F8B8D;--teal-d:#0a6b6d;--teal-l:#d6ecec;
+  --gold:#F2B544;--rose:#f78da7;--line:rgba(15,47,51,.14);
+  --fh:'Syne',sans-serif;--fb:'Manrope',sans-serif;--r:28px;--wrap:1240px;
 }
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:var(--fb);background:var(--bg);color:var(--ink);line-height:1.65;font-size:17px;overflow-x:hidden}
+img{display:block;max-width:100%}
 a{color:inherit;text-decoration:none}
-img{max-width:100%;display:block}
-.wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
-.concept{background:var(--ink);color:var(--bg);font-size:13px;text-align:center;padding:8px 16px;letter-spacing:.02em}
-.concept b{color:var(--gold);font-weight:600}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 28px}
+h1,h2,h3{font-family:var(--fh);line-height:1.02;letter-spacing:-.025em;font-weight:700}
+.label{font-size:12px;letter-spacing:.24em;text-transform:uppercase;font-weight:700;color:var(--teal);display:inline-flex;align-items:center;gap:12px}
+.label::before{content:"";width:28px;height:1px;background:currentColor}
+.sec{padding:130px 0;position:relative}
+.sec-head{display:grid;grid-template-columns:auto 1fr;gap:24px 60px;align-items:end;border-top:1px solid var(--line);padding-top:28px;margin-bottom:70px}
+.num{font-family:var(--fh);font-size:15px;font-weight:600;color:var(--ink2)}
+.num b{color:var(--teal)}
+.sec-head h2{font-size:clamp(40px,6vw,84px)}
+.sec-head p{grid-column:2;max-width:560px;color:var(--ink2)}
+em.acc{font-style:normal;color:var(--teal)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:17px 30px;border-radius:999px;font-weight:700;font-size:15px;letter-spacing:.02em;transition:transform .35s cubic-bezier(.2,.8,.2,1),box-shadow .35s,background .3s,color .3s;white-space:nowrap}
+.btn-p{background:var(--ink);color:#fff}
+.btn-p:hover{background:var(--teal);transform:translateY(-3px);box-shadow:0 14px 30px -12px rgba(15,139,141,.6)}
+.btn-g{border:1px solid var(--ink);color:var(--ink)}
+.btn-g:hover{background:var(--ink);color:#fff;transform:translateY(-3px)}
+.btn svg{width:16px;height:16px}
+.ul{background:linear-gradient(currentColor,currentColor) 0 100%/0 1px no-repeat;transition:background-size .4s}
+.ul:hover{background-size:100% 1px}
 
 /* header */
-header{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:saturate(1.4) blur(10px);border-bottom:1px solid color-mix(in srgb,var(--ink) 8%,transparent)}
-.nav{display:flex;align-items:center;justify-content:space-between;height:76px;gap:24px}
-.brand{font-family:var(--serif);font-size:23px;font-weight:600;letter-spacing:-.01em;line-height:1.1;max-width:340px}
-.links{display:flex;gap:30px;font-size:15px;font-weight:500;color:var(--muted)}
-.links a:hover{color:var(--ink)}
-.nav-right{display:flex;align-items:center;gap:18px}
-.phone{font-weight:600;font-size:15px;white-space:nowrap}
-.btn{display:inline-flex;align-items:center;gap:10px;background:var(--accent);color:var(--accent-ink);padding:14px 26px;border-radius:999px;font-weight:600;font-size:15.5px;transition:transform .2s ease,box-shadow .2s ease;white-space:nowrap}
-.btn:hover{transform:translateY(-2px);box-shadow:0 12px 28px -12px var(--accent)}
-.btn.ghost{background:transparent;color:var(--ink);border:1.5px solid color-mix(in srgb,var(--ink) 20%,transparent)}
-.btn.ghost:hover{box-shadow:none;border-color:var(--ink)}
-.btn svg{width:18px;height:18px}
+.hdr{position:fixed;inset:14px 14px auto;z-index:50;transition:inset .4s}
+.hdr-in{max-width:var(--wrap);margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:20px;padding:10px 12px 10px 22px;border-radius:999px;background:rgba(255,255,255,.62);backdrop-filter:blur(18px) saturate(1.4);-webkit-backdrop-filter:blur(18px) saturate(1.4);border:1px solid rgba(255,255,255,.8);box-shadow:0 10px 40px -20px rgba(15,47,51,.3)}
+.brand{display:flex;align-items:center;gap:12px;min-width:0}
+.brand img{height:42px;width:auto}
+.brand span{font-family:var(--fh);font-weight:700;font-size:15px;line-height:1.1;letter-spacing:-.01em}
+.brand small{display:block;font-family:var(--fb);font-weight:600;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--teal)}
+.nav{display:flex;gap:28px;font-size:14px;font-weight:600}
+.hdr-r{display:flex;align-items:center;gap:16px}
+.hdr-tel{font-weight:700;font-size:14px}
+.hdr .btn{padding:12px 22px}
+.burger{display:none;width:46px;height:46px;border-radius:50%;background:var(--ink);border:0;cursor:pointer;position:relative}
+.burger i{position:absolute;left:14px;right:14px;height:2px;background:#fff;transition:.3s}
+.burger i:nth-child(1){top:18px}.burger i:nth-child(2){top:26px}
+.menu-open .burger i:nth-child(1){top:22px;transform:rotate(45deg)}
+.menu-open .burger i:nth-child(2){top:22px;transform:rotate(-45deg)}
+.mnav{position:fixed;inset:0;z-index:45;background:var(--bg);display:flex;flex-direction:column;justify-content:center;padding:100px 32px 40px;gap:8px;opacity:0;visibility:hidden;transition:.4s}
+.mnav a{font-family:var(--fh);font-size:40px;font-weight:700;border-bottom:1px solid var(--line);padding:10px 0}
+.mnav .btn{margin-top:24px;font-family:var(--fb);font-size:16px;border:0}
+.menu-open .mnav{opacity:1;visibility:visible}
 
 /* hero */
-.hero{padding:72px 0 88px}
-.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:64px;align-items:center}
-.eyebrow{display:inline-flex;align-items:center;gap:10px;background:var(--surface);border:1px solid color-mix(in srgb,var(--ink) 10%,transparent);padding:8px 16px 8px 10px;border-radius:999px;font-size:14px;font-weight:600;color:var(--muted)}
-.stars{color:var(--gold);letter-spacing:1px;font-size:14px}
-.eyebrow .dot{width:26px;height:26px;border-radius:50%;background:var(--soft);display:grid;place-items:center;color:var(--accent)}
-h1{font-family:var(--serif);font-weight:500;font-size:clamp(44px,5.6vw,74px);line-height:1.02;letter-spacing:-.025em;margin:26px 0 22px}
-h1 em{font-style:italic;color:var(--accent)}
-.lead-text{font-size:19.5px;color:var(--muted);max-width:540px}
-.hero-ctas{display:flex;gap:14px;margin-top:36px;flex-wrap:wrap}
-.ticks{display:flex;gap:22px;margin-top:34px;flex-wrap:wrap;font-size:14.5px;font-weight:600;color:var(--muted)}
-.ticks span{display:flex;align-items:center;gap:8px}
-.ticks svg{width:18px;height:18px;color:var(--accent)}
-.visual{position:relative}
-.photo{aspect-ratio:4/5;border-radius:calc(var(--radius) + 10px);overflow:hidden;background:var(--soft);box-shadow:0 40px 80px -40px color-mix(in srgb,var(--ink) 55%,transparent)}
-.photo img{width:100%;height:100%;object-fit:cover}
-.quote-panel{aspect-ratio:4/5;border-radius:calc(var(--radius) + 10px);background:linear-gradient(155deg,var(--accent),color-mix(in srgb,var(--accent) 55%,var(--ink)));color:var(--accent-ink);padding:52px 46px;display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden;box-shadow:0 40px 80px -40px color-mix(in srgb,var(--ink) 60%,transparent)}
-.quote-panel:before{content:"";position:absolute;width:420px;height:420px;border-radius:50%;right:-160px;top:-160px;background:color-mix(in srgb,var(--accent-ink) 9%,transparent)}
-.quote-panel:after{content:"";position:absolute;width:260px;height:260px;border-radius:50%;left:-90px;bottom:-110px;border:1.5px solid color-mix(in srgb,var(--accent-ink) 22%,transparent)}
-.quote-mark{font-family:var(--serif);font-size:120px;line-height:.6;opacity:.35}
-.quote-panel p{font-family:var(--serif);font-size:28px;line-height:1.3;position:relative;z-index:1}
-.quote-panel .who{font-family:var(--sans);font-size:15px;opacity:.85;margin-top:22px;font-weight:600}
-.float{position:absolute;background:var(--surface);color:var(--ink);border-radius:18px;padding:16px 20px;box-shadow:0 24px 50px -24px color-mix(in srgb,var(--ink) 50%,transparent);display:flex;align-items:center;gap:14px;font-size:14px;line-height:1.35}
-.float b{font-size:22px;font-family:var(--serif);font-weight:600;display:block}
-.float.one{left:-34px;bottom:-28px}
-.float.two{right:-22px;top:44px}
-.float .badge{width:44px;height:44px;border-radius:14px;background:var(--soft);display:grid;place-items:center;color:var(--accent)}
-.float .badge svg{width:22px;height:22px}
+.hero{min-height:100vh;padding:150px 0 80px;position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;width:900px;height:900px;right:-300px;top:-260px;border-radius:50%;background:radial-gradient(circle,rgba(15,139,141,.16),transparent 65%);pointer-events:none}
+.hero-g{display:grid;grid-template-columns:1.12fr .88fr;gap:60px;align-items:center}
+.hero h1{font-size:clamp(46px,7.4vw,112px);margin:26px 0 30px;font-weight:700}
+.hero h1 .ln{display:block;overflow:hidden;padding-bottom:.06em}
+.hero h1 .ln>span{display:inline-block}
+.hero h1 .out{color:transparent;-webkit-text-stroke:1.5px var(--ink)}
+.hero h1 .dot{display:inline-block;width:.18em;height:.18em;border-radius:50%;background:var(--rose);margin-left:.05em}
+.hero-sub{max-width:520px;font-size:19px;color:var(--ink2)}
+.hero-cta{display:flex;flex-wrap:wrap;gap:14px;margin:38px 0 54px}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line);max-width:600px}
+.stat{padding:22px 18px 0 0}
+.stat+.stat{padding-left:22px;border-left:1px solid var(--line)}
+.stat b{font-family:var(--fh);font-size:clamp(30px,3.6vw,46px);font-weight:700;display:block;line-height:1;letter-spacing:-.03em}
+.stat b sup{color:var(--teal);font-size:.55em}
+.stat span{font-size:13px;color:var(--ink2);display:block;margin-top:8px;line-height:1.4}
+.hero-vis{position:relative;justify-self:end;width:100%;max-width:480px}
+.arch{border-radius:260px 260px var(--r) var(--r);overflow:hidden;aspect-ratio:4/5.6;position:relative;box-shadow:0 50px 90px -40px rgba(15,47,51,.5)}
+.arch img{width:100%;height:118%;object-fit:cover;object-position:center;will-change:transform}
+.arch::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(15,47,51,.35),transparent 40%)}
+.badge{position:absolute;left:-58px;bottom:70px;width:150px;height:150px;border-radius:50%;background:var(--gold);display:grid;place-items:center;box-shadow:0 20px 40px -18px rgba(15,47,51,.5)}
+.badge svg{position:absolute;inset:0;width:100%;height:100%;animation:spin 22s linear infinite}
+.badge text{font-family:var(--fb);font-size:10.5px;font-weight:700;letter-spacing:.24em;fill:var(--ink)}
+.badge .tooth{width:42px;height:42px;position:static;animation:none}
+.vert{position:absolute;right:-46px;top:40px;writing-mode:vertical-rl;font-size:11px;letter-spacing:.32em;text-transform:uppercase;font-weight:700;color:var(--ink2)}
+.hero-cap{position:absolute;left:24px;right:24px;bottom:22px;color:#fff;font-size:13px;font-weight:600;letter-spacing:.06em;display:flex;justify-content:space-between;z-index:2}
+@keyframes spin{to{transform:rotate(360deg)}}
 
-/* trust */
-.trust{border-top:1px solid color-mix(in srgb,var(--ink) 9%,transparent);border-bottom:1px solid color-mix(in srgb,var(--ink) 9%,transparent);background:var(--surface)}
-.trust .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;padding-top:26px;padding-bottom:26px}
-.trust div{display:flex;align-items:center;gap:12px;font-weight:600;font-size:15px}
-.trust svg{width:22px;height:22px;color:var(--accent);flex:none}
+/* marquee */
+.marq{background:var(--ink);color:#fff;overflow:hidden;padding:26px 0;transform:rotate(-1.2deg) scale(1.03);margin:10px 0}
+.marq-t{display:flex;width:max-content;animation:mq 38s linear infinite}
+.marq-t span{font-family:var(--fh);font-size:clamp(24px,3vw,40px);font-weight:600;padding:0 28px;display:flex;align-items:center;gap:56px;white-space:nowrap}
+.marq-t span::after{content:"";width:12px;height:12px;border-radius:50%;background:var(--gold)}
+.marq-t span:nth-child(4n)::after{background:var(--rose)}
+@keyframes mq{to{transform:translateX(-50%)}}
 
-/* sections */
-section.block{padding:110px 0}
-.kicker{font-size:13px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
-h2{font-family:var(--serif);font-weight:500;font-size:clamp(34px,3.8vw,52px);line-height:1.08;letter-spacing:-.02em;margin:14px 0 18px}
-.section-head{display:flex;justify-content:space-between;align-items:end;gap:40px;margin-bottom:56px}
-.section-head p{color:var(--muted);max-width:420px}
-.services{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-.card{background:var(--surface);border-radius:var(--radius);padding:34px 32px 36px;border:1px solid color-mix(in srgb,var(--ink) 7%,transparent);transition:transform .25s ease,box-shadow .25s ease}
-.card:hover{transform:translateY(-4px);box-shadow:0 30px 60px -36px color-mix(in srgb,var(--ink) 45%,transparent)}
-.icon{width:54px;height:54px;border-radius:16px;background:var(--soft);color:var(--accent);display:grid;place-items:center;margin-bottom:24px}
-.icon svg{width:26px;height:26px}
-.card h3{font-family:var(--serif);font-weight:500;font-size:23px;margin-bottom:8px;letter-spacing:-.01em}
-.card p{color:var(--muted);font-size:16px}
+/* services */
+.svc{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.card{background:var(--card);border-radius:var(--r);padding:38px 34px 34px;position:relative;transition:transform .5s cubic-bezier(.2,.8,.2,1),box-shadow .5s;border:1px solid rgba(15,47,51,.06);display:flex;flex-direction:column;min-height:330px}
+.card:hover{transform:translateY(-8px);box-shadow:0 34px 60px -34px rgba(15,47,51,.4)}
+.card .n{font-family:var(--fh);font-size:14px;color:var(--teal);font-weight:600}
+.card h3{font-size:28px;margin:46px 0 14px}
+.card p{color:var(--ink2);font-size:15.5px;flex:1}
+.card .tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:22px}
+.card .tags i{font-style:normal;font-size:12px;font-weight:600;padding:6px 12px;border-radius:99px;background:var(--bg);color:var(--ink)}
+.card .ic{position:absolute;right:30px;top:30px;width:52px;height:52px;border-radius:50%;background:var(--teal-l);display:grid;place-items:center;transition:background .4s,transform .5s}
+.card .ic svg{width:22px;height:22px;stroke:var(--teal-d);fill:none;stroke-width:1.6}
+.card:hover .ic{background:var(--gold);transform:rotate(-45deg)}
+.card.feat{background:var(--teal);color:#fff;grid-row:span 2;padding:0;overflow:hidden;min-height:0}
+.card.feat img{width:100%;height:56%;object-fit:cover}
+.card.feat .fb{padding:32px 34px;display:flex;flex-direction:column;flex:1}
+.card.feat h3{margin:12px 0 12px;color:#fff}
+.card.feat p{color:rgba(255,255,255,.88)}
+.card.feat .n{color:var(--gold)}
+.card.feat .btn{margin-top:22px;background:#fff;color:var(--ink);align-self:flex-start}
 
-.why{background:var(--ink);color:var(--bg)}
-.why .kicker{color:var(--gold)}
-.why-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:80px;align-items:start}
-.why h2{color:var(--bg)}
-.why .intro{color:color-mix(in srgb,var(--bg) 70%,transparent);font-size:18px;max-width:440px}
-.points{display:grid;gap:14px}
-.point{display:grid;grid-template-columns:62px 1fr;gap:20px;padding:30px;border-radius:var(--radius);background:color-mix(in srgb,var(--bg) 6%,transparent);border:1px solid color-mix(in srgb,var(--bg) 10%,transparent)}
-.point .num{font-family:var(--serif);font-size:34px;color:var(--gold);line-height:1}
-.point h3{font-family:var(--serif);font-weight:500;font-size:24px;margin-bottom:6px}
-.point p{color:color-mix(in srgb,var(--bg) 72%,transparent);font-size:16px}
+/* about */
+.about{background:var(--card)}
+.ab-g{display:grid;grid-template-columns:1fr 1fr;gap:90px;align-items:center}
+.ab-ph{position:relative;height:680px}
+.ab-ph .a{position:absolute;left:0;top:0;width:72%;height:84%;border-radius:var(--r);overflow:hidden}
+.ab-ph .b{position:absolute;right:0;bottom:0;width:48%;height:46%;border-radius:200px 200px var(--r) var(--r);overflow:hidden;border:10px solid var(--card)}
+.ab-ph img{width:100%;height:100%;object-fit:cover}
+.ab-ph .yr{position:absolute;right:4%;top:6%;font-family:var(--fh);text-align:right}
+.ab-ph .yr b{font-size:110px;line-height:.85;display:block;color:var(--teal);letter-spacing:-.05em}
+.ab-ph .yr span{font-size:12px;letter-spacing:.2em;text-transform:uppercase;font-family:var(--fb);font-weight:700}
+.ab-tx h2{font-size:clamp(38px,4.6vw,64px);margin:22px 0 28px}
+.ab-tx p{color:var(--ink2);margin-bottom:18px}
+.ab-tx .lead{font-size:21px;color:var(--ink);font-weight:500;line-height:1.5}
+.dr{display:flex;align-items:center;gap:18px;margin-top:34px;padding-top:28px;border-top:1px solid var(--line)}
+.dr .sig{width:58px;height:58px;border-radius:50%;background:var(--ink);color:var(--gold);display:grid;place-items:center;font-family:var(--fh);font-weight:700;font-size:20px;flex:none}
+.dr b{font-family:var(--fh);font-size:20px;display:block;line-height:1.2}
+.dr span{font-size:14px;color:var(--ink2)}
+.team{margin-top:100px;display:grid;grid-template-columns:repeat(5,1fr);border-top:1px solid var(--line)}
+.team div{padding:26px 20px 0 0}
+.team div+div{padding-left:20px;border-left:1px solid var(--line)}
+.team small{font-size:11px;letter-spacing:.2em;color:var(--teal);font-weight:700}
+.team h3{font-size:19px;margin-top:10px;line-height:1.2;letter-spacing:-.01em}
 
-.score{display:flex;align-items:center;gap:18px;background:var(--surface);padding:16px 24px;border-radius:18px;border:1px solid color-mix(in srgb,var(--ink) 8%,transparent)}
-.score b{font-family:var(--serif);font-size:40px;font-weight:500;line-height:1}
-.score small{display:block;color:var(--muted);font-size:14px}
-.reviews{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-.review{background:var(--surface);border-radius:var(--radius);padding:34px;display:flex;flex-direction:column;gap:22px;border:1px solid color-mix(in srgb,var(--ink) 7%,transparent)}
-.review p{font-family:var(--serif);font-size:19.5px;line-height:1.45}
-.review .by{margin-top:auto;display:flex;align-items:center;gap:12px;font-weight:600;font-size:15px}
-.avatar{width:40px;height:40px;border-radius:50%;background:var(--soft);color:var(--accent);display:grid;place-items:center;font-weight:700}
-.review .src{color:var(--muted);font-weight:500;font-size:13px;display:block}
+/* why */
+.why{position:relative;color:#fff;background:var(--ink);overflow:hidden}
+.why-bg{position:absolute;inset:0}
+.why-bg img{width:100%;height:100%;object-fit:cover;opacity:.18}
+.why-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,var(--ink) 0%,rgba(15,47,51,.82) 40%,var(--ink) 100%)}
+.why .wrap{position:relative}
+.why .sec-head{border-color:rgba(255,255,255,.2)}
+.why .sec-head p,.why .num{color:rgba(255,255,255,.75)}
+.why .label{color:var(--gold)}
+.why .num b{color:var(--gold)}
+.wl{list-style:none}
+.wl li{display:grid;grid-template-columns:90px 1fr 1.2fr;gap:30px;align-items:baseline;padding:34px 0;border-top:1px solid rgba(255,255,255,.18);transition:padding .4s}
+.wl li:last-child{border-bottom:1px solid rgba(255,255,255,.18)}
+.wl li:hover{padding-left:16px}
+.wl li span{font-family:var(--fh);color:var(--gold);font-weight:600}
+.wl h3{font-size:clamp(26px,3vw,40px);font-weight:600}
+.wl p{color:rgba(255,255,255,.8);font-size:16px}
 
-.cta-band{padding:0 0 110px}
-.cta-box{border-radius:calc(var(--radius) + 12px);background:linear-gradient(140deg,var(--accent),color-mix(in srgb,var(--accent) 60%,var(--ink)));color:var(--accent-ink);padding:76px 64px;display:grid;grid-template-columns:1.3fr 1fr;gap:40px;align-items:center;position:relative;overflow:hidden}
-.cta-box:after{content:"";position:absolute;right:-120px;bottom:-200px;width:460px;height:460px;border-radius:50%;border:1.5px solid color-mix(in srgb,var(--accent-ink) 22%,transparent)}
-.cta-box h2{color:inherit;margin:0 0 12px}
-.cta-box p{opacity:.85;font-size:18px}
-.cta-box .actions{display:flex;flex-direction:column;gap:12px;align-items:flex-start;position:relative;z-index:1}
-.cta-box .btn{background:var(--accent-ink);color:var(--accent)}
-.cta-box .btn.ghost{background:transparent;color:var(--accent-ink);border-color:color-mix(in srgb,var(--accent-ink) 40%,transparent)}
+/* proof numbers */
+.proof{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;margin-top:80px}
+.pf{border:1px solid rgba(255,255,255,.2);border-radius:var(--r);padding:30px}
+.pf b{font-family:var(--fh);font-size:54px;line-height:1;letter-spacing:-.04em;display:block}
+.pf b sup{color:var(--gold);font-size:.5em}
+.pf h4{font-family:var(--fh);font-size:17px;margin:16px 0 8px}
+.pf p{font-size:14px;color:rgba(255,255,255,.75)}
 
-.visit{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:10px}
-.visit .card h3{font-size:20px}
-.visit a{color:var(--accent);font-weight:600}
-footer{border-top:1px solid color-mix(in srgb,var(--ink) 9%,transparent);padding:40px 0 110px;color:var(--muted);font-size:14px}
-footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
-.mobile-bar{display:none}
+/* steps */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;counter-reset:s}
+.step{padding:34px 28px;border-radius:var(--r);background:var(--card);position:relative;overflow:hidden}
+.step::before{counter-increment:s;content:"0" counter(s);font-family:var(--fh);font-size:96px;font-weight:800;line-height:1;color:var(--teal-l);display:block;margin-bottom:30px;letter-spacing:-.05em}
+.step h3{font-size:22px;margin-bottom:10px;letter-spacing:-.01em}
+.step p{font-size:15px;color:var(--ink2)}
+.step::after{content:"";position:absolute;left:28px;right:28px;top:28px;height:3px;background:linear-gradient(90deg,var(--teal),var(--gold));transform:scaleX(0);transform-origin:left;transition:transform .7s}
+.step:hover::after{transform:scaleX(1)}
 
-@keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
-.hero .copy>*{animation:rise .8s cubic-bezier(.2,.7,.2,1) both}
-.hero .copy>*:nth-child(2){animation-delay:.08s}.hero .copy>*:nth-child(3){animation-delay:.16s}
-.hero .copy>*:nth-child(4){animation-delay:.24s}.hero .copy>*:nth-child(5){animation-delay:.32s}
-.visual{animation:rise 1s .2s cubic-bezier(.2,.7,.2,1) both}
+/* gallery */
+.gal{display:grid;grid-template-columns:repeat(12,1fr);grid-auto-rows:110px;gap:16px}
+.gal figure{border-radius:22px;overflow:hidden;position:relative;background:var(--teal-l)}
+.gal img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s cubic-bezier(.2,.8,.2,1)}
+.gal figure:hover img{transform:scale(1.06)}
+.g1{grid-column:1/6;grid-row:span 5}
+.g2{grid-column:6/13;grid-row:span 3}
+.g3{grid-column:6/9;grid-row:span 2}
+.g4{grid-column:9/13;grid-row:span 2}
+.g5{grid-column:1/5;grid-row:span 3}
+.g6{grid-column:5/9;grid-row:span 3}
+.g7{grid-column:9/13;grid-row:span 3}
+.gal figcaption{position:absolute;left:14px;bottom:14px;background:rgba(255,255,255,.92);font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:7px 13px;border-radius:99px}
 
-@media (max-width:980px){
-  .links{display:none}
-  .hero-grid,.why-grid,.cta-box{grid-template-columns:1fr}
-  .hero-grid{gap:56px}
-  .services,.reviews,.visit{grid-template-columns:1fr 1fr}
-  .trust .wrap{grid-template-columns:1fr 1fr}
-  .float.one{left:12px;bottom:-26px}.float.two{right:12px}
-  .visual{max-width:560px;margin-bottom:20px}
-  .section-head{flex-direction:column;align-items:flex-start}
+/* faq */
+.faq-g{display:grid;grid-template-columns:.8fr 1.2fr;gap:80px}
+.faq-g aside p{color:var(--ink2);margin-top:20px}
+.faq-g aside h2{font-size:clamp(40px,5vw,72px);margin-top:20px}
+details{border-top:1px solid var(--line)}
+details:last-child{border-bottom:1px solid var(--line)}
+summary{list-style:none;cursor:pointer;padding:28px 0;display:flex;justify-content:space-between;gap:20px;font-family:var(--fh);font-size:21px;font-weight:600;letter-spacing:-.01em}
+summary::-webkit-details-marker{display:none}
+summary i{flex:none;width:34px;height:34px;border-radius:50%;border:1px solid var(--line);position:relative;transition:.4s}
+summary i::before,summary i::after{content:"";position:absolute;left:10px;right:10px;top:16px;height:1.5px;background:var(--ink);transition:.4s}
+summary i::after{transform:rotate(90deg)}
+details[open] summary i{background:var(--teal);border-color:var(--teal)}
+details[open] summary i::before,details[open] summary i::after{background:#fff;transform:rotate(180deg)}
+details p{padding:0 50px 28px 0;color:var(--ink2)}
+
+/* cta */
+.cta{position:relative;margin:0 14px;border-radius:40px;overflow:hidden;color:#fff;padding:150px 0;text-align:center}
+.cta>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.cta::before{content:"";position:absolute;inset:0;background:linear-gradient(120deg,rgba(10,107,109,.94),rgba(15,47,51,.88))}
+.cta .wrap{position:relative}
+.cta h2{font-size:clamp(46px,8.5vw,128px);margin:24px 0 30px}
+.cta h2 span{color:var(--gold)}
+.cta p{max-width:560px;margin:0 auto 40px;color:rgba(255,255,255,.88);font-size:18px}
+.cta .label{color:var(--gold)}
+.cta .btn-p{background:#fff;color:var(--ink)}
+.cta .btn-p:hover{background:var(--gold);color:var(--ink)}
+.cta .btn-g{border-color:#fff;color:#fff}
+.cta .btn-g:hover{background:#fff;color:var(--ink)}
+.cta-b{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+
+/* contact */
+.ct-g{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.ct-card{background:var(--card);border-radius:var(--r);padding:44px}
+.ct-card h3{font-size:14px;font-family:var(--fb);letter-spacing:.2em;text-transform:uppercase;color:var(--teal);margin-bottom:12px}
+.ct-row{padding:24px 0;border-bottom:1px solid var(--line)}
+.ct-row:first-child{padding-top:0}
+.ct-row:last-child{border:0;padding-bottom:0}
+.ct-big{font-family:var(--fh);font-size:clamp(26px,3vw,38px);font-weight:700;letter-spacing:-.02em;line-height:1.15;display:inline-block}
+.ct-row p{color:var(--ink2)}
+.hrs{display:flex;justify-content:space-between;gap:16px;padding:6px 0;font-weight:600}
+.hrs span:last-child{color:var(--ink2);font-weight:500;text-align:right}
+.ct-ph{border-radius:var(--r);overflow:hidden;position:relative;min-height:540px}
+.ct-ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.ct-ph::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(15,47,51,.92),rgba(15,47,51,.1) 60%)}
+.ct-ov{position:absolute;left:36px;right:36px;bottom:36px;z-index:2;color:#fff}
+.ct-ov h3{font-size:30px;margin-bottom:14px}
+.ct-ov p{color:rgba(255,255,255,.88);font-size:15px;margin-bottom:22px}
+.ct-ov .btn{background:var(--gold);color:var(--ink)}
+.ct-ov .btn:hover{background:#fff;transform:translateY(-3px)}
+
+/* footer */
+footer{padding:90px 0 40px;margin-top:130px;border-top:1px solid var(--line)}
+.ft-big{font-family:var(--fh);font-size:clamp(48px,11vw,170px);font-weight:800;letter-spacing:-.05em;line-height:.9;color:var(--ink)}
+.ft-big span{color:transparent;-webkit-text-stroke:1.5px var(--teal)}
+.ft-g{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px;margin-top:70px}
+.ft-g img{height:56px;width:auto;margin-bottom:18px}
+.ft-g h4{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--teal);margin-bottom:16px}
+.ft-g p,.ft-g a{color:var(--ink2);font-size:15px;display:block;margin-bottom:8px}
+.ft-b{margin-top:70px;padding-top:26px;border-top:1px solid var(--line);font-size:13px;color:var(--ink2);display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+
+/* mobile bar */
+.mbar{display:none}
+
+/* reveal */
+.js .rv{opacity:0;transform:translateY(40px);transition:opacity 1s cubic-bezier(.2,.8,.2,1),transform 1s cubic-bezier(.2,.8,.2,1)}
+.js .rv.in{opacity:1;transform:none}
+.js .hero h1 .ln>span{transform:translateY(110%);transition:transform 1.1s cubic-bezier(.2,.8,.2,1)}
+.js .loaded .hero h1 .ln>span,.loaded .hero h1 .ln>span{transform:none}
+.js .h-fade{opacity:0;transform:translateY(24px);transition:opacity 1s,transform 1s cubic-bezier(.2,.8,.2,1)}
+.loaded .h-fade{opacity:1;transform:none}
+.js .hero-vis{opacity:0;transform:scale(.94);transition:opacity 1.4s,transform 1.4s cubic-bezier(.2,.8,.2,1)}
+.loaded .hero-vis{opacity:1;transform:none}
+
+@media (max-width:1080px){
+  .nav,.hdr-tel{display:none}
+  .burger{display:block}
+  .hero-g,.ab-g,.faq-g,.ct-g{grid-template-columns:1fr}
+  .hero-vis{justify-self:center;max-width:440px;margin-top:20px}
+  .svc{grid-template-columns:1fr 1fr}
+  .card.feat{grid-row:auto;grid-column:span 2}
+  .card.feat img{height:300px}
+  .steps,.proof{grid-template-columns:1fr 1fr}
+  .team{grid-template-columns:repeat(3,1fr);row-gap:30px}
+  .team div:nth-child(4){border-left:0;padding-left:0}
+  .ft-g{grid-template-columns:1fr 1fr}
+  .wl li{grid-template-columns:60px 1fr}
+  .wl p{grid-column:2}
+  .faq-g{gap:40px}
 }
 @media (max-width:640px){
   body{font-size:16px}
-  .wrap{padding:0 18px}
-  .nav{height:66px}.brand{font-size:19px}
-  .phone,.nav-right .btn{display:none}
-  .hero{padding:44px 0 64px}
-  .lead-text{font-size:17.5px}
-  .hero-ctas .btn{flex:1;justify-content:center}
-  .ticks{display:none}
-  .services,.reviews,.visit,.trust .wrap{grid-template-columns:1fr}
-  section.block{padding:76px 0}
-  .quote-panel,.photo{aspect-ratio:auto;min-height:380px}.photo{aspect-ratio:4/3;min-height:0}
-  .quote-panel{padding:40px 30px 64px}.quote-panel p{font-size:23px}
-  .float{font-size:13px;padding:12px 14px}.float b{font-size:18px}
-  .float.two{display:none}
-  .cta-box{padding:52px 28px}
-  .point{grid-template-columns:44px 1fr;padding:24px}
-  .mobile-bar{display:flex;position:fixed;left:12px;right:12px;bottom:12px;z-index:30;gap:10px}
-  .mobile-bar .btn{flex:1;justify-content:center;box-shadow:0 14px 30px -14px color-mix(in srgb,var(--ink) 60%,transparent)}
-  .mobile-bar .btn.ghost{background:var(--surface)}
+  .wrap{padding:0 20px}
+  .sec{padding:90px 0}
+  .hdr{inset:10px 10px auto}
+  .hdr-in{padding:8px 8px 8px 14px}
+  .brand img{height:36px}
+  .brand span{font-size:13px}
+  .hdr .btn{display:none}
+  .hero{padding:120px 0 60px}
+  .hero-sub{font-size:17px}
+  .hero-cta .btn{flex:1 1 100%}
+  .stat{padding-right:10px}
+  .stat+.stat{padding-left:12px}
+  .stat span{font-size:12px}
+  .badge{left:-6px;bottom:30px;width:116px;height:116px}
+  .badge text{font-size:9px}
+  .vert{display:none}
+  .sec-head{grid-template-columns:1fr;margin-bottom:46px}
+  .sec-head p{grid-column:1}
+  .svc,.steps,.proof{grid-template-columns:1fr}
+  .card.feat{grid-column:auto}
+  .card{min-height:0;padding:30px 26px}
+  .card.feat .fb{padding:28px 26px}
+  .card h3{font-size:25px;margin-top:40px}
+  .ab-ph{height:460px}
+  .ab-ph .yr b{font-size:72px}
+  .team{grid-template-columns:1fr 1fr}
+  .team div:nth-child(n){border-left:0;padding-left:0}
+  .team div:nth-child(even){border-left:1px solid var(--line);padding-left:16px}
+  .wl li{grid-template-columns:1fr;gap:8px;padding:26px 0}
+  .wl p{grid-column:1}
+  .gal{grid-auto-rows:90px;gap:10px}
+  .g1{grid-column:1/13;grid-row:span 4}
+  .g2{grid-column:1/13;grid-row:span 3}
+  .g3,.g4{grid-column:span 6;grid-row:span 2}
+  .g5{grid-column:1/13;grid-row:span 3}
+  .g6,.g7{grid-column:span 6;grid-row:span 2}
+  summary{font-size:18px}
+  details p{padding-right:0}
+  .cta{padding:100px 0;border-radius:28px;margin:0 10px}
+  .cta-b .btn{flex:1 1 100%}
+  .ct-card{padding:30px 24px}
+  .ct-ph{min-height:460px}
+  .ct-ov{left:24px;right:24px;bottom:24px}
+  .ft-g{grid-template-columns:1fr}
+  footer{margin-top:90px;padding-bottom:110px}
+  .mbar{display:flex;position:fixed;left:10px;right:10px;bottom:10px;z-index:40;gap:8px;padding:8px;border-radius:999px;background:rgba(15,47,51,.92);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px)}
+  .mbar a{flex:1;text-align:center;padding:14px 10px;border-radius:999px;font-weight:700;font-size:14px;color:#fff}
+  .mbar a:last-child{background:var(--gold);color:var(--ink)}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+  .js .rv,.js .h-fade,.js .hero-vis,.js .hero h1 .ln>span{opacity:1;transform:none}
 }
 </style>
 </head>
 <body>
-<div class="concept">Website concept prepared for <b>Frontline Medical Center</b> by webstudio &middot; not a live site</div>
 
-<header>
-  <div class="wrap nav">
-    <a href="#top" class="brand">Frontline Medical Center</a>
-    <nav class="links">
-      <a href="#services">Services</a><a href="#why">Why us</a><a href="#visit">Visit</a>
+<header class="hdr">
+  <div class="hdr-in">
+    <a href="#top" class="brand" aria-label="Frontline Medical Center home">
+      <img src="img/logo.png" alt="Frontline Medical Center logo">
+      <span>Frontline<small>Medical Center</small></span>
+    </a>
+    <nav class="nav" aria-label="Main">
+      <a class="ul" href="#services">Treatments</a>
+      <a class="ul" href="#about">About</a>
+      <a class="ul" href="#why">Standards</a>
+      <a class="ul" href="#gallery">Clinic</a>
+      <a class="ul" href="#faq">FAQ</a>
+      <a class="ul" href="#contact">Visit</a>
     </nav>
-    <div class="nav-right">
-      <a class="phone" href="tel:+97143979702">+97143979702</a>
-      <a class="btn" href="#visit">Book now</a>
+    <div class="hdr-r">
+      <a class="hdr-tel ul" href="tel:+97143979702">04 397 9702</a>
+      <a class="btn btn-p" href="#contact">Request Appointment</a>
+      <button class="burger" aria-label="Open menu" aria-expanded="false"><i></i><i></i></button>
     </div>
   </div>
 </header>
 
+<nav class="mnav" aria-label="Mobile">
+  <a href="#services">Treatments</a>
+  <a href="#about">About</a>
+  <a href="#why">Standards</a>
+  <a href="#gallery">Clinic</a>
+  <a href="#faq">FAQ</a>
+  <a href="#contact">Visit</a>
+  <a class="btn btn-p" href="tel:+97143979702">Call 04 397 9702</a>
+</nav>
+
 <main id="top">
+
 <section class="hero">
-  <div class="wrap hero-grid">
-    <div class="copy">
-      <div class="eyebrow">
-        <span class="dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-7-4.4-7-10a4 4 0 017-2.6A4 4 0 0119 10c0 5.6-7 10-7 10z"/></svg></span>Family &amp; cosmetic dentistry
-      </div>
-      <h1>Dentistry that feels as good as <em>it looks.</em></h1>
-      <p class="lead-text">Gentle, modern care for the whole family, with same-week appointments and a team that actually takes time to listen.</p>
-      <div class="hero-ctas">
-        <a class="btn" href="#visit">Book your visit <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-        <a class="btn ghost" href="tel:+97143979702">Call +97143979702</a>
-      </div>
-      <div class="ticks">
-        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7"/></svg>Most insurance accepted</span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7"/></svg>New patients welcome</span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7"/></svg>Flexible payment plans</span>
-      </div>
-    </div>
-    <div class="visual">
-      
-      <div class="quote-panel"><div class="quote-mark">“</div><div><p>Gentle, modern care for the whole family, with same-week appointments and a team that actually takes time to listen.</p><div class="who">Frontline Medical Center</div></div></div>
-      
-      
-      <div class="float two"><span class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><span><b>This week</b>New patients welcome</span></div>
-    </div>
-  </div>
-  <template id="qp"><div class="quote-panel"><div class="quote-mark">“</div><div><p>Gentle, modern care for the whole family, with same-week appointments and a team that actually takes time to listen.</p><div class="who">Frontline Medical Center</div></div></div></template>
-</section>
-
-<div class="trust"><div class="wrap">
-  <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.2-8 9-4.6-.8-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg>Most insurance accepted</div><div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.2-8 9-4.6-.8-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg>New patients welcome</div><div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.2-8 9-4.6-.8-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg>Flexible payment plans</div><div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.2-8 9-4.6-.8-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg>Evening appointments</div>
-</div></div>
-
-<section class="block" id="services">
-  <div class="wrap">
-    <div class="section-head">
-      <div><div class="kicker">What we do</div><h2>Everything you need,<br>under one roof.</h2></div>
-      <p>From routine visits to the work that changes how you feel about your day, Frontline Medical Center takes care of it properly.</p>
-    </div>
-    <div class="services">
-      
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3c-2.5 0-4 2-4 4.5 0 3 1.5 4.5 2 7.5.4 2.4.8 6 2.5 6 1.6 0 1.6-4.5 4.5-4.5s2.9 4.5 4.5 4.5c1.7 0 2.1-3.6 2.5-6 .5-3 2-4.5 2-7.5C21 5 19.5 3 17 3c-2 0-3 1-5 1S9 3 7 3z"/></svg></div><h3>Checkups &amp; cleanings</h3><p>Thorough, comfortable exams that keep small problems from becoming big ones.</p></div>
-      
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/><path d="M19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8z"/></svg></div><h3>Teeth whitening</h3><p>Professional whitening that brightens your smile safely in a single visit.</p></div>
-      
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 14s1.5 2.5 4 2.5 4-2.5 4-2.5"/><path d="M9 9.5h.01M15 9.5h.01"/></svg></div><h3>Invisalign &amp; aligners</h3><p>Straighten your teeth discreetly with clear aligners planned around your life.</p></div>
-      
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.2-8 9-4.6-.8-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg></div><h3>Dental implants</h3><p>Permanent, natural-looking replacements that feel and work like your own teeth.</p></div>
-      
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-7-4.4-7-10a4 4 0 017-2.6A4 4 0 0119 10c0 5.6-7 10-7 10z"/></svg></div><h3>Kids&#39; dentistry</h3><p>A calm, friendly first experience that helps children love their checkups.</p></div>
-      
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div><h3>Emergency care</h3><p>Same-day help for toothaches, chips and broken teeth when you need it most.</p></div>
-      
-    </div>
-  </div>
-</section>
-
-<section class="block why" id="why">
-  <div class="wrap why-grid">
+  <div class="wrap hero-g">
     <div>
-      <div class="kicker">Why patients choose us</div>
-      <h2>The Dubai dentist people recommend to their friends.</h2>
-      <p class="intro">it still comes down to the same three things.</p>
+      <span class="label h-fade">Al Karama · Dubai</span>
+      <h1>
+        <span class="ln"><span>The smile</span></span>
+        <span class="ln"><span>you've <span class="out">always</span></span></span>
+        <span class="ln"><span>dreamt of<span class="dot"></span></span></span>
+      </h1>
+      <p class="hero-sub h-fade">Orthodontics, smile makeovers, laser dentistry and gentle everyday care, delivered by a multispeciality team in the heart of Al Karama. Personalised to your needs, your comfort and your schedule.</p>
+      <div class="hero-cta h-fade">
+        <a class="btn btn-p" href="tel:+97143979702">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>
+          Book: 04 397 9702</a>
+        <a class="btn btn-g" href="#services">Explore Treatments</a>
+      </div>
+      <div class="stats h-fade">
+        <div class="stat"><b>25<sup>+</sup></b><span>Years of quality dental care</span></div>
+        <div class="stat"><b>800<sup>+</sup></b><span>Orthodontic patients</span></div>
+        <div class="stat"><b>450<sup>+</sup></b><span>Smile makeovers</span></div>
+      </div>
     </div>
-    <div class="points">
-      
-      <div class="point"><div class="num">01</div><div><h3>Comfort first</h3><p>Numbing that works, warm blankets, and no lectures. Anxious patients are welcome here.</p></div></div>
-      
-      <div class="point"><div class="num">02</div><div><h3>Modern technology</h3><p>Digital X-rays and 3D scans mean less radiation, fewer goopy impressions and faster results.</p></div></div>
-      
-      <div class="point"><div class="num">03</div><div><h3>Clear pricing</h3><p>We explain costs and insurance before treatment, so there are never any surprises.</p></div></div>
-      
+    <div class="hero-vis">
+      <div class="arch">
+        <img id="heroImg" src="img/photo-1.jpg" alt="Frontline Medical Center dental care in Al Karama, Dubai">
+        <div class="hero-cap"><span>Frontline Medical Center</span><span>Est. Karama</span></div>
+      </div>
+      <div class="badge" aria-hidden="true">
+        <svg viewBox="0 0 150 150"><defs><path id="c" d="M75,75 m-58,0 a58,58 0 1,1 116,0 a58,58 0 1,1 -116,0"/></defs><text><textPath href="#c">BEST ORTHODONTIST IN KARAMA · DUBAI · </textPath></text></svg>
+        <svg class="tooth" viewBox="0 0 24 24" fill="none" stroke="#0F2F33" stroke-width="1.5"><path d="M7 3c-2.5 0-4 2-4 4.5 0 2.5 1 4 1.5 6 .6 2.5 1 7.5 3 7.5s2-5 4.5-5 2.5 5 4.5 5 2.4-5 3-7.5c.5-2 1.5-3.5 1.5-6C21 5 19.5 3 17 3c-2 0-3 1-5 1S9 3 7 3z"/></svg>
+      </div>
+      <div class="vert">Multispeciality Dental Clinic</div>
     </div>
   </div>
 </section>
 
+<div class="marq" aria-hidden="true">
+  <div class="marq-t">
+    <span>Invisalign</span><span>Teeth Whitening</span><span>Veneers</span><span>Root Canals</span><span>Laser Dentistry</span><span>Surgical Extractions</span><span>Cosmetic Filling</span><span>Pedodontics</span>
+    <span>Invisalign</span><span>Teeth Whitening</span><span>Veneers</span><span>Root Canals</span><span>Laser Dentistry</span><span>Surgical Extractions</span><span>Cosmetic Filling</span><span>Pedodontics</span>
+  </div>
+</div>
 
-
-<section class="cta-band" id="book">
-  <div class="wrap"><div class="cta-box">
-    <div><h2>Ready when you are.</h2><p>Book your visit in under a minute, or give us a call and talk to a real person.</p></div>
-    <div class="actions">
-      <a class="btn" href="#visit">Book your visit</a>
-      <a class="btn ghost" href="tel:+97143979702">Call +97143979702</a>
-    </div>
-  </div></div>
-</section>
-
-<section class="block" id="visit" style="padding-top:0">
+<section class="sec" id="services">
   <div class="wrap">
-    <div class="kicker">Visit us</div><h2>Come say hello.</h2>
-    <div class="visit">
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11l8-7 8 7v9a1 1 0 01-1 1h-4v-6H9v6H5a1 1 0 01-1-1z"/></svg></div><h3>Address</h3><p>B-Block, Al Attar Center - 106, دبي 41318</p></div>
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div><h3>Phone</h3><p><a href="tel:+97143979702">+97143979702</a></p><p style="margin-top:10px">Call or message us for today's opening hours.</p></div>
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-7-4.4-7-10a4 4 0 017-2.6A4 4 0 0119 10c0 5.6-7 10-7 10z"/></svg></div><h3>New patients welcome</h3><p>Book your visit online or by phone and we'll take care of the rest.</p></div>
+    <div class="sec-head rv">
+      <div><span class="num"><b>01</b> / 07</span></div>
+      <h2>Our <em class="acc">treatments</em></h2>
+      <p>All areas of dentistry under one roof, from routine check-ups and oral hygiene to specialised, customised oral rehabilitation.</p>
+    </div>
+    <div class="svc">
+      <article class="card feat rv">
+        <img src="img/photo-12.jpg" alt="Orthodontic treatment at Frontline Medical Center">
+        <div class="fb">
+          <span class="n">Signature · Orthodontics</span>
+          <h3>A perfectly aligned smile</h3>
+          <p>Our orthodontic treatment has boosted the confidence and self-esteem of more than 800 people. From Invisalign clear aligners to complete alignment plans, our dentists are trained to guide you every step of the way.</p>
+          <a class="btn" href="#contact">Book a consultation</a>
+        </div>
+      </article>
+      <article class="card rv">
+        <div class="ic"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
+        <span class="n">02</span>
+        <h3>General Dentistry</h3>
+        <p>Comprehensive care vital for optimal oral health, with preventive procedures to protect your smile long-term.</p>
+        <div class="tags"><i>Check-ups</i><i>Fillings</i><i>Root Canals</i><i>Wisdom Teeth</i><i>Gum Care</i></div>
+      </article>
+      <article class="card rv">
+        <div class="ic"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
+        <span class="n">03</span>
+        <h3>Cosmetic Dentistry</h3>
+        <p>Your smile reflects your confidence. We close gaps and correct discolouration, from simple whitening to a complete smile makeover.</p>
+        <div class="tags"><i>Whitening</i><i>Veneers</i><i>Smile Makeover</i></div>
+      </article>
+      <article class="card rv">
+        <div class="ic"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
+        <span class="n">04</span>
+        <h3>Laser Dentistry</h3>
+        <p>Precise laser care inside the mouth: removing overgrown tissue, reshaping gums, whitening teeth and laser-assisted root canal disinfection.</p>
+      </article>
+      <article class="card rv">
+        <div class="ic"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
+        <span class="n">05</span>
+        <h3>Prosthodontics</h3>
+        <p>Diagnosis, treatment and maintenance of oral function, including removable and fixed prostheses that restore comfort and confidence.</p>
+      </article>
+      <article class="card rv">
+        <div class="ic"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
+        <span class="n">06</span>
+        <h3>Oral Medicine, Pain &amp; TMJ</h3>
+        <p>Expert detection of cancerous and pre-cancerous conditions such as red and white lesions and non-healing ulcers, plus pain and TMJ management.</p>
+      </article>
+      <article class="card rv">
+        <div class="ic"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
+        <span class="n">07</span>
+        <h3>Pedodontics</h3>
+        <p>Gentle dentistry for children. Our team cares for patients across all age groups, from little ones to grandparents.</p>
+      </article>
     </div>
   </div>
 </section>
+
+<section class="sec about" id="about">
+  <div class="wrap">
+    <div class="ab-g">
+      <div class="ab-ph rv">
+        <div class="a"><img src="img/photo-5.jpg" alt="The dental team at Frontline Medical Center"></div>
+        <div class="b"><img src="img/photo-11.jpg" alt="Inside Frontline Medical Center"></div>
+        <div class="yr"><b>25+</b><span>Years of<br>experience</span></div>
+      </div>
+      <div class="ab-tx rv">
+        <span class="label">02 · Our Story</span>
+        <h2>Elevated dental care, <em class="acc">made personal.</em></h2>
+        <p class="lead">Every appointment at Frontline is a dental experience shaped around your treatment needs, your comfort and your schedule.</p>
+        <p>Operating in India and the U.A.E., we are a multispeciality clinic offering premium treatments in a warm, friendly environment, from general practice to specialty Orthodontics, Implantology, Oral Medicine and Laser Dentistry. Beyond dentistry, we also practise Homeopathy to support your overall wellness.</p>
+        <p>Our skilled dentists bring more than 20 years of clinical experience, working together on customised treatment plans and long-term relationships built on trust, integrity and excellent care. All major insurance providers are affiliated with us for a hassle-free visit.</p>
+        <div class="dr">
+          <div class="sig">VP</div>
+          <div><b>Dr. Vimalkumar Parthasarathy</b><span>Lead practitioner, Frontline Medical Center</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="team rv">
+      <div><small>01</small><h3>Dr. Vimalkumar Parthasarathy</h3></div>
+      <div><small>02</small><h3>Dr. Mohamed Arif Mohamed Haneef</h3></div>
+      <div><small>03</small><h3>Dr. Halowine Coelho</h3></div>
+      <div><small>04</small><h3>Dr Shajahan Fazzludeen</h3></div>
+      <div><small>05</small><h3>Limy Jose</h3></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec why" id="why">
+  <div class="why-bg"><img src="img/photo-8.jpg" alt="" aria-hidden="true"></div>
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div><span class="num"><b>03</b> / 07</span></div>
+      <h2>Standards we <span style="color:var(--gold)">never</span> compromise</h2>
+      <p>The facilities and principles behind every visit, so you can relax in the chair.</p>
+    </div>
+    <ul class="wl">
+      <li class="rv"><span>i.</span><h3>Standards of Treatment</h3><p>Excellent, credible treatment delivered to the best standards, using modern and latest techniques.</p></li>
+      <li class="rv"><span>ii.</span><h3>Infection Prevention</h3><p>A safe, sanitary and comfortable environment that helps prevent the development and transmission of disease and infection.</p></li>
+      <li class="rv"><span>iii.</span><h3>Quality of Care</h3><p>Systems of care put in place to support our clinicians in rendering quality care, every single time.</p></li>
+      <li class="rv"><span>iv.</span><h3>Patient Experience</h3><p>Patient-centred care, with a constant focus on improving your experience with each appointment.</p></li>
+      <li class="rv"><span>v.</span><h3>Effective Communication</h3><p>We listen for the feelings behind your questions, and explain every step with clarity and purpose.</p></li>
+    </ul>
+    <div class="proof">
+      <div class="pf rv"><b>25<sup>+</sup></b><h4>Years Experience</h4><p>Delivering quality dental services.</p></div>
+      <div class="pf rv"><b>800<sup>+</sup></b><h4>Orthodontic Treatment</h4><p>People with renewed confidence and self-esteem.</p></div>
+      <div class="pf rv"><b>450<sup>+</sup></b><h4>Smile Makeovers</h4><p>From simple whitening to complex makeovers.</p></div>
+      <div class="pf rv"><b>Painless</b><h4>Root Canals</h4><p>Rotary endodontics, apex locators, 3D obturation and bio-ceramic sealers.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="process">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div><span class="num"><b>04</b> / 07</span></div>
+      <h2>Your visit, <em class="acc">simplified</em></h2>
+      <p>We make every effort to run on time, so your care fits seamlessly into your day.</p>
+    </div>
+    <div class="steps">
+      <div class="step rv"><h3>Call to book</h3><p>Ring 04 397 9702 and we'll quickly find an appointment that suits your schedule.</p></div>
+      <div class="step rv"><h3>Thorough assessment</h3><p>A careful oral health assessment, with time to talk through your concerns and goals.</p></div>
+      <div class="step rv"><h3>Your tailored plan</h3><p>A customised treatment plan built around your unique dental needs and comfort.</p></div>
+      <div class="step rv"><h3>Care &amp; aftercare</h3><p>Gentle treatment, regular check-ins along the way, and clear guidance for after your visit.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="gallery" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div><span class="num"><b>05</b> / 07</span></div>
+      <h2>Inside <em class="acc">Frontline</em></h2>
+      <p>A look at our clinic, equipment and treatment rooms in Al Karama.</p>
+    </div>
+    <div class="gal">
+      <figure class="g1 rv"><img src="img/photo-13.jpg" alt="Frontline Medical Center clinic" loading="lazy"><figcaption>Our Clinic</figcaption></figure>
+      <figure class="g2 rv"><img src="img/photo-2.jpg" alt="Treatment section at Frontline Medical Center" loading="lazy"><figcaption>Treatment Section</figcaption></figure>
+      <figure class="g3 rv"><img src="img/photo-10.jpg" alt="Medical equipment" loading="lazy"></figure>
+      <figure class="g4 rv"><img src="img/photo-9.jpg" alt="Dental care at Frontline" loading="lazy"></figure>
+      <figure class="g5 rv"><img src="img/photo-6.jpg" alt="Frontline Medical Center interior" loading="lazy"><figcaption>Medical Equipment</figcaption></figure>
+      <figure class="g6 rv"><img src="img/photo-14.jpg" alt="Patient care at Frontline Medical Center" loading="lazy"></figure>
+      <figure class="g7 rv"><img src="img/photo-7.jpg" alt="Front Line Medical Center" loading="lazy"></figure>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="faq" style="padding-top:0">
+  <div class="wrap faq-g">
+    <aside class="rv">
+      <span class="num"><b>06</b> / 07</span>
+      <h2>Good to <em class="acc">know</em></h2>
+      <p>Still have a question? Our front desk is happy to help on <a class="ul" href="tel:+97143979702"><b>04 397 9702</b></a>.</p>
+    </aside>
+    <div class="rv">
+      <details open><summary>Where is the clinic, and is there parking?<i></i></summary><p>We're in the heart of Al Karama at 106, B-Block, Al Attar Centre, above Chappan Bhog and opposite Spinneys on Sheikh Khalifa Bin Zayed St. Ample RTA parking is available at the front and back of the premises.</p></details>
+      <details><summary>Can I reach you by metro or bus?<i></i></summary><p>Yes. We're between ADCB (Karama) and Burjuman metro stations, less than a 5-minute walk from ADCB. There's also a bus stop in front of the clinic served by buses 33, 44, C5, 81, 21, 25, 91 and C10.</p></details>
+      <details><summary>Do you accept insurance?<i></i></summary><p>All major insurance providers are affiliated with us, so your visit can be as hassle-free as possible.</p></details>
+      <details><summary>Do you treat children?<i></i></summary><p>Absolutely. Our team cares for patients of every age, from children to older adults, and we offer Pedodontics (children's dentistry).</p></details>
+      <details><summary>Is root canal treatment painful?<i></i></summary><p>Our experts use the latest technology and techniques for a painless root canal experience, including rotary endodontics, apex locators for precision, 3D obturation, laser-assisted disinfection and bio-ceramic sealers for the best healing.</p></details>
+      <details><summary>How long is recovery after an extraction?<i></i></summary><p>We typically advise resting for about 48–72 hours so the area can clot, after which most people return to normal activity. The soft tissue usually heals fully in about 3–4 weeks.</p></details>
+    </div>
+  </div>
+</section>
+
+<section class="cta rv">
+  <img src="img/photo-3.jpg" alt="" aria-hidden="true" loading="lazy">
+  <div class="wrap">
+    <span class="label">Request Appointment</span>
+    <h2>Make your smile <span>better.</span></h2>
+    <p>Looking for professional, trusted dental care in Dubai? Don't hesitate. Call us and we'll find a time that works for you.</p>
+    <div class="cta-b">
+      <a class="btn btn-p" href="tel:+97143979702">Call 04 397 9702</a>
+      <a class="btn btn-g" href="tel:+971561022621">Mobile +971 56 102 2621</a>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="contact">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div><span class="num"><b>07</b> / 07</span></div>
+      <h2>Visit us in <em class="acc">Karama</em></h2>
+      <p>Central, easy to reach, and open seven days a week.</p>
+    </div>
+    <div class="ct-g">
+      <div class="ct-card rv">
+        <div class="ct-row"><h3>Call</h3><a class="ct-big ul" href="tel:+97143979702">04 397 9702</a><p style="margin-top:6px">Mobile: <a class="ul" href="tel:+971561022621">+971 56 102 2621</a></p></div>
+        <div class="ct-row"><h3>Address</h3><p style="color:var(--ink);font-weight:600">106, B-Block, Al Attar Centre<br>Above Chappan Bhog, Opposite Spinneys<br>Sheikh Khalifa Bin Zayed St, Al Karama, Dubai, U.A.E.</p></div>
+        <div class="ct-row"><h3>Opening Hours</h3>
+          <div class="hrs"><span>Monday – Saturday</span><span>10.00 AM – 8.30 PM</span></div>
+          <div class="hrs"><span>Sunday</span><span>11.00 AM – 7.00 PM</span></div>
+        </div>
+        <div class="ct-row"><h3>Email</h3><a class="ul" href="mailto:frontlinemedicalcenter@gmail.com" style="font-weight:600;word-break:break-all">frontlinemedicalcenter@gmail.com</a></div>
+      </div>
+      <div class="ct-ph rv">
+        <img src="img/photo-4.jpg" alt="Our location in Al Karama, Dubai" loading="lazy">
+        <div class="ct-ov">
+          <h3>Less than 5 minutes from ADCB Metro</h3>
+          <p>RTA parking front and back, and a bus stop right outside our door.</p>
+          <a class="btn" href="https://maps.google.com/?q=Frontline+Medical+Center+Al+Attar+Centre+Al+Karama+Dubai" target="_blank" rel="noopener">Get directions →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 </main>
 
-<footer><div class="wrap">
-  <span>© 2026 Frontline Medical Center</span>
-  <span>Concept design by webstudio. Not affiliated with or endorsed by Frontline Medical Center.</span>
-</div></footer>
+<footer>
+  <div class="wrap">
+    <div class="ft-big">Frontline<br><span>Smiles.</span></div>
+    <div class="ft-g">
+      <div>
+        <img src="img/logo.png" alt="Frontline Medical Center logo">
+        <p>An exceptional multispeciality dental clinic in Al Karama, Dubai, committed to the betterment of your oral health.</p>
+      </div>
+      <div><h4>Treatments</h4><a class="ul" href="#services">Orthodontics</a><a class="ul" href="#services">Cosmetic Dentistry</a><a class="ul" href="#services">General Dentistry</a><a class="ul" href="#services">Laser Dentistry</a></div>
+      <div><h4>Clinic</h4><a class="ul" href="#about">About Us</a><a class="ul" href="#why">Our Standards</a><a class="ul" href="#gallery">Gallery</a><a class="ul" href="#faq">FAQ</a></div>
+      <div><h4>Contact</h4><a class="ul" href="tel:+97143979702">04 397 9702</a><a class="ul" href="tel:+971561022621">+971 56 102 2621</a><p>Mon – Sat 10.00 AM – 8.30 PM<br>Sunday 11.00 AM – 7.00 PM</p></div>
+    </div>
+    <div class="ft-b"><span>© Frontline Medical Center · Al Karama, Dubai</span><a class="ul" href="#top">Back to top ↑</a></div>
+  </div>
+</footer>
 
-<div class="mobile-bar">
-  <a class="btn ghost" href="tel:+97143979702">Call</a>
-  <a class="btn" href="#visit">Book now</a>
+<div class="mbar">
+  <a href="tel:+97143979702">Call Now</a>
+  <a href="#contact">Book Visit</a>
 </div>
-</body>
+
+<script>
+(function(){
+  var d=document.documentElement;d.classList.add('js');
+  var rm=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  // staggered hero entrance
+  var lines=document.querySelectorAll('.hero h1 .ln>span'),fades=document.querySelectorAll('.h-fade');
+  lines.forEach(function(el,i){el.style.transitionDelay=(.15+i*.12)+'s'});
+  fades.forEach(function(el,i){el.style.transitionDelay=(.45+i*.12)+'s'});
+  requestAnimationFrame(function(){setTimeout(function(){document.body.classList.add('loaded')},60)});
+  // reveal on scroll
+  var rv=document.querySelectorAll('.rv');
+  if('IntersectionObserver' in window&&!rm){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12,rootMargin:'0px 0px -40px 0px'});
+    rv.forEach(function(el){var p=el.parentElement,sib=[].slice.call(p.children).filter(function(c){return c.classList.contains('rv')});el.style.transitionDelay=Math.min(sib.indexOf(el),5)*.08+'s';io.observe(el)});
+  }else{rv.forEach(function(el){el.classList.add('in')})}
+  // hero parallax
+  var img=document.getElementById('heroImg');
+  if(!rm&&img){var t=false;window.addEventListener('scroll',function(){if(t)return;t=true;requestAnimationFrame(function(){var y=Math.min(window.scrollY,900);img.style.transform='translateY('+(-y*.08-20)+'px)';t=false})},{passive:true});img.style.transform='translateY(-20px)'}
+  // mobile menu
+  var b=document.querySelector('.burger');
+  b.addEventListener('click',function(){var o=document.body.classList.toggle('menu-open');b.setAttribute('aria-expanded',o)});
+  document.querySelectorAll('.mnav a').forEach(function(a){a.addEventListener('click',function(){document.body.classList.remove('menu-open');b.setAttribute('aria-expanded','false')})});
+})();
+</script>
+<div id="lm-concept" style="position:fixed;left:12px;bottom:12px;z-index:2147483647;font:500 11px/1.3 -apple-system,BlinkMacSystemFont,Segoe UI,sans-serif;letter-spacing:.02em;background:rgba(15,15,18,.82);color:#f4f1ea;padding:7px 11px;border-radius:999px;backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);pointer-events:none;max-width:70vw">Website concept for Frontline Medical Center by webstudio &middot; not the live site</div><p style="margin:0;padding:18px 16px 70px;text-align:center;font:12px/1.5 -apple-system,sans-serif;color:#8a8a8a;background:#0e0e10">Concept design by webstudio. Not affiliated with or endorsed by Frontline Medical Center.</p></body>
 </html>
