@@ -1,291 +1,604 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src * data: blob:; media-src 'self' data:; style-src 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com data:; script-src 'unsafe-inline'; connect-src 'none'; frame-src 'none'; form-action 'none'; base-uri 'none'; object-src 'none'">
 <meta name="robots" content="noindex, nofollow">
-<title>Express Moving Ridgewood | Website concept</title>
+<style>html,body{max-width:100%;overflow-x:clip}</style>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Express Moving Ridgewood | Moving Company on Menahan St, NY 11385</title>
+<meta name="description" content="Express Moving Ridgewood: a local moving company at 59-40 Menahan St, New York NY 11385. Call (929) 493-9455 to plan your move.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Karla:wght@400;500;600;700;800&family=Libre+Caslon+Display&display=swap" rel="stylesheet">
 <style>
 :root{
-  --bg:#f6f4f0;--surface:#ffffff;--ink:#1d2433;--muted:#5f6675;
-  --accent:#c4512b;--accent-ink:#ffffff;--gold:#d79a3e;--soft:#f3e6de;
-  --radius:22px;--max:1180px;
-  --serif:"Fraunces",Georgia,serif;--sans:"Manrope",system-ui,-apple-system,sans-serif;
+  --bg:#F1F3F5;--surface:#FFFFFF;--ink:#14202B;--ember:#E2622A;--steel:#4B6B85;
+  --ink-2:#3A4754;--line:#D5DBE1;--steel-tint:#E3E9EE;--ember-tint:#FBE7DD;
+  --serif:"Libre Caslon Display",Georgia,serif;--sans:"Karla",system-ui,sans-serif;
+  --pad:clamp(20px,5vw,72px);--max:1360px;
+  --ease:cubic-bezier(.2,.7,.1,1);
 }
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
 a{color:inherit;text-decoration:none}
-img{max-width:100%;display:block}
-.wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
-.concept{background:var(--ink);color:var(--bg);font-size:13px;text-align:center;padding:8px 16px;letter-spacing:.02em}
-.concept b{color:var(--gold);font-weight:600}
+svg{display:block}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 var(--pad)}
+.label{font-family:var(--sans);font-weight:700;font-size:12px;letter-spacing:.22em;text-transform:uppercase}
+.h2{font-family:var(--serif);font-weight:400;font-size:clamp(40px,6.4vw,92px);line-height:.98;letter-spacing:-.02em}
+.h2 em{font-style:italic;color:var(--ember)}
+.lead{font-size:clamp(17px,1.5vw,20px);color:var(--ink-2);max-width:56ch}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;gap:12px;padding:18px 26px;font-weight:800;font-size:15px;letter-spacing:.04em;border:2px solid var(--ink);transition:transform .35s var(--ease),background .3s,color .3s;white-space:nowrap}
+.btn svg{width:18px;height:18px;transition:transform .35s var(--ease)}
+.btn:hover{transform:translateY(-3px)}
+.btn:hover svg{transform:translateX(4px)}
+.btn-ink{background:var(--ink);color:#fff}
+.btn-ink:hover{background:var(--ember);border-color:var(--ember);color:var(--ink)}
+.btn-line{background:transparent;color:var(--ink)}
+.btn-line:hover{background:var(--ink);color:#fff}
+.btn-ember{background:var(--ember);border-color:var(--ember);color:var(--ink)}
+.btn-ember:hover{background:var(--ink);border-color:var(--ink);color:#fff}
+.u{background:linear-gradient(currentColor,currentColor) 0 100%/0 2px no-repeat;transition:background-size .4s var(--ease)}
+.u:hover{background-size:100% 2px}
 
 /* header */
-header{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:saturate(1.4) blur(10px);border-bottom:1px solid color-mix(in srgb,var(--ink) 8%,transparent)}
-.nav{display:flex;align-items:center;justify-content:space-between;height:76px;gap:24px}
-.brand{font-family:var(--serif);font-size:23px;font-weight:600;letter-spacing:-.01em;line-height:1.1;max-width:340px}
-.links{display:flex;gap:30px;font-size:15px;font-weight:500;color:var(--muted)}
-.links a:hover{color:var(--ink)}
-.nav-right{display:flex;align-items:center;gap:18px}
-.phone{font-weight:600;font-size:15px;white-space:nowrap}
-.btn{display:inline-flex;align-items:center;gap:10px;background:var(--accent);color:var(--accent-ink);padding:14px 26px;border-radius:999px;font-weight:600;font-size:15.5px;transition:transform .2s ease,box-shadow .2s ease;white-space:nowrap}
-.btn:hover{transform:translateY(-2px);box-shadow:0 12px 28px -12px var(--accent)}
-.btn.ghost{background:transparent;color:var(--ink);border:1.5px solid color-mix(in srgb,var(--ink) 20%,transparent)}
-.btn.ghost:hover{box-shadow:none;border-color:var(--ink)}
-.btn svg{width:18px;height:18px}
+.hdr{position:fixed;inset:0 0 auto 0;z-index:50;background:rgba(241,243,245,.72);backdrop-filter:blur(16px) saturate(1.4);-webkit-backdrop-filter:blur(16px) saturate(1.4);border-bottom:1px solid transparent;transition:border-color .3s,background .3s}
+.hdr.scrolled{border-color:var(--line);background:rgba(241,243,245,.88)}
+.hdr .wrap{display:flex;align-items:center;justify-content:space-between;height:76px;gap:24px}
+.logo{display:flex;align-items:center;gap:12px}
+.logo-mark{width:40px;height:40px;background:var(--ink);display:grid;place-items:center;flex:none}
+.logo-mark span{width:16px;height:16px;background:var(--ember);transform:translate(4px,4px)}
+.logo b{display:block;font-family:var(--serif);font-weight:400;font-size:21px;line-height:1}
+.logo small{display:block;font-weight:700;font-size:10px;letter-spacing:.32em;color:var(--steel);margin-top:4px}
+.nav{display:flex;gap:30px;font-weight:600;font-size:15px}
+.hdr-r{display:flex;align-items:center;gap:22px}
+.hdr-tel{font-weight:800;font-size:15px;letter-spacing:.02em}
+.hdr .btn{padding:12px 18px;font-size:14px}
+.burger{display:none;width:46px;height:46px;border:2px solid var(--ink);background:none;cursor:pointer;position:relative}
+.burger i{position:absolute;left:11px;right:11px;height:2px;background:var(--ink);transition:transform .3s,opacity .3s}
+.burger i:nth-child(1){top:14px}.burger i:nth-child(2){top:21px}.burger i:nth-child(3){top:28px}
+.menu-open .burger i:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.menu-open .burger i:nth-child(2){opacity:0}
+.menu-open .burger i:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.mnav{position:fixed;inset:76px 0 0 0;background:var(--ink);color:#fff;z-index:49;padding:40px var(--pad);display:flex;flex-direction:column;gap:6px;transform:translateY(-102%);transition:transform .5s var(--ease);visibility:hidden}
+.menu-open .mnav{transform:none;visibility:visible}
+.mnav a{font-family:var(--serif);font-size:42px;line-height:1.2;border-bottom:1px solid rgba(255,255,255,.14);padding:10px 0;display:flex;justify-content:space-between;align-items:baseline}
+.mnav a span{font-family:var(--sans);font-size:12px;letter-spacing:.2em;color:var(--ember);font-weight:700}
+.mnav .btn{margin-top:28px;justify-content:center;font-family:var(--sans);font-size:16px;border-bottom:2px solid var(--ember)}
 
 /* hero */
-.hero{padding:72px 0 88px}
-.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:64px;align-items:center}
-.eyebrow{display:inline-flex;align-items:center;gap:10px;background:var(--surface);border:1px solid color-mix(in srgb,var(--ink) 10%,transparent);padding:8px 16px 8px 10px;border-radius:999px;font-size:14px;font-weight:600;color:var(--muted)}
-.stars{color:var(--gold);letter-spacing:1px;font-size:14px}
-.eyebrow .dot{width:26px;height:26px;border-radius:50%;background:var(--soft);display:grid;place-items:center;color:var(--accent)}
-h1{font-family:var(--serif);font-weight:500;font-size:clamp(44px,5.6vw,74px);line-height:1.02;letter-spacing:-.025em;margin:26px 0 22px}
-h1 em{font-style:italic;color:var(--accent)}
-.lead-text{font-size:19.5px;color:var(--muted);max-width:540px}
-.hero-ctas{display:flex;gap:14px;margin-top:36px;flex-wrap:wrap}
-.ticks{display:flex;gap:22px;margin-top:34px;flex-wrap:wrap;font-size:14.5px;font-weight:600;color:var(--muted)}
-.ticks span{display:flex;align-items:center;gap:8px}
-.ticks svg{width:18px;height:18px;color:var(--accent)}
-.visual{position:relative}
-.photo{aspect-ratio:4/5;border-radius:calc(var(--radius) + 10px);overflow:hidden;background:var(--soft);box-shadow:0 40px 80px -40px color-mix(in srgb,var(--ink) 55%,transparent)}
-.photo img{width:100%;height:100%;object-fit:cover}
-.quote-panel{aspect-ratio:4/5;border-radius:calc(var(--radius) + 10px);background:linear-gradient(155deg,var(--accent),color-mix(in srgb,var(--accent) 55%,var(--ink)));color:var(--accent-ink);padding:52px 46px;display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden;box-shadow:0 40px 80px -40px color-mix(in srgb,var(--ink) 60%,transparent)}
-.quote-panel:before{content:"";position:absolute;width:420px;height:420px;border-radius:50%;right:-160px;top:-160px;background:color-mix(in srgb,var(--accent-ink) 9%,transparent)}
-.quote-panel:after{content:"";position:absolute;width:260px;height:260px;border-radius:50%;left:-90px;bottom:-110px;border:1.5px solid color-mix(in srgb,var(--accent-ink) 22%,transparent)}
-.quote-mark{font-family:var(--serif);font-size:120px;line-height:.6;opacity:.35}
-.quote-panel p{font-family:var(--serif);font-size:28px;line-height:1.3;position:relative;z-index:1}
-.quote-panel .who{font-family:var(--sans);font-size:15px;opacity:.85;margin-top:22px;font-weight:600}
-.float{position:absolute;background:var(--surface);color:var(--ink);border-radius:18px;padding:16px 20px;box-shadow:0 24px 50px -24px color-mix(in srgb,var(--ink) 50%,transparent);display:flex;align-items:center;gap:14px;font-size:14px;line-height:1.35}
-.float b{font-size:22px;font-family:var(--serif);font-weight:600;display:block}
-.float.one{left:-34px;bottom:-28px}
-.float.two{right:-22px;top:44px}
-.float .badge{width:44px;height:44px;border-radius:14px;background:var(--soft);display:grid;place-items:center;color:var(--accent)}
-.float .badge svg{width:22px;height:22px}
+.hero{position:relative;min-height:100vh;min-height:100svh;padding:120px 0 0;display:flex;flex-direction:column;overflow:hidden}
+.hero-grid{position:absolute;inset:0;pointer-events:none;background-image:linear-gradient(to right,rgba(20,32,43,.06) 1px,transparent 1px);background-size:calc(100%/12) 100%}
+.hero-meta{display:flex;justify-content:space-between;gap:20px;border-top:2px solid var(--ink);padding-top:14px;color:var(--ink)}
+.hero-meta span:nth-child(2){color:var(--steel)}
+.hero-main{position:relative;display:grid;grid-template-columns:repeat(12,1fr);gap:0 20px;margin-top:clamp(28px,5vh,60px);flex:1}
+.hero h1{grid-column:1/-1;font-family:var(--serif);font-weight:400;font-size:clamp(64px,13.2vw,212px);line-height:.86;letter-spacing:-.035em;position:relative;z-index:2}
+.hero h1 .ln{display:block;overflow:hidden;padding-bottom:.06em}
+.hero h1 .ln>span{display:inline-block;transform:translateY(105%);transition:transform 1.1s var(--ease)}
+.hero h1 .ln:nth-child(2){padding-left:12%}
+.hero h1 .ln:nth-child(3){padding-left:4%}
+.hero h1 em{color:var(--ember);font-style:italic}
+.loaded .hero h1 .ln>span{transform:none}
+.loaded .hero h1 .ln:nth-child(2)>span{transition-delay:.12s}
+.loaded .hero h1 .ln:nth-child(3)>span{transition-delay:.24s}
+.arrow-line{display:inline-block;vertical-align:middle;width:.9em;height:.08em;background:var(--ink);margin:0 .12em .1em 0;position:relative}
+.arrow-line::after{content:"";position:absolute;right:-2px;top:50%;width:.22em;height:.22em;border-top:.08em solid var(--ink);border-right:.08em solid var(--ink);transform:translateY(-50%) rotate(45deg)}
+.ember-block{position:absolute;right:0;top:4%;width:min(34vw,440px);aspect-ratio:1/1.15;background:var(--ember);z-index:1;transform:scaleY(0);transform-origin:top;transition:transform 1.2s var(--ease) .3s;display:flex;flex-direction:column;justify-content:space-between;padding:22px;color:var(--ink)}
+.loaded .ember-block{transform:scaleY(1)}
+.ember-block .zip{font-family:var(--sans);font-weight:800;font-size:clamp(46px,7vw,112px);letter-spacing:-.04em;line-height:.85;text-align:right}
+.ember-block .box{width:56px;height:56px;border:2px solid var(--ink);position:relative}
+.ember-block .box::before{content:"";position:absolute;left:50%;top:-2px;bottom:-2px;width:2px;background:var(--ink)}
+.steel-bar{position:absolute;right:min(34vw,440px);top:calc(4% + min(34vw,440px)*1.15 - 70px);width:min(14vw,180px);height:70px;background:var(--steel);z-index:1;transform:scaleX(0);transform-origin:right;transition:transform 1s var(--ease) .7s}
+.loaded .steel-bar{transform:scaleX(1)}
+.hero-foot{grid-column:1/-1;display:grid;grid-template-columns:repeat(12,1fr);gap:20px;align-items:end;margin-top:clamp(28px,5vh,56px);padding-bottom:40px;position:relative;z-index:2}
+.hero-sub{grid-column:1/6;font-size:clamp(17px,1.45vw,20px);color:var(--ink-2)}
+.hero-sub strong{color:var(--ink)}
+.hero-ctas{grid-column:6/10;display:flex;flex-wrap:wrap;gap:12px}
+.hero-info{grid-column:10/13;border-left:2px solid var(--ink);padding-left:18px;font-size:15px}
+.hero-info p+p{margin-top:10px}
+.hero-info .label{color:var(--steel);font-size:11px;display:block}
+.fade{opacity:0;transform:translateY(24px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
+.loaded .fade{opacity:1;transform:none}
+.loaded .d1{transition-delay:.45s}.loaded .d2{transition-delay:.6s}.loaded .d3{transition-delay:.75s}.loaded .d4{transition-delay:.15s}
 
-/* trust */
-.trust{border-top:1px solid color-mix(in srgb,var(--ink) 9%,transparent);border-bottom:1px solid color-mix(in srgb,var(--ink) 9%,transparent);background:var(--surface)}
-.trust .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;padding-top:26px;padding-bottom:26px}
-.trust div{display:flex;align-items:center;gap:12px;font-weight:600;font-size:15px}
-.trust svg{width:22px;height:22px;color:var(--accent);flex:none}
+/* marquee */
+.marquee{background:var(--ink);color:#fff;overflow:hidden;border-top:6px solid var(--ember)}
+.mq-track{display:flex;width:max-content;animation:mq 38s linear infinite}
+.marquee:hover .mq-track{animation-play-state:paused}
+.mq-track span{font-family:var(--serif);font-size:clamp(30px,4.2vw,58px);padding:22px 0;display:flex;align-items:center;white-space:nowrap}
+.mq-track span::after{content:"";width:14px;height:14px;background:var(--ember);margin:0 clamp(24px,3vw,48px)}
+.mq-track span:nth-child(even){font-style:italic;color:#C9D5DF}
+@keyframes mq{to{transform:translateX(-50%)}}
 
 /* sections */
-section.block{padding:110px 0}
-.kicker{font-size:13px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
-h2{font-family:var(--serif);font-weight:500;font-size:clamp(34px,3.8vw,52px);line-height:1.08;letter-spacing:-.02em;margin:14px 0 18px}
-.section-head{display:flex;justify-content:space-between;align-items:end;gap:40px;margin-bottom:56px}
-.section-head p{color:var(--muted);max-width:420px}
-.services{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-.card{background:var(--surface);border-radius:var(--radius);padding:34px 32px 36px;border:1px solid color-mix(in srgb,var(--ink) 7%,transparent);transition:transform .25s ease,box-shadow .25s ease}
-.card:hover{transform:translateY(-4px);box-shadow:0 30px 60px -36px color-mix(in srgb,var(--ink) 45%,transparent)}
-.icon{width:54px;height:54px;border-radius:16px;background:var(--soft);color:var(--accent);display:grid;place-items:center;margin-bottom:24px}
-.icon svg{width:26px;height:26px}
-.card h3{font-family:var(--serif);font-weight:500;font-size:23px;margin-bottom:8px;letter-spacing:-.01em}
-.card p{color:var(--muted);font-size:16px}
+section{position:relative}
+.sec{padding:clamp(90px,12vw,170px) 0}
+.sec-head{display:grid;grid-template-columns:repeat(12,1fr);gap:20px;margin-bottom:clamp(48px,6vw,88px);align-items:end}
+.sec-head .tag{grid-column:1/-1;display:flex;align-items:center;gap:16px;border-top:2px solid var(--ink);padding-top:14px;margin-bottom:22px}
+.sec-head .tag b{font-size:12px;letter-spacing:.22em;color:var(--ember)}
+.sec-head .h2{grid-column:1/8}
+.sec-head .lead{grid-column:9/13}
 
-.why{background:var(--ink);color:var(--bg)}
-.why .kicker{color:var(--gold)}
-.why-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:80px;align-items:start}
-.why h2{color:var(--bg)}
-.why .intro{color:color-mix(in srgb,var(--bg) 70%,transparent);font-size:18px;max-width:440px}
-.points{display:grid;gap:14px}
-.point{display:grid;grid-template-columns:62px 1fr;gap:20px;padding:30px;border-radius:var(--radius);background:color-mix(in srgb,var(--bg) 6%,transparent);border:1px solid color-mix(in srgb,var(--bg) 10%,transparent)}
-.point .num{font-family:var(--serif);font-size:34px;color:var(--gold);line-height:1}
-.point h3{font-family:var(--serif);font-weight:500;font-size:24px;margin-bottom:6px}
-.point p{color:color-mix(in srgb,var(--bg) 72%,transparent);font-size:16px}
+/* services */
+.svc{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;background:var(--ink);border:2px solid var(--ink)}
+.card{background:var(--surface);padding:34px 28px 32px;display:flex;flex-direction:column;min-height:420px;position:relative;overflow:hidden;transition:background .45s var(--ease),color .45s}
+.card::before{content:"";position:absolute;left:0;right:0;bottom:0;height:6px;background:var(--ember);transform:scaleX(0);transform-origin:left;transition:transform .5s var(--ease)}
+.card:hover::before{transform:scaleX(1)}
+.card:hover{background:var(--ink);color:#fff}
+.card:hover p{color:#C9D5DF}
+.card:hover .ico{color:var(--ember);transform:translateY(-6px)}
+.card .num{font-family:var(--sans);font-weight:800;font-size:76px;line-height:.8;letter-spacing:-.05em;color:var(--steel-tint);transition:color .45s}
+.card:hover .num{color:var(--steel)}
+.card .ico{width:46px;height:46px;margin:36px 0 auto;color:var(--steel);transition:color .4s,transform .45s var(--ease)}
+.card h3{font-family:var(--serif);font-weight:400;font-size:30px;line-height:1.05;margin:28px 0 12px}
+.card p{font-size:15.5px;color:var(--ink-2);transition:color .45s}
+.svc-note{margin-top:22px;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;font-size:15px;color:var(--ink-2)}
+.svc-note a{font-weight:800;color:var(--ink)}
 
-.score{display:flex;align-items:center;gap:18px;background:var(--surface);padding:16px 24px;border-radius:18px;border:1px solid color-mix(in srgb,var(--ink) 8%,transparent)}
-.score b{font-family:var(--serif);font-size:40px;font-weight:500;line-height:1}
-.score small{display:block;color:var(--muted);font-size:14px}
-.reviews{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-.review{background:var(--surface);border-radius:var(--radius);padding:34px;display:flex;flex-direction:column;gap:22px;border:1px solid color-mix(in srgb,var(--ink) 7%,transparent)}
-.review p{font-family:var(--serif);font-size:19.5px;line-height:1.45}
-.review .by{margin-top:auto;display:flex;align-items:center;gap:12px;font-weight:600;font-size:15px}
-.avatar{width:40px;height:40px;border-radius:50%;background:var(--soft);color:var(--accent);display:grid;place-items:center;font-weight:700}
-.review .src{color:var(--muted);font-weight:500;font-size:13px;display:block}
+/* about */
+.about{background:var(--surface)}
+.about-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:20px;align-items:start}
+.about-art{grid-column:1/6;position:relative;aspect-ratio:4/5}
+.about-art .a1{position:absolute;inset:0 18% 18% 0;background:var(--steel);display:flex;align-items:flex-end;padding:26px;color:#fff}
+.about-art .a1 b{font-family:var(--serif);font-weight:400;font-size:clamp(40px,5vw,72px);line-height:.9}
+.about-art .a2{position:absolute;right:0;bottom:0;width:48%;aspect-ratio:1;background:var(--ember);display:grid;place-items:center}
+.about-art .a2 svg{width:58%;color:var(--ink)}
+.about-art .a3{position:absolute;left:8%;top:-22px;background:var(--ink);color:#fff;padding:10px 14px}
+.about-copy{grid-column:7/13;padding-top:10px}
+.about-copy .h2{font-size:clamp(38px,5vw,74px);margin:18px 0 32px}
+.about-copy p+p{margin-top:18px}
+.about-copy .lead{max-width:none}
+.facts{margin-top:44px;display:grid;grid-template-columns:1fr 1fr;border-top:2px solid var(--ink)}
+.facts div{padding:18px 0 0;font-size:15px}
+.facts div+div{padding-left:20px;border-left:1px solid var(--line)}
+.facts .label{color:var(--steel);display:block;margin-bottom:6px;font-size:11px}
+.facts strong{font-family:var(--serif);font-weight:400;font-size:22px;line-height:1.2;display:block}
 
-.cta-band{padding:0 0 110px}
-.cta-box{border-radius:calc(var(--radius) + 12px);background:linear-gradient(140deg,var(--accent),color-mix(in srgb,var(--accent) 60%,var(--ink)));color:var(--accent-ink);padding:76px 64px;display:grid;grid-template-columns:1.3fr 1fr;gap:40px;align-items:center;position:relative;overflow:hidden}
-.cta-box:after{content:"";position:absolute;right:-120px;bottom:-200px;width:460px;height:460px;border-radius:50%;border:1.5px solid color-mix(in srgb,var(--accent-ink) 22%,transparent)}
-.cta-box h2{color:inherit;margin:0 0 12px}
-.cta-box p{opacity:.85;font-size:18px}
-.cta-box .actions{display:flex;flex-direction:column;gap:12px;align-items:flex-start;position:relative;z-index:1}
-.cta-box .btn{background:var(--accent-ink);color:var(--accent)}
-.cta-box .btn.ghost{background:transparent;color:var(--accent-ink);border-color:color-mix(in srgb,var(--accent-ink) 40%,transparent)}
+/* signature band */
+.band{background:var(--ember);color:var(--ink);overflow:hidden;padding:clamp(60px,8vw,110px) 0;border-top:2px solid var(--ink);border-bottom:2px solid var(--ink)}
+.band-row{font-family:var(--serif);font-size:clamp(70px,14vw,230px);line-height:.92;white-space:nowrap;letter-spacing:-.03em;will-change:transform}
+.band-row.r2{font-style:italic;color:#fff;-webkit-text-stroke:0;text-shadow:none}
+.band-row .o{color:transparent;-webkit-text-stroke:2px var(--ink)}
+.band-row .sq{display:inline-block;width:.42em;height:.42em;background:var(--ink);margin:0 .25em .08em;vertical-align:middle}
+.band-row.r2 .sq{background:#fff}
 
-.visit{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:10px}
-.visit .card h3{font-size:20px}
-.visit a{color:var(--accent);font-weight:600}
-footer{border-top:1px solid color-mix(in srgb,var(--ink) 9%,transparent);padding:40px 0 110px;color:var(--muted);font-size:14px}
-footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
-.mobile-bar{display:none}
+/* why */
+.why-grid{display:grid;grid-template-columns:repeat(2,1fr);border-top:2px solid var(--ink)}
+.why{display:grid;grid-template-columns:110px 1fr;gap:20px;padding:40px 30px 44px 0;border-bottom:1px solid var(--line);transition:background .4s}
+.why:nth-child(even){padding-left:30px;border-left:1px solid var(--line)}
+.why .n{font-weight:800;font-size:72px;line-height:.8;letter-spacing:-.05em;color:var(--ember)}
+.why h3{font-family:var(--serif);font-weight:400;font-size:clamp(26px,2.4vw,34px);line-height:1.1;margin-bottom:10px}
+.why p{color:var(--ink-2);font-size:16px}
 
-@keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
-.hero .copy>*{animation:rise .8s cubic-bezier(.2,.7,.2,1) both}
-.hero .copy>*:nth-child(2){animation-delay:.08s}.hero .copy>*:nth-child(3){animation-delay:.16s}
-.hero .copy>*:nth-child(4){animation-delay:.24s}.hero .copy>*:nth-child(5){animation-delay:.32s}
-.visual{animation:rise 1s .2s cubic-bezier(.2,.7,.2,1) both}
+/* steps */
+.steps-sec{background:var(--ink);color:#fff}
+.steps-sec .sec-head .tag{border-color:#fff}
+.steps-sec .lead{color:#C9D5DF}
+.steps-sec .h2 em{color:var(--ember)}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;counter-reset:s}
+.step{position:relative;padding-top:30px;border-top:2px solid rgba(255,255,255,.25)}
+.step::before{content:"";position:absolute;left:0;top:-2px;height:2px;width:0;background:var(--ember);transition:width 1.2s var(--ease)}
+.step.in::before{width:100%}
+.step:nth-child(2)::before{transition-delay:.2s}.step:nth-child(3)::before{transition-delay:.4s}.step:nth-child(4)::before{transition-delay:.6s}
+.step .big{font-family:var(--serif);font-size:clamp(90px,10vw,150px);line-height:.8;color:transparent;-webkit-text-stroke:1.5px #8FA5B8;display:block;margin-bottom:28px}
+.step h3{font-family:var(--serif);font-weight:400;font-size:30px;margin-bottom:10px}
+.step p{color:#C9D5DF;font-size:16px}
+.step .label{color:var(--ember);font-size:11px;display:block;margin-bottom:10px}
 
-@media (max-width:980px){
-  .links{display:none}
-  .hero-grid,.why-grid,.cta-box{grid-template-columns:1fr}
-  .hero-grid{gap:56px}
-  .services,.reviews,.visit{grid-template-columns:1fr 1fr}
-  .trust .wrap{grid-template-columns:1fr 1fr}
-  .float.one{left:12px;bottom:-26px}.float.two{right:12px}
-  .visual{max-width:560px;margin-bottom:20px}
-  .section-head{flex-direction:column;align-items:flex-start}
+/* faq */
+.faq-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:20px}
+.faq-grid .sec-head{grid-column:1/6;display:block;margin:0}
+.faq-grid .sec-head .h2{margin-bottom:24px}
+.faqs{grid-column:7/13;border-top:2px solid var(--ink)}
+details{border-bottom:1px solid var(--line)}
+summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:20px;padding:26px 0;font-family:var(--serif);font-size:clamp(22px,2.2vw,30px);line-height:1.2;transition:color .3s}
+summary::-webkit-details-marker{display:none}
+summary:hover{color:var(--steel)}
+summary i{flex:none;width:34px;height:34px;border:2px solid var(--ink);position:relative;transition:background .3s,transform .4s var(--ease)}
+summary i::before,summary i::after{content:"";position:absolute;left:50%;top:50%;width:12px;height:2px;background:var(--ink);transform:translate(-50%,-50%)}
+summary i::after{transform:translate(-50%,-50%) rotate(90deg);transition:transform .4s var(--ease)}
+details[open] summary i{background:var(--ember);border-color:var(--ember)}
+details[open] summary i::after{transform:translate(-50%,-50%)}
+details p{padding:0 50px 28px 0;color:var(--ink-2)}
+details p a{font-weight:800;color:var(--ink)}
+
+/* cta */
+.cta{background:var(--steel);color:#fff;overflow:hidden;padding:clamp(90px,11vw,160px) 0}
+.cta .wrap{position:relative;z-index:1}
+.cta h2{font-family:var(--serif);font-weight:400;font-size:clamp(52px,9.5vw,150px);line-height:.9;letter-spacing:-.03em;max-width:12ch}
+.cta h2 em{color:var(--ink);font-style:italic}
+.cta-row{display:flex;flex-wrap:wrap;align-items:center;gap:22px;margin-top:48px}
+.cta .tel-big{font-weight:800;font-size:clamp(28px,4vw,52px);letter-spacing:-.02em;color:#fff;border-bottom:3px solid var(--ember);line-height:1.15}
+.cta .btn-line{border-color:#fff;color:#fff}
+.cta .btn-line:hover{background:#fff;color:var(--ink)}
+.cta-shape{position:absolute;right:-6vw;top:50%;width:46vw;max-width:640px;aspect-ratio:1;transform:translateY(-50%);pointer-events:none}
+.cta-shape div{position:absolute;border:2px solid rgba(255,255,255,.22)}
+.cta-shape div:nth-child(1){inset:0}
+.cta-shape div:nth-child(2){inset:14%;border-color:rgba(255,255,255,.18)}
+.cta-shape div:nth-child(3){inset:28%;background:var(--ember);border:0;opacity:.95}
+
+/* contact */
+.contact-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--ink);border:2px solid var(--ink)}
+.cbox{background:var(--surface);padding:38px 32px;display:flex;flex-direction:column;gap:14px;min-height:280px;transition:background .4s}
+.cbox:hover{background:var(--ember-tint)}
+.cbox .label{color:var(--steel)}
+.cbox .val{font-family:var(--serif);font-size:clamp(26px,2.4vw,34px);line-height:1.15;overflow-wrap:anywhere}
+.cbox .go{margin-top:auto;font-weight:800;font-size:15px;display:inline-flex;align-items:center;gap:10px}
+.cbox .go svg{width:18px;height:18px;transition:transform .35s var(--ease)}
+.cbox:hover .go svg{transform:translateX(5px)}
+.cbox p{color:var(--ink-2);font-size:15.5px}
+
+/* footer */
+footer{background:var(--ink);color:#C9D5DF;padding:72px 0 40px;overflow:hidden}
+.f-name{font-family:var(--serif);color:#fff;font-size:clamp(46px,10.5vw,170px);line-height:.88;letter-spacing:-.03em}
+.f-name em{color:var(--ember)}
+.f-row{display:flex;justify-content:space-between;flex-wrap:wrap;gap:20px;margin-top:48px;padding-top:22px;border-top:1px solid rgba(255,255,255,.18);font-size:14px}
+.f-row a{color:#fff}
+.f-row nav{display:flex;gap:22px;flex-wrap:wrap}
+
+/* mobile bar */
+.mbar{display:none}
+
+/* reveal */
+.rv{opacity:0;transform:translateY(40px);transition:opacity 1s var(--ease),transform 1s var(--ease)}
+.rv.in{opacity:1;transform:none}
+.rv.s1{transition-delay:.1s}.rv.s2{transition-delay:.2s}.rv.s3{transition-delay:.3s}
+
+@media (max-width:1100px){
+  .nav{display:none}
+  .burger{display:block}
+  .svc{grid-template-columns:repeat(2,1fr)}
+  .steps{grid-template-columns:repeat(2,1fr);gap:56px 28px}
+  .hero-sub{grid-column:1/8}
+  .hero-ctas{grid-column:1/8;grid-row:2}
+  .hero-info{grid-column:9/13;grid-row:1/3}
 }
-@media (max-width:640px){
+@media (max-width:820px){
   body{font-size:16px}
-  .wrap{padding:0 18px}
-  .nav{height:66px}.brand{font-size:19px}
-  .phone,.nav-right .btn{display:none}
-  .hero{padding:44px 0 64px}
-  .lead-text{font-size:17.5px}
+  .hdr-tel,.hdr .btn{display:none}
+  .hero{padding-top:104px}
+  .hero-meta span:nth-child(2){display:none}
+  .hero h1{font-size:clamp(58px,17vw,120px)}
+  .hero h1 .ln:nth-child(2){padding-left:0}
+  .hero h1 .ln:nth-child(3){padding-left:0}
+  .ember-block{width:42vw;top:auto;bottom:calc(100% - 46vw);right:-4vw;opacity:.95}
+  .ember-block{position:relative;grid-column:1/-1;justify-self:end;width:56%;aspect-ratio:1.5/1;right:0;bottom:auto;margin-top:22px;order:2}
+  .steel-bar{display:none}
+  .hero-main{display:flex;flex-direction:column}
+  .hero-foot{display:flex;flex-direction:column;align-items:stretch;gap:24px;order:3}
   .hero-ctas .btn{flex:1;justify-content:center}
-  .ticks{display:none}
-  .services,.reviews,.visit,.trust .wrap{grid-template-columns:1fr}
-  section.block{padding:76px 0}
-  .quote-panel,.photo{aspect-ratio:auto;min-height:380px}.photo{aspect-ratio:4/3;min-height:0}
-  .quote-panel{padding:40px 30px 64px}.quote-panel p{font-size:23px}
-  .float{font-size:13px;padding:12px 14px}.float b{font-size:18px}
-  .float.two{display:none}
-  .cta-box{padding:52px 28px}
-  .point{grid-template-columns:44px 1fr;padding:24px}
-  .mobile-bar{display:flex;position:fixed;left:12px;right:12px;bottom:12px;z-index:30;gap:10px}
-  .mobile-bar .btn{flex:1;justify-content:center;box-shadow:0 14px 30px -14px color-mix(in srgb,var(--ink) 60%,transparent)}
-  .mobile-bar .btn.ghost{background:var(--surface)}
+  .hero-info{border-left:0;border-top:2px solid var(--ink);padding:16px 0 0;display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .hero-info p+p{margin-top:0}
+  .sec-head{display:block}
+  .sec-head .lead{margin-top:22px}
+  .about-grid{display:block}
+  .about-art{max-width:460px;margin:20px 0 64px}
+  .why-grid{grid-template-columns:1fr}
+  .why,.why:nth-child(even){padding:32px 0;border-left:0;grid-template-columns:80px 1fr}
+  .why .n{font-size:56px}
+  .faq-grid{display:block}
+  .faqs{margin-top:36px}
+  .contact-grid{grid-template-columns:1fr}
+  .cbox{min-height:0}
+  .cta-shape{width:70vw;right:-30vw;opacity:.6}
+  .mbar{display:grid;grid-template-columns:1fr 1fr;position:fixed;left:0;right:0;bottom:0;z-index:60;border-top:2px solid var(--ink);transform:translateY(110%);transition:transform .45s var(--ease)}
+  .mbar.show{transform:none}
+  .mbar a{display:flex;align-items:center;justify-content:center;gap:10px;padding:17px 10px;font-weight:800;font-size:15px}
+  .mbar a svg{width:18px;height:18px}
+  .mbar a:first-child{background:var(--ink);color:#fff}
+  .mbar a:last-child{background:var(--ember);color:var(--ink)}
+  footer{padding-bottom:110px}
+}
+@media (max-width:560px){
+  .svc{grid-template-columns:1fr}
+  .card{min-height:0}
+  .card .ico{margin:26px 0 0}
+  .steps{grid-template-columns:1fr}
+  .facts{grid-template-columns:1fr}
+  .facts div+div{padding-left:0;border-left:0;border-top:1px solid var(--line);margin-top:18px}
+  .hero-ctas{flex-direction:column}
+  .btn{white-space:normal;text-align:center}
+  details p{padding-right:0}
+  .ember-block{width:72%}
+  .mnav a{font-size:34px}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+  .rv,.fade{opacity:1;transform:none}
+  .hero h1 .ln>span{transform:none}
+  .ember-block{transform:none}.steel-bar{transform:none}
+  .step::before{width:100%}
 }
 </style>
 </head>
 <body>
-<div class="concept">Website concept prepared for <b>Express Moving Ridgewood</b> by webstudio &middot; not a live site</div>
 
-<header>
-  <div class="wrap nav">
-    <a href="#top" class="brand">Express Moving Ridgewood</a>
-    <nav class="links">
-      <a href="#services">Services</a><a href="#why">Why us</a><a href="#visit">Visit</a>
+<header class="hdr" id="top">
+  <div class="wrap">
+    <a href="#top" class="logo" aria-label="Express Moving Ridgewood, back to top">
+      <span class="logo-mark"><span></span></span>
+      <span><b>Express Moving</b><small>RIDGEWOOD</small></span>
+    </a>
+    <nav class="nav" aria-label="Main">
+      <a href="#services" class="u">Services</a>
+      <a href="#about" class="u">About</a>
+      <a href="#process" class="u">Process</a>
+      <a href="#faq" class="u">FAQ</a>
+      <a href="#contact" class="u">Contact</a>
     </nav>
-    <div class="nav-right">
-      <a class="phone" href="tel:9294939455">(929) 493-9455</a>
-      <a class="btn" href="#visit">Free estimate</a>
+    <div class="hdr-r">
+      <a href="tel:+19294939455" class="hdr-tel u">(929) 493-9455</a>
+      <a href="#contact" class="btn btn-ink">Plan your move</a>
+      <button class="burger" aria-label="Open menu" aria-expanded="false" aria-controls="mnav"><i></i><i></i><i></i></button>
     </div>
   </div>
 </header>
 
-<main id="top">
-<section class="hero">
-  <div class="wrap hero-grid">
-    <div class="copy">
-      <div class="eyebrow">
-        <span class="dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-7-4.4-7-10a4 4 0 017-2.6A4 4 0 0119 10c0 5.6-7 10-7 10z"/></svg></span>Moving company in New York
-      </div>
-      <h1>Ridgewood moves handled carefully, from first box <em>to last.</em></h1>
-      <p class="lead-text">Express Moving Ridgewood helps New Yorkers get from one home to the next with clear planning, careful hands, and a crew that shows up ready.</p>
-      <div class="hero-ctas">
-        <a class="btn" href="#visit">Get a free estimate <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-        <a class="btn ghost" href="tel:9294939455">Call (929) 493-9455</a>
-      </div>
-      <div class="ticks">
-        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7"/></svg>Licensed &amp; insured</span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7"/></svg>Free in-home estimates</span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7"/></svg>No hidden fees</span>
-      </div>
+<nav class="mnav" id="mnav" aria-label="Mobile">
+  <a href="#services">Services <span>01</span></a>
+  <a href="#about">About <span>02</span></a>
+  <a href="#process">Process <span>03</span></a>
+  <a href="#faq">FAQ <span>04</span></a>
+  <a href="#contact">Contact <span>05</span></a>
+  <a href="tel:+19294939455" class="btn btn-ember">Call (929) 493-9455</a>
+</nav>
+
+<main>
+<section class="hero" aria-label="Introduction">
+  <div class="hero-grid" aria-hidden="true"></div>
+  <div class="wrap" style="width:100%;display:flex;flex-direction:column;flex:1">
+    <div class="hero-meta label fade d4">
+      <span>Express Moving Ridgewood</span>
+      <span>Moving company / Menahan St</span>
+      <span>NY 11385</span>
     </div>
-    <div class="visual">
-      
-      <div class="quote-panel"><div class="quote-mark">“</div><div><p>Careful, on-time movers who treat your things like their own, with honest flat-rate pricing and no surprises.</p><div class="who">Express Moving Ridgewood</div></div></div>
-      
-      
-      <div class="float two"><span class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><span><b>This week</b>Free in-home estimates</span></div>
+    <div class="hero-main">
+      <div class="ember-block" aria-hidden="true" data-par="0.12">
+        <span class="box"></span>
+        <span class="zip">11385</span>
+      </div>
+      <div class="steel-bar" aria-hidden="true" data-par="0.2"></div>
+      <h1>
+        <span class="ln"><span>Your move,</span></span>
+        <span class="ln"><span><span class="arrow-line"></span><em>handled</em></span></span>
+        <span class="ln"><span>with care.</span></span>
+      </h1>
+      <div class="hero-foot">
+        <p class="hero-sub fade d1"><strong>Express Moving Ridgewood</strong> is a local moving company on Menahan Street. One call and you're talking directly to the people who'll plan your move, so moving day feels calm, organised and under control.</p>
+        <div class="hero-ctas fade d2">
+          <a href="tel:+19294939455" class="btn btn-ink">Call (929) 493-9455
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M4 12h15M13 6l6 6-6 6"/></svg></a>
+          <a href="#services" class="btn btn-line">See how we help</a>
+        </div>
+        <div class="hero-info fade d3">
+          <p><span class="label">Based at</span>59-40 Menahan St, Ridgewood</p>
+          <p><span class="label">Booking</span>By phone, any question welcome</p>
+        </div>
+      </div>
     </div>
   </div>
-  <template id="qp"><div class="quote-panel"><div class="quote-mark">“</div><div><p>Careful, on-time movers who treat your things like their own, with honest flat-rate pricing and no surprises.</p><div class="who">Express Moving Ridgewood</div></div></div></template>
 </section>
 
-<div class="trust"><div class="wrap">
-  <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.2-8 9-4.6-.8-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg>Licensed &amp; insured</div><div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.2-8 9-4.6-.8-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg>Free in-home estimates</div><div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.2-8 9-4.6-.8-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg>No hidden fees</div><div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.2-8 9-4.6-.8-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg>Same-week availability</div>
-</div></div>
+<div class="marquee" aria-label="What we help with">
+  <div class="mq-track" aria-hidden="true">
+    <span>Apartment moves</span><span>Home moves</span><span>Packing</span><span>Furniture handling</span><span>Loading &amp; unloading</span><span>Office moves</span><span>Ridgewood, NY 11385</span>
+    <span>Apartment moves</span><span>Home moves</span><span>Packing</span><span>Furniture handling</span><span>Loading &amp; unloading</span><span>Office moves</span><span>Ridgewood, NY 11385</span>
+  </div>
+</div>
 
-<section class="block" id="services">
+<section class="sec" id="services">
   <div class="wrap">
-    <div class="section-head">
-      <div><div class="kicker">What we do</div><h2>Everything you need,<br>under one roof.</h2></div>
-      <p>From routine visits to the work that changes how you feel about your day, Express Moving Ridgewood takes care of it properly.</p>
+    <div class="sec-head">
+      <div class="tag label rv"><b>01</b> Services</div>
+      <h2 class="h2 rv">Every box, every flight of stairs, <em>accounted for.</em></h2>
+      <p class="lead rv s1">From a single room to a full home, tell us what's moving and where. We'll talk you through how we can help and what your move will involve.</p>
     </div>
-    <div class="services">
-      
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M2 6h11v10H2zM13 9h4l4 4v3h-8"/><circle cx="6" cy="17.5" r="1.8"/><circle cx="17" cy="17.5" r="1.8"/></svg></div><h3>Local moves</h3><p>Fast, careful moves across town, often done in a single morning.</p></div>
-      
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="18" r="2.5"/><circle cx="18" cy="6" r="2.5"/><path d="M8.5 18H16a3 3 0 000-6H8a3 3 0 010-6h7.5"/></svg></div><h3>Long-distance moves</h3><p>Coast-to-coast moves with tracking and one point of contact.</p></div>
-      
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7l9-4 9 4v10l-9 4-9-4z"/><path d="M3 7l9 4 9-4M12 11v10"/></svg></div><h3>Packing &amp; unpacking</h3><p>Professional packing materials and a team that wraps everything right.</p></div>
-      
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3" width="14" height="18" rx="1"/><path d="M9 7h2M13 7h2M9 11h2M13 11h2M9 15h2M13 15h2"/></svg></div><h3>Office relocation</h3><p>After-hours business moves that keep downtime to a minimum.</p></div>
-      
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.2-8 9-4.6-.8-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg></div><h3>Fragile &amp; specialty items</h3><p>Pianos, art, antiques and TVs handled with extra care.</p></div>
-      
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11l8-7 8 7v9a1 1 0 01-1 1h-4v-6H9v6H5a1 1 0 01-1-1z"/></svg></div><h3>Storage solutions</h3><p>Clean, secure short- and long-term storage when timing doesn&#39;t line up.</p></div>
-      
+    <div class="svc">
+      <article class="card rv">
+        <span class="num">01</span>
+        <svg class="ico" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M8 42V18L24 6l16 12v24z"/><path d="M19 42V29h10v13"/></svg>
+        <h3>Apartment &amp; home moves</h3>
+        <p>Walk-ups, tight hallways, narrow doorways: city moving is its own craft. We plan around your building so the day runs smoothly.</p>
+      </article>
+      <article class="card rv s1">
+        <span class="num">02</span>
+        <svg class="ico" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M6 15l18-9 18 9v19l-18 9-18-9z"/><path d="M6 15l18 9 18-9M24 24v19"/></svg>
+        <h3>Packing &amp; protection</h3>
+        <p>Your belongings boxed, wrapped and labelled so they arrive in the same condition they left in, and unpacking is easy.</p>
+      </article>
+      <article class="card rv s2">
+        <span class="num">03</span>
+        <svg class="ico" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M6 30h36v8H6zM10 30V18a4 4 0 014-4h20a4 4 0 014 4v12M10 38v4M38 38v4"/></svg>
+        <h3>Furniture handling</h3>
+        <p>Sofas, beds, tables and the heavy pieces you'd rather not lift yourself, carried out and placed where you want them.</p>
+      </article>
+      <article class="card rv s3">
+        <span class="num">04</span>
+        <svg class="ico" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M4 12h24v22H4zM28 20h9l7 8v6H28z"/><circle cx="12" cy="37" r="4"/><circle cx="36" cy="37" r="4"/></svg>
+        <h3>Office &amp; small business</h3>
+        <p>Desks, files and equipment moved with a clear plan, so your team is back to work with as little downtime as possible.</p>
+      </article>
     </div>
-  </div>
-</section>
-
-<section class="block why" id="why">
-  <div class="wrap why-grid">
-    <div>
-      <div class="kicker">Why customers choose us</div>
-      <h2>The New York moving company people recommend to their friends.</h2>
-      <p class="intro">it still comes down to the same three things.</p>
-    </div>
-    <div class="points">
-      
-      <div class="point"><div class="num">01</div><div><h3>Flat-rate pricing</h3><p>A firm quote up front, so the price on moving day is the price you were told.</p></div></div>
-      
-      <div class="point"><div class="num">02</div><div><h3>Licensed &amp; insured</h3><p>Fully licensed and insured, with valuation coverage on everything we carry.</p></div></div>
-      
-      <div class="point"><div class="num">03</div><div><h3>On time, every time</h3><p>We show up when we say we will, with the right truck and the right crew.</p></div></div>
-      
+    <div class="svc-note rv">
+      <span>Every move is different. Call to confirm exactly what's included for yours.</span>
+      <a href="tel:+19294939455" class="u">(929) 493-9455 →</a>
     </div>
   </div>
 </section>
 
-
-
-<section class="cta-band" id="book">
-  <div class="wrap"><div class="cta-box">
-    <div><h2>Ready when you are.</h2><p>Get a free estimate in under a minute, or give us a call and talk to a real person.</p></div>
-    <div class="actions">
-      <a class="btn" href="#visit">Get a free estimate</a>
-      <a class="btn ghost" href="tel:9294939455">Call (929) 493-9455</a>
+<section class="sec about" id="about">
+  <div class="wrap about-grid">
+    <div class="about-art rv" aria-hidden="true">
+      <div class="a1" data-par="0.06"><b>Ridge&shy;wood<br>made.</b></div>
+      <div class="a2" data-par="-0.06">
+        <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3"><path d="M8 22l24-12 24 12v24L32 58 8 46z"/><path d="M8 22l24 12 24-12M32 34v24M20 16l24 12"/></svg>
+      </div>
+      <span class="a3 label">59-40 Menahan St</span>
     </div>
-  </div></div>
+    <div class="about-copy">
+      <div class="label rv" style="color:var(--ember)">02 / About us</div>
+      <h2 class="h2 rv">A neighbourhood mover with <em>big-city standards.</em></h2>
+      <p class="lead rv s1">Express Moving Ridgewood works out of Menahan Street, right here in Ridgewood. We know these blocks, these buildings and what it takes to get a move done properly in New York.</p>
+      <p class="rv s2">Moving is one of the most stressful things people do. Our job is to take that weight off you: a straight conversation on the phone, a plan that makes sense, and a crew that treats your home and your things with respect from the first box to the last.</p>
+      <div class="facts rv s3">
+        <div><span class="label">Neighbourhood</span><strong>Ridgewood, NY 11385</strong></div>
+        <div><span class="label">Direct line</span><strong><a href="tel:+19294939455" class="u">(929) 493-9455</a></strong></div>
+      </div>
+    </div>
+  </div>
 </section>
 
-<section class="block" id="visit" style="padding-top:0">
+<section class="band" aria-hidden="true">
+  <div class="band-row r1" data-band="-1">From one door <span class="sq"></span> <span class="o">to the next</span> <span class="sq"></span> From one door <span class="sq"></span></div>
+  <div class="band-row r2" data-band="1">Ridgewood <span class="sq"></span> Express <span class="sq"></span> Moving <span class="sq"></span> Ridgewood <span class="sq"></span> Express</div>
+</section>
+
+<section class="sec" id="why">
   <div class="wrap">
-    <div class="kicker">Visit us</div><h2>Come say hello.</h2>
-    <div class="visit">
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11l8-7 8 7v9a1 1 0 01-1 1h-4v-6H9v6H5a1 1 0 01-1-1z"/></svg></div><h3>Address</h3><p>59-40 Menahan St APT #1, New York NY 11385</p></div>
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div><h3>Phone</h3><p><a href="tel:9294939455">(929) 493-9455</a></p><p style="margin-top:10px">Call or message us for today's opening hours.</p></div>
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-7-4.4-7-10a4 4 0 017-2.6A4 4 0 0119 10c0 5.6-7 10-7 10z"/></svg></div><h3>Free in-home estimates</h3><p>Get a free estimate online or by phone and we'll take care of the rest.</p></div>
+    <div class="sec-head">
+      <div class="tag label rv"><b>03</b> Why Express Moving</div>
+      <h2 class="h2 rv">Calm, careful, <em>and close by.</em></h2>
+      <p class="lead rv s1">What you can expect when you call us.</p>
+    </div>
+    <div class="why-grid">
+      <div class="why rv"><span class="n">A</span><div><h3>Local to Ridgewood</h3><p>We're based on Menahan Street, not a faraway call centre. Your mover is part of the neighbourhood.</p></div></div>
+      <div class="why rv s1"><span class="n">B</span><div><h3>A real conversation</h3><p>Call and talk it through. Ask questions, explain the tricky stairs, and get honest answers about your move.</p></div></div>
+      <div class="why rv"><span class="n">C</span><div><h3>A plan before move day</h3><p>We agree on what's moving, when and how ahead of time, so there are no surprises when the doors open.</p></div></div>
+      <div class="why rv s1"><span class="n">D</span><div><h3>Respect for your things</h3><p>Furniture, boxes and keepsakes are handled as if they were our own, wrapped, carried and placed with care.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec steps-sec" id="process">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="tag label rv"><b>04</b> How it works</div>
+      <h2 class="h2 rv">Four steps to your <em>new front door.</em></h2>
+      <p class="lead rv s1">Simple, clear and built around your schedule.</p>
+    </div>
+    <div class="steps">
+      <div class="step rv"><span class="big">1</span><span class="label">Call</span><h3>Tell us about your move</h3><p>Ring (929) 493-9455. Share where you're moving from and to, and what's coming with you.</p></div>
+      <div class="step rv s1"><span class="big">2</span><span class="label">Plan</span><h3>Agree the details</h3><p>We talk through timing, access, packing and anything special so everyone is on the same page.</p></div>
+      <div class="step rv s2"><span class="big">3</span><span class="label">Move</span><h3>Moving day</h3><p>Our crew arrives, protects your things, loads up and gets them safely to the new place.</p></div>
+      <div class="step rv s3"><span class="big">4</span><span class="label">Settle</span><h3>Make it home</h3><p>Furniture placed where you want it, boxes in the right rooms. All that's left is to settle in.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="faq">
+  <div class="wrap faq-grid">
+    <div class="sec-head">
+      <div class="tag label rv"><b>05</b> FAQ</div>
+      <h2 class="h2 rv">Good <em>questions.</em></h2>
+      <p class="lead rv s1">Anything else on your mind? The quickest answer is always a phone call.</p>
+    </div>
+    <div class="faqs rv s1">
+      <details open><summary>How do I book a move?<i></i></summary><p>Call us on <a href="tel:+19294939455">(929) 493-9455</a>. We'll ask a few questions about your move and take it from there.</p></details>
+      <details><summary>Where are you based?<i></i></summary><p>Express Moving Ridgewood is at 59-40 Menahan St APT #1, New York NY 11385, in Ridgewood. <a href="https://maps.google.com/?q=59-40+Menahan+St+APT+1,+New+York+NY+11385" target="_blank" rel="noopener">Open in Google Maps</a>.</p></details>
+      <details><summary>What are your hours?<i></i></summary><p>Please call <a href="tel:+19294939455">(929) 493-9455</a> to check availability and find a time that works for your move.</p></details>
+      <details><summary>How do I find out the cost?<i></i></summary><p>Every move is different, so the best way is to call and describe yours. We'll walk you through what's involved.</p></details>
+    </div>
+  </div>
+</section>
+
+<section class="cta" aria-label="Call to action">
+  <div class="cta-shape" aria-hidden="true" data-par="0.08"><div></div><div></div><div></div></div>
+  <div class="wrap">
+    <div class="label rv" style="color:#fff">Ready when you are</div>
+    <h2 class="rv" style="margin-top:22px">Let's get you <em>moving.</em></h2>
+    <div class="cta-row rv s1">
+      <a href="tel:+19294939455" class="tel-big">(929) 493-9455</a>
+      <a href="#contact" class="btn btn-line">Find us
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M4 12h15M13 6l6 6-6 6"/></svg></a>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="contact">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="tag label rv"><b>06</b> Contact</div>
+      <h2 class="h2 rv">Talk to <em>Ridgewood's movers.</em></h2>
+      <p class="lead rv s1">Call to plan your move, ask a question or check availability.</p>
+    </div>
+    <div class="contact-grid rv">
+      <a class="cbox" href="tel:+19294939455">
+        <span class="label">Phone</span>
+        <span class="val">(929) 493-9455</span>
+        <p>The fastest way to reach us and plan your move.</p>
+        <span class="go">Call now <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M4 12h15M13 6l6 6-6 6"/></svg></span>
+      </a>
+      <a class="cbox" href="https://maps.google.com/?q=59-40+Menahan+St+APT+1,+New+York+NY+11385" target="_blank" rel="noopener">
+        <span class="label">Address</span>
+        <span class="val">59-40 Menahan St APT #1</span>
+        <p>New York, NY 11385 (Ridgewood)</p>
+        <span class="go">Open in Maps <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M4 12h15M13 6l6 6-6 6"/></svg></span>
+      </a>
+      <a class="cbox" href="tel:+19294939455">
+        <span class="label">Hours</span>
+        <span class="val">Call for availability</span>
+        <p>Give us a ring to find a moving date that suits you.</p>
+        <span class="go">Check a date <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M4 12h15M13 6l6 6-6 6"/></svg></span>
+      </a>
     </div>
   </div>
 </section>
 </main>
 
-<footer><div class="wrap">
-  <span>© 2026 Express Moving Ridgewood</span>
-  <span>Concept design by webstudio. Not affiliated with or endorsed by Express Moving Ridgewood.</span>
-</div></footer>
+<footer>
+  <div class="wrap">
+    <div class="f-name">Express Moving<br><em>Ridgewood.</em></div>
+    <div class="f-row">
+      <span>59-40 Menahan St APT #1, New York NY 11385 · <a href="tel:+19294939455" class="u">(929) 493-9455</a></span>
+      <nav aria-label="Footer">
+        <a href="#services" class="u">Services</a><a href="#about" class="u">About</a><a href="#process" class="u">Process</a><a href="#contact" class="u">Contact</a>
+      </nav>
+      <span>© <span id="yr">2026</span> Express Moving Ridgewood</span>
+    </div>
+  </div>
+</footer>
 
-<div class="mobile-bar">
-  <a class="btn ghost" href="tel:9294939455">Call</a>
-  <a class="btn" href="#visit">Free estimate</a>
+<div class="mbar" id="mbar">
+  <a href="tel:+19294939455"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 006 6L16 13l5 2v4a2 2 0 01-2 2A16 16 0 013 5a2 2 0 012-2z"/></svg>Call now</a>
+  <a href="#contact">Plan your move</a>
 </div>
-</body>
+
+<script>
+(function(){
+  var d=document,b=d.body,rm=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  d.getElementById('yr').textContent=new Date().getFullYear();
+  requestAnimationFrame(function(){setTimeout(function(){b.classList.add('loaded')},60)});
+
+  var burger=d.querySelector('.burger'),mnav=d.getElementById('mnav');
+  function toggle(open){b.classList.toggle('menu-open',open);burger.setAttribute('aria-expanded',open);burger.setAttribute('aria-label',open?'Close menu':'Open menu')}
+  burger.addEventListener('click',function(){toggle(!b.classList.contains('menu-open'))});
+  mnav.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){toggle(false)})});
+  window.addEventListener('resize',function(){if(innerWidth>1100)toggle(false)});
+
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.15,rootMargin:'0px 0px -6% 0px'});
+  d.querySelectorAll('.rv,.step').forEach(function(el){io.observe(el)});
+
+  var hdr=d.querySelector('.hdr'),mbar=d.getElementById('mbar'),
+      par=[].slice.call(d.querySelectorAll('[data-par]')),
+      bands=[].slice.call(d.querySelectorAll('[data-band]')),band=d.querySelector('.band'),tick=false;
+  function frame(){
+    var y=scrollY,h=innerHeight;
+    hdr.classList.toggle('scrolled',y>10);
+    mbar.classList.toggle('show',y>h*.6);
+    if(!rm){
+      par.forEach(function(el){var r=el.getBoundingClientRect();if(r.bottom<0||r.top>h)return;var c=r.top+r.height/2-h/2;el.style.translate='0 '+(c*-parseFloat(el.dataset.par)).toFixed(1)+'px'});
+      var br=band.getBoundingClientRect();
+      if(br.bottom>0&&br.top<h){var p=(h-br.top)/(h+br.height);bands.forEach(function(el){var dir=+el.dataset.band;el.style.transform='translateX('+(dir<0?-p*30:-30+p*30)+'%)'})}
+    }
+    tick=false;
+  }
+  addEventListener('scroll',function(){if(!tick){tick=true;requestAnimationFrame(frame)}},{passive:true});
+  frame();
+})();
+</script>
+<div id="lm-concept" style="position:fixed;left:12px;bottom:12px;z-index:2147483647;font:500 11px/1.3 -apple-system,BlinkMacSystemFont,Segoe UI,sans-serif;letter-spacing:.02em;background:rgba(15,15,18,.82);color:#f4f1ea;padding:7px 11px;border-radius:999px;backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);pointer-events:none;max-width:70vw">Website concept for Express Moving Ridgewood by webstudio &middot; not the live site</div><p style="margin:0;padding:18px 16px 70px;text-align:center;font:12px/1.5 -apple-system,sans-serif;color:#8a8a8a;background:#0e0e10">Concept design by webstudio. Not affiliated with or endorsed by Express Moving Ridgewood.</p></body>
 </html>
