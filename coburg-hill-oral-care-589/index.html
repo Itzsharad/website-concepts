@@ -1,291 +1,675 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="en-AU">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src * data: blob:; media-src 'self' data:; style-src 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com data:; script-src 'unsafe-inline'; connect-src 'none'; frame-src 'none'; form-action 'none'; base-uri 'none'; object-src 'none'">
 <meta name="robots" content="noindex, nofollow">
-<title>Coburg Hill Oral Care | Website concept</title>
+<style>html,body{max-width:100%;overflow-x:clip}</style>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Coburg Hill Oral Care | Dentist on Snapshot Drive, Melbourne VIC 3058</title>
+<meta name="description" content="Coburg Hill Oral Care is a dental practice at 6/8 Snapshot Dr, Melbourne VIC 3058. Call +61 3 9041 5301 to book your visit.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 :root{
-  --bg:#f7f3ec;--surface:#ffffff;--ink:#12302c;--muted:#5b6b67;
-  --accent:#1f5c53;--accent-ink:#ffffff;--gold:#b8915a;--soft:#e8efe9;
-  --radius:22px;--max:1180px;
-  --serif:"Fraunces",Georgia,serif;--sans:"Manrope",system-ui,-apple-system,sans-serif;
+  --bg:#071A2B;--bg2:#05131F;--card:#0E2840;--card2:#123352;
+  --text:#EAF2F8;--muted:#A9C0D3;--accent:#4FB3E8;--gold:#E9C46A;
+  --line:rgba(234,242,248,.12);
+  --serif:"DM Serif Display",Georgia,serif;--sans:"Outfit",system-ui,sans-serif;
+  --ease:cubic-bezier(.22,1,.36,1);
 }
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--bg);color:var(--text);font-family:var(--sans);font-weight:300;font-size:1.0625rem;line-height:1.7;overflow-x:hidden;-webkit-font-smoothing:antialiased}
 a{color:inherit;text-decoration:none}
-img{max-width:100%;display:block}
-.wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
-.concept{background:var(--ink);color:var(--bg);font-size:13px;text-align:center;padding:8px 16px;letter-spacing:.02em}
-.concept b{color:var(--gold);font-weight:600}
+svg{display:block}
+h1,h2,h3{font-family:var(--serif);font-weight:400;line-height:1.02;letter-spacing:-.01em}
+.wrap{width:min(1240px,100% - 3rem);margin-inline:auto}
+.label{display:inline-flex;align-items:center;gap:.7rem;font-size:.75rem;font-weight:500;letter-spacing:.28em;text-transform:uppercase;color:var(--accent)}
+.label::before{content:"";width:2rem;height:1px;background:currentColor}
+.gold{color:var(--gold)}
+em{font-style:italic}
+.skip{position:absolute;left:-999px;top:1rem;background:var(--gold);color:var(--bg);padding:.6rem 1rem;border-radius:99px;z-index:200}
+.skip:focus{left:1rem}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
 
-/* header */
-header{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:saturate(1.4) blur(10px);border-bottom:1px solid color-mix(in srgb,var(--ink) 8%,transparent)}
-.nav{display:flex;align-items:center;justify-content:space-between;height:76px;gap:24px}
-.brand{font-family:var(--serif);font-size:23px;font-weight:600;letter-spacing:-.01em;line-height:1.1;max-width:340px}
-.links{display:flex;gap:30px;font-size:15px;font-weight:500;color:var(--muted)}
-.links a:hover{color:var(--ink)}
-.nav-right{display:flex;align-items:center;gap:18px}
-.phone{font-weight:600;font-size:15px;white-space:nowrap}
-.btn{display:inline-flex;align-items:center;gap:10px;background:var(--accent);color:var(--accent-ink);padding:14px 26px;border-radius:999px;font-weight:600;font-size:15.5px;transition:transform .2s ease,box-shadow .2s ease;white-space:nowrap}
-.btn:hover{transform:translateY(-2px);box-shadow:0 12px 28px -12px var(--accent)}
-.btn.ghost{background:transparent;color:var(--ink);border:1.5px solid color-mix(in srgb,var(--ink) 20%,transparent)}
-.btn.ghost:hover{box-shadow:none;border-color:var(--ink)}
-.btn svg{width:18px;height:18px}
+/* Buttons */
+.btn{position:relative;display:inline-flex;align-items:center;justify-content:center;gap:.6rem;padding:1rem 1.7rem;border-radius:999px;font-weight:500;font-size:.98rem;letter-spacing:.02em;overflow:hidden;isolation:isolate;transition:transform .5s var(--ease),box-shadow .5s var(--ease),color .4s;white-space:nowrap}
+.btn svg{width:18px;height:18px;flex:none}
+.btn-primary{background:var(--accent);color:#04121F;box-shadow:0 10px 30px -10px rgba(79,179,232,.6)}
+.btn-primary::after{content:"";position:absolute;inset:0;background:var(--gold);transform:translateY(101%);transition:transform .5s var(--ease);z-index:-1}
+.btn-primary:hover::after{transform:none}
+.btn-ghost{border:1px solid rgba(234,242,248,.35);color:var(--text)}
+.btn-ghost::after{content:"";position:absolute;inset:0;background:var(--text);transform:scaleX(0);transform-origin:left;transition:transform .5s var(--ease);z-index:-1}
+.btn-ghost:hover{color:var(--bg)}
+.btn-ghost:hover::after{transform:none}
+.btn:hover{transform:translateY(-3px)}
+.ulink{background:linear-gradient(currentColor,currentColor) 0 100%/0 1px no-repeat;transition:background-size .45s var(--ease)}
+.ulink:hover{background-size:100% 1px}
 
-/* hero */
-.hero{padding:72px 0 88px}
-.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:64px;align-items:center}
-.eyebrow{display:inline-flex;align-items:center;gap:10px;background:var(--surface);border:1px solid color-mix(in srgb,var(--ink) 10%,transparent);padding:8px 16px 8px 10px;border-radius:999px;font-size:14px;font-weight:600;color:var(--muted)}
-.stars{color:var(--gold);letter-spacing:1px;font-size:14px}
-.eyebrow .dot{width:26px;height:26px;border-radius:50%;background:var(--soft);display:grid;place-items:center;color:var(--accent)}
-h1{font-family:var(--serif);font-weight:500;font-size:clamp(44px,5.6vw,74px);line-height:1.02;letter-spacing:-.025em;margin:26px 0 22px}
-h1 em{font-style:italic;color:var(--accent)}
-.lead-text{font-size:19.5px;color:var(--muted);max-width:540px}
-.hero-ctas{display:flex;gap:14px;margin-top:36px;flex-wrap:wrap}
-.ticks{display:flex;gap:22px;margin-top:34px;flex-wrap:wrap;font-size:14.5px;font-weight:600;color:var(--muted)}
-.ticks span{display:flex;align-items:center;gap:8px}
-.ticks svg{width:18px;height:18px;color:var(--accent)}
-.visual{position:relative}
-.photo{aspect-ratio:4/5;border-radius:calc(var(--radius) + 10px);overflow:hidden;background:var(--soft);box-shadow:0 40px 80px -40px color-mix(in srgb,var(--ink) 55%,transparent)}
-.photo img{width:100%;height:100%;object-fit:cover}
-.quote-panel{aspect-ratio:4/5;border-radius:calc(var(--radius) + 10px);background:linear-gradient(155deg,var(--accent),color-mix(in srgb,var(--accent) 55%,var(--ink)));color:var(--accent-ink);padding:52px 46px;display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden;box-shadow:0 40px 80px -40px color-mix(in srgb,var(--ink) 60%,transparent)}
-.quote-panel:before{content:"";position:absolute;width:420px;height:420px;border-radius:50%;right:-160px;top:-160px;background:color-mix(in srgb,var(--accent-ink) 9%,transparent)}
-.quote-panel:after{content:"";position:absolute;width:260px;height:260px;border-radius:50%;left:-90px;bottom:-110px;border:1.5px solid color-mix(in srgb,var(--accent-ink) 22%,transparent)}
-.quote-mark{font-family:var(--serif);font-size:120px;line-height:.6;opacity:.35}
-.quote-panel p{font-family:var(--serif);font-size:28px;line-height:1.3;position:relative;z-index:1}
-.quote-panel .who{font-family:var(--sans);font-size:15px;opacity:.85;margin-top:22px;font-weight:600}
-.float{position:absolute;background:var(--surface);color:var(--ink);border-radius:18px;padding:16px 20px;box-shadow:0 24px 50px -24px color-mix(in srgb,var(--ink) 50%,transparent);display:flex;align-items:center;gap:14px;font-size:14px;line-height:1.35}
-.float b{font-size:22px;font-family:var(--serif);font-weight:600;display:block}
-.float.one{left:-34px;bottom:-28px}
-.float.two{right:-22px;top:44px}
-.float .badge{width:44px;height:44px;border-radius:14px;background:var(--soft);display:grid;place-items:center;color:var(--accent)}
-.float .badge svg{width:22px;height:22px}
+/* Header */
+header{position:fixed;inset:0 0 auto;z-index:100;padding:1rem 0;transition:padding .4s var(--ease)}
+header .bar{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:.7rem .8rem .7rem 1.2rem;border-radius:999px;border:1px solid transparent;transition:all .4s var(--ease)}
+header.scrolled .bar{background:rgba(7,26,43,.72);backdrop-filter:blur(18px) saturate(140%);-webkit-backdrop-filter:blur(18px) saturate(140%);border-color:var(--line);box-shadow:0 20px 40px -20px rgba(0,0,0,.5)}
+.logo{display:flex;align-items:center;gap:.75rem;line-height:1}
+.logo svg{width:38px;height:38px}
+.logo b{font-family:var(--serif);font-weight:400;font-size:1.3rem;display:block}
+.logo small{display:block;font-size:.62rem;letter-spacing:.3em;text-transform:uppercase;color:var(--muted);margin-top:.3rem}
+nav.main{display:flex;gap:2rem;font-size:.92rem;color:var(--muted)}
+nav.main a:hover{color:var(--text)}
+.h-right{display:flex;align-items:center;gap:1.2rem}
+.h-phone{font-size:.92rem;font-weight:500}
+.h-right .btn{padding:.75rem 1.3rem;font-size:.9rem}
+.burger{display:none;width:46px;height:46px;border-radius:50%;border:1px solid var(--line);background:none;color:var(--text);cursor:pointer;position:relative}
+.burger span{position:absolute;left:14px;right:14px;height:1.5px;background:currentColor;transition:transform .4s var(--ease),opacity .3s}
+.burger span:nth-child(1){top:18px}.burger span:nth-child(2){top:26px}
+.menu-open .burger span:nth-child(1){transform:translateY(4px) rotate(45deg)}
+.menu-open .burger span:nth-child(2){transform:translateY(-4px) rotate(-45deg)}
+.mmenu{position:fixed;inset:0;z-index:90;background:var(--bg2);display:flex;flex-direction:column;justify-content:center;padding:6rem 2rem 3rem;gap:.4rem;clip-path:circle(0% at calc(100% - 48px) 48px);transition:clip-path .7s var(--ease);visibility:hidden}
+.menu-open .mmenu{clip-path:circle(150% at calc(100% - 48px) 48px);visibility:visible}
+.mmenu a.big{font-family:var(--serif);font-size:2.6rem;line-height:1.2;border-bottom:1px solid var(--line);padding:.4rem 0}
+.mmenu .btn{margin-top:2rem}
 
-/* trust */
-.trust{border-top:1px solid color-mix(in srgb,var(--ink) 9%,transparent);border-bottom:1px solid color-mix(in srgb,var(--ink) 9%,transparent);background:var(--surface)}
-.trust .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;padding-top:26px;padding-bottom:26px}
-.trust div{display:flex;align-items:center;gap:12px;font-weight:600;font-size:15px}
-.trust svg{width:22px;height:22px;color:var(--accent);flex:none}
+/* Hero */
+.hero{position:relative;min-height:100svh;display:flex;flex-direction:column;justify-content:center;padding:9rem 0 4rem;overflow:hidden;background:
+ radial-gradient(60% 60% at 85% 20%,rgba(79,179,232,.28),transparent 70%),
+ radial-gradient(50% 50% at 0% 100%,rgba(233,196,106,.12),transparent 70%),var(--bg)}
+.hero-grid{position:absolute;inset:0;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:80px 80px;mask-image:radial-gradient(ellipse at 70% 40%,#000 0%,transparent 70%);-webkit-mask-image:radial-gradient(ellipse at 70% 40%,#000 0%,transparent 70%);opacity:.5}
+.orb{position:absolute;right:-8vw;top:8vh;width:min(62vw,820px);aspect-ratio:1;pointer-events:none;will-change:transform}
+.orb .ring{fill:none;stroke:rgba(79,179,232,.25);stroke-width:1}
+.orb .tooth{fill:none;stroke:url(#tg);stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:1400;stroke-dashoffset:1400;animation:draw 3.2s .6s var(--ease) forwards}
+.orb .spin{transform-origin:300px 300px;animation:spin 40s linear infinite}
+@keyframes draw{to{stroke-dashoffset:0}}
+@keyframes spin{to{transform:rotate(360deg)}}
+.hero .wrap{position:relative;z-index:2}
+.hero h1{font-size:clamp(3.2rem,10.5vw,10.5rem);line-height:.92;letter-spacing:-.025em;margin:1.6rem 0 2rem;max-width:13ch}
+.hero h1 .ln{display:block;overflow:hidden;padding-bottom:.08em}
+.hero h1 .ln>span{display:inline-block;transform:translateY(110%);animation:rise 1.2s var(--ease) forwards}
+.hero h1 .ln:nth-child(2)>span{animation-delay:.12s}
+.hero h1 .ln:nth-child(3)>span{animation-delay:.24s}
+.hero h1 .outline{color:transparent;-webkit-text-stroke:1.5px var(--accent)}
+@keyframes rise{to{transform:none}}
+.fade-in{opacity:0;transform:translateY(24px);animation:fin 1s var(--ease) forwards}
+@keyframes fin{to{opacity:1;transform:none}}
+.d1{animation-delay:.1s}.d2{animation-delay:.55s}.d3{animation-delay:.7s}.d4{animation-delay:.85s}
+.hero-row{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:2rem}
+.hero p.sub{max-width:36rem;font-size:clamp(1.05rem,1.5vw,1.25rem);color:var(--muted)}
+.hero p.sub strong{color:var(--text);font-weight:500}
+.ctas{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:2rem}
+.hero-card{display:flex;align-items:center;gap:1rem;padding:1.1rem 1.4rem;border:1px solid var(--line);border-radius:1.2rem;background:rgba(14,40,64,.55);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);max-width:22rem}
+.hero-card .pin{width:46px;height:46px;border-radius:50%;background:var(--gold);color:var(--bg);display:grid;place-items:center;flex:none}
+.hero-card .pin svg{width:20px;height:20px}
+.hero-card small{display:block;font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
+.hero-card span{font-weight:500;line-height:1.35;display:block}
+.scroll-cue{position:absolute;left:50%;bottom:1.6rem;transform:translateX(-50%);width:24px;height:40px;border:1px solid rgba(234,242,248,.35);border-radius:99px;z-index:2}
+.scroll-cue::after{content:"";position:absolute;left:50%;top:8px;width:3px;height:8px;margin-left:-1.5px;border-radius:3px;background:var(--gold);animation:cue 2s infinite}
+@keyframes cue{0%{opacity:0;transform:translateY(0)}40%{opacity:1}100%{opacity:0;transform:translateY(14px)}}
 
-/* sections */
-section.block{padding:110px 0}
-.kicker{font-size:13px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
-h2{font-family:var(--serif);font-weight:500;font-size:clamp(34px,3.8vw,52px);line-height:1.08;letter-spacing:-.02em;margin:14px 0 18px}
-.section-head{display:flex;justify-content:space-between;align-items:end;gap:40px;margin-bottom:56px}
-.section-head p{color:var(--muted);max-width:420px}
-.services{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-.card{background:var(--surface);border-radius:var(--radius);padding:34px 32px 36px;border:1px solid color-mix(in srgb,var(--ink) 7%,transparent);transition:transform .25s ease,box-shadow .25s ease}
-.card:hover{transform:translateY(-4px);box-shadow:0 30px 60px -36px color-mix(in srgb,var(--ink) 45%,transparent)}
-.icon{width:54px;height:54px;border-radius:16px;background:var(--soft);color:var(--accent);display:grid;place-items:center;margin-bottom:24px}
-.icon svg{width:26px;height:26px}
-.card h3{font-family:var(--serif);font-weight:500;font-size:23px;margin-bottom:8px;letter-spacing:-.01em}
-.card p{color:var(--muted);font-size:16px}
+/* Marquee */
+.marquee{background:var(--accent);color:#04121F;overflow:hidden;padding:1.3rem 0;transform:rotate(-1.6deg) scale(1.04);margin:-1rem 0;position:relative;z-index:5;box-shadow:0 30px 60px -30px rgba(0,0,0,.6)}
+.marquee .track{display:flex;width:max-content;animation:mq 38s linear infinite}
+.marquee:hover .track{animation-play-state:paused}
+.marquee .item{display:flex;align-items:center;gap:2.2rem;padding-right:2.2rem;font-family:var(--serif);font-size:clamp(1.6rem,3.4vw,2.8rem);white-space:nowrap;line-height:1}
+.marquee .item i{font-style:italic}
+.marquee svg{width:26px;height:26px;flex:none}
+@keyframes mq{to{transform:translateX(-50%)}}
 
-.why{background:var(--ink);color:var(--bg)}
-.why .kicker{color:var(--gold)}
-.why-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:80px;align-items:start}
-.why h2{color:var(--bg)}
-.why .intro{color:color-mix(in srgb,var(--bg) 70%,transparent);font-size:18px;max-width:440px}
-.points{display:grid;gap:14px}
-.point{display:grid;grid-template-columns:62px 1fr;gap:20px;padding:30px;border-radius:var(--radius);background:color-mix(in srgb,var(--bg) 6%,transparent);border:1px solid color-mix(in srgb,var(--bg) 10%,transparent)}
-.point .num{font-family:var(--serif);font-size:34px;color:var(--gold);line-height:1}
-.point h3{font-family:var(--serif);font-weight:500;font-size:24px;margin-bottom:6px}
-.point p{color:color-mix(in srgb,var(--bg) 72%,transparent);font-size:16px}
+/* Sections */
+section{position:relative}
+.pad{padding:clamp(6rem,12vw,10rem) 0}
+.sec-head{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:end;margin-bottom:4rem}
+.sec-head h2{font-size:clamp(2.6rem,6vw,5.4rem);margin-top:1.2rem}
+.sec-head p{color:var(--muted);max-width:30rem;justify-self:end}
 
-.score{display:flex;align-items:center;gap:18px;background:var(--surface);padding:16px 24px;border-radius:18px;border:1px solid color-mix(in srgb,var(--ink) 8%,transparent)}
-.score b{font-family:var(--serif);font-size:40px;font-weight:500;line-height:1}
-.score small{display:block;color:var(--muted);font-size:14px}
-.reviews{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-.review{background:var(--surface);border-radius:var(--radius);padding:34px;display:flex;flex-direction:column;gap:22px;border:1px solid color-mix(in srgb,var(--ink) 7%,transparent)}
-.review p{font-family:var(--serif);font-size:19.5px;line-height:1.45}
-.review .by{margin-top:auto;display:flex;align-items:center;gap:12px;font-weight:600;font-size:15px}
-.avatar{width:40px;height:40px;border-radius:50%;background:var(--soft);color:var(--accent);display:grid;place-items:center;font-weight:700}
-.review .src{color:var(--muted);font-weight:500;font-size:13px;display:block}
+/* Services */
+.services{background:var(--bg)}
+.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem}
+.svc{position:relative;padding:2.2rem 2rem 2rem;border-radius:1.6rem;background:linear-gradient(160deg,var(--card2),var(--card));border:1px solid var(--line);overflow:hidden;min-height:20rem;display:flex;flex-direction:column;transition:transform .6s var(--ease),border-color .4s}
+.svc::before{content:"";position:absolute;width:220px;height:220px;right:-80px;top:-80px;border-radius:50%;background:radial-gradient(circle,rgba(79,179,232,.35),transparent 70%);transition:transform .8s var(--ease)}
+.svc:hover{transform:translateY(-8px);border-color:rgba(79,179,232,.5)}
+.svc:hover::before{transform:scale(1.6)}
+.svc .num{font-family:var(--serif);font-size:.95rem;color:var(--gold);letter-spacing:.1em}
+.svc .ico{width:58px;height:58px;border-radius:1rem;border:1px solid rgba(79,179,232,.4);display:grid;place-items:center;color:var(--accent);margin:1.6rem 0 auto;position:relative}
+.svc .ico svg{width:28px;height:28px}
+.svc h3{font-size:1.85rem;margin:2rem 0 .7rem;position:relative}
+.svc p{color:var(--muted);font-size:.98rem;position:relative}
+.svc.feature{grid-column:span 2;background:var(--gold);color:#1A1405;border:none}
+.svc.feature::before{background:radial-gradient(circle,rgba(255,255,255,.45),transparent 70%)}
+.svc.feature .num{color:#5C4512}
+.svc.feature p{color:#3D2F0C}
+.svc.feature .ico{border-color:rgba(26,20,5,.3);color:#1A1405}
+.svc.feature h3{font-size:clamp(2rem,3.6vw,3rem);max-width:16ch}
+.svc-note{margin-top:2rem;color:var(--muted);font-size:.92rem;text-align:center}
+.svc-note a{color:var(--accent)}
 
-.cta-band{padding:0 0 110px}
-.cta-box{border-radius:calc(var(--radius) + 12px);background:linear-gradient(140deg,var(--accent),color-mix(in srgb,var(--accent) 60%,var(--ink)));color:var(--accent-ink);padding:76px 64px;display:grid;grid-template-columns:1.3fr 1fr;gap:40px;align-items:center;position:relative;overflow:hidden}
-.cta-box:after{content:"";position:absolute;right:-120px;bottom:-200px;width:460px;height:460px;border-radius:50%;border:1.5px solid color-mix(in srgb,var(--accent-ink) 22%,transparent)}
-.cta-box h2{color:inherit;margin:0 0 12px}
-.cta-box p{opacity:.85;font-size:18px}
-.cta-box .actions{display:flex;flex-direction:column;gap:12px;align-items:flex-start;position:relative;z-index:1}
-.cta-box .btn{background:var(--accent-ink);color:var(--accent)}
-.cta-box .btn.ghost{background:transparent;color:var(--accent-ink);border-color:color-mix(in srgb,var(--accent-ink) 40%,transparent)}
+/* About — signature giant type */
+.about{background:var(--bg2);overflow:hidden}
+.giant{font-family:var(--serif);font-size:clamp(6rem,22vw,22rem);line-height:.8;white-space:nowrap;color:transparent;-webkit-text-stroke:1px rgba(79,179,232,.35);will-change:transform;pointer-events:none;user-select:none}
+.giant em{-webkit-text-stroke:0;color:var(--card2)}
+.about-inner{display:grid;grid-template-columns:5fr 6fr;gap:clamp(2rem,6vw,6rem);margin-top:-3.5rem;position:relative}
+.about-visual{position:relative;aspect-ratio:4/5;border-radius:2rem;overflow:hidden;background:
+ radial-gradient(circle at 30% 25%,rgba(233,196,106,.55),transparent 45%),
+ radial-gradient(circle at 75% 80%,rgba(79,179,232,.7),transparent 55%),var(--card)}
+.about-visual svg{position:absolute;inset:0;width:100%;height:100%}
+.about-visual .tag{position:absolute;left:1.4rem;bottom:1.4rem;right:1.4rem;padding:1.1rem 1.3rem;border-radius:1rem;background:rgba(5,19,31,.78);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border:1px solid var(--line)}
+.about-visual .tag small{font-size:.68rem;letter-spacing:.24em;text-transform:uppercase;color:var(--gold)}
+.about-visual .tag p{font-family:var(--serif);font-size:1.35rem;line-height:1.25;margin-top:.3rem}
+.about-copy h2{font-size:clamp(2.4rem,5vw,4.4rem);margin:1.2rem 0 1.8rem}
+.about-copy p{color:var(--muted);margin-bottom:1.2rem;max-width:34rem}
+.about-copy p.lead{font-size:1.3rem;color:var(--text)}
+.pillars{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:2.4rem}
+.pillars div{padding:1.2rem 1.3rem;border-top:1px solid var(--gold)}
+.pillars b{font-family:var(--serif);font-weight:400;font-size:1.3rem;display:block}
+.pillars span{font-size:.92rem;color:var(--muted)}
 
-.visit{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:10px}
-.visit .card h3{font-size:20px}
-.visit a{color:var(--accent);font-weight:600}
-footer{border-top:1px solid color-mix(in srgb,var(--ink) 9%,transparent);padding:40px 0 110px;color:var(--muted);font-size:14px}
-footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
-.mobile-bar{display:none}
+/* Why — stacked sticky */
+.why{background:var(--bg)}
+.stack{display:grid;gap:0}
+.stack-card{position:sticky;top:clamp(5.5rem,10vh,7rem);min-height:clamp(20rem,52vh,30rem);border-radius:2rem;padding:clamp(2rem,5vw,4rem);display:grid;grid-template-columns:auto 1fr auto;gap:clamp(1.5rem,4vw,4rem);align-items:center;margin-bottom:2rem;box-shadow:0 -30px 60px -20px rgba(0,0,0,.55);overflow:hidden;transform-origin:center top}
+.stack-card:nth-child(1){background:var(--card)}
+.stack-card:nth-child(2){background:var(--accent);color:#04121F}
+.stack-card:nth-child(3){background:var(--gold);color:#1A1405}
+.stack-card:nth-child(4){background:#EAF2F8;color:#071A2B}
+.stack-card .big{font-family:var(--serif);font-size:clamp(5rem,13vw,11rem);line-height:.8;opacity:.9}
+.stack-card h3{font-size:clamp(2rem,4.6vw,4rem);margin-bottom:1rem}
+.stack-card p{max-width:34rem;font-size:1.08rem;opacity:.85}
+.stack-card .shape{width:clamp(80px,12vw,160px);height:auto;opacity:.85}
 
-@keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
-.hero .copy>*{animation:rise .8s cubic-bezier(.2,.7,.2,1) both}
-.hero .copy>*:nth-child(2){animation-delay:.08s}.hero .copy>*:nth-child(3){animation-delay:.16s}
-.hero .copy>*:nth-child(4){animation-delay:.24s}.hero .copy>*:nth-child(5){animation-delay:.32s}
-.visual{animation:rise 1s .2s cubic-bezier(.2,.7,.2,1) both}
+/* Steps */
+.steps{background:var(--bg2)}
+.step-list{display:grid;grid-template-columns:repeat(4,1fr);gap:1.2rem;counter-reset:s}
+.step{position:relative;padding:2rem 1.6rem;border-radius:1.4rem;border:1px solid var(--line);background:rgba(14,40,64,.5);transition:transform .5s var(--ease),background .4s}
+.step:hover{transform:translateY(-6px);background:var(--card)}
+.step::before{counter-increment:s;content:"0" counter(s);display:block;font-family:var(--serif);font-size:3.4rem;line-height:1;color:var(--accent);margin-bottom:2.4rem}
+.step h3{font-size:1.5rem;margin-bottom:.6rem}
+.step p{color:var(--muted);font-size:.95rem}
+.step a{color:var(--gold)}
+.step-line{height:1px;background:linear-gradient(90deg,var(--accent),var(--gold),transparent);margin:0 0 2.5rem;transform-origin:left;transform:scaleX(0);transition:transform 1.6s var(--ease)}
+.step-line.in{transform:none}
 
-@media (max-width:980px){
-  .links{display:none}
-  .hero-grid,.why-grid,.cta-box{grid-template-columns:1fr}
-  .hero-grid{gap:56px}
-  .services,.reviews,.visit{grid-template-columns:1fr 1fr}
-  .trust .wrap{grid-template-columns:1fr 1fr}
-  .float.one{left:12px;bottom:-26px}.float.two{right:12px}
-  .visual{max-width:560px;margin-bottom:20px}
-  .section-head{flex-direction:column;align-items:flex-start}
+/* FAQ */
+.faq{background:var(--bg)}
+.faq-grid{display:grid;grid-template-columns:4fr 7fr;gap:clamp(2rem,6vw,6rem)}
+.faq h2{font-size:clamp(2.6rem,5vw,4.6rem);margin-top:1.2rem}
+.faq-side p{color:var(--muted);margin-top:1.4rem}
+details{border-bottom:1px solid var(--line)}
+summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:1rem;padding:1.6rem 0;font-family:var(--serif);font-size:clamp(1.3rem,2.2vw,1.75rem);line-height:1.25}
+summary::-webkit-details-marker{display:none}
+summary .pm{width:38px;height:38px;flex:none;border-radius:50%;border:1px solid var(--line);position:relative;transition:background .4s,border-color .4s}
+summary .pm::before,summary .pm::after{content:"";position:absolute;left:50%;top:50%;width:12px;height:1.5px;background:var(--text);transform:translate(-50%,-50%);transition:transform .4s var(--ease)}
+summary .pm::after{transform:translate(-50%,-50%) rotate(90deg)}
+details[open] summary .pm{background:var(--accent);border-color:var(--accent)}
+details[open] summary .pm::before,details[open] summary .pm::after{background:#04121F}
+details[open] summary .pm::after{transform:translate(-50%,-50%) rotate(0)}
+details p{color:var(--muted);padding:0 3.5rem 1.8rem 0;max-width:40rem}
+details p a{color:var(--accent)}
+
+/* CTA band */
+.cta{background:var(--accent);color:#04121F;overflow:hidden;text-align:center}
+.cta::before,.cta::after{content:"";position:absolute;border-radius:50%;border:1px solid rgba(4,18,31,.18)}
+.cta::before{width:70vw;height:70vw;left:-25vw;top:-30vw}
+.cta::after{width:50vw;height:50vw;right:-18vw;bottom:-28vw}
+.cta .label{color:#04121F}
+.cta h2{font-size:clamp(3rem,9vw,8.5rem);line-height:.95;margin:1.6rem auto 2rem;max-width:14ch;position:relative;z-index:1}
+.cta h2 em{color:#071A2B;-webkit-text-stroke:0}
+.cta p{max-width:34rem;margin:0 auto 2.4rem;font-size:1.15rem;position:relative;z-index:1}
+.cta .ctas{justify-content:center;position:relative;z-index:1}
+.cta .btn-primary{background:#071A2B;color:var(--text);box-shadow:0 14px 30px -12px rgba(4,18,31,.6)}
+.cta .btn-primary::after{background:var(--gold)}
+.cta .btn-primary:hover{color:#071A2B}
+.cta .btn-ghost{border-color:rgba(4,18,31,.5);color:#04121F}
+.cta .btn-ghost::after{background:#071A2B}
+.cta .btn-ghost:hover{color:var(--text)}
+
+/* Contact */
+.contact{background:var(--bg2)}
+.c-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:1.2rem}
+.c-card{border-radius:1.8rem;padding:clamp(2rem,4vw,3.2rem);background:var(--card);border:1px solid var(--line)}
+.c-card h2{font-size:clamp(2.4rem,5vw,4.2rem);margin:1.2rem 0 2rem}
+.c-rows{display:grid;gap:1.6rem}
+.c-row{display:grid;grid-template-columns:48px 1fr;gap:1rem;align-items:start}
+.c-row .i{width:48px;height:48px;border-radius:50%;border:1px solid rgba(79,179,232,.4);display:grid;place-items:center;color:var(--accent)}
+.c-row .i svg{width:20px;height:20px}
+.c-row small{display:block;font-size:.7rem;letter-spacing:.24em;text-transform:uppercase;color:var(--muted)}
+.c-row a,.c-row span{font-size:1.2rem;font-weight:400;line-height:1.45;overflow-wrap:anywhere}
+.map{position:relative;border-radius:1.8rem;overflow:hidden;min-height:24rem;background:var(--card);border:1px solid var(--line);display:flex;align-items:flex-end;transition:transform .6s var(--ease)}
+.map:hover{transform:translateY(-6px)}
+.map svg.mapart{position:absolute;inset:0;width:100%;height:100%}
+.map .m-pin{position:absolute;left:52%;top:42%;transform:translate(-50%,-100%);color:var(--gold)}
+.map .m-pin svg{width:54px;height:54px;filter:drop-shadow(0 10px 18px rgba(0,0,0,.5))}
+.map .m-pin::after{content:"";position:absolute;left:50%;bottom:-6px;width:18px;height:18px;margin-left:-9px;border-radius:50%;background:rgba(233,196,106,.5);animation:ping 2s infinite;z-index:-1}
+@keyframes ping{0%{transform:scale(.6);opacity:1}100%{transform:scale(3.4);opacity:0}}
+.map .m-foot{position:relative;margin:1.2rem;padding:1.1rem 1.3rem;border-radius:1.1rem;background:rgba(5,19,31,.85);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);display:flex;justify-content:space-between;align-items:center;gap:1rem;width:calc(100% - 2.4rem)}
+.map .m-foot b{font-weight:500;display:block}
+.map .m-foot span{font-size:.88rem;color:var(--muted)}
+.map .arrow{width:44px;height:44px;flex:none;border-radius:50%;background:var(--accent);color:#04121F;display:grid;place-items:center;transition:transform .5s var(--ease)}
+.map:hover .arrow{transform:rotate(-45deg)}
+.map .arrow svg{width:18px;height:18px}
+
+/* Footer */
+footer{background:var(--bg2);border-top:1px solid var(--line);padding:4rem 0 2.5rem}
+.f-top{display:flex;flex-wrap:wrap;justify-content:space-between;gap:2rem;align-items:flex-start}
+.f-links{display:flex;flex-wrap:wrap;gap:1.6rem;color:var(--muted);font-size:.95rem}
+.f-links a:hover{color:var(--text)}
+.f-word{font-family:var(--serif);font-size:clamp(3rem,13vw,12rem);line-height:.9;margin:3rem 0 2rem;background:linear-gradient(180deg,var(--card2),transparent 95%);-webkit-background-clip:text;background-clip:text;color:transparent;white-space:nowrap;overflow:hidden}
+.f-bot{display:flex;flex-wrap:wrap;justify-content:space-between;gap:1rem;color:var(--muted);font-size:.85rem}
+
+/* Mobile CTA bar */
+.mbar{display:none}
+
+/* Reveal */
+.rv{opacity:0;transform:translateY(40px);transition:opacity 1s var(--ease),transform 1s var(--ease)}
+.rv.in{opacity:1;transform:none}
+.rv[data-d="1"]{transition-delay:.1s}.rv[data-d="2"]{transition-delay:.2s}.rv[data-d="3"]{transition-delay:.3s}
+
+/* Responsive */
+@media (max-width:1024px){
+  nav.main,.h-phone{display:none}
+  .svc-grid{grid-template-columns:1fr 1fr}
+  .step-list{grid-template-columns:1fr 1fr}
 }
-@media (max-width:640px){
-  body{font-size:16px}
-  .wrap{padding:0 18px}
-  .nav{height:66px}.brand{font-size:19px}
-  .phone,.nav-right .btn{display:none}
-  .hero{padding:44px 0 64px}
-  .lead-text{font-size:17.5px}
-  .hero-ctas .btn{flex:1;justify-content:center}
-  .ticks{display:none}
-  .services,.reviews,.visit,.trust .wrap{grid-template-columns:1fr}
-  section.block{padding:76px 0}
-  .quote-panel,.photo{aspect-ratio:auto;min-height:380px}.photo{aspect-ratio:4/3;min-height:0}
-  .quote-panel{padding:40px 30px 64px}.quote-panel p{font-size:23px}
-  .float{font-size:13px;padding:12px 14px}.float b{font-size:18px}
-  .float.two{display:none}
-  .cta-box{padding:52px 28px}
-  .point{grid-template-columns:44px 1fr;padding:24px}
-  .mobile-bar{display:flex;position:fixed;left:12px;right:12px;bottom:12px;z-index:30;gap:10px}
-  .mobile-bar .btn{flex:1;justify-content:center;box-shadow:0 14px 30px -14px color-mix(in srgb,var(--ink) 60%,transparent)}
-  .mobile-bar .btn.ghost{background:var(--surface)}
+@media (max-width:820px){
+  .burger{display:block}
+  .h-right .btn{display:none}
+  .sec-head,.about-inner,.faq-grid,.c-grid{grid-template-columns:1fr}
+  .sec-head p{justify-self:start}
+  .about-inner{margin-top:-1.5rem}
+  .about-visual{aspect-ratio:5/4}
+  .stack-card{grid-template-columns:1fr;gap:1rem;align-content:center}
+  .stack-card .shape{position:absolute;right:1.5rem;top:1.5rem;width:70px}
+  .orb{width:110vw;right:-45vw;top:6vh;opacity:.55}
+}
+@media (max-width:600px){
+  body{padding-bottom:76px}
+  .wrap{width:calc(100% - 2.5rem)}
+  .svc-grid,.step-list,.pillars{grid-template-columns:1fr}
+  .svc.feature{grid-column:auto}
+  .svc{min-height:auto}
+  .hero{padding-top:8rem}
+  .hero h1{font-size:clamp(2.9rem,15vw,4.6rem)}
+  .hero-card{max-width:none;width:100%}
+  .ctas .btn{flex:1 1 100%}
+  .logo small{display:none}
+  details p{padding-right:0}
+  .stack-card{min-height:auto;padding:2.2rem 1.6rem;top:5.5rem}
+  .stack-card .big{font-size:4.2rem}
+  .map{min-height:20rem}
+  .scroll-cue{display:none}
+  .mbar{display:grid;grid-template-columns:1fr 1fr;gap:.6rem;position:fixed;left:.7rem;right:.7rem;bottom:.7rem;z-index:95;padding:.55rem;border-radius:999px;background:rgba(7,26,43,.85);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid var(--line);box-shadow:0 18px 40px -12px rgba(0,0,0,.7)}
+  .mbar .btn{padding:.85rem .8rem;font-size:.92rem}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
+  .rv{opacity:1;transform:none}
+  .hero h1 .ln>span,.fade-in{transform:none;opacity:1}
+  .orb .tooth{stroke-dashoffset:0}
+  .marquee .track{animation:none}
 }
 </style>
 </head>
 <body>
-<div class="concept">Website concept prepared for <b>Coburg Hill Oral Care</b> by webstudio &middot; not a live site</div>
+<a class="skip" href="#main">Skip to content</a>
 
-<header>
-  <div class="wrap nav">
-    <a href="#top" class="brand">Coburg Hill Oral Care</a>
-    <nav class="links">
-      <a href="#services">Services</a><a href="#why">Why us</a><a href="#visit">Visit</a>
-    </nav>
-    <div class="nav-right">
-      <a class="phone" href="tel:+61390415301">+61390415301</a>
-      <a class="btn" href="#visit">Book now</a>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-phone" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" d="M12 21s-7-6.2-7-12a7 7 0 0 1 14 0c0 5.8-7 12-7 12z"/><circle cx="12" cy="9" r="2.5" fill="none" stroke="currentColor" stroke-width="1.6"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M12 7v5l3 2" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-spark" viewBox="0 0 24 24"><path d="M12 2c.6 5.4 4.6 9.4 10 10-5.4.6-9.4 4.6-10 10-.6-5.4-4.6-9.4-10-10 5.4-.6 9.4-4.6 10-10z" fill="currentColor"/></symbol>
+    <symbol id="i-tooth" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" d="M7.5 3C4.5 3 3 5.3 3 8c0 2.4 1 3.6 1.6 6 .6 2.6 1 7 3 7 1.8 0 1.6-5.5 4.4-5.5S14.6 21 16.4 21c2 0 2.4-4.4 3-7 .6-2.4 1.6-3.6 1.6-6 0-2.7-1.5-5-4.5-5-2 0-3 1-4.5 1S9.5 3 7.5 3z"/></symbol>
+  </defs>
+</svg>
+
+<header id="top">
+  <div class="wrap">
+    <div class="bar">
+      <a href="#top" class="logo" aria-label="Coburg Hill Oral Care, home">
+        <svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="19" fill="none" stroke="#4FB3E8" stroke-width="1.2"/><path d="M14 11c-3 0-4.6 2.2-4.6 4.8 0 2.2 1 3.4 1.5 5.6.6 2.5.9 6.6 2.8 6.6 1.7 0 1.5-5.2 4.3-5.2h4c2.8 0 2.6 5.2 4.3 5.2 1.9 0 2.2-4.1 2.8-6.6.5-2.2 1.5-3.4 1.5-5.6 0-2.6-1.6-4.8-4.6-4.8-1.9 0-2.9 1-4 1h-4c-1.1 0-2.1-1-4-1z" fill="#E9C46A"/></svg>
+        <span><b>Coburg Hill</b><small>Oral Care</small></span>
+      </a>
+      <nav class="main" aria-label="Primary">
+        <a class="ulink" href="#services">Care</a>
+        <a class="ulink" href="#about">About</a>
+        <a class="ulink" href="#how">Your visit</a>
+        <a class="ulink" href="#faq">FAQ</a>
+        <a class="ulink" href="#contact">Contact</a>
+      </nav>
+      <div class="h-right">
+        <a class="h-phone ulink" href="tel:+61390415301">(03) 9041 5301</a>
+        <a class="btn btn-primary" href="tel:+61390415301"><svg><use href="#i-phone"/></svg>Book a visit</a>
+        <button class="burger" aria-label="Open menu" aria-expanded="false" aria-controls="mmenu"><span></span><span></span></button>
+      </div>
     </div>
   </div>
 </header>
 
-<main id="top">
+<div class="mmenu" id="mmenu" aria-hidden="true">
+  <a class="big" href="#services">Care</a>
+  <a class="big" href="#about">About</a>
+  <a class="big" href="#how">Your visit</a>
+  <a class="big" href="#faq">FAQ</a>
+  <a class="big" href="#contact">Contact</a>
+  <a class="btn btn-primary" href="tel:+61390415301"><svg><use href="#i-phone"/></svg>Call (03) 9041 5301</a>
+</div>
+
+<main id="main">
+
+<!-- HERO -->
 <section class="hero">
-  <div class="wrap hero-grid">
-    <div class="copy">
-      <div class="eyebrow">
-        <span class="dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-7-4.4-7-10a4 4 0 017-2.6A4 4 0 0119 10c0 5.6-7 10-7 10z"/></svg></span>Family &amp; cosmetic dentistry
-      </div>
-      <h1>Dentistry that feels as good as <em>it looks.</em></h1>
-      <p class="lead-text">Gentle, modern care for the whole family, with same-week appointments and a team that actually takes time to listen.</p>
-      <div class="hero-ctas">
-        <a class="btn" href="#visit">Book your visit <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-        <a class="btn ghost" href="tel:+61390415301">Call +61390415301</a>
-      </div>
-      <div class="ticks">
-        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7"/></svg>Most insurance accepted</span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7"/></svg>New patients welcome</span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7"/></svg>Flexible payment plans</span>
-      </div>
-    </div>
-    <div class="visual">
-      
-      <div class="quote-panel"><div class="quote-mark">“</div><div><p>Gentle, modern care for the whole family, with same-week appointments and a team that actually takes time to listen.</p><div class="who">Coburg Hill Oral Care</div></div></div>
-      
-      
-      <div class="float two"><span class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><span><b>This week</b>New patients welcome</span></div>
-    </div>
-  </div>
-  <template id="qp"><div class="quote-panel"><div class="quote-mark">“</div><div><p>Gentle, modern care for the whole family, with same-week appointments and a team that actually takes time to listen.</p><div class="who">Coburg Hill Oral Care</div></div></div></template>
-</section>
+  <div class="hero-grid" aria-hidden="true"></div>
+  <svg class="orb" viewBox="0 0 600 600" aria-hidden="true" data-parallax>
+    <defs><linearGradient id="tg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#E9C46A"/><stop offset="1" stop-color="#4FB3E8"/></linearGradient></defs>
+    <g class="spin">
+      <circle class="ring" cx="300" cy="300" r="280" stroke-dasharray="2 10"/>
+      <circle cx="300" cy="20" r="6" fill="#E9C46A"/>
+    </g>
+    <circle class="ring" cx="300" cy="300" r="220"/>
+    <circle class="ring" cx="300" cy="300" r="160" stroke-dasharray="1 6"/>
+    <path class="tooth" d="M225 170c-45 0-68 34-68 74 0 34 15 52 23 86 9 39 14 100 42 100 26 0 23-80 64-80h28c41 0 38 80 64 80 28 0 33-61 42-100 8-34 23-52 23-86 0-40-23-74-68-74-29 0-44 15-61 15h-28c-17 0-32-15-61-15z"/>
+    <path class="tooth" d="M250 215c-14 4-24 16-26 32" />
+  </svg>
 
-<div class="trust"><div class="wrap">
-  <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.2-8 9-4.6-.8-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg>Most insurance accepted</div><div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.2-8 9-4.6-.8-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg>New patients welcome</div><div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.2-8 9-4.6-.8-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg>Flexible payment plans</div><div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.2-8 9-4.6-.8-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg>Evening appointments</div>
-</div></div>
-
-<section class="block" id="services">
   <div class="wrap">
-    <div class="section-head">
-      <div><div class="kicker">What we do</div><h2>Everything you need,<br>under one roof.</h2></div>
-      <p>From routine visits to the work that changes how you feel about your day, Coburg Hill Oral Care takes care of it properly.</p>
-    </div>
-    <div class="services">
-      
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3c-2.5 0-4 2-4 4.5 0 3 1.5 4.5 2 7.5.4 2.4.8 6 2.5 6 1.6 0 1.6-4.5 4.5-4.5s2.9 4.5 4.5 4.5c1.7 0 2.1-3.6 2.5-6 .5-3 2-4.5 2-7.5C21 5 19.5 3 17 3c-2 0-3 1-5 1S9 3 7 3z"/></svg></div><h3>Checkups &amp; cleanings</h3><p>Thorough, comfortable exams that keep small problems from becoming big ones.</p></div>
-      
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/><path d="M19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8z"/></svg></div><h3>Teeth whitening</h3><p>Professional whitening that brightens your smile safely in a single visit.</p></div>
-      
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 14s1.5 2.5 4 2.5 4-2.5 4-2.5"/><path d="M9 9.5h.01M15 9.5h.01"/></svg></div><h3>Invisalign &amp; aligners</h3><p>Straighten your teeth discreetly with clear aligners planned around your life.</p></div>
-      
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.2-8 9-4.6-.8-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg></div><h3>Dental implants</h3><p>Permanent, natural-looking replacements that feel and work like your own teeth.</p></div>
-      
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-7-4.4-7-10a4 4 0 017-2.6A4 4 0 0119 10c0 5.6-7 10-7 10z"/></svg></div><h3>Kids&#39; dentistry</h3><p>A calm, friendly first experience that helps children love their checkups.</p></div>
-      
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div><h3>Emergency care</h3><p>Same-day help for toothaches, chips and broken teeth when you need it most.</p></div>
-      
-    </div>
-  </div>
-</section>
-
-<section class="block why" id="why">
-  <div class="wrap why-grid">
-    <div>
-      <div class="kicker">Why patients choose us</div>
-      <h2>The Melbourne dentist people recommend to their friends.</h2>
-      <p class="intro">it still comes down to the same three things.</p>
-    </div>
-    <div class="points">
-      
-      <div class="point"><div class="num">01</div><div><h3>Comfort first</h3><p>Numbing that works, warm blankets, and no lectures. Anxious patients are welcome here.</p></div></div>
-      
-      <div class="point"><div class="num">02</div><div><h3>Modern technology</h3><p>Digital X-rays and 3D scans mean less radiation, fewer goopy impressions and faster results.</p></div></div>
-      
-      <div class="point"><div class="num">03</div><div><h3>Clear pricing</h3><p>We explain costs and insurance before treatment, so there are never any surprises.</p></div></div>
-      
+    <span class="label fade-in d1">Dentist · Snapshot Drive · Melbourne 3058</span>
+    <h1>
+      <span class="ln"><span>Smiles,</span></span>
+      <span class="ln"><span><em class="gold">beautifully</em></span></span>
+      <span class="ln"><span class="outline">cared for.</span></span>
+    </h1>
+    <div class="hero-row">
+      <div>
+        <p class="sub fade-in d2"><strong>Coburg Hill Oral Care</strong> is your neighbourhood dental practice on Snapshot Drive, where unhurried appointments, clear conversations and a calm chair make looking after your smile something you can actually look forward to.</p>
+        <div class="ctas fade-in d3">
+          <a class="btn btn-primary" href="tel:+61390415301"><svg><use href="#i-phone"/></svg>Call to book</a>
+          <a class="btn btn-ghost" href="#services">Explore our care <svg><use href="#i-arrow"/></svg></a>
+        </div>
+      </div>
+      <a class="hero-card fade-in d4" href="https://maps.google.com/?q=6%2F8+Snapshot+Dr%2C+Melbourne+VIC+3058" target="_blank" rel="noopener">
+        <span class="pin"><svg><use href="#i-pin"/></svg></span>
+        <span><small>Find us</small><span>6/8 Snapshot Dr<br>Melbourne VIC 3058</span></span>
+      </a>
     </div>
   </div>
+  <a href="#services" class="scroll-cue" aria-label="Scroll to services"></a>
 </section>
 
+<!-- MARQUEE -->
+<div class="marquee" aria-hidden="true">
+  <div class="track">
+    <div class="item"><span>Coburg Hill Oral Care</span><svg><use href="#i-spark"/></svg><i>Check-ups</i><svg><use href="#i-spark"/></svg><span>Gentle cleans</span><svg><use href="#i-spark"/></svg><i>Healthy gums</i><svg><use href="#i-spark"/></svg><span>Brighter smiles</span><svg><use href="#i-spark"/></svg><i>Snapshot Drive</i><svg><use href="#i-spark"/></svg></div>
+    <div class="item"><span>Coburg Hill Oral Care</span><svg><use href="#i-spark"/></svg><i>Check-ups</i><svg><use href="#i-spark"/></svg><span>Gentle cleans</span><svg><use href="#i-spark"/></svg><i>Healthy gums</i><svg><use href="#i-spark"/></svg><span>Brighter smiles</span><svg><use href="#i-spark"/></svg><i>Snapshot Drive</i><svg><use href="#i-spark"/></svg></div>
+  </div>
+</div>
 
-
-<section class="cta-band" id="book">
-  <div class="wrap"><div class="cta-box">
-    <div><h2>Ready when you are.</h2><p>Book your visit in under a minute, or give us a call and talk to a real person.</p></div>
-    <div class="actions">
-      <a class="btn" href="#visit">Book your visit</a>
-      <a class="btn ghost" href="tel:+61390415301">Call +61390415301</a>
-    </div>
-  </div></div>
-</section>
-
-<section class="block" id="visit" style="padding-top:0">
+<!-- SERVICES -->
+<section class="services pad" id="services">
   <div class="wrap">
-    <div class="kicker">Visit us</div><h2>Come say hello.</h2>
-    <div class="visit">
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11l8-7 8 7v9a1 1 0 01-1 1h-4v-6H9v6H5a1 1 0 01-1-1z"/></svg></div><h3>Address</h3><p>6/8 Snapshot Dr, Melbourne VIC 3058</p></div>
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div><h3>Phone</h3><p><a href="tel:+61390415301">+61390415301</a></p><p style="margin-top:10px">Call or message us for today's opening hours.</p></div>
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-7-4.4-7-10a4 4 0 017-2.6A4 4 0 0119 10c0 5.6-7 10-7 10z"/></svg></div><h3>New patients welcome</h3><p>Book your visit online or by phone and we'll take care of the rest.</p></div>
+    <div class="sec-head">
+      <div class="rv"><span class="label">Our care</span><h2>Everything your smile <em class="gold">deserves.</em></h2></div>
+      <p class="rv" data-d="1">Oral care, from the name on the door down. Here's how we think about looking after you. Call the practice to talk through the treatment that's right for your teeth.</p>
+    </div>
+    <div class="svc-grid">
+      <article class="svc feature rv">
+        <span class="num">01</span>
+        <span class="ico"><svg><use href="#i-tooth"/></svg></span>
+        <h3>Check-ups that keep you a step ahead</h3>
+        <p>A thorough look at your teeth and gums, an honest explanation of what we see, and a plan you understand before anything begins.</p>
+      </article>
+      <article class="svc rv" data-d="1">
+        <span class="num">02</span>
+        <span class="ico"><svg viewBox="0 0 24 24"><path d="M4 20l9-9M14 4l6 6-5 5-6-6z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        <h3>Cleaning &amp; prevention</h3>
+        <p>Fresh, smooth, cared-for: a clean that leaves your mouth feeling lighter, plus simple habits to keep it that way at home.</p>
+      </article>
+      <article class="svc rv">
+        <span class="num">03</span>
+        <span class="ico"><svg viewBox="0 0 24 24"><path d="M12 3c3 4 6 7 6 11a6 6 0 0 1-12 0c0-4 3-7 6-11z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg></span>
+        <h3>Gum health</h3>
+        <p>Strong smiles start below the surface. We keep a close, gentle eye on your gums so small concerns stay small.</p>
+      </article>
+      <article class="svc rv" data-d="1">
+        <span class="num">04</span>
+        <span class="ico"><svg><use href="#i-spark"/></svg></span>
+        <h3>Smile confidence</h3>
+        <p>Thinking about how your smile looks? Talk it through with us and explore the options that suit you.</p>
+      </article>
+      <article class="svc rv" data-d="2">
+        <span class="num">05</span>
+        <span class="ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M8.5 13.5c1 1.6 2.2 2.3 3.5 2.3s2.5-.7 3.5-2.3M9 9.5h.01M15 9.5h.01" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></span>
+        <h3>Care for the whole family</h3>
+        <p>A calm, welcoming practice for every generation of your household. Ask us when you call.</p>
+      </article>
+    </div>
+    <p class="svc-note rv">Not sure what you need? <a class="ulink" href="tel:+61390415301">Call (03) 9041 5301</a> and we'll point you in the right direction.</p>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about pad" id="about">
+  <div class="giant" aria-hidden="true" data-drift>Coburg <em>Hill</em> Coburg <em>Hill</em></div>
+  <div class="wrap">
+    <div class="about-inner">
+      <div class="about-visual rv" aria-hidden="true">
+        <svg viewBox="0 0 400 500" preserveAspectRatio="xMidYMid slice">
+          <g fill="none" stroke="rgba(234,242,248,.35)" stroke-width="1">
+            <circle cx="200" cy="230" r="150"/><circle cx="200" cy="230" r="110"/><circle cx="200" cy="230" r="70"/>
+          </g>
+          <path d="M160 160c-30 0-45 22-45 49 0 22 10 34 15 56 6 26 9 66 28 66 17 0 15-53 42-53s25 53 42 53c19 0 22-40 28-66 5-22 15-34 15-56 0-27-15-49-45-49-19 0-29 10-40 10s-21-10-40-10z" fill="rgba(234,242,248,.92)"/>
+          <path d="M150 190c-10 4-16 12-17 24" stroke="#4FB3E8" stroke-width="3" fill="none" stroke-linecap="round"/>
+        </svg>
+        <div class="tag"><small>Coburg Hill</small><p>Your local practice, minutes from home.</p></div>
+      </div>
+      <div class="about-copy">
+        <span class="label rv">About the practice</span>
+        <h2 class="rv">A dental home for <em class="gold">Coburg Hill.</em></h2>
+        <p class="lead rv">We believe great dentistry should feel personal, unhurried and genuinely reassuring.</p>
+        <p class="rv">Coburg Hill Oral Care sits right in the neighbourhood at 6/8 Snapshot Drive, so expert care is never far from your front door. Whether it's been six months or several years since your last visit, you'll be welcomed without judgement and looked after with care.</p>
+        <p class="rv">Every appointment starts with listening. We explain what we see in plain language, talk you through your options, and let you decide, so you leave feeling informed, comfortable and confident in your smile.</p>
+        <div class="pillars">
+          <div class="rv"><b>Listen first</b><span>Your concerns shape every visit.</span></div>
+          <div class="rv" data-d="1"><b>Explain clearly</b><span>No jargon, no pressure.</span></div>
+          <div class="rv"><b>Treat gently</b><span>Comfort is part of the care.</span></div>
+          <div class="rv" data-d="1"><b>Close to home</b><span>Right here on Snapshot Drive.</span></div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
+
+<!-- WHY: stacked sticky -->
+<section class="why pad" id="why">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="rv"><span class="label">Why Coburg Hill</span><h2>Dentistry that feels <em class="gold">different.</em></h2></div>
+      <p class="rv" data-d="1">Four promises that shape the way we look after every patient who walks through our door.</p>
+    </div>
+    <div class="stack">
+      <article class="stack-card">
+        <span class="big">01</span>
+        <div><h3>Time to talk</h3><p>Appointments that leave room for your questions. You'll never feel rushed out of the chair or unsure of what happens next.</p></div>
+        <svg class="shape" viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="46" fill="none" stroke="#4FB3E8" stroke-width="2"/><circle cx="50" cy="50" r="14" fill="#E9C46A"/></svg>
+      </article>
+      <article class="stack-card">
+        <span class="big">02</span>
+        <div><h3>Comfort, considered</h3><p>A calm environment and a gentle touch, because a relaxed patient is the start of every good result.</p></div>
+        <svg class="shape" viewBox="0 0 100 100" aria-hidden="true"><rect x="10" y="10" width="80" height="80" rx="40" fill="none" stroke="#04121F" stroke-width="2"/><path d="M30 55c6 10 14 14 20 14s14-4 20-14" fill="none" stroke="#04121F" stroke-width="3" stroke-linecap="round"/></svg>
+      </article>
+      <article class="stack-card">
+        <span class="big">03</span>
+        <div><h3>Honest advice</h3><p>Clear explanations and options laid out plainly, so every decision about your smile is truly yours.</p></div>
+        <svg class="shape" viewBox="0 0 100 100" aria-hidden="true"><path d="M50 6c3 24 20 41 44 44-24 3-41 20-44 44-3-24-20-41-44-44 24-3 41-20 44-44z" fill="#1A1405"/></svg>
+      </article>
+      <article class="stack-card">
+        <span class="big">04</span>
+        <div><h3>Right in your neighbourhood</h3><p>Find us at 6/8 Snapshot Drive, Melbourne VIC 3058: local, easy to reach, and only a phone call away.</p></div>
+        <svg class="shape" viewBox="0 0 24 24" aria-hidden="true" style="color:#071A2B"><use href="#i-pin"/></svg>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="steps pad" id="how">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="rv"><span class="label">Your visit</span><h2>Simple, from the <em class="gold">first call.</em></h2></div>
+      <p class="rv" data-d="1">Getting started at Coburg Hill Oral Care is easy. Here's what to expect.</p>
+    </div>
+    <div class="step-line" data-line></div>
+    <div class="step-list">
+      <div class="step rv"><h3>Give us a call</h3><p>Ring <a class="ulink" href="tel:+61390415301">(03) 9041 5301</a> and we'll find a time that suits you.</p></div>
+      <div class="step rv" data-d="1"><h3>Settle in</h3><p>Arrive at Snapshot Drive and take a breath. We'll start by hearing what matters to you.</p></div>
+      <div class="step rv" data-d="2"><h3>Understand your smile</h3><p>A careful examination, explained clearly, with your options laid out honestly.</p></div>
+      <div class="step rv" data-d="3"><h3>Leave confident</h3><p>Walk out with a healthier mouth, a clear plan and no surprises.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq pad" id="faq">
+  <div class="wrap faq-grid">
+    <div class="faq-side">
+      <span class="label rv">Good to know</span>
+      <h2 class="rv">Questions, <em class="gold">answered.</em></h2>
+      <p class="rv">Anything else on your mind? The team is happy to help over the phone.</p>
+    </div>
+    <div class="rv" data-d="1">
+      <details open><summary>How do I book an appointment?<span class="pm"></span></summary><p>The quickest way is to call us on <a class="ulink" href="tel:+61390415301">(03) 9041 5301</a>. We'll find a time that works around your week.</p></details>
+      <details><summary>Where is the practice?<span class="pm"></span></summary><p>We're at 6/8 Snapshot Dr, Melbourne VIC 3058. <a class="ulink" href="https://maps.google.com/?q=6%2F8+Snapshot+Dr%2C+Melbourne+VIC+3058" target="_blank" rel="noopener">Open it in Google Maps</a> for directions.</p></details>
+      <details><summary>What are your opening hours?<span class="pm"></span></summary><p>Please call the practice for current opening hours and appointment availability.</p></details>
+      <details><summary>It's been a while since my last visit. Is that okay?<span class="pm"></span></summary><p>Absolutely. You'll be welcomed without judgement. We'll take things at your pace and explain everything as we go.</p></details>
+      <details><summary>Can I ask about a specific treatment?<span class="pm"></span></summary><p>Of course. Give us a call and tell us what you're looking for, and we'll talk you through what's possible.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta pad">
+  <div class="wrap">
+    <span class="label rv">Your next chapter</span>
+    <h2 class="rv">Ready for a smile you'll <em>love?</em></h2>
+    <p class="rv">One call is all it takes. The team at Coburg Hill Oral Care is ready to welcome you.</p>
+    <div class="ctas rv">
+      <a class="btn btn-primary" href="tel:+61390415301"><svg><use href="#i-phone"/></svg>Call (03) 9041 5301</a>
+      <a class="btn btn-ghost" href="https://maps.google.com/?q=6%2F8+Snapshot+Dr%2C+Melbourne+VIC+3058" target="_blank" rel="noopener">Get directions <svg><use href="#i-arrow"/></svg></a>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact pad" id="contact">
+  <div class="wrap c-grid">
+    <div class="c-card rv">
+      <span class="label">Visit us</span>
+      <h2>Come and <em class="gold">say hello.</em></h2>
+      <div class="c-rows">
+        <div class="c-row"><span class="i"><svg><use href="#i-phone"/></svg></span><div><small>Phone</small><a class="ulink" href="tel:+61390415301">+61 3 9041 5301</a></div></div>
+        <div class="c-row"><span class="i"><svg><use href="#i-pin"/></svg></span><div><small>Address</small><a class="ulink" href="https://maps.google.com/?q=6%2F8+Snapshot+Dr%2C+Melbourne+VIC+3058" target="_blank" rel="noopener">6/8 Snapshot Dr, Melbourne VIC 3058</a></div></div>
+        <div class="c-row"><span class="i"><svg><use href="#i-clock"/></svg></span><div><small>Hours</small><span>Please call for current opening hours</span></div></div>
+      </div>
+    </div>
+    <a class="map rv" data-d="1" href="https://maps.google.com/?q=6%2F8+Snapshot+Dr%2C+Melbourne+VIC+3058" target="_blank" rel="noopener" aria-label="Open 6/8 Snapshot Dr, Melbourne VIC 3058 in Google Maps">
+      <svg class="mapart" viewBox="0 0 400 400" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+        <rect width="400" height="400" fill="#0E2840"/>
+        <g stroke="#163A5C" stroke-width="14" fill="none" stroke-linecap="round">
+          <path d="M-20 120C80 110 160 160 220 150s140-60 200-50"/><path d="M60 -20c20 120 0 220 30 440"/><path d="M-20 300c120-30 260 10 440-40"/><path d="M300 -20c-30 140 10 260-20 440"/>
+        </g>
+        <g stroke="#1D4A73" stroke-width="5" fill="none"><path d="M-20 210c140 10 280-40 440 0"/><path d="M180 -20c10 160-20 280 20 440"/></g>
+        <path d="M200 170c40-20 90 0 110 40" stroke="#4FB3E8" stroke-width="3" stroke-dasharray="6 8" fill="none"/>
+        <circle cx="330" cy="70" r="40" fill="#12324F"/><circle cx="90" cy="350" r="55" fill="#12324F"/>
+      </svg>
+      <span class="m-pin"><svg viewBox="0 0 24 24"><path d="M12 22s-7.5-6.6-7.5-12.8a7.5 7.5 0 0 1 15 0C19.5 15.4 12 22 12 22z" fill="currentColor"/><circle cx="12" cy="9.2" r="2.8" fill="#071A2B"/></svg></span>
+      <span class="m-foot"><span><b>Coburg Hill Oral Care</b><span>Open in Google Maps</span></span><span class="arrow"><svg><use href="#i-arrow"/></svg></span></span>
+    </a>
+  </div>
+</section>
+
 </main>
 
-<footer><div class="wrap">
-  <span>© 2026 Coburg Hill Oral Care</span>
-  <span>Concept design by webstudio. Not affiliated with or endorsed by Coburg Hill Oral Care.</span>
-</div></footer>
+<footer>
+  <div class="wrap">
+    <div class="f-top">
+      <a href="#top" class="logo" aria-label="Back to top">
+        <svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="19" fill="none" stroke="#4FB3E8" stroke-width="1.2"/><path d="M14 11c-3 0-4.6 2.2-4.6 4.8 0 2.2 1 3.4 1.5 5.6.6 2.5.9 6.6 2.8 6.6 1.7 0 1.5-5.2 4.3-5.2h4c2.8 0 2.6 5.2 4.3 5.2 1.9 0 2.2-4.1 2.8-6.6.5-2.2 1.5-3.4 1.5-5.6 0-2.6-1.6-4.8-4.6-4.8-1.9 0-2.9 1-4 1h-4c-1.1 0-2.1-1-4-1z" fill="#E9C46A"/></svg>
+        <span><b>Coburg Hill</b><small>Oral Care</small></span>
+      </a>
+      <nav class="f-links" aria-label="Footer">
+        <a class="ulink" href="#services">Care</a><a class="ulink" href="#about">About</a><a class="ulink" href="#how">Your visit</a><a class="ulink" href="#faq">FAQ</a><a class="ulink" href="#contact">Contact</a>
+      </nav>
+    </div>
+    <div class="f-word" aria-hidden="true">Coburg Hill</div>
+    <div class="f-bot">
+      <span>© <span id="yr"></span> Coburg Hill Oral Care · 6/8 Snapshot Dr, Melbourne VIC 3058</span>
+      <a class="ulink" href="tel:+61390415301">+61 3 9041 5301</a>
+    </div>
+  </div>
+</footer>
 
-<div class="mobile-bar">
-  <a class="btn ghost" href="tel:+61390415301">Call</a>
-  <a class="btn" href="#visit">Book now</a>
+<div class="mbar">
+  <a class="btn btn-primary" href="tel:+61390415301"><svg><use href="#i-phone"/></svg>Call now</a>
+  <a class="btn btn-ghost" href="https://maps.google.com/?q=6%2F8+Snapshot+Dr%2C+Melbourne+VIC+3058" target="_blank" rel="noopener"><svg><use href="#i-pin"/></svg>Directions</a>
 </div>
-</body>
+
+<script>
+(function(){
+  var d=document,b=d.body,h=d.getElementById('top');
+  d.getElementById('yr').textContent=new Date().getFullYear();
+  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // Header state
+  function onScroll(){h.classList.toggle('scrolled',window.scrollY>30)}
+  onScroll();
+
+  // Mobile menu
+  var burger=d.querySelector('.burger'),mm=d.getElementById('mmenu');
+  function setMenu(open){
+    b.classList.toggle('menu-open',open);
+    burger.setAttribute('aria-expanded',open);
+    burger.setAttribute('aria-label',open?'Close menu':'Open menu');
+    mm.setAttribute('aria-hidden',!open);
+    b.style.overflow=open?'hidden':'';
+  }
+  burger.addEventListener('click',function(){setMenu(!b.classList.contains('menu-open'))});
+  mm.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){setMenu(false)})});
+  d.addEventListener('keydown',function(e){if(e.key==='Escape')setMenu(false)});
+
+  // Reveal on scroll
+  var els=d.querySelectorAll('.rv,[data-line]');
+  if('IntersectionObserver' in window&&!reduce){
+    var io=new IntersectionObserver(function(en){
+      en.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}});
+    },{threshold:.15,rootMargin:'0px 0px -40px 0px'});
+    els.forEach(function(el){io.observe(el)});
+  }else{els.forEach(function(el){el.classList.add('in')})}
+
+  // Parallax + drifting giant type + stacked card scale
+  var orb=d.querySelector('[data-parallax]'),drift=d.querySelector('[data-drift]'),
+      cards=d.querySelectorAll('.stack-card'),ticking=false;
+  function frame(){
+    var y=window.scrollY,vh=window.innerHeight;
+    if(orb&&y<vh*1.2)orb.style.transform='translate3d(0,'+(y*.25)+'px,0) rotate('+(y*.02)+'deg)';
+    if(drift){
+      var r=drift.getBoundingClientRect();
+      if(r.bottom>0&&r.top<vh)drift.style.transform='translate3d('+((r.top-vh)*.35)+'px,0,0)';
+    }
+    cards.forEach(function(c,i){
+      var next=cards[i+1];if(!next)return;
+      var top=c.getBoundingClientRect().top,nt=next.getBoundingClientRect().top;
+      var p=Math.min(Math.max(1-(nt-top)/vh,0),1);
+      c.style.transform='scale('+(1-p*.06)+')';
+      c.style.filter='brightness('+(1-p*.25)+')';
+    });
+    ticking=false;
+  }
+  window.addEventListener('scroll',function(){
+    onScroll();
+    if(!reduce&&!ticking){ticking=true;requestAnimationFrame(frame)}
+  },{passive:true});
+  if(!reduce)frame();
+})();
+</script>
+<div id="lm-concept" style="position:fixed;left:12px;bottom:12px;z-index:2147483647;font:500 11px/1.3 -apple-system,BlinkMacSystemFont,Segoe UI,sans-serif;letter-spacing:.02em;background:rgba(15,15,18,.82);color:#f4f1ea;padding:7px 11px;border-radius:999px;backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);pointer-events:none;max-width:70vw">Website concept for Coburg Hill Oral Care by webstudio &middot; not the live site</div><p style="margin:0;padding:18px 16px 70px;text-align:center;font:12px/1.5 -apple-system,sans-serif;color:#8a8a8a;background:#0e0e10">Concept design by webstudio. Not affiliated with or endorsed by Coburg Hill Oral Care.</p></body>
 </html>

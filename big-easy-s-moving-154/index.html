@@ -1,291 +1,556 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src * data: blob:; media-src 'self' data:; style-src 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com data:; script-src 'unsafe-inline'; connect-src 'none'; frame-src 'none'; form-action 'none'; base-uri 'none'; object-src 'none'">
 <meta name="robots" content="noindex, nofollow">
-<title>Big Easy&#39;s Moving | Website concept</title>
+<style>html,body{max-width:100%;overflow-x:clip}</style>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Big Easy's Moving | Austin, TX Movers | (512) 589-7320</title>
+<meta name="description" content="Big Easy's Moving is a moving company in Austin, TX, located at 6132 W Highway 290. Call (512) 589-7320 to talk through your move.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 :root{
-  --bg:#f6f4f0;--surface:#ffffff;--ink:#1d2433;--muted:#5f6675;
-  --accent:#c4512b;--accent-ink:#ffffff;--gold:#d79a3e;--soft:#f3e6de;
-  --radius:22px;--max:1180px;
-  --serif:"Fraunces",Georgia,serif;--sans:"Manrope",system-ui,-apple-system,sans-serif;
+  --bg:#111315;--bg2:#0c0d0f;--surface:#1B1E21;--surface2:#22262a;
+  --text:#EDEFF0;--muted:#a9b1b9;--accent:#B8E04B;--accent-d:#9cc236;--steel:#6E7A86;
+  --line:rgba(237,239,240,.09);--line2:rgba(237,239,240,.16);
+  --serif:"Instrument Serif",Georgia,"Times New Roman",serif;
+  --sans:"Inter",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --ease:cubic-bezier(.22,.61,.21,1);
+  --pad:clamp(20px,4vw,56px);
 }
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--bg);color:var(--text);font-family:var(--sans);font-weight:400;font-size:16px;line-height:1.65;overflow-x:hidden;-webkit-font-smoothing:antialiased}
 a{color:inherit;text-decoration:none}
-img{max-width:100%;display:block}
-.wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
-.concept{background:var(--ink);color:var(--bg);font-size:13px;text-align:center;padding:8px 16px;letter-spacing:.02em}
-.concept b{color:var(--gold);font-weight:600}
+svg{display:block}
+::selection{background:var(--accent);color:#111315}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
+
+/* grain + glow backdrop */
+body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;
+  background:radial-gradient(60vw 50vh at 85% 0%,rgba(184,224,75,.07),transparent 70%),
+  radial-gradient(50vw 60vh at 0% 100%,rgba(110,122,134,.12),transparent 70%)}
+
+.label{font-size:11.5px;font-weight:500;letter-spacing:.24em;text-transform:uppercase;color:var(--steel);display:inline-flex;align-items:center;gap:12px}
+.label::before{content:"";width:28px;height:1px;background:currentColor;opacity:.7}
+.label.lime{color:var(--accent)}
+h1,h2,h3{font-family:var(--serif);font-weight:400;letter-spacing:-.015em;line-height:1.02}
+em{font-style:italic;color:var(--accent)}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:16px 26px;border-radius:999px;font-size:14.5px;font-weight:500;letter-spacing:.01em;transition:transform .5s var(--ease),background .4s,color .4s,border-color .4s,box-shadow .5s;white-space:nowrap;max-width:100%}
+.btn svg{width:16px;height:16px;transition:transform .5s var(--ease)}
+.btn-primary{background:var(--accent);color:#111315;box-shadow:0 0 0 0 rgba(184,224,75,.0)}
+.btn-primary:hover{transform:translateY(-3px);box-shadow:0 14px 40px -12px rgba(184,224,75,.55)}
+.btn-primary:hover svg{transform:translateX(4px)}
+.btn-ghost{border:1px solid var(--line2);color:var(--text)}
+.btn-ghost:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-3px)}
+.ulink{position:relative;display:inline-block}
+.ulink::after{content:"";position:absolute;left:0;bottom:-3px;width:100%;height:1px;background:var(--accent);transform:scaleX(0);transform-origin:right;transition:transform .6s var(--ease)}
+.ulink:hover::after{transform:scaleX(1);transform-origin:left}
 
 /* header */
-header{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:saturate(1.4) blur(10px);border-bottom:1px solid color-mix(in srgb,var(--ink) 8%,transparent)}
-.nav{display:flex;align-items:center;justify-content:space-between;height:76px;gap:24px}
-.brand{font-family:var(--serif);font-size:23px;font-weight:600;letter-spacing:-.01em;line-height:1.1;max-width:340px}
-.links{display:flex;gap:30px;font-size:15px;font-weight:500;color:var(--muted)}
-.links a:hover{color:var(--ink)}
-.nav-right{display:flex;align-items:center;gap:18px}
-.phone{font-weight:600;font-size:15px;white-space:nowrap}
-.btn{display:inline-flex;align-items:center;gap:10px;background:var(--accent);color:var(--accent-ink);padding:14px 26px;border-radius:999px;font-weight:600;font-size:15.5px;transition:transform .2s ease,box-shadow .2s ease;white-space:nowrap}
-.btn:hover{transform:translateY(-2px);box-shadow:0 12px 28px -12px var(--accent)}
-.btn.ghost{background:transparent;color:var(--ink);border:1.5px solid color-mix(in srgb,var(--ink) 20%,transparent)}
-.btn.ghost:hover{box-shadow:none;border-color:var(--ink)}
-.btn svg{width:18px;height:18px}
+.header{position:fixed;top:0;left:0;right:0;z-index:50;padding:14px var(--pad);transition:padding .5s var(--ease)}
+.header-in{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:10px 12px 10px 18px;border-radius:999px;background:rgba(17,19,21,.55);backdrop-filter:blur(18px) saturate(140%);-webkit-backdrop-filter:blur(18px) saturate(140%);border:1px solid var(--line)}
+.brand{display:flex;align-items:center;gap:12px;font-family:var(--serif);font-size:22px;line-height:1;white-space:nowrap}
+.brand-mark{width:34px;height:34px;flex:none}
+.nav{display:flex;gap:30px;font-size:13.5px;color:var(--muted)}
+.nav a:hover{color:var(--text)}
+.head-right{display:flex;align-items:center;gap:18px}
+.head-phone{font-size:13.5px;color:var(--muted);white-space:nowrap}
+.head-phone:hover{color:var(--accent)}
+.header .btn{padding:11px 20px;font-size:13.5px}
+.burger{display:none;width:44px;height:44px;border-radius:50%;border:1px solid var(--line2);background:transparent;color:var(--text);cursor:pointer;align-items:center;justify-content:center}
+.burger span{display:block;width:16px;height:1.5px;background:currentColor;position:relative;transition:background .3s}
+.burger span::before,.burger span::after{content:"";position:absolute;left:0;width:16px;height:1.5px;background:currentColor;transition:transform .4s var(--ease)}
+.burger span::before{top:-5px}.burger span::after{top:5px}
+.menu-open .burger span{background:transparent}
+.menu-open .burger span::before{transform:translateY(5px) rotate(45deg)}
+.menu-open .burger span::after{transform:translateY(-5px) rotate(-45deg)}
+.mobile-menu{position:fixed;inset:0;z-index:45;background:rgba(12,13,15,.97);display:flex;flex-direction:column;justify-content:center;padding:100px var(--pad) 120px;gap:8px;opacity:0;visibility:hidden;transition:opacity .5s var(--ease),visibility .5s}
+.mobile-menu a.big{font-family:var(--serif);font-size:44px;line-height:1.2;transform:translateY(16px);opacity:0;transition:transform .6s var(--ease),opacity .6s}
+.mobile-menu .mm-foot{margin-top:28px;color:var(--muted);font-size:14px;opacity:0;transition:opacity .6s .3s}
+.menu-open .mobile-menu{opacity:1;visibility:visible}
+.menu-open .mobile-menu a.big,.menu-open .mobile-menu .mm-foot{transform:none;opacity:1}
+.menu-open .mobile-menu a.big:nth-child(2){transition-delay:.06s}
+.menu-open .mobile-menu a.big:nth-child(3){transition-delay:.12s}
+.menu-open .mobile-menu a.big:nth-child(4){transition-delay:.18s}
+.menu-open .mobile-menu a.big:nth-child(5){transition-delay:.24s}
 
-/* hero */
-.hero{padding:72px 0 88px}
-.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:64px;align-items:center}
-.eyebrow{display:inline-flex;align-items:center;gap:10px;background:var(--surface);border:1px solid color-mix(in srgb,var(--ink) 10%,transparent);padding:8px 16px 8px 10px;border-radius:999px;font-size:14px;font-weight:600;color:var(--muted)}
-.stars{color:var(--gold);letter-spacing:1px;font-size:14px}
-.eyebrow .dot{width:26px;height:26px;border-radius:50%;background:var(--soft);display:grid;place-items:center;color:var(--accent)}
-h1{font-family:var(--serif);font-weight:500;font-size:clamp(44px,5.6vw,74px);line-height:1.02;letter-spacing:-.025em;margin:26px 0 22px}
-h1 em{font-style:italic;color:var(--accent)}
-.lead-text{font-size:19.5px;color:var(--muted);max-width:540px}
-.hero-ctas{display:flex;gap:14px;margin-top:36px;flex-wrap:wrap}
-.ticks{display:flex;gap:22px;margin-top:34px;flex-wrap:wrap;font-size:14.5px;font-weight:600;color:var(--muted)}
-.ticks span{display:flex;align-items:center;gap:8px}
-.ticks svg{width:18px;height:18px;color:var(--accent)}
-.visual{position:relative}
-.photo{aspect-ratio:4/5;border-radius:calc(var(--radius) + 10px);overflow:hidden;background:var(--soft);box-shadow:0 40px 80px -40px color-mix(in srgb,var(--ink) 55%,transparent)}
-.photo img{width:100%;height:100%;object-fit:cover}
-.quote-panel{aspect-ratio:4/5;border-radius:calc(var(--radius) + 10px);background:linear-gradient(155deg,var(--accent),color-mix(in srgb,var(--accent) 55%,var(--ink)));color:var(--accent-ink);padding:52px 46px;display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden;box-shadow:0 40px 80px -40px color-mix(in srgb,var(--ink) 60%,transparent)}
-.quote-panel:before{content:"";position:absolute;width:420px;height:420px;border-radius:50%;right:-160px;top:-160px;background:color-mix(in srgb,var(--accent-ink) 9%,transparent)}
-.quote-panel:after{content:"";position:absolute;width:260px;height:260px;border-radius:50%;left:-90px;bottom:-110px;border:1.5px solid color-mix(in srgb,var(--accent-ink) 22%,transparent)}
-.quote-mark{font-family:var(--serif);font-size:120px;line-height:.6;opacity:.35}
-.quote-panel p{font-family:var(--serif);font-size:28px;line-height:1.3;position:relative;z-index:1}
-.quote-panel .who{font-family:var(--sans);font-size:15px;opacity:.85;margin-top:22px;font-weight:600}
-.float{position:absolute;background:var(--surface);color:var(--ink);border-radius:18px;padding:16px 20px;box-shadow:0 24px 50px -24px color-mix(in srgb,var(--ink) 50%,transparent);display:flex;align-items:center;gap:14px;font-size:14px;line-height:1.35}
-.float b{font-size:22px;font-family:var(--serif);font-weight:600;display:block}
-.float.one{left:-34px;bottom:-28px}
-.float.two{right:-22px;top:44px}
-.float .badge{width:44px;height:44px;border-radius:14px;background:var(--soft);display:grid;place-items:center;color:var(--accent)}
-.float .badge svg{width:22px;height:22px}
+/* split layout */
+.layout{position:relative;z-index:1;display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr)}
+.aside{position:sticky;top:0;height:100vh;height:100svh;display:flex;flex-direction:column;justify-content:space-between;padding:130px var(--pad) 44px;border-right:1px solid var(--line);overflow:hidden}
+.aside-top{display:flex;flex-direction:column;gap:30px}
+.aside h1{font-size:clamp(52px,5.6vw,92px)}
+.aside h1 .line{display:block;overflow:hidden;padding-bottom:.06em}
+.aside h1 .line>span{display:inline-block}
+.aside p.sub{max-width:430px;color:var(--muted);font-size:17px;font-weight:300}
+.ctas{display:flex;flex-wrap:wrap;gap:12px}
+.aside-foot{display:grid;grid-template-columns:1fr 1fr;gap:20px;padding-top:24px;border-top:1px solid var(--line);font-size:13.5px}
+.aside-foot small{display:block;font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--steel);margin-bottom:6px}
+.aside-foot a{color:var(--text)}
+.aside-foot a:hover{color:var(--accent)}
+.aside-glow{position:absolute;width:420px;height:420px;border-radius:50%;left:-160px;bottom:-200px;background:radial-gradient(circle,rgba(184,224,75,.16),transparent 65%);filter:blur(10px);pointer-events:none}
 
-/* trust */
-.trust{border-top:1px solid color-mix(in srgb,var(--ink) 9%,transparent);border-bottom:1px solid color-mix(in srgb,var(--ink) 9%,transparent);background:var(--surface)}
-.trust .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;padding-top:26px;padding-bottom:26px}
-.trust div{display:flex;align-items:center;gap:12px;font-weight:600;font-size:15px}
-.trust svg{width:22px;height:22px;color:var(--accent);flex:none}
+/* entrance */
+.in{opacity:0;transform:translateY(28px);transition:opacity 1.2s var(--ease),transform 1.2s var(--ease)}
+.aside h1 .line>span.in{transform:translateY(105%)}
+.loaded .in{opacity:1;transform:none}
+.loaded .aside h1 .line>span.in{transform:none}
 
-/* sections */
-section.block{padding:110px 0}
-.kicker{font-size:13px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
-h2{font-family:var(--serif);font-weight:500;font-size:clamp(34px,3.8vw,52px);line-height:1.08;letter-spacing:-.02em;margin:14px 0 18px}
-.section-head{display:flex;justify-content:space-between;align-items:end;gap:40px;margin-bottom:56px}
-.section-head p{color:var(--muted);max-width:420px}
-.services{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-.card{background:var(--surface);border-radius:var(--radius);padding:34px 32px 36px;border:1px solid color-mix(in srgb,var(--ink) 7%,transparent);transition:transform .25s ease,box-shadow .25s ease}
-.card:hover{transform:translateY(-4px);box-shadow:0 30px 60px -36px color-mix(in srgb,var(--ink) 45%,transparent)}
-.icon{width:54px;height:54px;border-radius:16px;background:var(--soft);color:var(--accent);display:grid;place-items:center;margin-bottom:24px}
-.icon svg{width:26px;height:26px}
-.card h3{font-family:var(--serif);font-weight:500;font-size:23px;margin-bottom:8px;letter-spacing:-.01em}
-.card p{color:var(--muted);font-size:16px}
+main{min-width:0}
+section{position:relative;padding:clamp(80px,11vw,150px) var(--pad);border-bottom:1px solid var(--line)}
+.sec-head{display:flex;flex-direction:column;gap:22px;margin-bottom:clamp(44px,6vw,72px);max-width:640px}
+.sec-head h2{font-size:clamp(42px,5vw,76px)}
+.sec-head p{color:var(--muted);font-size:17px;font-weight:300;max-width:520px}
 
-.why{background:var(--ink);color:var(--bg)}
-.why .kicker{color:var(--gold)}
-.why-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:80px;align-items:start}
-.why h2{color:var(--bg)}
-.why .intro{color:color-mix(in srgb,var(--bg) 70%,transparent);font-size:18px;max-width:440px}
-.points{display:grid;gap:14px}
-.point{display:grid;grid-template-columns:62px 1fr;gap:20px;padding:30px;border-radius:var(--radius);background:color-mix(in srgb,var(--bg) 6%,transparent);border:1px solid color-mix(in srgb,var(--bg) 10%,transparent)}
-.point .num{font-family:var(--serif);font-size:34px;color:var(--gold);line-height:1}
-.point h3{font-family:var(--serif);font-weight:500;font-size:24px;margin-bottom:6px}
-.point p{color:color-mix(in srgb,var(--bg) 72%,transparent);font-size:16px}
+/* signature hero stage */
+.stage{min-height:100vh;min-height:100svh;padding-top:120px;display:flex;flex-direction:column;justify-content:flex-end;overflow:hidden;background:
+  radial-gradient(80% 60% at 70% 30%,rgba(184,224,75,.10),transparent 60%),
+  linear-gradient(180deg,#14171a 0%,var(--bg) 100%)}
+.stage-word{position:absolute;right:-2vw;top:50%;transform:translateY(-55%);font-family:var(--serif);font-style:italic;font-size:clamp(180px,30vw,520px);line-height:.8;letter-spacing:-.04em;color:transparent;-webkit-text-stroke:1px rgba(237,239,240,.14);white-space:nowrap;pointer-events:none;user-select:none;will-change:transform}
+.stage-word b{font-weight:400;-webkit-text-stroke:0;color:var(--accent);text-shadow:0 0 60px rgba(184,224,75,.35)}
+.stage-art{position:absolute;inset:0;pointer-events:none;will-change:transform}
+.stage-art svg{position:absolute;width:100%;height:100%}
+#route{stroke-dasharray:1;stroke-dashoffset:1}
+.stage-cap{position:relative;display:flex;justify-content:space-between;align-items:flex-end;gap:30px;flex-wrap:wrap}
+.stage-cap .pin{display:flex;flex-direction:column;gap:6px;font-size:13px;color:var(--muted)}
+.stage-cap .pin strong{font-family:var(--serif);font-weight:400;font-size:30px;color:var(--text);line-height:1}
+.scroll-cue{display:flex;align-items:center;gap:14px;font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--steel)}
+.scroll-cue i{width:1px;height:52px;background:linear-gradient(var(--accent),transparent);display:block;animation:cue 2.4s var(--ease) infinite;transform-origin:top}
+@keyframes cue{0%{transform:scaleY(0)}50%{transform:scaleY(1);transform-origin:top}51%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
 
-.score{display:flex;align-items:center;gap:18px;background:var(--surface);padding:16px 24px;border-radius:18px;border:1px solid color-mix(in srgb,var(--ink) 8%,transparent)}
-.score b{font-family:var(--serif);font-size:40px;font-weight:500;line-height:1}
-.score small{display:block;color:var(--muted);font-size:14px}
-.reviews{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-.review{background:var(--surface);border-radius:var(--radius);padding:34px;display:flex;flex-direction:column;gap:22px;border:1px solid color-mix(in srgb,var(--ink) 7%,transparent)}
-.review p{font-family:var(--serif);font-size:19.5px;line-height:1.45}
-.review .by{margin-top:auto;display:flex;align-items:center;gap:12px;font-weight:600;font-size:15px}
-.avatar{width:40px;height:40px;border-radius:50%;background:var(--soft);color:var(--accent);display:grid;place-items:center;font-weight:700}
-.review .src{color:var(--muted);font-weight:500;font-size:13px;display:block}
+/* marquee */
+.marquee{padding:30px 0;overflow:hidden;background:var(--bg2);border-bottom:1px solid var(--line)}
+.marquee-track{display:flex;width:max-content;animation:mq 42s linear infinite}
+.marquee:hover .marquee-track{animation-play-state:paused}
+.marquee-track span{display:flex;align-items:center;gap:40px;padding-right:40px;font-family:var(--serif);font-size:clamp(28px,3.4vw,46px);white-space:nowrap;color:var(--text)}
+.marquee-track span i{font-style:italic;color:var(--steel)}
+.marquee-track svg{width:18px;height:18px;flex:none}
+@keyframes mq{to{transform:translateX(-50%)}}
 
-.cta-band{padding:0 0 110px}
-.cta-box{border-radius:calc(var(--radius) + 12px);background:linear-gradient(140deg,var(--accent),color-mix(in srgb,var(--accent) 60%,var(--ink)));color:var(--accent-ink);padding:76px 64px;display:grid;grid-template-columns:1.3fr 1fr;gap:40px;align-items:center;position:relative;overflow:hidden}
-.cta-box:after{content:"";position:absolute;right:-120px;bottom:-200px;width:460px;height:460px;border-radius:50%;border:1.5px solid color-mix(in srgb,var(--accent-ink) 22%,transparent)}
-.cta-box h2{color:inherit;margin:0 0 12px}
-.cta-box p{opacity:.85;font-size:18px}
-.cta-box .actions{display:flex;flex-direction:column;gap:12px;align-items:flex-start;position:relative;z-index:1}
-.cta-box .btn{background:var(--accent-ink);color:var(--accent)}
-.cta-box .btn.ghost{background:transparent;color:var(--accent-ink);border-color:color-mix(in srgb,var(--accent-ink) 40%,transparent)}
+/* services */
+.cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.card{position:relative;background:var(--surface);border:1px solid var(--line);border-radius:22px;padding:34px 30px 30px;overflow:hidden;transition:transform .7s var(--ease),border-color .5s,background .5s;min-height:290px;display:flex;flex-direction:column}
+.card::before{content:"";position:absolute;inset:0;background:radial-gradient(400px 220px at var(--mx,80%) var(--my,0%),rgba(184,224,75,.10),transparent 70%);opacity:0;transition:opacity .5s}
+.card:hover{transform:translateY(-6px);border-color:rgba(184,224,75,.35)}
+.card:hover::before{opacity:1}
+.card .num{font-size:11.5px;letter-spacing:.22em;color:var(--steel);display:flex;justify-content:space-between;align-items:center}
+.card .ico{width:54px;height:54px;border-radius:16px;border:1px solid var(--line2);display:grid;place-items:center;margin:34px 0 26px;transition:background .5s,border-color .5s}
+.card .ico svg{width:24px;height:24px}
+.card:hover .ico{background:rgba(184,224,75,.1);border-color:rgba(184,224,75,.4)}
+.card h3{font-size:34px;margin-bottom:12px}
+.card p{color:var(--muted);font-size:15px;font-weight:300;margin-top:auto}
+.card.wide{grid-column:1/-1;min-height:auto;flex-direction:row;align-items:center;gap:30px;background:linear-gradient(120deg,#20251c 0%,var(--surface) 55%)}
+.card.wide h3{font-size:clamp(30px,3vw,42px);margin:0}
+.card.wide p{margin:0;max-width:420px}
+.card.wide .btn{margin-left:auto;flex:none}
+.note{margin-top:22px;font-size:13px;color:var(--steel)}
 
-.visit{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:10px}
-.visit .card h3{font-size:20px}
-.visit a{color:var(--accent);font-weight:600}
-footer{border-top:1px solid color-mix(in srgb,var(--ink) 9%,transparent);padding:40px 0 110px;color:var(--muted);font-size:14px}
-footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
-.mobile-bar{display:none}
+/* about */
+.about{background:var(--bg2)}
+.about-quote{font-family:var(--serif);font-size:clamp(34px,4.2vw,64px);line-height:1.1;letter-spacing:-.01em;max-width:860px}
+.about-quote .dim{color:#5a636c;transition:color .8s var(--ease)}
+.about-quote .dim.lit{color:var(--text)}
+.about-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:40px;margin-top:64px;padding-top:40px;border-top:1px solid var(--line);color:var(--muted);font-weight:300}
+.about-grid p+p{margin-top:16px}
+.about-grid strong{color:var(--text);font-weight:500}
 
-@keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
-.hero .copy>*{animation:rise .8s cubic-bezier(.2,.7,.2,1) both}
-.hero .copy>*:nth-child(2){animation-delay:.08s}.hero .copy>*:nth-child(3){animation-delay:.16s}
-.hero .copy>*:nth-child(4){animation-delay:.24s}.hero .copy>*:nth-child(5){animation-delay:.32s}
-.visual{animation:rise 1s .2s cubic-bezier(.2,.7,.2,1) both}
+/* why */
+.why-list{border-top:1px solid var(--line)}
+.why-item{display:grid;grid-template-columns:70px minmax(0,1fr) minmax(0,1.2fr);gap:30px;align-items:baseline;padding:34px 0;border-bottom:1px solid var(--line);transition:padding .6s var(--ease)}
+.why-item:hover{padding-left:14px}
+.why-item .n{font-family:var(--serif);font-style:italic;font-size:22px;color:var(--accent)}
+.why-item h3{font-size:clamp(28px,2.8vw,40px)}
+.why-item p{color:var(--muted);font-weight:300;font-size:15.5px}
 
-@media (max-width:980px){
-  .links{display:none}
-  .hero-grid,.why-grid,.cta-box{grid-template-columns:1fr}
-  .hero-grid{gap:56px}
-  .services,.reviews,.visit{grid-template-columns:1fr 1fr}
-  .trust .wrap{grid-template-columns:1fr 1fr}
-  .float.one{left:12px;bottom:-26px}.float.two{right:12px}
-  .visual{max-width:560px;margin-bottom:20px}
-  .section-head{flex-direction:column;align-items:flex-start}
+/* steps */
+.steps{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;counter-reset:s}
+.step{position:relative;padding:34px 30px;border-radius:22px;border:1px solid var(--line);background:linear-gradient(180deg,var(--surface),rgba(27,30,33,.4));transition:transform .7s var(--ease),border-color .5s}
+.step:hover{transform:translateY(-6px);border-color:var(--line2)}
+.step .big{font-family:var(--serif);font-size:96px;line-height:.8;color:transparent;-webkit-text-stroke:1px rgba(184,224,75,.55);display:block;margin-bottom:28px}
+.step h3{font-size:30px;margin-bottom:10px}
+.step p{color:var(--muted);font-size:15px;font-weight:300}
+.step p a{color:var(--accent)}
+
+/* closing band */
+.band{text-align:center;overflow:hidden;background:radial-gradient(70% 90% at 50% 100%,rgba(184,224,75,.16),transparent 70%),var(--bg)}
+.band h2{font-size:clamp(54px,8vw,132px);line-height:.95;margin:26px auto 26px;max-width:900px}
+.band p{color:var(--muted);max-width:500px;margin:0 auto 40px;font-weight:300;font-size:17px}
+.band .ctas{justify-content:center}
+.band-phone{display:inline-block;margin-top:44px;font-family:var(--serif);font-size:clamp(36px,5vw,64px);color:var(--text);transition:color .4s}
+.band-phone:hover{color:var(--accent)}
+.band-ring{position:absolute;left:50%;top:50%;width:900px;height:900px;transform:translate(-50%,-30%);border-radius:50%;border:1px solid rgba(184,224,75,.10);pointer-events:none}
+.band-ring.r2{width:620px;height:620px;border-color:rgba(237,239,240,.06)}
+
+/* contact */
+.contact-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.c-card{padding:32px 30px;border-radius:22px;background:var(--surface);border:1px solid var(--line);display:flex;flex-direction:column;gap:14px;transition:border-color .5s,transform .7s var(--ease)}
+.c-card:hover{border-color:rgba(184,224,75,.35);transform:translateY(-4px)}
+.c-card small{font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--steel)}
+.c-card .v{font-family:var(--serif);font-size:clamp(28px,2.8vw,38px);line-height:1.1;overflow-wrap:anywhere}
+.c-card .go{margin-top:auto;padding-top:14px;font-size:14px;color:var(--accent);display:inline-flex;align-items:center;gap:8px}
+.c-card .go svg{width:14px;height:14px;transition:transform .5s var(--ease)}
+.c-card:hover .go svg{transform:translateX(4px)}
+.c-card.full{grid-column:1/-1;position:relative;overflow:hidden;min-height:240px}
+.c-card.full .mapart{position:absolute;inset:0;opacity:.55;pointer-events:none}
+.c-card.full>*:not(.mapart){position:relative}
+
+footer{padding:56px var(--pad) 40px;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:20px;font-size:13px;color:var(--steel)}
+footer .brand{font-size:20px;color:var(--text)}
+footer nav{display:flex;flex-wrap:wrap;gap:22px}
+footer nav a:hover{color:var(--text)}
+
+/* reveal */
+.rv{opacity:0;transform:translateY(40px);transition:opacity 1.1s var(--ease),transform 1.1s var(--ease)}
+.rv.show{opacity:1;transform:none}
+.rv-d1{transition-delay:.1s}.rv-d2{transition-delay:.2s}.rv-d3{transition-delay:.3s}
+
+/* mobile bar */
+.mbar{display:none}
+
+@media (max-width:1080px){
+  .nav{display:none}
+  .cards,.steps,.contact-grid{grid-template-columns:1fr}
+  .card.wide{flex-direction:column;align-items:flex-start}
+  .card.wide .btn{margin-left:0}
+  .why-item{grid-template-columns:50px minmax(0,1fr)}
+  .why-item p{grid-column:2}
 }
-@media (max-width:640px){
-  body{font-size:16px}
-  .wrap{padding:0 18px}
-  .nav{height:66px}.brand{font-size:19px}
-  .phone,.nav-right .btn{display:none}
-  .hero{padding:44px 0 64px}
-  .lead-text{font-size:17.5px}
-  .hero-ctas .btn{flex:1;justify-content:center}
-  .ticks{display:none}
-  .services,.reviews,.visit,.trust .wrap{grid-template-columns:1fr}
-  section.block{padding:76px 0}
-  .quote-panel,.photo{aspect-ratio:auto;min-height:380px}.photo{aspect-ratio:4/3;min-height:0}
-  .quote-panel{padding:40px 30px 64px}.quote-panel p{font-size:23px}
-  .float{font-size:13px;padding:12px 14px}.float b{font-size:18px}
-  .float.two{display:none}
-  .cta-box{padding:52px 28px}
-  .point{grid-template-columns:44px 1fr;padding:24px}
-  .mobile-bar{display:flex;position:fixed;left:12px;right:12px;bottom:12px;z-index:30;gap:10px}
-  .mobile-bar .btn{flex:1;justify-content:center;box-shadow:0 14px 30px -14px color-mix(in srgb,var(--ink) 60%,transparent)}
-  .mobile-bar .btn.ghost{background:var(--surface)}
+@media (max-width:860px){
+  .layout{grid-template-columns:1fr}
+  .aside{position:relative;height:auto;min-height:100svh;padding-top:120px;border-right:0;border-bottom:1px solid var(--line);gap:56px}
+  .stage{min-height:70vh}
+  .head-phone,.header .btn{display:none}
+  .burger{display:inline-flex}
+  .about-grid{grid-template-columns:1fr;gap:16px}
+  .mbar{display:grid;grid-template-columns:1fr 1fr;gap:8px;position:fixed;left:12px;right:12px;bottom:12px;z-index:40;padding:8px;border-radius:999px;background:rgba(27,30,33,.88);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid var(--line2);transform:translateY(140%);transition:transform .6s var(--ease)}
+  .mbar.on{transform:none}
+  .mbar .btn{padding:13px 10px;font-size:14px}
+  footer{padding-bottom:110px}
+}
+@media (max-width:480px){
+  .header{padding:10px 12px}
+  .brand{font-size:19px}
+  .brand-mark{width:30px;height:30px}
+  .aside h1{font-size:clamp(46px,13.5vw,60px)}
+  .ctas .btn{flex:1 1 100%}
+  .aside-foot{grid-template-columns:1fr}
+  .card{padding:28px 22px 24px;min-height:auto}
+  .card .ico{margin:26px 0 20px}
+  .card h3{font-size:30px}
+  .step .big{font-size:76px}
+  .c-card{padding:26px 22px}
+  .why-item{grid-template-columns:1fr;gap:8px;padding:28px 0}
+  .why-item p{grid-column:auto}
+  .why-item:hover{padding-left:0}
+  .band-phone{font-size:34px}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+  .in,.rv,.aside h1 .line>span.in{opacity:1!important;transform:none!important}
+  #route{stroke-dashoffset:0!important}
+  .about-quote .dim{color:var(--text)}
 }
 </style>
 </head>
 <body>
-<div class="concept">Website concept prepared for <b>Big Easy&#39;s Moving</b> by webstudio &middot; not a live site</div>
 
-<header>
-  <div class="wrap nav">
-    <a href="#top" class="brand">Big Easy&#39;s Moving</a>
-    <nav class="links">
-      <a href="#services">Services</a><a href="#why">Why us</a><a href="#visit">Visit</a>
+<header class="header" id="top">
+  <div class="header-in">
+    <a href="#top" class="brand" aria-label="Big Easy's Moving, back to top">
+      <svg class="brand-mark" viewBox="0 0 40 40" fill="none" aria-hidden="true"><rect x="1" y="1" width="38" height="38" rx="12" stroke="#B8E04B" stroke-opacity=".5"/><path d="M11 17l9-5 9 5v10l-9 5-9-5V17z" stroke="#EDEFF0" stroke-width="1.4" stroke-linejoin="round"/><path d="M11 17l9 5 9-5M20 22v10" stroke="#B8E04B" stroke-width="1.4" stroke-linejoin="round"/></svg>
+      Big Easy's
+    </a>
+    <nav class="nav" aria-label="Main">
+      <a class="ulink" href="#services">Services</a>
+      <a class="ulink" href="#about">About</a>
+      <a class="ulink" href="#process">How it works</a>
+      <a class="ulink" href="#contact">Contact</a>
     </nav>
-    <div class="nav-right">
-      <a class="phone" href="tel:5125897320">(512) 589-7320</a>
-      <a class="btn" href="#visit">Free estimate</a>
+    <div class="head-right">
+      <a class="head-phone ulink" href="tel:+15125897320">(512) 589-7320</a>
+      <a class="btn btn-primary" href="#contact">Plan your move</a>
+      <button class="burger" aria-label="Open menu" aria-expanded="false"><span></span></button>
     </div>
   </div>
 </header>
 
-<main id="top">
-<section class="hero">
-  <div class="wrap hero-grid">
-    <div class="copy">
-      <div class="eyebrow">
-        <span class="dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-7-4.4-7-10a4 4 0 017-2.6A4 4 0 0119 10c0 5.6-7 10-7 10z"/></svg></span>Local &amp; long-distance moving
-      </div>
-      <h1>Moving day, minus the <em>stress.</em></h1>
-      <p class="lead-text">Careful, on-time movers who treat your things like their own, with honest flat-rate pricing and no surprises.</p>
-      <div class="hero-ctas">
-        <a class="btn" href="#visit">Get a free estimate <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-        <a class="btn ghost" href="tel:5125897320">Call (512) 589-7320</a>
-      </div>
-      <div class="ticks">
-        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7"/></svg>Licensed &amp; insured</span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7"/></svg>Free in-home estimates</span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7"/></svg>No hidden fees</span>
-      </div>
-    </div>
-    <div class="visual">
-      
-      <div class="quote-panel"><div class="quote-mark">“</div><div><p>Careful, on-time movers who treat your things like their own, with honest flat-rate pricing and no surprises.</p><div class="who">Big Easy&#39;s Moving</div></div></div>
-      
-      
-      <div class="float two"><span class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><span><b>This week</b>Free in-home estimates</span></div>
-    </div>
-  </div>
-  <template id="qp"><div class="quote-panel"><div class="quote-mark">“</div><div><p>Careful, on-time movers who treat your things like their own, with honest flat-rate pricing and no surprises.</p><div class="who">Big Easy&#39;s Moving</div></div></div></template>
-</section>
-
-<div class="trust"><div class="wrap">
-  <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.2-8 9-4.6-.8-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg>Licensed &amp; insured</div><div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.2-8 9-4.6-.8-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg>Free in-home estimates</div><div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.2-8 9-4.6-.8-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg>No hidden fees</div><div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.2-8 9-4.6-.8-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg>Same-week availability</div>
-</div></div>
-
-<section class="block" id="services">
-  <div class="wrap">
-    <div class="section-head">
-      <div><div class="kicker">What we do</div><h2>Everything you need,<br>under one roof.</h2></div>
-      <p>From routine visits to the work that changes how you feel about your day, Big Easy&#39;s Moving takes care of it properly.</p>
-    </div>
-    <div class="services">
-      
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M2 6h11v10H2zM13 9h4l4 4v3h-8"/><circle cx="6" cy="17.5" r="1.8"/><circle cx="17" cy="17.5" r="1.8"/></svg></div><h3>Local moves</h3><p>Fast, careful moves across town, often done in a single morning.</p></div>
-      
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="18" r="2.5"/><circle cx="18" cy="6" r="2.5"/><path d="M8.5 18H16a3 3 0 000-6H8a3 3 0 010-6h7.5"/></svg></div><h3>Long-distance moves</h3><p>Coast-to-coast moves with tracking and one point of contact.</p></div>
-      
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7l9-4 9 4v10l-9 4-9-4z"/><path d="M3 7l9 4 9-4M12 11v10"/></svg></div><h3>Packing &amp; unpacking</h3><p>Professional packing materials and a team that wraps everything right.</p></div>
-      
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3" width="14" height="18" rx="1"/><path d="M9 7h2M13 7h2M9 11h2M13 11h2M9 15h2M13 15h2"/></svg></div><h3>Office relocation</h3><p>After-hours business moves that keep downtime to a minimum.</p></div>
-      
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.2-8 9-4.6-.8-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg></div><h3>Fragile &amp; specialty items</h3><p>Pianos, art, antiques and TVs handled with extra care.</p></div>
-      
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11l8-7 8 7v9a1 1 0 01-1 1h-4v-6H9v6H5a1 1 0 01-1-1z"/></svg></div><h3>Storage solutions</h3><p>Clean, secure short- and long-term storage when timing doesn&#39;t line up.</p></div>
-      
-    </div>
-  </div>
-</section>
-
-<section class="block why" id="why">
-  <div class="wrap why-grid">
-    <div>
-      <div class="kicker">Why customers choose us</div>
-      <h2>The Austin moving company people recommend to their friends.</h2>
-      <p class="intro">it still comes down to the same three things.</p>
-    </div>
-    <div class="points">
-      
-      <div class="point"><div class="num">01</div><div><h3>Flat-rate pricing</h3><p>A firm quote up front, so the price on moving day is the price you were told.</p></div></div>
-      
-      <div class="point"><div class="num">02</div><div><h3>Licensed &amp; insured</h3><p>Fully licensed and insured, with valuation coverage on everything we carry.</p></div></div>
-      
-      <div class="point"><div class="num">03</div><div><h3>On time, every time</h3><p>We show up when we say we will, with the right truck and the right crew.</p></div></div>
-      
-    </div>
-  </div>
-</section>
-
-
-
-<section class="cta-band" id="book">
-  <div class="wrap"><div class="cta-box">
-    <div><h2>Ready when you are.</h2><p>Get a free estimate in under a minute, or give us a call and talk to a real person.</p></div>
-    <div class="actions">
-      <a class="btn" href="#visit">Get a free estimate</a>
-      <a class="btn ghost" href="tel:5125897320">Call (512) 589-7320</a>
-    </div>
-  </div></div>
-</section>
-
-<section class="block" id="visit" style="padding-top:0">
-  <div class="wrap">
-    <div class="kicker">Visit us</div><h2>Come say hello.</h2>
-    <div class="visit">
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11l8-7 8 7v9a1 1 0 01-1 1h-4v-6H9v6H5a1 1 0 01-1-1z"/></svg></div><h3>Address</h3><p>6132 W Highway 290, Austin TX 78735</p></div>
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div><h3>Phone</h3><p><a href="tel:5125897320">(512) 589-7320</a></p><p style="margin-top:10px">Call or message us for today's opening hours.</p></div>
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-7-4.4-7-10a4 4 0 017-2.6A4 4 0 0119 10c0 5.6-7 10-7 10z"/></svg></div><h3>Free in-home estimates</h3><p>Get a free estimate online or by phone and we'll take care of the rest.</p></div>
-    </div>
-  </div>
-</section>
-</main>
-
-<footer><div class="wrap">
-  <span>© 2026 Big Easy&#39;s Moving</span>
-  <span>Concept design by webstudio. Not affiliated with or endorsed by Big Easy&#39;s Moving.</span>
-</div></footer>
-
-<div class="mobile-bar">
-  <a class="btn ghost" href="tel:5125897320">Call</a>
-  <a class="btn" href="#visit">Free estimate</a>
+<div class="mobile-menu" aria-hidden="true">
+  <a class="big" href="#services">Services</a>
+  <a class="big" href="#about">About</a>
+  <a class="big" href="#process">How it works</a>
+  <a class="big" href="#contact">Contact</a>
+  <a class="big" href="tel:+15125897320"><em>Call us</em></a>
+  <div class="mm-foot">6132 W Highway 290, Austin TX 78735</div>
 </div>
-</body>
+
+<div class="layout">
+
+  <aside class="aside">
+    <div class="aside-glow"></div>
+    <div class="aside-top">
+      <span class="label lime in" style="transition-delay:.1s">Austin, Texas · Movers</span>
+      <h1>
+        <span class="line"><span class="in" style="transition-delay:.2s">Heavy lifting,</span></span>
+        <span class="line"><span class="in" style="transition-delay:.32s">made <em>easy.</em></span></span>
+      </h1>
+      <p class="sub in" style="transition-delay:.5s">Big Easy's Moving is an Austin moving company on West Highway 290. One call starts it: tell us where you're going, and we'll take the weight off your shoulders, and your furniture.</p>
+      <div class="ctas in" style="transition-delay:.62s">
+        <a class="btn btn-primary" href="tel:+15125897320">Call (512) 589-7320
+          <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        <a class="btn btn-ghost" href="#services">Explore our moves</a>
+      </div>
+    </div>
+    <div class="aside-foot in" style="transition-delay:.78s">
+      <div><small>Call</small><a class="ulink" href="tel:+15125897320">(512) 589-7320</a></div>
+      <div><small>Find us</small><a class="ulink" href="https://maps.google.com/?q=6132+W+Highway+290,+Austin+TX+78735" target="_blank" rel="noopener">6132 W Highway 290<br>Austin TX 78735</a></div>
+    </div>
+  </aside>
+
+  <main>
+
+    <!-- Signature stage: outlined type + drawn route between two boxes -->
+    <section class="stage" aria-label="Big Easy's Moving">
+      <div class="stage-word" aria-hidden="true" data-par="0.18">Ea<b>s</b>y.</div>
+      <div class="stage-art" aria-hidden="true" data-par="-0.08">
+        <svg viewBox="0 0 800 800" preserveAspectRatio="xMidYMid slice" fill="none">
+          <defs>
+            <linearGradient id="rg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#6E7A86"/><stop offset="1" stop-color="#B8E04B"/></linearGradient>
+            <radialGradient id="gl"><stop offset="0" stop-color="#B8E04B" stop-opacity=".5"/><stop offset="1" stop-color="#B8E04B" stop-opacity="0"/></radialGradient>
+          </defs>
+          <g stroke="#EDEFF0" stroke-opacity=".05">
+            <path d="M0 200H800M0 400H800M0 600H800M200 0V800M400 0V800M600 0V800"/>
+          </g>
+          <path id="route" pathLength="1" d="M150 610 C 260 600, 250 430, 380 420 S 520 300, 560 250 S 650 170, 660 150" stroke="url(#rg)" stroke-width="2" stroke-linecap="round"/>
+          <path d="M150 610 C 260 600, 250 430, 380 420 S 520 300, 560 250 S 650 170, 660 150" stroke="#EDEFF0" stroke-opacity=".08" stroke-width="1" stroke-dasharray="4 8"/>
+          <!-- origin box -->
+          <g transform="translate(150 610)">
+            <circle r="70" fill="url(#gl)" opacity=".35"/>
+            <path d="M-26 -10l26-14 26 14v28l-26 14-26-14z" stroke="#EDEFF0" stroke-opacity=".7" stroke-width="1.4" stroke-linejoin="round" fill="#1B1E21"/>
+            <path d="M-26 -10l26 14 26-14M0 4v28" stroke="#6E7A86" stroke-width="1.4"/>
+          </g>
+          <!-- destination -->
+          <g transform="translate(660 150)">
+            <circle r="90" fill="url(#gl)" opacity=".6"/>
+            <circle r="8" fill="#B8E04B"/>
+            <circle r="22" stroke="#B8E04B" stroke-opacity=".5"/>
+            <circle r="40" stroke="#B8E04B" stroke-opacity=".18"/>
+          </g>
+        </svg>
+      </div>
+      <div class="stage-cap">
+        <div class="pin rv"><span class="label">From</span><strong>Here</strong></div>
+        <div class="scroll-cue rv rv-d1"><i></i>Scroll</div>
+        <div class="pin rv rv-d2" style="text-align:right;align-items:flex-end"><span class="label lime">To</span><strong><em>Home</em></strong></div>
+      </div>
+    </section>
+
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-track">
+        <span>Big Easy's Moving <svg viewBox="0 0 20 20"><path d="M10 0l2.4 7.6L20 10l-7.6 2.4L10 20l-2.4-7.6L0 10l7.6-2.4z" fill="#B8E04B"/></svg> <i>Austin, Texas</i> <svg viewBox="0 0 20 20"><path d="M10 0l2.4 7.6L20 10l-7.6 2.4L10 20l-2.4-7.6L0 10l7.6-2.4z" fill="#B8E04B"/></svg> W Highway 290 <svg viewBox="0 0 20 20"><path d="M10 0l2.4 7.6L20 10l-7.6 2.4L10 20l-2.4-7.6L0 10l7.6-2.4z" fill="#B8E04B"/></svg> <i>Heavy lifting, made easy</i> <svg viewBox="0 0 20 20"><path d="M10 0l2.4 7.6L20 10l-7.6 2.4L10 20l-2.4-7.6L0 10l7.6-2.4z" fill="#B8E04B"/></svg> (512) 589-7320 <svg viewBox="0 0 20 20"><path d="M10 0l2.4 7.6L20 10l-7.6 2.4L10 20l-2.4-7.6L0 10l7.6-2.4z" fill="#B8E04B"/></svg></span>
+        <span>Big Easy's Moving <svg viewBox="0 0 20 20"><path d="M10 0l2.4 7.6L20 10l-7.6 2.4L10 20l-2.4-7.6L0 10l7.6-2.4z" fill="#B8E04B"/></svg> <i>Austin, Texas</i> <svg viewBox="0 0 20 20"><path d="M10 0l2.4 7.6L20 10l-7.6 2.4L10 20l-2.4-7.6L0 10l7.6-2.4z" fill="#B8E04B"/></svg> W Highway 290 <svg viewBox="0 0 20 20"><path d="M10 0l2.4 7.6L20 10l-7.6 2.4L10 20l-2.4-7.6L0 10l7.6-2.4z" fill="#B8E04B"/></svg> <i>Heavy lifting, made easy</i> <svg viewBox="0 0 20 20"><path d="M10 0l2.4 7.6L20 10l-7.6 2.4L10 20l-2.4-7.6L0 10l7.6-2.4z" fill="#B8E04B"/></svg> (512) 589-7320 <svg viewBox="0 0 20 20"><path d="M10 0l2.4 7.6L20 10l-7.6 2.4L10 20l-2.4-7.6L0 10l7.6-2.4z" fill="#B8E04B"/></svg></span>
+      </div>
+    </div>
+
+    <section id="services">
+      <div class="sec-head">
+        <span class="label lime rv">What we move</span>
+        <h2 class="rv rv-d1">Every move starts with <em>a conversation.</em></h2>
+        <p class="rv rv-d2">Whatever you're moving across Austin, the first step is the same: call us, tell us what's going where, and we'll talk it through together.</p>
+      </div>
+      <div class="cards">
+        <article class="card rv">
+          <div class="num"><span>01</span><span>Home</span></div>
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="#B8E04B" stroke-width="1.4" stroke-linejoin="round"><path d="M3 11l9-7 9 7v9a1 1 0 01-1 1h-5v-6H9v6H4a1 1 0 01-1-1z"/></svg></div>
+          <h3>Moving house</h3>
+          <p>The sofa, the boxes, the things you'd rather not carry yourself. Tell us about the place you're leaving and the one you're heading to.</p>
+        </article>
+        <article class="card rv rv-d1">
+          <div class="num"><span>02</span><span>Apartment</span></div>
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="#B8E04B" stroke-width="1.4" stroke-linejoin="round"><rect x="5" y="3" width="14" height="18" rx="1"/><path d="M9 7h2M13 7h2M9 11h2M13 11h2M9 15h2M13 15h2"/></svg></div>
+          <h3>Apartments &amp; condos</h3>
+          <p>Stairs, elevators, tight corners. Share the details of your building when you call, so we can plan around them.</p>
+        </article>
+        <article class="card rv">
+          <div class="num"><span>03</span><span>Business</span></div>
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="#B8E04B" stroke-width="1.4" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 012-2h4a2 2 0 012 2v2M3 12h18"/></svg></div>
+          <h3>Office moves</h3>
+          <p>Relocating a workspace? Ask us about moving your business and what it would take to keep your day running.</p>
+        </article>
+        <article class="card rv rv-d1">
+          <div class="num"><span>04</span><span>Big items</span></div>
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="#B8E04B" stroke-width="1.4" stroke-linejoin="round"><path d="M4 18v-6a3 3 0 013-3h10a3 3 0 013 3v6M2 14h20v4H2zM5 18v2M19 18v2"/></svg></div>
+          <h3>The heavy pieces</h3>
+          <p>The awkward, the oversized, the irreplaceable. Let us know what needs extra care before moving day.</p>
+        </article>
+        <article class="card wide rv">
+          <div>
+            <h3>Not sure what you <em>need?</em></h3>
+          </div>
+          <p>That's what the first call is for. Describe your move and we'll help you work out the rest.</p>
+          <a class="btn btn-primary" href="tel:+15125897320">Call us</a>
+        </article>
+      </div>
+      <p class="note rv">Availability and scope vary by move. Call (512) 589-7320 to confirm what's right for yours.</p>
+    </section>
+
+    <section id="about" class="about">
+      <div class="sec-head" style="margin-bottom:40px">
+        <span class="label lime rv">About Big Easy's</span>
+      </div>
+      <p class="about-quote" id="aq">
+        <span class="dim">Moving is one of life's</span> <span class="dim">heaviest days.</span> <span class="dim">Our whole name is a promise</span> <span class="dim">to make it feel</span> <span class="dim"><em>easy.</em></span>
+      </p>
+      <div class="about-grid">
+        <div class="rv">
+          <p><strong>Big Easy's Moving</strong> is a moving company based at 6132 W Highway 290 in Austin, Texas.</p>
+          <p>We're local, we're a phone call away, and we believe a move should feel calm and considered from the first conversation to the last box set down.</p>
+        </div>
+        <div class="rv rv-d1">
+          <p>The best moves aren't rushed. They're planned: what's going, where it's going, and how it gets there in one piece.</p>
+          <p>So we start by listening. Then we get to work, and you get to think about the new place instead of the moving truck.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="why">
+      <div class="sec-head">
+        <span class="label lime rv">Why Big Easy's</span>
+        <h2 class="rv rv-d1">The difference is in <em>how</em> it feels.</h2>
+      </div>
+      <div class="why-list">
+        <div class="why-item rv"><span class="n">i.</span><h3>Local to Austin</h3><p>We're based right here on West Highway 290, so Austin streets, Austin weather and Austin traffic are home ground.</p></div>
+        <div class="why-item rv"><span class="n">ii.</span><h3>A real conversation</h3><p>No maze of forms. Pick up the phone, talk to us about your move, and get straight answers about what happens next.</p></div>
+        <div class="why-item rv"><span class="n">iii.</span><h3>Handled, not hurried</h3><p>Your belongings carry your story. We treat moving day as something to get right, not just something to get done.</p></div>
+        <div class="why-item rv"><span class="n">iv.</span><h3>The easy part is you</h3><p>You tell us where. We take on the lifting, carrying and loading, so the day asks as little of you as possible.</p></div>
+      </div>
+    </section>
+
+    <section id="process">
+      <div class="sec-head">
+        <span class="label lime rv">How it works</span>
+        <h2 class="rv rv-d1">Four steps to your <em>front door.</em></h2>
+      </div>
+      <div class="steps">
+        <div class="step rv"><span class="big">1</span><h3>Call us</h3><p>Ring <a class="ulink" href="tel:+15125897320">(512) 589-7320</a> and tell us you're planning a move.</p></div>
+        <div class="step rv rv-d1"><span class="big">2</span><h3>Talk it through</h3><p>Where from, where to, what's coming with you. The more we know, the smoother it goes.</p></div>
+        <div class="step rv"><span class="big">3</span><h3>Moving day</h3><p>We arrive, load up and carry your life across town with care.</p></div>
+        <div class="step rv rv-d1"><span class="big">4</span><h3>Settle in</h3><p>Everything lands at the new place. The hard part's over; the good part begins.</p></div>
+      </div>
+    </section>
+
+    <section class="band">
+      <div class="band-ring"></div><div class="band-ring r2"></div>
+      <span class="label lime rv">Ready when you are</span>
+      <h2 class="rv rv-d1">Let's make your move <em>easy.</em></h2>
+      <p class="rv rv-d2">One call to Big Easy's Moving and the heavy part of your week gets a whole lot lighter.</p>
+      <div class="ctas rv rv-d3">
+        <a class="btn btn-primary" href="tel:+15125897320">Call now
+          <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        <a class="btn btn-ghost" href="#contact">Find us</a>
+      </div>
+      <a class="band-phone ulink rv" href="tel:+15125897320">(512) 589-7320</a>
+    </section>
+
+    <section id="contact">
+      <div class="sec-head">
+        <span class="label lime rv">Contact &amp; visit</span>
+        <h2 class="rv rv-d1">Come by, or just <em>call.</em></h2>
+      </div>
+      <div class="contact-grid">
+        <a class="c-card rv" href="tel:+15125897320">
+          <small>Phone</small>
+          <span class="v">(512) 589-7320</span>
+          <span class="go">Tap to call <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </a>
+        <div class="c-card rv rv-d1">
+          <small>Hours</small>
+          <span class="v">Call to confirm</span>
+          <span class="go" style="color:var(--muted)">Give us a ring to check availability for your date.</span>
+        </div>
+        <a class="c-card full rv" href="https://maps.google.com/?q=6132+W+Highway+290,+Austin+TX+78735" target="_blank" rel="noopener">
+          <svg class="mapart" viewBox="0 0 600 240" preserveAspectRatio="xMidYMid slice" fill="none" aria-hidden="true">
+            <path d="M-20 170 C 120 150, 220 190, 340 140 S 520 80, 640 100" stroke="#6E7A86" stroke-opacity=".5" stroke-width="10" stroke-linecap="round"/>
+            <path d="M-20 170 C 120 150, 220 190, 340 140 S 520 80, 640 100" stroke="#111315" stroke-width="1.5" stroke-dasharray="8 10"/>
+            <path d="M420 -10 L 380 260 M 120 -10 L 180 260 M 0 60 H 600" stroke="#EDEFF0" stroke-opacity=".06" stroke-width="6"/>
+            <circle cx="470" cy="104" r="40" fill="#B8E04B" fill-opacity=".12"/>
+            <circle cx="470" cy="104" r="7" fill="#B8E04B"/>
+          </svg>
+          <small>Address</small>
+          <span class="v">6132 W Highway 290<br>Austin TX 78735</span>
+          <span class="go">Open in Google Maps <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </a>
+      </div>
+    </section>
+
+    <footer>
+      <a href="#top" class="brand">Big Easy's Moving</a>
+      <nav aria-label="Footer">
+        <a href="#services">Services</a>
+        <a href="#about">About</a>
+        <a href="#process">How it works</a>
+        <a href="tel:+15125897320">(512) 589-7320</a>
+      </nav>
+      <span>© <span id="yr"></span> Big Easy's Moving · Austin, TX</span>
+    </footer>
+
+  </main>
+</div>
+
+<div class="mbar" id="mbar">
+  <a class="btn btn-ghost" href="#contact">Find us</a>
+  <a class="btn btn-primary" href="tel:+15125897320">Call now</a>
+</div>
+
+<script>
+(function(){
+  var d=document,b=d.body,reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  d.getElementById('yr').textContent=new Date().getFullYear();
+  requestAnimationFrame(function(){setTimeout(function(){b.classList.add('loaded')},80)});
+
+  // mobile menu
+  var burger=d.querySelector('.burger'),menu=d.querySelector('.mobile-menu');
+  function setMenu(o){b.classList.toggle('menu-open',o);burger.setAttribute('aria-expanded',o);menu.setAttribute('aria-hidden',!o);b.style.overflow=o?'hidden':''}
+  burger.addEventListener('click',function(){setMenu(!b.classList.contains('menu-open'))});
+  menu.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){setMenu(false)})});
+
+  // reveal on scroll
+  var rv=d.querySelectorAll('.rv');
+  if('IntersectionObserver' in window&&!reduce){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('show');io.unobserve(e.target)}})},{threshold:.14,rootMargin:'0px 0px -6% 0px'});
+    rv.forEach(function(el){io.observe(el)});
+  }else rv.forEach(function(el){el.classList.add('show')});
+
+  // card spotlight
+  d.querySelectorAll('.card').forEach(function(c){
+    c.addEventListener('pointermove',function(e){var r=c.getBoundingClientRect();c.style.setProperty('--mx',(e.clientX-r.left)+'px');c.style.setProperty('--my',(e.clientY-r.top)+'px')});
+  });
+
+  // scroll-linked: parallax, route draw, about words, mobile bar
+  var par=d.querySelectorAll('[data-par]'),route=d.getElementById('route'),stage=d.querySelector('.stage'),
+      words=d.querySelectorAll('#aq .dim'),aq=d.getElementById('aq'),mbar=d.getElementById('mbar'),ticking=false;
+  function frame(){
+    ticking=false;
+    var vh=innerHeight,y=scrollY;
+    mbar.classList.toggle('on',y>vh*.5);
+    if(reduce)return;
+    var sr=stage.getBoundingClientRect();
+    par.forEach(function(el){el.style.transform=(el.classList.contains('stage-word')?'translateY(-55%) ':'')+'translate3d(0,'+(-sr.top*parseFloat(el.dataset.par))+'px,0)'});
+    var p=Math.min(1,Math.max(0,(vh-sr.top)/(vh+sr.height*.35)));
+    route.style.strokeDashoffset=1-p*1.15<0?0:1-p*1.15;
+    var ar=aq.getBoundingClientRect(),ap=Math.min(1,Math.max(0,(vh*.85-ar.top)/(ar.height+vh*.3)));
+    words.forEach(function(w,i){w.classList.toggle('lit',ap>i/words.length)});
+  }
+  function onScroll(){if(!ticking){ticking=true;requestAnimationFrame(frame)}}
+  addEventListener('scroll',onScroll,{passive:true});
+  addEventListener('resize',onScroll);
+  frame();
+})();
+</script>
+<div id="lm-concept" style="position:fixed;left:12px;bottom:12px;z-index:2147483647;font:500 11px/1.3 -apple-system,BlinkMacSystemFont,Segoe UI,sans-serif;letter-spacing:.02em;background:rgba(15,15,18,.82);color:#f4f1ea;padding:7px 11px;border-radius:999px;backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);pointer-events:none;max-width:70vw">Website concept for Big Easy&#x27;s Moving by webstudio &middot; not the live site</div><p style="margin:0;padding:18px 16px 70px;text-align:center;font:12px/1.5 -apple-system,sans-serif;color:#8a8a8a;background:#0e0e10">Concept design by webstudio. Not affiliated with or endorsed by Big Easy&#x27;s Moving.</p></body>
 </html>
