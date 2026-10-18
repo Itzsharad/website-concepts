@@ -1,291 +1,683 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src * data: blob:; media-src 'self' data:; style-src 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com data:; script-src 'unsafe-inline'; connect-src 'none'; frame-src 'none'; form-action 'none'; base-uri 'none'; object-src 'none'">
+<meta name="robots" content="noindex, nofollow">
+<style>html,body{max-width:100%;overflow-x:clip}</style>
+
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="robots" content="noindex, nofollow">
-<title>Allen Davis Moving Systems Local &amp; Long Distance | Website concept</title>
+<title>Allen Davis Moving Systems | Local &amp; Long Distance Movers, San Diego</title>
+<meta name="description" content="Allen Davis Moving Systems: local and long distance moving from 4430 North Ave, San Diego. Call (619) 225-0605.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&family=Playfair+Display:ital,wght@0,600;0,800;0,900;1,600;1,800&display=swap" rel="stylesheet">
 <style>
 :root{
-  --bg:#f6f4f0;--surface:#ffffff;--ink:#1d2433;--muted:#5f6675;
-  --accent:#c4512b;--accent-ink:#ffffff;--gold:#d79a3e;--soft:#f3e6de;
-  --radius:22px;--max:1180px;
-  --serif:"Fraunces",Georgia,serif;--sans:"Manrope",system-ui,-apple-system,sans-serif;
+  --bg:#F4F8FD;--surface:#FFFFFF;--ink:#0B2340;--ink-2:#3A5170;--blue:#1D6FD8;--blue-d:#1558AE;--sky:#7FC4F5;
+  --line:rgba(11,35,64,.12);--tint:#E6F0FB;
+  --serif:"Playfair Display",Georgia,serif;--sans:"DM Sans",system-ui,-apple-system,sans-serif;
+  --pad:clamp(20px,5vw,72px);--max:1320px;--ease:cubic-bezier(.2,.7,.1,1);
 }
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
 a{color:inherit;text-decoration:none}
-img{max-width:100%;display:block}
-.wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
-.concept{background:var(--ink);color:var(--bg);font-size:13px;text-align:center;padding:8px 16px;letter-spacing:.02em}
-.concept b{color:var(--gold);font-weight:600}
+svg{display:block}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 var(--pad)}
+.label{font-size:12px;font-weight:700;letter-spacing:.22em;text-transform:uppercase}
+.label .n{color:var(--blue);margin-right:12px}
+h1,h2,h3{font-family:var(--serif);font-weight:800;line-height:1.02;letter-spacing:-.02em}
+h2{font-size:clamp(40px,6vw,84px)}
+em{font-style:italic;color:var(--blue)}
 
-/* header */
-header{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:saturate(1.4) blur(10px);border-bottom:1px solid color-mix(in srgb,var(--ink) 8%,transparent)}
-.nav{display:flex;align-items:center;justify-content:space-between;height:76px;gap:24px}
-.brand{font-family:var(--serif);font-size:23px;font-weight:600;letter-spacing:-.01em;line-height:1.1;max-width:340px}
-.links{display:flex;gap:30px;font-size:15px;font-weight:500;color:var(--muted)}
-.links a:hover{color:var(--ink)}
-.nav-right{display:flex;align-items:center;gap:18px}
-.phone{font-weight:600;font-size:15px;white-space:nowrap}
-.btn{display:inline-flex;align-items:center;gap:10px;background:var(--accent);color:var(--accent-ink);padding:14px 26px;border-radius:999px;font-weight:600;font-size:15.5px;transition:transform .2s ease,box-shadow .2s ease;white-space:nowrap}
-.btn:hover{transform:translateY(-2px);box-shadow:0 12px 28px -12px var(--accent)}
-.btn.ghost{background:transparent;color:var(--ink);border:1.5px solid color-mix(in srgb,var(--ink) 20%,transparent)}
-.btn.ghost:hover{box-shadow:none;border-color:var(--ink)}
-.btn svg{width:18px;height:18px}
+/* Buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:12px;padding:18px 30px;font:700 14px/1 var(--sans);letter-spacing:.12em;text-transform:uppercase;border:2px solid var(--ink);transition:transform .35s var(--ease),background .3s,color .3s,box-shadow .35s var(--ease);text-align:center}
+.btn svg{width:18px;height:18px;transition:transform .35s var(--ease)}
+.btn:hover{transform:translateY(-3px)}
+.btn:hover svg{transform:translateX(4px)}
+.btn-solid{background:var(--blue);border-color:var(--blue);color:#fff;box-shadow:0 10px 30px -12px rgba(29,111,216,.7)}
+.btn-solid:hover{background:var(--blue-d);border-color:var(--blue-d);box-shadow:0 18px 40px -14px rgba(29,111,216,.8)}
+.btn-line{background:transparent;color:var(--ink)}
+.btn-line:hover{background:var(--ink);color:#fff}
+.btn-white{background:#fff;border-color:#fff;color:var(--ink)}
+.btn-white:hover{background:var(--ink);border-color:var(--ink);color:#fff}
+.ul{background:linear-gradient(currentColor,currentColor) 0 100%/0 2px no-repeat;transition:background-size .4s var(--ease)}
+.ul:hover{background-size:100% 2px}
 
-/* hero */
-.hero{padding:72px 0 88px}
-.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:64px;align-items:center}
-.eyebrow{display:inline-flex;align-items:center;gap:10px;background:var(--surface);border:1px solid color-mix(in srgb,var(--ink) 10%,transparent);padding:8px 16px 8px 10px;border-radius:999px;font-size:14px;font-weight:600;color:var(--muted)}
-.stars{color:var(--gold);letter-spacing:1px;font-size:14px}
-.eyebrow .dot{width:26px;height:26px;border-radius:50%;background:var(--soft);display:grid;place-items:center;color:var(--accent)}
-h1{font-family:var(--serif);font-weight:500;font-size:clamp(44px,5.6vw,74px);line-height:1.02;letter-spacing:-.025em;margin:26px 0 22px}
-h1 em{font-style:italic;color:var(--accent)}
-.lead-text{font-size:19.5px;color:var(--muted);max-width:540px}
-.hero-ctas{display:flex;gap:14px;margin-top:36px;flex-wrap:wrap}
-.ticks{display:flex;gap:22px;margin-top:34px;flex-wrap:wrap;font-size:14.5px;font-weight:600;color:var(--muted)}
-.ticks span{display:flex;align-items:center;gap:8px}
-.ticks svg{width:18px;height:18px;color:var(--accent)}
-.visual{position:relative}
-.photo{aspect-ratio:4/5;border-radius:calc(var(--radius) + 10px);overflow:hidden;background:var(--soft);box-shadow:0 40px 80px -40px color-mix(in srgb,var(--ink) 55%,transparent)}
-.photo img{width:100%;height:100%;object-fit:cover}
-.quote-panel{aspect-ratio:4/5;border-radius:calc(var(--radius) + 10px);background:linear-gradient(155deg,var(--accent),color-mix(in srgb,var(--accent) 55%,var(--ink)));color:var(--accent-ink);padding:52px 46px;display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden;box-shadow:0 40px 80px -40px color-mix(in srgb,var(--ink) 60%,transparent)}
-.quote-panel:before{content:"";position:absolute;width:420px;height:420px;border-radius:50%;right:-160px;top:-160px;background:color-mix(in srgb,var(--accent-ink) 9%,transparent)}
-.quote-panel:after{content:"";position:absolute;width:260px;height:260px;border-radius:50%;left:-90px;bottom:-110px;border:1.5px solid color-mix(in srgb,var(--accent-ink) 22%,transparent)}
-.quote-mark{font-family:var(--serif);font-size:120px;line-height:.6;opacity:.35}
-.quote-panel p{font-family:var(--serif);font-size:28px;line-height:1.3;position:relative;z-index:1}
-.quote-panel .who{font-family:var(--sans);font-size:15px;opacity:.85;margin-top:22px;font-weight:600}
-.float{position:absolute;background:var(--surface);color:var(--ink);border-radius:18px;padding:16px 20px;box-shadow:0 24px 50px -24px color-mix(in srgb,var(--ink) 50%,transparent);display:flex;align-items:center;gap:14px;font-size:14px;line-height:1.35}
-.float b{font-size:22px;font-family:var(--serif);font-weight:600;display:block}
-.float.one{left:-34px;bottom:-28px}
-.float.two{right:-22px;top:44px}
-.float .badge{width:44px;height:44px;border-radius:14px;background:var(--soft);display:grid;place-items:center;color:var(--accent)}
-.float .badge svg{width:22px;height:22px}
+/* Header */
+header{position:fixed;inset:0 0 auto;z-index:50;transition:background .3s,box-shadow .3s,backdrop-filter .3s}
+header.scrolled{background:rgba(244,248,253,.78);backdrop-filter:blur(16px) saturate(1.4);-webkit-backdrop-filter:blur(16px) saturate(1.4);box-shadow:0 1px 0 var(--line)}
+.hd{display:flex;align-items:center;justify-content:space-between;height:84px;gap:24px}
+.logo{display:flex;align-items:center;gap:14px;min-width:0}
+.mark{width:44px;height:44px;flex:none;background:var(--ink);color:#fff;display:grid;place-items:center;font:900 18px/1 var(--serif);letter-spacing:-.04em;position:relative}
+.mark::after{content:"";position:absolute;right:-5px;bottom:-5px;width:14px;height:14px;background:var(--blue)}
+.logo-t{line-height:1.1}
+.logo-t b{display:block;font:800 19px/1.1 var(--serif);letter-spacing:-.01em;white-space:nowrap}
+.logo-t span{font-size:10px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-2);white-space:nowrap}
+nav{display:flex;gap:34px;font-size:14px;font-weight:500}
+.hd-r{display:flex;align-items:center;gap:22px}
+.hd-tel{font-weight:700;font-size:15px;white-space:nowrap}
+.hd .btn{padding:14px 22px;font-size:12px}
+.burger{display:none;width:46px;height:46px;border:2px solid var(--ink);background:transparent;cursor:pointer;position:relative;flex:none}
+.burger i{position:absolute;left:11px;right:11px;height:2px;background:var(--ink);transition:transform .35s var(--ease),opacity .2s}
+.burger i:nth-child(1){top:15px}.burger i:nth-child(2){top:21px}.burger i:nth-child(3){top:27px}
+.menu-open .burger i:nth-child(1){transform:translateY(6px) rotate(45deg)}
+.menu-open .burger i:nth-child(2){opacity:0}
+.menu-open .burger i:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
+.mnav{position:fixed;inset:0;z-index:40;background:var(--ink);color:#fff;padding:120px var(--pad) 40px;display:flex;flex-direction:column;gap:6px;transform:translateY(-100%);transition:transform .55s var(--ease);visibility:hidden}
+.menu-open .mnav{transform:none;visibility:visible}
+.mnav a{font:800 clamp(36px,10vw,56px)/1.15 var(--serif);border-bottom:1px solid rgba(255,255,255,.12);padding:10px 0;display:flex;justify-content:space-between;align-items:baseline}
+.mnav a small{font:700 12px var(--sans);letter-spacing:.2em;color:var(--sky)}
+.mnav .btn{margin-top:28px;font-family:var(--sans);font-size:14px;border-bottom:2px solid var(--blue);padding:18px}
+.menu-open header{background:transparent;box-shadow:none;backdrop-filter:none}
+.menu-open .logo,.menu-open .burger{color:#fff;border-color:#fff}
+.menu-open .burger i{background:#fff}
+.menu-open .mark{background:#fff;color:var(--ink)}
+.menu-open .logo-t span{color:var(--sky)}
 
-/* trust */
-.trust{border-top:1px solid color-mix(in srgb,var(--ink) 9%,transparent);border-bottom:1px solid color-mix(in srgb,var(--ink) 9%,transparent);background:var(--surface)}
-.trust .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;padding-top:26px;padding-bottom:26px}
-.trust div{display:flex;align-items:center;gap:12px;font-weight:600;font-size:15px}
-.trust svg{width:22px;height:22px;color:var(--accent);flex:none}
+/* Hero */
+.hero{position:relative;min-height:100vh;min-height:100svh;display:flex;flex-direction:column;justify-content:center;padding:130px 0 80px;overflow:hidden;text-align:center}
+.grid-bg{position:absolute;inset:0;pointer-events:none;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:calc(100%/12) 120px;mask-image:radial-gradient(ellipse at 50% 45%,#000 20%,transparent 75%);-webkit-mask-image:radial-gradient(ellipse at 50% 45%,#000 20%,transparent 75%);opacity:.7}
+.shape{position:absolute;pointer-events:none;will-change:transform}
+.sh1{width:clamp(140px,22vw,320px);aspect-ratio:1;background:var(--blue);right:-4%;top:14%}
+.sh2{width:clamp(90px,13vw,190px);aspect-ratio:1;background:var(--sky);left:5%;bottom:12%}
+.sh3{width:clamp(60px,8vw,120px);aspect-ratio:1;border:3px solid var(--ink);left:12%;top:20%}
+.hero-meta{display:flex;justify-content:center;gap:clamp(14px,4vw,48px);flex-wrap:wrap;margin-bottom:clamp(28px,4vw,48px);color:var(--ink-2)}
+.hero-meta span{display:flex;align-items:center;gap:10px}
+.hero-meta span::before{content:"";width:8px;height:8px;background:var(--blue)}
+.hero h1{font-size:clamp(54px,12.2vw,200px);font-weight:900;line-height:.9;letter-spacing:-.045em;position:relative}
+.hero h1 .ln{display:block;overflow:hidden;padding:.04em 0 .06em}
+.hero h1 .ln>span{display:inline-block}
+.hero h1 .amp{font-style:italic;font-weight:600;color:var(--blue);padding:0 .06em}
+.route{position:relative;max-width:880px;margin:clamp(26px,4vw,44px) auto 0;height:70px}
+.route svg{width:100%;height:100%;overflow:visible}
+.route path{stroke-dasharray:6 8}
+.route .rl{position:absolute;top:50%;transform:translateY(-50%);font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;background:var(--bg);padding:6px 10px;border:1.5px solid var(--ink)}
+.route .rl.a{left:0}.route .rl.b{right:0;background:var(--ink);color:#fff}
+.hero p.sub{max-width:620px;margin:clamp(24px,3vw,36px) auto 0;font-size:clamp(17px,1.6vw,20px);color:var(--ink-2)}
+.ctas{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:36px}
+.scroll-cue{position:absolute;bottom:28px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:10px;color:var(--ink-2)}
+.scroll-cue i{width:2px;height:44px;background:linear-gradient(var(--blue) 50%,var(--line) 50%);background-size:100% 200%;animation:cue 2s var(--ease) infinite}
+@keyframes cue{0%{background-position:0 100%}100%{background-position:0 -100%}}
 
-/* sections */
-section.block{padding:110px 0}
-.kicker{font-size:13px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
-h2{font-family:var(--serif);font-weight:500;font-size:clamp(34px,3.8vw,52px);line-height:1.08;letter-spacing:-.02em;margin:14px 0 18px}
-.section-head{display:flex;justify-content:space-between;align-items:end;gap:40px;margin-bottom:56px}
-.section-head p{color:var(--muted);max-width:420px}
-.services{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-.card{background:var(--surface);border-radius:var(--radius);padding:34px 32px 36px;border:1px solid color-mix(in srgb,var(--ink) 7%,transparent);transition:transform .25s ease,box-shadow .25s ease}
-.card:hover{transform:translateY(-4px);box-shadow:0 30px 60px -36px color-mix(in srgb,var(--ink) 45%,transparent)}
-.icon{width:54px;height:54px;border-radius:16px;background:var(--soft);color:var(--accent);display:grid;place-items:center;margin-bottom:24px}
-.icon svg{width:26px;height:26px}
-.card h3{font-family:var(--serif);font-weight:500;font-size:23px;margin-bottom:8px;letter-spacing:-.01em}
-.card p{color:var(--muted);font-size:16px}
+/* Hero entrance */
+.in{opacity:0;transform:translateY(24px)}
+.hero h1 .ln>span{transform:translateY(105%)}
+.loaded .in{opacity:1;transform:none;transition:opacity .9s var(--ease),transform .9s var(--ease)}
+.loaded .hero h1 .ln>span{transform:none;transition:transform 1.1s var(--ease)}
+.loaded .d1{transition-delay:.1s!important}.loaded .d2{transition-delay:.22s!important}.loaded .d3{transition-delay:.34s!important}
+.loaded .d4{transition-delay:.55s!important}.loaded .d5{transition-delay:.7s!important}.loaded .d6{transition-delay:.85s!important}
+.route .dash{stroke-dashoffset:0}
+.route .draw{stroke-dasharray:900;stroke-dashoffset:900}
+.loaded .route .draw{stroke-dashoffset:0;transition:stroke-dashoffset 2.2s .8s var(--ease)}
+.truck{opacity:0}
+.loaded .truck{opacity:1;transition:opacity .4s 1.2s}
 
-.why{background:var(--ink);color:var(--bg)}
-.why .kicker{color:var(--gold)}
-.why-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:80px;align-items:start}
-.why h2{color:var(--bg)}
-.why .intro{color:color-mix(in srgb,var(--bg) 70%,transparent);font-size:18px;max-width:440px}
-.points{display:grid;gap:14px}
-.point{display:grid;grid-template-columns:62px 1fr;gap:20px;padding:30px;border-radius:var(--radius);background:color-mix(in srgb,var(--bg) 6%,transparent);border:1px solid color-mix(in srgb,var(--bg) 10%,transparent)}
-.point .num{font-family:var(--serif);font-size:34px;color:var(--gold);line-height:1}
-.point h3{font-family:var(--serif);font-weight:500;font-size:24px;margin-bottom:6px}
-.point p{color:color-mix(in srgb,var(--bg) 72%,transparent);font-size:16px}
+/* Colour band */
+.band{background:var(--blue);color:#fff;position:relative;overflow:hidden}
+.band-top{display:grid;grid-template-columns:repeat(3,1fr);border-bottom:1px solid rgba(255,255,255,.22)}
+.band-top>div{padding:clamp(28px,4vw,52px) var(--pad);border-right:1px solid rgba(255,255,255,.22)}
+.band-top>div:last-child{border-right:0}
+.band-top .big{font:900 clamp(44px,6vw,92px)/.9 var(--serif);letter-spacing:-.04em;display:block;margin-bottom:14px}
+.band-top .label{color:#DCEEFD}
+.band-top p{margin-top:8px;font-size:15px;color:#fff;max-width:300px}
+.marquee{display:flex;overflow:hidden;padding:26px 0;user-select:none}
+.mq{display:flex;flex:none;gap:48px;padding-right:48px;align-items:center;animation:mq 34s linear infinite}
+.mq span{font:800 clamp(28px,3.4vw,46px)/1 var(--serif);white-space:nowrap;letter-spacing:-.02em}
+.mq span.o{font-style:italic;font-weight:600;color:var(--ink)}
+.mq b{width:14px;height:14px;background:var(--sky);flex:none}
+@keyframes mq{to{transform:translateX(-100%)}}
 
-.score{display:flex;align-items:center;gap:18px;background:var(--surface);padding:16px 24px;border-radius:18px;border:1px solid color-mix(in srgb,var(--ink) 8%,transparent)}
-.score b{font-family:var(--serif);font-size:40px;font-weight:500;line-height:1}
-.score small{display:block;color:var(--muted);font-size:14px}
-.reviews{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-.review{background:var(--surface);border-radius:var(--radius);padding:34px;display:flex;flex-direction:column;gap:22px;border:1px solid color-mix(in srgb,var(--ink) 7%,transparent)}
-.review p{font-family:var(--serif);font-size:19.5px;line-height:1.45}
-.review .by{margin-top:auto;display:flex;align-items:center;gap:12px;font-weight:600;font-size:15px}
-.avatar{width:40px;height:40px;border-radius:50%;background:var(--soft);color:var(--accent);display:grid;place-items:center;font-weight:700}
-.review .src{color:var(--muted);font-weight:500;font-size:13px;display:block}
+/* Sections */
+section{position:relative}
+.sec{padding:clamp(90px,12vw,170px) 0}
+.sec-head{display:grid;grid-template-columns:4fr 8fr;gap:clamp(24px,4vw,64px);align-items:end;margin-bottom:clamp(48px,6vw,90px)}
+.sec-head .label{padding-bottom:14px;border-bottom:2px solid var(--ink);align-self:start}
+.sec-head p{color:var(--ink-2);max-width:560px;margin-top:22px;font-size:18px}
 
-.cta-band{padding:0 0 110px}
-.cta-box{border-radius:calc(var(--radius) + 12px);background:linear-gradient(140deg,var(--accent),color-mix(in srgb,var(--accent) 60%,var(--ink)));color:var(--accent-ink);padding:76px 64px;display:grid;grid-template-columns:1.3fr 1fr;gap:40px;align-items:center;position:relative;overflow:hidden}
-.cta-box:after{content:"";position:absolute;right:-120px;bottom:-200px;width:460px;height:460px;border-radius:50%;border:1.5px solid color-mix(in srgb,var(--accent-ink) 22%,transparent)}
-.cta-box h2{color:inherit;margin:0 0 12px}
-.cta-box p{opacity:.85;font-size:18px}
-.cta-box .actions{display:flex;flex-direction:column;gap:12px;align-items:flex-start;position:relative;z-index:1}
-.cta-box .btn{background:var(--accent-ink);color:var(--accent)}
-.cta-box .btn.ghost{background:transparent;color:var(--accent-ink);border-color:color-mix(in srgb,var(--accent-ink) 40%,transparent)}
+/* Services */
+.svc{display:grid;grid-template-columns:7fr 5fr;gap:24px}
+.card{background:var(--surface);border:1px solid var(--line);padding:clamp(28px,4vw,56px);position:relative;overflow:hidden;transition:transform .5s var(--ease),box-shadow .5s var(--ease)}
+.card:hover{transform:translateY(-6px);box-shadow:0 30px 60px -30px rgba(11,35,64,.35)}
+.card .num{font:900 clamp(90px,13vw,190px)/.8 var(--serif);letter-spacing:-.06em;color:var(--tint);position:absolute;right:clamp(16px,3vw,40px);top:clamp(16px,3vw,36px);transition:color .5s}
+.card:hover .num{color:#D3E6FB}
+.card .ic{width:64px;height:64px;background:var(--ink);display:grid;place-items:center;margin-bottom:clamp(60px,9vw,140px);position:relative}
+.card .ic svg{width:32px;height:32px}
+.card h3{font-size:clamp(32px,3.6vw,54px);margin-bottom:16px;position:relative}
+.card p{color:var(--ink-2);max-width:460px;position:relative}
+.card ul{list-style:none;margin-top:28px;border-top:1px solid var(--line);position:relative}
+.card li{padding:14px 0;border-bottom:1px solid var(--line);display:flex;gap:14px;align-items:center;font-weight:500}
+.card li::before{content:"";width:10px;height:2px;background:var(--blue);flex:none}
+.card.dark{background:var(--ink);color:#fff;border-color:var(--ink)}
+.card.dark .num{color:rgba(127,196,245,.12)}
+.card.dark:hover .num{color:rgba(127,196,245,.22)}
+.card.dark .ic{background:var(--blue)}
+.card.dark p{color:#C9D8EA}
+.card.dark ul,.card.dark li{border-color:rgba(255,255,255,.14)}
+.card.dark li::before{background:var(--sky)}
+.svc-note{grid-column:1/-1;display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap;background:var(--tint);padding:clamp(24px,3vw,40px) clamp(28px,4vw,56px);border-left:6px solid var(--blue)}
+.svc-note p{font:600 clamp(20px,2.2vw,28px)/1.25 var(--serif);max-width:720px}
 
-.visit{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:10px}
-.visit .card h3{font-size:20px}
-.visit a{color:var(--accent);font-weight:600}
-footer{border-top:1px solid color-mix(in srgb,var(--ink) 9%,transparent);padding:40px 0 110px;color:var(--muted);font-size:14px}
-footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
-.mobile-bar{display:none}
+/* About */
+.about{background:var(--surface);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.ab{display:grid;grid-template-columns:5fr 7fr;gap:clamp(40px,7vw,120px);align-items:start}
+.ab-l{position:sticky;top:120px}
+.ab-art{margin-top:40px;aspect-ratio:1;position:relative;max-width:420px}
+.ab-art div{position:absolute}
+.ab-art .a1{inset:0 30% 30% 0;background:var(--ink)}
+.ab-art .a2{inset:30% 0 0 30%;background:var(--blue);mix-blend-mode:multiply}
+.ab-art .a3{right:0;top:0;width:26%;aspect-ratio:1;background:var(--sky)}
+.ab-art .ad{position:absolute;inset:30% 30% 30% 30%;display:grid;place-items:center;color:#fff;font:900 clamp(40px,6vw,76px)/1 var(--serif);letter-spacing:-.04em;mix-blend-mode:normal}
+.ab-r .lead{font:600 clamp(26px,3.2vw,44px)/1.22 var(--serif);letter-spacing:-.015em}
+.ab-r .lead em{font-weight:800}
+.ab-r p{color:var(--ink-2);margin-top:28px;font-size:18px;max-width:640px}
+.ab-facts{margin-top:56px;display:grid;grid-template-columns:1fr 1fr;border-top:2px solid var(--ink)}
+.ab-facts div{padding:24px 24px 24px 0;border-bottom:1px solid var(--line)}
+.ab-facts div:nth-child(odd){border-right:1px solid var(--line)}
+.ab-facts div:nth-child(even){padding-left:24px}
+.ab-facts .label{color:var(--ink-2);display:block;margin-bottom:8px;font-size:11px}
+.ab-facts strong{font:700 clamp(18px,1.8vw,22px)/1.3 var(--serif)}
 
-@keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
-.hero .copy>*{animation:rise .8s cubic-bezier(.2,.7,.2,1) both}
-.hero .copy>*:nth-child(2){animation-delay:.08s}.hero .copy>*:nth-child(3){animation-delay:.16s}
-.hero .copy>*:nth-child(4){animation-delay:.24s}.hero .copy>*:nth-child(5){animation-delay:.32s}
-.visual{animation:rise 1s .2s cubic-bezier(.2,.7,.2,1) both}
+/* Why */
+.why-g{display:grid;grid-template-columns:repeat(4,1fr);border-top:2px solid var(--ink)}
+.why-i{padding:36px 28px 40px 0;border-right:1px solid var(--line);transition:background .4s}
+.why-i+.why-i{padding-left:28px}
+.why-i:last-child{border-right:0}
+.why-i .n{font:900 64px/1 var(--serif);color:var(--blue);letter-spacing:-.04em;display:block;margin-bottom:28px}
+.why-i h3{font-size:26px;margin-bottom:12px;line-height:1.1}
+.why-i p{color:var(--ink-2);font-size:16px}
 
-@media (max-width:980px){
-  .links{display:none}
-  .hero-grid,.why-grid,.cta-box{grid-template-columns:1fr}
-  .hero-grid{gap:56px}
-  .services,.reviews,.visit{grid-template-columns:1fr 1fr}
-  .trust .wrap{grid-template-columns:1fr 1fr}
-  .float.one{left:12px;bottom:-26px}.float.two{right:12px}
-  .visual{max-width:560px;margin-bottom:20px}
-  .section-head{flex-direction:column;align-items:flex-start}
+/* Steps */
+.steps{background:var(--ink);color:#fff;overflow:hidden}
+.steps .sec-head .label{border-color:#fff}
+.steps .sec-head p{color:#C9D8EA}
+.steps em{color:var(--sky)}
+.st{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;background:rgba(255,255,255,.12);border:2px solid rgba(255,255,255,.12)}
+.st-i{background:var(--ink);padding:clamp(28px,3vw,44px);min-height:340px;display:flex;flex-direction:column;position:relative;transition:background .4s}
+.st-i:hover{background:#0F2D52}
+.st-i .n{font:900 clamp(80px,8vw,124px)/.8 var(--serif);letter-spacing:-.06em;color:transparent;-webkit-text-stroke:1.5px var(--sky)}
+.st-i:hover .n{color:var(--sky)}
+.st-i h3{margin-top:auto;font-size:28px;line-height:1.1;padding-top:40px}
+.st-i p{color:#C9D8EA;font-size:16px;margin-top:12px}
+.st-i a{color:#fff;font-weight:700}
+
+/* FAQ */
+.faq-g{display:grid;grid-template-columns:4fr 8fr;gap:clamp(30px,6vw,100px)}
+.faq-l h2{font-size:clamp(40px,5vw,72px)}
+.faq-l p{color:var(--ink-2);margin-top:20px}
+details{border-top:1px solid var(--line)}
+details:last-child{border-bottom:1px solid var(--line)}
+summary{list-style:none;cursor:pointer;padding:28px 0;display:flex;justify-content:space-between;gap:24px;align-items:center;font:700 clamp(20px,2vw,26px)/1.25 var(--serif)}
+summary::-webkit-details-marker{display:none}
+summary i{width:40px;height:40px;flex:none;border:2px solid var(--ink);position:relative;transition:background .3s,transform .4s var(--ease)}
+summary i::before,summary i::after{content:"";position:absolute;left:50%;top:50%;width:14px;height:2px;background:var(--ink);transform:translate(-50%,-50%);transition:background .3s}
+summary i::after{transform:translate(-50%,-50%) rotate(90deg)}
+details[open] summary i{background:var(--blue);border-color:var(--blue);transform:rotate(45deg)}
+details[open] summary i::before,details[open] summary i::after{background:#fff}
+summary:hover{color:var(--blue)}
+details .ans{padding:0 60px 30px 0;color:var(--ink-2);max-width:680px}
+details .ans a{color:var(--blue);font-weight:700}
+
+/* CTA band */
+.cta{background:var(--blue);color:#fff;overflow:hidden;padding:clamp(90px,12vw,160px) 0;position:relative}
+.cta::before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.1) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.1) 1px,transparent 1px);background-size:80px 80px}
+.cta .wrap{position:relative;text-align:center}
+.cta .label{color:#DCEEFD}
+.cta h2{font-size:clamp(46px,9vw,150px);font-weight:900;letter-spacing:-.045em;line-height:.92;margin:26px 0 36px}
+.cta h2 em{color:var(--ink)}
+.cta-tel{display:inline-block;font:900 clamp(34px,6vw,84px)/1 var(--serif);letter-spacing:-.03em;border-bottom:4px solid #fff;padding-bottom:6px;transition:color .3s,border-color .3s}
+.cta-tel:hover{color:var(--ink);border-color:var(--ink)}
+.cta .ctas{margin-top:44px}
+
+/* Contact */
+.ct{display:grid;grid-template-columns:7fr 5fr;gap:24px}
+.ct-card{background:var(--surface);border:1px solid var(--line);padding:clamp(28px,4vw,56px)}
+.ct-row{display:grid;grid-template-columns:140px 1fr;gap:20px;padding:26px 0;border-bottom:1px solid var(--line);align-items:baseline}
+.ct-row:first-of-type{border-top:2px solid var(--ink)}
+.ct-row .label{color:var(--ink-2);font-size:11px}
+.ct-row .v{font:700 clamp(22px,2.4vw,32px)/1.25 var(--serif)}
+.ct-row .v small{display:block;font:400 15px/1.5 var(--sans);color:var(--ink-2);margin-top:6px}
+.map{background:var(--ink);color:#fff;position:relative;overflow:hidden;min-height:440px;display:flex;flex-direction:column;justify-content:flex-end;padding:clamp(28px,4vw,48px);transition:transform .5s var(--ease)}
+.map:hover{transform:translateY(-6px)}
+.map svg.streets{position:absolute;inset:0;width:100%;height:100%}
+.map .pin{position:absolute;left:52%;top:40%;transform:translate(-50%,-100%)}
+.map .pin::after{content:"";position:absolute;left:50%;bottom:-8px;width:60px;height:60px;border:2px solid var(--sky);border-radius:50%;transform:translate(-50%,50%) scale(.3);animation:ping 2.4s var(--ease) infinite;opacity:0}
+@keyframes ping{0%{transform:translate(-50%,50%) scale(.2);opacity:1}100%{transform:translate(-50%,50%) scale(1.6);opacity:0}}
+.map-t{position:relative;background:var(--ink);padding-top:16px}
+.map-t h3{font-size:clamp(28px,3vw,40px);margin:10px 0 20px}
+.map-t .label{color:var(--sky)}
+.map-t span.go{display:inline-flex;align-items:center;gap:10px;font-weight:700;font-size:14px;letter-spacing:.12em;text-transform:uppercase;border-bottom:2px solid var(--sky);padding-bottom:4px}
+
+/* Footer */
+footer{border-top:2px solid var(--ink);padding:56px 0 40px}
+.ft{display:grid;grid-template-columns:2fr 1fr 1fr;gap:40px;align-items:start}
+.ft-name{font:900 clamp(30px,4vw,54px)/1 var(--serif);letter-spacing:-.03em}
+.ft-name em{font-weight:600}
+.ft h4{font-size:11px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-2);margin-bottom:16px}
+.ft a,.ft address{display:block;font-style:normal;margin-bottom:8px;font-weight:500}
+.ft-b{margin-top:56px;padding-top:24px;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;font-size:14px;color:var(--ink-2)}
+
+/* Mobile bar */
+.mbar{display:none;position:fixed;left:0;right:0;bottom:0;z-index:45;grid-template-columns:1fr 1fr;box-shadow:0 -10px 30px -10px rgba(11,35,64,.3);transform:translateY(110%);transition:transform .45s var(--ease)}
+.mbar.show{transform:none}
+.mbar a{display:flex;align-items:center;justify-content:center;gap:10px;padding:18px 10px calc(18px + env(safe-area-inset-bottom));font-weight:700;font-size:14px;letter-spacing:.1em;text-transform:uppercase}
+.mbar a svg{width:18px;height:18px}
+.mbar .c1{background:var(--blue);color:#fff}
+.mbar .c2{background:var(--ink);color:#fff}
+
+/* Reveal */
+.rv{opacity:0;transform:translateY(40px);transition:opacity 1s var(--ease),transform 1s var(--ease)}
+.rv.on{opacity:1;transform:none}
+.rv.s2{transition-delay:.12s}.rv.s3{transition-delay:.24s}.rv.s4{transition-delay:.36s}
+
+/* Responsive */
+@media (max-width:1080px){
+  nav,.hd-tel{display:none}
+  .why-g{grid-template-columns:1fr 1fr}
+  .why-i:nth-child(2){border-right:0}
+  .why-i:nth-child(3){padding-left:0}
+  .why-i{border-bottom:1px solid var(--line)}
+  .st{grid-template-columns:1fr 1fr}
 }
-@media (max-width:640px){
+@media (max-width:860px){
+  .hd .btn{display:none}
+  .burger{display:block}
+  .sec-head,.svc,.ab,.faq-g,.ct,.ft{grid-template-columns:1fr}
+  .ab-l{position:static}
+  .ab-art{max-width:300px}
+  .band-top{grid-template-columns:1fr}
+  .band-top>div{border-right:0;border-bottom:1px solid rgba(255,255,255,.22);display:grid;grid-template-columns:auto 1fr;gap:6px 24px;align-items:center}
+  .band-top>div:last-child{border-bottom:0}
+  .band-top .big{margin:0;grid-row:span 2;min-width:1.4em}
+  .band-top p{margin:0}
+  .mbar{display:grid}
+  footer{padding-bottom:110px}
+}
+@media (max-width:560px){
   body{font-size:16px}
-  .wrap{padding:0 18px}
-  .nav{height:66px}.brand{font-size:19px}
-  .phone,.nav-right .btn{display:none}
-  .hero{padding:44px 0 64px}
-  .lead-text{font-size:17.5px}
-  .hero-ctas .btn{flex:1;justify-content:center}
-  .ticks{display:none}
-  .services,.reviews,.visit,.trust .wrap{grid-template-columns:1fr}
-  section.block{padding:76px 0}
-  .quote-panel,.photo{aspect-ratio:auto;min-height:380px}.photo{aspect-ratio:4/3;min-height:0}
-  .quote-panel{padding:40px 30px 64px}.quote-panel p{font-size:23px}
-  .float{font-size:13px;padding:12px 14px}.float b{font-size:18px}
-  .float.two{display:none}
-  .cta-box{padding:52px 28px}
-  .point{grid-template-columns:44px 1fr;padding:24px}
-  .mobile-bar{display:flex;position:fixed;left:12px;right:12px;bottom:12px;z-index:30;gap:10px}
-  .mobile-bar .btn{flex:1;justify-content:center;box-shadow:0 14px 30px -14px color-mix(in srgb,var(--ink) 60%,transparent)}
-  .mobile-bar .btn.ghost{background:var(--surface)}
+  .hd{height:72px}
+  .logo-t b{font-size:16px}
+  .logo-t span{font-size:9px;letter-spacing:.16em}
+  .mark{width:38px;height:38px;font-size:16px}
+  .hero{padding:110px 0 90px}
+  .hero h1{font-size:clamp(46px,14.6vw,80px)}
+  .hero-meta{gap:10px 18px;font-size:10px}
+  .route{height:56px}
+  .route .rl{font-size:9px;padding:5px 7px;letter-spacing:.14em}
+  .ctas{flex-direction:column;align-items:stretch}
+  .ctas .btn{width:100%}
+  .scroll-cue{display:none}
+  .sh1{right:-18%;top:9%}
+  .sh3{left:-4%;top:14%}
+  .why-g{grid-template-columns:1fr}
+  .why-i,.why-i+.why-i{padding:30px 0;border-right:0}
+  .st{grid-template-columns:1fr}
+  .st-i{min-height:0}
+  .st-i h3{padding-top:28px}
+  .ab-facts{grid-template-columns:1fr}
+  .ab-facts div:nth-child(odd){border-right:0}
+  .ab-facts div:nth-child(even){padding-left:0}
+  .ct-row{grid-template-columns:1fr;gap:6px}
+  .ct-row .v{word-break:break-word}
+  details .ans{padding-right:0}
+  .svc-note .btn{width:100%}
+  .map{min-height:380px}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+  .in,.rv,.hero h1 .ln>span{opacity:1!important;transform:none!important}
+  .route .draw{stroke-dashoffset:0}
+  .truck{opacity:1}
 }
 </style>
 </head>
 <body>
-<div class="concept">Website concept prepared for <b>Allen Davis Moving Systems Local &amp; Long Distance</b> by webstudio &middot; not a live site</div>
 
-<header>
-  <div class="wrap nav">
-    <a href="#top" class="brand">Allen Davis Moving Systems Local &amp; Long Distance</a>
-    <nav class="links">
-      <a href="#services">Services</a><a href="#why">Why us</a><a href="#visit">Visit</a>
+<header id="top">
+  <div class="wrap hd">
+    <a href="#top" class="logo" aria-label="Allen Davis Moving Systems, back to top">
+      <span class="mark">AD</span>
+      <span class="logo-t"><b>Allen Davis</b><span>Moving Systems</span></span>
+    </a>
+    <nav aria-label="Main">
+      <a class="ul" href="#services">Services</a>
+      <a class="ul" href="#about">About</a>
+      <a class="ul" href="#process">Process</a>
+      <a class="ul" href="#faq">FAQ</a>
+      <a class="ul" href="#contact">Contact</a>
     </nav>
-    <div class="nav-right">
-      <a class="phone" href="tel:6192250605">(619) 225-0605</a>
-      <a class="btn" href="#visit">Free estimate</a>
+    <div class="hd-r">
+      <a class="hd-tel ul" href="tel:+16192250605">(619) 225-0605</a>
+      <a class="btn btn-solid" href="#contact">Plan my move</a>
+      <button class="burger" aria-label="Open menu" aria-expanded="false" aria-controls="mnav"><i></i><i></i><i></i></button>
     </div>
   </div>
 </header>
 
-<main id="top">
-<section class="hero">
-  <div class="wrap hero-grid">
-    <div class="copy">
-      <div class="eyebrow">
-        <span class="dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-7-4.4-7-10a4 4 0 017-2.6A4 4 0 0119 10c0 5.6-7 10-7 10z"/></svg></span>San Diego moving company
-      </div>
-      <h1>San Diego moves, local or across <em>the country.</em></h1>
-      <p class="lead-text">Allen Davis Moving Systems plans each local and long-distance move with care, so your belongings arrive safely and your day stays on schedule.</p>
-      <div class="hero-ctas">
-        <a class="btn" href="#visit">Get a free estimate <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-        <a class="btn ghost" href="tel:6192250605">Call (619) 225-0605</a>
-      </div>
-      <div class="ticks">
-        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7"/></svg>Licensed &amp; insured</span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7"/></svg>Free in-home estimates</span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7"/></svg>No hidden fees</span>
-      </div>
+<div class="mnav" id="mnav" aria-hidden="true">
+  <a href="#services">Services <small>01</small></a>
+  <a href="#about">About <small>02</small></a>
+  <a href="#process">Process <small>03</small></a>
+  <a href="#faq">FAQ <small>04</small></a>
+  <a href="#contact">Contact <small>05</small></a>
+  <a class="btn btn-solid" href="tel:+16192250605">Call (619) 225-0605</a>
+</div>
+
+<main>
+<section class="hero" aria-label="Introduction">
+  <div class="grid-bg" aria-hidden="true"></div>
+  <div class="shape sh1" data-px="0.18" aria-hidden="true"></div>
+  <div class="shape sh2" data-px="-0.12" aria-hidden="true"></div>
+  <div class="shape sh3" data-px="0.3" aria-hidden="true"></div>
+
+  <div class="wrap" style="position:relative">
+    <div class="hero-meta label in d1">
+      <span>San Diego, CA</span><span>Local</span><span>Long Distance</span>
     </div>
-    <div class="visual">
-      
-      <div class="quote-panel"><div class="quote-mark">“</div><div><p>Careful, on-time movers who treat your things like their own, with honest flat-rate pricing and no surprises.</p><div class="who">Allen Davis Moving Systems Local &amp; Long Distance</div></div></div>
-      
-      
-      <div class="float two"><span class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><span><b>This week</b>Free in-home estimates</span></div>
+    <h1>
+      <span class="ln"><span class="d2">Local</span><span class="amp d2">&amp;</span></span>
+      <span class="ln"><span class="d3">Long Distance.</span></span>
+    </h1>
+
+    <div class="route in d4" aria-hidden="true">
+      <svg viewBox="0 0 880 70" preserveAspectRatio="none">
+        <path class="draw" d="M70 35 C 260 -10, 420 80, 620 30 S 790 35, 810 35" fill="none" stroke="#1D6FD8" stroke-width="2.5" vector-effect="non-scaling-stroke"/>
+      </svg>
+      <svg class="truck" id="truck" viewBox="0 0 40 24" width="40" height="24" style="position:absolute;left:0;top:0" aria-hidden="true">
+        <rect x="1" y="3" width="24" height="15" fill="#0B2340"/><path d="M25 8h8l5 5v5H25z" fill="#1D6FD8"/><circle cx="9" cy="20" r="3" fill="#0B2340" stroke="#F4F8FD" stroke-width="1.5"/><circle cx="31" cy="20" r="3" fill="#0B2340" stroke="#F4F8FD" stroke-width="1.5"/>
+      </svg>
+      <span class="rl a">San Diego</span>
+      <span class="rl b">Your new door</span>
+    </div>
+
+    <p class="sub in d5">Allen Davis Moving Systems moves San Diego homes and businesses across town or across the country, with the calm, careful handling your belongings deserve.</p>
+    <div class="ctas in d6">
+      <a class="btn btn-solid" href="tel:+16192250605">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>
+        Call (619) 225-0605
+      </a>
+      <a class="btn btn-line" href="#services">Explore services
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
     </div>
   </div>
-  <template id="qp"><div class="quote-panel"><div class="quote-mark">“</div><div><p>Careful, on-time movers who treat your things like their own, with honest flat-rate pricing and no surprises.</p><div class="who">Allen Davis Moving Systems Local &amp; Long Distance</div></div></div></template>
+  <div class="scroll-cue label in d6" aria-hidden="true" style="font-size:10px">Scroll<i></i></div>
 </section>
 
-<div class="trust"><div class="wrap">
-  <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.2-8 9-4.6-.8-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg>Licensed &amp; insured</div><div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.2-8 9-4.6-.8-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg>Free in-home estimates</div><div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.2-8 9-4.6-.8-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg>No hidden fees</div><div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.2-8 9-4.6-.8-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg>Same-week availability</div>
-</div></div>
+<section class="band" aria-label="At a glance">
+  <div class="band-top">
+    <div class="rv"><span class="big">01</span><span class="label">Local moving</span><p>Across neighbourhoods and across San Diego.</p></div>
+    <div class="rv s2"><span class="big">02</span><span class="label">Long distance</span><p>Out of town, out of state, handled end to end.</p></div>
+    <div class="rv s3"><span class="big">619</span><span class="label">Based in San Diego</span><p>On North Ave, a phone call away.</p></div>
+  </div>
+  <div class="marquee" aria-hidden="true">
+    <div class="mq">
+      <span>Local Moving</span><b></b><span class="o">Long Distance</span><b></b><span>San Diego, CA</span><b></b><span class="o">Moving Systems</span><b></b><span>Allen Davis</span><b></b>
+    </div>
+    <div class="mq">
+      <span>Local Moving</span><b></b><span class="o">Long Distance</span><b></b><span>San Diego, CA</span><b></b><span class="o">Moving Systems</span><b></b><span>Allen Davis</span><b></b>
+    </div>
+  </div>
+</section>
 
-<section class="block" id="services">
+<section class="sec" id="services">
   <div class="wrap">
-    <div class="section-head">
-      <div><div class="kicker">What we do</div><h2>Everything you need,<br>under one roof.</h2></div>
-      <p>From routine visits to the work that changes how you feel about your day, Allen Davis Moving Systems Local &amp; Long Distance takes care of it properly.</p>
+    <div class="sec-head">
+      <span class="label rv"><span class="n">01</span>Services</span>
+      <div class="rv s2">
+        <h2>Two kinds of move. <em>One standard.</em></h2>
+        <p>Whether you are going a few miles down the road or a few states away, your move gets the same systematic planning and the same respect for everything you own.</p>
+      </div>
     </div>
-    <div class="services">
-      
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M2 6h11v10H2zM13 9h4l4 4v3h-8"/><circle cx="6" cy="17.5" r="1.8"/><circle cx="17" cy="17.5" r="1.8"/></svg></div><h3>Local moves</h3><p>Fast, careful moves across town, often done in a single morning.</p></div>
-      
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="18" r="2.5"/><circle cx="18" cy="6" r="2.5"/><path d="M8.5 18H16a3 3 0 000-6H8a3 3 0 010-6h7.5"/></svg></div><h3>Long-distance moves</h3><p>Coast-to-coast moves with tracking and one point of contact.</p></div>
-      
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7l9-4 9 4v10l-9 4-9-4z"/><path d="M3 7l9 4 9-4M12 11v10"/></svg></div><h3>Packing &amp; unpacking</h3><p>Professional packing materials and a team that wraps everything right.</p></div>
-      
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3" width="14" height="18" rx="1"/><path d="M9 7h2M13 7h2M9 11h2M13 11h2M9 15h2M13 15h2"/></svg></div><h3>Office relocation</h3><p>After-hours business moves that keep downtime to a minimum.</p></div>
-      
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.2-8 9-4.6-.8-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg></div><h3>Fragile &amp; specialty items</h3><p>Pianos, art, antiques and TVs handled with extra care.</p></div>
-      
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11l8-7 8 7v9a1 1 0 01-1 1h-4v-6H9v6H5a1 1 0 01-1-1z"/></svg></div><h3>Storage solutions</h3><p>Clean, secure short- and long-term storage when timing doesn&#39;t line up.</p></div>
-      
-    </div>
-  </div>
-</section>
 
-<section class="block why" id="why">
-  <div class="wrap why-grid">
-    <div>
-      <div class="kicker">Why customers choose us</div>
-      <h2>The San Diego moving company people recommend to their friends.</h2>
-      <p class="intro">it still comes down to the same three things.</p>
-    </div>
-    <div class="points">
-      
-      <div class="point"><div class="num">01</div><div><h3>Flat-rate pricing</h3><p>A firm quote up front, so the price on moving day is the price you were told.</p></div></div>
-      
-      <div class="point"><div class="num">02</div><div><h3>Licensed &amp; insured</h3><p>Fully licensed and insured, with valuation coverage on everything we carry.</p></div></div>
-      
-      <div class="point"><div class="num">03</div><div><h3>On time, every time</h3><p>We show up when we say we will, with the right truck and the right crew.</p></div></div>
-      
+    <div class="svc">
+      <article class="card rv">
+        <span class="num" aria-hidden="true">01</span>
+        <div class="ic"><svg viewBox="0 0 32 32" fill="none" stroke="#fff" stroke-width="2"><path d="M4 15 16 5l12 10"/><path d="M7 13v14h18V13"/><path d="M13 27v-8h6v8"/></svg></div>
+        <h3>Local Moving</h3>
+        <p>Moving within San Diego should feel like a fresh start, not a lost weekend. We bring a clear plan to your door so you can step into your new place and simply begin living there.</p>
+        <ul>
+          <li>Moves within San Diego and the surrounding area</li>
+          <li>Homes, apartments and businesses</li>
+          <li>Planned with you before moving day</li>
+        </ul>
+      </article>
+      <article class="card dark rv s2">
+        <span class="num" aria-hidden="true">02</span>
+        <div class="ic"><svg viewBox="0 0 32 32" fill="none" stroke="#fff" stroke-width="2"><circle cx="7" cy="24" r="3"/><circle cx="25" cy="8" r="3"/><path d="M10 24h8a4 4 0 0 0 0-8h-4a4 4 0 0 1 0-8h8"/></svg></div>
+        <h3>Long Distance Moving</h3>
+        <p>When the destination is far from San Diego, the details matter more. We coordinate the journey so your belongings leave in good hands and arrive the same way.</p>
+        <ul>
+          <li>Moves beyond San Diego</li>
+          <li>One team coordinating start to finish</li>
+          <li>Straight answers on the phone</li>
+        </ul>
+      </article>
+      <div class="svc-note rv">
+        <p>Not sure which you need, or have something specific to move? Tell us about it and we will talk it through.</p>
+        <a class="btn btn-solid" href="tel:+16192250605">Call (619) 225-0605</a>
+      </div>
     </div>
   </div>
 </section>
 
-
-
-<section class="cta-band" id="book">
-  <div class="wrap"><div class="cta-box">
-    <div><h2>Ready when you are.</h2><p>Get a free estimate in under a minute, or give us a call and talk to a real person.</p></div>
-    <div class="actions">
-      <a class="btn" href="#visit">Get a free estimate</a>
-      <a class="btn ghost" href="tel:6192250605">Call (619) 225-0605</a>
+<section class="sec about" id="about">
+  <div class="wrap ab">
+    <div class="ab-l">
+      <span class="label rv" style="display:block;padding-bottom:14px;border-bottom:2px solid var(--ink)"><span class="n">02</span>About</span>
+      <div class="ab-art rv s2" aria-hidden="true">
+        <div class="a1"></div><div class="a2"></div><div class="a3"></div>
+        <span class="ad">AD</span>
+      </div>
     </div>
-  </div></div>
+    <div class="ab-r">
+      <p class="lead rv">A San Diego moving company with a name on the door and a <em>system</em> behind every move.</p>
+      <p class="rv s2">Allen Davis Moving Systems works out of North Ave in San Diego, moving people locally and over long distances. The word in our name is deliberate: a move goes best when it follows a system, so nothing is left to chance and nothing is left behind.</p>
+      <p class="rv s3">When you call, you speak with people who know San Diego and know what moving day asks of you. Tell us where you are going, and we will help you get there.</p>
+      <div class="ab-facts rv s3">
+        <div><span class="label">Based at</span><strong>4430 North Ave, San Diego</strong></div>
+        <div><span class="label">Moving</span><strong>Local &amp; long distance</strong></div>
+        <div><span class="label">Call</span><strong><a class="ul" href="tel:+16192250605">(619) 225-0605</a></strong></div>
+        <div><span class="label">Visit</span><strong><a class="ul" href="https://maps.google.com/?q=4430+North+Ave,+San+Diego,+CA+92116-3941" target="_blank" rel="noopener">Open in Maps</a></strong></div>
+      </div>
+    </div>
+  </div>
 </section>
 
-<section class="block" id="visit" style="padding-top:0">
+<section class="sec" id="why">
   <div class="wrap">
-    <div class="kicker">Visit us</div><h2>Come say hello.</h2>
-    <div class="visit">
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11l8-7 8 7v9a1 1 0 01-1 1h-4v-6H9v6H5a1 1 0 01-1-1z"/></svg></div><h3>Address</h3><p>4430 North Ave, San Diego CA 92116-3941</p></div>
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div><h3>Phone</h3><p><a href="tel:6192250605">(619) 225-0605</a></p><p style="margin-top:10px">Call or message us for today's opening hours.</p></div>
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-7-4.4-7-10a4 4 0 017-2.6A4 4 0 0119 10c0 5.6-7 10-7 10z"/></svg></div><h3>Free in-home estimates</h3><p>Get a free estimate online or by phone and we'll take care of the rest.</p></div>
+    <div class="sec-head">
+      <span class="label rv"><span class="n">03</span>Why Allen Davis</span>
+      <div class="rv s2"><h2>Precision is the <em>premium.</em></h2></div>
+    </div>
+    <div class="why-g">
+      <div class="why-i rv"><span class="n">A</span><h3>A system, not guesswork</h3><p>Moving is in our name as a system: an ordered way of working that keeps your move on track.</p></div>
+      <div class="why-i rv s2"><span class="n">B</span><h3>Near or far</h3><p>One company for both local and long distance moves, so you never have to start over with someone new.</p></div>
+      <div class="why-i rv s3"><span class="n">C</span><h3>Rooted in San Diego</h3><p>A local address on North Ave and a local phone number. Real people, close to home.</p></div>
+      <div class="why-i rv s4"><span class="n">D</span><h3>Straight conversation</h3><p>Call, describe your move, and get clear answers about how it will work for you.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec steps" id="process">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="label rv"><span class="n">04</span>How it works</span>
+      <div class="rv s2">
+        <h2>Four steps to your <em>new front door.</em></h2>
+        <p>A simple path from first call to final box.</p>
+      </div>
+    </div>
+    <div class="st">
+      <div class="st-i rv"><span class="n">01</span><h3>Call us</h3><p>Ring <a class="ul" href="tel:+16192250605">(619) 225-0605</a> and tell us where you are moving from and to.</p></div>
+      <div class="st-i rv s2"><span class="n">02</span><h3>Plan together</h3><p>We talk through what is moving, the timing and anything that needs special care.</p></div>
+      <div class="st-i rv s3"><span class="n">03</span><h3>Moving day</h3><p>Your belongings are loaded and on their way, locally or long distance.</p></div>
+      <div class="st-i rv s4"><span class="n">04</span><h3>Settle in</h3><p>Everything arrives at your new place, and you start the next chapter.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="faq">
+  <div class="wrap faq-g">
+    <div class="faq-l">
+      <span class="label rv" style="display:block;padding-bottom:14px;border-bottom:2px solid var(--ink);margin-bottom:28px"><span class="n">05</span>FAQ</span>
+      <h2 class="rv s2">Good <em>questions.</em></h2>
+      <p class="rv s3">Anything else? The quickest answer is a phone call.</p>
+    </div>
+    <div class="rv s2">
+      <details open>
+        <summary>Do you handle local or long distance moves?<i aria-hidden="true"></i></summary>
+        <div class="ans">Both. Allen Davis Moving Systems handles local moves around San Diego as well as long distance moves.</div>
+      </details>
+      <details>
+        <summary>Where are you located?<i aria-hidden="true"></i></summary>
+        <div class="ans">We are at 4430 North Ave, San Diego, CA 92116-3941. <a class="ul" href="https://maps.google.com/?q=4430+North+Ave,+San+Diego,+CA+92116-3941" target="_blank" rel="noopener">Get directions</a>.</div>
+      </details>
+      <details>
+        <summary>How do I get started or ask about pricing?<i aria-hidden="true"></i></summary>
+        <div class="ans">Call us at <a class="ul" href="tel:+16192250605">(619) 225-0605</a>. Tell us about your move and we will go through the details with you.</div>
+      </details>
+      <details>
+        <summary>What are your hours?<i aria-hidden="true"></i></summary>
+        <div class="ans">Please call <a class="ul" href="tel:+16192250605">(619) 225-0605</a> to check current availability and arrange a time that suits your move.</div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section class="cta" aria-label="Call to action">
+  <div class="wrap">
+    <span class="label rv">Ready when you are</span>
+    <h2 class="rv s2">Let&rsquo;s move you <em>forward.</em></h2>
+    <a class="cta-tel rv s3" href="tel:+16192250605">(619) 225-0605</a>
+    <div class="ctas rv s4">
+      <a class="btn btn-white" href="tel:+16192250605">Call now</a>
+      <a class="btn btn-white" href="https://maps.google.com/?q=4430+North+Ave,+San+Diego,+CA+92116-3941" target="_blank" rel="noopener">Find us</a>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="contact">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="label rv"><span class="n">06</span>Contact</span>
+      <div class="rv s2"><h2>Call, or <em>come by.</em></h2></div>
+    </div>
+    <div class="ct">
+      <div class="ct-card rv">
+        <div class="ct-row"><span class="label">Phone</span><a class="v ul" href="tel:+16192250605">(619) 225-0605</a></div>
+        <div class="ct-row"><span class="label">Address</span><span class="v">4430 North Ave<small>San Diego, CA 92116-3941</small></span></div>
+        <div class="ct-row"><span class="label">Hours</span><span class="v">By phone<small>Please call to confirm current hours.</small></span></div>
+        <div class="ct-row"><span class="label">Services</span><span class="v">Local &amp; Long Distance</span></div>
+      </div>
+      <a class="map rv s2" href="https://maps.google.com/?q=4430+North+Ave,+San+Diego,+CA+92116-3941" target="_blank" rel="noopener" aria-label="Open 4430 North Ave, San Diego in Google Maps">
+        <svg class="streets" viewBox="0 0 400 440" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+          <g stroke="rgba(127,196,245,.18)" stroke-width="1" fill="none">
+            <path d="M0 60H400M0 120H400M0 180H400M0 240H400M0 300H400M0 360H400"/>
+            <path d="M50 0V440M110 0V440M170 0V440M270 0V440M330 0V440"/>
+          </g>
+          <path d="M210 0V440" stroke="#1D6FD8" stroke-width="6"/>
+          <path d="M0 160H400" stroke="rgba(127,196,245,.45)" stroke-width="3"/>
+          <rect x="290" y="250" width="70" height="80" fill="rgba(127,196,245,.1)"/>
+          <rect x="60" y="70" width="90" height="40" fill="rgba(127,196,245,.1)"/>
+          <text x="218" y="420" fill="rgba(255,255,255,.5)" font-family="DM Sans,sans-serif" font-size="11" letter-spacing="3">NORTH AVE</text>
+        </svg>
+        <span class="pin" aria-hidden="true"><svg width="34" height="44" viewBox="0 0 34 44"><path d="M17 0C7.6 0 0 7.6 0 17c0 12.7 17 27 17 27s17-14.3 17-27C34 7.6 26.4 0 17 0z" fill="#7FC4F5"/><rect x="11" y="11" width="12" height="12" fill="#0B2340"/></svg></span>
+        <div class="map-t">
+          <span class="label">Visit</span>
+          <h3>4430 North Ave, San Diego</h3>
+          <span class="go">Open in Google Maps <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
+        </div>
+      </a>
     </div>
   </div>
 </section>
 </main>
 
-<footer><div class="wrap">
-  <span>© 2026 Allen Davis Moving Systems Local &amp; Long Distance</span>
-  <span>Concept design by webstudio. Not affiliated with or endorsed by Allen Davis Moving Systems Local &amp; Long Distance.</span>
-</div></footer>
+<footer>
+  <div class="wrap">
+    <div class="ft">
+      <div>
+        <div class="ft-name">Allen Davis<br><em>Moving Systems</em></div>
+        <p style="color:var(--ink-2);margin-top:16px;max-width:380px">Local &amp; long distance moving from San Diego, CA.</p>
+      </div>
+      <div>
+        <h4>Visit</h4>
+        <address>4430 North Ave<br>San Diego, CA 92116-3941</address>
+        <a class="ul" href="https://maps.google.com/?q=4430+North+Ave,+San+Diego,+CA+92116-3941" target="_blank" rel="noopener" style="display:inline-block">Directions</a>
+      </div>
+      <div>
+        <h4>Talk</h4>
+        <a class="ul" href="tel:+16192250605" style="display:inline-block">(619) 225-0605</a><br>
+        <a class="ul" href="#services" style="display:inline-block">Services</a><br>
+        <a class="ul" href="#faq" style="display:inline-block">FAQ</a>
+      </div>
+    </div>
+    <div class="ft-b">
+      <span>&copy; <span id="yr"></span> Allen Davis Moving Systems Local &amp; Long Distance</span>
+      <a class="ul" href="#top">Back to top &uarr;</a>
+    </div>
+  </div>
+</footer>
 
-<div class="mobile-bar">
-  <a class="btn ghost" href="tel:6192250605">Call</a>
-  <a class="btn" href="#visit">Free estimate</a>
+<div class="mbar" id="mbar">
+  <a class="c1" href="tel:+16192250605"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>Call</a>
+  <a class="c2" href="#contact"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-6.2-7-12a7 7 0 0 1 14 0c0 5.8-7 12-7 12z"/><circle cx="12" cy="9" r="2.5"/></svg>Contact</a>
 </div>
-</body>
+
+<script>
+(function(){
+  var d=document,b=d.body,rm=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  d.getElementById('yr').textContent=new Date().getFullYear();
+  requestAnimationFrame(function(){setTimeout(function(){b.classList.add('loaded')},60)});
+
+  var hd=d.querySelector('header'),mbar=d.getElementById('mbar'),shapes=d.querySelectorAll('[data-px]'),ticking=false;
+  function onScroll(){
+    var y=window.scrollY;
+    hd.classList.toggle('scrolled',y>20);
+    mbar.classList.toggle('show',y>window.innerHeight*.6);
+    if(!rm&&y<window.innerHeight*1.2){
+      shapes.forEach(function(s){s.style.transform='translate3d(0,'+(y*parseFloat(s.dataset.px))+'px,0)'});
+    }
+    ticking=false;
+  }
+  window.addEventListener('scroll',function(){if(!ticking){requestAnimationFrame(onScroll);ticking=true}},{passive:true});
+  onScroll();
+
+  var burger=d.querySelector('.burger'),mnav=d.getElementById('mnav');
+  function setMenu(open){
+    b.classList.toggle('menu-open',open);
+    burger.setAttribute('aria-expanded',open);
+    burger.setAttribute('aria-label',open?'Close menu':'Open menu');
+    mnav.setAttribute('aria-hidden',!open);
+    b.style.overflow=open?'hidden':'';
+  }
+  burger.addEventListener('click',function(){setMenu(!b.classList.contains('menu-open'))});
+  mnav.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){setMenu(false)})});
+  d.addEventListener('keydown',function(e){if(e.key==='Escape')setMenu(false)});
+
+  var rvs=d.querySelectorAll('.rv');
+  if('IntersectionObserver' in window&&!rm){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target)}})},{threshold:.14,rootMargin:'0px 0px -40px 0px'});
+    rvs.forEach(function(el){io.observe(el)});
+  }else{rvs.forEach(function(el){el.classList.add('on')})}
+
+  // Truck travels along the hero route
+  var route=d.querySelector('.route'),path=route.querySelector('path.draw'),truck=d.getElementById('truck'),len=path.getTotalLength(),t0=null;
+  function place(p){
+    var pt=path.getPointAtLength(len*p),w=route.clientWidth,h=route.clientHeight;
+    truck.style.transform='translate('+(pt.x/880*w-20)+'px,'+(pt.y/70*h-20)+'px)';
+  }
+  function loop(ts){
+    if(!t0)t0=ts;
+    var p=((ts-t0)/7000)%1;
+    p=p<.5?2*p*p:1-Math.pow(-2*p+2,2)/2;
+    place(p);requestAnimationFrame(loop);
+  }
+  if(rm){place(.62)}else{setTimeout(function(){requestAnimationFrame(loop)},1200)}
+  window.addEventListener('resize',function(){if(rm)place(.62)});
+})();
+</script>
+<div id="lm-concept" style="position:fixed;left:12px;bottom:12px;z-index:2147483647;font:500 11px/1.3 -apple-system,BlinkMacSystemFont,Segoe UI,sans-serif;letter-spacing:.02em;background:rgba(15,15,18,.82);color:#f4f1ea;padding:7px 11px;border-radius:999px;backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);pointer-events:none;max-width:70vw">Website concept for Allen Davis Moving Systems Local &amp; Long Distance by webstudio &middot; not the live site</div><p style="margin:0;padding:18px 16px 70px;text-align:center;font:12px/1.5 -apple-system,sans-serif;color:#8a8a8a;background:#0e0e10">Concept design by webstudio. Not affiliated with or endorsed by Allen Davis Moving Systems Local &amp; Long Distance.</p></body>
 </html>
