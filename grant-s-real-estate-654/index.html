@@ -1,291 +1,679 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="en-AU">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src * data: blob:; media-src 'self' data:; style-src 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com data:; script-src 'unsafe-inline'; connect-src 'none'; frame-src 'none'; form-action 'none'; base-uri 'none'; object-src 'none'">
 <meta name="robots" content="noindex, nofollow">
-<title>Grant&#39;s Real Estate | Website concept</title>
+<style>html,body{max-width:100%;overflow-x:clip}</style>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Grant's Real Estate | Melbourne Real Estate Agent, 9 Webb Street</title>
+<meta name="description" content="Grant's Real Estate: a Melbourne real estate agent at 9 Webb Street. Personal, considered guidance for selling and buying property. Call +61 3 9704 8899.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 :root{
-  --bg:#0d0d0f;--surface:#16161a;--ink:#f3efe7;--muted:#a8a39a;
-  --accent:#c9a96e;--accent-ink:#0d0d0f;--gold:#c9a96e;--soft:#1f1e22;
-  --radius:22px;--max:1180px;
-  --serif:"Fraunces",Georgia,serif;--sans:"Manrope",system-ui,-apple-system,sans-serif;
+  --bg:#1A1411;--bg2:#140F0D;--surface:#251D18;--surface2:#2E241E;
+  --text:#F3E9DC;--muted:#C9B8A6;--gold:#D4A44F;--gold-l:#E6C27F;--gold-d:#A9803A;--clay:#A07D63;
+  --line:rgba(212,164,79,.22);--line2:rgba(243,233,220,.1);
+  --serif:"Instrument Serif",Georgia,"Times New Roman",serif;
+  --sans:"Inter",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --ease:cubic-bezier(.2,.7,.2,1);
+  --wrap:1240px;
 }
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--bg);color:var(--text);font-family:var(--sans);font-weight:400;font-size:17px;line-height:1.7;overflow-x:hidden;-webkit-font-smoothing:antialiased}
 a{color:inherit;text-decoration:none}
-img{max-width:100%;display:block}
-.wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
-.concept{background:var(--ink);color:var(--bg);font-size:13px;text-align:center;padding:8px 16px;letter-spacing:.02em}
-.concept b{color:var(--gold);font-weight:600}
+svg{display:block}
+::selection{background:var(--gold);color:var(--bg)}
+.wrap{width:100%;max-width:var(--wrap);margin:0 auto;padding:0 clamp(20px,4vw,48px)}
+.label{font-size:12px;font-weight:500;letter-spacing:.28em;text-transform:uppercase;color:var(--gold)}
+.label.dash{display:inline-flex;align-items:center;gap:14px}
+.label.dash::before{content:"";width:32px;height:1px;background:currentColor}
+h1,h2,h3{font-family:var(--serif);font-weight:400;line-height:1.02;letter-spacing:-.01em}
+h2{font-size:clamp(42px,6vw,84px)}
+h2 em,h1 em{font-style:italic;color:var(--gold)}
+p{color:var(--muted)}
+.lead{font-size:clamp(18px,1.6vw,21px);line-height:1.65;color:var(--text);opacity:.86}
+
+/* buttons */
+.btn{position:relative;display:inline-flex;align-items:center;justify-content:center;gap:12px;padding:17px 30px;border-radius:999px;font-size:14px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;transition:transform .4s var(--ease),background .4s,color .4s,border-color .4s,box-shadow .4s;white-space:nowrap;overflow:hidden;text-align:center}
+.btn svg{width:16px;height:16px;transition:transform .4s var(--ease)}
+.btn:hover svg{transform:translateX(4px)}
+.btn-gold{background:var(--gold);color:#1A1411}
+.btn-gold:hover{background:var(--gold-l);transform:translateY(-2px);box-shadow:0 14px 34px -12px rgba(212,164,79,.55)}
+.btn-ghost{border:1px solid rgba(243,233,220,.3);color:var(--text)}
+.btn-ghost:hover{border-color:var(--gold);color:var(--gold);transform:translateY(-2px)}
+.btn-dark{background:var(--bg);color:var(--text)}
+.btn-dark:hover{background:#000;transform:translateY(-2px)}
+.ulink{position:relative;display:inline-block}
+.ulink::after{content:"";position:absolute;left:0;bottom:-3px;width:100%;height:1px;background:var(--gold);transform:scaleX(0);transform-origin:right;transition:transform .5s var(--ease)}
+.ulink:hover::after{transform:scaleX(1);transform-origin:left}
 
 /* header */
-header{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:saturate(1.4) blur(10px);border-bottom:1px solid color-mix(in srgb,var(--ink) 8%,transparent)}
-.nav{display:flex;align-items:center;justify-content:space-between;height:76px;gap:24px}
-.brand{font-family:var(--serif);font-size:23px;font-weight:600;letter-spacing:-.01em;line-height:1.1;max-width:340px}
-.links{display:flex;gap:30px;font-size:15px;font-weight:500;color:var(--muted)}
-.links a:hover{color:var(--ink)}
-.nav-right{display:flex;align-items:center;gap:18px}
-.phone{font-weight:600;font-size:15px;white-space:nowrap}
-.btn{display:inline-flex;align-items:center;gap:10px;background:var(--accent);color:var(--accent-ink);padding:14px 26px;border-radius:999px;font-weight:600;font-size:15.5px;transition:transform .2s ease,box-shadow .2s ease;white-space:nowrap}
-.btn:hover{transform:translateY(-2px);box-shadow:0 12px 28px -12px var(--accent)}
-.btn.ghost{background:transparent;color:var(--ink);border:1.5px solid color-mix(in srgb,var(--ink) 20%,transparent)}
-.btn.ghost:hover{box-shadow:none;border-color:var(--ink)}
-.btn svg{width:18px;height:18px}
+.hdr{position:fixed;inset:0 0 auto;z-index:50;transition:background .4s,border-color .4s,padding .4s;padding:22px 0;border-bottom:1px solid transparent}
+.hdr.scrolled{background:rgba(26,20,17,.72);backdrop-filter:blur(16px) saturate(1.3);-webkit-backdrop-filter:blur(16px) saturate(1.3);border-color:var(--line2);padding:14px 0}
+.hdr .wrap{display:flex;align-items:center;justify-content:space-between;gap:24px}
+.logo{display:flex;align-items:center;gap:14px}
+.logo-mark{width:42px;height:42px;flex:none}
+.logo-txt{display:flex;flex-direction:column;line-height:1}
+.logo-txt b{font-family:var(--serif);font-weight:400;font-size:25px;letter-spacing:.01em}
+.logo-txt small{font-size:9.5px;letter-spacing:.34em;text-transform:uppercase;color:var(--gold);margin-top:5px}
+.nav{display:flex;align-items:center;gap:34px}
+.nav a{font-size:13.5px;letter-spacing:.06em;color:var(--muted);transition:color .3s}
+.nav a:hover{color:var(--text)}
+.hdr-cta{display:flex;align-items:center;gap:22px}
+.hdr-phone{font-size:14px;letter-spacing:.04em;display:flex;align-items:center;gap:9px}
+.hdr-phone svg{width:15px;height:15px;color:var(--gold)}
+.hdr .btn{padding:13px 22px;font-size:12px}
+.burger{display:none;width:46px;height:46px;border:1px solid var(--line);border-radius:50%;background:none;color:var(--text);cursor:pointer;align-items:center;justify-content:center}
+.burger span{display:block;width:18px;height:1px;background:currentColor;position:relative;transition:background .3s}
+.burger span::before,.burger span::after{content:"";position:absolute;left:0;width:18px;height:1px;background:currentColor;transition:transform .4s var(--ease)}
+.burger span::before{top:-6px}.burger span::after{top:6px}
+.menu-open .burger span{background:transparent}
+.menu-open .burger span::before{transform:translateY(6px) rotate(45deg)}
+.menu-open .burger span::after{transform:translateY(-6px) rotate(-45deg)}
+.mmenu{position:fixed;inset:0;z-index:45;background:var(--bg2);display:flex;flex-direction:column;justify-content:center;padding:100px 28px 120px;opacity:0;visibility:hidden;transition:opacity .5s var(--ease),visibility .5s}
+.menu-open .mmenu{opacity:1;visibility:visible}
+.mmenu a.m{font-family:var(--serif);font-size:46px;line-height:1.25;display:block;transform:translateY(20px);opacity:0;transition:transform .6s var(--ease),opacity .6s}
+.menu-open .mmenu a.m{transform:none;opacity:1}
+.mmenu a.m:nth-child(2){transition-delay:.05s}.mmenu a.m:nth-child(3){transition-delay:.1s}.mmenu a.m:nth-child(4){transition-delay:.15s}.mmenu a.m:nth-child(5){transition-delay:.2s}
+.mmenu .mfoot{margin-top:40px;padding-top:28px;border-top:1px solid var(--line2);font-size:15px;color:var(--muted)}
+.mmenu .mfoot a{color:var(--gold);font-size:20px;display:block;margin-top:6px}
 
 /* hero */
-.hero{padding:72px 0 88px}
-.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:64px;align-items:center}
-.eyebrow{display:inline-flex;align-items:center;gap:10px;background:var(--surface);border:1px solid color-mix(in srgb,var(--ink) 10%,transparent);padding:8px 16px 8px 10px;border-radius:999px;font-size:14px;font-weight:600;color:var(--muted)}
-.stars{color:var(--gold);letter-spacing:1px;font-size:14px}
-.eyebrow .dot{width:26px;height:26px;border-radius:50%;background:var(--soft);display:grid;place-items:center;color:var(--accent)}
-h1{font-family:var(--serif);font-weight:500;font-size:clamp(44px,5.6vw,74px);line-height:1.02;letter-spacing:-.025em;margin:26px 0 22px}
-h1 em{font-style:italic;color:var(--accent)}
-.lead-text{font-size:19.5px;color:var(--muted);max-width:540px}
-.hero-ctas{display:flex;gap:14px;margin-top:36px;flex-wrap:wrap}
-.ticks{display:flex;gap:22px;margin-top:34px;flex-wrap:wrap;font-size:14.5px;font-weight:600;color:var(--muted)}
-.ticks span{display:flex;align-items:center;gap:8px}
-.ticks svg{width:18px;height:18px;color:var(--accent)}
-.visual{position:relative}
-.photo{aspect-ratio:4/5;border-radius:calc(var(--radius) + 10px);overflow:hidden;background:var(--soft);box-shadow:0 40px 80px -40px color-mix(in srgb,var(--ink) 55%,transparent)}
-.photo img{width:100%;height:100%;object-fit:cover}
-.quote-panel{aspect-ratio:4/5;border-radius:calc(var(--radius) + 10px);background:linear-gradient(155deg,var(--accent),color-mix(in srgb,var(--accent) 55%,var(--ink)));color:var(--accent-ink);padding:52px 46px;display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden;box-shadow:0 40px 80px -40px color-mix(in srgb,var(--ink) 60%,transparent)}
-.quote-panel:before{content:"";position:absolute;width:420px;height:420px;border-radius:50%;right:-160px;top:-160px;background:color-mix(in srgb,var(--accent-ink) 9%,transparent)}
-.quote-panel:after{content:"";position:absolute;width:260px;height:260px;border-radius:50%;left:-90px;bottom:-110px;border:1.5px solid color-mix(in srgb,var(--accent-ink) 22%,transparent)}
-.quote-mark{font-family:var(--serif);font-size:120px;line-height:.6;opacity:.35}
-.quote-panel p{font-family:var(--serif);font-size:28px;line-height:1.3;position:relative;z-index:1}
-.quote-panel .who{font-family:var(--sans);font-size:15px;opacity:.85;margin-top:22px;font-weight:600}
-.float{position:absolute;background:var(--surface);color:var(--ink);border-radius:18px;padding:16px 20px;box-shadow:0 24px 50px -24px color-mix(in srgb,var(--ink) 50%,transparent);display:flex;align-items:center;gap:14px;font-size:14px;line-height:1.35}
-.float b{font-size:22px;font-family:var(--serif);font-weight:600;display:block}
-.float.one{left:-34px;bottom:-28px}
-.float.two{right:-22px;top:44px}
-.float .badge{width:44px;height:44px;border-radius:14px;background:var(--soft);display:grid;place-items:center;color:var(--accent)}
-.float .badge svg{width:22px;height:22px}
+.hero{position:relative;min-height:100vh;min-height:100svh;display:flex;align-items:center;justify-content:center;text-align:center;padding:150px 0 90px;overflow:hidden;isolation:isolate}
+.hero-bg{position:absolute;inset:-10% 0 0;z-index:-2;background:
+  radial-gradient(60% 50% at 50% 38%,rgba(212,164,79,.16),transparent 70%),
+  radial-gradient(40% 40% at 12% 90%,rgba(160,125,99,.18),transparent 70%),
+  radial-gradient(40% 40% at 90% 10%,rgba(160,125,99,.12),transparent 70%),
+  linear-gradient(180deg,#1A1411 0%,#1F1814 60%,#1A1411 100%)}
+.hero-grain{position:absolute;inset:0;z-index:-1;opacity:.5;mix-blend-mode:overlay;pointer-events:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 .9 0 0 0 0 .8 0 0 0 .07 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+.arch{position:absolute;left:50%;top:50%;width:min(760px,92vw);height:auto;transform:translate(-50%,-46%);z-index:-1;color:var(--gold);opacity:.9;pointer-events:none}
+.arch path,.arch line,.arch rect,.arch circle{vector-effect:non-scaling-stroke}
+.arch .draw{stroke-dasharray:3000;stroke-dashoffset:3000;animation:draw 3.2s .3s var(--ease) forwards}
+@keyframes draw{to{stroke-dashoffset:0}}
+.hero-inner{position:relative;max-width:1100px;margin:0 auto;padding:0 20px}
+.hero .label{margin-bottom:34px;display:inline-flex;gap:14px;align-items:center}
+.hero .label i{width:5px;height:5px;background:var(--gold);transform:rotate(45deg);display:inline-block}
+.hero h1{font-size:clamp(58px,12.5vw,188px);line-height:.9;letter-spacing:-.025em}
+.hero h1 .ln{display:block;overflow:hidden;padding-bottom:.06em}
+.hero h1 .ln>span{display:inline-block}
+.hero h1 .amp{font-style:italic;color:var(--gold)}
+.hero h1 .sm{display:block;font-size:.36em;letter-spacing:.01em;font-style:italic;color:var(--clay);margin-top:.15em}
+.hero .lead{max-width:600px;margin:36px auto 0}
+.hero-ctas{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:44px}
+.scroll-cue{position:absolute;bottom:28px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:10px;font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--muted)}
+.scroll-cue::after{content:"";width:1px;height:44px;background:linear-gradient(var(--gold),transparent);animation:cue 2.4s infinite var(--ease)}
+@keyframes cue{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}51%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+.corner{position:absolute;width:64px;height:64px;border-color:var(--line);border-style:solid;border-width:0}
+.c1{top:110px;left:clamp(20px,4vw,48px);border-top-width:1px;border-left-width:1px}
+.c2{top:110px;right:clamp(20px,4vw,48px);border-top-width:1px;border-right-width:1px}
+.c3{bottom:40px;left:clamp(20px,4vw,48px);border-bottom-width:1px;border-left-width:1px}
+.c4{bottom:40px;right:clamp(20px,4vw,48px);border-bottom-width:1px;border-right-width:1px}
+.hero-meta{position:absolute;bottom:52px;font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--muted)}
+.hm-l{left:clamp(40px,6vw,80px)}.hm-r{right:clamp(40px,6vw,80px)}
 
-/* trust */
-.trust{border-top:1px solid color-mix(in srgb,var(--ink) 9%,transparent);border-bottom:1px solid color-mix(in srgb,var(--ink) 9%,transparent);background:var(--surface)}
-.trust .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;padding-top:26px;padding-bottom:26px}
-.trust div{display:flex;align-items:center;gap:12px;font-weight:600;font-size:15px}
-.trust svg{width:22px;height:22px;color:var(--accent);flex:none}
+/* entrance */
+.in{opacity:0;transform:translateY(28px)}
+.loaded .in{animation:rise 1.2s var(--ease) forwards}
+.hero h1 .ln>span{transform:translateY(105%)}
+.loaded .hero h1 .ln>span{animation:up 1.3s var(--ease) forwards}
+@keyframes rise{to{opacity:1;transform:none}}
+@keyframes up{to{transform:none}}
+
+/* colour band + marquee */
+.band{background:var(--gold);color:#1A1411;position:relative}
+.band-top{padding:clamp(56px,7vw,96px) 0}
+.band-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:clamp(30px,5vw,80px);align-items:end}
+.band h2{font-size:clamp(38px,5vw,70px);color:#1A1411}
+.band h2 em{color:#5A3E22}
+.band p{color:#2B1F15;font-size:18px;max-width:460px}
+.band .label{color:#4A321B}
+.marquee{border-top:1px solid rgba(26,20,17,.22);overflow:hidden;padding:22px 0;display:flex}
+.mq-track{display:flex;flex:none;gap:0;animation:mq 38s linear infinite;will-change:transform}
+.mq-track span{font-family:var(--serif);font-size:clamp(28px,3.4vw,44px);white-space:nowrap;padding:0 28px;display:flex;align-items:center;gap:56px}
+.mq-track span::after{content:"";width:10px;height:10px;background:#1A1411;transform:rotate(45deg);flex:none}
+.mq-track span:nth-child(even){font-style:italic;color:#5A3E22}
+@keyframes mq{to{transform:translateX(-100%)}}
 
 /* sections */
-section.block{padding:110px 0}
-.kicker{font-size:13px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
-h2{font-family:var(--serif);font-weight:500;font-size:clamp(34px,3.8vw,52px);line-height:1.08;letter-spacing:-.02em;margin:14px 0 18px}
-.section-head{display:flex;justify-content:space-between;align-items:end;gap:40px;margin-bottom:56px}
-.section-head p{color:var(--muted);max-width:420px}
-.services{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-.card{background:var(--surface);border-radius:var(--radius);padding:34px 32px 36px;border:1px solid color-mix(in srgb,var(--ink) 7%,transparent);transition:transform .25s ease,box-shadow .25s ease}
-.card:hover{transform:translateY(-4px);box-shadow:0 30px 60px -36px color-mix(in srgb,var(--ink) 45%,transparent)}
-.icon{width:54px;height:54px;border-radius:16px;background:var(--soft);color:var(--accent);display:grid;place-items:center;margin-bottom:24px}
-.icon svg{width:26px;height:26px}
-.card h3{font-family:var(--serif);font-weight:500;font-size:23px;margin-bottom:8px;letter-spacing:-.01em}
-.card p{color:var(--muted);font-size:16px}
+section{position:relative}
+.sec{padding:clamp(90px,12vw,170px) 0}
+.sec-head{display:grid;grid-template-columns:1fr 1.1fr;gap:clamp(30px,6vw,100px);align-items:end;margin-bottom:clamp(54px,7vw,96px)}
+.sec-head .label{margin-bottom:24px;display:inline-flex}
 
-.why{background:var(--ink);color:var(--bg)}
-.why .kicker{color:var(--gold)}
-.why-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:80px;align-items:start}
-.why h2{color:var(--bg)}
-.why .intro{color:color-mix(in srgb,var(--bg) 70%,transparent);font-size:18px;max-width:440px}
-.points{display:grid;gap:14px}
-.point{display:grid;grid-template-columns:62px 1fr;gap:20px;padding:30px;border-radius:var(--radius);background:color-mix(in srgb,var(--bg) 6%,transparent);border:1px solid color-mix(in srgb,var(--bg) 10%,transparent)}
-.point .num{font-family:var(--serif);font-size:34px;color:var(--gold);line-height:1}
-.point h3{font-family:var(--serif);font-weight:500;font-size:24px;margin-bottom:6px}
-.point p{color:color-mix(in srgb,var(--bg) 72%,transparent);font-size:16px}
+/* services */
+.svc-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:22px}
+.card{position:relative;background:var(--surface);border:1px solid var(--line2);border-radius:4px;padding:clamp(30px,3.4vw,48px);overflow:hidden;transition:transform .6s var(--ease),border-color .6s,background .6s;isolation:isolate;display:flex;flex-direction:column}
+.card::before{content:"";position:absolute;inset:10px;border:1px solid var(--line);border-radius:2px;pointer-events:none;opacity:.55;transition:opacity .6s,inset .6s var(--ease)}
+.card::after{content:"";position:absolute;inset:0;z-index:-1;background:radial-gradient(80% 60% at 100% 0%,rgba(212,164,79,.14),transparent 60%);opacity:0;transition:opacity .6s}
+.card:hover{transform:translateY(-8px);border-color:var(--line)}
+.card:hover::after{opacity:1}
+.card:hover::before{opacity:1;inset:14px}
+.svc-a{grid-column:span 7;min-height:460px}
+.svc-b{grid-column:span 5;min-height:460px;margin-top:80px}
+.svc-c{grid-column:2 / span 10}
+.card .num{font-family:var(--serif);font-style:italic;font-size:22px;color:var(--gold)}
+.card .ico{width:58px;height:58px;color:var(--gold);margin:34px 0 auto}
+.card h3{font-size:clamp(34px,3.4vw,50px);margin:44px 0 16px}
+.card p{max-width:440px}
+.card ul{list-style:none;margin-top:26px;display:grid;gap:12px}
+.card li{display:flex;gap:14px;align-items:flex-start;font-size:15.5px;color:var(--text);opacity:.85}
+.card li::before{content:"";width:6px;height:6px;margin-top:10px;border:1px solid var(--gold);transform:rotate(45deg);flex:none}
+.svc-c{flex-direction:row;align-items:center;gap:clamp(24px,5vw,70px);background:linear-gradient(120deg,#2B211B,#251D18)}
+.svc-c .ico{margin:0;width:76px;height:76px;flex:none}
+.svc-c h3{margin:0 0 12px}
+.svc-c .btn{margin-left:auto;flex:none}
 
-.score{display:flex;align-items:center;gap:18px;background:var(--surface);padding:16px 24px;border-radius:18px;border:1px solid color-mix(in srgb,var(--ink) 8%,transparent)}
-.score b{font-family:var(--serif);font-size:40px;font-weight:500;line-height:1}
-.score small{display:block;color:var(--muted);font-size:14px}
-.reviews{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-.review{background:var(--surface);border-radius:var(--radius);padding:34px;display:flex;flex-direction:column;gap:22px;border:1px solid color-mix(in srgb,var(--ink) 7%,transparent)}
-.review p{font-family:var(--serif);font-size:19.5px;line-height:1.45}
-.review .by{margin-top:auto;display:flex;align-items:center;gap:12px;font-weight:600;font-size:15px}
-.avatar{width:40px;height:40px;border-radius:50%;background:var(--soft);color:var(--accent);display:grid;place-items:center;font-weight:700}
-.review .src{color:var(--muted);font-weight:500;font-size:13px;display:block}
+/* about */
+.about{background:var(--bg2);overflow:hidden}
+.about-grid{display:grid;grid-template-columns:5fr 7fr;gap:clamp(40px,7vw,120px);align-items:start}
+.frame{position:relative;aspect-ratio:4/5;border:1px solid var(--line);padding:16px;position:sticky;top:120px}
+.frame-in{position:relative;width:100%;height:100%;background:
+  radial-gradient(120% 80% at 50% 110%,rgba(212,164,79,.32),transparent 60%),
+  linear-gradient(170deg,#2E241E,#1E1714);overflow:hidden;display:flex;align-items:center;justify-content:center}
+.frame-in svg{width:78%;color:var(--gold)}
+.frame-cap{position:absolute;left:16px;right:16px;bottom:16px;padding:22px 24px;background:linear-gradient(transparent,rgba(20,15,13,.92));display:flex;justify-content:space-between;align-items:end;gap:12px;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
+.frame-cap b{font-family:var(--serif);font-weight:400;font-size:30px;letter-spacing:0;text-transform:none;color:var(--text);display:block;line-height:1}
+.frame-tag{position:absolute;top:-1px;right:30px;background:var(--gold);color:#1A1411;font-size:10.5px;letter-spacing:.24em;text-transform:uppercase;padding:10px 14px;font-weight:600}
+.about-txt .label{margin-bottom:28px;display:inline-flex}
+.about-txt h2{margin-bottom:40px}
+.about-txt p+p{margin-top:22px}
+.quote{margin:56px 0 0;padding:40px 0 0;border-top:1px solid var(--line2);font-family:var(--serif);font-size:clamp(28px,3vw,40px);line-height:1.2;color:var(--text)}
+.quote em{color:var(--gold)}
+.sig{margin-top:22px;font-size:12px;letter-spacing:.26em;text-transform:uppercase;color:var(--clay)}
 
-.cta-band{padding:0 0 110px}
-.cta-box{border-radius:calc(var(--radius) + 12px);background:linear-gradient(140deg,var(--accent),color-mix(in srgb,var(--accent) 60%,var(--ink)));color:var(--accent-ink);padding:76px 64px;display:grid;grid-template-columns:1.3fr 1fr;gap:40px;align-items:center;position:relative;overflow:hidden}
-.cta-box:after{content:"";position:absolute;right:-120px;bottom:-200px;width:460px;height:460px;border-radius:50%;border:1.5px solid color-mix(in srgb,var(--accent-ink) 22%,transparent)}
-.cta-box h2{color:inherit;margin:0 0 12px}
-.cta-box p{opacity:.85;font-size:18px}
-.cta-box .actions{display:flex;flex-direction:column;gap:12px;align-items:flex-start;position:relative;z-index:1}
-.cta-box .btn{background:var(--accent-ink);color:var(--accent)}
-.cta-box .btn.ghost{background:transparent;color:var(--accent-ink);border-color:color-mix(in srgb,var(--accent-ink) 40%,transparent)}
+/* why */
+.why-list{border-top:1px solid var(--line2)}
+.why-row{display:grid;grid-template-columns:90px 1fr 1.2fr;gap:clamp(20px,4vw,60px);padding:clamp(34px,4vw,52px) 0;border-bottom:1px solid var(--line2);align-items:baseline;transition:padding .6s var(--ease)}
+.why-row .n{font-family:var(--serif);font-style:italic;color:var(--gold);font-size:24px}
+.why-row h3{font-size:clamp(30px,3.4vw,48px);transition:color .4s,transform .6s var(--ease)}
+.why-row:hover h3{color:var(--gold);transform:translateX(10px)}
 
-.visit{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:10px}
-.visit .card h3{font-size:20px}
-.visit a{color:var(--accent);font-weight:600}
-footer{border-top:1px solid color-mix(in srgb,var(--ink) 9%,transparent);padding:40px 0 110px;color:var(--muted);font-size:14px}
-footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
-.mobile-bar{display:none}
+/* steps */
+.steps{background:var(--surface);border-top:1px solid var(--line2);border-bottom:1px solid var(--line2)}
+.steps-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;counter-reset:s}
+.step{position:relative;padding:40px clamp(18px,2vw,34px) 10px;border-left:1px solid var(--line2)}
+.step:first-child{border-left:0;padding-left:0}
+.step .big{font-family:var(--serif);font-size:clamp(80px,8vw,120px);line-height:.8;color:transparent;-webkit-text-stroke:1px var(--gold);display:block;margin-bottom:34px}
+.step h3{font-size:30px;margin-bottom:14px}
+.step p{font-size:15.5px}
+.steps-line{height:1px;background:var(--line2);margin-bottom:0;position:relative;overflow:hidden}
+.steps-line i{position:absolute;inset:0;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:transform 2.2s var(--ease)}
+.steps-line.on i{transform:scaleX(1)}
 
-@keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
-.hero .copy>*{animation:rise .8s cubic-bezier(.2,.7,.2,1) both}
-.hero .copy>*:nth-child(2){animation-delay:.08s}.hero .copy>*:nth-child(3){animation-delay:.16s}
-.hero .copy>*:nth-child(4){animation-delay:.24s}.hero .copy>*:nth-child(5){animation-delay:.32s}
-.visual{animation:rise 1s .2s cubic-bezier(.2,.7,.2,1) both}
+/* faq */
+.faq-grid{display:grid;grid-template-columns:4fr 7fr;gap:clamp(40px,7vw,110px)}
+.faq-grid .label{margin-bottom:24px;display:inline-flex}
+.qa{border-bottom:1px solid var(--line2)}
+.qa:first-child{border-top:1px solid var(--line2)}
+.qa button{width:100%;background:none;border:0;color:var(--text);text-align:left;font-family:var(--serif);font-size:clamp(24px,2.4vw,32px);line-height:1.2;padding:30px 0;display:flex;justify-content:space-between;gap:24px;align-items:center;cursor:pointer}
+.qa button:hover{color:var(--gold)}
+.qa .pm{width:34px;height:34px;flex:none;border:1px solid var(--line);border-radius:50%;position:relative;transition:transform .5s var(--ease),background .4s}
+.qa .pm::before,.qa .pm::after{content:"";position:absolute;left:50%;top:50%;width:12px;height:1px;background:var(--gold);transform:translate(-50%,-50%)}
+.qa .pm::after{transform:translate(-50%,-50%) rotate(90deg);transition:transform .5s var(--ease)}
+.qa.open .pm{background:rgba(212,164,79,.1)}
+.qa.open .pm::after{transform:translate(-50%,-50%) rotate(0)}
+.qa .ans{display:grid;grid-template-rows:0fr;transition:grid-template-rows .6s var(--ease)}
+.qa.open .ans{grid-template-rows:1fr}
+.qa .ans>div{overflow:hidden}
+.qa .ans p{padding:0 60px 30px 0}
+.qa .ans a{color:var(--gold)}
 
-@media (max-width:980px){
-  .links{display:none}
-  .hero-grid,.why-grid,.cta-box{grid-template-columns:1fr}
-  .hero-grid{gap:56px}
-  .services,.reviews,.visit{grid-template-columns:1fr 1fr}
-  .trust .wrap{grid-template-columns:1fr 1fr}
-  .float.one{left:12px;bottom:-26px}.float.two{right:12px}
-  .visual{max-width:560px;margin-bottom:20px}
-  .section-head{flex-direction:column;align-items:flex-start}
+/* closing cta */
+.cta{position:relative;padding:clamp(100px,13vw,190px) 0;text-align:center;overflow:hidden;background:linear-gradient(180deg,var(--bg) 0%,#231A15 100%);isolation:isolate}
+.cta::before{content:"";position:absolute;left:50%;top:50%;width:min(1100px,140vw);aspect-ratio:1;transform:translate(-50%,-50%);border-radius:50%;background:radial-gradient(closest-side,rgba(212,164,79,.18),transparent);z-index:-1}
+.cta .rings{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:min(900px,130vw);z-index:-1;color:var(--gold);opacity:.35}
+.cta h2{font-size:clamp(50px,9vw,140px);line-height:.92;max-width:1000px;margin:26px auto 0}
+.cta .lead{max-width:540px;margin:34px auto 0}
+.cta-phone{display:inline-block;margin-top:48px;font-family:var(--serif);font-size:clamp(34px,5vw,64px);color:var(--gold);line-height:1}
+.cta .hero-ctas{margin-top:40px}
+
+/* contact */
+.contact-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.contact-grid .card{min-height:300px}
+.contact-grid .card .ico{margin:0 0 auto;width:40px;height:40px}
+.contact-grid h3{font-size:clamp(28px,2.6vw,38px);margin:40px 0 10px;word-break:break-word}
+.contact-grid .k{font-size:11.5px;letter-spacing:.26em;text-transform:uppercase;color:var(--gold);margin-top:44px}
+.contact-grid .go{margin-top:22px;font-size:13.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--text);display:inline-flex;gap:10px;align-items:center}
+.contact-grid .go svg{width:14px;height:14px;color:var(--gold);transition:transform .4s var(--ease)}
+.contact-grid .card:hover .go svg{transform:translateX(5px)}
+.contact-grid .card h3,.contact-grid .k{margin-top:0}
+.contact-grid .card .k{margin-top:44px;margin-bottom:12px}
+
+/* footer */
+footer{border-top:1px solid var(--line2);padding:70px 0 40px;background:var(--bg2)}
+.f-top{display:flex;justify-content:space-between;align-items:flex-start;gap:40px;flex-wrap:wrap}
+.f-big{font-family:var(--serif);font-size:clamp(56px,11vw,170px);line-height:.85;letter-spacing:-.02em;color:var(--surface2);margin:60px 0 40px;user-select:none;white-space:nowrap}
+.f-big em{color:rgba(212,164,79,.32)}
+.f-nav{display:flex;gap:30px;flex-wrap:wrap}
+.f-nav a{font-size:14px;color:var(--muted)}
+.f-nav a:hover{color:var(--text)}
+.f-bot{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;font-size:13px;color:var(--muted);padding-top:28px;border-top:1px solid var(--line2)}
+
+/* mobile bar */
+.mbar{display:none}
+
+/* reveal */
+.rv{opacity:0;transform:translateY(46px);transition:opacity 1.1s var(--ease),transform 1.1s var(--ease)}
+.rv.on{opacity:1;transform:none}
+.rv.d1{transition-delay:.12s}.rv.d2{transition-delay:.24s}.rv.d3{transition-delay:.36s}
+
+/* responsive */
+@media (max-width:1080px){
+  .nav{display:none}
+  .burger{display:inline-flex}
+  .hdr-phone span{display:none}
+}
+@media (max-width:900px){
+  .band-grid,.sec-head,.about-grid,.faq-grid{grid-template-columns:1fr}
+  .svc-a,.svc-b,.svc-c{grid-column:1/-1;min-height:0;margin-top:0}
+  .svc-c{flex-direction:column;align-items:flex-start}
+  .svc-c .btn{margin-left:0}
+  .frame{position:relative;top:0;max-width:440px;aspect-ratio:1/1}
+  .steps-grid{grid-template-columns:1fr 1fr}
+  .step{border-left:0;padding-left:0;border-top:1px solid var(--line2)}
+  .step:nth-child(even){padding-left:clamp(18px,3vw,30px);border-left:1px solid var(--line2)}
+  .steps-line{display:none}
+  .contact-grid{grid-template-columns:1fr}
+  .contact-grid .card{min-height:0}
+  .why-row{grid-template-columns:60px 1fr}
+  .why-row p{grid-column:2}
+  .hero-meta{display:none}
 }
 @media (max-width:640px){
-  body{font-size:16px}
-  .wrap{padding:0 18px}
-  .nav{height:66px}.brand{font-size:19px}
-  .phone,.nav-right .btn{display:none}
-  .hero{padding:44px 0 64px}
-  .lead-text{font-size:17.5px}
-  .hero-ctas .btn{flex:1;justify-content:center}
-  .ticks{display:none}
-  .services,.reviews,.visit,.trust .wrap{grid-template-columns:1fr}
-  section.block{padding:76px 0}
-  .quote-panel,.photo{aspect-ratio:auto;min-height:380px}.photo{aspect-ratio:4/3;min-height:0}
-  .quote-panel{padding:40px 30px 64px}.quote-panel p{font-size:23px}
-  .float{font-size:13px;padding:12px 14px}.float b{font-size:18px}
-  .float.two{display:none}
-  .cta-box{padding:52px 28px}
-  .point{grid-template-columns:44px 1fr;padding:24px}
-  .mobile-bar{display:flex;position:fixed;left:12px;right:12px;bottom:12px;z-index:30;gap:10px}
-  .mobile-bar .btn{flex:1;justify-content:center;box-shadow:0 14px 30px -14px color-mix(in srgb,var(--ink) 60%,transparent)}
-  .mobile-bar .btn.ghost{background:var(--surface)}
+  body{font-size:16px;padding-bottom:76px}
+  .hdr .btn,.hdr-phone{display:none}
+  .logo-mark{width:36px;height:36px}
+  .logo-txt b{font-size:22px}
+  .hero{padding:130px 0 110px}
+  .hero .label{font-size:10.5px;letter-spacing:.22em;margin-bottom:26px}
+  .hero-ctas{flex-direction:column;align-items:stretch;max-width:340px;margin-left:auto;margin-right:auto}
+  .corner{width:36px;height:36px}
+  .c1,.c2{top:92px}
+  .c3,.c4{bottom:20px}
+  .scroll-cue{display:none}
+  .steps-grid{grid-template-columns:1fr}
+  .step,.step:nth-child(even){padding-left:0;border-left:0}
+  .why-row{grid-template-columns:1fr;gap:10px}
+  .why-row p{grid-column:1}
+  .qa .ans p{padding-right:0}
+  .btn{white-space:normal;padding:16px 24px}
+  .cta .hero-ctas{max-width:none}
+  .mbar{display:grid;grid-template-columns:1fr 1fr;gap:10px;position:fixed;left:0;right:0;bottom:0;z-index:40;padding:12px 14px calc(12px + env(safe-area-inset-bottom));background:rgba(20,15,13,.9);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-top:1px solid var(--line2);transform:translateY(110%);transition:transform .5s var(--ease)}
+  .mbar.show{transform:none}
+  .mbar .btn{padding:14px 10px;font-size:12px;letter-spacing:.06em}
+  .f-big{white-space:normal}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
+  .in,.rv,.hero h1 .ln>span{opacity:1!important;transform:none!important}
+  .arch .draw{stroke-dashoffset:0}
+  .mq-track{animation:none}
 }
 </style>
 </head>
 <body>
-<div class="concept">Website concept prepared for <b>Grant&#39;s Real Estate</b> by webstudio &middot; not a live site</div>
 
-<header>
-  <div class="wrap nav">
-    <a href="#top" class="brand">Grant&#39;s Real Estate</a>
-    <nav class="links">
-      <a href="#services">Services</a><a href="#why">Why us</a><a href="#visit">Visit</a>
+<header class="hdr" id="hdr">
+  <div class="wrap">
+    <a href="#top" class="logo" aria-label="Grant's Real Estate, home">
+      <svg class="logo-mark" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+        <rect x=".5" y=".5" width="47" height="47" stroke="#D4A44F" stroke-opacity=".55"/>
+        <path d="M10 40V21c0-7.7 6.3-14 14-14s14 6.3 14 14v19" stroke="#D4A44F"/>
+        <text x="24" y="34" text-anchor="middle" font-family="Instrument Serif, Georgia, serif" font-size="20" fill="#F3E9DC">G</text>
+        <line x1="6" y1="40" x2="42" y2="40" stroke="#D4A44F"/>
+      </svg>
+      <span class="logo-txt"><b>Grant's</b><small>Real Estate</small></span>
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <a href="#services" class="ulink">Services</a>
+      <a href="#about" class="ulink">About</a>
+      <a href="#process" class="ulink">Process</a>
+      <a href="#faq" class="ulink">FAQ</a>
+      <a href="#contact" class="ulink">Visit</a>
     </nav>
-    <div class="nav-right">
-      <a class="phone" href="tel:+61397048899">+61 3 9704 8899</a>
-      <a class="btn" href="#visit">Let&#39;s talk</a>
+    <div class="hdr-cta">
+      <a href="tel:+61397048899" class="hdr-phone ulink"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg><span>+61 3 9704 8899</span></a>
+      <a href="#contact" class="btn btn-gold">Book a Conversation</a>
+      <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="mmenu"><span></span></button>
     </div>
   </div>
 </header>
 
+<div class="mmenu" id="mmenu" aria-hidden="true">
+  <a class="m" href="#services">Services</a>
+  <a class="m" href="#about">About</a>
+  <a class="m" href="#process">Process</a>
+  <a class="m" href="#faq">FAQ</a>
+  <a class="m" href="#contact">Visit us</a>
+  <div class="mfoot">Call Grant's Real Estate<a href="tel:+61397048899">+61 3 9704 8899</a></div>
+</div>
+
 <main id="top">
-<section class="hero">
-  <div class="wrap hero-grid">
-    <div class="copy">
-      <div class="eyebrow">
-        <span class="dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-7-4.4-7-10a4 4 0 017-2.6A4 4 0 0119 10c0 5.6-7 10-7 10z"/></svg></span>Real estate
+  <!-- HERO -->
+  <section class="hero" aria-label="Introduction">
+    <div class="hero-bg" id="heroBg"></div>
+    <div class="hero-grain"></div>
+    <svg class="arch" id="arch" viewBox="0 0 760 900" fill="none" stroke="currentColor" aria-hidden="true">
+      <path class="draw" d="M80 880V380C80 214 214 80 380 80s300 134 300 300v500" stroke-opacity=".38"/>
+      <path class="draw" d="M120 880V390c0-144 116-260 260-260s260 116 260 260v490" stroke-opacity=".18"/>
+      <line class="draw" x1="20" y1="880" x2="740" y2="880" stroke-opacity=".38"/>
+      <circle cx="380" cy="80" r="5" fill="currentColor" stroke="none" opacity=".7"/>
+      <path class="draw" d="M380 20v40M350 50h60" stroke-opacity=".35"/>
+    </svg>
+    <span class="corner c1"></span><span class="corner c2"></span><span class="corner c3"></span><span class="corner c4"></span>
+    <span class="hero-meta hm-l in" style="animation-delay:1.4s">9 Webb Street</span>
+    <span class="hero-meta hm-r in" style="animation-delay:1.4s">Melbourne · VIC</span>
+
+    <div class="hero-inner">
+      <p class="label in" style="animation-delay:.2s"><i></i>Grant's Real Estate · Melbourne<i></i></p>
+      <h1>
+        <span class="ln"><span style="animation-delay:.35s">Where Melbourne</span></span>
+        <span class="ln"><span style="animation-delay:.5s">comes <span class="amp">home</span></span></span>
+        <span class="ln"><span class="sm" style="animation-delay:.65s">— with Grant's beside you.</span></span>
+      </h1>
+      <p class="lead in" style="animation-delay:.95s">Selling the home you love or searching for the one you'll love next deserves more than a sign on the lawn. We bring calm, personal guidance to every step, from first conversation to final keys.</p>
+      <div class="hero-ctas in" style="animation-delay:1.15s">
+        <a href="#contact" class="btn btn-gold">Start the Conversation <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M1 8h13M9 3l5 5-5 5"/></svg></a>
+        <a href="tel:+61397048899" class="btn btn-ghost">Call +61 3 9704 8899</a>
       </div>
-      <h1>Find home. Sell for <em>more.</em></h1>
-      <p class="lead-text">Local expertise, honest advice and a marketing plan that gets your home seen by the right buyers.</p>
-      <div class="hero-ctas">
-        <a class="btn" href="#visit">Book a consultation <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-        <a class="btn ghost" href="tel:+61397048899">Call +61 3 9704 8899</a>
+    </div>
+    <div class="scroll-cue" aria-hidden="true">Scroll</div>
+  </section>
+
+  <!-- BAND -->
+  <section class="band" aria-label="Our promise">
+    <div class="band-top">
+      <div class="wrap band-grid">
+        <div class="rv">
+          <p class="label dash" style="margin-bottom:22px">The Grant's Standard</p>
+          <h2>Property is personal. <em>So is how we handle it.</em></h2>
+        </div>
+        <p class="rv d1">Behind every address is a story: the years lived inside it, the plans riding on what comes next. Grant's Real Estate treats yours with the care and discretion it deserves, here in Melbourne.</p>
       </div>
-      <div class="ticks">
-        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7"/></svg>Free home valuation</span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7"/></svg>Local market expert</span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7"/></svg>Premium marketing</span>
+    </div>
+    <div class="marquee" aria-hidden="true">
+      <div class="mq-track"><span>Selling</span><span>Buying</span><span>Melbourne, VIC</span><span>Personal Guidance</span><span>9 Webb Street</span><span>Considered Advice</span></div>
+      <div class="mq-track"><span>Selling</span><span>Buying</span><span>Melbourne, VIC</span><span>Personal Guidance</span><span>9 Webb Street</span><span>Considered Advice</span></div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="sec" id="services">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="rv">
+          <p class="label dash">What We Do</p>
+          <h2>Two sides of the <em>same key.</em></h2>
+        </div>
+        <p class="lead rv d1">Whether you're letting go of a property or looking for your next one, Grant's Real Estate offers the same thing: honest counsel, careful preparation and someone who picks up the phone.</p>
+      </div>
+
+      <div class="svc-grid">
+        <article class="card svc-a rv">
+          <span class="num">i.</span>
+          <svg class="ico" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><path d="M8 56V28L32 10l24 18v28"/><path d="M4 56h56"/><rect x="26" y="36" width="12" height="20"/><path d="M44 14v-6h6v10.5"/><circle cx="35" cy="47" r="1" fill="currentColor"/></svg>
+          <h3>Selling your <em style="color:var(--gold)">home</em></h3>
+          <p>Your property presented with intent and taken to market with a clear plan, so you always know where things stand and why.</p>
+          <ul>
+            <li>An honest conversation about your property and your goals</li>
+            <li>A marketing approach shaped around your home</li>
+            <li>Steady communication from listing to settlement</li>
+          </ul>
+        </article>
+
+        <article class="card svc-b rv d1">
+          <span class="num">ii.</span>
+          <svg class="ico" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><circle cx="22" cy="32" r="12"/><circle cx="22" cy="32" r="4"/><path d="M34 32h26M50 32v9M56 32v6"/></svg>
+          <h3>Finding your <em style="color:var(--gold)">next</em></h3>
+          <p>Searching for a home in Melbourne is easier with a local guide. Tell us what matters to you and we'll help you move forward with confidence.</p>
+          <ul>
+            <li>Listening first: what you need, not what's convenient</li>
+            <li>Straight answers to your questions</li>
+            <li>Support right through to the keys</li>
+          </ul>
+        </article>
+
+        <article class="card svc-c rv">
+          <svg class="ico" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><path d="M10 50h44"/><path d="M14 50V36M24 50V28M34 50V32M44 50V20"/><path d="M12 30l12-10 10 6 16-14"/><path d="M44 12h6v6"/></svg>
+          <div>
+            <span class="num">iii.</span>
+            <h3>What's your property <em style="color:var(--gold)">worth?</em></h3>
+            <p>Thinking about your options but not ready to commit? Start with a no-pressure conversation about your property and where it sits in today's market.</p>
+          </div>
+          <a href="#contact" class="btn btn-gold">Ask Grant's <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M1 8h13M9 3l5 5-5 5"/></svg></a>
+        </article>
       </div>
     </div>
-    <div class="visual">
-      
-      <div class="quote-panel"><div class="quote-mark">“</div><div><p>Local expertise, honest advice and a marketing plan that gets your home seen by the right buyers.</p><div class="who">Grant&#39;s Real Estate</div></div></div>
-      
-      
-      <div class="float two"><span class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><span><b>This week</b>Local market expert</span></div>
-    </div>
-  </div>
-  <template id="qp"><div class="quote-panel"><div class="quote-mark">“</div><div><p>Local expertise, honest advice and a marketing plan that gets your home seen by the right buyers.</p><div class="who">Grant&#39;s Real Estate</div></div></div></template>
-</section>
+  </section>
 
-<div class="trust"><div class="wrap">
-  <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.2-8 9-4.6-.8-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg>Free home valuation</div><div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.2-8 9-4.6-.8-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg>Local market expert</div><div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.2-8 9-4.6-.8-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg>Premium marketing</div><div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.2-8 9-4.6-.8-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg>5-star client service</div>
-</div></div>
+  <!-- ABOUT -->
+  <section class="sec about" id="about">
+    <div class="wrap about-grid">
+      <div class="frame rv">
+        <span class="frame-tag">Est. on Webb St</span>
+        <div class="frame-in">
+          <svg viewBox="0 0 300 300" fill="none" stroke="currentColor" stroke-width="1" aria-hidden="true">
+            <path d="M40 270V140l110-80 110 80v130" stroke-opacity=".8"/>
+            <path d="M20 270h260" stroke-opacity=".8"/>
+            <path d="M120 270v-70a30 30 0 0 1 60 0v70" stroke-opacity=".8"/>
+            <rect x="62" y="160" width="36" height="44" stroke-opacity=".5"/><path d="M80 160v44M62 182h36" stroke-opacity=".5"/>
+            <rect x="202" y="160" width="36" height="44" stroke-opacity=".5"/><path d="M220 160v44M202 182h36" stroke-opacity=".5"/>
+            <circle cx="150" cy="122" r="14" stroke-opacity=".6"/><path d="M150 108v28M136 122h28" stroke-opacity=".4"/>
+            <path d="M150 60V30" stroke-opacity=".35"/>
+            <text x="150" y="250" text-anchor="middle" font-family="Instrument Serif, Georgia, serif" font-size="30" fill="currentColor" stroke="none" font-style="italic">9</text>
+          </svg>
+        </div>
+        <div class="frame-cap"><span><b>9 Webb Street</b>Melbourne, VIC</span><span>No. 09</span></div>
+      </div>
 
-<section class="block" id="services">
-  <div class="wrap">
-    <div class="section-head">
-      <div><div class="kicker">What we do</div><h2>Everything you need,<br>under one roof.</h2></div>
-      <p>From routine visits to the work that changes how you feel about your day, Grant&#39;s Real Estate takes care of it properly.</p>
+      <div class="about-txt">
+        <p class="label dash rv">Our Story</p>
+        <h2 class="rv d1">A name on the door. <em>A person on the phone.</em></h2>
+        <p class="lead rv d2">Grant's Real Estate is a Melbourne agency built around a simple idea: that buying or selling property should feel guided, not rushed.</p>
+        <p class="rv d2">You'll find us at 9 Webb Street. When you call, you speak with people who know their patch and take the time to understand yours. We'd rather give you a straight answer than a sales pitch, and we'd rather earn your trust than chase a quick result.</p>
+        <p class="rv d3">Whatever stage you're at, whether simply curious or ready to move, the first step is the same: a conversation.</p>
+        <blockquote class="quote rv">"The right move begins with <em>the right conversation.</em>"</blockquote>
+        <p class="sig rv">— The Grant's Real Estate approach</p>
+      </div>
     </div>
-    <div class="services">
-      
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11l8-7 8 7v9a1 1 0 01-1 1h-4v-6H9v6H5a1 1 0 01-1-1z"/></svg></div><h3>Selling</h3><p>Pricing strategy, staging advice and premium marketing.</p></div>
-      
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1-4.4-4.3 6.1-.9z"/></svg></div><h3>Buying</h3><p>Off-market access and expert negotiation.</p></div>
-      
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3" width="14" height="18" rx="1"/><path d="M9 7h2M13 7h2M9 11h2M13 11h2M9 15h2M13 15h2"/></svg></div><h3>Luxury homes</h3><p>Discreet representation for high-end properties.</p></div>
-      
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="18" r="2.5"/><circle cx="18" cy="6" r="2.5"/><path d="M8.5 18H16a3 3 0 000-6H8a3 3 0 010-6h7.5"/></svg></div><h3>Relocation</h3><p>Moving to the area? We make it easy.</p></div>
-      
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/><path d="M19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8z"/></svg></div><h3>Home valuation</h3><p>Find out what your home is worth today.</p></div>
-      
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-7-4.4-7-10a4 4 0 017-2.6A4 4 0 0119 10c0 5.6-7 10-7 10z"/></svg></div><h3>First-time buyers</h3><p>Patient guidance from first viewing to keys.</p></div>
-      
-    </div>
-  </div>
-</section>
+  </section>
 
-<section class="block why" id="why">
-  <div class="wrap why-grid">
-    <div>
-      <div class="kicker">Why clients choose us</div>
-      <h2>The Melbourne real estate agent people recommend to their friends.</h2>
-      <p class="intro">it still comes down to the same three things.</p>
+  <!-- WHY -->
+  <section class="sec" id="why">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="rv">
+          <p class="label dash">Why Grant's</p>
+          <h2>Quietly <em>exceptional.</em></h2>
+        </div>
+        <p class="lead rv d1">Premium service isn't about noise. It's attention to detail, clear thinking and showing up for you, every time.</p>
+      </div>
+      <div class="why-list">
+        <div class="why-row rv"><span class="n">01</span><h3>Personal, not processed</h3><p>You're treated as a client with a story, not a file number. Your goals set the direction.</p></div>
+        <div class="why-row rv"><span class="n">02</span><h3>Melbourne at heart</h3><p>A local agency on Webb Street, working with homeowners and buyers across Melbourne.</p></div>
+        <div class="why-row rv"><span class="n">03</span><h3>Straight talk</h3><p>Clear, honest advice, even when it's not what you expected to hear. No surprises later.</p></div>
+        <div class="why-row rv"><span class="n">04</span><h3>Easy to reach</h3><p>One call to +61 3 9704 8899 puts you in touch. Questions answered, not deflected.</p></div>
+      </div>
     </div>
-    <div class="points">
-      
-      <div class="point"><div class="num">01</div><div><h3>Local expert</h3><p>Deep knowledge of every neighbourhood we serve.</p></div></div>
-      
-      <div class="point"><div class="num">02</div><div><h3>Premium marketing</h3><p>Professional photography, video and targeted promotion.</p></div></div>
-      
-      <div class="point"><div class="num">03</div><div><h3>Skilled negotiator</h3><p>We protect your interests at every step.</p></div></div>
-      
+  </section>
+
+  <!-- PROCESS -->
+  <section class="sec steps" id="process">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="rv">
+          <p class="label dash">How It Works</p>
+          <h2>Four steps. <em>No guesswork.</em></h2>
+        </div>
+        <p class="lead rv d1">A clear path from your first call to the final handshake, so you always know what happens next.</p>
+      </div>
+      <div class="steps-line" id="stepsLine"><i></i></div>
+      <div class="steps-grid">
+        <div class="step rv"><span class="big">1</span><h3>Talk</h3><p>Call us or drop in at 9 Webb Street. Tell us where you are and where you'd like to be.</p></div>
+        <div class="step rv d1"><span class="big">2</span><h3>Plan</h3><p>We map out a clear approach for your sale or search, built around your timing and goals.</p></div>
+        <div class="step rv d2"><span class="big">3</span><h3>Act</h3><p>We get to work with care and keep you informed at every turn, so nothing is left to chance.</p></div>
+        <div class="step rv d3"><span class="big">4</span><h3>Arrive</h3><p>Contracts, settlement, keys. We stay with you until the move is truly done.</p></div>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-
-
-<section class="cta-band" id="book">
-  <div class="wrap"><div class="cta-box">
-    <div><h2>Ready when you are.</h2><p>Book a consultation in under a minute, or give us a call and talk to a real person.</p></div>
-    <div class="actions">
-      <a class="btn" href="#visit">Book a consultation</a>
-      <a class="btn ghost" href="tel:+61397048899">Call +61 3 9704 8899</a>
+  <!-- FAQ -->
+  <section class="sec" id="faq">
+    <div class="wrap faq-grid">
+      <div>
+        <p class="label dash rv">Questions</p>
+        <h2 class="rv d1">Good to <em>know.</em></h2>
+        <p class="rv d2" style="margin-top:26px;max-width:340px">Anything else on your mind? Call us on <a href="tel:+61397048899" class="ulink" style="color:var(--gold)">+61 3 9704 8899</a>.</p>
+      </div>
+      <div class="rv d1">
+        <div class="qa open">
+          <button aria-expanded="true">Where is Grant's Real Estate located?<span class="pm" aria-hidden="true"></span></button>
+          <div class="ans"><div><p>Our office is at 9 Webb Street, Melbourne, VIC. <a href="https://maps.google.com/?q=Grant%27s+Real+Estate+9+Webb+Street+Melbourne+VIC" target="_blank" rel="noopener" class="ulink">Open in Google Maps</a>.</p></div></div>
+        </div>
+        <div class="qa">
+          <button aria-expanded="false">How do I get in touch?<span class="pm" aria-hidden="true"></span></button>
+          <div class="ans"><div><p>The quickest way is to call us on <a href="tel:+61397048899">+61 3 9704 8899</a>. We're happy to talk through your situation and answer your questions.</p></div></div>
+        </div>
+        <div class="qa">
+          <button aria-expanded="false">Can you help if I'm buying, not selling?<span class="pm" aria-hidden="true"></span></button>
+          <div class="ans"><div><p>Yes. As a Melbourne real estate agent we work with people on both sides of a move. Give us a call and tell us what you're looking for.</p></div></div>
+        </div>
+        <div class="qa">
+          <button aria-expanded="false">What are your opening hours?<span class="pm" aria-hidden="true"></span></button>
+          <div class="ans"><div><p>Please call ahead on <a href="tel:+61397048899">+61 3 9704 8899</a> to confirm our hours or to arrange a time to meet at Webb Street.</p></div></div>
+        </div>
+      </div>
     </div>
-  </div></div>
-</section>
+  </section>
 
-<section class="block" id="visit" style="padding-top:0">
-  <div class="wrap">
-    <div class="kicker">Visit us</div><h2>Come say hello.</h2>
-    <div class="visit">
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11l8-7 8 7v9a1 1 0 01-1 1h-4v-6H9v6H5a1 1 0 01-1-1z"/></svg></div><h3>Address</h3><p>9 Webb Street</p></div>
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div><h3>Phone</h3><p><a href="tel:+61397048899">+61 3 9704 8899</a></p><p style="margin-top:10px">Call or message us for today's opening hours.</p></div>
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-7-4.4-7-10a4 4 0 017-2.6A4 4 0 0119 10c0 5.6-7 10-7 10z"/></svg></div><h3>Local market expert</h3><p>Book a consultation online or by phone and we'll take care of the rest.</p></div>
+  <!-- CTA -->
+  <section class="cta" aria-label="Get in touch">
+    <svg class="rings" id="rings" viewBox="0 0 900 900" fill="none" stroke="currentColor" aria-hidden="true">
+      <circle cx="450" cy="450" r="440" stroke-opacity=".35"/><circle cx="450" cy="450" r="340" stroke-opacity=".5" stroke-dasharray="2 8"/><circle cx="450" cy="450" r="240" stroke-opacity=".35"/>
+    </svg>
+    <div class="wrap">
+      <p class="label rv">Your Next Chapter</p>
+      <h2 class="rv d1">Let's talk about <em>your address.</em></h2>
+      <p class="lead rv d2">One call is all it takes to start. No pressure, no obligation, just a clear-headed conversation with Grant's Real Estate.</p>
+      <a href="tel:+61397048899" class="cta-phone ulink rv d2">+61 3 9704 8899</a>
+      <div class="hero-ctas rv d3">
+        <a href="tel:+61397048899" class="btn btn-gold">Call Now <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M1 8h13M9 3l5 5-5 5"/></svg></a>
+        <a href="https://maps.google.com/?q=Grant%27s+Real+Estate+9+Webb+Street+Melbourne+VIC" target="_blank" rel="noopener" class="btn btn-ghost">Find Webb Street</a>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="sec" id="contact">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="rv">
+          <p class="label dash">Visit &amp; Contact</p>
+          <h2>Come by <em>Webb Street.</em></h2>
+        </div>
+        <p class="lead rv d1">Call ahead, or find us in person. Either way, you'll be welcomed by people who are glad you came.</p>
+      </div>
+      <div class="contact-grid">
+        <a href="tel:+61397048899" class="card rv">
+          <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>
+          <p class="k">Telephone</p>
+          <h3>+61 3 9704 8899</h3>
+          <span class="go">Call now <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M1 8h13M9 3l5 5-5 5"/></svg></span>
+        </a>
+        <a href="https://maps.google.com/?q=Grant%27s+Real+Estate+9+Webb+Street+Melbourne+VIC" target="_blank" rel="noopener" class="card rv d1">
+          <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M12 22s7-6.2 7-12a7 7 0 0 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg>
+          <p class="k">Address</p>
+          <h3>9 Webb Street<br>Melbourne, VIC</h3>
+          <span class="go">Get directions <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M1 8h13M9 3l5 5-5 5"/></svg></span>
+        </a>
+        <a href="tel:+61397048899" class="card rv d2">
+          <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+          <p class="k">Hours</p>
+          <h3>Please call to confirm</h3>
+          <span class="go">Arrange a time <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M1 8h13M9 3l5 5-5 5"/></svg></span>
+        </a>
+      </div>
+    </div>
+  </section>
 </main>
 
-<footer><div class="wrap">
-  <span>© 2026 Grant&#39;s Real Estate</span>
-  <span>Concept design by webstudio. Not affiliated with or endorsed by Grant&#39;s Real Estate.</span>
-</div></footer>
+<footer>
+  <div class="wrap">
+    <div class="f-top">
+      <a href="#top" class="logo" aria-label="Back to top">
+        <svg class="logo-mark" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <rect x=".5" y=".5" width="47" height="47" stroke="#D4A44F" stroke-opacity=".55"/>
+          <path d="M10 40V21c0-7.7 6.3-14 14-14s14 6.3 14 14v19" stroke="#D4A44F"/>
+          <text x="24" y="34" text-anchor="middle" font-family="Instrument Serif, Georgia, serif" font-size="20" fill="#F3E9DC">G</text>
+          <line x1="6" y1="40" x2="42" y2="40" stroke="#D4A44F"/>
+        </svg>
+        <span class="logo-txt"><b>Grant's</b><small>Real Estate</small></span>
+      </a>
+      <nav class="f-nav" aria-label="Footer">
+        <a href="#services" class="ulink">Services</a>
+        <a href="#about" class="ulink">About</a>
+        <a href="#process" class="ulink">Process</a>
+        <a href="#faq" class="ulink">FAQ</a>
+        <a href="#contact" class="ulink">Contact</a>
+      </nav>
+    </div>
+    <div class="f-big" aria-hidden="true">Grant's <em>Real Estate</em></div>
+    <div class="f-bot">
+      <span>© <span id="yr">2026</span> Grant's Real Estate · 9 Webb Street, Melbourne VIC</span>
+      <a href="tel:+61397048899" class="ulink">+61 3 9704 8899</a>
+    </div>
+  </div>
+</footer>
 
-<div class="mobile-bar">
-  <a class="btn ghost" href="tel:+61397048899">Call</a>
-  <a class="btn" href="#visit">Let&#39;s talk</a>
+<div class="mbar" id="mbar">
+  <a href="tel:+61397048899" class="btn btn-gold">Call Now</a>
+  <a href="#contact" class="btn btn-ghost">Visit Us</a>
 </div>
-</body>
+
+<script>
+(function(){
+  var d=document,b=d.body,rm=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  requestAnimationFrame(function(){b.classList.add('loaded')});
+  d.getElementById('yr').textContent=new Date().getFullYear();
+
+  var hdr=d.getElementById('hdr'),mbar=d.getElementById('mbar'),bg=d.getElementById('heroBg'),arch=d.getElementById('arch'),ticking=false;
+  function onScroll(){
+    var y=window.scrollY;
+    hdr.classList.toggle('scrolled',y>30);
+    mbar.classList.toggle('show',y>window.innerHeight*.6);
+    if(!rm&&y<window.innerHeight*1.2){
+      bg.style.transform='translate3d(0,'+(y*.3)+'px,0)';
+      arch.style.transform='translate(-50%,calc(-46% + '+(y*.15)+'px))';
+    }
+    ticking=false;
+  }
+  window.addEventListener('scroll',function(){if(!ticking){requestAnimationFrame(onScroll);ticking=true}},{passive:true});
+  onScroll();
+
+  var burger=d.getElementById('burger'),mm=d.getElementById('mmenu');
+  function setMenu(o){b.classList.toggle('menu-open',o);burger.setAttribute('aria-expanded',o);mm.setAttribute('aria-hidden',!o);b.style.overflow=o?'hidden':''}
+  burger.addEventListener('click',function(){setMenu(!b.classList.contains('menu-open'))});
+  mm.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){setMenu(false)})});
+  d.addEventListener('keydown',function(e){if(e.key==='Escape')setMenu(false)});
+
+  var els=d.querySelectorAll('.rv,#stepsLine');
+  if('IntersectionObserver' in window&&!rm){
+    var io=new IntersectionObserver(function(en){en.forEach(function(e){if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target)}})},{threshold:.12,rootMargin:'0px 0px -6% 0px'});
+    els.forEach(function(el){io.observe(el)});
+  }else{els.forEach(function(el){el.classList.add('on')})}
+
+  d.querySelectorAll('.qa button').forEach(function(btn){
+    btn.addEventListener('click',function(){
+      var q=btn.parentElement,o=q.classList.toggle('open');
+      btn.setAttribute('aria-expanded',o);
+    });
+  });
+})();
+</script>
+<div id="lm-concept" style="position:fixed;left:12px;bottom:12px;z-index:2147483647;font:500 11px/1.3 -apple-system,BlinkMacSystemFont,Segoe UI,sans-serif;letter-spacing:.02em;background:rgba(15,15,18,.82);color:#f4f1ea;padding:7px 11px;border-radius:999px;backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);pointer-events:none;max-width:70vw">Website concept for Grant&#x27;s Real Estate by webstudio &middot; not the live site</div><p style="margin:0;padding:18px 16px 70px;text-align:center;font:12px/1.5 -apple-system,sans-serif;color:#8a8a8a;background:#0e0e10">Concept design by webstudio. Not affiliated with or endorsed by Grant&#x27;s Real Estate.</p></body>
 </html>
