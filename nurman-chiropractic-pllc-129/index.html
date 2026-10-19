@@ -1,291 +1,567 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src * data: blob:; media-src 'self' data:; style-src 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com data:; script-src 'unsafe-inline'; connect-src 'none'; frame-src 'none'; form-action 'none'; base-uri 'none'; object-src 'none'">
 <meta name="robots" content="noindex, nofollow">
-<title>Nurman Chiropractic, PLLC | Website concept</title>
+<style>html,body{max-width:100%;overflow-x:clip}</style>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nurman Chiropractic, PLLC | Chiropractor in Round Rock, TX</title>
+<meta name="description" content="Nurman Chiropractic, PLLC: personal, hands-on chiropractic care at 2681 Gattis School Rd, Round Rock, TX. Call (512) 931-4694.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{
-  --bg:#f5f3ee;--surface:#ffffff;--ink:#1c2a22;--muted:#5f6b63;
-  --accent:#2f5a43;--accent-ink:#ffffff;--gold:#b8955a;--soft:#e6ece6;
-  --radius:22px;--max:1180px;
-  --serif:"Fraunces",Georgia,serif;--sans:"Manrope",system-ui,-apple-system,sans-serif;
+  --bg:#EFF7F7;--surface:#FFFFFF;--ink:#0F2F33;--ink-soft:#3D5A5E;--teal:#0F8B8D;--teal-d:#0A6567;--teal-l:#D5ECEC;--gold:#F2B544;--gold-l:#FBE8C2;--sand:#F7F1E6;
+  --r-lg:36px;--r-md:22px;--ease:cubic-bezier(.22,1,.36,1);
+  --shadow:0 1px 2px rgba(15,47,51,.04),0 18px 50px -20px rgba(15,47,51,.18);
 }
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:"Space Grotesk",system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;font-size:17px;overflow-x:hidden;-webkit-font-smoothing:antialiased}
 a{color:inherit;text-decoration:none}
-img{max-width:100%;display:block}
-.wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
-.concept{background:var(--ink);color:var(--bg);font-size:13px;text-align:center;padding:8px 16px;letter-spacing:.02em}
-.concept b{color:var(--gold);font-weight:600}
+svg{display:block}
+.wrap{width:min(1200px,100% - 48px);margin-inline:auto}
+.label{display:inline-flex;align-items:center;gap:10px;font-size:12px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--teal-d)}
+.label::before{content:"";width:28px;height:2px;border-radius:2px;background:var(--gold)}
+h1,h2,h3{font-weight:600;line-height:1.02;letter-spacing:-.035em}
+h2{font-size:clamp(38px,6vw,76px);margin:18px 0 22px}
+h2 em{font-style:normal;color:var(--teal)}
+.lead{font-size:clamp(17px,1.6vw,20px);color:var(--ink-soft);max-width:58ch}
+section{position:relative}
+
+/* buttons */
+.btn{position:relative;display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:17px 28px;border-radius:999px;font-weight:600;font-size:16px;letter-spacing:-.01em;transition:transform .5s var(--ease),box-shadow .5s var(--ease),background .3s;white-space:nowrap;overflow:hidden;isolation:isolate}
+.btn-primary{background:var(--ink);color:#fff;box-shadow:0 14px 30px -14px rgba(15,47,51,.6)}
+.btn-primary::after{content:"";position:absolute;inset:0;background:var(--teal);transform:translateY(101%);transition:transform .5s var(--ease);z-index:-1;border-radius:inherit}
+.btn-primary:hover::after{transform:none}
+.btn-ghost{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 1.5px rgba(15,47,51,.22)}
+.btn-ghost:hover{box-shadow:inset 0 0 0 1.5px var(--ink);background:#fff}
+.btn:hover{transform:translateY(-3px)}
+.btn svg{width:18px;height:18px;transition:transform .4s var(--ease)}
+.btn:hover svg{transform:translateX(3px)}
+.ul{background:linear-gradient(currentColor,currentColor) 0 100%/0 1.5px no-repeat;transition:background-size .45s var(--ease)}
+.ul:hover{background-size:100% 1.5px}
 
 /* header */
-header{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:saturate(1.4) blur(10px);border-bottom:1px solid color-mix(in srgb,var(--ink) 8%,transparent)}
-.nav{display:flex;align-items:center;justify-content:space-between;height:76px;gap:24px}
-.brand{font-family:var(--serif);font-size:23px;font-weight:600;letter-spacing:-.01em;line-height:1.1;max-width:340px}
-.links{display:flex;gap:30px;font-size:15px;font-weight:500;color:var(--muted)}
-.links a:hover{color:var(--ink)}
-.nav-right{display:flex;align-items:center;gap:18px}
-.phone{font-weight:600;font-size:15px;white-space:nowrap}
-.btn{display:inline-flex;align-items:center;gap:10px;background:var(--accent);color:var(--accent-ink);padding:14px 26px;border-radius:999px;font-weight:600;font-size:15.5px;transition:transform .2s ease,box-shadow .2s ease;white-space:nowrap}
-.btn:hover{transform:translateY(-2px);box-shadow:0 12px 28px -12px var(--accent)}
-.btn.ghost{background:transparent;color:var(--ink);border:1.5px solid color-mix(in srgb,var(--ink) 20%,transparent)}
-.btn.ghost:hover{box-shadow:none;border-color:var(--ink)}
-.btn svg{width:18px;height:18px}
+header{position:fixed;inset:14px 0 auto;z-index:50;pointer-events:none}
+.nav{pointer-events:auto;display:flex;align-items:center;justify-content:space-between;gap:20px;padding:10px 10px 10px 22px;border-radius:999px;background:rgba(255,255,255,.62);backdrop-filter:blur(18px) saturate(1.4);-webkit-backdrop-filter:blur(18px) saturate(1.4);border:1px solid rgba(255,255,255,.8);box-shadow:0 10px 40px -18px rgba(15,47,51,.25);transition:background .3s}
+header.scrolled .nav{background:rgba(255,255,255,.86)}
+.logo{display:flex;align-items:center;gap:12px;font-weight:700;letter-spacing:-.02em;font-size:18px;line-height:1}
+.logo small{display:block;font-size:10px;font-weight:500;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-soft);margin-top:4px}
+.mark{width:38px;height:38px;flex:none}
+.links{display:flex;gap:30px;font-size:15px;font-weight:500}
+.nav-r{display:flex;align-items:center;gap:8px}
+.nav-phone{font-weight:600;font-size:15px;padding:0 14px}
+.nav .btn{padding:12px 20px;font-size:15px}
+.burger{display:none;width:46px;height:46px;border-radius:50%;border:0;background:var(--ink);cursor:pointer;position:relative}
+.burger span{position:absolute;left:14px;right:14px;height:2px;background:#fff;border-radius:2px;transition:transform .4s var(--ease),top .4s var(--ease)}
+.burger span:nth-child(1){top:19px}.burger span:nth-child(2){top:25px}
+.menu-open .burger span:nth-child(1){top:22px;transform:rotate(45deg)}
+.menu-open .burger span:nth-child(2){top:22px;transform:rotate(-45deg)}
+.mobile-menu{position:fixed;inset:0;z-index:40;background:var(--bg);display:flex;flex-direction:column;justify-content:center;padding:100px 32px 40px;gap:6px;clip-path:circle(0 at calc(100% - 50px) 44px);transition:clip-path .7s var(--ease);visibility:hidden}
+.menu-open .mobile-menu{clip-path:circle(150% at calc(100% - 50px) 44px);visibility:visible}
+.mobile-menu a.m{font-size:44px;font-weight:600;letter-spacing:-.04em;line-height:1.2}
+.mobile-menu .btn{margin-top:28px;align-self:flex-start}
 
 /* hero */
-.hero{padding:72px 0 88px}
-.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:64px;align-items:center}
-.eyebrow{display:inline-flex;align-items:center;gap:10px;background:var(--surface);border:1px solid color-mix(in srgb,var(--ink) 10%,transparent);padding:8px 16px 8px 10px;border-radius:999px;font-size:14px;font-weight:600;color:var(--muted)}
-.stars{color:var(--gold);letter-spacing:1px;font-size:14px}
-.eyebrow .dot{width:26px;height:26px;border-radius:50%;background:var(--soft);display:grid;place-items:center;color:var(--accent)}
-h1{font-family:var(--serif);font-weight:500;font-size:clamp(44px,5.6vw,74px);line-height:1.02;letter-spacing:-.025em;margin:26px 0 22px}
-h1 em{font-style:italic;color:var(--accent)}
-.lead-text{font-size:19.5px;color:var(--muted);max-width:540px}
-.hero-ctas{display:flex;gap:14px;margin-top:36px;flex-wrap:wrap}
-.ticks{display:flex;gap:22px;margin-top:34px;flex-wrap:wrap;font-size:14.5px;font-weight:600;color:var(--muted)}
-.ticks span{display:flex;align-items:center;gap:8px}
-.ticks svg{width:18px;height:18px;color:var(--accent)}
-.visual{position:relative}
-.photo{aspect-ratio:4/5;border-radius:calc(var(--radius) + 10px);overflow:hidden;background:var(--soft);box-shadow:0 40px 80px -40px color-mix(in srgb,var(--ink) 55%,transparent)}
-.photo img{width:100%;height:100%;object-fit:cover}
-.quote-panel{aspect-ratio:4/5;border-radius:calc(var(--radius) + 10px);background:linear-gradient(155deg,var(--accent),color-mix(in srgb,var(--accent) 55%,var(--ink)));color:var(--accent-ink);padding:52px 46px;display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden;box-shadow:0 40px 80px -40px color-mix(in srgb,var(--ink) 60%,transparent)}
-.quote-panel:before{content:"";position:absolute;width:420px;height:420px;border-radius:50%;right:-160px;top:-160px;background:color-mix(in srgb,var(--accent-ink) 9%,transparent)}
-.quote-panel:after{content:"";position:absolute;width:260px;height:260px;border-radius:50%;left:-90px;bottom:-110px;border:1.5px solid color-mix(in srgb,var(--accent-ink) 22%,transparent)}
-.quote-mark{font-family:var(--serif);font-size:120px;line-height:.6;opacity:.35}
-.quote-panel p{font-family:var(--serif);font-size:28px;line-height:1.3;position:relative;z-index:1}
-.quote-panel .who{font-family:var(--sans);font-size:15px;opacity:.85;margin-top:22px;font-weight:600}
-.float{position:absolute;background:var(--surface);color:var(--ink);border-radius:18px;padding:16px 20px;box-shadow:0 24px 50px -24px color-mix(in srgb,var(--ink) 50%,transparent);display:flex;align-items:center;gap:14px;font-size:14px;line-height:1.35}
-.float b{font-size:22px;font-family:var(--serif);font-weight:600;display:block}
-.float.one{left:-34px;bottom:-28px}
-.float.two{right:-22px;top:44px}
-.float .badge{width:44px;height:44px;border-radius:14px;background:var(--soft);display:grid;place-items:center;color:var(--accent)}
-.float .badge svg{width:22px;height:22px}
+.hero{min-height:100vh;min-height:100svh;padding:150px 0 0;display:flex;flex-direction:column;overflow:hidden}
+.hero-bg{position:absolute;inset:0;z-index:-1;overflow:hidden}
+.blob{position:absolute;border-radius:50%;filter:blur(2px)}
+.b1{width:56vw;height:56vw;max-width:760px;max-height:760px;right:-12vw;top:-14vw;background:radial-gradient(circle at 35% 35%,var(--teal-l),rgba(213,236,236,0) 70%)}
+.b2{width:40vw;height:40vw;max-width:520px;max-height:520px;left:-12vw;bottom:-6vw;background:radial-gradient(circle at 50% 50%,var(--gold-l),rgba(251,232,194,0) 70%)}
+.grain{position:absolute;inset:0;opacity:.35;background-image:radial-gradient(rgba(15,47,51,.08) 1px,transparent 1px);background-size:22px 22px;mask-image:linear-gradient(180deg,#000,transparent 75%);-webkit-mask-image:linear-gradient(180deg,#000,transparent 75%)}
+.hero-grid{display:grid;grid-template-columns:1fr auto;gap:40px;align-items:end;flex:1}
+.hero-top{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-bottom:28px}
+.pill{display:inline-flex;align-items:center;gap:8px;padding:8px 16px;border-radius:999px;background:#fff;font-size:13px;font-weight:500;box-shadow:var(--shadow)}
+.pill i{width:8px;height:8px;border-radius:50%;background:var(--teal);box-shadow:0 0 0 4px var(--teal-l)}
+.hero h1{font-size:clamp(58px,12.4vw,190px);line-height:.88;letter-spacing:-.06em;font-weight:600}
+.hero h1 .line{display:block;overflow:hidden;padding-bottom:.06em}
+.hero h1 .w{display:inline-block;transform:translateY(110%);transition:transform 1.2s var(--ease)}
+.hero h1 .shift{display:inline-block;transition:transform 1.6s var(--ease) .9s}
+.hero h1 .l2 .shift{transform:translateX(.35em)}
+.hero h1 .l3 .shift{transform:translateX(-.25em)}
+.loaded .hero h1 .w{transform:none}
+.loaded .hero h1 .shift{transform:none}
+.hero h1 .l2 .w{transition-delay:.12s}.hero h1 .l3 .w{transition-delay:.24s}
+.hero h1 .accent{color:var(--teal)}
+.hero h1 .dot{color:var(--gold)}
+.hero h1 .arch{display:inline-block;vertical-align:middle;width:.82em;height:.62em;border-radius:999px 999px 999px 999px;background:linear-gradient(135deg,var(--teal),var(--teal-d));margin:0 .08em;position:relative;top:-.04em;overflow:hidden}
+.hero h1 .arch::after{content:"";position:absolute;inset:18% 30%;border-radius:999px;background:var(--gold);animation:slide 4s var(--ease) infinite alternate}
+@keyframes slide{from{transform:translateX(-60%)}to{transform:translateX(60%)}}
+.hero-sub{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:40px;align-items:end;margin-top:44px}
+.hero-sub p{font-size:clamp(17px,1.5vw,20px);color:var(--ink-soft);max-width:46ch}
+.ctas{display:flex;gap:12px;flex-wrap:wrap;justify-content:flex-end}
+.fade{opacity:0;transform:translateY(24px);transition:opacity 1s var(--ease),transform 1s var(--ease)}
+.loaded .fade{opacity:1;transform:none}
+.loaded .d1{transition-delay:.5s}.loaded .d2{transition-delay:.65s}.loaded .d3{transition-delay:.8s}.loaded .d4{transition-delay:.95s}
 
-/* trust */
-.trust{border-top:1px solid color-mix(in srgb,var(--ink) 9%,transparent);border-bottom:1px solid color-mix(in srgb,var(--ink) 9%,transparent);background:var(--surface)}
-.trust .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;padding-top:26px;padding-bottom:26px}
-.trust div{display:flex;align-items:center;gap:12px;font-weight:600;font-size:15px}
-.trust svg{width:22px;height:22px;color:var(--accent);flex:none}
+/* spine signature */
+.spine{width:120px;display:flex;flex-direction:column;align-items:center;gap:9px;padding-bottom:6px;will-change:transform}
+.vert{height:26px;border-radius:999px;background:#fff;box-shadow:var(--shadow);position:relative;transition:transform 1.4s var(--ease)}
+.vert::after{content:"";position:absolute;left:50%;top:50%;width:8px;height:8px;margin:-4px 0 0 -4px;border-radius:50%;background:var(--teal-l)}
+.vert.g{background:var(--gold)}.vert.g::after{background:#fff}
+.vert.t{background:var(--teal)}.vert.t::after{background:rgba(255,255,255,.5)}
+.spine-cap{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-soft);margin-top:14px;writing-mode:vertical-rl;transform:rotate(180deg)}
 
-/* sections */
-section.block{padding:110px 0}
-.kicker{font-size:13px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
-h2{font-family:var(--serif);font-weight:500;font-size:clamp(34px,3.8vw,52px);line-height:1.08;letter-spacing:-.02em;margin:14px 0 18px}
-.section-head{display:flex;justify-content:space-between;align-items:end;gap:40px;margin-bottom:56px}
-.section-head p{color:var(--muted);max-width:420px}
-.services{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-.card{background:var(--surface);border-radius:var(--radius);padding:34px 32px 36px;border:1px solid color-mix(in srgb,var(--ink) 7%,transparent);transition:transform .25s ease,box-shadow .25s ease}
-.card:hover{transform:translateY(-4px);box-shadow:0 30px 60px -36px color-mix(in srgb,var(--ink) 45%,transparent)}
-.icon{width:54px;height:54px;border-radius:16px;background:var(--soft);color:var(--accent);display:grid;place-items:center;margin-bottom:24px}
-.icon svg{width:26px;height:26px}
-.card h3{font-family:var(--serif);font-weight:500;font-size:23px;margin-bottom:8px;letter-spacing:-.01em}
-.card p{color:var(--muted);font-size:16px}
+/* marquee */
+.marquee{margin-top:64px;background:var(--ink);color:#fff;padding:26px 0;overflow:hidden;transform:rotate(-1.4deg) scale(1.03);transform-origin:center}
+.track{display:flex;width:max-content;animation:marq 38s linear infinite}
+.track span{display:flex;align-items:center;gap:36px;padding-right:36px;font-size:clamp(26px,3.6vw,44px);font-weight:500;letter-spacing:-.03em;white-space:nowrap}
+.track span b{font-weight:500;color:var(--gold)}
+.track svg{width:22px;height:22px;flex:none}
+.marquee:hover .track{animation-play-state:paused}
+@keyframes marq{to{transform:translateX(-50%)}}
 
-.why{background:var(--ink);color:var(--bg)}
-.why .kicker{color:var(--gold)}
-.why-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:80px;align-items:start}
-.why h2{color:var(--bg)}
-.why .intro{color:color-mix(in srgb,var(--bg) 70%,transparent);font-size:18px;max-width:440px}
-.points{display:grid;gap:14px}
-.point{display:grid;grid-template-columns:62px 1fr;gap:20px;padding:30px;border-radius:var(--radius);background:color-mix(in srgb,var(--bg) 6%,transparent);border:1px solid color-mix(in srgb,var(--bg) 10%,transparent)}
-.point .num{font-family:var(--serif);font-size:34px;color:var(--gold);line-height:1}
-.point h3{font-family:var(--serif);font-weight:500;font-size:24px;margin-bottom:6px}
-.point p{color:color-mix(in srgb,var(--bg) 72%,transparent);font-size:16px}
+/* services */
+.services{padding:160px 0 120px}
+.sec-head{display:grid;grid-template-columns:1fr minmax(0,440px);gap:40px;align-items:end;margin-bottom:64px}
+.cards{display:grid;grid-template-columns:repeat(12,1fr);gap:20px}
+.card{grid-column:span 4;background:var(--surface);border-radius:var(--r-lg);padding:36px;box-shadow:var(--shadow);position:relative;overflow:hidden;transition:transform .6s var(--ease),box-shadow .6s var(--ease);display:flex;flex-direction:column;min-height:340px}
+.card:hover{transform:translateY(-8px);box-shadow:0 30px 70px -30px rgba(15,47,51,.35)}
+.card.wide{grid-column:span 8;background:linear-gradient(140deg,var(--teal) 0%,var(--teal-d) 100%);color:#fff}
+.card.wide p{color:rgba(255,255,255,.88)}
+.card.sand{background:var(--sand)}
+.card.gold{background:var(--gold)}
+.card.gold p{color:var(--ink)}
+.ico{width:58px;height:58px;border-radius:18px;display:grid;place-items:center;background:var(--teal-l);color:var(--teal-d);margin-bottom:auto;transition:transform .6s var(--ease)}
+.card:hover .ico{transform:rotate(-8deg) scale(1.06)}
+.wide .ico{background:rgba(255,255,255,.16);color:#fff}
+.gold .ico{background:rgba(255,255,255,.5);color:var(--ink)}
+.ico svg{width:28px;height:28px}
+.card .n{position:absolute;top:30px;right:34px;font-size:13px;letter-spacing:.2em;opacity:.55;font-weight:500}
+.card h3{font-size:clamp(26px,2.6vw,34px);margin:48px 0 12px}
+.card p{color:var(--ink-soft);font-size:16px;max-width:44ch}
+.card .deco{position:absolute;right:-60px;bottom:-60px;width:260px;height:260px;border-radius:50%;border:40px solid rgba(255,255,255,.08)}
+.note{margin-top:28px;font-size:15px;color:var(--ink-soft)}
+.note a{color:var(--teal-d);font-weight:600}
 
-.score{display:flex;align-items:center;gap:18px;background:var(--surface);padding:16px 24px;border-radius:18px;border:1px solid color-mix(in srgb,var(--ink) 8%,transparent)}
-.score b{font-family:var(--serif);font-size:40px;font-weight:500;line-height:1}
-.score small{display:block;color:var(--muted);font-size:14px}
-.reviews{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-.review{background:var(--surface);border-radius:var(--radius);padding:34px;display:flex;flex-direction:column;gap:22px;border:1px solid color-mix(in srgb,var(--ink) 7%,transparent)}
-.review p{font-family:var(--serif);font-size:19.5px;line-height:1.45}
-.review .by{margin-top:auto;display:flex;align-items:center;gap:12px;font-weight:600;font-size:15px}
-.avatar{width:40px;height:40px;border-radius:50%;background:var(--soft);color:var(--accent);display:grid;place-items:center;font-weight:700}
-.review .src{color:var(--muted);font-weight:500;font-size:13px;display:block}
+/* about */
+.about{padding:120px 0;background:var(--surface);border-radius:60px 60px 0 0}
+.about-grid{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:80px;align-items:center}
+.arches{position:relative;aspect-ratio:4/5;max-width:480px;width:100%}
+.arch-a{position:absolute;inset:0 18% 8% 0;border-radius:999px 999px 36px 36px;background:linear-gradient(170deg,var(--teal-l),var(--bg));overflow:hidden}
+.arch-b{position:absolute;right:0;bottom:0;width:46%;height:52%;border-radius:999px 999px 30px 30px;background:var(--gold);display:flex;align-items:flex-end;padding:22px;font-weight:600;font-size:clamp(18px,2vw,22px);line-height:1.15;letter-spacing:-.02em}
+.arch-a svg{position:absolute;left:50%;bottom:0;transform:translateX(-50%);width:78%;height:auto}
+.about-copy p+p{margin-top:18px}
+.quote{margin-top:34px;padding:28px 30px;border-radius:var(--r-md);background:var(--bg);font-size:clamp(20px,2vw,24px);line-height:1.35;letter-spacing:-.02em;font-weight:500;position:relative}
+.quote::before{content:"";position:absolute;left:0;top:24px;bottom:24px;width:4px;border-radius:4px;background:var(--teal)}
 
-.cta-band{padding:0 0 110px}
-.cta-box{border-radius:calc(var(--radius) + 12px);background:linear-gradient(140deg,var(--accent),color-mix(in srgb,var(--accent) 60%,var(--ink)));color:var(--accent-ink);padding:76px 64px;display:grid;grid-template-columns:1.3fr 1fr;gap:40px;align-items:center;position:relative;overflow:hidden}
-.cta-box:after{content:"";position:absolute;right:-120px;bottom:-200px;width:460px;height:460px;border-radius:50%;border:1.5px solid color-mix(in srgb,var(--accent-ink) 22%,transparent)}
-.cta-box h2{color:inherit;margin:0 0 12px}
-.cta-box p{opacity:.85;font-size:18px}
-.cta-box .actions{display:flex;flex-direction:column;gap:12px;align-items:flex-start;position:relative;z-index:1}
-.cta-box .btn{background:var(--accent-ink);color:var(--accent)}
-.cta-box .btn.ghost{background:transparent;color:var(--accent-ink);border-color:color-mix(in srgb,var(--accent-ink) 40%,transparent)}
+/* why */
+.why{padding:120px 0;background:var(--surface)}
+.why-list{display:grid;grid-template-columns:repeat(2,1fr);gap:0;border-top:1px solid rgba(15,47,51,.12);margin-top:56px}
+.why-item{display:grid;grid-template-columns:64px 1fr;gap:20px;padding:36px 24px 36px 0;border-bottom:1px solid rgba(15,47,51,.12);transition:padding .5s var(--ease)}
+.why-item:nth-child(odd){border-right:1px solid rgba(15,47,51,.12)}
+.why-item:nth-child(even){padding-left:36px}
+.why-item:hover{padding-left:14px}
+.why-item:nth-child(even):hover{padding-left:50px}
+.why-item .k{font-size:14px;letter-spacing:.2em;color:var(--teal);font-weight:600;padding-top:8px}
+.why-item h3{font-size:clamp(22px,2.2vw,28px);margin-bottom:8px}
+.why-item p{color:var(--ink-soft);font-size:16px}
 
-.visit{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:10px}
-.visit .card h3{font-size:20px}
-.visit a{color:var(--accent);font-weight:600}
-footer{border-top:1px solid color-mix(in srgb,var(--ink) 9%,transparent);padding:40px 0 110px;color:var(--muted);font-size:14px}
-footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
-.mobile-bar{display:none}
+/* steps */
+.steps{padding:140px 0;overflow:hidden}
+.steps-row{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:64px;position:relative}
+.steps-row::before{content:"";position:absolute;top:36px;left:36px;right:36px;height:2px;background:repeating-linear-gradient(90deg,var(--teal) 0 10px,transparent 10px 20px);opacity:.35}
+.step{position:relative}
+.step .num{width:72px;height:72px;border-radius:50%;display:grid;place-items:center;background:#fff;box-shadow:var(--shadow);font-size:22px;font-weight:600;color:var(--teal-d);margin-bottom:28px;transition:background .4s,color .4s,transform .6s var(--ease)}
+.step:hover .num{background:var(--teal);color:#fff;transform:scale(1.08)}
+.step:last-child .num{background:var(--gold);color:var(--ink)}
+.step h3{font-size:24px;margin-bottom:10px}
+.step p{color:var(--ink-soft);font-size:16px;padding-right:10px}
 
-@keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
-.hero .copy>*{animation:rise .8s cubic-bezier(.2,.7,.2,1) both}
-.hero .copy>*:nth-child(2){animation-delay:.08s}.hero .copy>*:nth-child(3){animation-delay:.16s}
-.hero .copy>*:nth-child(4){animation-delay:.24s}.hero .copy>*:nth-child(5){animation-delay:.32s}
-.visual{animation:rise 1s .2s cubic-bezier(.2,.7,.2,1) both}
+/* cta band */
+.band{padding:0 0 120px}
+.band-in{position:relative;border-radius:48px;background:var(--ink);color:#fff;padding:clamp(56px,8vw,110px) clamp(28px,6vw,90px);overflow:hidden;text-align:center}
+.band-in h2{font-size:clamp(42px,8vw,118px);margin:20px auto 26px;max-width:12ch}
+.band-in h2 em{color:var(--gold)}
+.band-in .label{color:var(--gold-l)}
+.band-in p{color:rgba(255,255,255,.82);max-width:48ch;margin:0 auto 38px;font-size:18px}
+.band-in .btn-primary{background:var(--gold);color:var(--ink)}
+.band-in .btn-primary::after{background:#fff}
+.band-in .btn-ghost{color:#fff;box-shadow:inset 0 0 0 1.5px rgba(255,255,255,.35)}
+.band-in .btn-ghost:hover{background:rgba(255,255,255,.08);box-shadow:inset 0 0 0 1.5px #fff}
+.band .ctas{justify-content:center}
+.ring{position:absolute;border-radius:50%;border:1.5px solid rgba(255,255,255,.08)}
+.r1{width:600px;height:600px;left:-200px;top:-260px}.r2{width:420px;height:420px;right:-140px;bottom:-200px;border-color:rgba(242,181,68,.25)}
+.r3{width:180px;height:180px;right:12%;top:-60px;background:rgba(15,139,141,.35);border:0;filter:blur(30px)}
 
-@media (max-width:980px){
-  .links{display:none}
-  .hero-grid,.why-grid,.cta-box{grid-template-columns:1fr}
-  .hero-grid{gap:56px}
-  .services,.reviews,.visit{grid-template-columns:1fr 1fr}
-  .trust .wrap{grid-template-columns:1fr 1fr}
-  .float.one{left:12px;bottom:-26px}.float.two{right:12px}
-  .visual{max-width:560px;margin-bottom:20px}
-  .section-head{flex-direction:column;align-items:flex-start}
+/* contact */
+.contact{padding:0 0 120px}
+.contact-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:56px}
+.c-card{background:#fff;border-radius:var(--r-lg);padding:36px;box-shadow:var(--shadow);transition:transform .6s var(--ease);display:flex;flex-direction:column;gap:14px;min-width:0}
+.c-card:hover{transform:translateY(-6px)}
+.c-card .ico{margin-bottom:18px}
+.c-card .lab{font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-soft);font-weight:600}
+.c-card .big{font-size:clamp(22px,2.2vw,28px);font-weight:600;letter-spacing:-.025em;line-height:1.2;overflow-wrap:anywhere}
+.c-card .act{margin-top:auto;padding-top:16px;font-weight:600;color:var(--teal-d);display:inline-flex;align-items:center;gap:8px}
+.c-card .act svg{width:16px;height:16px;transition:transform .4s var(--ease)}
+.c-card:hover .act svg{transform:translateX(4px)}
+.map-art{margin-top:20px;border-radius:var(--r-lg);overflow:hidden;background:var(--teal-l);position:relative;height:280px;display:block}
+.map-art svg{position:absolute;inset:0;width:100%;height:100%}
+.map-pin{position:absolute;left:50%;top:50%;transform:translate(-50%,-100%);display:flex;flex-direction:column;align-items:center}
+.map-pin .tag{background:var(--ink);color:#fff;padding:12px 18px;border-radius:999px;font-weight:600;font-size:14px;white-space:nowrap;box-shadow:0 12px 30px -10px rgba(15,47,51,.5)}
+.map-pin .stem{width:2px;height:22px;background:var(--ink)}
+.map-pin .pt{width:16px;height:16px;border-radius:50%;background:var(--gold);box-shadow:0 0 0 0 rgba(242,181,68,.6);animation:pulse 2.2s infinite}
+@keyframes pulse{70%{box-shadow:0 0 0 22px rgba(242,181,68,0)}100%{box-shadow:0 0 0 0 rgba(242,181,68,0)}}
+
+/* footer */
+footer{background:var(--ink);color:rgba(255,255,255,.8);padding:80px 0 40px;border-radius:48px 48px 0 0}
+.f-big{font-size:clamp(44px,10vw,150px);font-weight:600;letter-spacing:-.06em;line-height:.9;color:#fff;margin-bottom:56px}
+.f-big span{color:var(--teal)}
+.f-row{display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap;padding-top:30px;border-top:1px solid rgba(255,255,255,.12);font-size:15px}
+.f-row nav{display:flex;gap:24px;flex-wrap:wrap}
+.f-row a:hover{color:#fff}
+
+/* reveal */
+.rv{opacity:0;transform:translateY(40px);transition:opacity 1s var(--ease),transform 1s var(--ease)}
+.rv.in{opacity:1;transform:none}
+.rv.s1{transition-delay:.08s}.rv.s2{transition-delay:.16s}.rv.s3{transition-delay:.24s}
+
+/* sticky mobile bar */
+.mbar{display:none}
+
+@media (max-width:1000px){
+  .links,.nav-phone{display:none}
+  .hero-grid{grid-template-columns:1fr}
+  .spine{display:none}
+  .hero-sub,.sec-head,.about-grid{grid-template-columns:1fr}
+  .ctas{justify-content:flex-start}
+  .card,.card.wide{grid-column:span 6}
+  .steps-row{grid-template-columns:repeat(2,1fr);row-gap:48px}
+  .steps-row::before{display:none}
+  .contact-grid{grid-template-columns:1fr}
+  .about-grid{gap:56px}
+  .arches{margin-inline:auto}
 }
-@media (max-width:640px){
+@media (max-width:680px){
   body{font-size:16px}
-  .wrap{padding:0 18px}
-  .nav{height:66px}.brand{font-size:19px}
-  .phone,.nav-right .btn{display:none}
-  .hero{padding:44px 0 64px}
-  .lead-text{font-size:17.5px}
-  .hero-ctas .btn{flex:1;justify-content:center}
-  .ticks{display:none}
-  .services,.reviews,.visit,.trust .wrap{grid-template-columns:1fr}
-  section.block{padding:76px 0}
-  .quote-panel,.photo{aspect-ratio:auto;min-height:380px}.photo{aspect-ratio:4/3;min-height:0}
-  .quote-panel{padding:40px 30px 64px}.quote-panel p{font-size:23px}
-  .float{font-size:13px;padding:12px 14px}.float b{font-size:18px}
-  .float.two{display:none}
-  .cta-box{padding:52px 28px}
-  .point{grid-template-columns:44px 1fr;padding:24px}
-  .mobile-bar{display:flex;position:fixed;left:12px;right:12px;bottom:12px;z-index:30;gap:10px}
-  .mobile-bar .btn{flex:1;justify-content:center;box-shadow:0 14px 30px -14px color-mix(in srgb,var(--ink) 60%,transparent)}
-  .mobile-bar .btn.ghost{background:var(--surface)}
+  .wrap{width:calc(100% - 36px)}
+  .nav .btn{display:none}
+  .burger{display:block}
+  .hero{padding-top:120px}
+  .hero h1{font-size:clamp(50px,15.5vw,80px)}
+  .hero-sub{margin-top:32px;gap:28px}
+  .ctas .btn{flex:1 1 100%}
+  .marquee{margin-top:48px;padding:18px 0}
+  .services{padding:110px 0 80px}
+  .sec-head{margin-bottom:40px;gap:16px}
+  .card,.card.wide{grid-column:span 12;min-height:0;padding:30px 26px}
+  .card h3{margin-top:36px}
+  .about,.why{padding:80px 0}
+  .about{border-radius:36px 36px 0 0}
+  .why-list{grid-template-columns:1fr}
+  .why-item,.why-item:nth-child(even){border-right:0;padding:28px 0;grid-template-columns:48px 1fr;gap:12px}
+  .why-item:hover,.why-item:nth-child(even):hover{padding-left:0}
+  .steps{padding:90px 0}
+  .steps-row{grid-template-columns:1fr;row-gap:36px}
+  .band{padding-bottom:80px}
+  .band-in{border-radius:32px}
+  .band .ctas .btn{flex:1 1 100%}
+  .contact{padding-bottom:80px}
+  .c-card{padding:28px 24px}
+  .map-art{height:220px}
+  footer{padding-bottom:110px;border-radius:32px 32px 0 0}
+  .mbar{display:flex;position:fixed;left:12px;right:12px;bottom:12px;z-index:45;gap:8px;padding:8px;border-radius:999px;background:rgba(15,47,51,.92);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);box-shadow:0 18px 40px -12px rgba(15,47,51,.5);transform:translateY(140%);transition:transform .6s var(--ease)}
+  .mbar.show{transform:none}
+  .mbar a{flex:1;display:flex;align-items:center;justify-content:center;gap:8px;padding:14px 10px;border-radius:999px;font-weight:600;font-size:15px;color:#fff;white-space:nowrap}
+  .mbar a:last-child{background:var(--gold);color:var(--ink)}
+  .mbar svg{width:18px;height:18px}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+  .rv,.fade{opacity:1;transform:none}
+  .hero h1 .w,.hero h1 .shift{transform:none!important}
+  .vert{transform:none!important}
 }
 </style>
 </head>
 <body>
-<div class="concept">Website concept prepared for <b>Nurman Chiropractic, PLLC</b> by webstudio &middot; not a live site</div>
 
-<header>
+<header id="hdr">
   <div class="wrap nav">
-    <a href="#top" class="brand">Nurman Chiropractic, PLLC</a>
-    <nav class="links">
-      <a href="#services">Services</a><a href="#why">Why us</a><a href="#visit">Visit</a>
+    <a href="#top" class="logo" aria-label="Nurman Chiropractic home">
+      <svg class="mark" viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="20" fill="#0F2F33"/><rect x="13" y="9" width="14" height="5" rx="2.5" fill="#fff"/><rect x="12" y="17.5" width="16" height="5" rx="2.5" fill="#F2B544"/><rect x="13" y="26" width="14" height="5" rx="2.5" fill="#0F8B8D"/></svg>
+      <span>Nurman<small>Chiropractic, PLLC</small></span>
+    </a>
+    <nav class="links" aria-label="Primary">
+      <a class="ul" href="#services">Care</a>
+      <a class="ul" href="#about">About</a>
+      <a class="ul" href="#process">Your Visit</a>
+      <a class="ul" href="#contact">Visit Us</a>
     </nav>
-    <div class="nav-right">
-      <a class="phone" href="tel:5129314694">(512) 931-4694</a>
-      <a class="btn" href="#visit">Book now</a>
+    <div class="nav-r">
+      <a class="nav-phone ul" href="tel:+15129314694">(512) 931-4694</a>
+      <a class="btn btn-primary" href="#contact">Book a Visit</a>
+      <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false"><span></span><span></span></button>
     </div>
   </div>
 </header>
 
+<div class="mobile-menu" id="mmenu" aria-hidden="true">
+  <a class="m" href="#services">Care</a>
+  <a class="m" href="#about">About</a>
+  <a class="m" href="#process">Your Visit</a>
+  <a class="m" href="#contact">Visit Us</a>
+  <a class="btn btn-primary" href="tel:+15129314694">Call (512) 931-4694</a>
+</div>
+
 <main id="top">
 <section class="hero">
+  <div class="hero-bg" aria-hidden="true"><div class="blob b1" data-par="0.12"></div><div class="blob b2" data-par="-0.08"></div><div class="grain"></div></div>
   <div class="wrap hero-grid">
-    <div class="copy">
-      <div class="eyebrow">
-        <span class="dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-7-4.4-7-10a4 4 0 017-2.6A4 4 0 0119 10c0 5.6-7 10-7 10z"/></svg></span>Chiropractic &amp; wellness
-      </div>
-      <h1>Move better. Feel better. <em>Live better.</em></h1>
-      <p class="lead-text">Gentle, evidence-based chiropractic care that gets to the root of your pain, not just the symptoms.</p>
-      <div class="hero-ctas">
-        <a class="btn" href="#visit">Book your first visit <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-        <a class="btn ghost" href="tel:5129314694">Call (512) 931-4694</a>
-      </div>
-      <div class="ticks">
-        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7"/></svg>New patients welcome</span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7"/></svg>Most insurance accepted</span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7"/></svg>Same-day visits</span>
-      </div>
-    </div>
-    <div class="visual">
-      
-      <div class="quote-panel"><div class="quote-mark">“</div><div><p>Gentle, evidence-based chiropractic care that gets to the root of your pain, not just the symptoms.</p><div class="who">Nurman Chiropractic, PLLC</div></div></div>
-      
-      
-      <div class="float two"><span class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><span><b>This week</b>Most insurance accepted</span></div>
-    </div>
-  </div>
-  <template id="qp"><div class="quote-panel"><div class="quote-mark">“</div><div><p>Gentle, evidence-based chiropractic care that gets to the root of your pain, not just the symptoms.</p><div class="who">Nurman Chiropractic, PLLC</div></div></div></template>
-</section>
-
-<div class="trust"><div class="wrap">
-  <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.2-8 9-4.6-.8-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg>New patients welcome</div><div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.2-8 9-4.6-.8-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg>Most insurance accepted</div><div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.2-8 9-4.6-.8-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg>Same-day visits</div><div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.2-8 9-4.6-.8-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg>Gentle techniques</div>
-</div></div>
-
-<section class="block" id="services">
-  <div class="wrap">
-    <div class="section-head">
-      <div><div class="kicker">What we do</div><h2>Everything you need,<br>under one roof.</h2></div>
-      <p>From routine visits to the work that changes how you feel about your day, Nurman Chiropractic, PLLC takes care of it properly.</p>
-    </div>
-    <div class="services">
-      
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-7-4.4-7-10a4 4 0 017-2.6A4 4 0 0119 10c0 5.6-7 10-7 10z"/></svg></div><h3>Back &amp; neck pain</h3><p>Relief that lasts, from a plan built around you.</p></div>
-      
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1-4.4-4.3 6.1-.9z"/></svg></div><h3>Sports injuries</h3><p>Get back in the game faster and stronger.</p></div>
-      
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 19c0-8 5-14 15-14 0 10-6 15-14 15"/><path d="M5 19c3-4 6-6 10-8"/></svg></div><h3>Headaches</h3><p>Address the tension and alignment issues behind them.</p></div>
-      
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 14s1.5 2.5 4 2.5 4-2.5 4-2.5"/><path d="M9 9.5h.01M15 9.5h.01"/></svg></div><h3>Prenatal care</h3><p>Gentle, safe adjustments for moms-to-be.</p></div>
-      
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.2-8 9-4.6-.8-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg></div><h3>Auto injuries</h3><p>Care and documentation after car accidents.</p></div>
-      
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div><h3>Same-day visits</h3><p>In pain today? We&#39;ll see you today.</p></div>
-      
-    </div>
-  </div>
-</section>
-
-<section class="block why" id="why">
-  <div class="wrap why-grid">
     <div>
-      <div class="kicker">Why patients choose us</div>
-      <h2>The Austin chiropractor people recommend to their friends.</h2>
-      <p class="intro">it still comes down to the same three things.</p>
+      <div class="hero-top fade d1">
+        <span class="pill"><i></i>Chiropractic care in Round Rock, TX</span>
+      </div>
+      <h1 aria-label="Feel aligned. Move freely. Live well.">
+        <span class="line l1"><span class="w">Feel <span class="accent">aligned</span><span class="dot">.</span></span></span>
+        <span class="line l2"><span class="shift"><span class="w">Move <span class="arch" aria-hidden="true"></span> freely<span class="dot">.</span></span></span></span>
+        <span class="line l3"><span class="shift"><span class="w">Live well<span class="dot">.</span></span></span></span>
+      </h1>
     </div>
-    <div class="points">
-      
-      <div class="point"><div class="num">01</div><div><h3>Root-cause care</h3><p>We find out why it hurts, not just where.</p></div></div>
-      
-      <div class="point"><div class="num">02</div><div><h3>Gentle techniques</h3><p>Comfortable adjustments for every age and condition.</p></div></div>
-      
-      <div class="point"><div class="num">03</div><div><h3>Clear plans</h3><p>You&#39;ll know your plan, timeline and costs from day one.</p></div></div>
-      
+    <div class="spine" id="spine" aria-hidden="true" data-par="-0.18">
+      <div class="vert" style="width:56px"></div>
+      <div class="vert" style="width:66px"></div>
+      <div class="vert t" style="width:74px"></div>
+      <div class="vert" style="width:80px"></div>
+      <div class="vert g" style="width:86px"></div>
+      <div class="vert" style="width:92px"></div>
+      <div class="vert t" style="width:98px"></div>
+      <div class="vert" style="width:104px"></div>
+      <span class="spine-cap">In alignment</span>
+    </div>
+  </div>
+  <div class="wrap hero-sub">
+    <p class="fade d2">Nurman Chiropractic is a personal, hands-on practice on Gattis School Road in Round Rock, helping neighbours across greater Austin ease tension, stand taller and get back to the things they love.</p>
+    <div class="ctas fade d3">
+      <a class="btn btn-primary" href="tel:+15129314694"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>Call (512) 931-4694</a>
+      <a class="btn btn-ghost" href="#services">Explore our care<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    </div>
+  </div>
+  <div class="marquee fade d4" aria-label="Areas of care">
+    <div class="track">
+      <span>Chiropractic Adjustments <svg viewBox="0 0 24 24" fill="#F2B544"><path d="M12 0l2.6 9.4L24 12l-9.4 2.6L12 24l-2.6-9.4L0 12l9.4-2.6z"/></svg> Back &amp; Neck Comfort <svg viewBox="0 0 24 24" fill="#F2B544"><path d="M12 0l2.6 9.4L24 12l-9.4 2.6L12 24l-2.6-9.4L0 12l9.4-2.6z"/></svg> <b>Posture &amp; Alignment</b> <svg viewBox="0 0 24 24" fill="#F2B544"><path d="M12 0l2.6 9.4L24 12l-9.4 2.6L12 24l-2.6-9.4L0 12l9.4-2.6z"/></svg> Mobility &amp; Movement <svg viewBox="0 0 24 24" fill="#F2B544"><path d="M12 0l2.6 9.4L24 12l-9.4 2.6L12 24l-2.6-9.4L0 12l9.4-2.6z"/></svg> <b>Round Rock, TX</b> <svg viewBox="0 0 24 24" fill="#F2B544"><path d="M12 0l2.6 9.4L24 12l-9.4 2.6L12 24l-2.6-9.4L0 12l9.4-2.6z"/></svg></span>
+      <span aria-hidden="true">Chiropractic Adjustments <svg viewBox="0 0 24 24" fill="#F2B544"><path d="M12 0l2.6 9.4L24 12l-9.4 2.6L12 24l-2.6-9.4L0 12l9.4-2.6z"/></svg> Back &amp; Neck Comfort <svg viewBox="0 0 24 24" fill="#F2B544"><path d="M12 0l2.6 9.4L24 12l-9.4 2.6L12 24l-2.6-9.4L0 12l9.4-2.6z"/></svg> <b>Posture &amp; Alignment</b> <svg viewBox="0 0 24 24" fill="#F2B544"><path d="M12 0l2.6 9.4L24 12l-9.4 2.6L12 24l-2.6-9.4L0 12l9.4-2.6z"/></svg> Mobility &amp; Movement <svg viewBox="0 0 24 24" fill="#F2B544"><path d="M12 0l2.6 9.4L24 12l-9.4 2.6L12 24l-2.6-9.4L0 12l9.4-2.6z"/></svg> <b>Round Rock, TX</b> <svg viewBox="0 0 24 24" fill="#F2B544"><path d="M12 0l2.6 9.4L24 12l-9.4 2.6L12 24l-2.6-9.4L0 12l9.4-2.6z"/></svg></span>
     </div>
   </div>
 </section>
 
-
-
-<section class="cta-band" id="book">
-  <div class="wrap"><div class="cta-box">
-    <div><h2>Ready when you are.</h2><p>Book your first visit in under a minute, or give us a call and talk to a real person.</p></div>
-    <div class="actions">
-      <a class="btn" href="#visit">Book your first visit</a>
-      <a class="btn ghost" href="tel:5129314694">Call (512) 931-4694</a>
+<section class="services" id="services">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="rv"><span class="label">Our care</span><h2>Care that meets you <em>where you are.</em></h2></div>
+      <p class="lead rv s1">Every body carries its own story. Chiropractic care at Nurman is about listening first, then helping your spine and joints move the way they're meant to.</p>
     </div>
-  </div></div>
+    <div class="cards">
+      <article class="card wide rv">
+        <span class="n">01</span>
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><rect x="8" y="2" width="8" height="4" rx="2"/><rect x="7" y="8" width="10" height="4" rx="2"/><rect x="8" y="14" width="8" height="4" rx="2"/><path d="M12 19v3"/></svg></div>
+        <h3>Chiropractic Adjustments</h3>
+        <p>The heart of chiropractic: precise, hands-on care aimed at restoring healthy motion to the spine and joints so you can feel looser, lighter and more like yourself.</p>
+        <div class="deco" aria-hidden="true"></div>
+      </article>
+      <article class="card sand rv s1">
+        <span class="n">02</span>
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="5" r="3"/><path d="M12 8v8M8 22l4-6 4 6M7 12h10"/></svg></div>
+        <h3>Back &amp; Neck Comfort</h3>
+        <p>For the stiffness and tension that come with long desk days, commutes and busy family life.</p>
+      </article>
+      <article class="card gold rv">
+        <span class="n">03</span>
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M12 2v20M5 7h14M7 12h10M9 17h6"/></svg></div>
+        <h3>Posture &amp; Alignment</h3>
+        <p>Supporting a body that stands, sits and carries itself with more ease.</p>
+      </article>
+      <article class="card rv s1">
+        <span class="n">04</span>
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M3 12h4l3-8 4 16 3-8h4"/></svg></div>
+        <h3>Mobility &amp; Movement</h3>
+        <p>Helping you bend, turn and reach more freely, from weekend workouts to everyday errands.</p>
+      </article>
+      <article class="card sand rv s2">
+        <span class="n">05</span>
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 21.2l8.8-8.8a5.5 5.5 0 0 0 0-7.8z"/></svg></div>
+        <h3>Ongoing Wellness</h3>
+        <p>Care that keeps you feeling your best, not just when something hurts.</p>
+      </article>
+    </div>
+    <p class="note rv">Curious whether chiropractic is right for you? <a class="ul" href="tel:+15129314694">Call (512) 931-4694</a> and we'll talk through your needs.</p>
+  </div>
 </section>
 
-<section class="block" id="visit" style="padding-top:0">
-  <div class="wrap">
-    <div class="kicker">Visit us</div><h2>Come say hello.</h2>
-    <div class="visit">
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11l8-7 8 7v9a1 1 0 01-1 1h-4v-6H9v6H5a1 1 0 01-1-1z"/></svg></div><h3>Address</h3><p>2681 Gattis School Rd, Round Rock TX 78664-2056</p></div>
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div><h3>Phone</h3><p><a href="tel:5129314694">(512) 931-4694</a></p><p style="margin-top:10px">Call or message us for today's opening hours.</p></div>
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-7-4.4-7-10a4 4 0 017-2.6A4 4 0 0119 10c0 5.6-7 10-7 10z"/></svg></div><h3>Most insurance accepted</h3><p>Book your first visit online or by phone and we'll take care of the rest.</p></div>
+<section class="about" id="about">
+  <div class="wrap about-grid">
+    <div class="arches rv" aria-hidden="true">
+      <div class="arch-a">
+        <svg viewBox="0 0 200 260" fill="none"><g fill="#fff"><rect x="76" y="20" width="48" height="18" rx="9"/><rect x="70" y="46" width="60" height="18" rx="9"/><rect x="66" y="72" width="68" height="18" rx="9"/><rect x="62" y="98" width="76" height="18" rx="9"/><rect x="58" y="124" width="84" height="18" rx="9"/><rect x="56" y="150" width="88" height="18" rx="9"/><rect x="54" y="176" width="92" height="18" rx="9"/><rect x="52" y="202" width="96" height="18" rx="9"/></g><rect x="62" y="98" width="76" height="18" rx="9" fill="#0F8B8D"/><circle cx="100" cy="242" r="10" fill="#F2B544"/></svg>
+      </div>
+      <div class="arch-b">Rooted in Round Rock.</div>
     </div>
+    <div class="about-copy">
+      <span class="label rv">About the practice</span>
+      <h2 class="rv s1">A neighbourhood practice with a <em>personal touch.</em></h2>
+      <p class="lead rv s2">Nurman Chiropractic, PLLC is an independent chiropractic practice at 2681 Gattis School Road in Round Rock, Texas.</p>
+      <p class="lead rv s2">Here, you're not a number on a schedule. Visits are unhurried, conversations are honest, and care is shaped around how you live, work and move.</p>
+      <div class="quote rv s3">Feel heard. Feel cared for. Leave feeling better aligned than when you arrived.</div>
+    </div>
+  </div>
+</section>
+
+<section class="why">
+  <div class="wrap">
+    <span class="label rv">Why Nurman</span>
+    <h2 class="rv s1">Small practice. <em>Full attention.</em></h2>
+    <div class="why-list">
+      <div class="why-item rv"><span class="k">01</span><div><h3>Personal, one-to-one care</h3><p>An independent practice means time to listen, explain and tailor your care to you.</p></div></div>
+      <div class="why-item rv s1"><span class="k">02</span><div><h3>Hands-on, whole-body view</h3><p>Chiropractic looks at how your spine, joints and posture work together, not just where it aches.</p></div></div>
+      <div class="why-item rv"><span class="k">03</span><div><h3>Clear, honest guidance</h3><p>You'll understand what we're doing and why, so you can make confident choices about your care.</p></div></div>
+      <div class="why-item rv s1"><span class="k">04</span><div><h3>Easy to reach</h3><p>Conveniently located on Gattis School Rd in Round Rock, close to home for much of north Austin.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="steps" id="process">
+  <div class="wrap">
+    <span class="label rv">Your visit</span>
+    <h2 class="rv s1">Four simple steps to <em>feeling better.</em></h2>
+    <div class="steps-row">
+      <div class="step rv"><div class="num">1</div><h3>Call us</h3><p>Ring (512) 931-4694 to ask questions and find a time that suits you.</p></div>
+      <div class="step rv s1"><div class="num">2</div><h3>Tell your story</h3><p>Share what you're feeling, what you do day to day and what you'd like to get back to.</p></div>
+      <div class="step rv s2"><div class="num">3</div><h3>Receive care</h3><p>Gentle, hands-on chiropractic care tailored to your body and goals.</p></div>
+      <div class="step rv s3"><div class="num">4</div><h3>Move forward</h3><p>Leave with a clear plan and simple ways to support your body between visits.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <div class="band-in rv">
+      <div class="ring r1" aria-hidden="true"></div><div class="ring r2" aria-hidden="true"></div><div class="ring r3" aria-hidden="true"></div>
+      <span class="label">Ready when you are</span>
+      <h2>Your body, <em>back in line.</em></h2>
+      <p>One call is all it takes to start feeling more at home in your own body.</p>
+      <div class="ctas">
+        <a class="btn btn-primary" href="tel:+15129314694">Call (512) 931-4694</a>
+        <a class="btn btn-ghost" href="https://maps.google.com/?q=2681+Gattis+School+Rd,+Round+Rock,+TX+78664" target="_blank" rel="noopener">Get directions</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap">
+    <span class="label rv">Visit us</span>
+    <h2 class="rv s1">Come see us in <em>Round Rock.</em></h2>
+    <div class="contact-grid">
+      <a class="c-card rv" href="tel:+15129314694">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg></div>
+        <span class="lab">Phone</span>
+        <span class="big">(512) 931-4694</span>
+        <span class="act">Tap to call<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+      <a class="c-card rv s1" href="https://maps.google.com/?q=2681+Gattis+School+Rd,+Round+Rock,+TX+78664" target="_blank" rel="noopener">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+        <span class="lab">Address</span>
+        <span class="big">2681 Gattis School Rd<br>Round Rock, TX 78664</span>
+        <span class="act">Open in Google Maps<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+      <a class="c-card rv s2" href="tel:+15129314694">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
+        <span class="lab">Hours</span>
+        <span class="big">Please call for current hours</span>
+        <span class="act">Call to check availability<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+    </div>
+    <a class="map-art rv" href="https://maps.google.com/?q=2681+Gattis+School+Rd,+Round+Rock,+TX+78664" target="_blank" rel="noopener" aria-label="Open the Nurman Chiropractic location in Google Maps">
+      <svg viewBox="0 0 1200 280" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+        <rect width="1200" height="280" fill="#D5ECEC"/>
+        <g stroke="#fff" stroke-linecap="round" fill="none">
+          <path d="M-20 170 C 300 140, 500 200, 1220 120" stroke-width="22"/>
+          <path d="M380 -20 L 520 300" stroke-width="14"/>
+          <path d="M820 -20 C 780 120, 860 200, 800 300" stroke-width="14"/>
+          <path d="M-20 60 L 1220 40" stroke-width="8"/>
+          <path d="M-20 250 L 1220 240" stroke-width="8"/>
+          <path d="M160 -20 L 120 300" stroke-width="8"/>
+          <path d="M1040 -20 L 1080 300" stroke-width="8"/>
+        </g>
+        <circle cx="240" cy="230" r="40" fill="#C2E3E3"/><circle cx="980" cy="70" r="56" fill="#C2E3E3"/>
+      </svg>
+      <div class="map-pin"><span class="tag">Nurman Chiropractic</span><span class="stem"></span><span class="pt"></span></div>
+    </a>
   </div>
 </section>
 </main>
 
-<footer><div class="wrap">
-  <span>© 2026 Nurman Chiropractic, PLLC</span>
-  <span>Concept design by webstudio. Not affiliated with or endorsed by Nurman Chiropractic, PLLC.</span>
-</div></footer>
+<footer>
+  <div class="wrap">
+    <div class="f-big">Nurman<span>.</span><br>Chiropractic</div>
+    <div class="f-row">
+      <span>Nurman Chiropractic, PLLC · 2681 Gattis School Rd, Round Rock, TX 78664-2056</span>
+      <nav aria-label="Footer"><a class="ul" href="tel:+15129314694">(512) 931-4694</a><a class="ul" href="#services">Care</a><a class="ul" href="#about">About</a><a class="ul" href="#contact">Visit</a></nav>
+    </div>
+    <div class="f-row" style="border:0;padding-top:18px;opacity:.6;font-size:13px"><span>© <span id="yr"></span> Nurman Chiropractic, PLLC</span></div>
+  </div>
+</footer>
 
-<div class="mobile-bar">
-  <a class="btn ghost" href="tel:5129314694">Call</a>
-  <a class="btn" href="#visit">Book now</a>
+<div class="mbar" id="mbar">
+  <a href="tel:+15129314694"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>Call now</a>
+  <a href="https://maps.google.com/?q=2681+Gattis+School+Rd,+Round+Rock,+TX+78664" target="_blank" rel="noopener">Directions</a>
 </div>
-</body>
+
+<script>
+(function(){
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  document.getElementById('yr').textContent = new Date().getFullYear();
+
+  // spine starts misaligned, then settles into alignment
+  var verts = document.querySelectorAll('.vert');
+  var offs = [14,-18,10,-22,16,-12,20,-8];
+  if(!reduce) verts.forEach(function(v,i){ v.style.transform = 'translateX(' + offs[i] + 'px) rotate(' + (offs[i]/4) + 'deg)'; v.style.transitionDelay = (1 + i*.08) + 's'; });
+
+  requestAnimationFrame(function(){ setTimeout(function(){
+    document.body.classList.add('loaded');
+    verts.forEach(function(v){ v.style.transform = 'none'; });
+  }, 80); });
+
+  // reveal on scroll
+  var rv = document.querySelectorAll('.rv');
+  if('IntersectionObserver' in window && !reduce){
+    var io = new IntersectionObserver(function(es){
+      es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, {threshold:.12, rootMargin:'0px 0px -40px 0px'});
+    rv.forEach(function(el){ io.observe(el); });
+  } else rv.forEach(function(el){ el.classList.add('in'); });
+
+  // header state, mobile bar, parallax
+  var hdr = document.getElementById('hdr'), mbar = document.getElementById('mbar');
+  var par = document.querySelectorAll('[data-par]'), ticking = false;
+  function onScroll(){
+    var y = window.scrollY;
+    hdr.classList.toggle('scrolled', y > 30);
+    mbar.classList.toggle('show', y > window.innerHeight * .6);
+    if(!reduce && y < window.innerHeight * 1.2){
+      par.forEach(function(el){ el.style.transform = 'translate3d(0,' + (y * parseFloat(el.dataset.par)) + 'px,0)'; });
+    }
+    ticking = false;
+  }
+  window.addEventListener('scroll', function(){ if(!ticking){ requestAnimationFrame(onScroll); ticking = true; } }, {passive:true});
+  onScroll();
+
+  // mobile menu
+  var burger = document.getElementById('burger'), menu = document.getElementById('mmenu');
+  function setMenu(open){
+    document.body.classList.toggle('menu-open', open);
+    burger.setAttribute('aria-expanded', open);
+    menu.setAttribute('aria-hidden', !open);
+    document.body.style.overflow = open ? 'hidden' : '';
+  }
+  burger.addEventListener('click', function(){ setMenu(!document.body.classList.contains('menu-open')); });
+  menu.querySelectorAll('a').forEach(function(a){ a.addEventListener('click', function(){ setMenu(false); }); });
+  document.addEventListener('keydown', function(e){ if(e.key === 'Escape') setMenu(false); });
+})();
+</script>
+<div id="lm-concept" style="position:fixed;left:12px;bottom:12px;z-index:2147483647;font:500 11px/1.3 -apple-system,BlinkMacSystemFont,Segoe UI,sans-serif;letter-spacing:.02em;background:rgba(15,15,18,.82);color:#f4f1ea;padding:7px 11px;border-radius:999px;backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);pointer-events:none;max-width:70vw">Website concept for Nurman Chiropractic, PLLC by webstudio &middot; not the live site</div><p style="margin:0;padding:18px 16px 70px;text-align:center;font:12px/1.5 -apple-system,sans-serif;color:#8a8a8a;background:#0e0e10">Concept design by webstudio. Not affiliated with or endorsed by Nurman Chiropractic, PLLC.</p></body>
 </html>
