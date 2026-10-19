@@ -1,291 +1,656 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src * data: blob:; media-src 'self' data:; style-src 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com data:; script-src 'unsafe-inline'; connect-src 'none'; frame-src 'none'; form-action 'none'; base-uri 'none'; object-src 'none'">
+<meta name="robots" content="noindex, nofollow">
+<style>html,body{max-width:100%;overflow-x:clip}</style>
+
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="robots" content="noindex, nofollow">
-<title>Quick Touch Cleaning Services LLC | Website concept</title>
+<title>Quick Touch Cleaning Services LLC | House Cleaning in Los Angeles, CA</title>
+<meta name="description" content="Quick Touch Cleaning Services LLC: house cleaning in Los Angeles, CA. Call (818) 741-2849 to book.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..800;1,6..96,400..800&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 :root{
-  --bg:#f3f6f8;--surface:#ffffff;--ink:#14283a;--muted:#566676;
-  --accent:#2a6f97;--accent-ink:#ffffff;--gold:#e0a43a;--soft:#e3eef5;
-  --radius:22px;--max:1180px;
-  --serif:"Fraunces",Georgia,serif;--sans:"Manrope",system-ui,-apple-system,sans-serif;
+  --bg:#F3F0E8;--surface:#FFFFFF;--ink:#1F2A24;--muted:#4A564F;
+  --sage:#5E7D63;--sage-d:#46604B;--sage-dd:#2F4434;--sage-l:#E4EBE3;
+  --sand:#C9B79C;--sand-l:#EAE1D2;--sky:#E6EEED;
+  --line:rgba(31,42,36,.12);
+  --shadow:0 1px 2px rgba(31,42,36,.04),0 12px 32px -12px rgba(31,42,36,.14);
+  --shadow-lg:0 2px 4px rgba(31,42,36,.04),0 30px 60px -24px rgba(31,42,36,.22);
+  --serif:"Bodoni Moda",Georgia,"Times New Roman",serif;
+  --sans:"Jost",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --hdr:76px;--r:22px;
+  --ease:cubic-bezier(.22,.8,.24,1);
 }
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
-a{color:inherit;text-decoration:none}
-img{max-width:100%;display:block}
-.wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
-.concept{background:var(--ink);color:var(--bg);font-size:13px;text-align:center;padding:8px 16px;letter-spacing:.02em}
-.concept b{color:var(--gold);font-weight:600}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:calc(var(--hdr) + 16px)}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-weight:400;font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img,svg{display:block;max-width:100%}
+a{color:inherit}
+h1,h2,h3{font-family:var(--serif);font-weight:500;line-height:1.05;margin:0;letter-spacing:-.01em}
+p{margin:0 0 1em}
+.label{font-family:var(--sans);font-size:12px;font-weight:500;letter-spacing:.24em;text-transform:uppercase;color:var(--sage-d)}
+.skip{position:absolute;left:-999px;top:8px;background:var(--ink);color:#fff;padding:10px 16px;border-radius:8px;z-index:100}
+.skip:focus{left:8px}
+:focus-visible{outline:2px solid var(--sage-d);outline-offset:3px;border-radius:6px}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 26px;border-radius:999px;font:500 15px/1.2 var(--sans);letter-spacing:.04em;text-decoration:none;text-align:center;transition:transform .35s var(--ease),box-shadow .35s var(--ease),background .35s var(--ease),color .35s;white-space:nowrap}
+.btn svg{width:18px;height:18px;flex:none}
+.btn-primary{background:var(--sage-d);color:#fff;box-shadow:0 10px 24px -10px rgba(70,96,75,.7)}
+.btn-primary:hover{background:var(--sage-dd);transform:translateY(-2px);box-shadow:0 16px 30px -12px rgba(47,68,52,.7)}
+.btn-ghost{background:rgba(255,255,255,.6);color:var(--ink);box-shadow:inset 0 0 0 1px rgba(31,42,36,.22)}
+.btn-ghost:hover{background:#fff;transform:translateY(-2px);box-shadow:inset 0 0 0 1px rgba(31,42,36,.4),var(--shadow)}
+.ulink{text-decoration:none;background:linear-gradient(currentColor,currentColor) 0 100%/0 1px no-repeat;transition:background-size .4s var(--ease)}
+.ulink:hover{background-size:100% 1px}
 
 /* header */
-header{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:saturate(1.4) blur(10px);border-bottom:1px solid color-mix(in srgb,var(--ink) 8%,transparent)}
-.nav{display:flex;align-items:center;justify-content:space-between;height:76px;gap:24px}
-.brand{font-family:var(--serif);font-size:23px;font-weight:600;letter-spacing:-.01em;line-height:1.1;max-width:340px}
-.links{display:flex;gap:30px;font-size:15px;font-weight:500;color:var(--muted)}
-.links a:hover{color:var(--ink)}
-.nav-right{display:flex;align-items:center;gap:18px}
-.phone{font-weight:600;font-size:15px;white-space:nowrap}
-.btn{display:inline-flex;align-items:center;gap:10px;background:var(--accent);color:var(--accent-ink);padding:14px 26px;border-radius:999px;font-weight:600;font-size:15.5px;transition:transform .2s ease,box-shadow .2s ease;white-space:nowrap}
-.btn:hover{transform:translateY(-2px);box-shadow:0 12px 28px -12px var(--accent)}
-.btn.ghost{background:transparent;color:var(--ink);border:1.5px solid color-mix(in srgb,var(--ink) 20%,transparent)}
-.btn.ghost:hover{box-shadow:none;border-color:var(--ink)}
-.btn svg{width:18px;height:18px}
+.hdr{position:sticky;top:0;z-index:50;height:var(--hdr);background:rgba(243,240,232,.72);backdrop-filter:saturate(1.4) blur(16px);-webkit-backdrop-filter:saturate(1.4) blur(16px);border-bottom:1px solid transparent;transition:border-color .3s,background .3s}
+.hdr.scrolled{border-color:var(--line);background:rgba(243,240,232,.86)}
+.hdr-in{max-width:1440px;margin:0 auto;height:100%;display:flex;align-items:center;gap:28px;padding:0 clamp(18px,3.4vw,48px)}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;min-width:0}
+.brand-mark{width:40px;height:40px;flex:none}
+.brand-txt{display:flex;flex-direction:column;line-height:1.1;min-width:0}
+.brand-txt b{font:500 20px/1 var(--serif);letter-spacing:-.01em}
+.brand-txt small{font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:var(--muted);margin-top:4px;white-space:nowrap}
+.nav{display:flex;gap:26px;margin-left:auto}
+.nav a{font-size:14px;letter-spacing:.06em;text-decoration:none;color:var(--muted);padding:6px 0;position:relative;transition:color .3s}
+.nav a::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:var(--sage-d);transform:scaleX(0);transform-origin:right;transition:transform .4s var(--ease)}
+.nav a:hover,.nav a.active{color:var(--ink)}
+.nav a:hover::after,.nav a.active::after{transform:scaleX(1);transform-origin:left}
+.hdr-phone{font-size:15px;font-weight:500;text-decoration:none;white-space:nowrap}
+.hdr .btn{min-height:44px;padding:0 20px;font-size:14px}
+.burger{display:none;margin-left:auto;width:46px;height:46px;border:0;border-radius:50%;background:#fff;box-shadow:var(--shadow);cursor:pointer;position:relative}
+.burger span{position:absolute;left:14px;right:14px;height:1.5px;background:var(--ink);transition:transform .4s var(--ease),opacity .3s}
+.burger span:nth-child(1){top:18px}.burger span:nth-child(2){top:23px}.burger span:nth-child(3){top:28px}
+.burger[aria-expanded="true"] span:nth-child(1){transform:translateY(5px) rotate(45deg)}
+.burger[aria-expanded="true"] span:nth-child(2){opacity:0}
+.burger[aria-expanded="true"] span:nth-child(3){transform:translateY(-5px) rotate(-45deg)}
+.mmenu{position:fixed;inset:var(--hdr) 0 0 0;z-index:49;background:var(--bg);padding:32px 24px 120px;display:flex;flex-direction:column;gap:6px;opacity:0;visibility:hidden;transform:translateY(-10px);transition:opacity .35s,transform .45s var(--ease),visibility .35s}
+.mmenu.open{opacity:1;visibility:visible;transform:none}
+.mmenu a.mlink{font:500 34px/1.2 var(--serif);text-decoration:none;padding:10px 0;border-bottom:1px solid var(--line)}
+.mmenu .btn{margin-top:24px}
 
-/* hero */
-.hero{padding:72px 0 88px}
-.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:64px;align-items:center}
-.eyebrow{display:inline-flex;align-items:center;gap:10px;background:var(--surface);border:1px solid color-mix(in srgb,var(--ink) 10%,transparent);padding:8px 16px 8px 10px;border-radius:999px;font-size:14px;font-weight:600;color:var(--muted)}
-.stars{color:var(--gold);letter-spacing:1px;font-size:14px}
-.eyebrow .dot{width:26px;height:26px;border-radius:50%;background:var(--soft);display:grid;place-items:center;color:var(--accent)}
-h1{font-family:var(--serif);font-weight:500;font-size:clamp(44px,5.6vw,74px);line-height:1.02;letter-spacing:-.025em;margin:26px 0 22px}
-h1 em{font-style:italic;color:var(--accent)}
-.lead-text{font-size:19.5px;color:var(--muted);max-width:540px}
-.hero-ctas{display:flex;gap:14px;margin-top:36px;flex-wrap:wrap}
-.ticks{display:flex;gap:22px;margin-top:34px;flex-wrap:wrap;font-size:14.5px;font-weight:600;color:var(--muted)}
-.ticks span{display:flex;align-items:center;gap:8px}
-.ticks svg{width:18px;height:18px;color:var(--accent)}
-.visual{position:relative}
-.photo{aspect-ratio:4/5;border-radius:calc(var(--radius) + 10px);overflow:hidden;background:var(--soft);box-shadow:0 40px 80px -40px color-mix(in srgb,var(--ink) 55%,transparent)}
-.photo img{width:100%;height:100%;object-fit:cover}
-.quote-panel{aspect-ratio:4/5;border-radius:calc(var(--radius) + 10px);background:linear-gradient(155deg,var(--accent),color-mix(in srgb,var(--accent) 55%,var(--ink)));color:var(--accent-ink);padding:52px 46px;display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden;box-shadow:0 40px 80px -40px color-mix(in srgb,var(--ink) 60%,transparent)}
-.quote-panel:before{content:"";position:absolute;width:420px;height:420px;border-radius:50%;right:-160px;top:-160px;background:color-mix(in srgb,var(--accent-ink) 9%,transparent)}
-.quote-panel:after{content:"";position:absolute;width:260px;height:260px;border-radius:50%;left:-90px;bottom:-110px;border:1.5px solid color-mix(in srgb,var(--accent-ink) 22%,transparent)}
-.quote-mark{font-family:var(--serif);font-size:120px;line-height:.6;opacity:.35}
-.quote-panel p{font-family:var(--serif);font-size:28px;line-height:1.3;position:relative;z-index:1}
-.quote-panel .who{font-family:var(--sans);font-size:15px;opacity:.85;margin-top:22px;font-weight:600}
-.float{position:absolute;background:var(--surface);color:var(--ink);border-radius:18px;padding:16px 20px;box-shadow:0 24px 50px -24px color-mix(in srgb,var(--ink) 50%,transparent);display:flex;align-items:center;gap:14px;font-size:14px;line-height:1.35}
-.float b{font-size:22px;font-family:var(--serif);font-weight:600;display:block}
-.float.one{left:-34px;bottom:-28px}
-.float.two{right:-22px;top:44px}
-.float .badge{width:44px;height:44px;border-radius:14px;background:var(--soft);display:grid;place-items:center;color:var(--accent)}
-.float .badge svg{width:22px;height:22px}
+/* layout */
+.layout{max-width:1440px;margin:0 auto;display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr)}
+.side{position:relative;border-right:1px solid var(--line)}
+.side-in{position:sticky;top:var(--hdr);min-height:calc(100vh - var(--hdr));display:flex;flex-direction:column;justify-content:center;padding:48px clamp(24px,3.6vw,56px) 40px}
+.side h1{font-size:clamp(54px,6.4vw,104px);font-weight:500;line-height:.92;letter-spacing:-.025em;margin:22px 0 14px}
+.side h1 em{font-style:italic;color:var(--sage-d);display:block;padding-left:.5em}
+.side .llc{font-size:12px;letter-spacing:.3em;text-transform:uppercase;color:var(--muted);display:flex;align-items:center;gap:14px}
+.side .llc::before{content:"";width:36px;height:1px;background:var(--sand)}
+.lede{font:italic 400 clamp(22px,2vw,28px)/1.3 var(--serif);margin:34px 0 14px;max-width:24ch}
+.side p.sub{color:var(--muted);max-width:42ch;font-size:16.5px}
+.ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
+.side-meta{margin-top:auto;padding-top:36px;display:flex;flex-wrap:wrap;gap:8px 28px;font-size:14px;color:var(--muted)}
+.side-meta a{text-decoration:none}
+.side-meta span{display:flex;align-items:center;gap:8px}
+.side-meta svg{width:16px;height:16px;color:var(--sage-d)}
+.flow{min-width:0}
+.sec{padding:clamp(72px,9vw,128px) clamp(20px,4.4vw,72px)}
+.sec-head{max-width:640px;margin-bottom:48px}
+.sec-head h2{font-size:clamp(38px,4.4vw,64px);margin:16px 0 18px}
+.sec-head h2 em{font-style:italic;color:var(--sage-d)}
+.sec-head p{color:var(--muted);font-size:17.5px;max-width:52ch}
 
-/* trust */
-.trust{border-top:1px solid color-mix(in srgb,var(--ink) 9%,transparent);border-bottom:1px solid color-mix(in srgb,var(--ink) 9%,transparent);background:var(--surface)}
-.trust .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;padding-top:26px;padding-bottom:26px}
-.trust div{display:flex;align-items:center;gap:12px;font-weight:600;font-size:15px}
-.trust svg{width:22px;height:22px;color:var(--accent);flex:none}
+/* staged entrance */
+.stage>*{opacity:0;transform:translateY(22px);animation:rise 1s var(--ease) forwards}
+.stage>*:nth-child(1){animation-delay:.1s}.stage>*:nth-child(2){animation-delay:.2s}.stage>*:nth-child(3){animation-delay:.3s}.stage>*:nth-child(4){animation-delay:.42s}.stage>*:nth-child(5){animation-delay:.54s}.stage>*:nth-child(6){animation-delay:.66s}.stage>*:nth-child(7){animation-delay:.78s}
+@keyframes rise{to{opacity:1;transform:none}}
 
-/* sections */
-section.block{padding:110px 0}
-.kicker{font-size:13px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
-h2{font-family:var(--serif);font-weight:500;font-size:clamp(34px,3.8vw,52px);line-height:1.08;letter-spacing:-.02em;margin:14px 0 18px}
-.section-head{display:flex;justify-content:space-between;align-items:end;gap:40px;margin-bottom:56px}
-.section-head p{color:var(--muted);max-width:420px}
-.services{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-.card{background:var(--surface);border-radius:var(--radius);padding:34px 32px 36px;border:1px solid color-mix(in srgb,var(--ink) 7%,transparent);transition:transform .25s ease,box-shadow .25s ease}
-.card:hover{transform:translateY(-4px);box-shadow:0 30px 60px -36px color-mix(in srgb,var(--ink) 45%,transparent)}
-.icon{width:54px;height:54px;border-radius:16px;background:var(--soft);color:var(--accent);display:grid;place-items:center;margin-bottom:24px}
-.icon svg{width:26px;height:26px}
-.card h3{font-family:var(--serif);font-weight:500;font-size:23px;margin-bottom:8px;letter-spacing:-.01em}
-.card p{color:var(--muted);font-size:16px}
+/* HERO: signature squeegee sweep */
+.hero{position:relative;min-height:calc(100vh - var(--hdr));padding:clamp(40px,6vw,80px) clamp(20px,4.4vw,72px);display:flex;flex-direction:column;justify-content:center;overflow:hidden;background:radial-gradient(120% 80% at 80% 10%,#fff 0%,rgba(255,255,255,0) 55%),linear-gradient(180deg,var(--sky) 0%,var(--bg) 85%)}
+.hero .sun{position:absolute;width:62vmin;height:62vmin;right:-14vmin;top:-12vmin;border-radius:50%;background:radial-gradient(circle,rgba(255,255,255,.95) 0%,rgba(255,255,255,0) 68%);pointer-events:none}
+.bubble{position:absolute;border-radius:50%;pointer-events:none;background:radial-gradient(circle at 32% 28%,rgba(255,255,255,.95) 0 8%,rgba(255,255,255,.25) 22%,rgba(230,238,237,.15) 60%,rgba(94,125,99,.18) 100%);box-shadow:inset 0 0 0 1px rgba(255,255,255,.7),inset -6px -10px 24px rgba(94,125,99,.12);will-change:transform}
+.b1{width:150px;height:150px;right:8%;top:12%}
+.b2{width:64px;height:64px;right:30%;top:24%}
+.b3{width:96px;height:96px;left:4%;bottom:18%}
+.b4{width:38px;height:38px;right:18%;bottom:30%}
+.float{animation:bob 9s ease-in-out infinite}
+.b2 .float,.b2{animation-delay:-3s}
+@keyframes bob{0%,100%{translate:0 0}50%{translate:0 -14px}}
+.hero-words{position:relative;z-index:2}
+.hero-words .label{display:flex;align-items:center;gap:12px;margin-bottom:26px}
+.hero-words .label i{width:8px;height:8px;border-radius:50%;background:var(--sage);box-shadow:0 0 0 6px rgba(94,125,99,.15)}
+.big{font-family:var(--serif);font-weight:500;font-size:clamp(64px,10.4vw,168px);line-height:.88;letter-spacing:-.035em}
+.big span{display:block}
+.big .r2{padding-left:.9em;font-style:italic;color:var(--sage-d)}
+.wipe{position:relative;display:inline-block!important;padding-right:.06em}
+.wipe .film{position:absolute;inset:-.06em -.12em -.12em -.04em;background:linear-gradient(100deg,var(--sand-l),#DED3BF 60%,var(--sand-l));border-radius:6px;transform-origin:right;animation:film 1.6s 1s var(--ease) forwards;z-index:1}
+.wipe .blade{position:absolute;top:-.12em;bottom:-.16em;left:-.1em;width:.14em;border-radius:99px;background:linear-gradient(180deg,#fff,#F7F4EE);box-shadow:0 10px 30px -6px rgba(31,42,36,.35),0 0 0 1px rgba(31,42,36,.08);z-index:2;opacity:0;animation:blade 1.6s 1s var(--ease) forwards}
+@keyframes film{0%{clip-path:inset(0 0 0 0)}100%{clip-path:inset(0 0 0 100%)}}
+@keyframes blade{0%{opacity:1;left:-.1em}88%{opacity:1}100%{opacity:0;left:calc(100% + .02em)}}
+.gleam{position:absolute;width:.28em;height:.28em;right:-.18em;top:-.02em;color:var(--sand);opacity:0;animation:spark 1.4s 2.5s ease-out forwards,twinkle 3.6s 3.9s ease-in-out infinite}
+@keyframes spark{0%{opacity:0;transform:scale(.2) rotate(-40deg)}60%{opacity:1;transform:scale(1.15) rotate(10deg)}100%{opacity:1;transform:scale(1) rotate(0)}}
+@keyframes twinkle{0%,100%{transform:scale(1)}50%{transform:scale(.72) rotate(20deg)}}
+.hero-foot{position:relative;z-index:2;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:20px;margin-top:clamp(40px,6vw,72px);align-items:end}
+.hero-foot p{color:var(--muted);max-width:36ch;margin:0}
+.linen{position:relative;height:200px}
+.card-l{position:absolute;inset:0;border-radius:var(--r);background:var(--surface);box-shadow:var(--shadow-lg);padding:24px 26px;display:flex;flex-direction:column;justify-content:space-between}
+.card-l.back1{transform:rotate(-5deg) translate(-16px,8px);background:var(--sand-l)}
+.card-l.back2{transform:rotate(3deg) translate(10px,4px);background:var(--sage-l)}
+.card-l .label{font-size:11px}
+.card-l ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:8px 14px;font-size:15px}
+.card-l li{display:flex;align-items:center;gap:8px}
+.card-l li svg{width:15px;height:15px;color:var(--sage-d);flex:none}
+.card-l .q{font:italic 400 22px/1.2 var(--serif)}
 
-.why{background:var(--ink);color:var(--bg)}
-.why .kicker{color:var(--gold)}
-.why-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:80px;align-items:start}
-.why h2{color:var(--bg)}
-.why .intro{color:color-mix(in srgb,var(--bg) 70%,transparent);font-size:18px;max-width:440px}
-.points{display:grid;gap:14px}
-.point{display:grid;grid-template-columns:62px 1fr;gap:20px;padding:30px;border-radius:var(--radius);background:color-mix(in srgb,var(--bg) 6%,transparent);border:1px solid color-mix(in srgb,var(--bg) 10%,transparent)}
-.point .num{font-family:var(--serif);font-size:34px;color:var(--gold);line-height:1}
-.point h3{font-family:var(--serif);font-weight:500;font-size:24px;margin-bottom:6px}
-.point p{color:color-mix(in srgb,var(--bg) 72%,transparent);font-size:16px}
+/* marquee */
+.marquee{overflow:hidden;background:var(--sage-dd);color:#F3F0E8;padding:20px 0;position:relative}
+.track{display:flex;width:max-content;animation:mq 38s linear infinite}
+.marquee:hover .track{animation-play-state:paused}
+.track span{display:flex;align-items:center;gap:28px;padding-right:28px;font:italic 400 24px/1 var(--serif);white-space:nowrap}
+.track span b{font:500 11.5px/1 var(--sans);letter-spacing:.26em;text-transform:uppercase;color:#E6DCCB}
+.track svg{width:14px;height:14px;color:var(--sand);flex:none}
+@keyframes mq{to{transform:translateX(-50%)}}
 
-.score{display:flex;align-items:center;gap:18px;background:var(--surface);padding:16px 24px;border-radius:18px;border:1px solid color-mix(in srgb,var(--ink) 8%,transparent)}
-.score b{font-family:var(--serif);font-size:40px;font-weight:500;line-height:1}
-.score small{display:block;color:var(--muted);font-size:14px}
-.reviews{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-.review{background:var(--surface);border-radius:var(--radius);padding:34px;display:flex;flex-direction:column;gap:22px;border:1px solid color-mix(in srgb,var(--ink) 7%,transparent)}
-.review p{font-family:var(--serif);font-size:19.5px;line-height:1.45}
-.review .by{margin-top:auto;display:flex;align-items:center;gap:12px;font-weight:600;font-size:15px}
-.avatar{width:40px;height:40px;border-radius:50%;background:var(--soft);color:var(--accent);display:grid;place-items:center;font-weight:700}
-.review .src{color:var(--muted);font-weight:500;font-size:13px;display:block}
+/* services */
+.svc-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+.svc{position:relative;background:var(--surface);border-radius:var(--r);padding:34px 30px 30px;box-shadow:var(--shadow);overflow:hidden;transition:transform .5s var(--ease),box-shadow .5s var(--ease)}
+.svc:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg)}
+.svc:nth-child(2){margin-top:44px}.svc:nth-child(4){margin-top:44px}
+.svc .ico{width:58px;height:58px;border-radius:18px;display:grid;place-items:center;background:var(--sage-l);color:var(--sage-d);margin-bottom:28px;transition:background .4s,color .4s,transform .5s var(--ease)}
+.svc:hover .ico{background:var(--sage-d);color:#fff;transform:rotate(-6deg)}
+.svc .ico svg{width:28px;height:28px}
+.svc .num{position:absolute;top:22px;right:26px;font:italic 400 15px var(--serif);color:var(--muted)}
+.svc h3{font-size:31px;margin-bottom:12px}
+.svc p{color:var(--muted);margin:0;font-size:16px}
+.svc::after{content:"";position:absolute;width:180px;height:180px;right:-70px;bottom:-90px;border-radius:50%;background:radial-gradient(circle,var(--sky),rgba(230,238,237,0) 70%);transition:transform .7s var(--ease)}
+.svc:hover::after{transform:scale(1.5)}
+.note{margin-top:28px;display:flex;align-items:center;gap:16px;flex-wrap:wrap;padding:22px 26px;border-radius:var(--r);border:1px dashed rgba(70,96,75,.4);color:var(--ink);font-size:16px}
+.note a{font-weight:500;color:var(--sage-d)}
 
-.cta-band{padding:0 0 110px}
-.cta-box{border-radius:calc(var(--radius) + 12px);background:linear-gradient(140deg,var(--accent),color-mix(in srgb,var(--accent) 60%,var(--ink)));color:var(--accent-ink);padding:76px 64px;display:grid;grid-template-columns:1.3fr 1fr;gap:40px;align-items:center;position:relative;overflow:hidden}
-.cta-box:after{content:"";position:absolute;right:-120px;bottom:-200px;width:460px;height:460px;border-radius:50%;border:1.5px solid color-mix(in srgb,var(--accent-ink) 22%,transparent)}
-.cta-box h2{color:inherit;margin:0 0 12px}
-.cta-box p{opacity:.85;font-size:18px}
-.cta-box .actions{display:flex;flex-direction:column;gap:12px;align-items:flex-start;position:relative;z-index:1}
-.cta-box .btn{background:var(--accent-ink);color:var(--accent)}
-.cta-box .btn.ghost{background:transparent;color:var(--accent-ink);border-color:color-mix(in srgb,var(--accent-ink) 40%,transparent)}
+/* about */
+.about{background:linear-gradient(180deg,var(--bg),#ECE6DA)}
+.about-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(28px,4vw,56px);align-items:center}
+.art{position:relative;aspect-ratio:4/5;border-radius:28px;overflow:hidden;background:linear-gradient(160deg,#fff 0%,var(--sky) 45%,var(--sage-l) 100%);box-shadow:var(--shadow-lg)}
+.art svg{position:absolute;inset:0;width:100%;height:100%}
+.art .mono{position:absolute;left:50%;top:50%;transform:translate(-50%,-54%);font:italic 500 clamp(160px,18vw,260px)/1 var(--serif);color:var(--sage-d);letter-spacing:-.04em}
+.art .tag{position:absolute;left:18px;right:18px;bottom:18px;background:rgba(255,255,255,.88);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-radius:16px;padding:16px 18px;font-size:14px;color:var(--ink);display:flex;align-items:center;gap:12px}
+.art .tag svg{position:static;width:20px;height:20px;color:var(--sage-d);flex:none}
+.about-txt p{color:var(--muted)}
+.about-txt p.big-p{font:400 clamp(22px,2.2vw,28px)/1.35 var(--serif);color:var(--ink)}
+.sign{display:flex;align-items:center;gap:14px;margin-top:28px;font:italic 400 20px var(--serif)}
+.sign::before{content:"";width:44px;height:1px;background:var(--sand)}
 
-.visit{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:10px}
-.visit .card h3{font-size:20px}
-.visit a{color:var(--accent);font-weight:600}
-footer{border-top:1px solid color-mix(in srgb,var(--ink) 9%,transparent);padding:40px 0 110px;color:var(--muted);font-size:14px}
-footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
-.mobile-bar{display:none}
+/* why */
+.why-list{display:grid;gap:0;border-top:1px solid var(--line)}
+.why-item{display:grid;grid-template-columns:80px minmax(0,1fr) minmax(0,1.2fr);gap:24px;padding:30px 4px;border-bottom:1px solid var(--line);align-items:baseline;transition:background .4s,padding .4s var(--ease)}
+.why-item:hover{background:rgba(255,255,255,.55);padding-left:18px}
+.why-item .n{font:italic 400 18px var(--serif);color:var(--sage-d)}
+.why-item h3{font-size:28px}
+.why-item p{color:var(--muted);margin:0;font-size:16px}
 
-@keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
-.hero .copy>*{animation:rise .8s cubic-bezier(.2,.7,.2,1) both}
-.hero .copy>*:nth-child(2){animation-delay:.08s}.hero .copy>*:nth-child(3){animation-delay:.16s}
-.hero .copy>*:nth-child(4){animation-delay:.24s}.hero .copy>*:nth-child(5){animation-delay:.32s}
-.visual{animation:rise 1s .2s cubic-bezier(.2,.7,.2,1) both}
+/* process */
+.process{background:var(--surface);position:relative}
+.process::before{content:"";position:absolute;inset:0 0 auto;height:80px;background:linear-gradient(var(--bg),rgba(255,255,255,0))}
+.steps{position:relative;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+.step{position:relative;border-radius:var(--r);padding:30px 28px;background:linear-gradient(170deg,var(--bg),#fff);box-shadow:inset 0 0 0 1px var(--line);transition:transform .5s var(--ease),box-shadow .5s}
+.step:hover{transform:translateY(-4px);box-shadow:inset 0 0 0 1px rgba(70,96,75,.35),var(--shadow)}
+.step .sn{display:inline-grid;place-items:center;width:46px;height:46px;border-radius:50%;background:var(--ink);color:#fff;font:italic 500 19px var(--serif);margin-bottom:22px}
+.step h3{font-size:26px;margin-bottom:10px}
+.step p{color:var(--muted);margin:0;font-size:16px}
+.step a{color:var(--sage-d);font-weight:500}
 
-@media (max-width:980px){
-  .links{display:none}
-  .hero-grid,.why-grid,.cta-box{grid-template-columns:1fr}
-  .hero-grid{gap:56px}
-  .services,.reviews,.visit{grid-template-columns:1fr 1fr}
-  .trust .wrap{grid-template-columns:1fr 1fr}
-  .float.one{left:12px;bottom:-26px}.float.two{right:12px}
-  .visual{max-width:560px;margin-bottom:20px}
-  .section-head{flex-direction:column;align-items:flex-start}
+/* faq */
+.faq-list{display:grid;gap:12px}
+.faq{background:var(--surface);border-radius:18px;box-shadow:var(--shadow);overflow:hidden}
+.faq summary{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:22px 26px;font:500 21px/1.3 var(--serif)}
+.faq summary::-webkit-details-marker{display:none}
+.faq .pm{width:30px;height:30px;flex:none;border-radius:50%;background:var(--sage-l);position:relative;transition:background .3s,transform .4s var(--ease)}
+.faq .pm::before,.faq .pm::after{content:"";position:absolute;left:9px;right:9px;top:14px;height:1.5px;background:var(--sage-dd)}
+.faq .pm::after{transform:rotate(90deg);transition:transform .4s var(--ease)}
+.faq[open] .pm{background:var(--sand-l);transform:rotate(180deg)}
+.faq[open] .pm::after{transform:rotate(0)}
+.faq .a{padding:0 26px 22px;color:var(--muted);font-size:16px}
+.faq .a p{margin:0}
+.faq .a a{color:var(--sage-d);font-weight:500}
+
+/* cta band */
+.band{margin:0 clamp(20px,4.4vw,72px);border-radius:32px;position:relative;overflow:hidden;background:var(--sage-dd);color:#F3F0E8;padding:clamp(56px,7vw,96px) clamp(28px,5vw,72px);isolation:isolate}
+.band::before{content:"";position:absolute;width:520px;height:520px;right:-160px;top:-220px;border-radius:50%;background:radial-gradient(circle,rgba(201,183,156,.35),rgba(201,183,156,0) 70%);z-index:-1}
+.band::after{content:"";position:absolute;width:420px;height:420px;left:-140px;bottom:-240px;border-radius:50%;border:1px solid rgba(243,240,232,.18);box-shadow:0 0 0 40px rgba(243,240,232,.04),0 0 0 80px rgba(243,240,232,.03);z-index:-1}
+.band .label{color:#E6DCCB}
+.band h2{font-size:clamp(42px,5.6vw,84px);margin:18px 0 22px;max-width:14ch}
+.band h2 em{font-style:italic;color:#E6DCCB}
+.band p{color:rgba(243,240,232,.86);max-width:46ch;font-size:17.5px}
+.band .btn-primary{background:#F3F0E8;color:var(--ink);box-shadow:none}
+.band .btn-primary:hover{background:#fff}
+.band .btn-ghost{background:transparent;color:#F3F0E8;box-shadow:inset 0 0 0 1px rgba(243,240,232,.5)}
+.band .btn-ghost:hover{background:rgba(243,240,232,.1)}
+
+/* contact */
+.contact-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:20px}
+.cc{background:var(--surface);border-radius:var(--r);padding:30px;box-shadow:var(--shadow);display:flex;flex-direction:column;gap:6px;transition:transform .5s var(--ease),box-shadow .5s;text-decoration:none;min-width:0}
+a.cc:hover{transform:translateY(-5px);box-shadow:var(--shadow-lg)}
+.cc .ico{width:46px;height:46px;border-radius:14px;background:var(--sage-l);color:var(--sage-d);display:grid;place-items:center;margin-bottom:16px}
+.cc .ico svg{width:22px;height:22px}
+.cc .v{font:500 clamp(22px,2.2vw,28px)/1.25 var(--serif);overflow-wrap:anywhere}
+.cc .s{color:var(--muted);font-size:15px}
+.cc .go{margin-top:14px;font-size:14px;font-weight:500;letter-spacing:.06em;color:var(--sage-d);display:flex;align-items:center;gap:8px}
+.cc .go svg{width:16px;height:16px;transition:transform .4s var(--ease)}
+a.cc:hover .go svg{transform:translateX(5px)}
+.cc.wide{grid-column:1/-1;flex-direction:row;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:18px;background:linear-gradient(120deg,#fff,var(--sky))}
+.mapart{grid-column:1/-1;height:220px;border-radius:var(--r);overflow:hidden;position:relative;background:#EDE8DD;box-shadow:inset 0 0 0 1px var(--line);text-decoration:none}
+.mapart svg{width:100%;height:100%}
+.pin{position:absolute;left:50%;top:50%;transform:translate(-50%,-100%);display:flex;flex-direction:column;align-items:center}
+.pin b{background:var(--ink);color:#fff;font:500 13px/1 var(--sans);letter-spacing:.06em;padding:10px 14px;border-radius:999px;white-space:nowrap;box-shadow:var(--shadow)}
+.pin i{width:14px;height:14px;border-radius:50%;background:var(--sage-d);margin-top:8px;box-shadow:0 0 0 6px rgba(70,96,75,.2);animation:ping 2.4s ease-out infinite}
+@keyframes ping{0%{box-shadow:0 0 0 0 rgba(70,96,75,.45)}100%{box-shadow:0 0 0 22px rgba(70,96,75,0)}}
+
+/* footer */
+.foot{border-top:1px solid var(--line);margin-top:clamp(56px,7vw,96px)}
+.foot-in{max-width:1440px;margin:0 auto;padding:44px clamp(20px,3.4vw,48px);display:flex;flex-wrap:wrap;gap:20px 40px;align-items:center;justify-content:space-between;font-size:14px;color:var(--muted)}
+.foot-name{font:italic 400 clamp(36px,5vw,64px)/1 var(--serif);color:var(--ink);width:100%;letter-spacing:-.02em}
+.foot nav{display:flex;flex-wrap:wrap;gap:8px 22px}
+.foot a{text-decoration:none}
+
+/* mobile bar */
+.mbar{display:none}
+
+/* reveal */
+.rv{opacity:0;transform:translateY(34px);transition:opacity 1s var(--ease),transform 1s var(--ease)}
+.rv.in{opacity:1;transform:none}
+.rv.d1{transition-delay:.08s}.rv.d2{transition-delay:.16s}.rv.d3{transition-delay:.24s}
+
+/* responsive */
+@media (max-width:1180px){
+  .nav{display:none}
+  .hdr-phone{margin-left:auto}
 }
-@media (max-width:640px){
-  body{font-size:16px}
-  .wrap{padding:0 18px}
-  .nav{height:66px}.brand{font-size:19px}
-  .phone,.nav-right .btn{display:none}
-  .hero{padding:44px 0 64px}
-  .lead-text{font-size:17.5px}
-  .hero-ctas .btn{flex:1;justify-content:center}
-  .ticks{display:none}
-  .services,.reviews,.visit,.trust .wrap{grid-template-columns:1fr}
-  section.block{padding:76px 0}
-  .quote-panel,.photo{aspect-ratio:auto;min-height:380px}.photo{aspect-ratio:4/3;min-height:0}
-  .quote-panel{padding:40px 30px 64px}.quote-panel p{font-size:23px}
-  .float{font-size:13px;padding:12px 14px}.float b{font-size:18px}
-  .float.two{display:none}
-  .cta-box{padding:52px 28px}
-  .point{grid-template-columns:44px 1fr;padding:24px}
-  .mobile-bar{display:flex;position:fixed;left:12px;right:12px;bottom:12px;z-index:30;gap:10px}
-  .mobile-bar .btn{flex:1;justify-content:center;box-shadow:0 14px 30px -14px color-mix(in srgb,var(--ink) 60%,transparent)}
-  .mobile-bar .btn.ghost{background:var(--surface)}
+@media (max-width:980px){
+  .layout{grid-template-columns:minmax(0,1fr)}
+  .side{border-right:0;border-bottom:1px solid var(--line)}
+  .side-in{position:relative;top:0;min-height:0;padding:44px 22px 48px}
+  .side-meta{margin-top:0}
+  .hero{min-height:auto;padding-top:64px;padding-bottom:64px}
+  .about-grid{grid-template-columns:minmax(0,1fr)}
+  .art{aspect-ratio:5/4}
+}
+@media (max-width:720px){
+  :root{--hdr:68px}
+  body{font-size:16.5px;padding-bottom:84px}
+  .hdr-phone,.hdr .btn{display:none}
+  .burger{display:block}
+  .brand-txt small{letter-spacing:.18em}
+  .svc-grid,.steps,.contact-grid{grid-template-columns:minmax(0,1fr)}
+  .svc:nth-child(2),.svc:nth-child(4){margin-top:0}
+  .hero-foot{grid-template-columns:minmax(0,1fr);gap:40px}
+  .linen{height:190px;margin:0 10px}
+  .why-item{grid-template-columns:minmax(0,1fr);gap:8px;padding:26px 4px}
+  .why-item:hover{padding-left:4px}
+  .band{margin:0 14px;border-radius:26px}
+  .ctas .btn{flex:1 1 100%}
+  .band .btn{flex:1 1 100%}
+  .cc.wide .btn{width:100%}
+  .b1{width:96px;height:96px;right:-12px;top:6%}
+  .b3{width:64px;height:64px}
+  .mbar{display:grid;grid-template-columns:1fr 1fr;gap:10px;position:fixed;left:10px;right:10px;bottom:10px;z-index:60;padding:10px;border-radius:999px;background:rgba(255,255,255,.88);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);box-shadow:var(--shadow-lg)}
+  .mbar .btn{min-height:48px;padding:0 14px;font-size:14.5px}
+  .faq summary{font-size:19px;padding:20px}
+  .faq .a{padding:0 20px 20px}
+}
+@media (max-width:400px){
+  .big{font-size:58px}
+  .brand-txt b{font-size:18px}
+  .card-l ul{font-size:14px}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important;scroll-behavior:auto!important}
+  .stage>*{opacity:1;transform:none}
+  .rv{opacity:1;transform:none}
+  .track{animation:none;flex-wrap:wrap;width:auto}
+  .wipe .film,.wipe .blade{display:none}
+  .gleam{opacity:1}
 }
 </style>
 </head>
 <body>
-<div class="concept">Website concept prepared for <b>Quick Touch Cleaning Services LLC</b> by webstudio &middot; not a live site</div>
+<a class="skip" href="#main">Skip to content</a>
 
-<header>
-  <div class="wrap nav">
-    <a href="#top" class="brand">Quick Touch Cleaning Services LLC</a>
-    <nav class="links">
-      <a href="#services">Services</a><a href="#why">Why us</a><a href="#visit">Visit</a>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-phone" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" d="M5 4h3.5l1.7 4.2-2.2 1.4a11 11 0 0 0 6.4 6.4l1.4-2.2L20 15.5V19a1.5 1.5 0 0 1-1.6 1.5A16.5 16.5 0 0 1 3.5 5.6 1.5 1.5 0 0 1 5 4z"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" d="M12 21s-7-6.1-7-11.5a7 7 0 0 1 14 0C19 14.9 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5" fill="none" stroke="currentColor" stroke-width="1.6"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5" fill="none" stroke="currentColor" stroke-width="1.6"/><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" d="M12 7.5V12l3 2"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" d="M4 12h15M13 6l6 6-6 6"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M5 12.5l4.5 4.5L19 7.5"/></symbol>
+    <symbol id="i-spark" viewBox="0 0 24 24"><path fill="currentColor" d="M12 0c.8 6.4 3.6 9.2 10 10-6.4.8-9.2 3.6-10 10-.8-6.4-3.6-9.2-10-10 6.4-.8 9.2-3.6 10-10z"/></symbol>
+  </defs>
+</svg>
+
+<header class="hdr" id="top">
+  <div class="hdr-in">
+    <a class="brand" href="#top" aria-label="Quick Touch Cleaning Services, back to top">
+      <svg class="brand-mark" viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="19" fill="#46604B"/><path d="M11 24c3.5-1 6.5-3.6 8.6-8.4M20 30c1.8-5.4 5.2-8.6 9.6-10" fill="none" stroke="#F3F0E8" stroke-width="1.6" stroke-linecap="round"/><path fill="#E6DCCB" d="M27 8c.4 3 1.6 4.3 4.6 4.7-3 .4-4.2 1.7-4.6 4.7-.4-3-1.6-4.3-4.6-4.7 3-.4 4.2-1.7 4.6-4.7z"/></svg>
+      <span class="brand-txt"><b>Quick Touch</b><small>Cleaning Services</small></span>
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <a href="#services">Services</a>
+      <a href="#about">About</a>
+      <a href="#process">How it works</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contact">Contact</a>
     </nav>
-    <div class="nav-right">
-      <a class="phone" href="tel:8187412849">(818) 741-2849</a>
-      <a class="btn" href="#visit">Free quote</a>
-    </div>
+    <a class="hdr-phone ulink" href="tel:+18187412849">(818) 741-2849</a>
+    <a class="btn btn-primary" href="#contact">Book a clean</a>
+    <button class="burger" aria-label="Open menu" aria-expanded="false" aria-controls="mmenu"><span></span><span></span><span></span></button>
   </div>
 </header>
 
-<main id="top">
-<section class="hero">
-  <div class="wrap hero-grid">
-    <div class="copy">
-      <div class="eyebrow">
-        <span class="dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-7-4.4-7-10a4 4 0 017-2.6A4 4 0 0119 10c0 5.6-7 10-7 10z"/></svg></span>House cleaning in Los Angeles
+<div class="mmenu" id="mmenu" aria-hidden="true">
+  <a class="mlink" href="#services">Services</a>
+  <a class="mlink" href="#about">About</a>
+  <a class="mlink" href="#process">How it works</a>
+  <a class="mlink" href="#faq">FAQ</a>
+  <a class="mlink" href="#contact">Contact</a>
+  <a class="btn btn-primary" href="tel:+18187412849"><svg><use href="#i-phone"/></svg>Call (818) 741-2849</a>
+</div>
+
+<main class="layout" id="main">
+  <aside class="side" aria-label="Introduction">
+    <div class="side-in stage">
+      <span class="label">House cleaning · Los Angeles, CA</span>
+      <h1>Quick<em>Touch</em></h1>
+      <span class="llc">Cleaning Services LLC</span>
+      <p class="lede">Come home to a house that feels lighter, calmer and completely yours again.</p>
+      <p class="sub">Careful, considered house cleaning for Los Angeles homes. One phone call and we take it from there, so your evenings and weekends go back to you.</p>
+      <div class="ctas">
+        <a class="btn btn-primary" href="tel:+18187412849"><svg><use href="#i-phone"/></svg>Call (818) 741-2849</a>
+        <a class="btn btn-ghost" href="#services">Explore services</a>
       </div>
-      <h1>A cleaner, calmer Los Angeles home, handled <em>for you.</em></h1>
-      <p class="lead-text">Quick Touch Cleaning Services brings reliable, careful house cleaning to Los Angeles homes, so you can come back to a space that feels fresh and easy.</p>
-      <div class="hero-ctas">
-        <a class="btn" href="#visit">Get a free quote <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-        <a class="btn ghost" href="tel:8187412849">Call (818) 741-2849</a>
-      </div>
-      <div class="ticks">
-        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7"/></svg>Background-checked team</span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7"/></svg>Fully insured</span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7"/></svg>Supplies included</span>
+      <div class="side-meta">
+        <span><svg><use href="#i-pin"/></svg><a class="ulink" href="https://maps.google.com/?q=714+W+73rd+St,+Los+Angeles,+CA+90044-6167" target="_blank" rel="noopener">714 W 73rd St, Los Angeles</a></span>
       </div>
     </div>
-    <div class="visual">
-      
-      <div class="quote-panel"><div class="quote-mark">“</div><div><p>Trusted, background-checked cleaners who show up on time, bring everything, and leave every room shining.</p><div class="who">Quick Touch Cleaning Services LLC</div></div></div>
-      
-      
-      <div class="float two"><span class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><span><b>This week</b>Fully insured</span></div>
+  </aside>
+
+  <div class="flow">
+    <section class="hero" aria-label="Quick Touch Cleaning Services">
+      <div class="sun"></div>
+      <div class="bubble b1" data-px="0.18"></div>
+      <div class="bubble b2" data-px="0.32"></div>
+      <div class="bubble b3" data-px="0.12"></div>
+      <div class="bubble b4" data-px="0.26"></div>
+
+      <div class="hero-words stage">
+        <span class="label"><i></i>The Quick Touch finish</span>
+        <p class="big" aria-label="Light. Fresh. Spotless.">
+          <span aria-hidden="true">Light.</span>
+          <span class="r2" aria-hidden="true">Fresh.</span>
+          <span aria-hidden="true" class="wipe">Spotless<span class="film"></span><span class="blade"></span><svg class="gleam"><use href="#i-spark"/></svg></span>
+        </p>
+      </div>
+
+      <div class="hero-foot">
+        <p class="rv">Every room handled with an unhurried, detail-minded touch, so the only thing you notice when you walk in is how good it feels.</p>
+        <div class="linen rv d2" aria-hidden="true">
+          <div class="card-l back1"></div>
+          <div class="card-l back2"></div>
+          <div class="card-l">
+            <span class="label">Room by room</span>
+            <ul>
+              <li><svg><use href="#i-check"/></svg>Kitchens</li>
+              <li><svg><use href="#i-check"/></svg>Bathrooms</li>
+              <li><svg><use href="#i-check"/></svg>Living spaces</li>
+              <li><svg><use href="#i-check"/></svg>Bedrooms</li>
+            </ul>
+            <span class="q">Your home, made calm.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="marquee" aria-hidden="true">
+      <div class="track">
+        <span>House cleaning <svg><use href="#i-spark"/></svg> <b>Los Angeles, CA</b> <svg><use href="#i-spark"/></svg> A fresh, calm home <svg><use href="#i-spark"/></svg> <b>(818) 741-2849</b> <svg><use href="#i-spark"/></svg> Quick Touch Cleaning Services <svg><use href="#i-spark"/></svg> <b>714 W 73rd St</b> <svg><use href="#i-spark"/></svg></span>
+        <span>House cleaning <svg><use href="#i-spark"/></svg> <b>Los Angeles, CA</b> <svg><use href="#i-spark"/></svg> A fresh, calm home <svg><use href="#i-spark"/></svg> <b>(818) 741-2849</b> <svg><use href="#i-spark"/></svg> Quick Touch Cleaning Services <svg><use href="#i-spark"/></svg> <b>714 W 73rd St</b> <svg><use href="#i-spark"/></svg></span>
+      </div>
     </div>
+
+    <section class="sec" id="services">
+      <div class="sec-head rv">
+        <span class="label">Services</span>
+        <h2>House cleaning, <em>room by room.</em></h2>
+        <p>The rooms you live in most deserve the most care. Here is how we think about a Quick Touch clean across your home.</p>
+      </div>
+      <div class="svc-grid">
+        <article class="svc rv">
+          <span class="num">01</span>
+          <div class="ico"><svg viewBox="0 0 32 32" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="13" width="22" height="13" rx="2"/><path d="M5 18h22M11 13V8a3 3 0 0 1 6 0M20 8.5c1.5 0 2.5 1 2.5 2.5"/><circle cx="10" cy="22" r="1"/></g></svg></div>
+          <h3>Kitchens</h3>
+          <p>Counters, surfaces and the everyday spots hands reach for most, left clean, clear and ready for the next meal.</p>
+        </article>
+        <article class="svc rv d1">
+          <span class="num">02</span>
+          <div class="ico"><svg viewBox="0 0 32 32" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 16h24v3a6 6 0 0 1-6 6H10a6 6 0 0 1-6-6v-3zM8 16V7a3 3 0 0 1 6 0M10 25l-1.5 3M22 25l1.5 3"/><circle cx="18" cy="9" r="1"/><circle cx="21" cy="12" r="1"/></g></svg></div>
+          <h3>Bathrooms</h3>
+          <p>Gleaming fixtures and fresh, bright surfaces, the kind of bathroom that feels like a small daily retreat.</p>
+        </article>
+        <article class="svc rv">
+          <span class="num">03</span>
+          <div class="ico"><svg viewBox="0 0 32 32" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 20v-5a3 3 0 0 1 3-3h14a3 3 0 0 1 3 3v5"/><path d="M4 20a2 2 0 0 1 4 0v2h16v-2a2 2 0 0 1 4 0v5H4v-5zM7 25v2M25 25v2"/></g></svg></div>
+          <h3>Living spaces</h3>
+          <p>Dust-free surfaces and floors you want to walk on barefoot, so the heart of your home feels open and at ease.</p>
+        </article>
+        <article class="svc rv d1">
+          <span class="num">04</span>
+          <div class="ico"><svg viewBox="0 0 32 32" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 24V9M4 18h24v6M28 24v-4"/><path d="M4 18v-3a2 2 0 0 1 2-2h5a2 2 0 0 1 2 2v3M13 18v-2a2 2 0 0 1 2-2h11a2 2 0 0 1 2 2v2"/></g></svg></div>
+          <h3>Bedrooms</h3>
+          <p>A calm, orderly room at the end of the day. Fresh surfaces and a quiet sense of rest the moment you walk in.</p>
+        </article>
+      </div>
+      <div class="note rv">
+        <span>Every home is different. Tell us what matters most and we will talk it through together.</span>
+        <a class="ulink" href="tel:+18187412849">Call (818) 741-2849</a>
+      </div>
+    </section>
+
+    <section class="sec about" id="about">
+      <div class="about-grid">
+        <div class="art rv" aria-hidden="true">
+          <svg viewBox="0 0 400 500" preserveAspectRatio="xMidYMid slice">
+            <defs><linearGradient id="g1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".9"/><stop offset="1" stop-color="#C9B79C" stop-opacity=".35"/></linearGradient></defs>
+            <path d="M-20 360 C 80 300, 180 420, 420 330 L 420 520 L -20 520Z" fill="#EAE1D2"/>
+            <path d="M-20 400 C 120 350, 220 460, 420 390 L 420 520 L -20 520Z" fill="#C9B79C" opacity=".45"/>
+            <circle cx="320" cy="90" r="70" fill="url(#g1)"/>
+            <circle cx="70" cy="140" r="26" fill="#fff" opacity=".8"/>
+            <path d="M40 60 C 140 20, 260 40, 360 20" stroke="#5E7D63" stroke-opacity=".3" fill="none" stroke-width="1.2"/>
+            <path d="M30 80 C 150 40, 250 70, 380 40" stroke="#5E7D63" stroke-opacity=".2" fill="none" stroke-width="1.2"/>
+          </svg>
+          <span class="mono">Q</span>
+          <div class="tag"><svg><use href="#i-pin"/></svg><span>Based at 714 W 73rd St, Los Angeles, CA 90044</span></div>
+        </div>
+        <div class="about-txt">
+          <div class="rv">
+            <span class="label">About us</span>
+            <h2 style="font-size:clamp(38px,4.4vw,60px);margin:16px 0 24px">A Los Angeles cleaner, <em style="color:var(--sage-d)">close to home.</em></h2>
+          </div>
+          <p class="big-p rv d1">Quick Touch Cleaning Services LLC is a house cleaning company rooted right here in Los Angeles.</p>
+          <p class="rv d2">Our name says what we care about: a light, quick touch that leaves a lasting difference. We step in, take care of the work you would rather not spend your time on, and leave your home feeling fresh, bright and easy to live in.</p>
+          <p class="rv d2">No call centres and no runaround. When you call, you are speaking with the business that will look after your home.</p>
+          <div class="sign rv d3">Quick Touch Cleaning Services</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="sec" id="why">
+      <div class="sec-head rv">
+        <span class="label">Why Quick Touch</span>
+        <h2>The quiet <em>details</em> that make a home.</h2>
+      </div>
+      <div class="why-list">
+        <div class="why-item rv"><span class="n">i.</span><h3>Truly local</h3><p>We are a Los Angeles business, based on W 73rd St, looking after homes in the city we call our own.</p></div>
+        <div class="why-item rv"><span class="n">ii.</span><h3>One direct call</h3><p>Booking starts with a real conversation at (818) 741-2849, not a maze of forms and menus.</p></div>
+        <div class="why-item rv"><span class="n">iii.</span><h3>Your home, your way</h3><p>Tell us your priorities, the rooms that matter most and anything to handle with extra care.</p></div>
+        <div class="why-item rv"><span class="n">iv.</span><h3>Calm, considerate care</h3><p>We treat your home with respect, so a clean feels like a relief rather than an intrusion.</p></div>
+      </div>
+    </section>
+
+    <section class="sec process" id="process">
+      <div class="sec-head rv">
+        <span class="label">How it works</span>
+        <h2>Four easy steps to a <em>fresher home.</em></h2>
+      </div>
+      <div class="steps">
+        <div class="step rv"><span class="sn">1</span><h3>Give us a call</h3><p>Reach Quick Touch at <a class="ulink" href="tel:+18187412849">(818) 741-2849</a>.</p></div>
+        <div class="step rv d1"><span class="sn">2</span><h3>Tell us about your home</h3><p>Share the rooms, the priorities and anything that needs special attention.</p></div>
+        <div class="step rv"><span class="sn">3</span><h3>We plan your clean</h3><p>Together we agree on what will be cleaned and find a time that suits you.</p></div>
+        <div class="step rv d1"><span class="sn">4</span><h3>Come home to calm</h3><p>Walk in, breathe out and enjoy a house that feels light and fresh again.</p></div>
+      </div>
+    </section>
+
+    <section class="sec" id="faq">
+      <div class="sec-head rv">
+        <span class="label">Questions</span>
+        <h2>Good to <em>know.</em></h2>
+      </div>
+      <div class="faq-list">
+        <details class="faq rv"><summary>How do I book a cleaning?<span class="pm"></span></summary><div class="a"><p>The simplest way is to call us at <a class="ulink" href="tel:+18187412849">(818) 741-2849</a>. We will talk through your home and what you need.</p></div></details>
+        <details class="faq rv"><summary>Where are you based?<span class="pm"></span></summary><div class="a"><p>Quick Touch Cleaning Services LLC is located at 714 W 73rd St, Los Angeles, CA 90044-6167.</p></div></details>
+        <details class="faq rv"><summary>What are your hours?<span class="pm"></span></summary><div class="a"><p>Please call us to check current availability and find a time that works for you.</p></div></details>
+        <details class="faq rv"><summary>Can I ask for something specific?<span class="pm"></span></summary><div class="a"><p>Of course. Let us know what matters most when you call and we will talk it through with you.</p></div></details>
+      </div>
+    </section>
+
+    <section class="band rv" aria-label="Book a clean">
+      <span class="label">Ready when you are</span>
+      <h2>Let someone else <em>hold the cloth.</em></h2>
+      <p>Give your weekends back to yourself. One call to Quick Touch and a fresher, calmer home is on its way.</p>
+      <div class="ctas">
+        <a class="btn btn-primary" href="tel:+18187412849"><svg><use href="#i-phone"/></svg>Call (818) 741-2849</a>
+        <a class="btn btn-ghost" href="#contact">Visit &amp; contact</a>
+      </div>
+    </section>
+
+    <section class="sec" id="contact">
+      <div class="sec-head rv">
+        <span class="label">Contact</span>
+        <h2>Say <em>hello.</em></h2>
+        <p>Call to book your clean or ask a question. We would love to hear about your home.</p>
+      </div>
+      <div class="contact-grid">
+        <a class="cc rv" href="tel:+18187412849">
+          <span class="ico"><svg><use href="#i-phone"/></svg></span>
+          <span class="label">Phone</span>
+          <span class="v">(818) 741-2849</span>
+          <span class="go">Tap to call <svg><use href="#i-arrow"/></svg></span>
+        </a>
+        <a class="cc rv d1" href="https://maps.google.com/?q=714+W+73rd+St,+Los+Angeles,+CA+90044-6167" target="_blank" rel="noopener">
+          <span class="ico"><svg><use href="#i-pin"/></svg></span>
+          <span class="label">Address</span>
+          <span class="v">714 W 73rd St</span>
+          <span class="s">Los Angeles, CA 90044-6167</span>
+          <span class="go">Open in Maps <svg><use href="#i-arrow"/></svg></span>
+        </a>
+        <div class="cc wide rv">
+          <div style="display:flex;gap:16px;align-items:center;min-width:0">
+            <span class="ico" style="margin:0;flex:none"><svg><use href="#i-clock"/></svg></span>
+            <div style="min-width:0"><span class="label">Hours</span><div class="s" style="font-size:16px;color:var(--ink)">Please call to confirm availability</div></div>
+          </div>
+          <a class="btn btn-primary" href="tel:+18187412849"><svg><use href="#i-phone"/></svg>Call to book</a>
+        </div>
+        <a class="mapart rv" href="https://maps.google.com/?q=714+W+73rd+St,+Los+Angeles,+CA+90044-6167" target="_blank" rel="noopener" aria-label="View 714 W 73rd St, Los Angeles on Google Maps">
+          <svg viewBox="0 0 800 220" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+            <rect width="800" height="220" fill="#EDE8DD"/>
+            <g stroke="#fff" stroke-width="10" fill="none"><path d="M0 70H800M0 150H800M140 0V220M330 0V220M520 0V220M690 0V220"/></g>
+            <g stroke="#fff" stroke-width="4" fill="none" opacity=".8"><path d="M0 110H800M235 0V220M425 0V220M605 0V220"/></g>
+            <path d="M0 200 C 200 170, 420 230, 800 180" stroke="#C9B79C" stroke-width="14" fill="none" opacity=".6"/>
+            <rect x="350" y="84" width="60" height="52" rx="6" fill="#E4EBE3"/>
+            <rect x="160" y="16" width="56" height="40" rx="6" fill="#E4EBE3"/>
+            <rect x="545" y="164" width="60" height="40" rx="6" fill="#E4EBE3"/>
+          </svg>
+          <span class="pin"><b>Quick Touch · W 73rd St</b><i></i></span>
+        </a>
+      </div>
+    </section>
   </div>
-  <template id="qp"><div class="quote-panel"><div class="quote-mark">“</div><div><p>Trusted, background-checked cleaners who show up on time, bring everything, and leave every room shining.</p><div class="who">Quick Touch Cleaning Services LLC</div></div></div></template>
-</section>
-
-<div class="trust"><div class="wrap">
-  <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.2-8 9-4.6-.8-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg>Background-checked team</div><div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.2-8 9-4.6-.8-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg>Fully insured</div><div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.2-8 9-4.6-.8-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg>Supplies included</div><div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.2-8 9-4.6-.8-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg>100% satisfaction guarantee</div>
-</div></div>
-
-<section class="block" id="services">
-  <div class="wrap">
-    <div class="section-head">
-      <div><div class="kicker">What we do</div><h2>Everything you need,<br>under one roof.</h2></div>
-      <p>From routine visits to the work that changes how you feel about your day, Quick Touch Cleaning Services LLC takes care of it properly.</p>
-    </div>
-    <div class="services">
-      
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11l8-7 8 7v9a1 1 0 01-1 1h-4v-6H9v6H5a1 1 0 01-1-1z"/></svg></div><h3>Regular cleaning</h3><p>Weekly or bi-weekly visits so your home always feels fresh and cared for.</p></div>
-      
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/><path d="M19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8z"/></svg></div><h3>Deep cleaning</h3><p>Top-to-bottom detail work on baseboards, grout, appliances and every corner.</p></div>
-      
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7l9-4 9 4v10l-9 4-9-4z"/><path d="M3 7l9 4 9-4M12 11v10"/></svg></div><h3>Move-in &amp; move-out</h3><p>Get your deposit back or start fresh in a home that&#39;s truly clean.</p></div>
-      
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3" width="14" height="18" rx="1"/><path d="M9 7h2M13 7h2M9 11h2M13 11h2M9 15h2M13 15h2"/></svg></div><h3>Office cleaning</h3><p>Reliable after-hours cleaning that keeps your workspace professional.</p></div>
-      
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 19c0-8 5-14 15-14 0 10-6 15-14 15"/><path d="M5 19c3-4 6-6 10-8"/></svg></div><h3>Eco-friendly products</h3><p>Safe for kids and pets, tough on dirt, and gentle on the planet.</p></div>
-      
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div><h3>Same-week booking</h3><p>Need it done fast? We usually have openings within a few days.</p></div>
-      
-    </div>
-  </div>
-</section>
-
-<section class="block why" id="why">
-  <div class="wrap why-grid">
-    <div>
-      <div class="kicker">Why clients choose us</div>
-      <h2>The Los Angeles house cleaning service people recommend to their friends.</h2>
-      <p class="intro">it still comes down to the same three things.</p>
-    </div>
-    <div class="points">
-      
-      <div class="point"><div class="num">01</div><div><h3>Vetted &amp; insured</h3><p>Every cleaner is background-checked, trained and fully insured for your peace of mind.</p></div></div>
-      
-      <div class="point"><div class="num">02</div><div><h3>Satisfaction guaranteed</h3><p>Not happy with something? We&#39;ll come back and make it right, free.</p></div></div>
-      
-      <div class="point"><div class="num">03</div><div><h3>Upfront pricing</h3><p>A clear quote before we start. No hidden fees, ever.</p></div></div>
-      
-    </div>
-  </div>
-</section>
-
-
-
-<section class="cta-band" id="book">
-  <div class="wrap"><div class="cta-box">
-    <div><h2>Ready when you are.</h2><p>Get a free quote in under a minute, or give us a call and talk to a real person.</p></div>
-    <div class="actions">
-      <a class="btn" href="#visit">Get a free quote</a>
-      <a class="btn ghost" href="tel:8187412849">Call (818) 741-2849</a>
-    </div>
-  </div></div>
-</section>
-
-<section class="block" id="visit" style="padding-top:0">
-  <div class="wrap">
-    <div class="kicker">Visit us</div><h2>Come say hello.</h2>
-    <div class="visit">
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11l8-7 8 7v9a1 1 0 01-1 1h-4v-6H9v6H5a1 1 0 01-1-1z"/></svg></div><h3>Address</h3><p>714 W 73rd St, Los Angeles CA 90044-6167</p></div>
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div><h3>Phone</h3><p><a href="tel:8187412849">(818) 741-2849</a></p><p style="margin-top:10px">Call or message us for today's opening hours.</p></div>
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-7-4.4-7-10a4 4 0 017-2.6A4 4 0 0119 10c0 5.6-7 10-7 10z"/></svg></div><h3>Fully insured</h3><p>Get a free quote online or by phone and we'll take care of the rest.</p></div>
-    </div>
-  </div>
-</section>
 </main>
 
-<footer><div class="wrap">
-  <span>© 2026 Quick Touch Cleaning Services LLC</span>
-  <span>Concept design by webstudio. Not affiliated with or endorsed by Quick Touch Cleaning Services LLC.</span>
-</div></footer>
+<footer class="foot">
+  <div class="foot-in">
+    <div class="foot-name">Quick Touch Cleaning Services LLC</div>
+    <span>714 W 73rd St, Los Angeles CA 90044-6167 · <a class="ulink" href="tel:+18187412849">(818) 741-2849</a></span>
+    <nav aria-label="Footer">
+      <a class="ulink" href="#services">Services</a>
+      <a class="ulink" href="#about">About</a>
+      <a class="ulink" href="#process">How it works</a>
+      <a class="ulink" href="#contact">Contact</a>
+    </nav>
+    <span>© <span id="yr"></span> Quick Touch Cleaning Services LLC</span>
+  </div>
+</footer>
 
-<div class="mobile-bar">
-  <a class="btn ghost" href="tel:8187412849">Call</a>
-  <a class="btn" href="#visit">Free quote</a>
+<div class="mbar" aria-label="Quick actions">
+  <a class="btn btn-primary" href="tel:+18187412849"><svg><use href="#i-phone"/></svg>Call now</a>
+  <a class="btn btn-ghost" href="#contact">Book a clean</a>
 </div>
-</body>
+
+<script>
+(function(){
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  document.getElementById('yr').textContent = new Date().getFullYear();
+
+  // header state
+  var hdr = document.querySelector('.hdr');
+  function onHdr(){ hdr.classList.toggle('scrolled', window.scrollY > 8); }
+  onHdr();
+
+  // mobile menu
+  var burger = document.querySelector('.burger'), menu = document.getElementById('mmenu');
+  function setMenu(open){
+    burger.setAttribute('aria-expanded', open);
+    burger.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+    menu.classList.toggle('open', open);
+    menu.setAttribute('aria-hidden', !open);
+    document.body.style.overflow = open ? 'hidden' : '';
+  }
+  burger.addEventListener('click', function(){ setMenu(burger.getAttribute('aria-expanded') !== 'true'); });
+  menu.querySelectorAll('a').forEach(function(a){ a.addEventListener('click', function(){ setMenu(false); }); });
+  document.addEventListener('keydown', function(e){ if(e.key === 'Escape') setMenu(false); });
+  window.addEventListener('resize', function(){ if(window.innerWidth > 720) setMenu(false); });
+
+  // reveal on scroll
+  var rvs = document.querySelectorAll('.rv');
+  if(reduce || !('IntersectionObserver' in window)){
+    rvs.forEach(function(el){ el.classList.add('in'); });
+  } else {
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){ if(en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); } });
+    }, {threshold:.14, rootMargin:'0px 0px -6% 0px'});
+    rvs.forEach(function(el){ io.observe(el); });
+  }
+
+  // active nav
+  var links = document.querySelectorAll('.nav a');
+  if('IntersectionObserver' in window){
+    var so = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if(en.isIntersecting){
+          links.forEach(function(l){ l.classList.toggle('active', l.getAttribute('href') === '#' + en.target.id); });
+        }
+      });
+    }, {rootMargin:'-45% 0px -50% 0px'});
+    ['services','about','process','faq','contact'].forEach(function(id){ var s = document.getElementById(id); if(s) so.observe(s); });
+  }
+
+  // parallax bubbles
+  var bubbles = document.querySelectorAll('[data-px]'), ticking = false;
+  function para(){
+    var y = window.scrollY;
+    if(!reduce && y < window.innerHeight * 1.4){
+      bubbles.forEach(function(b){ b.style.transform = 'translate3d(0,' + (y * -parseFloat(b.dataset.px)).toFixed(1) + 'px,0)'; });
+    }
+    ticking = false;
+  }
+  window.addEventListener('scroll', function(){
+    onHdr();
+    if(!ticking){ ticking = true; requestAnimationFrame(para); }
+  }, {passive:true});
+})();
+</script>
+<div id="lm-concept" style="position:fixed;left:12px;bottom:12px;z-index:2147483647;font:500 11px/1.3 -apple-system,BlinkMacSystemFont,Segoe UI,sans-serif;letter-spacing:.02em;background:rgba(15,15,18,.82);color:#f4f1ea;padding:7px 11px;border-radius:999px;backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);pointer-events:none;max-width:70vw">Website concept for Quick Touch Cleaning Services LLC by webstudio &middot; not the live site</div><p style="margin:0;padding:18px 16px 70px;text-align:center;font:12px/1.5 -apple-system,sans-serif;color:#8a8a8a;background:#0e0e10">Concept design by webstudio. Not affiliated with or endorsed by Quick Touch Cleaning Services LLC.</p></body>
 </html>
