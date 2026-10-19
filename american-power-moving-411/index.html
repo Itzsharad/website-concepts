@@ -1,291 +1,457 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src * data: blob:; media-src 'self' data:; style-src 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com data:; script-src 'unsafe-inline'; connect-src 'none'; frame-src 'none'; form-action 'none'; base-uri 'none'; object-src 'none'">
 <meta name="robots" content="noindex, nofollow">
-<title>American Power Moving | Website concept</title>
+<style>html,body{max-width:100%;overflow-x:clip}</style>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>American Power Moving | Moving Company, Brooklyn &amp; New York</title>
+<meta name="description" content="American Power Moving: a Brooklyn-based moving company serving New York. Call (347) 462-9009. 1815 Avenue U Ste 2R, Brooklyn NY 11229.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 :root{
-  --bg:#f6f4f0;--surface:#ffffff;--ink:#1d2433;--muted:#5f6675;
-  --accent:#c4512b;--accent-ink:#ffffff;--gold:#d79a3e;--soft:#f3e6de;
-  --radius:22px;--max:1180px;
-  --serif:"Fraunces",Georgia,serif;--sans:"Manrope",system-ui,-apple-system,sans-serif;
+  --bg:#071A2B;--bg2:#05131F;--card:#0E2840;--card2:#123352;
+  --text:#EAF2F8;--muted:#A9C0D2;--dim:#6F8BA3;
+  --blue:#4FB3E8;--gold:#E9C46A;
+  --line:rgba(234,242,248,.1);
+  --serif:"DM Serif Display",Georgia,serif;--sans:"Outfit",system-ui,sans-serif;
+  --ease:cubic-bezier(.2,.7,.1,1);
+  --head:76px;
 }
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:var(--head)}
+body{background:var(--bg);color:var(--text);font-family:var(--sans);font-weight:300;font-size:17px;line-height:1.65;overflow-x:hidden;-webkit-font-smoothing:antialiased}
 a{color:inherit;text-decoration:none}
-img{max-width:100%;display:block}
-.wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
-.concept{background:var(--ink);color:var(--bg);font-size:13px;text-align:center;padding:8px 16px;letter-spacing:.02em}
-.concept b{color:var(--gold);font-weight:600}
+svg{display:block}
+::selection{background:var(--gold);color:var(--bg)}
+.label{font-size:.72rem;letter-spacing:.32em;text-transform:uppercase;font-weight:500;color:var(--gold);display:inline-flex;align-items:center;gap:.8em}
+.label::before{content:"";width:28px;height:1px;background:currentColor;opacity:.7}
+h1,h2,h3{font-family:var(--serif);font-weight:400;line-height:1.04;letter-spacing:-.01em}
+h2{font-size:clamp(2.3rem,4.4vw,3.8rem);margin:.5em 0 .45em}
+h2 em,h1 em{font-style:italic;color:var(--blue)}
+p{color:var(--muted)}
+
+/* grain + glow backdrop */
+body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;
+  background:radial-gradient(60vw 60vw at 85% -10%,rgba(79,179,232,.13),transparent 60%),
+  radial-gradient(50vw 50vw at -10% 110%,rgba(233,196,106,.07),transparent 60%)}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.6em;padding:1em 1.6em;border-radius:100px;font-weight:500;font-size:.95rem;letter-spacing:.02em;transition:transform .4s var(--ease),background .4s,box-shadow .4s,color .4s;white-space:nowrap;text-align:center}
+.btn svg{width:18px;height:18px;flex:none}
+.btn-gold{background:var(--gold);color:#071A2B;box-shadow:0 10px 40px -10px rgba(233,196,106,.55)}
+.btn-gold:hover{transform:translateY(-3px);box-shadow:0 18px 50px -12px rgba(233,196,106,.7)}
+.btn-ghost{border:1px solid rgba(234,242,248,.25);color:var(--text)}
+.btn-ghost:hover{border-color:var(--blue);color:var(--blue);transform:translateY(-3px)}
+.u{background:linear-gradient(currentColor,currentColor) 0 100%/0 1px no-repeat;transition:background-size .5s var(--ease)}
+.u:hover{background-size:100% 1px}
 
 /* header */
-header{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:saturate(1.4) blur(10px);border-bottom:1px solid color-mix(in srgb,var(--ink) 8%,transparent)}
-.nav{display:flex;align-items:center;justify-content:space-between;height:76px;gap:24px}
-.brand{font-family:var(--serif);font-size:23px;font-weight:600;letter-spacing:-.01em;line-height:1.1;max-width:340px}
-.links{display:flex;gap:30px;font-size:15px;font-weight:500;color:var(--muted)}
-.links a:hover{color:var(--ink)}
-.nav-right{display:flex;align-items:center;gap:18px}
-.phone{font-weight:600;font-size:15px;white-space:nowrap}
-.btn{display:inline-flex;align-items:center;gap:10px;background:var(--accent);color:var(--accent-ink);padding:14px 26px;border-radius:999px;font-weight:600;font-size:15.5px;transition:transform .2s ease,box-shadow .2s ease;white-space:nowrap}
-.btn:hover{transform:translateY(-2px);box-shadow:0 12px 28px -12px var(--accent)}
-.btn.ghost{background:transparent;color:var(--ink);border:1.5px solid color-mix(in srgb,var(--ink) 20%,transparent)}
-.btn.ghost:hover{box-shadow:none;border-color:var(--ink)}
-.btn svg{width:18px;height:18px}
+header{position:fixed;top:0;left:0;right:0;z-index:50;height:var(--head);display:flex;align-items:center;justify-content:space-between;padding:0 clamp(20px,3.4vw,48px);
+  background:rgba(7,26,43,.6);backdrop-filter:blur(18px) saturate(140%);-webkit-backdrop-filter:blur(18px) saturate(140%);border-bottom:1px solid var(--line)}
+.logo{display:flex;align-items:center;gap:12px;font-family:var(--serif);font-size:1.25rem;line-height:1}
+.logo small{display:block;font-family:var(--sans);font-size:.6rem;letter-spacing:.34em;text-transform:uppercase;color:var(--gold);margin-top:5px}
+.mark{width:40px;height:40px;flex:none}
+nav{display:flex;align-items:center;gap:30px}
+nav .links{display:flex;gap:28px;font-size:.9rem;color:var(--muted)}
+nav .links a:hover{color:var(--text)}
+.hphone{font-weight:500;font-size:.92rem;color:var(--text)}
+header .btn{padding:.75em 1.3em;font-size:.88rem}
+.burger{display:none;width:44px;height:44px;border-radius:50%;border:1px solid var(--line);background:none;color:var(--text);cursor:pointer;align-items:center;justify-content:center}
+.burger span,.burger span::before,.burger span::after{display:block;width:18px;height:1.5px;background:currentColor;position:relative;transition:transform .4s var(--ease),background .3s}
+.burger span::before,.burger span::after{content:"";position:absolute;left:0}
+.burger span::before{top:-6px}.burger span::after{top:6px}
+.open .burger span{background:transparent}
+.open .burger span::before{transform:translateY(6px) rotate(45deg)}
+.open .burger span::after{transform:translateY(-6px) rotate(-45deg)}
+.mmenu{position:fixed;inset:var(--head) 0 0 0;z-index:45;background:rgba(5,19,31,.97);display:flex;flex-direction:column;padding:40px 28px;gap:6px;opacity:0;pointer-events:none;transition:opacity .4s}
+.mmenu a{font-family:var(--serif);font-size:2.2rem;padding:.25em 0;border-bottom:1px solid var(--line)}
+.mmenu .btn{font-family:var(--sans);font-size:1rem;margin-top:28px;border:0}
+.open .mmenu{opacity:1;pointer-events:auto}
 
-/* hero */
-.hero{padding:72px 0 88px}
-.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:64px;align-items:center}
-.eyebrow{display:inline-flex;align-items:center;gap:10px;background:var(--surface);border:1px solid color-mix(in srgb,var(--ink) 10%,transparent);padding:8px 16px 8px 10px;border-radius:999px;font-size:14px;font-weight:600;color:var(--muted)}
-.stars{color:var(--gold);letter-spacing:1px;font-size:14px}
-.eyebrow .dot{width:26px;height:26px;border-radius:50%;background:var(--soft);display:grid;place-items:center;color:var(--accent)}
-h1{font-family:var(--serif);font-weight:500;font-size:clamp(44px,5.6vw,74px);line-height:1.02;letter-spacing:-.025em;margin:26px 0 22px}
-h1 em{font-style:italic;color:var(--accent)}
-.lead-text{font-size:19.5px;color:var(--muted);max-width:540px}
-.hero-ctas{display:flex;gap:14px;margin-top:36px;flex-wrap:wrap}
-.ticks{display:flex;gap:22px;margin-top:34px;flex-wrap:wrap;font-size:14.5px;font-weight:600;color:var(--muted)}
-.ticks span{display:flex;align-items:center;gap:8px}
-.ticks svg{width:18px;height:18px;color:var(--accent)}
-.visual{position:relative}
-.photo{aspect-ratio:4/5;border-radius:calc(var(--radius) + 10px);overflow:hidden;background:var(--soft);box-shadow:0 40px 80px -40px color-mix(in srgb,var(--ink) 55%,transparent)}
-.photo img{width:100%;height:100%;object-fit:cover}
-.quote-panel{aspect-ratio:4/5;border-radius:calc(var(--radius) + 10px);background:linear-gradient(155deg,var(--accent),color-mix(in srgb,var(--accent) 55%,var(--ink)));color:var(--accent-ink);padding:52px 46px;display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden;box-shadow:0 40px 80px -40px color-mix(in srgb,var(--ink) 60%,transparent)}
-.quote-panel:before{content:"";position:absolute;width:420px;height:420px;border-radius:50%;right:-160px;top:-160px;background:color-mix(in srgb,var(--accent-ink) 9%,transparent)}
-.quote-panel:after{content:"";position:absolute;width:260px;height:260px;border-radius:50%;left:-90px;bottom:-110px;border:1.5px solid color-mix(in srgb,var(--accent-ink) 22%,transparent)}
-.quote-mark{font-family:var(--serif);font-size:120px;line-height:.6;opacity:.35}
-.quote-panel p{font-family:var(--serif);font-size:28px;line-height:1.3;position:relative;z-index:1}
-.quote-panel .who{font-family:var(--sans);font-size:15px;opacity:.85;margin-top:22px;font-weight:600}
-.float{position:absolute;background:var(--surface);color:var(--ink);border-radius:18px;padding:16px 20px;box-shadow:0 24px 50px -24px color-mix(in srgb,var(--ink) 50%,transparent);display:flex;align-items:center;gap:14px;font-size:14px;line-height:1.35}
-.float b{font-size:22px;font-family:var(--serif);font-weight:600;display:block}
-.float.one{left:-34px;bottom:-28px}
-.float.two{right:-22px;top:44px}
-.float .badge{width:44px;height:44px;border-radius:14px;background:var(--soft);display:grid;place-items:center;color:var(--accent)}
-.float .badge svg{width:22px;height:22px}
+/* layout */
+.layout{position:relative;z-index:1;display:grid;grid-template-columns:minmax(380px,42%) 1fr}
+aside{position:sticky;top:0;height:100vh;padding:calc(var(--head) + 6vh) clamp(28px,4vw,64px) 6vh;display:flex;flex-direction:column;justify-content:space-between;border-right:1px solid var(--line);overflow:hidden}
+aside h1{font-size:clamp(3rem,5.4vw,5.6rem);margin:.4em 0 .35em}
+aside h1 .line{display:block;overflow:hidden;padding-bottom:.06em}
+aside h1 .line>span{display:inline-block;transform:translateY(105%);transition:transform 1.3s var(--ease)}
+.loaded aside h1 .line>span{transform:none}
+aside h1 .line:nth-child(2)>span{transition-delay:.12s}
+aside h1 .line:nth-child(3)>span{transition-delay:.24s}
+.sub{max-width:30em;font-size:1.08rem}
+.ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:34px}
+.fade{opacity:0;transform:translateY(18px);transition:opacity 1.1s var(--ease),transform 1.1s var(--ease)}
+.loaded .fade{opacity:1;transform:none}
+.loaded .d1{transition-delay:.5s}.loaded .d2{transition-delay:.65s}.loaded .d3{transition-delay:.8s}.loaded .d4{transition-delay:1s}
+.aside-foot{display:grid;grid-template-columns:1fr 1fr;gap:20px;padding-top:24px;border-top:1px solid var(--line);font-size:.88rem}
+.aside-foot b{display:block;font-weight:500;font-size:.66rem;letter-spacing:.28em;text-transform:uppercase;color:var(--dim);margin-bottom:6px}
+.aside-foot a{color:var(--text)}
+main{min-width:0}
+section{padding:clamp(80px,12vh,140px) clamp(24px,5vw,80px);position:relative}
 
-/* trust */
-.trust{border-top:1px solid color-mix(in srgb,var(--ink) 9%,transparent);border-bottom:1px solid color-mix(in srgb,var(--ink) 9%,transparent);background:var(--surface)}
-.trust .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;padding-top:26px;padding-bottom:26px}
-.trust div{display:flex;align-items:center;gap:12px;font-weight:600;font-size:15px}
-.trust svg{width:22px;height:22px;color:var(--accent);flex:none}
+/* signature hero visual */
+.hero{min-height:100vh;padding-top:calc(var(--head) + 40px);display:flex;flex-direction:column;justify-content:center;overflow:hidden}
+.stage{position:relative;aspect-ratio:1/1.05;max-height:78vh;width:100%;border-radius:28px;overflow:hidden;
+  background:radial-gradient(120% 80% at 70% 10%,#14406A 0%,#0E2840 40%,#071A2B 85%);border:1px solid var(--line);isolation:isolate}
+.stage .grid{position:absolute;inset:0;background-image:linear-gradient(rgba(79,179,232,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(79,179,232,.07) 1px,transparent 1px);background-size:44px 44px;mask-image:radial-gradient(circle at 60% 40%,#000 20%,transparent 75%);-webkit-mask-image:radial-gradient(circle at 60% 40%,#000 20%,transparent 75%)}
+.bigword{position:absolute;left:-2%;bottom:-6%;font-family:var(--serif);font-size:clamp(9rem,24vw,24rem);line-height:.8;color:transparent;-webkit-text-stroke:1px rgba(234,242,248,.22);white-space:nowrap;will-change:transform;user-select:none}
+.bigword i{color:rgba(79,179,232,.12);-webkit-text-stroke:0}
+.route{position:absolute;inset:0;width:100%;height:100%}
+.route .path{stroke-dasharray:1400;stroke-dashoffset:1400;transition:stroke-dashoffset 3.2s var(--ease) .6s}
+.loaded .route .path{stroke-dashoffset:0}
+.route .dot{opacity:0;transition:opacity .8s 3.4s}
+.loaded .route .dot{opacity:1}
+.pulse{animation:pulse 2.6s ease-out infinite;transform-origin:center;transform-box:fill-box}
+@keyframes pulse{0%{transform:scale(1);opacity:.8}100%{transform:scale(4);opacity:0}}
+.pin{position:absolute;font-size:.66rem;letter-spacing:.28em;text-transform:uppercase;font-weight:500;padding:.6em 1em;border-radius:100px;background:rgba(7,26,43,.75);border:1px solid var(--line);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);white-space:nowrap}
+.pin.a{left:9%;top:68%;color:var(--blue)}
+.pin.b{right:8%;top:16%;color:var(--gold)}
+.crate{position:absolute;right:10%;bottom:14%;width:34%;will-change:transform}
+.stage-cap{position:absolute;left:28px;top:26px;right:28px;display:flex;justify-content:space-between;font-size:.7rem;letter-spacing:.28em;text-transform:uppercase;color:var(--dim)}
 
-/* sections */
-section.block{padding:110px 0}
-.kicker{font-size:13px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
-h2{font-family:var(--serif);font-weight:500;font-size:clamp(34px,3.8vw,52px);line-height:1.08;letter-spacing:-.02em;margin:14px 0 18px}
-.section-head{display:flex;justify-content:space-between;align-items:end;gap:40px;margin-bottom:56px}
-.section-head p{color:var(--muted);max-width:420px}
-.services{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-.card{background:var(--surface);border-radius:var(--radius);padding:34px 32px 36px;border:1px solid color-mix(in srgb,var(--ink) 7%,transparent);transition:transform .25s ease,box-shadow .25s ease}
-.card:hover{transform:translateY(-4px);box-shadow:0 30px 60px -36px color-mix(in srgb,var(--ink) 45%,transparent)}
-.icon{width:54px;height:54px;border-radius:16px;background:var(--soft);color:var(--accent);display:grid;place-items:center;margin-bottom:24px}
-.icon svg{width:26px;height:26px}
-.card h3{font-family:var(--serif);font-weight:500;font-size:23px;margin-bottom:8px;letter-spacing:-.01em}
-.card p{color:var(--muted);font-size:16px}
+/* marquee */
+.marquee{padding:0;border-block:1px solid var(--line);overflow:hidden;background:var(--bg2)}
+.track{display:flex;width:max-content;animation:mq 38s linear infinite}
+.track span{font-family:var(--serif);font-size:clamp(1.6rem,2.6vw,2.4rem);padding:22px 0;white-space:nowrap;display:flex;align-items:center}
+.track span::after{content:"";width:9px;height:9px;margin:0 36px;border-radius:50%;background:var(--gold);box-shadow:0 0 18px var(--gold)}
+.track span:nth-child(even){font-style:italic;color:var(--blue)}
+@keyframes mq{to{transform:translateX(-50%)}}
 
-.why{background:var(--ink);color:var(--bg)}
-.why .kicker{color:var(--gold)}
-.why-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:80px;align-items:start}
-.why h2{color:var(--bg)}
-.why .intro{color:color-mix(in srgb,var(--bg) 70%,transparent);font-size:18px;max-width:440px}
-.points{display:grid;gap:14px}
-.point{display:grid;grid-template-columns:62px 1fr;gap:20px;padding:30px;border-radius:var(--radius);background:color-mix(in srgb,var(--bg) 6%,transparent);border:1px solid color-mix(in srgb,var(--bg) 10%,transparent)}
-.point .num{font-family:var(--serif);font-size:34px;color:var(--gold);line-height:1}
-.point h3{font-family:var(--serif);font-weight:500;font-size:24px;margin-bottom:6px}
-.point p{color:color-mix(in srgb,var(--bg) 72%,transparent);font-size:16px}
+/* services */
+.cards{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:48px}
+.card{position:relative;padding:34px 30px 32px;border-radius:22px;background:linear-gradient(160deg,var(--card2),var(--card) 60%);border:1px solid var(--line);overflow:hidden;transition:transform .6s var(--ease),border-color .5s,box-shadow .6s}
+.card::after{content:"";position:absolute;width:260px;height:260px;right:-120px;top:-120px;border-radius:50%;background:radial-gradient(circle,rgba(79,179,232,.28),transparent 70%);opacity:0;transition:opacity .6s}
+.card:hover{transform:translateY(-8px);border-color:rgba(79,179,232,.35);box-shadow:0 30px 60px -30px rgba(0,0,0,.6)}
+.card:hover::after{opacity:1}
+.ico{width:54px;height:54px;border-radius:16px;display:grid;place-items:center;background:rgba(79,179,232,.1);border:1px solid rgba(79,179,232,.25);margin-bottom:26px;color:var(--blue)}
+.ico svg{width:26px;height:26px}
+.card h3{font-size:1.7rem;margin-bottom:.4em}
+.card p{font-size:.96rem}
+.card .num{position:absolute;top:30px;right:30px;font-size:.72rem;letter-spacing:.24em;color:var(--dim)}
+.card.wide{grid-column:span 2;display:grid;grid-template-columns:auto 1fr;gap:28px;align-items:start;background:linear-gradient(120deg,#16405F,var(--card) 70%)}
+.card.wide .ico{margin:0;background:rgba(233,196,106,.12);border-color:rgba(233,196,106,.3);color:var(--gold)}
 
-.score{display:flex;align-items:center;gap:18px;background:var(--surface);padding:16px 24px;border-radius:18px;border:1px solid color-mix(in srgb,var(--ink) 8%,transparent)}
-.score b{font-family:var(--serif);font-size:40px;font-weight:500;line-height:1}
-.score small{display:block;color:var(--muted);font-size:14px}
-.reviews{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-.review{background:var(--surface);border-radius:var(--radius);padding:34px;display:flex;flex-direction:column;gap:22px;border:1px solid color-mix(in srgb,var(--ink) 7%,transparent)}
-.review p{font-family:var(--serif);font-size:19.5px;line-height:1.45}
-.review .by{margin-top:auto;display:flex;align-items:center;gap:12px;font-weight:600;font-size:15px}
-.avatar{width:40px;height:40px;border-radius:50%;background:var(--soft);color:var(--accent);display:grid;place-items:center;font-weight:700}
-.review .src{color:var(--muted);font-weight:500;font-size:13px;display:block}
+/* about */
+.about{background:var(--bg2)}
+.quote{font-family:var(--serif);font-size:clamp(2rem,3.6vw,3.2rem);line-height:1.15;margin:28px 0 40px;color:var(--text)}
+.quote em{color:var(--gold)}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:36px}
+.addrcard{margin-top:48px;display:flex;align-items:center;gap:22px;padding:24px 26px;border-radius:20px;border:1px solid var(--line);background:rgba(14,40,64,.6)}
+.addrcard svg{width:46px;height:46px;flex:none;color:var(--gold)}
+.addrcard strong{display:block;font-weight:500;color:var(--text)}
 
-.cta-band{padding:0 0 110px}
-.cta-box{border-radius:calc(var(--radius) + 12px);background:linear-gradient(140deg,var(--accent),color-mix(in srgb,var(--accent) 60%,var(--ink)));color:var(--accent-ink);padding:76px 64px;display:grid;grid-template-columns:1.3fr 1fr;gap:40px;align-items:center;position:relative;overflow:hidden}
-.cta-box:after{content:"";position:absolute;right:-120px;bottom:-200px;width:460px;height:460px;border-radius:50%;border:1.5px solid color-mix(in srgb,var(--accent-ink) 22%,transparent)}
-.cta-box h2{color:inherit;margin:0 0 12px}
-.cta-box p{opacity:.85;font-size:18px}
-.cta-box .actions{display:flex;flex-direction:column;gap:12px;align-items:flex-start;position:relative;z-index:1}
-.cta-box .btn{background:var(--accent-ink);color:var(--accent)}
-.cta-box .btn.ghost{background:transparent;color:var(--accent-ink);border-color:color-mix(in srgb,var(--accent-ink) 40%,transparent)}
+/* why */
+.why ul{list-style:none;margin-top:40px;border-top:1px solid var(--line)}
+.why li{display:grid;grid-template-columns:70px 1fr;gap:20px;padding:30px 0;border-bottom:1px solid var(--line);transition:padding .5s var(--ease)}
+.why li:hover{padding-left:12px}
+.why li .n{font-family:var(--serif);font-size:2rem;color:var(--blue);line-height:1}
+.why li h3{font-size:1.55rem;margin-bottom:.3em}
 
-.visit{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:10px}
-.visit .card h3{font-size:20px}
-.visit a{color:var(--accent);font-weight:600}
-footer{border-top:1px solid color-mix(in srgb,var(--ink) 9%,transparent);padding:40px 0 110px;color:var(--muted);font-size:14px}
-footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
-.mobile-bar{display:none}
+/* steps */
+.steps{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:48px;counter-reset:s}
+.step{padding:30px;border-radius:22px;border:1px solid var(--line);background:rgba(14,40,64,.45);position:relative;transition:transform .6s var(--ease),background .5s}
+.step:hover{transform:translateY(-6px);background:rgba(14,40,64,.85)}
+.step::before{counter-increment:s;content:"0" counter(s);font-family:var(--serif);font-size:3.4rem;line-height:1;color:transparent;-webkit-text-stroke:1px var(--gold);display:block;margin-bottom:20px}
+.step h3{font-size:1.45rem;margin-bottom:.35em}
+.step p{font-size:.95rem}
 
-@keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
-.hero .copy>*{animation:rise .8s cubic-bezier(.2,.7,.2,1) both}
-.hero .copy>*:nth-child(2){animation-delay:.08s}.hero .copy>*:nth-child(3){animation-delay:.16s}
-.hero .copy>*:nth-child(4){animation-delay:.24s}.hero .copy>*:nth-child(5){animation-delay:.32s}
-.visual{animation:rise 1s .2s cubic-bezier(.2,.7,.2,1) both}
+/* closing band */
+.band{margin:0 clamp(24px,5vw,80px);padding:clamp(56px,8vw,96px) clamp(28px,5vw,72px);border-radius:32px;overflow:hidden;text-align:left;
+  background:radial-gradient(80% 120% at 100% 0%,rgba(79,179,232,.45),transparent 55%),linear-gradient(140deg,#123A5C,#0A2238);border:1px solid rgba(79,179,232,.25)}
+.band h2{font-size:clamp(2.6rem,5.4vw,4.8rem);max-width:12ch}
+.band p{color:#C8DAE7;max-width:32em;margin-bottom:34px}
+.band .bignum{display:block;font-family:var(--serif);font-size:clamp(2rem,4.4vw,3.6rem);color:var(--gold);margin:6px 0 28px;line-height:1.1}
+.band .bignum:hover{color:#F3D68F}
 
-@media (max-width:980px){
-  .links{display:none}
-  .hero-grid,.why-grid,.cta-box{grid-template-columns:1fr}
-  .hero-grid{gap:56px}
-  .services,.reviews,.visit{grid-template-columns:1fr 1fr}
-  .trust .wrap{grid-template-columns:1fr 1fr}
-  .float.one{left:12px;bottom:-26px}.float.two{right:12px}
-  .visual{max-width:560px;margin-bottom:20px}
-  .section-head{flex-direction:column;align-items:flex-start}
+/* contact */
+.contact-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:44px}
+.cbox{padding:28px;border-radius:20px;background:var(--card);border:1px solid var(--line);display:flex;flex-direction:column;gap:10px;min-width:0;transition:border-color .4s,transform .5s var(--ease)}
+.cbox:hover{border-color:rgba(233,196,106,.4);transform:translateY(-5px)}
+.cbox b{font-weight:500;font-size:.68rem;letter-spacing:.28em;text-transform:uppercase;color:var(--gold)}
+.cbox .v{font-family:var(--serif);font-size:1.45rem;line-height:1.2;color:var(--text);overflow-wrap:anywhere}
+.cbox .go{margin-top:auto;padding-top:10px;font-size:.88rem;color:var(--blue);font-weight:500}
+
+footer{padding:56px clamp(24px,5vw,80px) 40px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:20px;justify-content:space-between;align-items:center;font-size:.85rem;color:var(--dim)}
+footer .links{display:flex;gap:22px;flex-wrap:wrap}
+footer a:hover{color:var(--text)}
+
+/* reveal */
+.r{opacity:0;transform:translateY(40px);transition:opacity 1.1s var(--ease),transform 1.1s var(--ease)}
+.r.in{opacity:1;transform:none}
+.r.s2{transition-delay:.12s}.r.s3{transition-delay:.24s}.r.s4{transition-delay:.36s}
+
+.callbar{display:none}
+
+@media (max-width:1100px){nav .links{display:none}}
+@media (max-width:960px){
+  .layout{grid-template-columns:1fr}
+  aside{position:relative;height:auto;min-height:auto;border-right:0;padding:calc(var(--head) + 48px) 24px 40px}
+  .aside-foot{margin-top:40px}
+  .hero{min-height:auto;padding-top:0}
+  .stage{aspect-ratio:1/1;max-height:none}
 }
-@media (max-width:640px){
-  body{font-size:16px}
-  .wrap{padding:0 18px}
-  .nav{height:66px}.brand{font-size:19px}
-  .phone,.nav-right .btn{display:none}
-  .hero{padding:44px 0 64px}
-  .lead-text{font-size:17.5px}
-  .hero-ctas .btn{flex:1;justify-content:center}
-  .ticks{display:none}
-  .services,.reviews,.visit,.trust .wrap{grid-template-columns:1fr}
-  section.block{padding:76px 0}
-  .quote-panel,.photo{aspect-ratio:auto;min-height:380px}.photo{aspect-ratio:4/3;min-height:0}
-  .quote-panel{padding:40px 30px 64px}.quote-panel p{font-size:23px}
-  .float{font-size:13px;padding:12px 14px}.float b{font-size:18px}
-  .float.two{display:none}
-  .cta-box{padding:52px 28px}
-  .point{grid-template-columns:44px 1fr;padding:24px}
-  .mobile-bar{display:flex;position:fixed;left:12px;right:12px;bottom:12px;z-index:30;gap:10px}
-  .mobile-bar .btn{flex:1;justify-content:center;box-shadow:0 14px 30px -14px color-mix(in srgb,var(--ink) 60%,transparent)}
-  .mobile-bar .btn.ghost{background:var(--surface)}
+@media (max-width:720px){
+  :root{--head:66px}
+  body{font-size:16px;padding-bottom:78px}
+  header .btn,.hphone{display:none}
+  .burger{display:inline-flex}
+  .logo{font-size:1.08rem}
+  .mark{width:34px;height:34px}
+  section{padding:76px 22px}
+  .cards,.steps,.cols,.contact-grid{grid-template-columns:1fr}
+  .card.wide{grid-column:auto;grid-template-columns:1fr;gap:0}
+  .card.wide .ico{margin-bottom:24px}
+  .card{padding:30px 24px}
+  .ctas .btn{flex:1 1 100%}
+  .aside-foot{grid-template-columns:1fr}
+  .why li{grid-template-columns:48px 1fr;gap:14px}
+  .band{margin:0 16px;border-radius:24px;padding:52px 24px}
+  .band .btn{width:100%}
+  .pin{font-size:.58rem;letter-spacing:.2em}
+  .stage-cap{left:18px;right:18px;top:18px;font-size:.6rem}
+  footer{flex-direction:column;align-items:flex-start;padding-bottom:30px}
+  .callbar{display:grid;grid-template-columns:1fr 1fr;gap:10px;position:fixed;left:0;right:0;bottom:0;z-index:60;padding:12px 14px calc(12px + env(safe-area-inset-bottom));background:rgba(5,19,31,.92);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-top:1px solid var(--line)}
+  .callbar .btn{padding:.9em .6em;font-size:.9rem}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  html{scroll-behavior:auto}
+  .r,.fade{opacity:1;transform:none}
+  aside h1 .line>span{transform:none}
+  .route .path{stroke-dashoffset:0}.route .dot{opacity:1}
 }
 </style>
 </head>
 <body>
-<div class="concept">Website concept prepared for <b>American Power Moving</b> by webstudio &middot; not a live site</div>
 
-<header>
-  <div class="wrap nav">
-    <a href="#top" class="brand">American Power Moving</a>
-    <nav class="links">
-      <a href="#services">Services</a><a href="#why">Why us</a><a href="#visit">Visit</a>
-    </nav>
-    <div class="nav-right">
-      <a class="phone" href="tel:3474629009">(347) 462-9009</a>
-      <a class="btn" href="#visit">Free estimate</a>
+<header id="top">
+  <a href="#top" class="logo" aria-label="American Power Moving home">
+    <svg class="mark" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+      <rect x=".5" y=".5" width="39" height="39" rx="11" stroke="#4FB3E8" stroke-opacity=".5"/>
+      <path d="M10 27 20 11l10 16" stroke="#E9C46A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M14 22h12" stroke="#4FB3E8" stroke-width="2" stroke-linecap="round"/>
+      <circle cx="20" cy="30" r="1.6" fill="#E9C46A"/>
+    </svg>
+    <span>American Power<small>Moving · Brooklyn</small></span>
+  </a>
+  <nav>
+    <div class="links">
+      <a class="u" href="#services">Services</a>
+      <a class="u" href="#about">About</a>
+      <a class="u" href="#process">How it works</a>
+      <a class="u" href="#contact">Contact</a>
     </div>
-  </div>
+    <a class="hphone u" href="tel:+13474629009">(347) 462-9009</a>
+    <a class="btn btn-gold" href="#contact">Plan my move</a>
+    <button class="burger" aria-label="Open menu" aria-expanded="false"><span></span></button>
+  </nav>
 </header>
 
-<main id="top">
-<section class="hero">
-  <div class="wrap hero-grid">
-    <div class="copy">
-      <div class="eyebrow">
-        <span class="dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-7-4.4-7-10a4 4 0 017-2.6A4 4 0 0119 10c0 5.6-7 10-7 10z"/></svg></span>Moving company in New York
-      </div>
-      <h1>New York moves, handled with real muscle <em>and care.</em></h1>
-      <p class="lead-text">From fifth-floor walk-ups to tight city streets, American Power Moving helps New Yorkers get to their new place without the usual stress.</p>
-      <div class="hero-ctas">
-        <a class="btn" href="#visit">Get a free estimate <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-        <a class="btn ghost" href="tel:3474629009">Call (347) 462-9009</a>
-      </div>
-      <div class="ticks">
-        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7"/></svg>Licensed &amp; insured</span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7"/></svg>Free in-home estimates</span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7"/></svg>No hidden fees</span>
-      </div>
-    </div>
-    <div class="visual">
-      
-      <div class="quote-panel"><div class="quote-mark">“</div><div><p>Careful, on-time movers who treat your things like their own, with honest flat-rate pricing and no surprises.</p><div class="who">American Power Moving</div></div></div>
-      
-      
-      <div class="float two"><span class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><span><b>This week</b>Free in-home estimates</span></div>
-    </div>
-  </div>
-  <template id="qp"><div class="quote-panel"><div class="quote-mark">“</div><div><p>Careful, on-time movers who treat your things like their own, with honest flat-rate pricing and no surprises.</p><div class="who">American Power Moving</div></div></div></template>
-</section>
-
-<div class="trust"><div class="wrap">
-  <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.2-8 9-4.6-.8-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg>Licensed &amp; insured</div><div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.2-8 9-4.6-.8-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg>Free in-home estimates</div><div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.2-8 9-4.6-.8-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg>No hidden fees</div><div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.2-8 9-4.6-.8-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg>Same-week availability</div>
-</div></div>
-
-<section class="block" id="services">
-  <div class="wrap">
-    <div class="section-head">
-      <div><div class="kicker">What we do</div><h2>Everything you need,<br>under one roof.</h2></div>
-      <p>From routine visits to the work that changes how you feel about your day, American Power Moving takes care of it properly.</p>
-    </div>
-    <div class="services">
-      
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M2 6h11v10H2zM13 9h4l4 4v3h-8"/><circle cx="6" cy="17.5" r="1.8"/><circle cx="17" cy="17.5" r="1.8"/></svg></div><h3>Local moves</h3><p>Fast, careful moves across town, often done in a single morning.</p></div>
-      
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="18" r="2.5"/><circle cx="18" cy="6" r="2.5"/><path d="M8.5 18H16a3 3 0 000-6H8a3 3 0 010-6h7.5"/></svg></div><h3>Long-distance moves</h3><p>Coast-to-coast moves with tracking and one point of contact.</p></div>
-      
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7l9-4 9 4v10l-9 4-9-4z"/><path d="M3 7l9 4 9-4M12 11v10"/></svg></div><h3>Packing &amp; unpacking</h3><p>Professional packing materials and a team that wraps everything right.</p></div>
-      
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3" width="14" height="18" rx="1"/><path d="M9 7h2M13 7h2M9 11h2M13 11h2M9 15h2M13 15h2"/></svg></div><h3>Office relocation</h3><p>After-hours business moves that keep downtime to a minimum.</p></div>
-      
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.2-8 9-4.6-.8-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg></div><h3>Fragile &amp; specialty items</h3><p>Pianos, art, antiques and TVs handled with extra care.</p></div>
-      
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11l8-7 8 7v9a1 1 0 01-1 1h-4v-6H9v6H5a1 1 0 01-1-1z"/></svg></div><h3>Storage solutions</h3><p>Clean, secure short- and long-term storage when timing doesn&#39;t line up.</p></div>
-      
-    </div>
-  </div>
-</section>
-
-<section class="block why" id="why">
-  <div class="wrap why-grid">
-    <div>
-      <div class="kicker">Why customers choose us</div>
-      <h2>The New York moving company people recommend to their friends.</h2>
-      <p class="intro">it still comes down to the same three things.</p>
-    </div>
-    <div class="points">
-      
-      <div class="point"><div class="num">01</div><div><h3>Flat-rate pricing</h3><p>A firm quote up front, so the price on moving day is the price you were told.</p></div></div>
-      
-      <div class="point"><div class="num">02</div><div><h3>Licensed &amp; insured</h3><p>Fully licensed and insured, with valuation coverage on everything we carry.</p></div></div>
-      
-      <div class="point"><div class="num">03</div><div><h3>On time, every time</h3><p>We show up when we say we will, with the right truck and the right crew.</p></div></div>
-      
-    </div>
-  </div>
-</section>
-
-
-
-<section class="cta-band" id="book">
-  <div class="wrap"><div class="cta-box">
-    <div><h2>Ready when you are.</h2><p>Get a free estimate in under a minute, or give us a call and talk to a real person.</p></div>
-    <div class="actions">
-      <a class="btn" href="#visit">Get a free estimate</a>
-      <a class="btn ghost" href="tel:3474629009">Call (347) 462-9009</a>
-    </div>
-  </div></div>
-</section>
-
-<section class="block" id="visit" style="padding-top:0">
-  <div class="wrap">
-    <div class="kicker">Visit us</div><h2>Come say hello.</h2>
-    <div class="visit">
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11l8-7 8 7v9a1 1 0 01-1 1h-4v-6H9v6H5a1 1 0 01-1-1z"/></svg></div><h3>Address</h3><p>1815 Avenue U Ste 2R, Brooklyn NY 11229</p></div>
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div><h3>Phone</h3><p><a href="tel:3474629009">(347) 462-9009</a></p><p style="margin-top:10px">Call or message us for today's opening hours.</p></div>
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-7-4.4-7-10a4 4 0 017-2.6A4 4 0 0119 10c0 5.6-7 10-7 10z"/></svg></div><h3>Free in-home estimates</h3><p>Get a free estimate online or by phone and we'll take care of the rest.</p></div>
-    </div>
-  </div>
-</section>
-</main>
-
-<footer><div class="wrap">
-  <span>© 2026 American Power Moving</span>
-  <span>Concept design by webstudio. Not affiliated with or endorsed by American Power Moving.</span>
-</div></footer>
-
-<div class="mobile-bar">
-  <a class="btn ghost" href="tel:3474629009">Call</a>
-  <a class="btn" href="#visit">Free estimate</a>
+<div class="mmenu" aria-hidden="true">
+  <a href="#services">Services</a>
+  <a href="#about">About</a>
+  <a href="#process">How it works</a>
+  <a href="#contact">Contact</a>
+  <a class="btn btn-gold" href="tel:+13474629009">Call (347) 462-9009</a>
 </div>
-</body>
+
+<div class="layout">
+  <aside>
+    <div>
+      <span class="label fade">Moving company · Brooklyn, New York</span>
+      <h1>
+        <span class="line"><span>Your life,</span></span>
+        <span class="line"><span>moved with</span></span>
+        <span class="line"><span><em>quiet power.</em></span></span>
+      </h1>
+      <p class="sub fade d1">American Power Moving carries what matters most across Brooklyn and New York City: handled with care, planned with precision, and delivered without the drama.</p>
+      <div class="ctas fade d2">
+        <a class="btn btn-gold" href="tel:+13474629009">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>
+          Call (347) 462-9009
+        </a>
+        <a class="btn btn-ghost" href="#services">Explore services</a>
+      </div>
+    </div>
+    <div class="aside-foot fade d3">
+      <div><b>Office</b><a class="u" href="https://maps.google.com/?q=1815+Avenue+U+Ste+2R,+Brooklyn,+NY+11229" target="_blank" rel="noopener">1815 Avenue U Ste 2R<br>Brooklyn, NY 11229</a></div>
+      <div><b>Direct line</b><a class="u" href="tel:+13474629009">(347) 462-9009</a></div>
+    </div>
+  </aside>
+
+  <main>
+    <!-- Signature: animated route over a giant outlined wordmark -->
+    <section class="hero" aria-label="From here to there">
+      <div class="stage fade d4">
+        <div class="grid"></div>
+        <div class="bigword" data-px="-0.08">Mo<i>v</i>e</div>
+        <svg class="route" viewBox="0 0 600 630" preserveAspectRatio="none" aria-hidden="true">
+          <defs>
+            <linearGradient id="rg" x1="0" y1="1" x2="1" y2="0">
+              <stop offset="0" stop-color="#4FB3E8"/><stop offset="1" stop-color="#E9C46A"/>
+            </linearGradient>
+            <filter id="gl"><feGaussianBlur stdDeviation="4"/></filter>
+          </defs>
+          <path class="path" d="M80 450 C 160 440, 170 320, 260 320 S 360 380, 410 280 S 470 150, 510 120" stroke="url(#rg)" stroke-width="6" fill="none" opacity=".45" filter="url(#gl)"/>
+          <path class="path" d="M80 450 C 160 440, 170 320, 260 320 S 360 380, 410 280 S 470 150, 510 120" stroke="url(#rg)" stroke-width="2" fill="none" stroke-linecap="round"/>
+          <g class="dot"><circle class="pulse" cx="80" cy="450" r="6" fill="#4FB3E8"/><circle cx="80" cy="450" r="6" fill="#4FB3E8"/></g>
+          <g class="dot"><circle class="pulse" cx="510" cy="120" r="6" fill="#E9C46A"/><circle cx="510" cy="120" r="6" fill="#E9C46A"/></g>
+        </svg>
+        <svg class="crate" data-px="0.06" viewBox="0 0 200 180" fill="none" aria-hidden="true">
+          <path d="M100 20 180 60v80l-80 40-80-40V60z" fill="#0E2840" fill-opacity=".85" stroke="#4FB3E8" stroke-opacity=".6"/>
+          <path d="M20 60l80 40 80-40M100 100v80" stroke="#4FB3E8" stroke-opacity=".6"/>
+          <path d="M60 40l80 40v30" stroke="#E9C46A" stroke-width="1.5"/>
+          <path d="M100 100 180 60v80l-80 40z" fill="#4FB3E8" fill-opacity=".07"/>
+        </svg>
+        <span class="pin a">From here</span>
+        <span class="pin b">To home</span>
+        <div class="stage-cap"><span>Brooklyn, NY</span><span>New York</span></div>
+      </div>
+    </section>
+
+    <div class="marquee" aria-hidden="true">
+      <div class="track">
+        <span>Handled with care</span><span>Brooklyn based</span><span>Planned with precision</span><span>New York City</span><span>Door to door</span><span>One call away</span>
+        <span>Handled with care</span><span>Brooklyn based</span><span>Planned with precision</span><span>New York City</span><span>Door to door</span><span>One call away</span>
+      </div>
+    </div>
+
+    <section id="services">
+      <span class="label r">What we move</span>
+      <h2 class="r s2">Every kind of move, <em>one steady team.</em></h2>
+      <p class="r s3" style="max-width:34em">Tell us what's going where and we'll shape the move around it. Call to talk through your plans; we'll confirm exactly what's included for your move.</p>
+      <div class="cards">
+        <article class="card r">
+          <span class="num">01</span>
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 11 12 4l9 7v9H3z"/><path d="M9 20v-6h6v6"/></svg></div>
+          <h3>Home moves</h3>
+          <p>From a first apartment to a family home: your rooms, wrapped, carried and set down in their new place with respect.</p>
+        </article>
+        <article class="card r s2">
+          <span class="num">02</span>
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="5" y="3" width="14" height="18" rx="1"/><path d="M9 7h2M13 7h2M9 11h2M13 11h2M9 15h2M13 15h2"/></svg></div>
+          <h3>Apartment &amp; walk-up</h3>
+          <p>Narrow staircases, tight hallways, building rules. City moving is its own craft, and we treat it that way.</p>
+        </article>
+        <article class="card r">
+          <span class="num">03</span>
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M3 13h18"/></svg></div>
+          <h3>Office moves</h3>
+          <p>Desks, files and equipment relocated with a clear plan, so your team can get back to work sooner.</p>
+        </article>
+        <article class="card r s2">
+          <span class="num">04</span>
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3 20 7.5v9L12 21l-8-4.5v-9z"/><path d="m4 7.5 8 4.5 8-4.5M12 12v9"/></svg></div>
+          <h3>Packing &amp; protection</h3>
+          <p>Ask us about packing help, so fragile pieces, art and furniture travel wrapped, padded and secure.</p>
+        </article>
+        <article class="card wide r">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 21s-7-5.5-7-11a7 7 0 0 1 14 0c0 5.5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></div>
+          <div>
+            <h3>Rooted in Brooklyn, moving New York</h3>
+            <p>Our office is on Avenue U in Brooklyn. Moving within the borough, across the city, or further? Give us a call and tell us where you're headed.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="about" class="about">
+      <span class="label r">About us</span>
+      <p class="quote r s2">A move isn't boxes. It's <em>a whole life</em> in transit, and it deserves people who carry it that way.</p>
+      <div class="cols">
+        <p class="r s3">American Power Moving is a moving company working out of Brooklyn, New York. The name says it plainly: the strength to lift the heavy things, and the steadiness to make a stressful day feel calm.</p>
+        <p class="r s4">We believe a premium move is measured in small details: a careful wrap, a clear answer on the phone, a team that shows up ready. That's the standard we hold ourselves to on every job.</p>
+      </div>
+      <div class="addrcard r">
+        <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M24 44s-14-11-14-22a14 14 0 0 1 28 0c0 11-14 22-14 22z"/><circle cx="24" cy="22" r="5"/></svg>
+        <div><strong>Find us in Brooklyn</strong><a class="u" href="https://maps.google.com/?q=1815+Avenue+U+Ste+2R,+Brooklyn,+NY+11229" target="_blank" rel="noopener">1815 Avenue U Ste 2R, Brooklyn NY 11229</a></div>
+      </div>
+    </section>
+
+    <section class="why">
+      <span class="label r">Why American Power</span>
+      <h2 class="r s2">The calm side of <em>moving day.</em></h2>
+      <ul>
+        <li class="r"><span class="n">i.</span><div><h3>Local, reachable people</h3><p>A Brooklyn office and a direct phone line. When you call, you're speaking with the company doing your move.</p></div></li>
+        <li class="r"><span class="n">ii.</span><div><h3>City-move know-how</h3><p>New York moves come with stairs, parking and elevators. We plan for them up front, not on the day.</p></div></li>
+        <li class="r"><span class="n">iii.</span><div><h3>Care as the default</h3><p>Your belongings are treated as your belongings: protected, carried, never rushed.</p></div></li>
+        <li class="r"><span class="n">iv.</span><div><h3>Straight answers</h3><p>Ask anything about your move, and we'll tell you clearly what to expect before anything is lifted.</p></div></li>
+      </ul>
+    </section>
+
+    <section id="process">
+      <span class="label r">How it works</span>
+      <h2 class="r s2">Four steps. <em>Zero chaos.</em></h2>
+      <div class="steps">
+        <div class="step r"><h3>Call us</h3><p>Ring (347) 462-9009 and tell us where you're moving from, where you're going, and when.</p></div>
+        <div class="step r s2"><h3>We plan it</h3><p>We talk through your home, your access and your must-handle-carefully pieces, then shape the plan.</p></div>
+        <div class="step r"><h3>Moving day</h3><p>Our team arrives ready, protects what needs protecting, and loads with care.</p></div>
+        <div class="step r s2"><h3>Settle in</h3><p>Everything is delivered and placed where you want it, so the new place starts feeling like home.</p></div>
+      </div>
+    </section>
+
+    <div class="band r" id="cta">
+      <span class="label">Ready when you are</span>
+      <h2>Let's move you <em>beautifully.</em></h2>
+      <p>One conversation is all it takes to start. Call American Power Moving and tell us about your move.</p>
+      <a class="bignum" href="tel:+13474629009">(347) 462-9009</a>
+      <a class="btn btn-gold" href="tel:+13474629009">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>
+        Call now
+      </a>
+    </div>
+
+    <section id="contact">
+      <span class="label r">Contact</span>
+      <h2 class="r s2">Talk to us <em>today.</em></h2>
+      <div class="contact-grid">
+        <a class="cbox r" href="tel:+13474629009"><b>Phone</b><span class="v">(347) 462-9009</span><span class="go">Tap to call →</span></a>
+        <a class="cbox r s2" href="https://maps.google.com/?q=1815+Avenue+U+Ste+2R,+Brooklyn,+NY+11229" target="_blank" rel="noopener"><b>Office</b><span class="v">1815 Avenue U Ste 2R, Brooklyn NY 11229</span><span class="go">Open in Maps →</span></a>
+        <a class="cbox r s3" href="tel:+13474629009"><b>Hours</b><span class="v">Call to confirm availability</span><span class="go">Ask about your date →</span></a>
+      </div>
+    </section>
+
+    <footer>
+      <div>© <span id="yr"></span> American Power Moving · Brooklyn, NY</div>
+      <div class="links">
+        <a href="#services">Services</a><a href="#about">About</a><a href="#process">How it works</a><a href="tel:+13474629009">(347) 462-9009</a>
+      </div>
+    </footer>
+  </main>
+</div>
+
+<div class="callbar">
+  <a class="btn btn-gold" href="tel:+13474629009">Call now</a>
+  <a class="btn btn-ghost" href="#contact">Contact</a>
+</div>
+
+<script>
+(function(){
+  var d=document,b=d.body;
+  d.getElementById('yr').textContent=new Date().getFullYear();
+  requestAnimationFrame(function(){setTimeout(function(){b.classList.add('loaded')},80)});
+
+  var burger=d.querySelector('.burger'),menu=d.querySelector('.mmenu');
+  function setMenu(o){b.classList.toggle('open',o);burger.setAttribute('aria-expanded',o);menu.setAttribute('aria-hidden',!o)}
+  burger.addEventListener('click',function(){setMenu(!b.classList.contains('open'))});
+  menu.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){setMenu(false)})});
+
+  var rs=d.querySelectorAll('.r');
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.15,rootMargin:'0px 0px -40px 0px'});
+    rs.forEach(function(el){io.observe(el)});
+  }else{rs.forEach(function(el){el.classList.add('in')})}
+
+  if(!matchMedia('(prefers-reduced-motion: reduce)').matches){
+    var px=d.querySelectorAll('[data-px]'),tick=false;
+    function run(){var y=scrollY;px.forEach(function(el){el.style.transform='translate3d('+(y*parseFloat(el.dataset.px))+'px,'+(y*parseFloat(el.dataset.px)*-1.2)+'px,0)'});tick=false}
+    addEventListener('scroll',function(){if(!tick){requestAnimationFrame(run);tick=true}},{passive:true});
+  }
+})();
+</script>
+<div id="lm-concept" style="position:fixed;left:12px;bottom:12px;z-index:2147483647;font:500 11px/1.3 -apple-system,BlinkMacSystemFont,Segoe UI,sans-serif;letter-spacing:.02em;background:rgba(15,15,18,.82);color:#f4f1ea;padding:7px 11px;border-radius:999px;backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);pointer-events:none;max-width:70vw">Website concept for American Power Moving by webstudio &middot; not the live site</div><p style="margin:0;padding:18px 16px 70px;text-align:center;font:12px/1.5 -apple-system,sans-serif;color:#8a8a8a;background:#0e0e10">Concept design by webstudio. Not affiliated with or endorsed by American Power Moving.</p></body>
 </html>
