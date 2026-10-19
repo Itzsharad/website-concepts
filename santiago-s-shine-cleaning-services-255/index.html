@@ -1,291 +1,503 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src * data: blob:; media-src 'self' data:; style-src 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com data:; script-src 'unsafe-inline'; connect-src 'none'; frame-src 'none'; form-action 'none'; base-uri 'none'; object-src 'none'">
 <meta name="robots" content="noindex, nofollow">
-<title>Santiago&#39;s Shine Cleaning Services | Website concept</title>
+<style>html,body{max-width:100%;overflow-x:clip}</style>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Santiago's Shine Cleaning Services | House Cleaning in Los Angeles</title>
+<meta name="description" content="Santiago's Shine Cleaning Services: personal, careful house cleaning in Los Angeles, CA. Call (323) 495-9558.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
 <style>
 :root{
-  --bg:#f3f6f8;--surface:#ffffff;--ink:#14283a;--muted:#566676;
-  --accent:#2a6f97;--accent-ink:#ffffff;--gold:#e0a43a;--soft:#e3eef5;
-  --radius:22px;--max:1180px;
-  --serif:"Fraunces",Georgia,serif;--sans:"Manrope",system-ui,-apple-system,sans-serif;
+  --bg:#EFF7F7;--surface:#FFFFFF;--ink:#0F2F33;--ink-soft:#3D5A5E;
+  --teal:#0F8B8D;--teal-deep:#0A6466;--teal-ink:#0B4F52;--teal-tint:#D6ECEC;--teal-mist:#E3F1F1;
+  --gold:#F2B544;--gold-tint:#FCEFD3;--line:rgba(15,47,51,.12);
+  --r-lg:32px;--r-md:22px;--shadow:0 24px 60px -28px rgba(15,47,51,.35);
+  --ease:cubic-bezier(.22,1,.36,1);
 }
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:90px}
+body{font-family:"Manrope",system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.65;font-size:17px;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+h1,h2,h3,.syne{font-family:"Syne",sans-serif;line-height:1.02;letter-spacing:-.02em}
 a{color:inherit;text-decoration:none}
-img{max-width:100%;display:block}
-.wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
-.concept{background:var(--ink);color:var(--bg);font-size:13px;text-align:center;padding:8px 16px;letter-spacing:.02em}
-.concept b{color:var(--gold);font-weight:600}
+svg{display:block}
+.label{font-size:.74rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--teal-deep);display:inline-flex;align-items:center;gap:.6rem}
+.label::before{content:"";width:28px;height:2px;background:var(--gold);border-radius:2px}
 
-/* header */
-header{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:saturate(1.4) blur(10px);border-bottom:1px solid color-mix(in srgb,var(--ink) 8%,transparent)}
-.nav{display:flex;align-items:center;justify-content:space-between;height:76px;gap:24px}
-.brand{font-family:var(--serif);font-size:23px;font-weight:600;letter-spacing:-.01em;line-height:1.1;max-width:340px}
-.links{display:flex;gap:30px;font-size:15px;font-weight:500;color:var(--muted)}
-.links a:hover{color:var(--ink)}
-.nav-right{display:flex;align-items:center;gap:18px}
-.phone{font-weight:600;font-size:15px;white-space:nowrap}
-.btn{display:inline-flex;align-items:center;gap:10px;background:var(--accent);color:var(--accent-ink);padding:14px 26px;border-radius:999px;font-weight:600;font-size:15.5px;transition:transform .2s ease,box-shadow .2s ease;white-space:nowrap}
-.btn:hover{transform:translateY(-2px);box-shadow:0 12px 28px -12px var(--accent)}
-.btn.ghost{background:transparent;color:var(--ink);border:1.5px solid color-mix(in srgb,var(--ink) 20%,transparent)}
-.btn.ghost:hover{box-shadow:none;border-color:var(--ink)}
-.btn svg{width:18px;height:18px}
+/* Buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.6rem;padding:1rem 1.6rem;border-radius:999px;font-weight:700;font-size:.98rem;transition:transform .4s var(--ease),box-shadow .4s var(--ease),background .3s;white-space:nowrap;max-width:100%}
+.btn-primary{background:var(--teal-deep);color:#fff;box-shadow:0 14px 30px -14px rgba(10,100,102,.8)}
+.btn-primary:hover{transform:translateY(-3px);background:var(--teal-ink);box-shadow:0 20px 36px -14px rgba(10,100,102,.9)}
+.btn-ghost{background:transparent;color:var(--ink);border:1.5px solid var(--ink)}
+.btn-ghost:hover{transform:translateY(-3px);background:var(--ink);color:#fff}
+.btn-gold{background:var(--gold);color:var(--ink)}
+.btn-gold:hover{transform:translateY(-3px);box-shadow:0 18px 34px -16px rgba(242,181,68,.9)}
+.btn svg{width:18px;height:18px;flex:none}
+.u-link{background:linear-gradient(currentColor,currentColor) 0 100%/0 2px no-repeat;transition:background-size .45s var(--ease);padding-bottom:2px}
+.u-link:hover{background-size:100% 2px}
 
-/* hero */
-.hero{padding:72px 0 88px}
-.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:64px;align-items:center}
-.eyebrow{display:inline-flex;align-items:center;gap:10px;background:var(--surface);border:1px solid color-mix(in srgb,var(--ink) 10%,transparent);padding:8px 16px 8px 10px;border-radius:999px;font-size:14px;font-weight:600;color:var(--muted)}
-.stars{color:var(--gold);letter-spacing:1px;font-size:14px}
-.eyebrow .dot{width:26px;height:26px;border-radius:50%;background:var(--soft);display:grid;place-items:center;color:var(--accent)}
-h1{font-family:var(--serif);font-weight:500;font-size:clamp(44px,5.6vw,74px);line-height:1.02;letter-spacing:-.025em;margin:26px 0 22px}
-h1 em{font-style:italic;color:var(--accent)}
-.lead-text{font-size:19.5px;color:var(--muted);max-width:540px}
-.hero-ctas{display:flex;gap:14px;margin-top:36px;flex-wrap:wrap}
-.ticks{display:flex;gap:22px;margin-top:34px;flex-wrap:wrap;font-size:14.5px;font-weight:600;color:var(--muted)}
-.ticks span{display:flex;align-items:center;gap:8px}
-.ticks svg{width:18px;height:18px;color:var(--accent)}
-.visual{position:relative}
-.photo{aspect-ratio:4/5;border-radius:calc(var(--radius) + 10px);overflow:hidden;background:var(--soft);box-shadow:0 40px 80px -40px color-mix(in srgb,var(--ink) 55%,transparent)}
-.photo img{width:100%;height:100%;object-fit:cover}
-.quote-panel{aspect-ratio:4/5;border-radius:calc(var(--radius) + 10px);background:linear-gradient(155deg,var(--accent),color-mix(in srgb,var(--accent) 55%,var(--ink)));color:var(--accent-ink);padding:52px 46px;display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden;box-shadow:0 40px 80px -40px color-mix(in srgb,var(--ink) 60%,transparent)}
-.quote-panel:before{content:"";position:absolute;width:420px;height:420px;border-radius:50%;right:-160px;top:-160px;background:color-mix(in srgb,var(--accent-ink) 9%,transparent)}
-.quote-panel:after{content:"";position:absolute;width:260px;height:260px;border-radius:50%;left:-90px;bottom:-110px;border:1.5px solid color-mix(in srgb,var(--accent-ink) 22%,transparent)}
-.quote-mark{font-family:var(--serif);font-size:120px;line-height:.6;opacity:.35}
-.quote-panel p{font-family:var(--serif);font-size:28px;line-height:1.3;position:relative;z-index:1}
-.quote-panel .who{font-family:var(--sans);font-size:15px;opacity:.85;margin-top:22px;font-weight:600}
-.float{position:absolute;background:var(--surface);color:var(--ink);border-radius:18px;padding:16px 20px;box-shadow:0 24px 50px -24px color-mix(in srgb,var(--ink) 50%,transparent);display:flex;align-items:center;gap:14px;font-size:14px;line-height:1.35}
-.float b{font-size:22px;font-family:var(--serif);font-weight:600;display:block}
-.float.one{left:-34px;bottom:-28px}
-.float.two{right:-22px;top:44px}
-.float .badge{width:44px;height:44px;border-radius:14px;background:var(--soft);display:grid;place-items:center;color:var(--accent)}
-.float .badge svg{width:22px;height:22px}
+/* Header */
+.top{position:fixed;inset:0 0 auto;z-index:50;display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:.9rem clamp(1.1rem,3vw,2.6rem);background:rgba(239,247,247,.72);backdrop-filter:blur(16px) saturate(1.4);-webkit-backdrop-filter:blur(16px) saturate(1.4);border-bottom:1px solid transparent;transition:border-color .3s,background .3s}
+.top.scrolled{border-color:var(--line);background:rgba(239,247,247,.88)}
+.brand{display:flex;align-items:center;gap:.7rem;font-family:"Syne";font-weight:800;font-size:1.08rem;letter-spacing:-.01em}
+.brand-mark{width:40px;height:40px;border-radius:14px 14px 14px 4px;background:var(--teal-deep);display:grid;place-items:center;flex:none}
+.brand small{display:block;font-family:"Manrope";font-weight:600;font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-soft)}
+.nav{display:flex;align-items:center;gap:1.8rem;font-weight:600;font-size:.94rem}
+.nav .phone{display:flex;align-items:center;gap:.5rem}
+.nav .btn{padding:.75rem 1.25rem}
+.burger{display:none;width:46px;height:46px;border-radius:50%;border:1.5px solid var(--ink);background:none;cursor:pointer;place-items:center}
+.burger span,.burger span::before,.burger span::after{display:block;width:18px;height:2px;background:var(--ink);border-radius:2px;position:relative;transition:transform .35s var(--ease),background .2s}
+.burger span::before,.burger span::after{content:"";position:absolute;left:0}
+.burger span::before{top:-6px}.burger span::after{top:6px}
+.menu-open .burger span{background:transparent}
+.menu-open .burger span::before{transform:translateY(6px) rotate(45deg)}
+.menu-open .burger span::after{transform:translateY(-6px) rotate(-45deg)}
+.mobile-menu{position:fixed;inset:0;z-index:45;background:var(--bg);padding:7rem 1.6rem 2rem;display:flex;flex-direction:column;gap:1.2rem;opacity:0;visibility:hidden;transition:opacity .4s var(--ease),visibility .4s}
+.mobile-menu a.m{font-family:"Syne";font-weight:700;font-size:2rem;border-bottom:1px solid var(--line);padding-bottom:.8rem}
+.menu-open .mobile-menu{opacity:1;visibility:visible}
 
-/* trust */
-.trust{border-top:1px solid color-mix(in srgb,var(--ink) 9%,transparent);border-bottom:1px solid color-mix(in srgb,var(--ink) 9%,transparent);background:var(--surface)}
-.trust .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;padding-top:26px;padding-bottom:26px}
-.trust div{display:flex;align-items:center;gap:12px;font-weight:600;font-size:15px}
-.trust svg{width:22px;height:22px;color:var(--accent);flex:none}
+/* Layout */
+.layout{display:grid;grid-template-columns:minmax(0,44fr) minmax(0,56fr);max-width:1500px;margin:0 auto}
+.left{position:sticky;top:0;height:100vh;padding:7.5rem clamp(1.4rem,3.4vw,3.4rem) 2.6rem;display:flex;flex-direction:column;justify-content:space-between;overflow:hidden}
+.left::after{content:"";position:absolute;right:0;top:12%;bottom:6%;width:1px;background:var(--line)}
+.left-blob{position:absolute;z-index:-1;width:520px;height:520px;left:-200px;bottom:-220px;opacity:.9}
+.left h1{font-size:clamp(3rem,6vw,5.6rem);font-weight:800;margin:1.2rem 0 1.4rem}
+.left h1 em{font-style:normal;color:var(--teal-deep);position:relative;display:inline-block}
+.left h1 em svg{position:absolute;right:-.42em;top:-.18em;width:.5em;height:.5em}
+.lead{font-size:clamp(1.05rem,1.3vw,1.2rem);color:var(--ink-soft);max-width:30rem}
+.lead strong{color:var(--ink)}
+.cta-row{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:2rem}
+.left-meta{display:flex;flex-wrap:wrap;gap:1.6rem;font-size:.9rem;color:var(--ink-soft);border-top:1px solid var(--line);padding-top:1.4rem}
+.left-meta b{display:block;color:var(--ink);font-weight:700;font-size:.98rem}
+.right{padding:6.5rem clamp(1.2rem,3.6vw,3.6rem) 3rem;min-width:0}
+section{padding:clamp(3.5rem,8vh,6rem) 0}
 
-/* sections */
-section.block{padding:110px 0}
-.kicker{font-size:13px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
-h2{font-family:var(--serif);font-weight:500;font-size:clamp(34px,3.8vw,52px);line-height:1.08;letter-spacing:-.02em;margin:14px 0 18px}
-.section-head{display:flex;justify-content:space-between;align-items:end;gap:40px;margin-bottom:56px}
-.section-head p{color:var(--muted);max-width:420px}
-.services{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-.card{background:var(--surface);border-radius:var(--radius);padding:34px 32px 36px;border:1px solid color-mix(in srgb,var(--ink) 7%,transparent);transition:transform .25s ease,box-shadow .25s ease}
-.card:hover{transform:translateY(-4px);box-shadow:0 30px 60px -36px color-mix(in srgb,var(--ink) 45%,transparent)}
-.icon{width:54px;height:54px;border-radius:16px;background:var(--soft);color:var(--accent);display:grid;place-items:center;margin-bottom:24px}
-.icon svg{width:26px;height:26px}
-.card h3{font-family:var(--serif);font-weight:500;font-size:23px;margin-bottom:8px;letter-spacing:-.01em}
-.card p{color:var(--muted);font-size:16px}
+/* Signature hero art */
+.stage{position:relative;height:min(78vh,720px);min-height:480px;border-radius:var(--r-lg);overflow:hidden;background:linear-gradient(160deg,#0F8B8D 0%,#0A6466 55%,#0B4F52 100%);isolation:isolate}
+.stage .arch{position:absolute;left:50%;bottom:-2px;transform:translateX(-50%);width:68%;height:82%;border-radius:999px 999px 0 0;background:linear-gradient(180deg,#F7FBFB 0%,#E3F1F1 100%);box-shadow:inset 0 30px 60px -30px rgba(15,47,51,.25)}
+.stage .arch-inner{position:absolute;left:50%;bottom:-2px;transform:translateX(-50%);width:44%;height:58%;border-radius:999px 999px 0 0;border:2px dashed rgba(15,139,141,.35)}
+.stage .sun{position:absolute;width:150px;height:150px;border-radius:50%;background:var(--gold);right:9%;top:10%;box-shadow:0 0 0 18px rgba(242,181,68,.18),0 0 0 40px rgba(242,181,68,.08)}
+.stage .word{position:absolute;left:0;right:0;bottom:6%;text-align:center;font-family:"Syne";font-weight:800;font-size:clamp(4.6rem,13vw,11.5rem);line-height:.85;letter-spacing:-.05em;color:var(--ink);z-index:2}
+.stage .word span{display:inline-block}
+.stage .word .o{color:var(--teal)}
+.stage .tag{position:absolute;left:6%;top:8%;z-index:3;color:#fff;font-size:.74rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;display:flex;gap:.6rem;align-items:center}
+.stage .tag i{width:8px;height:8px;border-radius:50%;background:var(--gold);display:block;animation:pulse 2.4s infinite}
+.spark{position:absolute;z-index:3;fill:var(--gold)}
+.spark.s1{width:56px;left:16%;top:30%;animation:twinkle 3.2s ease-in-out infinite}
+.spark.s2{width:34px;right:22%;top:44%;animation:twinkle 2.6s ease-in-out .8s infinite;fill:#fff}
+.spark.s3{width:24px;left:30%;top:52%;animation:twinkle 3s ease-in-out 1.4s infinite;fill:var(--teal)}
+.stage .bubbles circle{fill:rgba(255,255,255,.14)}
+.stage .chip{position:absolute;z-index:4;right:6%;bottom:40%;background:var(--surface);border-radius:18px;padding:.85rem 1.1rem;box-shadow:var(--shadow);display:flex;gap:.7rem;align-items:center;font-weight:700;font-size:.9rem;max-width:62%}
+.stage .chip span{width:34px;height:34px;border-radius:50%;background:var(--gold-tint);display:grid;place-items:center;flex:none}
+@keyframes twinkle{0%,100%{transform:scale(.7) rotate(0);opacity:.6}50%{transform:scale(1.1) rotate(25deg);opacity:1}}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(242,181,68,.7)}100%{box-shadow:0 0 0 12px rgba(242,181,68,0)}}
 
-.why{background:var(--ink);color:var(--bg)}
-.why .kicker{color:var(--gold)}
-.why-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:80px;align-items:start}
-.why h2{color:var(--bg)}
-.why .intro{color:color-mix(in srgb,var(--bg) 70%,transparent);font-size:18px;max-width:440px}
-.points{display:grid;gap:14px}
-.point{display:grid;grid-template-columns:62px 1fr;gap:20px;padding:30px;border-radius:var(--radius);background:color-mix(in srgb,var(--bg) 6%,transparent);border:1px solid color-mix(in srgb,var(--bg) 10%,transparent)}
-.point .num{font-family:var(--serif);font-size:34px;color:var(--gold);line-height:1}
-.point h3{font-family:var(--serif);font-weight:500;font-size:24px;margin-bottom:6px}
-.point p{color:color-mix(in srgb,var(--bg) 72%,transparent);font-size:16px}
+/* Marquee */
+.marquee{margin-top:1.4rem;border-radius:999px;background:var(--ink);color:#fff;overflow:hidden;padding:1rem 0}
+.marquee-track{display:flex;width:max-content;animation:scroll 34s linear infinite}
+.marquee-track span{display:flex;align-items:center;gap:1.6rem;padding-right:1.6rem;font-family:"Syne";font-weight:700;font-size:1.05rem;white-space:nowrap}
+.marquee-track svg{width:16px;fill:var(--gold)}
+@keyframes scroll{to{transform:translateX(-50%)}}
 
-.score{display:flex;align-items:center;gap:18px;background:var(--surface);padding:16px 24px;border-radius:18px;border:1px solid color-mix(in srgb,var(--ink) 8%,transparent)}
-.score b{font-family:var(--serif);font-size:40px;font-weight:500;line-height:1}
-.score small{display:block;color:var(--muted);font-size:14px}
-.reviews{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-.review{background:var(--surface);border-radius:var(--radius);padding:34px;display:flex;flex-direction:column;gap:22px;border:1px solid color-mix(in srgb,var(--ink) 7%,transparent)}
-.review p{font-family:var(--serif);font-size:19.5px;line-height:1.45}
-.review .by{margin-top:auto;display:flex;align-items:center;gap:12px;font-weight:600;font-size:15px}
-.avatar{width:40px;height:40px;border-radius:50%;background:var(--soft);color:var(--accent);display:grid;place-items:center;font-weight:700}
-.review .src{color:var(--muted);font-weight:500;font-size:13px;display:block}
+/* Section heads */
+.head{max-width:36rem;margin-bottom:2.6rem}
+.head h2{font-size:clamp(2.2rem,4.2vw,3.6rem);font-weight:800;margin-top:1rem}
+.head p{color:var(--ink-soft);margin-top:1rem}
 
-.cta-band{padding:0 0 110px}
-.cta-box{border-radius:calc(var(--radius) + 12px);background:linear-gradient(140deg,var(--accent),color-mix(in srgb,var(--accent) 60%,var(--ink)));color:var(--accent-ink);padding:76px 64px;display:grid;grid-template-columns:1.3fr 1fr;gap:40px;align-items:center;position:relative;overflow:hidden}
-.cta-box:after{content:"";position:absolute;right:-120px;bottom:-200px;width:460px;height:460px;border-radius:50%;border:1.5px solid color-mix(in srgb,var(--accent-ink) 22%,transparent)}
-.cta-box h2{color:inherit;margin:0 0 12px}
-.cta-box p{opacity:.85;font-size:18px}
-.cta-box .actions{display:flex;flex-direction:column;gap:12px;align-items:flex-start;position:relative;z-index:1}
-.cta-box .btn{background:var(--accent-ink);color:var(--accent)}
-.cta-box .btn.ghost{background:transparent;color:var(--accent-ink);border-color:color-mix(in srgb,var(--accent-ink) 40%,transparent)}
+/* Services */
+.grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.1rem}
+.card{background:var(--surface);border-radius:var(--r-md);padding:2rem 1.8rem;border:1px solid var(--line);transition:transform .5s var(--ease),box-shadow .5s var(--ease);position:relative;overflow:hidden}
+.card:hover{transform:translateY(-6px);box-shadow:var(--shadow)}
+.card .ic{width:58px;height:58px;border-radius:20px 20px 20px 6px;background:var(--teal-mist);display:grid;place-items:center;margin-bottom:1.4rem;transition:background .4s,transform .5s var(--ease)}
+.card:hover .ic{background:var(--gold-tint);transform:rotate(-6deg)}
+.card .ic svg{width:28px;height:28px;stroke:var(--teal-deep);fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.card h3{font-size:1.45rem;font-weight:700;margin-bottom:.6rem}
+.card p{color:var(--ink-soft);font-size:.98rem}
+.card .num{position:absolute;right:1.4rem;top:1.2rem;font-family:"Syne";font-weight:800;font-size:.85rem;color:var(--teal);opacity:.6}
+.card.feature{grid-column:1/-1;background:var(--teal-deep);color:#fff;border:none;display:flex;gap:1.6rem;align-items:center;justify-content:space-between;flex-wrap:wrap}
+.card.feature p{color:#D6ECEC;max-width:28rem}
+.card.feature h3{font-size:1.8rem}
 
-.visit{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:10px}
-.visit .card h3{font-size:20px}
-.visit a{color:var(--accent);font-weight:600}
-footer{border-top:1px solid color-mix(in srgb,var(--ink) 9%,transparent);padding:40px 0 110px;color:var(--muted);font-size:14px}
-footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
-.mobile-bar{display:none}
+/* About */
+.about{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:2.4rem;align-items:center}
+.about-art{position:relative;aspect-ratio:4/5;border-radius:999px 999px var(--r-lg) var(--r-lg);background:linear-gradient(180deg,var(--gold-tint),#F8DFA8);overflow:hidden;display:grid;place-items:center}
+.about-art .big{font-family:"Syne";font-weight:800;font-size:clamp(7rem,14vw,11rem);color:var(--ink);line-height:1;letter-spacing:-.06em;transform:translateY(8%)}
+.about-art .ring{position:absolute;inset:9% 9% auto;aspect-ratio:1;border-radius:50%;border:2px solid rgba(15,47,51,.18)}
+.about-art .pin{position:absolute;bottom:7%;left:50%;transform:translateX(-50%);background:var(--surface);border-radius:999px;padding:.55rem 1rem;font-size:.8rem;font-weight:700;display:flex;gap:.45rem;align-items:center;white-space:nowrap;box-shadow:0 10px 26px -14px rgba(15,47,51,.5)}
+.about-copy h2{font-size:clamp(2rem,3.8vw,3.2rem);font-weight:800;margin:1rem 0 1.2rem}
+.about-copy p{color:var(--ink-soft);margin-bottom:1rem}
+.about-copy p.big-q{font-family:"Syne";font-weight:600;color:var(--ink);font-size:1.3rem;line-height:1.35;border-left:3px solid var(--gold);padding-left:1rem}
 
-@keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
-.hero .copy>*{animation:rise .8s cubic-bezier(.2,.7,.2,1) both}
-.hero .copy>*:nth-child(2){animation-delay:.08s}.hero .copy>*:nth-child(3){animation-delay:.16s}
-.hero .copy>*:nth-child(4){animation-delay:.24s}.hero .copy>*:nth-child(5){animation-delay:.32s}
-.visual{animation:rise 1s .2s cubic-bezier(.2,.7,.2,1) both}
+/* Why */
+.why{background:var(--ink);color:#fff;border-radius:var(--r-lg);padding:clamp(2.4rem,5vw,4rem) clamp(1.4rem,4vw,3.4rem);position:relative;overflow:hidden}
+.why .label{color:var(--gold)}
+.why .head p{color:#B9D3D5}
+.why-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:2rem 2.4rem;position:relative}
+.why-item{border-top:1px solid rgba(255,255,255,.18);padding-top:1.3rem}
+.why-item h3{font-size:1.3rem;margin-bottom:.5rem;display:flex;gap:.7rem;align-items:center}
+.why-item h3 svg{width:20px;fill:var(--gold);flex:none}
+.why-item p{color:#C8DCDD;font-size:.97rem}
+.why-blob{position:absolute;width:420px;right:-160px;top:-160px;opacity:.5}
 
-@media (max-width:980px){
-  .links{display:none}
-  .hero-grid,.why-grid,.cta-box{grid-template-columns:1fr}
-  .hero-grid{gap:56px}
-  .services,.reviews,.visit{grid-template-columns:1fr 1fr}
-  .trust .wrap{grid-template-columns:1fr 1fr}
-  .float.one{left:12px;bottom:-26px}.float.two{right:12px}
-  .visual{max-width:560px;margin-bottom:20px}
-  .section-head{flex-direction:column;align-items:flex-start}
+/* Steps */
+.steps{display:grid;gap:1rem;counter-reset:s}
+.step{display:grid;grid-template-columns:auto minmax(0,1fr);gap:1.6rem;align-items:start;background:var(--surface);border-radius:var(--r-md);padding:1.8rem;border:1px solid var(--line);transition:transform .5s var(--ease),border-color .4s}
+.step:hover{transform:translateX(8px);border-color:var(--teal)}
+.step .n{width:64px;height:64px;border-radius:50%;background:var(--teal-mist);display:grid;place-items:center;font-family:"Syne";font-weight:800;font-size:1.4rem;color:var(--teal-deep)}
+.step:nth-child(2) .n{background:var(--gold-tint);color:var(--ink)}
+.step:nth-child(3) .n{background:var(--teal-deep);color:#fff}
+.step h3{font-size:1.35rem;margin:.3rem 0 .4rem}
+.step p{color:var(--ink-soft)}
+.step a{color:var(--teal-deep);font-weight:700}
+
+/* FAQ */
+.faq details{background:var(--surface);border-radius:var(--r-md);border:1px solid var(--line);margin-bottom:.8rem;overflow:hidden}
+.faq summary{list-style:none;cursor:pointer;padding:1.4rem 1.6rem;font-family:"Syne";font-weight:700;font-size:1.15rem;display:flex;justify-content:space-between;align-items:center;gap:1rem}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary i{width:34px;height:34px;border-radius:50%;background:var(--teal-mist);flex:none;position:relative;transition:transform .4s var(--ease),background .3s}
+.faq summary i::before,.faq summary i::after{content:"";position:absolute;left:50%;top:50%;width:12px;height:2px;background:var(--teal-deep);transform:translate(-50%,-50%)}
+.faq summary i::after{transform:translate(-50%,-50%) rotate(90deg)}
+.faq details[open] summary i{transform:rotate(45deg);background:var(--gold-tint)}
+.faq details p{padding:0 1.6rem 1.5rem;color:var(--ink-soft)}
+.faq details p a{color:var(--teal-deep);font-weight:700}
+
+/* Closing CTA */
+.closing{position:relative;border-radius:var(--r-lg);background:var(--gold);padding:clamp(3rem,7vw,5rem) clamp(1.4rem,5vw,4rem);overflow:hidden;text-align:center}
+.closing h2{font-size:clamp(2.4rem,6vw,5rem);font-weight:800;max-width:14ch;margin:0 auto 1.2rem;position:relative}
+.closing p{max-width:30rem;margin:0 auto 2rem;font-weight:500;position:relative}
+.closing .cta-row{justify-content:center;position:relative}
+.closing .arc{position:absolute;width:140%;left:-20%;top:55%;aspect-ratio:2/1;border-radius:999px 999px 0 0;background:rgba(255,255,255,.28)}
+.closing .label{color:var(--ink)}.closing .label::before{background:var(--ink)}
+
+/* Contact */
+.contact-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem}
+.c-card{background:var(--surface);border-radius:var(--r-md);padding:1.8rem;border:1px solid var(--line);display:flex;flex-direction:column;gap:.5rem;transition:transform .5s var(--ease),box-shadow .5s var(--ease);min-width:0}
+a.c-card:hover{transform:translateY(-5px);box-shadow:var(--shadow)}
+.c-card .k{font-size:.72rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--teal-deep)}
+.c-card .v{font-family:"Syne";font-weight:700;font-size:1.35rem;line-height:1.25;overflow-wrap:anywhere}
+.c-card .s{color:var(--ink-soft);font-size:.92rem}
+.c-card.wide{grid-column:1/-1;background:var(--teal-mist);flex-direction:row;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem}
+
+footer{padding:3rem 0 1rem;border-top:1px solid var(--line);margin-top:3rem;display:flex;flex-wrap:wrap;justify-content:space-between;gap:1rem;color:var(--ink-soft);font-size:.9rem}
+footer a{color:var(--ink);font-weight:600}
+
+/* Mobile call bar */
+.callbar{display:none}
+
+/* Reveal */
+.rv{opacity:0;transform:translateY(34px);transition:opacity 1s var(--ease),transform 1s var(--ease)}
+.rv.in{opacity:1;transform:none}
+.load{opacity:0;transform:translateY(26px);animation:enter 1.1s var(--ease) forwards}
+.d1{animation-delay:.1s}.d2{animation-delay:.22s}.d3{animation-delay:.36s}.d4{animation-delay:.5s}.d5{animation-delay:.64s}
+@keyframes enter{to{opacity:1;transform:none}}
+
+/* Responsive */
+@media (max-width:1080px){
+  .nav .hide-md{display:none}
+  .about{grid-template-columns:1fr}
+  .about-art{max-width:380px;width:100%;margin:0 auto}
 }
-@media (max-width:640px){
+@media (max-width:900px){
   body{font-size:16px}
-  .wrap{padding:0 18px}
-  .nav{height:66px}.brand{font-size:19px}
-  .phone,.nav-right .btn{display:none}
-  .hero{padding:44px 0 64px}
-  .lead-text{font-size:17.5px}
-  .hero-ctas .btn{flex:1;justify-content:center}
-  .ticks{display:none}
-  .services,.reviews,.visit,.trust .wrap{grid-template-columns:1fr}
-  section.block{padding:76px 0}
-  .quote-panel,.photo{aspect-ratio:auto;min-height:380px}.photo{aspect-ratio:4/3;min-height:0}
-  .quote-panel{padding:40px 30px 64px}.quote-panel p{font-size:23px}
-  .float{font-size:13px;padding:12px 14px}.float b{font-size:18px}
-  .float.two{display:none}
-  .cta-box{padding:52px 28px}
-  .point{grid-template-columns:44px 1fr;padding:24px}
-  .mobile-bar{display:flex;position:fixed;left:12px;right:12px;bottom:12px;z-index:30;gap:10px}
-  .mobile-bar .btn{flex:1;justify-content:center;box-shadow:0 14px 30px -14px color-mix(in srgb,var(--ink) 60%,transparent)}
-  .mobile-bar .btn.ghost{background:var(--surface)}
+  .layout{grid-template-columns:1fr}
+  .left{position:relative;height:auto;padding:7rem 1.25rem 2rem;gap:2rem}
+  .left::after{display:none}
+  .right{padding:0 1.25rem 6rem}
+  .nav{display:none}
+  .burger{display:grid}
+  .stage{height:auto;aspect-ratio:4/5;min-height:0}
+  .callbar{display:flex;position:fixed;left:.75rem;right:.75rem;bottom:.75rem;z-index:40;gap:.5rem;padding:.5rem;border-radius:999px;background:rgba(15,47,51,.92);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);box-shadow:0 18px 40px -16px rgba(15,47,51,.7)}
+  .callbar a{flex:1;padding:.85rem .5rem;font-size:.92rem}
+}
+@media (max-width:600px){
+  .grid2,.why-list,.contact-grid{grid-template-columns:1fr}
+  .stage .sun{width:90px;height:90px;box-shadow:0 0 0 12px rgba(242,181,68,.18),0 0 0 26px rgba(242,181,68,.08)}
+  .stage .arch{width:84%}
+  .stage .chip{right:4%;bottom:38%;font-size:.8rem;max-width:72%}
+  .card{padding:1.6rem 1.4rem}
+  .step{grid-template-columns:1fr;gap:1rem;padding:1.5rem}
+  .step:hover{transform:none}
+  .cta-row .btn{flex:1 1 100%}
+  .left-meta{gap:1.1rem}
+  .brand{font-size:.98rem}
+  .brand small{letter-spacing:.14em}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+  .rv,.load{opacity:1;transform:none}
 }
 </style>
 </head>
 <body>
-<div class="concept">Website concept prepared for <b>Santiago&#39;s Shine Cleaning Services</b> by webstudio &middot; not a live site</div>
 
-<header>
-  <div class="wrap nav">
-    <a href="#top" class="brand">Santiago&#39;s Shine Cleaning Services</a>
-    <nav class="links">
-      <a href="#services">Services</a><a href="#why">Why us</a><a href="#visit">Visit</a>
-    </nav>
-    <div class="nav-right">
-      <a class="phone" href="tel:3234959558">(323) 495-9558</a>
-      <a class="btn" href="#visit">Free quote</a>
-    </div>
-  </div>
+<header class="top" id="top">
+  <a href="#home" class="brand" aria-label="Santiago's Shine Cleaning Services, home">
+    <span class="brand-mark" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24"><path fill="#F2B544" d="M12 1.5c.6 4.9 2.6 6.9 7.5 7.5v.1c-4.9.6-6.9 2.6-7.5 7.5h-.1c-.6-4.9-2.6-6.9-7.5-7.5V9C9.3 8.4 11.3 6.4 12 1.5z"/><circle cx="19" cy="19" r="2.2" fill="#fff"/></svg></span>
+    <span>Santiago's Shine<small>Cleaning Services</small></span>
+  </a>
+  <nav class="nav" aria-label="Main">
+    <a href="#services" class="u-link hide-md">Services</a>
+    <a href="#story" class="u-link hide-md">Our story</a>
+    <a href="#process" class="u-link hide-md">How it works</a>
+    <a href="tel:+13234959558" class="phone u-link"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>(323) 495-9558</a>
+    <a href="#contact" class="btn btn-primary">Book a clean</a>
+  </nav>
+  <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false"><span></span></button>
 </header>
 
-<main id="top">
-<section class="hero">
-  <div class="wrap hero-grid">
-    <div class="copy">
-      <div class="eyebrow">
-        <span class="dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-7-4.4-7-10a4 4 0 017-2.6A4 4 0 0119 10c0 5.6-7 10-7 10z"/></svg></span>House cleaning in Los Angeles
-      </div>
-      <h1>Come home to a Los Angeles home <em>that shines.</em></h1>
-      <p class="lead-text">Santiago&#39;s Shine Cleaning Services brings careful, thorough house cleaning to Los Angeles homes, so you can spend less time scrubbing and more time living.</p>
-      <div class="hero-ctas">
-        <a class="btn" href="#visit">Get a free quote <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-        <a class="btn ghost" href="tel:3234959558">Call (323) 495-9558</a>
-      </div>
-      <div class="ticks">
-        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7"/></svg>Background-checked team</span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7"/></svg>Fully insured</span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7"/></svg>Supplies included</span>
-      </div>
-    </div>
-    <div class="visual">
-      
-      <div class="quote-panel"><div class="quote-mark">“</div><div><p>Trusted, background-checked cleaners who show up on time, bring everything, and leave every room shining.</p><div class="who">Santiago&#39;s Shine Cleaning Services</div></div></div>
-      
-      
-      <div class="float two"><span class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><span><b>This week</b>Fully insured</span></div>
-    </div>
-  </div>
-  <template id="qp"><div class="quote-panel"><div class="quote-mark">“</div><div><p>Trusted, background-checked cleaners who show up on time, bring everything, and leave every room shining.</p><div class="who">Santiago&#39;s Shine Cleaning Services</div></div></div></template>
-</section>
-
-<div class="trust"><div class="wrap">
-  <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.2-8 9-4.6-.8-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg>Background-checked team</div><div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.2-8 9-4.6-.8-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg>Fully insured</div><div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.2-8 9-4.6-.8-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg>Supplies included</div><div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.2-8 9-4.6-.8-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg>100% satisfaction guarantee</div>
-</div></div>
-
-<section class="block" id="services">
-  <div class="wrap">
-    <div class="section-head">
-      <div><div class="kicker">What we do</div><h2>Everything you need,<br>under one roof.</h2></div>
-      <p>From routine visits to the work that changes how you feel about your day, Santiago&#39;s Shine Cleaning Services takes care of it properly.</p>
-    </div>
-    <div class="services">
-      
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11l8-7 8 7v9a1 1 0 01-1 1h-4v-6H9v6H5a1 1 0 01-1-1z"/></svg></div><h3>Regular cleaning</h3><p>Weekly or bi-weekly visits so your home always feels fresh and cared for.</p></div>
-      
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/><path d="M19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8z"/></svg></div><h3>Deep cleaning</h3><p>Top-to-bottom detail work on baseboards, grout, appliances and every corner.</p></div>
-      
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7l9-4 9 4v10l-9 4-9-4z"/><path d="M3 7l9 4 9-4M12 11v10"/></svg></div><h3>Move-in &amp; move-out</h3><p>Get your deposit back or start fresh in a home that&#39;s truly clean.</p></div>
-      
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3" width="14" height="18" rx="1"/><path d="M9 7h2M13 7h2M9 11h2M13 11h2M9 15h2M13 15h2"/></svg></div><h3>Office cleaning</h3><p>Reliable after-hours cleaning that keeps your workspace professional.</p></div>
-      
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 19c0-8 5-14 15-14 0 10-6 15-14 15"/><path d="M5 19c3-4 6-6 10-8"/></svg></div><h3>Eco-friendly products</h3><p>Safe for kids and pets, tough on dirt, and gentle on the planet.</p></div>
-      
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div><h3>Same-week booking</h3><p>Need it done fast? We usually have openings within a few days.</p></div>
-      
-    </div>
-  </div>
-</section>
-
-<section class="block why" id="why">
-  <div class="wrap why-grid">
-    <div>
-      <div class="kicker">Why clients choose us</div>
-      <h2>The Los Angeles house cleaning service people recommend to their friends.</h2>
-      <p class="intro">it still comes down to the same three things.</p>
-    </div>
-    <div class="points">
-      
-      <div class="point"><div class="num">01</div><div><h3>Vetted &amp; insured</h3><p>Every cleaner is background-checked, trained and fully insured for your peace of mind.</p></div></div>
-      
-      <div class="point"><div class="num">02</div><div><h3>Satisfaction guaranteed</h3><p>Not happy with something? We&#39;ll come back and make it right, free.</p></div></div>
-      
-      <div class="point"><div class="num">03</div><div><h3>Upfront pricing</h3><p>A clear quote before we start. No hidden fees, ever.</p></div></div>
-      
-    </div>
-  </div>
-</section>
-
-
-
-<section class="cta-band" id="book">
-  <div class="wrap"><div class="cta-box">
-    <div><h2>Ready when you are.</h2><p>Get a free quote in under a minute, or give us a call and talk to a real person.</p></div>
-    <div class="actions">
-      <a class="btn" href="#visit">Get a free quote</a>
-      <a class="btn ghost" href="tel:3234959558">Call (323) 495-9558</a>
-    </div>
-  </div></div>
-</section>
-
-<section class="block" id="visit" style="padding-top:0">
-  <div class="wrap">
-    <div class="kicker">Visit us</div><h2>Come say hello.</h2>
-    <div class="visit">
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11l8-7 8 7v9a1 1 0 01-1 1h-4v-6H9v6H5a1 1 0 01-1-1z"/></svg></div><h3>Address</h3><p>1215 E 47th Pl, Los Angeles CA 90011</p></div>
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div><h3>Phone</h3><p><a href="tel:3234959558">(323) 495-9558</a></p><p style="margin-top:10px">Call or message us for today's opening hours.</p></div>
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-7-4.4-7-10a4 4 0 017-2.6A4 4 0 0119 10c0 5.6-7 10-7 10z"/></svg></div><h3>Fully insured</h3><p>Get a free quote online or by phone and we'll take care of the rest.</p></div>
-    </div>
-  </div>
-</section>
-</main>
-
-<footer><div class="wrap">
-  <span>© 2026 Santiago&#39;s Shine Cleaning Services</span>
-  <span>Concept design by webstudio. Not affiliated with or endorsed by Santiago&#39;s Shine Cleaning Services.</span>
-</div></footer>
-
-<div class="mobile-bar">
-  <a class="btn ghost" href="tel:3234959558">Call</a>
-  <a class="btn" href="#visit">Free quote</a>
+<div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+  <a class="m" href="#services">Services</a>
+  <a class="m" href="#story">Our story</a>
+  <a class="m" href="#process">How it works</a>
+  <a class="m" href="#faq">FAQ</a>
+  <a class="m" href="#contact">Contact</a>
+  <a href="tel:+13234959558" class="btn btn-primary" style="margin-top:1rem">Call (323) 495-9558</a>
 </div>
-</body>
+
+<div class="layout" id="home">
+  <!-- Sticky left column -->
+  <aside class="left">
+    <svg class="left-blob" viewBox="0 0 200 200" aria-hidden="true"><path fill="#D6ECEC" d="M43.7-58.6C55.6-49.5 63.4-34.6 67.5-18.6 71.6-2.6 72-14.5 66.2 18.9 58.9 37.2 46 56.6 28.4 64.8 10.8 73-11.4 70-30.5 61.4-49.6 52.8-65.6 38.6-70.9 20.9-76.2 3.2-70.8-18 -59.7-33.5-48.6-49-31.8-58.8-14.6-64.6 2.6-70.4 31.8-67.7 43.7-58.6Z" transform="translate(100 100)"/></svg>
+    <div>
+      <span class="label load d1">House cleaning · Los Angeles</span>
+      <h1 class="load d2">Santiago's <em>Shine<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#F2B544" d="M12 0c.7 5.8 3.2 8.3 9 9v.1c-5.8.7-8.3 3.2-9 9h-.1c-.7-5.8-3.2-8.3-9-9V9C8.7 8.3 11.3 5.8 12 0z"/></svg></em></h1>
+      <p class="lead load d3"><strong>Come home to a house that feels like a deep breath.</strong> Personal, careful house cleaning for Los Angeles homes, from a local team that treats your space like their own.</p>
+      <div class="cta-row load d4">
+        <a href="tel:+13234959558" class="btn btn-primary"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>Call (323) 495-9558</a>
+        <a href="#services" class="btn btn-ghost">See what we clean</a>
+      </div>
+    </div>
+    <div class="left-meta load d5">
+      <div><b>Based in</b>South Los Angeles, 90011</div>
+      <div><b>Booking</b>By phone, personally</div>
+    </div>
+  </aside>
+
+  <!-- Scrolling right column -->
+  <main class="right">
+
+    <!-- Signature hero composition -->
+    <div class="stage load d3" aria-label="Decorative illustration: the word Shine inside a soft arch">
+      <svg class="bubbles" viewBox="0 0 400 500" preserveAspectRatio="none" style="position:absolute;inset:0;width:100%;height:100%" aria-hidden="true"><circle cx="40" cy="420" r="26"/><circle cx="90" cy="360" r="12"/><circle cx="360" cy="300" r="18"/><circle cx="330" cy="460" r="34"/><circle cx="70" cy="120" r="9"/></svg>
+      <div class="sun" data-par="0.18" aria-hidden="true"></div>
+      <div class="tag"><i></i>Now booking in Los Angeles</div>
+      <div class="arch" data-par="0.06" aria-hidden="true"></div>
+      <div class="arch-inner" aria-hidden="true"></div>
+      <svg class="spark s1" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0c.7 5.8 3.2 8.3 9 9v.1c-5.8.7-8.3 3.2-9 9h-.1c-.7-5.8-3.2-8.3-9-9V9C8.7 8.3 11.3 5.8 12 0z"/></svg>
+      <svg class="spark s2" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0c.7 5.8 3.2 8.3 9 9v.1c-5.8.7-8.3 3.2-9 9h-.1c-.7-5.8-3.2-8.3-9-9V9C8.7 8.3 11.3 5.8 12 0z"/></svg>
+      <svg class="spark s3" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0c.7 5.8 3.2 8.3 9 9v.1c-5.8.7-8.3 3.2-9 9h-.1c-.7-5.8-3.2-8.3-9-9V9C8.7 8.3 11.3 5.8 12 0z"/></svg>
+      <div class="chip"><span aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0F2F33" stroke-width="2.2" stroke-linecap="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>Fresh, calm, cared-for</div>
+      <div class="word" aria-hidden="true"><span>Sh</span><span class="o">i</span><span>ne</span></div>
+    </div>
+
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-track">
+        <span>Kitchens <svg viewBox="0 0 24 24"><path d="M12 0c.7 5.8 3.2 8.3 9 9v.1c-5.8.7-8.3 3.2-9 9h-.1c-.7-5.8-3.2-8.3-9-9V9C8.7 8.3 11.3 5.8 12 0z"/></svg> Bathrooms <svg viewBox="0 0 24 24"><path d="M12 0c.7 5.8 3.2 8.3 9 9v.1c-5.8.7-8.3 3.2-9 9h-.1c-.7-5.8-3.2-8.3-9-9V9C8.7 8.3 11.3 5.8 12 0z"/></svg> Bedrooms <svg viewBox="0 0 24 24"><path d="M12 0c.7 5.8 3.2 8.3 9 9v.1c-5.8.7-8.3 3.2-9 9h-.1c-.7-5.8-3.2-8.3-9-9V9C8.7 8.3 11.3 5.8 12 0z"/></svg> Living spaces <svg viewBox="0 0 24 24"><path d="M12 0c.7 5.8 3.2 8.3 9 9v.1c-5.8.7-8.3 3.2-9 9h-.1c-.7-5.8-3.2-8.3-9-9V9C8.7 8.3 11.3 5.8 12 0z"/></svg> Locally based in Los Angeles <svg viewBox="0 0 24 24"><path d="M12 0c.7 5.8 3.2 8.3 9 9v.1c-5.8.7-8.3 3.2-9 9h-.1c-.7-5.8-3.2-8.3-9-9V9C8.7 8.3 11.3 5.8 12 0z"/></svg></span>
+        <span>Kitchens <svg viewBox="0 0 24 24"><path d="M12 0c.7 5.8 3.2 8.3 9 9v.1c-5.8.7-8.3 3.2-9 9h-.1c-.7-5.8-3.2-8.3-9-9V9C8.7 8.3 11.3 5.8 12 0z"/></svg> Bathrooms <svg viewBox="0 0 24 24"><path d="M12 0c.7 5.8 3.2 8.3 9 9v.1c-5.8.7-8.3 3.2-9 9h-.1c-.7-5.8-3.2-8.3-9-9V9C8.7 8.3 11.3 5.8 12 0z"/></svg> Bedrooms <svg viewBox="0 0 24 24"><path d="M12 0c.7 5.8 3.2 8.3 9 9v.1c-5.8.7-8.3 3.2-9 9h-.1c-.7-5.8-3.2-8.3-9-9V9C8.7 8.3 11.3 5.8 12 0z"/></svg> Living spaces <svg viewBox="0 0 24 24"><path d="M12 0c.7 5.8 3.2 8.3 9 9v.1c-5.8.7-8.3 3.2-9 9h-.1c-.7-5.8-3.2-8.3-9-9V9C8.7 8.3 11.3 5.8 12 0z"/></svg> Locally based in Los Angeles <svg viewBox="0 0 24 24"><path d="M12 0c.7 5.8 3.2 8.3 9 9v.1c-5.8.7-8.3 3.2-9 9h-.1c-.7-5.8-3.2-8.3-9-9V9C8.7 8.3 11.3 5.8 12 0z"/></svg></span>
+      </div>
+    </div>
+
+    <!-- Services -->
+    <section id="services">
+      <div class="head rv">
+        <span class="label">House cleaning</span>
+        <h2>Every room, brought back to calm.</h2>
+        <p>Santiago's Shine is a house cleaning service, so your home is the whole focus. Tell us what matters most on the call, and we'll shape the visit around it.</p>
+      </div>
+      <div class="grid2">
+        <article class="card rv">
+          <span class="num">01</span>
+          <div class="ic"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M3 9h18M8 13v4M16 13v4"/></svg></div>
+          <h3>Kitchens</h3>
+          <p>The heart of the home, wiped down and refreshed so cooking feels easy again.</p>
+        </article>
+        <article class="card rv">
+          <span class="num">02</span>
+          <div class="ic"><svg viewBox="0 0 24 24"><path d="M4 12h16v3a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5v-3zM6 12V5a2 2 0 0 1 4 0"/><path d="M8 20l-1 2M16 20l1 2"/></svg></div>
+          <h3>Bathrooms</h3>
+          <p>Sinks, surfaces and fixtures given real attention, for a room that feels spa-fresh.</p>
+        </article>
+        <article class="card rv">
+          <span class="num">03</span>
+          <div class="ic"><svg viewBox="0 0 24 24"><path d="M3 18v-6a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v6M3 18h18M3 18v2M21 18v2M6 10V7a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v3"/></svg></div>
+          <h3>Bedrooms</h3>
+          <p>A tidy, peaceful space to end the day in, with dust and clutter out of sight.</p>
+        </article>
+        <article class="card rv">
+          <span class="num">04</span>
+          <div class="ic"><svg viewBox="0 0 24 24"><path d="M4 11V8a3 3 0 0 1 3-3h10a3 3 0 0 1 3 3v3"/><path d="M2 13a2 2 0 0 1 4 0v2h12v-2a2 2 0 0 1 4 0v5H2v-5zM5 18v2M19 18v2"/></svg></div>
+          <h3>Living spaces</h3>
+          <p>The rooms you share and host in, left bright, fresh and ready for real life.</p>
+        </article>
+        <article class="card feature rv">
+          <div>
+            <h3>Not sure what you need?</h3>
+            <p>Every home is different. Give Santiago's Shine a call and talk it through, no guesswork required.</p>
+          </div>
+          <a href="tel:+13234959558" class="btn btn-gold">Call to plan your clean</a>
+        </article>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="story">
+      <div class="about">
+        <div class="about-art rv" aria-hidden="true">
+          <div class="ring"></div>
+          <div class="big">S</div>
+          <div class="pin"><svg width="14" height="14" viewBox="0 0 24 24" fill="#0A6466"><path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>East 47th Place, Los Angeles</div>
+        </div>
+        <div class="about-copy rv">
+          <span class="label">Our story</span>
+          <h2>A name on the door, and care in every room.</h2>
+          <p class="big-q">Santiago's Shine is a local cleaning service with its own name on it, so your home gets personal attention, not a faceless rotation.</p>
+          <p>We're based right here in Los Angeles, on East 47th Place. When you call, you're talking to the people who care how your home turns out.</p>
+          <p>Our promise is simple: to leave your space feeling lighter, brighter and genuinely looked after, so you get your time back for the things you love.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why -->
+    <section>
+      <div class="why rv">
+        <svg class="why-blob" viewBox="0 0 200 200" aria-hidden="true"><path fill="#0F8B8D" d="M43.7-58.6C55.6-49.5 63.4-34.6 67.5-18.6 71.6-2.6 72 14.5 66.2 28.9 58.9 47.2 46 56.6 28.4 64.8 10.8 73-11.4 70-30.5 61.4-49.6 52.8-65.6 38.6-70.9 20.9-76.2 3.2-70.8-18-59.7-33.5-48.6-49-31.8-58.8-14.6-64.6 2.6-70.4 31.8-67.7 43.7-58.6Z" transform="translate(100 100)"/></svg>
+        <div class="head" style="position:relative">
+          <span class="label">Why Santiago's Shine</span>
+          <h2>Clean, the boutique way.</h2>
+          <p>Premium isn't about fuss. It's about care you can feel the moment you walk in.</p>
+        </div>
+        <div class="why-list">
+          <div class="why-item"><h3><svg viewBox="0 0 24 24"><path d="M12 0c.7 5.8 3.2 8.3 9 9v.1c-5.8.7-8.3 3.2-9 9h-.1c-.7-5.8-3.2-8.3-9-9V9C8.7 8.3 11.3 5.8 12 0z"/></svg>Homes only</h3><p>House cleaning is what we do, so our attention stays on the details of a lived-in home.</p></div>
+          <div class="why-item"><h3><svg viewBox="0 0 24 24"><path d="M12 0c.7 5.8 3.2 8.3 9 9v.1c-5.8.7-8.3 3.2-9 9h-.1c-.7-5.8-3.2-8.3-9-9V9C8.7 8.3 11.3 5.8 12 0z"/></svg>Truly local</h3><p>Based in Los Angeles, 90011. A neighbour-run service, not a distant call centre.</p></div>
+          <div class="why-item"><h3><svg viewBox="0 0 24 24"><path d="M12 0c.7 5.8 3.2 8.3 9 9v.1c-5.8.7-8.3 3.2-9 9h-.1c-.7-5.8-3.2-8.3-9-9V9C8.7 8.3 11.3 5.8 12 0z"/></svg>A real conversation</h3><p>Booking starts with a phone call, so your priorities are heard before anyone arrives.</p></div>
+          <div class="why-item"><h3><svg viewBox="0 0 24 24"><path d="M12 0c.7 5.8 3.2 8.3 9 9v.1c-5.8.7-8.3 3.2-9 9h-.1c-.7-5.8-3.2-8.3-9-9V9C8.7 8.3 11.3 5.8 12 0z"/></svg>Respect for your space</h3><p>Your home is personal. We treat it with the same care we'd want for our own.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- How it works -->
+    <section id="process">
+      <div class="head rv">
+        <span class="label">How it works</span>
+        <h2>Three easy steps to a shining home.</h2>
+      </div>
+      <div class="steps">
+        <div class="step rv"><div class="n">1</div><div><h3>Give us a call</h3><p>Ring <a href="tel:+13234959558">(323) 495-9558</a> and tell us about your home and what you'd like cleaned.</p></div></div>
+        <div class="step rv"><div class="n">2</div><div><h3>Plan your visit</h3><p>We'll talk through your priorities and find a time that works for you.</p></div></div>
+        <div class="step rv"><div class="n">3</div><div><h3>Come home to shine</h3><p>Walk into fresh, calm rooms and enjoy the time you didn't spend scrubbing.</p></div></div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="faq">
+      <div class="head rv">
+        <span class="label">Good to know</span>
+        <h2>Questions, answered.</h2>
+      </div>
+      <details class="rv"><summary>What does Santiago's Shine do?<i aria-hidden="true"></i></summary><p>We're a house cleaning service in Los Angeles, CA, focused on residential homes.</p></details>
+      <details class="rv"><summary>Where are you based?<i aria-hidden="true"></i></summary><p>1215 E 47th Pl, Los Angeles, CA 90011. <a href="https://maps.google.com/?q=1215+E+47th+Pl,+Los+Angeles,+CA+90011" target="_blank" rel="noopener">Open in Google Maps</a>.</p></details>
+      <details class="rv"><summary>How do I book a cleaning?<i aria-hidden="true"></i></summary><p>The quickest way is to call us at <a href="tel:+13234959558">(323) 495-9558</a>. We'll chat about your home and set up a time.</p></details>
+      <details class="rv"><summary>What are your hours?<i aria-hidden="true"></i></summary><p>Please call <a href="tel:+13234959558">(323) 495-9558</a> to check current availability and scheduling.</p></details>
+    </section>
+
+    <!-- Closing CTA -->
+    <section>
+      <div class="closing rv">
+        <div class="arc" aria-hidden="true"></div>
+        <span class="label">Ready when you are</span>
+        <h2 style="margin-top:1rem">Let your home shine again.</h2>
+        <p>One call is all it takes. Talk to Santiago's Shine today and plan a clean that fits your home.</p>
+        <div class="cta-row">
+          <a href="tel:+13234959558" class="btn btn-primary">Call (323) 495-9558</a>
+          <a href="#contact" class="btn btn-ghost">Contact details</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact">
+      <div class="head rv">
+        <span class="label">Get in touch</span>
+        <h2>Say hello.</h2>
+        <p>Calls are the best way to reach us and book your clean.</p>
+      </div>
+      <div class="contact-grid">
+        <a href="tel:+13234959558" class="c-card rv"><span class="k">Phone</span><span class="v">(323) 495-9558</span><span class="s">Tap to call</span></a>
+        <a href="https://maps.google.com/?q=1215+E+47th+Pl,+Los+Angeles,+CA+90011" target="_blank" rel="noopener" class="c-card rv"><span class="k">Address</span><span class="v">1215 E 47th Pl, Los Angeles CA 90011</span><span class="s">Open in Google Maps →</span></a>
+        <div class="c-card wide rv"><div><span class="k">Hours</span><div class="v" style="margin-top:.4rem">Call for availability</div></div><a href="tel:+13234959558" class="btn btn-primary">Call now</a></div>
+      </div>
+      <footer>
+        <span>© <span id="yr"></span> Santiago's Shine Cleaning Services · Los Angeles, CA</span>
+        <span><a href="tel:+13234959558" class="u-link">(323) 495-9558</a> · <a href="#home" class="u-link">Back to top ↑</a></span>
+      </footer>
+    </section>
+  </main>
+</div>
+
+<div class="callbar">
+  <a href="tel:+13234959558" class="btn btn-gold">Call now</a>
+  <a href="#contact" class="btn btn-primary">Book a clean</a>
+</div>
+
+<script>
+(function(){
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  document.getElementById('yr').textContent = new Date().getFullYear();
+
+  // Header state
+  var top = document.getElementById('top');
+  function onScroll(){ top.classList.toggle('scrolled', window.scrollY > 10); }
+  window.addEventListener('scroll', onScroll, {passive:true}); onScroll();
+
+  // Mobile menu
+  var burger = document.getElementById('burger'), menu = document.getElementById('mobileMenu');
+  function setMenu(open){
+    document.body.classList.toggle('menu-open', open);
+    burger.setAttribute('aria-expanded', open);
+    burger.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+    menu.setAttribute('aria-hidden', !open);
+    document.body.style.overflow = open ? 'hidden' : '';
+  }
+  burger.addEventListener('click', function(){ setMenu(!document.body.classList.contains('menu-open')); });
+  menu.querySelectorAll('a').forEach(function(a){ a.addEventListener('click', function(){ setMenu(false); }); });
+
+  // Reveal on scroll (staggered within groups)
+  var items = document.querySelectorAll('.rv');
+  if (reduce || !('IntersectionObserver' in window)) {
+    items.forEach(function(el){ el.classList.add('in'); });
+  } else {
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if (!e.isIntersecting) return;
+        var sibs = Array.prototype.filter.call(e.target.parentNode.children, function(c){ return c.classList.contains('rv'); });
+        e.target.style.transitionDelay = (Math.max(0, sibs.indexOf(e.target)) % 4) * 90 + 'ms';
+        e.target.classList.add('in');
+        io.unobserve(e.target);
+      });
+    }, {threshold:.14, rootMargin:'0px 0px -40px 0px'});
+    items.forEach(function(el){ io.observe(el); });
+  }
+
+  // Subtle parallax on hero art
+  if (!reduce) {
+    var par = document.querySelectorAll('[data-par]'), ticking = false;
+    function para(){
+      var y = window.scrollY;
+      par.forEach(function(el){
+        var k = parseFloat(el.dataset.par);
+        var base = el.classList.contains('arch') ? 'translateX(-50%) ' : '';
+        el.style.transform = base + 'translateY(' + (y * k) + 'px)';
+      });
+      ticking = false;
+    }
+    window.addEventListener('scroll', function(){ if (!ticking){ requestAnimationFrame(para); ticking = true; } }, {passive:true});
+  }
+})();
+</script>
+<div id="lm-concept" style="position:fixed;left:12px;bottom:12px;z-index:2147483647;font:500 11px/1.3 -apple-system,BlinkMacSystemFont,Segoe UI,sans-serif;letter-spacing:.02em;background:rgba(15,15,18,.82);color:#f4f1ea;padding:7px 11px;border-radius:999px;backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);pointer-events:none;max-width:70vw">Website concept for Santiago&#x27;s Shine Cleaning Services by webstudio &middot; not the live site</div><p style="margin:0;padding:18px 16px 70px;text-align:center;font:12px/1.5 -apple-system,sans-serif;color:#8a8a8a;background:#0e0e10">Concept design by webstudio. Not affiliated with or endorsed by Santiago&#x27;s Shine Cleaning Services.</p></body>
 </html>

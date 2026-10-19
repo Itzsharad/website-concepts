@@ -1,291 +1,599 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src * data: blob:; media-src 'self' data:; style-src 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com data:; script-src 'unsafe-inline'; connect-src 'none'; frame-src 'none'; form-action 'none'; base-uri 'none'; object-src 'none'">
 <meta name="robots" content="noindex, nofollow">
-<title>LA Solar Cleaning | Website concept</title>
+<style>html,body{max-width:100%;overflow-x:clip}</style>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LA Solar Cleaning | Solar Panel Professional Cleaning in Los Angeles</title>
+<meta name="description" content="LA Solar Cleaning: solar panel cleaning, window cleaning, pressure washing, bird proofing and gutter cleaning in the Los Angeles area. Call (818) 428-9706 for a free estimate.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{
-  --bg:#f3f6f8;--surface:#ffffff;--ink:#14283a;--muted:#566676;
-  --accent:#2a6f97;--accent-ink:#ffffff;--gold:#e0a43a;--soft:#e3eef5;
-  --radius:22px;--max:1180px;
-  --serif:"Fraunces",Georgia,serif;--sans:"Manrope",system-ui,-apple-system,sans-serif;
+  --bg:#EDF5FB;--bg2:#E2EEF8;--card:#FFFFFF;--ink:#10314D;--ink2:#3E5A73;
+  --sky:#2F86C8;--skyD:#1E6CA8;--sand:#F6C38B;--sandL:#FBE6CC;--navy:#003569;--brand:#3897f0;
+  --line:rgba(16,49,77,.1);--sh:0 1px 2px rgba(16,49,77,.05),0 12px 32px -12px rgba(16,49,77,.16);
+  --shL:0 2px 4px rgba(16,49,77,.05),0 30px 60px -24px rgba(16,49,77,.28);
+  --r:28px;--serif:"Instrument Serif",Georgia,serif;--sans:"Inter",system-ui,-apple-system,sans-serif;
+  --ease:cubic-bezier(.2,.7,.2,1);
 }
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:90px}
+body{font-family:var(--sans);background:var(--bg);color:var(--ink);font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{display:block;max-width:100%}
 a{color:inherit;text-decoration:none}
-img{max-width:100%;display:block}
-.wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
-.concept{background:var(--ink);color:var(--bg);font-size:13px;text-align:center;padding:8px 16px;letter-spacing:.02em}
-.concept b{color:var(--gold);font-weight:600}
+.wrap{width:min(1240px,100% - 48px);margin-inline:auto}
+h1,h2,h3{font-family:var(--serif);font-weight:400;line-height:1.02;letter-spacing:-.01em}
+h2{font-size:clamp(2.6rem,5.6vw,4.6rem)}
+h2 em,h1 em{font-style:italic;color:var(--skyD)}
+.label{display:inline-flex;align-items:center;gap:10px;font-size:.74rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--skyD)}
+.label::before{content:"";width:28px;height:1px;background:currentColor}
+.lead{font-size:1.12rem;color:var(--ink2);max-width:56ch}
+section{position:relative}
+.pad{padding:clamp(80px,11vw,150px) 0}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:16px 28px;border-radius:999px;font-weight:600;font-size:.95rem;letter-spacing:.01em;transition:transform .4s var(--ease),box-shadow .4s var(--ease),background .3s;white-space:nowrap;text-align:center}
+.btn svg{width:18px;height:18px;flex:none;transition:transform .4s var(--ease)}
+.btn:hover svg{transform:translateX(3px)}
+.btn-p{background:var(--skyD);color:#fff;box-shadow:0 12px 28px -10px rgba(30,108,168,.6)}
+.btn-p:hover{background:var(--navy);transform:translateY(-2px)}
+.btn-g{background:var(--card);color:var(--ink);box-shadow:var(--sh);border:1px solid var(--line)}
+.btn-g:hover{transform:translateY(-2px);box-shadow:var(--shL)}
+.btn-s{background:var(--sand);color:var(--ink)}
+.btn-s:hover{background:#f3b46f;transform:translateY(-2px)}
+.ul{background:linear-gradient(currentColor,currentColor) 0 100%/0 1px no-repeat;transition:background-size .45s var(--ease)}
+.ul:hover{background-size:100% 1px}
 
 /* header */
-header{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:saturate(1.4) blur(10px);border-bottom:1px solid color-mix(in srgb,var(--ink) 8%,transparent)}
-.nav{display:flex;align-items:center;justify-content:space-between;height:76px;gap:24px}
-.brand{font-family:var(--serif);font-size:23px;font-weight:600;letter-spacing:-.01em;line-height:1.1;max-width:340px}
-.links{display:flex;gap:30px;font-size:15px;font-weight:500;color:var(--muted)}
-.links a:hover{color:var(--ink)}
-.nav-right{display:flex;align-items:center;gap:18px}
-.phone{font-weight:600;font-size:15px;white-space:nowrap}
-.btn{display:inline-flex;align-items:center;gap:10px;background:var(--accent);color:var(--accent-ink);padding:14px 26px;border-radius:999px;font-weight:600;font-size:15.5px;transition:transform .2s ease,box-shadow .2s ease;white-space:nowrap}
-.btn:hover{transform:translateY(-2px);box-shadow:0 12px 28px -12px var(--accent)}
-.btn.ghost{background:transparent;color:var(--ink);border:1.5px solid color-mix(in srgb,var(--ink) 20%,transparent)}
-.btn.ghost:hover{box-shadow:none;border-color:var(--ink)}
-.btn svg{width:18px;height:18px}
+.hd{position:fixed;inset:14px 0 auto;z-index:50;transition:inset .4s var(--ease)}
+.hd .bar{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:10px 12px 10px 20px;border-radius:999px;background:rgba(255,255,255,.62);backdrop-filter:blur(18px) saturate(1.4);-webkit-backdrop-filter:blur(18px) saturate(1.4);border:1px solid rgba(255,255,255,.8);box-shadow:0 10px 30px -18px rgba(16,49,77,.35)}
+.brand{display:flex;align-items:center;gap:12px;font-family:var(--serif);font-size:1.45rem;line-height:1}
+.brand img{height:40px;width:auto}
+.nav{display:flex;gap:30px;font-size:.9rem;font-weight:500;color:var(--ink2)}
+.nav a:hover{color:var(--ink)}
+.hd-r{display:flex;align-items:center;gap:18px}
+.hd-tel{font-weight:600;font-size:.92rem}
+.hd .btn{padding:12px 22px}
+.burger{display:none;width:46px;height:46px;border-radius:50%;border:1px solid var(--line);background:#fff;cursor:pointer;position:relative}
+.burger span{position:absolute;left:14px;right:14px;height:1.5px;background:var(--ink);transition:.35s var(--ease)}
+.burger span:nth-child(1){top:18px}.burger span:nth-child(2){top:26px}
+.menu-open .burger span:nth-child(1){top:22px;transform:rotate(45deg)}
+.menu-open .burger span:nth-child(2){top:22px;transform:rotate(-45deg)}
+.mnav{position:fixed;inset:0;z-index:40;background:rgba(237,245,251,.97);backdrop-filter:blur(10px);display:flex;flex-direction:column;justify-content:center;padding:0 32px;gap:6px;opacity:0;pointer-events:none;transition:opacity .4s}
+.mnav a{font-family:var(--serif);font-size:2.6rem;line-height:1.25}
+.mnav .btn{font-family:var(--sans);font-size:1rem;margin-top:24px;align-self:flex-start}
+.menu-open .mnav{opacity:1;pointer-events:auto}
 
 /* hero */
-.hero{padding:72px 0 88px}
-.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:64px;align-items:center}
-.eyebrow{display:inline-flex;align-items:center;gap:10px;background:var(--surface);border:1px solid color-mix(in srgb,var(--ink) 10%,transparent);padding:8px 16px 8px 10px;border-radius:999px;font-size:14px;font-weight:600;color:var(--muted)}
-.stars{color:var(--gold);letter-spacing:1px;font-size:14px}
-.eyebrow .dot{width:26px;height:26px;border-radius:50%;background:var(--soft);display:grid;place-items:center;color:var(--accent)}
-h1{font-family:var(--serif);font-weight:500;font-size:clamp(44px,5.6vw,74px);line-height:1.02;letter-spacing:-.025em;margin:26px 0 22px}
-h1 em{font-style:italic;color:var(--accent)}
-.lead-text{font-size:19.5px;color:var(--muted);max-width:540px}
-.hero-ctas{display:flex;gap:14px;margin-top:36px;flex-wrap:wrap}
-.ticks{display:flex;gap:22px;margin-top:34px;flex-wrap:wrap;font-size:14.5px;font-weight:600;color:var(--muted)}
-.ticks span{display:flex;align-items:center;gap:8px}
-.ticks svg{width:18px;height:18px;color:var(--accent)}
-.visual{position:relative}
-.photo{aspect-ratio:4/5;border-radius:calc(var(--radius) + 10px);overflow:hidden;background:var(--soft);box-shadow:0 40px 80px -40px color-mix(in srgb,var(--ink) 55%,transparent)}
-.photo img{width:100%;height:100%;object-fit:cover}
-.quote-panel{aspect-ratio:4/5;border-radius:calc(var(--radius) + 10px);background:linear-gradient(155deg,var(--accent),color-mix(in srgb,var(--accent) 55%,var(--ink)));color:var(--accent-ink);padding:52px 46px;display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden;box-shadow:0 40px 80px -40px color-mix(in srgb,var(--ink) 60%,transparent)}
-.quote-panel:before{content:"";position:absolute;width:420px;height:420px;border-radius:50%;right:-160px;top:-160px;background:color-mix(in srgb,var(--accent-ink) 9%,transparent)}
-.quote-panel:after{content:"";position:absolute;width:260px;height:260px;border-radius:50%;left:-90px;bottom:-110px;border:1.5px solid color-mix(in srgb,var(--accent-ink) 22%,transparent)}
-.quote-mark{font-family:var(--serif);font-size:120px;line-height:.6;opacity:.35}
-.quote-panel p{font-family:var(--serif);font-size:28px;line-height:1.3;position:relative;z-index:1}
-.quote-panel .who{font-family:var(--sans);font-size:15px;opacity:.85;margin-top:22px;font-weight:600}
-.float{position:absolute;background:var(--surface);color:var(--ink);border-radius:18px;padding:16px 20px;box-shadow:0 24px 50px -24px color-mix(in srgb,var(--ink) 50%,transparent);display:flex;align-items:center;gap:14px;font-size:14px;line-height:1.35}
-.float b{font-size:22px;font-family:var(--serif);font-weight:600;display:block}
-.float.one{left:-34px;bottom:-28px}
-.float.two{right:-22px;top:44px}
-.float .badge{width:44px;height:44px;border-radius:14px;background:var(--soft);display:grid;place-items:center;color:var(--accent)}
-.float .badge svg{width:22px;height:22px}
+.hero{min-height:100vh;min-height:100svh;padding:140px 0 70px;display:flex;align-items:center;overflow:hidden}
+.hero::before{content:"";position:absolute;inset:0;background:radial-gradient(60% 50% at 85% 10%,#fff 0,transparent 70%),radial-gradient(45% 40% at 5% 90%,var(--sandL) 0,transparent 70%);pointer-events:none}
+.hero-g{position:relative;display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(40px,6vw,90px);align-items:center}
+.hero h1{font-size:clamp(3.4rem,8.4vw,7.6rem);margin:22px 0 26px;line-height:.94}
+.hero h1 .ln{display:block;overflow:hidden;padding-bottom:.06em}
+.hero h1 .ln>span{display:inline-block}
+.hero .lead{margin-bottom:36px}
+.ctas{display:flex;flex-wrap:wrap;gap:14px}
+.trust{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:56px;padding-top:28px;border-top:1px solid var(--line)}
+.trust div{padding-right:18px}
+.trust div+div{padding-left:18px;border-left:1px solid var(--line)}
+.trust b{display:block;font-family:var(--serif);font-weight:400;font-size:2.1rem;line-height:1.05;color:var(--ink)}
+.trust span{font-size:.82rem;color:var(--ink2);line-height:1.4;display:block;margin-top:6px}
+.hero-v{position:relative;height:min(78vh,720px);min-height:520px}
+.frame{position:absolute;inset:0;border-radius:300px 300px var(--r) var(--r);overflow:hidden;box-shadow:var(--shL);background:var(--bg2)}
+.frame img{width:100%;height:115%;object-fit:cover;object-position:center;will-change:transform}
+.frame::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(16,49,77,0) 55%,rgba(16,49,77,.45))}
+.sheen{position:absolute;inset:0;z-index:2;pointer-events:none;background:linear-gradient(105deg,transparent 35%,rgba(255,255,255,.55) 48%,rgba(255,255,255,.1) 55%,transparent 65%);transform:translateX(-120%);animation:sheen 6s 1.6s var(--ease) infinite}
+@keyframes sheen{0%{transform:translateX(-120%)}35%,100%{transform:translateX(120%)}}
+.sun{position:absolute;top:-34px;right:-26px;width:150px;height:150px;z-index:3}
+.sun svg{width:100%;height:100%;animation:spin 40s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.float{position:absolute;z-index:3;background:rgba(255,255,255,.9);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-radius:20px;box-shadow:var(--shL);padding:18px 20px;display:flex;gap:14px;align-items:center;max-width:280px}
+.float .ic{flex:none;width:44px;height:44px;border-radius:14px;background:var(--bg);display:grid;place-items:center;color:var(--skyD)}
+.float .ic svg{width:22px;height:22px}
+.float b{display:block;font-size:.95rem;line-height:1.25}
+.float small{font-size:.8rem;color:var(--ink2)}
+.f1{left:-46px;bottom:70px;animation:bob 7s ease-in-out infinite}
+.f2{right:22px;bottom:-26px;animation:bob 8s 1s ease-in-out infinite}
+@keyframes bob{50%{transform:translateY(-10px)}}
+.in-h{opacity:0;transform:translateY(30px);animation:rise 1.1s var(--ease) forwards}
+.hero h1 .ln>span{transform:translateY(110%);animation:up 1.2s var(--ease) forwards}
+@keyframes rise{to{opacity:1;transform:none}}
+@keyframes up{to{transform:none}}
+.d1{animation-delay:.1s!important}.d2{animation-delay:.22s!important}.d3{animation-delay:.34s!important}.d4{animation-delay:.5s!important}.d5{animation-delay:.65s!important}.d6{animation-delay:.8s!important}.d7{animation-delay:1s!important}
+.hero-v.in-h{transform:translateY(40px) scale(.97)}
 
-/* trust */
-.trust{border-top:1px solid color-mix(in srgb,var(--ink) 9%,transparent);border-bottom:1px solid color-mix(in srgb,var(--ink) 9%,transparent);background:var(--surface)}
-.trust .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;padding-top:26px;padding-bottom:26px}
-.trust div{display:flex;align-items:center;gap:12px;font-weight:600;font-size:15px}
-.trust svg{width:22px;height:22px;color:var(--accent);flex:none}
+/* marquee */
+.mq{background:var(--ink);color:#EAF3FB;padding:22px 0;overflow:hidden;transform:rotate(-1.2deg);margin:10px -20px;box-shadow:var(--shL);position:relative;z-index:2}
+.mq-t{display:flex;width:max-content;animation:mq 38s linear infinite}
+.mq-t span{display:flex;align-items:center;gap:34px;padding-right:34px;font-family:var(--serif);font-size:clamp(1.6rem,3vw,2.3rem);white-space:nowrap}
+.mq-t i{width:10px;height:10px;border-radius:50%;background:var(--sand);flex:none}
+.mq-t em{color:var(--sand)}
+@keyframes mq{to{transform:translateX(-50%)}}
 
-/* sections */
-section.block{padding:110px 0}
-.kicker{font-size:13px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
-h2{font-family:var(--serif);font-weight:500;font-size:clamp(34px,3.8vw,52px);line-height:1.08;letter-spacing:-.02em;margin:14px 0 18px}
-.section-head{display:flex;justify-content:space-between;align-items:end;gap:40px;margin-bottom:56px}
-.section-head p{color:var(--muted);max-width:420px}
-.services{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-.card{background:var(--surface);border-radius:var(--radius);padding:34px 32px 36px;border:1px solid color-mix(in srgb,var(--ink) 7%,transparent);transition:transform .25s ease,box-shadow .25s ease}
-.card:hover{transform:translateY(-4px);box-shadow:0 30px 60px -36px color-mix(in srgb,var(--ink) 45%,transparent)}
-.icon{width:54px;height:54px;border-radius:16px;background:var(--soft);color:var(--accent);display:grid;place-items:center;margin-bottom:24px}
-.icon svg{width:26px;height:26px}
-.card h3{font-family:var(--serif);font-weight:500;font-size:23px;margin-bottom:8px;letter-spacing:-.01em}
-.card p{color:var(--muted);font-size:16px}
+/* services */
+.sec-h{display:flex;justify-content:space-between;align-items:end;gap:40px;margin-bottom:60px;flex-wrap:wrap}
+.sec-h h2{margin-top:18px;max-width:14ch}
+.sec-h .lead{max-width:44ch}
+.svc{display:grid;grid-template-columns:repeat(6,1fr);gap:22px}
+.card{background:var(--card);border-radius:var(--r);padding:36px 32px;box-shadow:var(--sh);border:1px solid rgba(255,255,255,.9);transition:transform .5s var(--ease),box-shadow .5s var(--ease);position:relative;overflow:hidden}
+.card:hover{transform:translateY(-8px);box-shadow:var(--shL)}
+.svc .card{grid-column:span 2;display:flex;flex-direction:column}
+.svc .card.big{grid-column:span 3;background:linear-gradient(160deg,#fff 40%,#E4F0FA)}
+.svc .card.big:first-child{background:var(--ink);color:#EAF3FB}
+.svc .card.big:first-child p{color:#C2D5E6}
+.svc .card.big:first-child .num{color:var(--sand)}
+.svc .card.big:first-child .ico{background:rgba(255,255,255,.08);color:var(--sand)}
+.num{font-size:.75rem;font-weight:600;letter-spacing:.2em;color:var(--skyD)}
+.ico{width:58px;height:58px;border-radius:18px;background:var(--bg);display:grid;place-items:center;color:var(--skyD);margin:26px 0 30px;transition:transform .5s var(--ease)}
+.card:hover .ico{transform:rotate(-8deg) scale(1.06)}
+.ico svg{width:28px;height:28px}
+.card h3{font-size:2.1rem;margin-bottom:12px}
+.card p{color:var(--ink2);font-size:.98rem}
+.card .more{margin-top:auto;padding-top:26px;font-size:.88rem;font-weight:600;display:inline-flex;gap:8px;align-items:center}
+.card .more svg{width:16px;height:16px;transition:transform .4s var(--ease)}
+.card:hover .more svg{transform:translateX(4px)}
 
-.why{background:var(--ink);color:var(--bg)}
-.why .kicker{color:var(--gold)}
-.why-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:80px;align-items:start}
-.why h2{color:var(--bg)}
-.why .intro{color:color-mix(in srgb,var(--bg) 70%,transparent);font-size:18px;max-width:440px}
-.points{display:grid;gap:14px}
-.point{display:grid;grid-template-columns:62px 1fr;gap:20px;padding:30px;border-radius:var(--radius);background:color-mix(in srgb,var(--bg) 6%,transparent);border:1px solid color-mix(in srgb,var(--bg) 10%,transparent)}
-.point .num{font-family:var(--serif);font-size:34px;color:var(--gold);line-height:1}
-.point h3{font-family:var(--serif);font-weight:500;font-size:24px;margin-bottom:6px}
-.point p{color:color-mix(in srgb,var(--bg) 72%,transparent);font-size:16px}
+/* why clean / big type */
+.shine{background:linear-gradient(180deg,var(--bg),#fff);overflow:hidden}
+.bigtype{font-family:var(--serif);font-size:clamp(3rem,10.5vw,10rem);line-height:.92;letter-spacing:-.02em;text-align:center}
+.bigtype .o{color:transparent;-webkit-text-stroke:1.5px var(--ink);background:linear-gradient(90deg,var(--ink) 0 var(--p,0%),transparent var(--p,0%));-webkit-background-clip:text;background-clip:text}
+.bigtype em{color:var(--skyD)}
+.bigtype .star{display:inline-block;width:.6em;vertical-align:middle;color:var(--sand)}
+.shine .lead{margin:40px auto 0;text-align:center}
 
-.score{display:flex;align-items:center;gap:18px;background:var(--surface);padding:16px 24px;border-radius:18px;border:1px solid color-mix(in srgb,var(--ink) 8%,transparent)}
-.score b{font-family:var(--serif);font-size:40px;font-weight:500;line-height:1}
-.score small{display:block;color:var(--muted);font-size:14px}
-.reviews{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-.review{background:var(--surface);border-radius:var(--radius);padding:34px;display:flex;flex-direction:column;gap:22px;border:1px solid color-mix(in srgb,var(--ink) 7%,transparent)}
-.review p{font-family:var(--serif);font-size:19.5px;line-height:1.45}
-.review .by{margin-top:auto;display:flex;align-items:center;gap:12px;font-weight:600;font-size:15px}
-.avatar{width:40px;height:40px;border-radius:50%;background:var(--soft);color:var(--accent);display:grid;place-items:center;font-weight:700}
-.review .src{color:var(--muted);font-weight:500;font-size:13px;display:block}
+/* about */
+.about-g{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(40px,7vw,110px);align-items:center}
+.ph{position:relative}
+.ph .pic{border-radius:var(--r);overflow:hidden;aspect-ratio:4/5;box-shadow:var(--shL)}
+.ph .pic img{width:100%;height:100%;object-fit:cover;transition:transform 1.4s var(--ease)}
+.ph:hover .pic img{transform:scale(1.04)}
+.ph::before{content:"";position:absolute;inset:-22px 22px 22px -22px;border-radius:var(--r);background:repeating-linear-gradient(135deg,var(--sandL) 0 2px,transparent 2px 14px);z-index:-1}
+.ph .tag{position:absolute;right:-28px;top:40px;background:var(--sand);color:var(--ink);border-radius:20px;padding:18px 22px;font-family:var(--serif);font-size:1.5rem;line-height:1.1;box-shadow:var(--shL);max-width:200px}
+.about h2{margin:18px 0 26px}
+.about p+p{margin-top:18px}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:34px}
+.chips span{padding:9px 16px;border-radius:999px;background:#fff;border:1px solid var(--line);font-size:.85rem;font-weight:500}
 
-.cta-band{padding:0 0 110px}
-.cta-box{border-radius:calc(var(--radius) + 12px);background:linear-gradient(140deg,var(--accent),color-mix(in srgb,var(--accent) 60%,var(--ink)));color:var(--accent-ink);padding:76px 64px;display:grid;grid-template-columns:1.3fr 1fr;gap:40px;align-items:center;position:relative;overflow:hidden}
-.cta-box:after{content:"";position:absolute;right:-120px;bottom:-200px;width:460px;height:460px;border-radius:50%;border:1.5px solid color-mix(in srgb,var(--accent-ink) 22%,transparent)}
-.cta-box h2{color:inherit;margin:0 0 12px}
-.cta-box p{opacity:.85;font-size:18px}
-.cta-box .actions{display:flex;flex-direction:column;gap:12px;align-items:flex-start;position:relative;z-index:1}
-.cta-box .btn{background:var(--accent-ink);color:var(--accent)}
-.cta-box .btn.ghost{background:transparent;color:var(--accent-ink);border-color:color-mix(in srgb,var(--accent-ink) 40%,transparent)}
+/* why */
+.why{background:var(--ink);color:#EAF3FB;border-radius:48px;margin:0 clamp(8px,2vw,24px);overflow:hidden}
+.why::before{content:"";position:absolute;inset:0;background:radial-gradient(50% 60% at 100% 0,rgba(47,134,200,.35),transparent 70%),radial-gradient(40% 50% at 0 100%,rgba(246,195,139,.14),transparent 70%)}
+.why .wrap{position:relative}
+.why .label{color:var(--sand)}
+.why h2 em{color:var(--sand)}
+.why .lead{color:#C2D5E6}
+.why-g{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.wc{padding:34px 28px;border-radius:24px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);transition:background .4s,transform .5s var(--ease)}
+.wc:hover{background:rgba(255,255,255,.09);transform:translateY(-6px)}
+.wc .n{font-family:var(--serif);font-style:italic;font-size:3.2rem;color:var(--sand);line-height:1}
+.wc h3{font-size:1.75rem;margin:30px 0 12px}
+.wc p{color:#C2D5E6;font-size:.95rem}
 
-.visit{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:10px}
-.visit .card h3{font-size:20px}
-.visit a{color:var(--accent);font-weight:600}
-footer{border-top:1px solid color-mix(in srgb,var(--ink) 9%,transparent);padding:40px 0 110px;color:var(--muted);font-size:14px}
-footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
-.mobile-bar{display:none}
+/* steps */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;counter-reset:s}
+.step{position:relative;padding-top:34px}
+.step::before{content:"";position:absolute;top:10px;left:0;right:-22px;height:1px;background:repeating-linear-gradient(90deg,var(--sky) 0 6px,transparent 6px 12px);opacity:.5}
+.step:last-child::before{right:0}
+.step .dot{position:absolute;top:0;left:0;width:21px;height:21px;border-radius:50%;background:#fff;border:2px solid var(--sky);box-shadow:0 0 0 6px var(--bg)}
+.step .card{margin-top:22px;padding:30px 26px;height:calc(100% - 22px)}
+.step small{font-size:.75rem;font-weight:600;letter-spacing:.2em;color:var(--skyD)}
+.step h3{font-size:1.85rem;margin:10px 0}
 
-@keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
-.hero .copy>*{animation:rise .8s cubic-bezier(.2,.7,.2,1) both}
-.hero .copy>*:nth-child(2){animation-delay:.08s}.hero .copy>*:nth-child(3){animation-delay:.16s}
-.hero .copy>*:nth-child(4){animation-delay:.24s}.hero .copy>*:nth-child(5){animation-delay:.32s}
-.visual{animation:rise 1s .2s cubic-bezier(.2,.7,.2,1) both}
+/* faq */
+.faq-g{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(40px,6vw,90px);align-items:start}
+.faq-g h2{margin-top:18px;position:sticky;top:120px}
+.qa{background:#fff;border-radius:22px;box-shadow:var(--sh);margin-bottom:14px;overflow:hidden}
+.qa summary{list-style:none;cursor:pointer;padding:24px 28px;display:flex;justify-content:space-between;align-items:center;gap:20px;font-weight:600;font-size:1.04rem}
+.qa summary::-webkit-details-marker{display:none}
+.qa summary i{flex:none;width:34px;height:34px;border-radius:50%;background:var(--bg);position:relative;transition:transform .4s var(--ease),background .3s}
+.qa summary i::before,.qa summary i::after{content:"";position:absolute;left:11px;right:11px;top:16px;height:2px;background:var(--skyD);border-radius:2px}
+.qa summary i::after{transform:rotate(90deg);transition:transform .4s var(--ease)}
+.qa[open] summary i{background:var(--sand)}
+.qa[open] summary i::after{transform:rotate(0)}
+.qa p{padding:0 28px 26px;color:var(--ink2)}
 
-@media (max-width:980px){
-  .links{display:none}
-  .hero-grid,.why-grid,.cta-box{grid-template-columns:1fr}
-  .hero-grid{gap:56px}
-  .services,.reviews,.visit{grid-template-columns:1fr 1fr}
-  .trust .wrap{grid-template-columns:1fr 1fr}
-  .float.one{left:12px;bottom:-26px}.float.two{right:12px}
-  .visual{max-width:560px;margin-bottom:20px}
-  .section-head{flex-direction:column;align-items:flex-start}
+/* cta band */
+.band{border-radius:48px;margin:0 clamp(8px,2vw,24px);overflow:hidden;background:linear-gradient(135deg,var(--skyD),var(--navy));color:#fff;text-align:center;padding:clamp(80px,10vw,140px) 24px}
+.band::before{content:"";position:absolute;inset:0;background:radial-gradient(40% 70% at 50% 0,rgba(255,255,255,.18),transparent 70%)}
+.band svg.rays{position:absolute;left:50%;top:-40%;width:900px;max-width:none;transform:translateX(-50%);opacity:.12;animation:spin 80s linear infinite}
+.band>*{position:relative}
+.band h2{font-size:clamp(2.8rem,7vw,6rem);max-width:15ch;margin:20px auto 22px}
+.band h2 em{color:var(--sand)}
+.band .label{color:var(--sand)}
+.band p{color:#DCEAF6;max-width:52ch;margin:0 auto 38px}
+.band .ctas{justify-content:center}
+.band .btn-g{background:transparent;color:#fff;border-color:rgba(255,255,255,.4);box-shadow:none}
+.band .btn-g:hover{background:rgba(255,255,255,.1)}
+
+/* contact */
+.ct-g{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.ct-g .intro{grid-column:1/-1;display:flex;justify-content:space-between;align-items:end;gap:30px;flex-wrap:wrap;margin-bottom:30px}
+.ct-g .intro h2{margin-top:18px}
+.ci{display:flex;gap:20px;align-items:flex-start}
+.ci .ico{margin:0;flex:none}
+.ci small{display:block;font-size:.74rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--skyD);margin-bottom:6px}
+.ci a,.ci div>span{font-family:var(--serif);font-size:clamp(1.6rem,2.6vw,2.2rem);line-height:1.15;display:block;word-break:break-word}
+.ci .sub{font-family:var(--sans);font-size:.95rem;color:var(--ink2);margin-top:6px}
+.ct-map{grid-column:1/-1;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;background:linear-gradient(120deg,#fff,#F7EFE4)}
+
+/* footer */
+.ft{padding:90px 0 40px;margin-top:40px;border-top:1px solid var(--line)}
+.ft-g{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px}
+.ft .brand img{height:56px}
+.ft p{color:var(--ink2);font-size:.92rem;margin-top:18px;max-width:34ch}
+.ft h4{font-size:.74rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--skyD);margin-bottom:18px}
+.ft li{list-style:none;margin-bottom:10px;font-size:.94rem}
+.ft-b{margin-top:70px;padding-top:26px;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;font-size:.84rem;color:var(--ink2)}
+.ft-word{font-family:var(--serif);font-size:clamp(4rem,15vw,15rem);line-height:.85;letter-spacing:-.03em;color:transparent;-webkit-text-stroke:1px rgba(16,49,77,.18);margin-top:60px;white-space:nowrap;text-align:center;user-select:none}
+
+/* mobile bar */
+.mbar{display:none}
+
+/* reveal */
+.rv{opacity:0;transform:translateY(40px);transition:opacity 1s var(--ease),transform 1s var(--ease)}
+.rv.in{opacity:1;transform:none}
+
+@media (max-width:1080px){
+  .nav,.hd-tel{display:none}
+  .burger{display:block}
+  .hero-g,.about-g,.faq-g{grid-template-columns:1fr}
+  .hero-v{height:620px;max-width:560px;width:100%;margin:20px auto 0}
+  .why-g,.steps{grid-template-columns:repeat(2,1fr)}
+  .step:nth-child(2)::before{right:0}
+  .svc .card,.svc .card.big{grid-column:span 3}
+  .svc .card:last-child{grid-column:1/-1}
+  .faq-g h2{position:static}
+  .ft-g{grid-template-columns:1fr 1fr}
+  .ph{max-width:520px}
 }
-@media (max-width:640px){
+@media (max-width:680px){
   body{font-size:16px}
-  .wrap{padding:0 18px}
-  .nav{height:66px}.brand{font-size:19px}
-  .phone,.nav-right .btn{display:none}
-  .hero{padding:44px 0 64px}
-  .lead-text{font-size:17.5px}
-  .hero-ctas .btn{flex:1;justify-content:center}
-  .ticks{display:none}
-  .services,.reviews,.visit,.trust .wrap{grid-template-columns:1fr}
-  section.block{padding:76px 0}
-  .quote-panel,.photo{aspect-ratio:auto;min-height:380px}.photo{aspect-ratio:4/3;min-height:0}
-  .quote-panel{padding:40px 30px 64px}.quote-panel p{font-size:23px}
-  .float{font-size:13px;padding:12px 14px}.float b{font-size:18px}
-  .float.two{display:none}
-  .cta-box{padding:52px 28px}
-  .point{grid-template-columns:44px 1fr;padding:24px}
-  .mobile-bar{display:flex;position:fixed;left:12px;right:12px;bottom:12px;z-index:30;gap:10px}
-  .mobile-bar .btn{flex:1;justify-content:center;box-shadow:0 14px 30px -14px color-mix(in srgb,var(--ink) 60%,transparent)}
-  .mobile-bar .btn.ghost{background:var(--surface)}
+  .wrap{width:calc(100% - 36px)}
+  .hd{inset:10px 0 auto}
+  .hd .bar{padding:8px 8px 8px 14px}
+  .brand{font-size:1.2rem}
+  .brand img{height:34px}
+  .hd .btn-p{display:none}
+  .hero{padding:120px 0 50px}
+  .hero h1{font-size:clamp(3rem,14vw,4.2rem)}
+  .ctas .btn{flex:1 1 100%}
+  .trust{grid-template-columns:1fr;gap:16px;margin-top:40px}
+  .trust div,.trust div+div{padding:0;border:0;display:flex;align-items:baseline;gap:14px}
+  .trust b{font-size:1.7rem;min-width:62px}
+  .trust span{margin:0}
+  .hero-v{height:480px;min-height:0}
+  .sun{width:100px;height:100px;top:-24px;right:-8px}
+  .f1{left:-6px;bottom:60px;max-width:230px;padding:14px 16px}
+  .f2{display:none}
+  .svc{grid-template-columns:1fr}
+  .svc .card,.svc .card.big,.svc .card:last-child{grid-column:auto}
+  .card{padding:30px 24px}
+  .why-g,.steps{grid-template-columns:1fr}
+  .step::before{display:none}
+  .why,.band{border-radius:30px}
+  .ph .tag{right:-6px;top:auto;bottom:-24px;font-size:1.25rem}
+  .ph::before{inset:-14px 14px 14px -14px}
+  .ct-g{grid-template-columns:1fr}
+  .qa summary{padding:20px 20px;font-size:.98rem}
+  .qa p{padding:0 20px 22px}
+  .ft-g{grid-template-columns:1fr}
+  .ft{padding-bottom:110px}
+  .mbar{display:flex;position:fixed;left:10px;right:10px;bottom:10px;z-index:45;gap:8px;padding:8px;border-radius:999px;background:rgba(255,255,255,.85);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);box-shadow:var(--shL);border:1px solid #fff}
+  .mbar .btn{flex:1;padding:14px 10px;font-size:.9rem}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+  .rv,.in-h{opacity:1;transform:none}
+  .hero h1 .ln>span{transform:none}
 }
 </style>
 </head>
 <body>
-<div class="concept">Website concept prepared for <b>LA Solar Cleaning</b> by webstudio &middot; not a live site</div>
 
-<header>
-  <div class="wrap nav">
-    <a href="#top" class="brand">LA Solar Cleaning</a>
-    <nav class="links">
-      <a href="#services">Services</a><a href="#why">Why us</a><a href="#visit">Visit</a>
+<header class="hd" id="top">
+  <div class="wrap bar">
+    <a href="#top" class="brand" aria-label="LA Solar Cleaning home"><img src="img/logo.png" alt="LA Solar Cleaning logo"><span>LA Solar Cleaning</span></a>
+    <nav class="nav" aria-label="Main">
+      <a class="ul" href="#services">Services</a>
+      <a class="ul" href="#about">About</a>
+      <a class="ul" href="#why">Why Us</a>
+      <a class="ul" href="#process">Process</a>
+      <a class="ul" href="#faq">FAQ</a>
     </nav>
-    <div class="nav-right">
-      <a class="phone" href="tel:8184289706">(818) 428-9706</a>
-      <a class="btn" href="#visit">Free quote</a>
+    <div class="hd-r">
+      <a class="hd-tel ul" href="tel:+18184289706">(818) 428-9706</a>
+      <a class="btn btn-p" href="#contact">Free Estimate</a>
+      <button class="burger" aria-label="Open menu" aria-expanded="false"><span></span><span></span></button>
     </div>
   </div>
 </header>
 
-<main id="top">
+<div class="mnav" aria-hidden="true">
+  <a href="#services">Services</a>
+  <a href="#about">About</a>
+  <a href="#why">Why Us</a>
+  <a href="#process">Process</a>
+  <a href="#faq">FAQ</a>
+  <a href="#contact">Contact</a>
+  <a class="btn btn-p" href="tel:+18184289706">Call (818) 428-9706</a>
+</div>
+
+<main>
+<!-- HERO -->
 <section class="hero">
-  <div class="wrap hero-grid">
-    <div class="copy">
-      <div class="eyebrow">
-        <span class="dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-7-4.4-7-10a4 4 0 017-2.6A4 4 0 0119 10c0 5.6-7 10-7 10z"/></svg></span>House cleaning in Los Angeles
-      </div>
-      <h1>A spotless Los Angeles home, without lifting <em>a finger.</em></h1>
-      <p class="lead-text">LA Solar Cleaning takes care of the scrubbing, dusting, and tidying so you can come home to a fresh, clean space that feels like yours again.</p>
-      <div class="hero-ctas">
-        <a class="btn" href="#visit">Get a free quote <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-        <a class="btn ghost" href="tel:8184289706">Call (818) 428-9706</a>
-      </div>
-      <div class="ticks">
-        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7"/></svg>Background-checked team</span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7"/></svg>Fully insured</span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7"/></svg>Supplies included</span>
-      </div>
-    </div>
-    <div class="visual">
-      
-      <div class="quote-panel"><div class="quote-mark">“</div><div><p>Trusted, background-checked cleaners who show up on time, bring everything, and leave every room shining.</p><div class="who">LA Solar Cleaning</div></div></div>
-      
-      
-      <div class="float two"><span class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><span><b>This week</b>Fully insured</span></div>
-    </div>
-  </div>
-  <template id="qp"><div class="quote-panel"><div class="quote-mark">“</div><div><p>Trusted, background-checked cleaners who show up on time, bring everything, and leave every room shining.</p><div class="who">LA Solar Cleaning</div></div></div></template>
-</section>
-
-<div class="trust"><div class="wrap">
-  <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.2-8 9-4.6-.8-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg>Background-checked team</div><div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.2-8 9-4.6-.8-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg>Fully insured</div><div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.2-8 9-4.6-.8-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg>Supplies included</div><div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.2-8 9-4.6-.8-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg>100% satisfaction guarantee</div>
-</div></div>
-
-<section class="block" id="services">
-  <div class="wrap">
-    <div class="section-head">
-      <div><div class="kicker">What we do</div><h2>Everything you need,<br>under one roof.</h2></div>
-      <p>From routine visits to the work that changes how you feel about your day, LA Solar Cleaning takes care of it properly.</p>
-    </div>
-    <div class="services">
-      
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11l8-7 8 7v9a1 1 0 01-1 1h-4v-6H9v6H5a1 1 0 01-1-1z"/></svg></div><h3>Regular cleaning</h3><p>Weekly or bi-weekly visits so your home always feels fresh and cared for.</p></div>
-      
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/><path d="M19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8z"/></svg></div><h3>Deep cleaning</h3><p>Top-to-bottom detail work on baseboards, grout, appliances and every corner.</p></div>
-      
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7l9-4 9 4v10l-9 4-9-4z"/><path d="M3 7l9 4 9-4M12 11v10"/></svg></div><h3>Move-in &amp; move-out</h3><p>Get your deposit back or start fresh in a home that&#39;s truly clean.</p></div>
-      
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3" width="14" height="18" rx="1"/><path d="M9 7h2M13 7h2M9 11h2M13 11h2M9 15h2M13 15h2"/></svg></div><h3>Office cleaning</h3><p>Reliable after-hours cleaning that keeps your workspace professional.</p></div>
-      
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 19c0-8 5-14 15-14 0 10-6 15-14 15"/><path d="M5 19c3-4 6-6 10-8"/></svg></div><h3>Eco-friendly products</h3><p>Safe for kids and pets, tough on dirt, and gentle on the planet.</p></div>
-      
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div><h3>Same-week booking</h3><p>Need it done fast? We usually have openings within a few days.</p></div>
-      
-    </div>
-  </div>
-</section>
-
-<section class="block why" id="why">
-  <div class="wrap why-grid">
+  <div class="wrap hero-g">
     <div>
-      <div class="kicker">Why clients choose us</div>
-      <h2>The Los Angeles house cleaning service people recommend to their friends.</h2>
-      <p class="intro">it still comes down to the same three things.</p>
+      <span class="label in-h d1">Solar Panel Professional Cleaning · Los Angeles</span>
+      <h1>
+        <span class="ln"><span class="d2">Making clean</span></span>
+        <span class="ln"><span class="d3">energy <em>cleaner.</em></span></span>
+      </h1>
+      <p class="lead in-h d4">Dust and grime quietly steal the sunlight your panels were built to catch. Our trained technicians gently restore every panel with an eco-friendly solution, so your investment keeps paying you back, perfectly clean and perfectly safe.</p>
+      <div class="ctas in-h d5">
+        <a class="btn btn-p" href="#contact">Get a Free Estimate <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a class="btn btn-g" href="tel:+18184289706"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>(818) 428-9706</a>
+      </div>
+      <div class="trust in-h d6">
+        <div><b>5</b><span>Exterior services, one trusted crew</span></div>
+        <div><b>Eco</b><span>Friendly cleaning solution on every job</span></div>
+        <div><b>Free</b><span>No-obligation estimates</span></div>
+      </div>
     </div>
-    <div class="points">
-      
-      <div class="point"><div class="num">01</div><div><h3>Vetted &amp; insured</h3><p>Every cleaner is background-checked, trained and fully insured for your peace of mind.</p></div></div>
-      
-      <div class="point"><div class="num">02</div><div><h3>Satisfaction guaranteed</h3><p>Not happy with something? We&#39;ll come back and make it right, free.</p></div></div>
-      
-      <div class="point"><div class="num">03</div><div><h3>Upfront pricing</h3><p>A clear quote before we start. No hidden fees, ever.</p></div></div>
-      
+
+    <div class="hero-v in-h d4">
+      <div class="frame">
+        <img id="heroImg" src="img/photo-1.jpg" alt="Solar panels freshly cleaned by LA Solar Cleaning" width="2000" height="1334" fetchpriority="high">
+        <div class="sheen"></div>
+      </div>
+      <div class="sun" aria-hidden="true">
+        <svg viewBox="0 0 200 200"><defs><path id="c" d="M100,100 m-72,0 a72,72 0 1,1 144,0 a72,72 0 1,1 -144,0"/></defs><circle cx="100" cy="100" r="96" fill="#F6C38B"/><text font-family="Inter,sans-serif" font-size="13" font-weight="600" letter-spacing="4.2" fill="#10314D"><textPath href="#c">GIVE US THE TIME · WE'LL MAKE IT SHINE · </textPath></text><g fill="#10314D"><circle cx="100" cy="100" r="16"/></g><g stroke="#10314D" stroke-width="3" stroke-linecap="round"><path d="M100 70v-8M100 138v-8M70 100h-8M138 100h-8M79 79l-6-6M127 127l-6-6M79 121l-6 6M127 73l-6 6"/></g></svg>
+      </div>
+      <div class="float f1">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg></div>
+        <div><b>Perfectly clean, perfectly safe</b><small>Trained technicians on every job</small></div>
+      </div>
+      <div class="float f2">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.5 19 2c1 2 2 4.2 2 8 0 5.5-4.8 10-10 10z"/><path d="M2 21c0-3 1.9-5.4 5.2-6"/></svg></div>
+        <div><b>Eco-friendly</b><small>Biodegradable cleansers</small></div>
+      </div>
     </div>
   </div>
 </section>
 
+<!-- MARQUEE -->
+<div class="mq" aria-hidden="true">
+  <div class="mq-t">
+    <span>Solar Panel Cleaning <i></i> Window Cleaning <i></i> Pressure Washing <i></i> Bird Proofing <i></i> Gutter Cleaning <i></i> <em>Give us the time, we'll make it shine</em> <i></i></span>
+    <span>Solar Panel Cleaning <i></i> Window Cleaning <i></i> Pressure Washing <i></i> Bird Proofing <i></i> Gutter Cleaning <i></i> <em>Give us the time, we'll make it shine</em> <i></i></span>
+  </div>
+</div>
 
-
-<section class="cta-band" id="book">
-  <div class="wrap"><div class="cta-box">
-    <div><h2>Ready when you are.</h2><p>Get a free quote in under a minute, or give us a call and talk to a real person.</p></div>
-    <div class="actions">
-      <a class="btn" href="#visit">Get a free quote</a>
-      <a class="btn ghost" href="tel:8184289706">Call (818) 428-9706</a>
+<!-- SERVICES -->
+<section class="pad" id="services">
+  <div class="wrap">
+    <div class="sec-h">
+      <div class="rv"><span class="label">Our Services</span><h2>Expert care for your <em>whole exterior.</em></h2></div>
+      <p class="lead rv">A wide variety of services tailored to the wants of our community members and the needs of the Southern California climate, from the roof to the gutters to the glass.</p>
     </div>
-  </div></div>
+    <div class="svc">
+      <article class="card big rv">
+        <span class="num">01 · SIGNATURE</span>
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M3 20 6 8h12l3 12z"/><path d="M4.5 14h15M9 8l-1.5 12M15 8l1.5 12"/><path d="M12 2v2M5 3.5l1.2 1.5M19 3.5 17.8 5"/></svg></div>
+        <h3>Solar Panel Cleaning</h3>
+        <p>We gently scrub your panels with a highly concentrated cleaning solution that cuts through grime and leaves every cell shining. Our techs are solar pros, trained to spot issues a window washer would miss.</p>
+        <a class="more" href="#contact">Schedule a cleaning <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </article>
+      <article class="card big rv">
+        <span class="num">02</span>
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="4" y="3" width="16" height="18" rx="1.5"/><path d="M12 3v18M4 12h16"/><path d="m15 6 2 2M14 9l3-3"/></svg></div>
+        <h3>Window Cleaning</h3>
+        <p>Streak-free glass that lets the California light pour in. The same careful hands that look after your panels bring your views back to crystal clear.</p>
+        <a class="more" href="#contact">Book windows <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </article>
+      <article class="card rv">
+        <span class="num">03</span>
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M3 10h8l2 2h3"/><path d="M5 10V7h4v3"/><path d="M16 12h2l3-3M18 12l3 1M18 12l2 3"/><path d="M11 12v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-8"/></svg></div>
+        <h3>Pressure Washing</h3>
+        <p>One of the most affordable, simplest ways to lift your home's value, and to prevent the cost, time and trouble of future repairs.</p>
+        <a class="more" href="#contact">Get a quote <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </article>
+      <article class="card rv">
+        <span class="num">04</span>
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M16 7h.01M3.4 18H12a8 8 0 0 0 8-8V7a4 4 0 0 0-7.3-2.3L2 20"/><path d="m20 7 2 .5-2 .5M10 18v3M14 17.7V21"/></svg></div>
+        <h3>Bird Proofing</h3>
+        <p>Birds love to nest under panels and eaves, and can cause real damage if left alone. We protect your property, properly.</p>
+        <a class="more" href="#contact">Protect my roof <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </article>
+      <article class="card rv">
+        <span class="num">05</span>
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M2 6h20l-2 5H4z"/><path d="M18 11v7a2 2 0 0 0 2 2h1"/><path d="M8 14c0 1 .8 2 1.5 2S11 15 11 14s-1.5-2.5-1.5-2.5S8 13 8 14z"/></svg></div>
+        <h3>Gutter Cleaning</h3>
+        <p>Gutters are a hardworking part of your home that most people overlook. We keep them flowing so small clogs never become big repairs.</p>
+        <a class="more" href="#contact">Clear my gutters <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </article>
+    </div>
+  </div>
 </section>
 
-<section class="block" id="visit" style="padding-top:0">
+<!-- WHY CLEANING MATTERS (signature type) -->
+<section class="pad shine" id="importance">
   <div class="wrap">
-    <div class="kicker">Visit us</div><h2>Come say hello.</h2>
-    <div class="visit">
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11l8-7 8 7v9a1 1 0 01-1 1h-4v-6H9v6H5a1 1 0 01-1-1z"/></svg></div><h3>Address</h3><p>4555 Fulton Ave, Los Angeles CA 91423</p></div>
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div><h3>Phone</h3><p><a href="tel:8184289706">(818) 428-9706</a></p><p style="margin-top:10px">Call or message us for today's opening hours.</p></div>
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-7-4.4-7-10a4 4 0 017-2.6A4 4 0 0119 10c0 5.6-7 10-7 10z"/></svg></div><h3>Fully insured</h3><p>Get a free quote online or by phone and we'll take care of the rest.</p></div>
+    <p class="bigtype rv" id="bigtype">
+      <span class="o">Give us</span> the <em>time,</em><br>
+      we'll make <span class="star"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c.7 6.4 5.6 11.3 12 12-6.4.7-11.3 5.6-12 12-.7-6.4-5.6-11.3-12-12C6.4 11.3 11.3 6.4 12 0z"/></svg></span> it <span class="o">shine.</span>
+    </p>
+    <p class="lead rv">Why cleaning is important: when dirt settles on the surface of a solar panel, it reduces how much light that area can absorb, and with it, your panel's efficiency. As the days grow longer and warmer, clean panels make the most of every hour of sun.</p>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="pad about" id="about">
+  <div class="wrap about-g">
+    <div class="ph rv">
+      <div class="pic"><img src="img/photo-2.jpg" alt="LA Solar Cleaning technician at work" width="1080" height="1350" loading="lazy"></div>
+      <div class="tag">Because it is renewable, clean &amp; cool.</div>
+    </div>
+    <div>
+      <span class="label rv">Welcome</span>
+      <h2 class="rv">The solar cleaning specialists of the <em>Los Angeles area.</em></h2>
+      <p class="lead rv">Your solar panels are one of your home's largest investments. With proper care, they'll keep bringing you and your loved ones savings for many years to come.</p>
+      <p class="rv" style="color:var(--ink2)">That's the whole idea behind LA Solar Cleaning. We invest in the best tools so we can serve our solar customers well, and we send trained technicians who know panels inside out. Our process combines biodegradable cleansers with safe, gentle pressure to lift mildew, algae and dirt without risking your system.</p>
+      <p class="rv" style="color:var(--ink2)">Beyond the roof, we keep the rest of your home's exterior cared for too, because there's no better feeling than pulling up to a home that's clearly well looked after.</p>
+      <div class="chips rv"><span>Solar specialists</span><span>Eco-friendly solution</span><span>Trained technicians</span><span>Free estimates</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY CHOOSE US -->
+<section class="pad why" id="why">
+  <div class="wrap">
+    <div class="sec-h">
+      <div class="rv"><span class="label">Why Choose Us</span><h2>Premium care, <em>without the premium fuss.</em></h2></div>
+      <p class="lead rv">Why call a window washer for your panels when you can have a team that lives and breathes solar?</p>
+    </div>
+    <div class="why-g">
+      <div class="wc rv"><span class="n">i.</span><h3>Specialists in our field</h3><p>Solar panel cleaning is our signature work. Our techs are solar pros trained to identify issues while they clean.</p></div>
+      <div class="wc rv"><span class="n">ii.</span><h3>Eco-friendly cleaning solution</h3><p>Biodegradable cleansers and safe pressure: tough on grime, gentle on your panels, your home and the planet.</p></div>
+      <div class="wc rv"><span class="n">iii.</span><h3>Premium service, great price</h3><p>Expert, careful work at a price that makes regular maintenance an easy decision.</p></div>
+      <div class="wc rv"><span class="n">iv.</span><h3>Trained technicians on every job</h3><p>Every member of our team brings the expertise, skill and commitment it takes to finish each project right.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="pad" id="process">
+  <div class="wrap">
+    <div class="sec-h">
+      <div class="rv"><span class="label">How It Works</span><h2>Quick &amp; easy, <em>start to shine.</em></h2></div>
+      <p class="lead rv">Scheduling your solar panel cleaning takes minutes. If you have any questions or concerns along the way, our experienced technicians are happy to help.</p>
+    </div>
+    <div class="steps">
+      <div class="step rv"><span class="dot"></span><div class="card"><small>STEP 01</small><h3>Reach out</h3><p>Call us or send a message. Tell us about your panels, windows, gutters or exterior.</p></div></div>
+      <div class="step rv"><span class="dot"></span><div class="card"><small>STEP 02</small><h3>Free estimate</h3><p>We provide a free, no-obligation quote built around your needs and concerns.</p></div></div>
+      <div class="step rv"><span class="dot"></span><div class="card"><small>STEP 03</small><h3>Pick your time</h3><p>Choose a service date and time that's convenient for you.</p></div></div>
+      <div class="step rv"><span class="dot"></span><div class="card"><small>STEP 04</small><h3>Watch it shine</h3><p>Our trained technicians clean carefully and safely, leaving everything sparkling.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="pad" id="faq" style="padding-top:0">
+  <div class="wrap faq-g">
+    <div class="rv"><span class="label">FAQ</span><h2>Good <em>questions.</em></h2></div>
+    <div>
+      <details class="qa rv" open><summary>Why should I clean my solar panels?<i></i></summary><p>Dirt on the surface of a panel reduces how much light that area can absorb, which reduces its efficiency. Regular cleaning helps your panels keep delivering the savings you bought them for.</p></details>
+      <details class="qa rv"><summary>What do you clean the panels with?<i></i></summary><p>We gently scrub with a highly concentrated, eco-friendly cleaning solution, combining biodegradable cleansers with safe pressure to remove mildew, algae and dirt.</p></details>
+      <details class="qa rv"><summary>Why not just call a window washer?<i></i></summary><p>Our technicians are experienced solar pros, trained to identify issues with your system while they clean, not just wipe the glass.</p></details>
+      <details class="qa rv"><summary>What other services do you offer?<i></i></summary><p>Alongside solar panel cleaning, we offer window cleaning, pressure washing, bird proofing and gutter cleaning.</p></details>
+      <details class="qa rv"><summary>How do I get a quote?<i></i></summary><p>Call us at (818) 428-9706 or (747) 283-9921. We'll give you a free, no-obligation quote and help you choose a convenient date and time.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BAND -->
+<section class="band rv">
+  <svg class="rays" viewBox="0 0 200 200" aria-hidden="true"><g stroke="#fff" stroke-width="1.2"><path d="M100 0v200M0 100h200M29 29l142 142M171 29 29 171M62 8l76 184M138 8 62 192M8 62l184 76M8 138l184-76"/></g></svg>
+  <span class="label">Get a Free Estimate</span>
+  <h2>Have you cleaned your panels <em>lately?</em></h2>
+  <p>Get expert care for your solar panels and the home beneath them. One call, a free no-obligation quote, and a time that works for you.</p>
+  <div class="ctas">
+    <a class="btn btn-s" href="tel:+18184289706">Call (818) 428-9706 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    <a class="btn btn-g" href="#contact">Contact details</a>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="pad" id="contact">
+  <div class="wrap ct-g">
+    <div class="intro">
+      <div class="rv"><span class="label">Schedule Your Cleaning</span><h2>Let's make it <em>shine.</em></h2></div>
+      <p class="lead rv">Have a question about our services or want to book an appointment? We'd love to hear from you, about anything.</p>
+    </div>
+    <div class="card ci rv">
+      <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg></div>
+      <div><small>Call us</small><a class="ul" href="tel:+18184289706">(818) 428-9706</a><a class="ul" href="tel:+17472839921" style="font-size:1.4rem;margin-top:6px">(747) 283-9921</a></div>
+    </div>
+    <div class="card ci rv">
+      <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
+      <div><small>Hours</small><span>Monday – Friday</span><p class="sub">9am – 5pm</p><p class="sub">Email: lasolarcleaning@gmail.com</p></div>
+    </div>
+    <div class="card ct-map rv">
+      <div class="ci">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+        <div><small>Visit</small><span>4555 Fulton Ave, Unit 107</span><p class="sub">Los Angeles, CA 91423</p></div>
+      </div>
+      <a class="btn btn-p" href="https://maps.google.com/?q=4555+Fulton+Ave+Unit+107+Los+Angeles+CA+91423" target="_blank" rel="noopener">Open in Google Maps <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
     </div>
   </div>
 </section>
 </main>
 
-<footer><div class="wrap">
-  <span>© 2026 LA Solar Cleaning</span>
-  <span>Concept design by webstudio. Not affiliated with or endorsed by LA Solar Cleaning.</span>
-</div></footer>
+<footer class="ft">
+  <div class="wrap">
+    <div class="ft-g">
+      <div>
+        <a href="#top" class="brand"><img src="img/logo.png" alt="LA Solar Cleaning logo"><span>LA Solar Cleaning</span></a>
+        <p>Making clean energy cleaner. Solar panel professional cleaning and exterior care across the Los Angeles area.</p>
+      </div>
+      <div><h4>Services</h4><ul><li><a class="ul" href="#services">Solar Panel Cleaning</a></li><li><a class="ul" href="#services">Window Cleaning</a></li><li><a class="ul" href="#services">Pressure Washing</a></li><li><a class="ul" href="#services">Bird Proofing</a></li><li><a class="ul" href="#services">Gutter Cleaning</a></li></ul></div>
+      <div><h4>Explore</h4><ul><li><a class="ul" href="#about">About</a></li><li><a class="ul" href="#why">Why Choose Us</a></li><li><a class="ul" href="#process">How It Works</a></li><li><a class="ul" href="#faq">FAQ</a></li></ul></div>
+      <div><h4>Contact</h4><ul><li><a class="ul" href="tel:+18184289706">(818) 428-9706</a></li><li><a class="ul" href="tel:+17472839921">(747) 283-9921</a></li><li>lasolarcleaning@gmail.com</li><li><a class="ul" href="https://maps.google.com/?q=4555+Fulton+Ave+Unit+107+Los+Angeles+CA+91423" target="_blank" rel="noopener">4555 Fulton Ave, Unit 107<br>Los Angeles, CA 91423</a></li></ul></div>
+    </div>
+    <div class="ft-word" aria-hidden="true">Perfectly clean.</div>
+    <div class="ft-b"><span>© <span id="yr"></span> LA Solar Cleaning. All rights reserved.</span><span>Monday – Friday · 9am – 5pm</span></div>
+  </div>
+</footer>
 
-<div class="mobile-bar">
-  <a class="btn ghost" href="tel:8184289706">Call</a>
-  <a class="btn" href="#visit">Free quote</a>
+<div class="mbar">
+  <a class="btn btn-g" href="tel:+18184289706">Call Now</a>
+  <a class="btn btn-p" href="#contact">Free Estimate</a>
 </div>
-</body>
+
+<script>
+(function(){
+  var d=document,b=d.body,reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  d.getElementById('yr').textContent=new Date().getFullYear();
+
+  // mobile menu
+  var burger=d.querySelector('.burger'),mnav=d.querySelector('.mnav');
+  function setMenu(o){b.classList.toggle('menu-open',o);burger.setAttribute('aria-expanded',o);mnav.setAttribute('aria-hidden',!o);b.style.overflow=o?'hidden':''}
+  burger.addEventListener('click',function(){setMenu(!b.classList.contains('menu-open'))});
+  mnav.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){setMenu(false)})});
+
+  // reveal on scroll with stagger
+  var els=d.querySelectorAll('.rv');
+  if(reduce||!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in')})}
+  else{
+    var io=new IntersectionObserver(function(en){
+      en.forEach(function(e){
+        if(e.isIntersecting){
+          var sib=[].slice.call(e.target.parentNode.children).filter(function(x){return x.classList.contains('rv')});
+          e.target.style.transitionDelay=Math.min(sib.indexOf(e.target),5)*90+'ms';
+          e.target.classList.add('in');io.unobserve(e.target);
+        }
+      });
+    },{threshold:.12,rootMargin:'0px 0px -40px 0px'});
+    els.forEach(function(e){io.observe(e)});
+  }
+
+  if(reduce)return;
+  // hero parallax + big type fill
+  var img=d.getElementById('heroImg'),big=d.getElementById('bigtype'),tick=false;
+  function frame(){
+    var y=window.scrollY;
+    if(y<window.innerHeight*1.2)img.style.transform='translate3d(0,'+(-7+y*.06)+'%,0)'.replace(/(-?\d+\.?\d*)%/,function(m,n){return Math.max(-13,Math.min(0,parseFloat(n)))+'%'});
+    var r=big.getBoundingClientRect(),vh=window.innerHeight;
+    var p=Math.max(0,Math.min(1,(vh-r.top)/(vh*.9)));
+    big.style.setProperty('--p',(p*100).toFixed(1)+'%');
+    tick=false;
+  }
+  window.addEventListener('scroll',function(){if(!tick){tick=true;requestAnimationFrame(frame)}},{passive:true});
+  frame();
+})();
+</script>
+<div id="lm-concept" style="position:fixed;left:12px;bottom:12px;z-index:2147483647;font:500 11px/1.3 -apple-system,BlinkMacSystemFont,Segoe UI,sans-serif;letter-spacing:.02em;background:rgba(15,15,18,.82);color:#f4f1ea;padding:7px 11px;border-radius:999px;backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);pointer-events:none;max-width:70vw">Website concept for LA Solar Cleaning by webstudio &middot; not the live site</div><p style="margin:0;padding:18px 16px 70px;text-align:center;font:12px/1.5 -apple-system,sans-serif;color:#8a8a8a;background:#0e0e10">Concept design by webstudio. Not affiliated with or endorsed by LA Solar Cleaning.</p></body>
 </html>
