@@ -4,9 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>webstudio | Website design portfolio</title>
-<meta name="description" content="36 premium website designs for local businesses by webstudio. See them live and watch the video tours.">
+<meta name="description" content="120 premium website designs for local businesses by webstudio. See them live and watch the video tours.">
 <meta property="og:title" content="webstudio | Website design portfolio">
-<meta property="og:description" content="36 premium website designs for local businesses. Click any one to see it live.">
+<meta property="og:description" content="120 premium website designs for local businesses. Click any one to see it live.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://itzsharad.github.io/website-concepts/work/">
 <meta property="og:image" content="https://itzsharad.github.io/website-concepts/work/thumbs/lowe-s-193.jpg">
@@ -23,8 +23,10 @@ a{color:inherit;text-decoration:none}
 .wrap{max-width:1240px;margin:0 auto;padding:0 24px}
 header.top{position:sticky;top:0;z-index:20;background:rgba(245,248,253,.82);backdrop-filter:saturate(1.4) blur(14px);-webkit-backdrop-filter:saturate(1.4) blur(14px);border-bottom:1px solid rgba(225,232,242,.7)}
 header.top .wrap{display:flex;align-items:center;justify-content:space-between;height:64px;gap:16px}
-.logo{display:flex;align-items:center;gap:10px;font-weight:650;letter-spacing:-.01em}
-.logo i{width:30px;height:30px;border-radius:9px;background:linear-gradient(135deg,#5b8cff,#2f62f0 60%,#1d3fb8);box-shadow:0 4px 14px rgba(47,98,240,.35);display:block}
+.logo{display:flex;align-items:center;gap:11px;letter-spacing:-.01em;line-height:1.05}
+.logo svg{flex:none;filter:drop-shadow(0 6px 14px rgba(47,98,240,.32))}
+.logo b{display:block;font-size:17px;font-weight:650}
+.logo small{display:block;font-size:11px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-top:3px}
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:44px;padding:0 20px;border-radius:999px;font-weight:600;font-size:15px;transition:transform .15s,box-shadow .2s,background .2s;white-space:nowrap}
 .btn.pri{background:var(--ion);color:#fff;box-shadow:0 8px 24px rgba(47,98,240,.28)}
 .btn.pri:hover{transform:translateY(-1px);box-shadow:0 12px 30px rgba(47,98,240,.36)}
@@ -46,6 +48,8 @@ h1 em{font-family:"Instrument Serif",Georgia,serif;font-weight:400;font-style:it
 .stats div{background:#fff;padding:18px 12px}
 .stats b{display:block;font-size:30px;letter-spacing:-.03em;font-weight:650}
 .stats span{font-size:13.5px;color:var(--muted)}
+.where{display:flex;flex-wrap:wrap;justify-content:center;gap:8px 18px;margin:22px auto 0;max-width:760px;font-size:14.5px;color:var(--muted)}
+.where span{white-space:nowrap}.where em{font-style:normal;font-weight:600;color:var(--ink);margin-left:2px}
 .filters{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin:8px 0 28px}
 .chip{height:38px;padding:0 16px;border-radius:999px;border:1px solid var(--edge);background:#fff;font:500 14px Geist,system-ui,sans-serif;color:var(--ink);cursor:pointer;transition:all .15s}
 .chip span{color:var(--muted);margin-left:4px}
@@ -94,7 +98,16 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 </head>
 <body>
 <header class="top"><div class="wrap">
-  <a class="logo" href="#top"><i></i>webstudio</a>
+  <a class="logo" href="#top" aria-label="webstudio">
+    <svg width="38" height="38" viewBox="0 0 40 40" aria-hidden="true">
+      <defs><linearGradient id="lg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#6b97ff"/><stop offset=".55" stop-color="#2f62f0"/><stop offset="1" stop-color="#1a3596"/></linearGradient>
+        <linearGradient id="ls" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".45"/><stop offset=".5" stop-color="#fff" stop-opacity="0"/></linearGradient></defs>
+      <rect width="40" height="40" rx="11" fill="url(#lg)"/>
+      <rect x=".75" y=".75" width="38.5" height="38.5" rx="10.3" fill="url(#ls)" stroke="#fff" stroke-opacity=".25" stroke-width="1.5"/>
+      <text x="19" y="29.5" text-anchor="middle" fill="#fff" font-family="'Instrument Serif',Georgia,serif" font-style="italic" font-size="27">w</text>
+      <circle cx="30.5" cy="27.5" r="2.4" fill="#9fe1ff"/>
+    </svg>
+    <span><b>webstudio</b><small>Web design studio</small></span></a>
   <div style="display:flex;gap:8px">
     <a class="btn sec sm" href="https://www.youtube.com/@sharad.webstudio" target="_blank" rel="noopener"><span class="yt"></span>Video tours</a>
     <a class="btn pri sm" href="mailto:sharad.webstudio@gmail.com?subject=A%20website%20concept%20for%20my%20business">Get yours</a>
@@ -102,7 +115,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 </div></header>
 
 <section class="hero" id="top"><div class="wrap">
-  <span class="eyebrow"><b>●</b> 36 unique designs, each one made from scratch</span>
+  <span class="eyebrow"><b>●</b> 120 unique designs, each one made from scratch</span>
   <h1>Websites that make local businesses <em>look the best in town.</em></h1>
   <p class="lead">Every site below was designed for a real local business, using their own photos, services and reviews. Click any one to see it live on your phone.</p>
   <div class="ctas">
@@ -110,18 +123,19 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
     <a class="btn sec" href="https://www.youtube.com/@sharad.webstudio" target="_blank" rel="noopener"><span class="yt"></span>Watch the video tours</a>
   </div>
   <div class="stats">
-    <div><b>36</b><span>unique designs</span></div>
+    <div><b>120</b><span>unique designs</span></div>
     <div><b>6</b><span>kinds of business</span></div>
-    <div><b>6</b><span>cities in 3 countries</span></div>
+    <div><b>6</b><span>countries, 8 cities</span></div>
   </div>
+  <div class="where"><span>🇺🇸 United States <em>75</em></span><span>🇦🇺 Australia <em>12</em></span><span>🇦🇪 United Arab Emirates <em>12</em></span><span>🇰🇼 Kuwait <em>10</em></span><span>🇬🇧 United Kingdom <em>9</em></span><span>🇸🇬 Singapore <em>2</em></span></div>
 </div></section>
 
 <main class="wrap" id="work">
   
   
   <div class="filters" role="tablist" aria-label="Filter by kind of business">
-    <button class="chip on" data-k="">All<span>36</span></button>
-    <button class="chip" data-k="House cleaning service">House cleaning service<span>17</span></button><button class="chip" data-k="Moving company">Moving company<span>6</span></button><button class="chip" data-k="Chiropractor">Chiropractor<span>5</span></button><button class="chip" data-k="Dentist">Dentist<span>5</span></button><button class="chip" data-k="Real estate agent">Real estate agent<span>2</span></button><button class="chip" data-k="Remodeling company">Remodeling company<span>1</span></button>
+    <button class="chip on" data-k="">All<span>120</span></button>
+    <button class="chip" data-k="Dentist">Dentist<span>30</span></button><button class="chip" data-k="Moving company">Moving company<span>29</span></button><button class="chip" data-k="Chiropractor">Chiropractor<span>22</span></button><button class="chip" data-k="House cleaning service">House cleaning service<span>21</span></button><button class="chip" data-k="Real estate agent">Real estate agent<span>12</span></button><button class="chip" data-k="Remodeling company">Remodeling company<span>6</span></button>
   </div>
   
   <div class="grid">
@@ -133,7 +147,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
         <div class="view"><span>View live site ↗</span></div>
       </a>
       <div class="meta">
-        <div><h3>Lowe&#39;s</h3><p>Remodeling company · Austin, TX</p></div>
+        <div><h3>Lowe&#39;s</h3><p>Remodeling company · 🇺🇸 Austin, TX, United States</p></div>
         <div class="tags"><span class="tag won">★ Client</span><span class="tag style">Architectural minimal</span></div>
         <div class="acts">
           <a class="btn sec sm" href="https://itzsharad.github.io/website-concepts/lowe-s-193/" target="_blank" rel="noopener">View site ↗</a>
@@ -149,7 +163,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
         <div class="view"><span>View live site ↗</span></div>
       </a>
       <div class="meta">
-        <div><h3>Grant&#39;s Real Estate</h3><p>Real estate agent · Melbourne, VIC, Australia</p></div>
+        <div><h3>Grant&#39;s Real Estate</h3><p>Real estate agent · 🇦🇺 Melbourne, VIC, Australia</p></div>
         <div class="tags"><span class="tag style">Heritage classic</span></div>
         <div class="acts">
           <a class="btn sec sm" href="https://itzsharad.github.io/website-concepts/grant-s-real-estate-654/" target="_blank" rel="noopener">View site ↗</a>
@@ -165,7 +179,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
         <div class="view"><span>View live site ↗</span></div>
       </a>
       <div class="meta">
-        <div><h3>Waterfront Management Group</h3><p>Real estate agent · Melbourne, VIC, Australia</p></div>
+        <div><h3>Waterfront Management Group</h3><p>Real estate agent · 🇦🇺 Melbourne, VIC, Australia</p></div>
         <div class="tags"><span class="tag style">Editorial luxury</span></div>
         <div class="acts">
           <a class="btn sec sm" href="https://itzsharad.github.io/website-concepts/waterfront-management-group-682/" target="_blank" rel="noopener">View site ↗</a>
@@ -181,7 +195,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
         <div class="view"><span>View live site ↗</span></div>
       </a>
       <div class="meta">
-        <div><h3>The Squeegee Crew</h3><p>House cleaning service · Los Angeles, CA</p></div>
+        <div><h3>The Squeegee Crew</h3><p>House cleaning service · 🇺🇸 Los Angeles, CA, United States</p></div>
         <div class="tags"><span class="tag style">Coastal light</span></div>
         <div class="acts">
           <a class="btn sec sm" href="https://itzsharad.github.io/website-concepts/the-squeegee-crew-278/" target="_blank" rel="noopener">View site ↗</a>
@@ -197,7 +211,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
         <div class="view"><span>View live site ↗</span></div>
       </a>
       <div class="meta">
-        <div><h3>Anderson cleaning solutions</h3><p>House cleaning service · Los Angeles, CA</p></div>
+        <div><h3>Anderson cleaning solutions</h3><p>House cleaning service · 🇺🇸 Los Angeles, CA, United States</p></div>
         <div class="tags"><span class="tag style">Swiss modern</span></div>
         <div class="acts">
           <a class="btn sec sm" href="https://itzsharad.github.io/website-concepts/anderson-cleaning-solutions-277/" target="_blank" rel="noopener">View site ↗</a>
@@ -213,7 +227,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
         <div class="view"><span>View live site ↗</span></div>
       </a>
       <div class="meta">
-        <div><h3>Four Brothers Janitorial Services</h3><p>House cleaning service · Los Angeles, CA</p></div>
+        <div><h3>Four Brothers Janitorial Services</h3><p>House cleaning service · 🇺🇸 Los Angeles, CA, United States</p></div>
         <div class="tags"><span class="tag style">Bold contemporary</span></div>
         <div class="acts">
           <a class="btn sec sm" href="https://itzsharad.github.io/website-concepts/four-brothers-janitorial-services-275/" target="_blank" rel="noopener">View site ↗</a>
@@ -229,7 +243,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
         <div class="view"><span>View live site ↗</span></div>
       </a>
       <div class="meta">
-        <div><h3>Maid In Downtown La LLC</h3><p>House cleaning service · Los Angeles, CA</p></div>
+        <div><h3>Maid In Downtown La LLC</h3><p>House cleaning service · 🇺🇸 Los Angeles, CA, United States</p></div>
         <div class="tags"><span class="tag style">Warm boutique</span></div>
         <div class="acts">
           <a class="btn sec sm" href="https://itzsharad.github.io/website-concepts/maid-in-downtown-la-llc-273/" target="_blank" rel="noopener">View site ↗</a>
@@ -245,7 +259,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
         <div class="view"><span>View live site ↗</span></div>
       </a>
       <div class="meta">
-        <div><h3>Pronto Clean</h3><p>House cleaning service · Los Angeles, CA</p></div>
+        <div><h3>Pronto Clean</h3><p>House cleaning service · 🇺🇸 Los Angeles, CA, United States</p></div>
         <div class="tags"><span class="tag style">Coastal light</span></div>
         <div class="acts">
           <a class="btn sec sm" href="https://itzsharad.github.io/website-concepts/pronto-clean-271/" target="_blank" rel="noopener">View site ↗</a>
@@ -261,7 +275,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
         <div class="view"><span>View live site ↗</span></div>
       </a>
       <div class="meta">
-        <div><h3>The Maid&#39;s Clean Touch</h3><p>House cleaning service · Los Angeles, CA</p></div>
+        <div><h3>The Maid&#39;s Clean Touch</h3><p>House cleaning service · 🇺🇸 Los Angeles, CA, United States</p></div>
         <div class="tags"><span class="tag style">Bold contemporary</span></div>
         <div class="acts">
           <a class="btn sec sm" href="https://itzsharad.github.io/website-concepts/the-maid-s-clean-touch-266/" target="_blank" rel="noopener">View site ↗</a>
@@ -277,7 +291,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
         <div class="view"><span>View live site ↗</span></div>
       </a>
       <div class="meta">
-        <div><h3>Fusion Cleaning Services</h3><p>House cleaning service · Los Angeles, CA</p></div>
+        <div><h3>Fusion Cleaning Services</h3><p>House cleaning service · 🇺🇸 Los Angeles, CA, United States</p></div>
         <div class="tags"><span class="tag style">Swiss modern</span></div>
         <div class="acts">
           <a class="btn sec sm" href="https://itzsharad.github.io/website-concepts/fusion-cleaning-services-270/" target="_blank" rel="noopener">View site ↗</a>
@@ -293,7 +307,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
         <div class="view"><span>View live site ↗</span></div>
       </a>
       <div class="meta">
-        <div><h3>Quick Touch Cleaning Services LLC</h3><p>House cleaning service · Los Angeles, CA</p></div>
+        <div><h3>Quick Touch Cleaning Services LLC</h3><p>House cleaning service · 🇺🇸 Los Angeles, CA, United States</p></div>
         <div class="tags"><span class="tag style">Coastal light</span></div>
         <div class="acts">
           <a class="btn sec sm" href="https://itzsharad.github.io/website-concepts/quick-touch-cleaning-services-llc-260/" target="_blank" rel="noopener">View site ↗</a>
@@ -309,7 +323,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
         <div class="view"><span>View live site ↗</span></div>
       </a>
       <div class="meta">
-        <div><h3>Calixfornia Professional Leather</h3><p>House cleaning service · Los Angeles, CA</p></div>
+        <div><h3>Calixfornia Professional Leather</h3><p>House cleaning service · 🇺🇸 Los Angeles, CA, United States</p></div>
         <div class="tags"><span class="tag style">Warm boutique</span></div>
         <div class="acts">
           <a class="btn sec sm" href="https://itzsharad.github.io/website-concepts/calixfornia-professional-leather-261/" target="_blank" rel="noopener">View site ↗</a>
@@ -325,7 +339,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
         <div class="view"><span>View live site ↗</span></div>
       </a>
       <div class="meta">
-        <div><h3>Faith&#39;s Green Clean</h3><p>House cleaning service · Los Angeles, CA</p></div>
+        <div><h3>Faith&#39;s Green Clean</h3><p>House cleaning service · 🇺🇸 Los Angeles, CA, United States</p></div>
         <div class="tags"><span class="tag style">Swiss modern</span></div>
         <div class="acts">
           <a class="btn sec sm" href="https://itzsharad.github.io/website-concepts/faith-s-green-clean-259/" target="_blank" rel="noopener">View site ↗</a>
@@ -341,7 +355,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
         <div class="view"><span>View live site ↗</span></div>
       </a>
       <div class="meta">
-        <div><h3>Green Arm Commercial Cleaning</h3><p>House cleaning service · Los Angeles, CA</p></div>
+        <div><h3>Green Arm Commercial Cleaning</h3><p>House cleaning service · 🇺🇸 Los Angeles, CA, United States</p></div>
         <div class="tags"><span class="tag style">Bold contemporary</span></div>
         <div class="acts">
           <a class="btn sec sm" href="https://itzsharad.github.io/website-concepts/green-arm-commercial-cleaning-256/" target="_blank" rel="noopener">View site ↗</a>
@@ -357,7 +371,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
         <div class="view"><span>View live site ↗</span></div>
       </a>
       <div class="meta">
-        <div><h3>Santiago&#39;s Shine Cleaning Services</h3><p>House cleaning service · Los Angeles, CA</p></div>
+        <div><h3>Santiago&#39;s Shine Cleaning Services</h3><p>House cleaning service · 🇺🇸 Los Angeles, CA, United States</p></div>
         <div class="tags"><span class="tag style">Warm boutique</span></div>
         <div class="acts">
           <a class="btn sec sm" href="https://itzsharad.github.io/website-concepts/santiago-s-shine-cleaning-services-255/" target="_blank" rel="noopener">View site ↗</a>
@@ -373,7 +387,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
         <div class="view"><span>View live site ↗</span></div>
       </a>
       <div class="meta">
-        <div><h3>LA Solar Cleaning</h3><p>House cleaning service · Los Angeles, CA</p></div>
+        <div><h3>LA Solar Cleaning</h3><p>House cleaning service · 🇺🇸 Los Angeles, CA, United States</p></div>
         <div class="tags"><span class="tag style">Coastal light</span></div>
         <div class="acts">
           <a class="btn sec sm" href="https://itzsharad.github.io/website-concepts/la-solar-cleaning-254/" target="_blank" rel="noopener">View site ↗</a>
@@ -389,7 +403,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
         <div class="view"><span>View live site ↗</span></div>
       </a>
       <div class="meta">
-        <div><h3>Babylon Rug Cleaners</h3><p>House cleaning service · Los Angeles, CA</p></div>
+        <div><h3>Babylon Rug Cleaners</h3><p>House cleaning service · 🇺🇸 Los Angeles, CA, United States</p></div>
         <div class="tags"><span class="tag style">Swiss modern</span></div>
         <div class="acts">
           <a class="btn sec sm" href="https://itzsharad.github.io/website-concepts/babylon-rug-cleaners-251/" target="_blank" rel="noopener">View site ↗</a>
@@ -405,7 +419,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
         <div class="view"><span>View live site ↗</span></div>
       </a>
       <div class="meta">
-        <div><h3>V.A. Maids and Associates</h3><p>House cleaning service · Los Angeles, CA</p></div>
+        <div><h3>V.A. Maids and Associates</h3><p>House cleaning service · 🇺🇸 Los Angeles, CA, United States</p></div>
         <div class="tags"><span class="tag style">Bold contemporary</span></div>
         <div class="acts">
           <a class="btn sec sm" href="https://itzsharad.github.io/website-concepts/v-a-maids-and-associates-247/" target="_blank" rel="noopener">View site ↗</a>
@@ -421,7 +435,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
         <div class="view"><span>View live site ↗</span></div>
       </a>
       <div class="meta">
-        <div><h3>Best Maintenance Services</h3><p>House cleaning service · Los Angeles, CA</p></div>
+        <div><h3>Best Maintenance Services</h3><p>House cleaning service · 🇺🇸 Los Angeles, CA, United States</p></div>
         <div class="tags"><span class="tag style">Warm boutique</span></div>
         <div class="acts">
           <a class="btn sec sm" href="https://itzsharad.github.io/website-concepts/best-maintenance-services-238/" target="_blank" rel="noopener">View site ↗</a>
@@ -437,7 +451,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
         <div class="view"><span>View live site ↗</span></div>
       </a>
       <div class="meta">
-        <div><h3>Rosa&#39;s Cleaning Services</h3><p>House cleaning service · Los Angeles, CA</p></div>
+        <div><h3>Rosa&#39;s Cleaning Services</h3><p>House cleaning service · 🇺🇸 Los Angeles, CA, United States</p></div>
         <div class="tags"><span class="tag style">Coastal light</span></div>
         <div class="acts">
           <a class="btn sec sm" href="https://itzsharad.github.io/website-concepts/rosa-s-cleaning-services-240/" target="_blank" rel="noopener">View site ↗</a>
@@ -453,7 +467,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
         <div class="view"><span>View live site ↗</span></div>
       </a>
       <div class="meta">
-        <div><h3>Nurman Chiropractic, PLLC</h3><p>Chiropractor · Austin, TX</p></div>
+        <div><h3>Nurman Chiropractic, PLLC</h3><p>Chiropractor · 🇺🇸 Austin, TX, United States</p></div>
         <div class="tags"><span class="tag style">Warm boutique</span></div>
         <div class="acts">
           <a class="btn sec sm" href="https://itzsharad.github.io/website-concepts/nurman-chiropractic-pllc-129/" target="_blank" rel="noopener">View site ↗</a>
@@ -469,7 +483,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
         <div class="view"><span>View live site ↗</span></div>
       </a>
       <div class="meta">
-        <div><h3>The Joint Chiropractic</h3><p>Chiropractor · Austin, TX</p></div>
+        <div><h3>The Joint Chiropractic</h3><p>Chiropractor · 🇺🇸 Austin, TX, United States</p></div>
         <div class="tags"><span class="tag style">Coastal light</span></div>
         <div class="acts">
           <a class="btn sec sm" href="https://itzsharad.github.io/website-concepts/the-joint-chiropractic-55/" target="_blank" rel="noopener">View site ↗</a>
@@ -485,7 +499,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
         <div class="view"><span>View live site ↗</span></div>
       </a>
       <div class="meta">
-        <div><h3>Smoovin</h3><p>Moving company · San Diego, CA</p></div>
+        <div><h3>Smoovin</h3><p>Moving company · 🇺🇸 San Diego, CA, United States</p></div>
         <div class="tags"><span class="tag style">Dark cinematic</span></div>
         <div class="acts">
           <a class="btn sec sm" href="https://itzsharad.github.io/website-concepts/smoovin-472/" target="_blank" rel="noopener">View site ↗</a>
@@ -501,7 +515,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
         <div class="view"><span>View live site ↗</span></div>
       </a>
       <div class="meta">
-        <div><h3>Nonstop Carriers</h3><p>Moving company · San Diego, CA</p></div>
+        <div><h3>Nonstop Carriers</h3><p>Moving company · 🇺🇸 San Diego, CA, United States</p></div>
         <div class="tags"><span class="tag style">Bold contemporary</span></div>
         <div class="acts">
           <a class="btn sec sm" href="https://itzsharad.github.io/website-concepts/nonstop-carriers-456/" target="_blank" rel="noopener">View site ↗</a>
@@ -517,7 +531,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
         <div class="view"><span>View live site ↗</span></div>
       </a>
       <div class="meta">
-        <div><h3>Ybt Van Lines</h3><p>Moving company · New York, NY</p></div>
+        <div><h3>Ybt Van Lines</h3><p>Moving company · 🇺🇸 New York, NY, United States</p></div>
         <div class="tags"><span class="tag style">Swiss modern</span></div>
         <div class="acts">
           <a class="btn sec sm" href="https://itzsharad.github.io/website-concepts/ybt-van-lines-416/" target="_blank" rel="noopener">View site ↗</a>
@@ -533,7 +547,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
         <div class="view"><span>View live site ↗</span></div>
       </a>
       <div class="meta">
-        <div><h3>American Power Moving</h3><p>Moving company · New York, NY</p></div>
+        <div><h3>American Power Moving</h3><p>Moving company · 🇺🇸 New York, NY, United States</p></div>
         <div class="tags"><span class="tag style">Dark cinematic</span></div>
         <div class="acts">
           <a class="btn sec sm" href="https://itzsharad.github.io/website-concepts/american-power-moving-411/" target="_blank" rel="noopener">View site ↗</a>
@@ -549,7 +563,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
         <div class="view"><span>View live site ↗</span></div>
       </a>
       <div class="meta">
-        <div><h3>Big Easy&#39;s Moving</h3><p>Moving company · Austin, TX</p></div>
+        <div><h3>Big Easy&#39;s Moving</h3><p>Moving company · 🇺🇸 Austin, TX, United States</p></div>
         <div class="tags"><span class="tag style">Dark cinematic</span></div>
         <div class="acts">
           <a class="btn sec sm" href="https://itzsharad.github.io/website-concepts/big-easy-s-moving-154/" target="_blank" rel="noopener">View site ↗</a>
@@ -565,7 +579,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
         <div class="view"><span>View live site ↗</span></div>
       </a>
       <div class="meta">
-        <div><h3>Coburg Hill Oral Care</h3><p>Dentist · Melbourne, VIC, Australia</p></div>
+        <div><h3>Coburg Hill Oral Care</h3><p>Dentist · 🇦🇺 Melbourne, VIC, Australia</p></div>
         <div class="tags"><span class="tag style">Bold contemporary</span></div>
         <div class="acts">
           <a class="btn sec sm" href="https://itzsharad.github.io/website-concepts/coburg-hill-oral-care-589/" target="_blank" rel="noopener">View site ↗</a>
@@ -581,7 +595,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
         <div class="view"><span>View live site ↗</span></div>
       </a>
       <div class="meta">
-        <div><h3>Clifton Hill Dental</h3><p>Dentist · Melbourne, VIC, Australia</p></div>
+        <div><h3>Clifton Hill Dental</h3><p>Dentist · 🇦🇺 Melbourne, VIC, Australia</p></div>
         <div class="tags"><span class="tag style">Editorial luxury</span></div>
         <div class="acts">
           <a class="btn sec sm" href="https://itzsharad.github.io/website-concepts/clifton-hill-dental-587/" target="_blank" rel="noopener">View site ↗</a>
@@ -597,7 +611,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
         <div class="view"><span>View live site ↗</span></div>
       </a>
       <div class="meta">
-        <div><h3>Pure Orthodontics</h3><p>Dentist · Melbourne, VIC, Australia</p></div>
+        <div><h3>Pure Orthodontics</h3><p>Dentist · 🇦🇺 Melbourne, VIC, Australia</p></div>
         <div class="tags"><span class="tag style">Warm boutique</span></div>
         <div class="acts">
           <a class="btn sec sm" href="https://itzsharad.github.io/website-concepts/pure-orthodontics-556/" target="_blank" rel="noopener">View site ↗</a>
@@ -613,7 +627,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
         <div class="view"><span>View live site ↗</span></div>
       </a>
       <div class="meta">
-        <div><h3>Melbourne Dental Vision</h3><p>Dentist · Melbourne, VIC, Australia</p></div>
+        <div><h3>Melbourne Dental Vision</h3><p>Dentist · 🇦🇺 Melbourne, VIC, Australia</p></div>
         <div class="tags"><span class="tag style">Coastal light</span></div>
         <div class="acts">
           <a class="btn sec sm" href="https://itzsharad.github.io/website-concepts/melbourne-dental-vision-581/" target="_blank" rel="noopener">View site ↗</a>
@@ -629,7 +643,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
         <div class="view"><span>View live site ↗</span></div>
       </a>
       <div class="meta">
-        <div><h3>Church Road Chiropractic Clinic</h3><p>Chiropractor · London, United Kingdom</p></div>
+        <div><h3>Church Road Chiropractic Clinic</h3><p>Chiropractor · 🇬🇧 London, United Kingdom</p></div>
         <div class="tags"><span class="tag style">Bold contemporary</span></div>
         <div class="acts">
           <a class="btn sec sm" href="https://itzsharad.github.io/website-concepts/church-road-chiropractic-clinic-302/" target="_blank" rel="noopener">View site ↗</a>
@@ -645,7 +659,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
         <div class="view"><span>View live site ↗</span></div>
       </a>
       <div class="meta">
-        <div><h3>SpineCentral</h3><p>Chiropractor · London, United Kingdom</p></div>
+        <div><h3>SpineCentral</h3><p>Chiropractor · 🇬🇧 London, United Kingdom</p></div>
         <div class="tags"><span class="tag style">Swiss modern</span></div>
         <div class="acts">
           <a class="btn sec sm" href="https://itzsharad.github.io/website-concepts/spinecentral-351/" target="_blank" rel="noopener">View site ↗</a>
@@ -661,7 +675,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
         <div class="view"><span>View live site ↗</span></div>
       </a>
       <div class="meta">
-        <div><h3>Greenvale Dentistry</h3><p>Dentist · Melbourne, VIC, Australia</p></div>
+        <div><h3>Greenvale Dentistry</h3><p>Dentist · 🇦🇺 Melbourne, VIC, Australia</p></div>
         <div class="tags"><span class="tag style">Editorial luxury</span></div>
         <div class="acts">
           <a class="btn sec sm" href="https://itzsharad.github.io/website-concepts/greenvale-dentistry-578/" target="_blank" rel="noopener">View site ↗</a>
@@ -677,7 +691,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
         <div class="view"><span>View live site ↗</span></div>
       </a>
       <div class="meta">
-        <div><h3>Battersea &amp; Wandsworth Chiropractors</h3><p>Chiropractor · London, United Kingdom</p></div>
+        <div><h3>Battersea &amp; Wandsworth Chiropractors</h3><p>Chiropractor · 🇬🇧 London, United Kingdom</p></div>
         <div class="tags"><span class="tag style">Coastal light</span></div>
         <div class="acts">
           <a class="btn sec sm" href="https://itzsharad.github.io/website-concepts/battersea-wandsworth-chiropractors-291/" target="_blank" rel="noopener">View site ↗</a>
@@ -693,11 +707,1355 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
         <div class="view"><span>View live site ↗</span></div>
       </a>
       <div class="meta">
-        <div><h3>United Piano Movers San Diego</h3><p>Moving company · San Diego, CA</p></div>
+        <div><h3>United Piano Movers San Diego</h3><p>Moving company · 🇺🇸 San Diego, CA, United States</p></div>
         <div class="tags"><span class="tag style">Dark cinematic</span></div>
         <div class="acts">
           <a class="btn sec sm" href="https://itzsharad.github.io/website-concepts/united-piano-movers-san-diego-467/" target="_blank" rel="noopener">View site ↗</a>
           
+        </div>
+      </div>
+    </article>
+    
+    <article class="card" data-k="Moving company">
+      <a class="shot" href="https://itzsharad.github.io/website-concepts/allen-davis-moving-systems-local-long-distance-461/" target="_blank" rel="noopener" aria-label="Open the Allen Davis Moving Systems Local &amp; Long Distance website">
+        <div class="bar"><i></i><i></i><i></i></div>
+        <img src="thumbs/allen-davis-moving-systems-local-long-distance-461.jpg?v=1792870283" alt="Website design for Allen Davis Moving Systems Local &amp; Long Distance" loading="lazy" width="960" height="600">
+        <div class="view"><span>View live site ↗</span></div>
+      </a>
+      <div class="meta">
+        <div><h3>Allen Davis Moving Systems Local &amp; Long Distance</h3><p>Moving company · 🇺🇸 San Diego, CA, United States</p></div>
+        <div class="tags"><span class="tag style">Swiss modern</span></div>
+        <div class="acts">
+          <a class="btn sec sm" href="https://itzsharad.github.io/website-concepts/allen-davis-moving-systems-local-long-distance-461/" target="_blank" rel="noopener">View site ↗</a>
+          <a class="btn sec sm" href="https://youtu.be/f2noqUivJ8o" target="_blank" rel="noopener"><span class="yt"></span>Tour</a>
+        </div>
+      </div>
+    </article>
+    
+    <article class="card" data-k="Moving company">
+      <a class="shot" href="https://itzsharad.github.io/website-concepts/globe-moving-group-inc-464/" target="_blank" rel="noopener" aria-label="Open the Globe Moving Group Inc. website">
+        <div class="bar"><i></i><i></i><i></i></div>
+        <img src="thumbs/globe-moving-group-inc-464.jpg?v=1792870285" alt="Website design for Globe Moving Group Inc." loading="lazy" width="960" height="600">
+        <div class="view"><span>View live site ↗</span></div>
+      </a>
+      <div class="meta">
+        <div><h3>Globe Moving Group Inc.</h3><p>Moving company · 🇺🇸 San Diego, CA, United States</p></div>
+        <div class="tags"><span class="tag style">Swiss modern</span></div>
+        <div class="acts">
+          <a class="btn sec sm" href="https://itzsharad.github.io/website-concepts/globe-moving-group-inc-464/" target="_blank" rel="noopener">View site ↗</a>
+          <a class="btn sec sm" href="https://youtu.be/dd4pqHnxHOQ" target="_blank" rel="noopener"><span class="yt"></span>Tour</a>
+        </div>
+      </div>
+    </article>
+    
+    <article class="card" data-k="Moving company">
+      <a class="shot" href="https://itzsharad.github.io/website-concepts/riptide-moving-and-delivery-458/" target="_blank" rel="noopener" aria-label="Open the Riptide Moving and Delivery website">
+        <div class="bar"><i></i><i></i><i></i></div>
+        <img src="thumbs/riptide-moving-and-delivery-458.jpg?v=1792870287" alt="Website design for Riptide Moving and Delivery" loading="lazy" width="960" height="600">
+        <div class="view"><span>View live site ↗</span></div>
+      </a>
+      <div class="meta">
+        <div><h3>Riptide Moving and Delivery</h3><p>Moving company · 🇺🇸 San Diego, CA, United States</p></div>
+        <div class="tags"><span class="tag style">Swiss modern</span></div>
+        <div class="acts">
+          <a class="btn sec sm" href="https://itzsharad.github.io/website-concepts/riptide-moving-and-delivery-458/" target="_blank" rel="noopener">View site ↗</a>
+          <a class="btn sec sm" href="https://youtu.be/kkw2qmvzcwc" target="_blank" rel="noopener"><span class="yt"></span>Tour</a>
+        </div>
+      </div>
+    </article>
+    
+    <article class="card" data-k="Moving company">
+      <a class="shot" href="https://itzsharad.github.io/website-concepts/s-d-moving-company-453/" target="_blank" rel="noopener" aria-label="Open the S&amp;D Moving Company website">
+        <div class="bar"><i></i><i></i><i></i></div>
+        <img src="thumbs/s-d-moving-company-453.jpg?v=1792870289" alt="Website design for S&amp;D Moving Company" loading="lazy" width="960" height="600">
+        <div class="view"><span>View live site ↗</span></div>
+      </a>
+      <div class="meta">
+        <div><h3>S&amp;D Moving Company</h3><p>Moving company · 🇺🇸 San Diego, CA, United States</p></div>
+        <div class="tags"><span class="tag style">Bold contemporary</span></div>
+        <div class="acts">
+          <a class="btn sec sm" href="https://itzsharad.github.io/website-concepts/s-d-moving-company-453/" target="_blank" rel="noopener">View site ↗</a>
+          
+        </div>
+      </div>
+    </article>
+    
+    <article class="card" data-k="Moving company">
+      <a class="shot" href="https://itzsharad.github.io/website-concepts/xin-yf-new-york-moving-company-443/" target="_blank" rel="noopener" aria-label="Open the Xin YF New York Moving Company website">
+        <div class="bar"><i></i><i></i><i></i></div>
+        <img src="thumbs/xin-yf-new-york-moving-company-443.jpg?v=1792870291" alt="Website design for Xin YF New York Moving Company" loading="lazy" width="960" height="600">
+        <div class="view"><span>View live site ↗</span></div>
+      </a>
+      <div class="meta">
+        <div><h3>Xin YF New York Moving Company</h3><p>Moving company · 🇺🇸 New York, NY, United States</p></div>
+        <div class="tags"><span class="tag style">Dark cinematic</span></div>
+        <div class="acts">
+          <a class="btn sec sm" href="https://itzsharad.github.io/website-concepts/xin-yf-new-york-moving-company-443/" target="_blank" rel="noopener">View site ↗</a>
+          <a class="btn sec sm" href="https://youtu.be/u4JQ041sKWw" target="_blank" rel="noopener"><span class="yt"></span>Tour</a>
+        </div>
+      </div>
+    </article>
+    
+    <article class="card" data-k="Moving company">
+      <a class="shot" href="https://itzsharad.github.io/website-concepts/express-moving-ridgewood-439/" target="_blank" rel="noopener" aria-label="Open the Express Moving Ridgewood website">
+        <div class="bar"><i></i><i></i><i></i></div>
+        <img src="thumbs/express-moving-ridgewood-439.jpg?v=1792870293" alt="Website design for Express Moving Ridgewood" loading="lazy" width="960" height="600">
+        <div class="view"><span>View live site ↗</span></div>
+      </a>
+      <div class="meta">
+        <div><h3>Express Moving Ridgewood</h3><p>Moving company · 🇺🇸 New York, NY, United States</p></div>
+        <div class="tags"><span class="tag style">Swiss modern</span></div>
+        <div class="acts">
+          <a class="btn sec sm" href="https://itzsharad.github.io/website-concepts/express-moving-ridgewood-439/" target="_blank" rel="noopener">View site ↗</a>
+          <a class="btn sec sm" href="https://youtu.be/V9kI1CrfwDA" target="_blank" rel="noopener"><span class="yt"></span>Tour</a>
+        </div>
+      </div>
+    </article>
+    
+    <article class="card" data-k="Moving company">
+      <a class="shot" href="https://itzsharad.github.io/website-concepts/loyal-moving-group-437/" target="_blank" rel="noopener" aria-label="Open the Loyal Moving Group website">
+        <div class="bar"><i></i><i></i><i></i></div>
+        <img src="thumbs/loyal-moving-group-437.jpg?v=1792870296" alt="Website design for Loyal Moving Group" loading="lazy" width="960" height="600">
+        <div class="view"><span>View live site ↗</span></div>
+      </a>
+      <div class="meta">
+        <div><h3>Loyal Moving Group</h3><p>Moving company · 🇺🇸 New York, NY, United States</p></div>
+        <div class="tags"><span class="tag style">Bold contemporary</span></div>
+        <div class="acts">
+          <a class="btn sec sm" href="https://itzsharad.github.io/website-concepts/loyal-moving-group-437/" target="_blank" rel="noopener">View site ↗</a>
+          <a class="btn sec sm" href="https://youtu.be/HEYES6N4EgU" target="_blank" rel="noopener"><span class="yt"></span>Tour</a>
+        </div>
+      </div>
+    </article>
+    
+    <article class="card" data-k="Moving company">
+      <a class="shot" href="https://itzsharad.github.io/website-concepts/the-honeymovers-434/" target="_blank" rel="noopener" aria-label="Open the The HoneyMovers website">
+        <div class="bar"><i></i><i></i><i></i></div>
+        <img src="thumbs/the-honeymovers-434.jpg?v=1792870298" alt="Website design for The HoneyMovers" loading="lazy" width="960" height="600">
+        <div class="view"><span>View live site ↗</span></div>
+      </a>
+      <div class="meta">
+        <div><h3>The HoneyMovers</h3><p>Moving company · 🇺🇸 New York, NY, United States</p></div>
+        <div class="tags"><span class="tag style">Bold contemporary</span></div>
+        <div class="acts">
+          <a class="btn sec sm" href="https://itzsharad.github.io/website-concepts/the-honeymovers-434/" target="_blank" rel="noopener">View site ↗</a>
+          <a class="btn sec sm" href="https://youtu.be/U-htlJIpv8E" target="_blank" rel="noopener"><span class="yt"></span>Tour</a>
+        </div>
+      </div>
+    </article>
+    
+    <article class="card" data-k="Moving company">
+      <a class="shot" href="https://itzsharad.github.io/website-concepts/jgentle-van-lines-428/" target="_blank" rel="noopener" aria-label="Open the JGentle Van Lines website">
+        <div class="bar"><i></i><i></i><i></i></div>
+        <img src="thumbs/jgentle-van-lines-428.jpg?v=1792870300" alt="Website design for JGentle Van Lines" loading="lazy" width="960" height="600">
+        <div class="view"><span>View live site ↗</span></div>
+      </a>
+      <div class="meta">
+        <div><h3>JGentle Van Lines</h3><p>Moving company · 🇺🇸 New York, NY, United States</p></div>
+        <div class="tags"><span class="tag style">Swiss modern</span></div>
+        <div class="acts">
+          <a class="btn sec sm" href="https://itzsharad.github.io/website-concepts/jgentle-van-lines-428/" target="_blank" rel="noopener">View site ↗</a>
+          
+        </div>
+      </div>
+    </article>
+    
+    <article class="card" data-k="Moving company">
+      <a class="shot" href="https://itzsharad.github.io/website-concepts/engle-movers-422/" target="_blank" rel="noopener" aria-label="Open the Engle Movers website">
+        <div class="bar"><i></i><i></i><i></i></div>
+        <img src="thumbs/engle-movers-422.jpg?v=1792870302" alt="Website design for Engle Movers" loading="lazy" width="960" height="600">
+        <div class="view"><span>View live site ↗</span></div>
+      </a>
+      <div class="meta">
+        <div><h3>Engle Movers</h3><p>Moving company · 🇺🇸 New York, NY, United States</p></div>
+        <div class="tags"><span class="tag style">Bold contemporary</span></div>
+        <div class="acts">
+          <a class="btn sec sm" href="https://itzsharad.github.io/website-concepts/engle-movers-422/" target="_blank" rel="noopener">View site ↗</a>
+          
+        </div>
+      </div>
+    </article>
+    
+    <article class="card" data-k="Moving company">
+      <a class="shot" href="https://itzsharad.github.io/website-concepts/full-house-movers-nyc-418/" target="_blank" rel="noopener" aria-label="Open the Full House Movers NYC website">
+        <div class="bar"><i></i><i></i><i></i></div>
+        <img src="thumbs/full-house-movers-nyc-418.jpg?v=1792870304" alt="Website design for Full House Movers NYC" loading="lazy" width="960" height="600">
+        <div class="view"><span>View live site ↗</span></div>
+      </a>
+      <div class="meta">
+        <div><h3>Full House Movers NYC</h3><p>Moving company · 🇺🇸 New York, NY, United States</p></div>
+        <div class="tags"><span class="tag style">Dark cinematic</span></div>
+        <div class="acts">
+          <a class="btn sec sm" href="https://itzsharad.github.io/website-concepts/full-house-movers-nyc-418/" target="_blank" rel="noopener">View site ↗</a>
+          
+        </div>
+      </div>
+    </article>
+    
+    <article class="card" data-k="Moving company">
+      <a class="shot" href="https://itzsharad.github.io/website-concepts/helen-and-sons-movers-417/" target="_blank" rel="noopener" aria-label="Open the Helen and Sons Movers website">
+        <div class="bar"><i></i><i></i><i></i></div>
+        <img src="thumbs/helen-and-sons-movers-417.jpg?v=1792870306" alt="Website design for Helen and Sons Movers" loading="lazy" width="960" height="600">
+        <div class="view"><span>View live site ↗</span></div>
+      </a>
+      <div class="meta">
+        <div><h3>Helen and Sons Movers</h3><p>Moving company · 🇺🇸 New York, NY, United States</p></div>
+        <div class="tags"><span class="tag style">Swiss modern</span></div>
+        <div class="acts">
+          <a class="btn sec sm" href="https://itzsharad.github.io/website-concepts/helen-and-sons-movers-417/" target="_blank" rel="noopener">View site ↗</a>
+          
+        </div>
+      </div>
+    </article>
+    
+    <article class="card" data-k="Moving company">
+      <a class="shot" href="https://itzsharad.github.io/website-concepts/gibraltar-van-lines-408/" target="_blank" rel="noopener" aria-label="Open the Gibraltar Van Lines website">
+        <div class="bar"><i></i><i></i><i></i></div>
+        <img src="thumbs/gibraltar-van-lines-408.jpg?v=1792870362" alt="Website design for Gibraltar Van Lines" loading="lazy" width="960" height="600">
+        <div class="view"><span>View live site ↗</span></div>
+      </a>
+      <div class="meta">
+        <div><h3>Gibraltar Van Lines</h3><p>Moving company · 🇺🇸 New York, NY, United States</p></div>
+        <div class="tags"><span class="tag style">Bold contemporary</span></div>
+        <div class="acts">
+          <a class="btn sec sm" href="https://itzsharad.github.io/website-concepts/gibraltar-van-lines-408/" target="_blank" rel="noopener">View site ↗</a>
+          
+        </div>
+      </div>
+    </article>
+    
+    <article class="card" data-k="Moving company">
+      <a class="shot" href="https://itzsharad.github.io/website-concepts/tiktok-406/" target="_blank" rel="noopener" aria-label="Open the Tiktok website">
+        <div class="bar"><i></i><i></i><i></i></div>
+        <img src="thumbs/tiktok-406.jpg?v=1792870365" alt="Website design for Tiktok" loading="lazy" width="960" height="600">
+        <div class="view"><span>View live site ↗</span></div>
+      </a>
+      <div class="meta">
+        <div><h3>Tiktok</h3><p>Moving company · 🇺🇸 New York, NY, United States</p></div>
+        <div class="tags"><span class="tag style">Dark cinematic</span></div>
+        <div class="acts">
+          <a class="btn sec sm" href="https://itzsharad.github.io/website-concepts/tiktok-406/" target="_blank" rel="noopener">View site ↗</a>
+          
+        </div>
+      </div>
+    </article>
+    
+    <article class="card" data-k="Dentist">
+      <a class="shot" href="https://itzsharad.github.io/website-concepts/mountain-gate-dental-clinic-591/" target="_blank" rel="noopener" aria-label="Open the Mountain Gate Dental Clinic website">
+        <div class="bar"><i></i><i></i><i></i></div>
+        <img src="thumbs/mountain-gate-dental-clinic-591.jpg?v=1792870367" alt="Website design for Mountain Gate Dental Clinic" loading="lazy" width="960" height="600">
+        <div class="view"><span>View live site ↗</span></div>
+      </a>
+      <div class="meta">
+        <div><h3>Mountain Gate Dental Clinic</h3><p>Dentist · 🇦🇺 Melbourne, VIC, Australia</p></div>
+        <div class="tags"><span class="tag style">Editorial luxury</span></div>
+        <div class="acts">
+          <a class="btn sec sm" href="https://itzsharad.github.io/website-concepts/mountain-gate-dental-clinic-591/" target="_blank" rel="noopener">View site ↗</a>
+          
+        </div>
+      </div>
+    </article>
+    
+    <article class="card" data-k="Dentist">
+      <a class="shot" href="https://itzsharad.github.io/website-concepts/toorak-village-dental-care-560/" target="_blank" rel="noopener" aria-label="Open the Toorak Village Dental Care website">
+        <div class="bar"><i></i><i></i><i></i></div>
+        <img src="thumbs/toorak-village-dental-care-560.jpg?v=1792870369" alt="Website design for Toorak Village Dental Care" loading="lazy" width="960" height="600">
+        <div class="view"><span>View live site ↗</span></div>
+      </a>
+      <div class="meta">
+        <div><h3>Toorak Village Dental Care</h3><p>Dentist · 🇦🇺 Melbourne, VIC, Australia</p></div>
+        <div class="tags"><span class="tag style">Coastal light</span></div>
+        <div class="acts">
+          <a class="btn sec sm" href="https://itzsharad.github.io/website-concepts/toorak-village-dental-care-560/" target="_blank" rel="noopener">View site ↗</a>
+          
+        </div>
+      </div>
+    </article>
+    
+    <article class="card" data-k="Dentist">
+      <a class="shot" href="https://itzsharad.github.io/website-concepts/hellenic-dental-clinic-547/" target="_blank" rel="noopener" aria-label="Open the Hellenic Dental Clinic website">
+        <div class="bar"><i></i><i></i><i></i></div>
+        <img src="thumbs/hellenic-dental-clinic-547.jpg?v=1792870371" alt="Website design for Hellenic Dental Clinic" loading="lazy" width="960" height="600">
+        <div class="view"><span>View live site ↗</span></div>
+      </a>
+      <div class="meta">
+        <div><h3>Hellenic Dental Clinic</h3><p>Dentist · 🇦🇪 Dubai, United Arab Emirates</p></div>
+        <div class="tags"><span class="tag style">Swiss modern</span></div>
+        <div class="acts">
+          <a class="btn sec sm" href="https://itzsharad.github.io/website-concepts/hellenic-dental-clinic-547/" target="_blank" rel="noopener">View site ↗</a>
+          
+        </div>
+      </div>
+    </article>
+    
+    <article class="card" data-k="Dentist">
+      <a class="shot" href="https://itzsharad.github.io/website-concepts/medicazone-509/" target="_blank" rel="noopener" aria-label="Open the Medicazone website">
+        <div class="bar"><i></i><i></i><i></i></div>
+        <img src="thumbs/medicazone-509.jpg?v=1792870373" alt="Website design for Medicazone" loading="lazy" width="960" height="600">
+        <div class="view"><span>View live site ↗</span></div>
+      </a>
+      <div class="meta">
+        <div><h3>Medicazone</h3><p>Dentist · 🇦🇪 Dubai, United Arab Emirates</p></div>
+        <div class="tags"><span class="tag style">Bold contemporary</span></div>
+        <div class="acts">
+          <a class="btn sec sm" href="https://itzsharad.github.io/website-concepts/medicazone-509/" target="_blank" rel="noopener">View site ↗</a>
+          
+        </div>
+      </div>
+    </article>
+    
+    <article class="card" data-k="Dentist">
+      <a class="shot" href="https://itzsharad.github.io/website-concepts/dental-zone-508/" target="_blank" rel="noopener" aria-label="Open the Dental Zone website">
+        <div class="bar"><i></i><i></i><i></i></div>
+        <img src="thumbs/dental-zone-508.jpg?v=1792870375" alt="Website design for Dental Zone" loading="lazy" width="960" height="600">
+        <div class="view"><span>View live site ↗</span></div>
+      </a>
+      <div class="meta">
+        <div><h3>Dental Zone</h3><p>Dentist · 🇦🇪 Dubai, United Arab Emirates</p></div>
+        <div class="tags"><span class="tag style">Warm boutique</span></div>
+        <div class="acts">
+          <a class="btn sec sm" href="https://itzsharad.github.io/website-concepts/dental-zone-508/" target="_blank" rel="noopener">View site ↗</a>
+          
+        </div>
+      </div>
+    </article>
+    
+    <article class="card" data-k="Real estate agent">
+      <a class="shot" href="https://itzsharad.github.io/website-concepts/marriott-palace-635/" target="_blank" rel="noopener" aria-label="Open the marriott_palace website">
+        <div class="bar"><i></i><i></i><i></i></div>
+        <img src="thumbs/marriott-palace-635.jpg?v=1792870377" alt="Website design for marriott_palace" loading="lazy" width="960" height="600">
+        <div class="view"><span>View live site ↗</span></div>
+      </a>
+      <div class="meta">
+        <div><h3>marriott_palace</h3><p>Real estate agent · 🇰🇼 Kuwait City, Kuwait</p></div>
+        <div class="tags"><span class="tag style">Editorial luxury</span></div>
+        <div class="acts">
+          <a class="btn sec sm" href="https://itzsharad.github.io/website-concepts/marriott-palace-635/" target="_blank" rel="noopener">View site ↗</a>
+          
+        </div>
+      </div>
+    </article>
+    
+    <article class="card" data-k="Dentist">
+      <a class="shot" href="https://itzsharad.github.io/website-concepts/german-dental-oasis-506/" target="_blank" rel="noopener" aria-label="Open the German Dental Oasis website">
+        <div class="bar"><i></i><i></i><i></i></div>
+        <img src="thumbs/german-dental-oasis-506.jpg?v=1792870379" alt="Website design for German Dental Oasis" loading="lazy" width="960" height="600">
+        <div class="view"><span>View live site ↗</span></div>
+      </a>
+      <div class="meta">
+        <div><h3>German Dental Oasis</h3><p>Dentist · 🇦🇪 Dubai, United Arab Emirates</p></div>
+        <div class="tags"><span class="tag style">Coastal light</span></div>
+        <div class="acts">
+          <a class="btn sec sm" href="https://itzsharad.github.io/website-concepts/german-dental-oasis-506/" target="_blank" rel="noopener">View site ↗</a>
+          
+        </div>
+      </div>
+    </article>
+    
+    <article class="card" data-k="Real estate agent">
+      <a class="shot" href="https://itzsharad.github.io/website-concepts/the-corner-kuwait-629/" target="_blank" rel="noopener" aria-label="Open the The Corner Kuwait website">
+        <div class="bar"><i></i><i></i><i></i></div>
+        <img src="thumbs/the-corner-kuwait-629.jpg?v=1792870382" alt="Website design for The Corner Kuwait" loading="lazy" width="960" height="600">
+        <div class="view"><span>View live site ↗</span></div>
+      </a>
+      <div class="meta">
+        <div><h3>The Corner Kuwait</h3><p>Real estate agent · 🇰🇼 Kuwait City, Kuwait</p></div>
+        <div class="tags"><span class="tag style">Dark cinematic</span></div>
+        <div class="acts">
+          <a class="btn sec sm" href="https://itzsharad.github.io/website-concepts/the-corner-kuwait-629/" target="_blank" rel="noopener">View site ↗</a>
+          
+        </div>
+      </div>
+    </article>
+    
+    <article class="card" data-k="Dentist">
+      <a class="shot" href="https://itzsharad.github.io/website-concepts/williams-landing-dental-clinic-570/" target="_blank" rel="noopener" aria-label="Open the Williams Landing Dental Clinic website">
+        <div class="bar"><i></i><i></i><i></i></div>
+        <img src="thumbs/williams-landing-dental-clinic-570.jpg?v=1792870384" alt="Website design for Williams Landing Dental Clinic" loading="lazy" width="960" height="600">
+        <div class="view"><span>View live site ↗</span></div>
+      </a>
+      <div class="meta">
+        <div><h3>Williams Landing Dental Clinic</h3><p>Dentist · 🇦🇺 Melbourne, VIC, Australia</p></div>
+        <div class="tags"><span class="tag style">Bold contemporary</span></div>
+        <div class="acts">
+          <a class="btn sec sm" href="https://itzsharad.github.io/website-concepts/williams-landing-dental-clinic-570/" target="_blank" rel="noopener">View site ↗</a>
+          
+        </div>
+      </div>
+    </article>
+    
+    <article class="card" data-k="Dentist">
+      <a class="shot" href="https://itzsharad.github.io/website-concepts/dr-rafih-khoury-dental-clinic-528/" target="_blank" rel="noopener" aria-label="Open the Dr. Rafih Khoury Dental Clinic website">
+        <div class="bar"><i></i><i></i><i></i></div>
+        <img src="thumbs/dr-rafih-khoury-dental-clinic-528.jpg?v=1792870386" alt="Website design for Dr. Rafih Khoury Dental Clinic" loading="lazy" width="960" height="600">
+        <div class="view"><span>View live site ↗</span></div>
+      </a>
+      <div class="meta">
+        <div><h3>Dr. Rafih Khoury Dental Clinic</h3><p>Dentist · 🇦🇪 Dubai, United Arab Emirates</p></div>
+        <div class="tags"><span class="tag style">Warm boutique</span></div>
+        <div class="acts">
+          <a class="btn sec sm" href="https://itzsharad.github.io/website-concepts/dr-rafih-khoury-dental-clinic-528/" target="_blank" rel="noopener">View site ↗</a>
+          
+        </div>
+      </div>
+    </article>
+    
+    <article class="card" data-k="Dentist">
+      <a class="shot" href="https://itzsharad.github.io/website-concepts/hadiya-dental-center-524/" target="_blank" rel="noopener" aria-label="Open the Hadiya Dental Center website">
+        <div class="bar"><i></i><i></i><i></i></div>
+        <img src="thumbs/hadiya-dental-center-524.jpg?v=1792870388" alt="Website design for Hadiya Dental Center" loading="lazy" width="960" height="600">
+        <div class="view"><span>View live site ↗</span></div>
+      </a>
+      <div class="meta">
+        <div><h3>Hadiya Dental Center</h3><p>Dentist · 🇦🇪 Dubai, United Arab Emirates</p></div>
+        <div class="tags"><span class="tag style">Coastal light</span></div>
+        <div class="acts">
+          <a class="btn sec sm" href="https://itzsharad.github.io/website-concepts/hadiya-dental-center-524/" target="_blank" rel="noopener">View site ↗</a>
+          
+        </div>
+      </div>
+    </article>
+    
+    <article class="card" data-k="Real estate agent">
+      <a class="shot" href="https://itzsharad.github.io/website-concepts/uhod-real-estate-company-636/" target="_blank" rel="noopener" aria-label="Open the Uhod Real Estate Company website">
+        <div class="bar"><i></i><i></i><i></i></div>
+        <img src="thumbs/uhod-real-estate-company-636.jpg?v=1792870391" alt="Website design for Uhod Real Estate Company" loading="lazy" width="960" height="600">
+        <div class="view"><span>View live site ↗</span></div>
+      </a>
+      <div class="meta">
+        <div><h3>Uhod Real Estate Company</h3><p>Real estate agent · 🇰🇼 Kuwait City, Kuwait</p></div>
+        <div class="tags"><span class="tag style">Editorial luxury</span></div>
+        <div class="acts">
+          <a class="btn sec sm" href="https://itzsharad.github.io/website-concepts/uhod-real-estate-company-636/" target="_blank" rel="noopener">View site ↗</a>
+          
+        </div>
+      </div>
+    </article>
+    
+    <article class="card" data-k="Real estate agent">
+      <a class="shot" href="https://itzsharad.github.io/website-concepts/elite-homes-real-estate-626/" target="_blank" rel="noopener" aria-label="Open the Elite Homes Real Estate website">
+        <div class="bar"><i></i><i></i><i></i></div>
+        <img src="thumbs/elite-homes-real-estate-626.jpg?v=1792870393" alt="Website design for Elite Homes Real Estate" loading="lazy" width="960" height="600">
+        <div class="view"><span>View live site ↗</span></div>
+      </a>
+      <div class="meta">
+        <div><h3>Elite Homes Real Estate</h3><p>Real estate agent · 🇰🇼 Kuwait City, Kuwait</p></div>
+        <div class="tags"><span class="tag style">Heritage classic</span></div>
+        <div class="acts">
+          <a class="btn sec sm" href="https://itzsharad.github.io/website-concepts/elite-homes-real-estate-626/" target="_blank" rel="noopener">View site ↗</a>
+          
+        </div>
+      </div>
+    </article>
+    
+    <article class="card" data-k="Real estate agent">
+      <a class="shot" href="https://itzsharad.github.io/website-concepts/300f-warehouse-615/" target="_blank" rel="noopener" aria-label="Open the 300F Warehouse website">
+        <div class="bar"><i></i><i></i><i></i></div>
+        <img src="thumbs/300f-warehouse-615.jpg?v=1792870395" alt="Website design for 300F Warehouse" loading="lazy" width="960" height="600">
+        <div class="view"><span>View live site ↗</span></div>
+      </a>
+      <div class="meta">
+        <div><h3>300F Warehouse</h3><p>Real estate agent · 🇰🇼 Kuwait City, Kuwait</p></div>
+        <div class="tags"><span class="tag style">Architectural minimal</span></div>
+        <div class="acts">
+          <a class="btn sec sm" href="https://itzsharad.github.io/website-concepts/300f-warehouse-615/" target="_blank" rel="noopener">View site ↗</a>
+          
+        </div>
+      </div>
+    </article>
+    
+    <article class="card" data-k="Real estate agent">
+      <a class="shot" href="https://itzsharad.github.io/website-concepts/al-manar-clinic-613/" target="_blank" rel="noopener" aria-label="Open the Al Manar Clinic website">
+        <div class="bar"><i></i><i></i><i></i></div>
+        <img src="thumbs/al-manar-clinic-613.jpg?v=1792870397" alt="Website design for Al Manar Clinic" loading="lazy" width="960" height="600">
+        <div class="view"><span>View live site ↗</span></div>
+      </a>
+      <div class="meta">
+        <div><h3>Al Manar Clinic</h3><p>Real estate agent · 🇰🇼 Kuwait City, Kuwait</p></div>
+        <div class="tags"><span class="tag style">Dark cinematic</span></div>
+        <div class="acts">
+          <a class="btn sec sm" href="https://itzsharad.github.io/website-concepts/al-manar-clinic-613/" target="_blank" rel="noopener">View site ↗</a>
+          
+        </div>
+      </div>
+    </article>
+    
+    <article class="card" data-k="Real estate agent">
+      <a class="shot" href="https://itzsharad.github.io/website-concepts/zaina-clinic-604/" target="_blank" rel="noopener" aria-label="Open the Zaina Clinic website">
+        <div class="bar"><i></i><i></i><i></i></div>
+        <img src="thumbs/zaina-clinic-604.jpg?v=1792870399" alt="Website design for Zaina Clinic" loading="lazy" width="960" height="600">
+        <div class="view"><span>View live site ↗</span></div>
+      </a>
+      <div class="meta">
+        <div><h3>Zaina Clinic</h3><p>Real estate agent · 🇰🇼 Kuwait City, Kuwait</p></div>
+        <div class="tags"><span class="tag style">Editorial luxury</span></div>
+        <div class="acts">
+          <a class="btn sec sm" href="https://itzsharad.github.io/website-concepts/zaina-clinic-604/" target="_blank" rel="noopener">View site ↗</a>
+          
+        </div>
+      </div>
+    </article>
+    
+    <article class="card" data-k="Real estate agent">
+      <a class="shot" href="https://itzsharad.github.io/website-concepts/concept-616/" target="_blank" rel="noopener" aria-label="Open the شركة أبيات المتحدة العقارية website">
+        <div class="bar"><i></i><i></i><i></i></div>
+        <img src="thumbs/concept-616.jpg?v=1792870401" alt="Website design for شركة أبيات المتحدة العقارية" loading="lazy" width="960" height="600">
+        <div class="view"><span>View live site ↗</span></div>
+      </a>
+      <div class="meta">
+        <div><h3>شركة أبيات المتحدة العقارية</h3><p>Real estate agent · 🇰🇼 Kuwait City, Kuwait</p></div>
+        <div class="tags"><span class="tag style">Heritage classic</span></div>
+        <div class="acts">
+          <a class="btn sec sm" href="https://itzsharad.github.io/website-concepts/concept-616/" target="_blank" rel="noopener">View site ↗</a>
+          
+        </div>
+      </div>
+    </article>
+    
+    <article class="card" data-k="Real estate agent">
+      <a class="shot" href="https://itzsharad.github.io/website-concepts/aqaratt-kw-620/" target="_blank" rel="noopener" aria-label="Open the Aqaratt_kw website">
+        <div class="bar"><i></i><i></i><i></i></div>
+        <img src="thumbs/aqaratt-kw-620.jpg?v=1792870404" alt="Website design for Aqaratt_kw" loading="lazy" width="960" height="600">
+        <div class="view"><span>View live site ↗</span></div>
+      </a>
+      <div class="meta">
+        <div><h3>Aqaratt_kw</h3><p>Real estate agent · 🇰🇼 Kuwait City, Kuwait</p></div>
+        <div class="tags"><span class="tag style">Architectural minimal</span></div>
+        <div class="acts">
+          <a class="btn sec sm" href="https://itzsharad.github.io/website-concepts/aqaratt-kw-620/" target="_blank" rel="noopener">View site ↗</a>
+          
+        </div>
+      </div>
+    </article>
+    
+    <article class="card" data-k="Real estate agent">
+      <a class="shot" href="https://itzsharad.github.io/website-concepts/al-tilal-complex-646/" target="_blank" rel="noopener" aria-label="Open the Al Tilal Complex مجمع التلال website">
+        <div class="bar"><i></i><i></i><i></i></div>
+        <img src="thumbs/al-tilal-complex-646.jpg?v=1792870406" alt="Website design for Al Tilal Complex مجمع التلال" loading="lazy" width="960" height="600">
+        <div class="view"><span>View live site ↗</span></div>
+      </a>
+      <div class="meta">
+        <div><h3>Al Tilal Complex مجمع التلال</h3><p>Real estate agent · 🇰🇼 Kuwait City, Kuwait</p></div>
+        <div class="tags"><span class="tag style">Dark cinematic</span></div>
+        <div class="acts">
+          <a class="btn sec sm" href="https://itzsharad.github.io/website-concepts/al-tilal-complex-646/" target="_blank" rel="noopener">View site ↗</a>
+          
+        </div>
+      </div>
+    </article>
+    
+    <article class="card" data-k="Dentist">
+      <a class="shot" href="https://itzsharad.github.io/website-concepts/queen-napier-dental-601/" target="_blank" rel="noopener" aria-label="Open the Queen Napier Dental website">
+        <div class="bar"><i></i><i></i><i></i></div>
+        <img src="thumbs/queen-napier-dental-601.jpg?v=1792870408" alt="Website design for Queen Napier Dental" loading="lazy" width="960" height="600">
+        <div class="view"><span>View live site ↗</span></div>
+      </a>
+      <div class="meta">
+        <div><h3>Queen Napier Dental</h3><p>Dentist · 🇦🇺 Melbourne, VIC, Australia</p></div>
+        <div class="tags"><span class="tag style">Editorial luxury</span></div>
+        <div class="acts">
+          <a class="btn sec sm" href="https://itzsharad.github.io/website-concepts/queen-napier-dental-601/" target="_blank" rel="noopener">View site ↗</a>
+          
+        </div>
+      </div>
+    </article>
+    
+    <article class="card" data-k="Dentist">
+      <a class="shot" href="https://itzsharad.github.io/website-concepts/pearls-513/" target="_blank" rel="noopener" aria-label="Open the Pearls website">
+        <div class="bar"><i></i><i></i><i></i></div>
+        <img src="thumbs/pearls-513.jpg?v=1792870410" alt="Website design for Pearls" loading="lazy" width="960" height="600">
+        <div class="view"><span>View live site ↗</span></div>
+      </a>
+      <div class="meta">
+        <div><h3>Pearls</h3><p>Dentist · 🇦🇪 Dubai, United Arab Emirates</p></div>
+        <div class="tags"><span class="tag style">Warm boutique</span></div>
+        <div class="acts">
+          <a class="btn sec sm" href="https://itzsharad.github.io/website-concepts/pearls-513/" target="_blank" rel="noopener">View site ↗</a>
+          
+        </div>
+      </div>
+    </article>
+    
+    <article class="card" data-k="Dentist">
+      <a class="shot" href="https://itzsharad.github.io/website-concepts/niddrie-dental-clinic-566/" target="_blank" rel="noopener" aria-label="Open the Niddrie Dental Clinic website">
+        <div class="bar"><i></i><i></i><i></i></div>
+        <img src="thumbs/niddrie-dental-clinic-566.jpg?v=1792870412" alt="Website design for Niddrie Dental Clinic" loading="lazy" width="960" height="600">
+        <div class="view"><span>View live site ↗</span></div>
+      </a>
+      <div class="meta">
+        <div><h3>Niddrie Dental Clinic</h3><p>Dentist · 🇦🇺 Melbourne, VIC, Australia</p></div>
+        <div class="tags"><span class="tag style">Swiss modern</span></div>
+        <div class="acts">
+          <a class="btn sec sm" href="https://itzsharad.github.io/website-concepts/niddrie-dental-clinic-566/" target="_blank" rel="noopener">View site ↗</a>
+          
+        </div>
+      </div>
+    </article>
+    
+    <article class="card" data-k="Dentist">
+      <a class="shot" href="https://itzsharad.github.io/website-concepts/midac-medical-centre-550/" target="_blank" rel="noopener" aria-label="Open the MIDAC Medical Centre website">
+        <div class="bar"><i></i><i></i><i></i></div>
+        <img src="thumbs/midac-medical-centre-550.jpg?v=1792870415" alt="Website design for MIDAC Medical Centre" loading="lazy" width="960" height="600">
+        <div class="view"><span>View live site ↗</span></div>
+      </a>
+      <div class="meta">
+        <div><h3>MIDAC Medical Centre</h3><p>Dentist · 🇦🇪 Dubai, United Arab Emirates</p></div>
+        <div class="tags"><span class="tag style">Bold contemporary</span></div>
+        <div class="acts">
+          <a class="btn sec sm" href="https://itzsharad.github.io/website-concepts/midac-medical-centre-550/" target="_blank" rel="noopener">View site ↗</a>
+          
+        </div>
+      </div>
+    </article>
+    
+    <article class="card" data-k="Dentist">
+      <a class="shot" href="https://itzsharad.github.io/website-concepts/dr-michael-s-dental-clinic-519/" target="_blank" rel="noopener" aria-label="Open the Dr. Michael&#39;s Dental Clinic website">
+        <div class="bar"><i></i><i></i><i></i></div>
+        <img src="thumbs/dr-michael-s-dental-clinic-519.jpg?v=1792870416" alt="Website design for Dr. Michael&#39;s Dental Clinic" loading="lazy" width="960" height="600">
+        <div class="view"><span>View live site ↗</span></div>
+      </a>
+      <div class="meta">
+        <div><h3>Dr. Michael&#39;s Dental Clinic</h3><p>Dentist · 🇦🇪 Dubai, United Arab Emirates</p></div>
+        <div class="tags"><span class="tag style">Warm boutique</span></div>
+        <div class="acts">
+          <a class="btn sec sm" href="https://itzsharad.github.io/website-concepts/dr-michael-s-dental-clinic-519/" target="_blank" rel="noopener">View site ↗</a>
+          
+        </div>
+      </div>
+    </article>
+    
+    <article class="card" data-k="Dentist">
+      <a class="shot" href="https://itzsharad.github.io/website-concepts/al-rowaad-dental-center-543/" target="_blank" rel="noopener" aria-label="Open the Al Rowaad Dental Center website">
+        <div class="bar"><i></i><i></i><i></i></div>
+        <img src="thumbs/al-rowaad-dental-center-543.jpg?v=1792870419" alt="Website design for Al Rowaad Dental Center" loading="lazy" width="960" height="600">
+        <div class="view"><span>View live site ↗</span></div>
+      </a>
+      <div class="meta">
+        <div><h3>Al Rowaad Dental Center</h3><p>Dentist · 🇦🇪 Dubai, United Arab Emirates</p></div>
+        <div class="tags"><span class="tag style">Coastal light</span></div>
+        <div class="acts">
+          <a class="btn sec sm" href="https://itzsharad.github.io/website-concepts/al-rowaad-dental-center-543/" target="_blank" rel="noopener">View site ↗</a>
+          
+        </div>
+      </div>
+    </article>
+    
+    <article class="card" data-k="Dentist">
+      <a class="shot" href="https://itzsharad.github.io/website-concepts/frontline-medical-center-527/" target="_blank" rel="noopener" aria-label="Open the Frontline Medical Center website">
+        <div class="bar"><i></i><i></i><i></i></div>
+        <img src="thumbs/frontline-medical-center-527.jpg?v=1792870421" alt="Website design for Frontline Medical Center" loading="lazy" width="960" height="600">
+        <div class="view"><span>View live site ↗</span></div>
+      </a>
+      <div class="meta">
+        <div><h3>Frontline Medical Center</h3><p>Dentist · 🇦🇪 Dubai, United Arab Emirates</p></div>
+        <div class="tags"><span class="tag style">Editorial luxury</span></div>
+        <div class="acts">
+          <a class="btn sec sm" href="https://itzsharad.github.io/website-concepts/frontline-medical-center-527/" target="_blank" rel="noopener">View site ↗</a>
+          
+        </div>
+      </div>
+    </article>
+    
+    <article class="card" data-k="Dentist">
+      <a class="shot" href="https://itzsharad.github.io/website-concepts/kholood-dental-clinic-citymart-building-al-busta-503/" target="_blank" rel="noopener" aria-label="Open the Kholood Dental clinic,Citymart building,Al bustan,Ajman website">
+        <div class="bar"><i></i><i></i><i></i></div>
+        <img src="thumbs/kholood-dental-clinic-citymart-building-al-busta-503.jpg?v=1792870423" alt="Website design for Kholood Dental clinic,Citymart building,Al bustan,Ajman" loading="lazy" width="960" height="600">
+        <div class="view"><span>View live site ↗</span></div>
+      </a>
+      <div class="meta">
+        <div><h3>Kholood Dental clinic,Citymart building,Al bustan,Ajman</h3><p>Dentist · 🇦🇪 Dubai, United Arab Emirates</p></div>
+        <div class="tags"><span class="tag style">Swiss modern</span></div>
+        <div class="acts">
+          <a class="btn sec sm" href="https://itzsharad.github.io/website-concepts/kholood-dental-clinic-citymart-building-al-busta-503/" target="_blank" rel="noopener">View site ↗</a>
+          
+        </div>
+      </div>
+    </article>
+    
+    <article class="card" data-k="House cleaning service">
+      <a class="shot" href="https://itzsharad.github.io/website-concepts/west-coast-washers-234/" target="_blank" rel="noopener" aria-label="Open the West Coast Washers website">
+        <div class="bar"><i></i><i></i><i></i></div>
+        <img src="thumbs/west-coast-washers-234.jpg?v=1792870425" alt="Website design for West Coast Washers" loading="lazy" width="960" height="600">
+        <div class="view"><span>View live site ↗</span></div>
+      </a>
+      <div class="meta">
+        <div><h3>West Coast Washers</h3><p>House cleaning service · 🇺🇸 Los Angeles, CA, United States</p></div>
+        <div class="tags"><span class="tag style">Coastal light</span></div>
+        <div class="acts">
+          <a class="btn sec sm" href="https://itzsharad.github.io/website-concepts/west-coast-washers-234/" target="_blank" rel="noopener">View site ↗</a>
+          <a class="btn sec sm" href="https://youtu.be/pYxOfky_R8c" target="_blank" rel="noopener"><span class="yt"></span>Tour</a>
+        </div>
+      </div>
+    </article>
+    
+    <article class="card" data-k="Chiropractor">
+      <a class="shot" href="https://itzsharad.github.io/website-concepts/spinex-disc-clinic-353/" target="_blank" rel="noopener" aria-label="Open the Spinex Disc Clinic website">
+        <div class="bar"><i></i><i></i><i></i></div>
+        <img src="thumbs/spinex-disc-clinic-353.jpg?v=1792870427" alt="Website design for Spinex Disc Clinic" loading="lazy" width="960" height="600">
+        <div class="view"><span>View live site ↗</span></div>
+      </a>
+      <div class="meta">
+        <div><h3>Spinex Disc Clinic</h3><p>Chiropractor · 🇬🇧 London, United Kingdom</p></div>
+        <div class="tags"><span class="tag style">Bold contemporary</span></div>
+        <div class="acts">
+          <a class="btn sec sm" href="https://itzsharad.github.io/website-concepts/spinex-disc-clinic-353/" target="_blank" rel="noopener">View site ↗</a>
+          
+        </div>
+      </div>
+    </article>
+    
+    <article class="card" data-k="Moving company">
+      <a class="shot" href="https://itzsharad.github.io/website-concepts/jackson-s-moving-and-delivery-155/" target="_blank" rel="noopener" aria-label="Open the Jackson&#39;s Moving and Delivery website">
+        <div class="bar"><i></i><i></i><i></i></div>
+        <img src="thumbs/jackson-s-moving-and-delivery-155.jpg?v=1792870429" alt="Website design for Jackson&#39;s Moving and Delivery" loading="lazy" width="960" height="600">
+        <div class="view"><span>View live site ↗</span></div>
+      </a>
+      <div class="meta">
+        <div><h3>Jackson&#39;s Moving and Delivery</h3><p>Moving company · 🇺🇸 Austin, TX, United States</p></div>
+        <div class="tags"><span class="tag style">Swiss modern</span></div>
+        <div class="acts">
+          <a class="btn sec sm" href="https://itzsharad.github.io/website-concepts/jackson-s-moving-and-delivery-155/" target="_blank" rel="noopener">View site ↗</a>
+          <a class="btn sec sm" href="https://youtu.be/tpX9lhOi-0E" target="_blank" rel="noopener"><span class="yt"></span>Tour</a>
+        </div>
+      </div>
+    </article>
+    
+    <article class="card" data-k="Moving company">
+      <a class="shot" href="https://itzsharad.github.io/website-concepts/south-austin-movers-156/" target="_blank" rel="noopener" aria-label="Open the South Austin Movers website">
+        <div class="bar"><i></i><i></i><i></i></div>
+        <img src="thumbs/south-austin-movers-156.jpg?v=1792870431" alt="Website design for South Austin Movers" loading="lazy" width="960" height="600">
+        <div class="view"><span>View live site ↗</span></div>
+      </a>
+      <div class="meta">
+        <div><h3>South Austin Movers</h3><p>Moving company · 🇺🇸 Austin, TX, United States</p></div>
+        <div class="tags"><span class="tag style">Dark cinematic</span></div>
+        <div class="acts">
+          <a class="btn sec sm" href="https://itzsharad.github.io/website-concepts/south-austin-movers-156/" target="_blank" rel="noopener">View site ↗</a>
+          <a class="btn sec sm" href="https://youtu.be/Olm-jsXJnLA" target="_blank" rel="noopener"><span class="yt"></span>Tour</a>
+        </div>
+      </div>
+    </article>
+    
+    <article class="card" data-k="Moving company">
+      <a class="shot" href="https://itzsharad.github.io/website-concepts/north-park-transfer-storage-468/" target="_blank" rel="noopener" aria-label="Open the North Park Transfer &amp; Storage website">
+        <div class="bar"><i></i><i></i><i></i></div>
+        <img src="thumbs/north-park-transfer-storage-468.jpg?v=1792870433" alt="Website design for North Park Transfer &amp; Storage" loading="lazy" width="960" height="600">
+        <div class="view"><span>View live site ↗</span></div>
+      </a>
+      <div class="meta">
+        <div><h3>North Park Transfer &amp; Storage</h3><p>Moving company · 🇺🇸 San Diego, CA, United States</p></div>
+        <div class="tags"><span class="tag style">Dark cinematic</span></div>
+        <div class="acts">
+          <a class="btn sec sm" href="https://itzsharad.github.io/website-concepts/north-park-transfer-storage-468/" target="_blank" rel="noopener">View site ↗</a>
+          <a class="btn sec sm" href="https://youtu.be/i5UGqkC1_f0" target="_blank" rel="noopener"><span class="yt"></span>Tour</a>
+        </div>
+      </div>
+    </article>
+    
+    <article class="card" data-k="Moving company">
+      <a class="shot" href="https://itzsharad.github.io/website-concepts/columbia-moving-systems-451/" target="_blank" rel="noopener" aria-label="Open the Columbia Moving Systems website">
+        <div class="bar"><i></i><i></i><i></i></div>
+        <img src="thumbs/columbia-moving-systems-451.jpg?v=1792870436" alt="Website design for Columbia Moving Systems" loading="lazy" width="960" height="600">
+        <div class="view"><span>View live site ↗</span></div>
+      </a>
+      <div class="meta">
+        <div><h3>Columbia Moving Systems</h3><p>Moving company · 🇺🇸 New York, NY, United States</p></div>
+        <div class="tags"><span class="tag style">Bold contemporary</span></div>
+        <div class="acts">
+          <a class="btn sec sm" href="https://itzsharad.github.io/website-concepts/columbia-moving-systems-451/" target="_blank" rel="noopener">View site ↗</a>
+          
+        </div>
+      </div>
+    </article>
+    
+    <article class="card" data-k="Moving company">
+      <a class="shot" href="https://itzsharad.github.io/website-concepts/gonzalez-dumpster-service-457/" target="_blank" rel="noopener" aria-label="Open the Gonzalez Dumpster Service website">
+        <div class="bar"><i></i><i></i><i></i></div>
+        <img src="thumbs/gonzalez-dumpster-service-457.jpg?v=1792870438" alt="Website design for Gonzalez Dumpster Service" loading="lazy" width="960" height="600">
+        <div class="view"><span>View live site ↗</span></div>
+      </a>
+      <div class="meta">
+        <div><h3>Gonzalez Dumpster Service</h3><p>Moving company · 🇺🇸 San Diego, CA, United States</p></div>
+        <div class="tags"><span class="tag style">Dark cinematic</span></div>
+        <div class="acts">
+          <a class="btn sec sm" href="https://itzsharad.github.io/website-concepts/gonzalez-dumpster-service-457/" target="_blank" rel="noopener">View site ↗</a>
+          
+        </div>
+      </div>
+    </article>
+    
+    <article class="card" data-k="Moving company">
+      <a class="shot" href="https://itzsharad.github.io/website-concepts/go-mini-s-of-austin-152/" target="_blank" rel="noopener" aria-label="Open the Go Mini’s of Austin website">
+        <div class="bar"><i></i><i></i><i></i></div>
+        <img src="thumbs/go-mini-s-of-austin-152.jpg?v=1792870440" alt="Website design for Go Mini’s of Austin" loading="lazy" width="960" height="600">
+        <div class="view"><span>View live site ↗</span></div>
+      </a>
+      <div class="meta">
+        <div><h3>Go Mini’s of Austin</h3><p>Moving company · 🇺🇸 Austin, TX, United States</p></div>
+        <div class="tags"><span class="tag style">Dark cinematic</span></div>
+        <div class="acts">
+          <a class="btn sec sm" href="https://itzsharad.github.io/website-concepts/go-mini-s-of-austin-152/" target="_blank" rel="noopener">View site ↗</a>
+          <a class="btn sec sm" href="https://youtu.be/rBnETJ6IUGI" target="_blank" rel="noopener"><span class="yt"></span>Tour</a>
+        </div>
+      </div>
+    </article>
+    
+    <article class="card" data-k="Dentist">
+      <a class="shot" href="https://itzsharad.github.io/website-concepts/dentalsaurus-34/" target="_blank" rel="noopener" aria-label="Open the Dentalsaurus website">
+        <div class="bar"><i></i><i></i><i></i></div>
+        <img src="thumbs/dentalsaurus-34.jpg?v=1792870442" alt="Website design for Dentalsaurus" loading="lazy" width="960" height="600">
+        <div class="view"><span>View live site ↗</span></div>
+      </a>
+      <div class="meta">
+        <div><h3>Dentalsaurus</h3><p>Dentist · 🇺🇸 Austin, TX, United States</p></div>
+        <div class="tags"><span class="tag style">Editorial luxury</span></div>
+        <div class="acts">
+          <a class="btn sec sm" href="https://itzsharad.github.io/website-concepts/dentalsaurus-34/" target="_blank" rel="noopener">View site ↗</a>
+          <a class="btn sec sm" href="https://youtu.be/z0W0QiM-FDM" target="_blank" rel="noopener"><span class="yt"></span>Tour</a>
+        </div>
+      </div>
+    </article>
+    
+    <article class="card" data-k="Moving company">
+      <a class="shot" href="https://itzsharad.github.io/website-concepts/horizons-moving-147/" target="_blank" rel="noopener" aria-label="Open the Horizons Moving website">
+        <div class="bar"><i></i><i></i><i></i></div>
+        <img src="thumbs/horizons-moving-147.jpg?v=1792870444" alt="Website design for Horizons Moving" loading="lazy" width="960" height="600">
+        <div class="view"><span>View live site ↗</span></div>
+      </a>
+      <div class="meta">
+        <div><h3>Horizons Moving</h3><p>Moving company · 🇺🇸 Austin, TX, United States</p></div>
+        <div class="tags"><span class="tag style">Swiss modern</span></div>
+        <div class="acts">
+          <a class="btn sec sm" href="https://itzsharad.github.io/website-concepts/horizons-moving-147/" target="_blank" rel="noopener">View site ↗</a>
+          
+        </div>
+      </div>
+    </article>
+    
+    <article class="card" data-k="House cleaning service">
+      <a class="shot" href="https://itzsharad.github.io/website-concepts/majic-wand-pressure-washing-265/" target="_blank" rel="noopener" aria-label="Open the Majic Wand Pressure Washing website">
+        <div class="bar"><i></i><i></i><i></i></div>
+        <img src="thumbs/majic-wand-pressure-washing-265.jpg?v=1792870446" alt="Website design for Majic Wand Pressure Washing" loading="lazy" width="960" height="600">
+        <div class="view"><span>View live site ↗</span></div>
+      </a>
+      <div class="meta">
+        <div><h3>Majic Wand Pressure Washing</h3><p>House cleaning service · 🇺🇸 Los Angeles, CA, United States</p></div>
+        <div class="tags"><span class="tag style">Warm boutique</span></div>
+        <div class="acts">
+          <a class="btn sec sm" href="https://itzsharad.github.io/website-concepts/majic-wand-pressure-washing-265/" target="_blank" rel="noopener">View site ↗</a>
+          <a class="btn sec sm" href="https://youtu.be/Rgprm5iKGqs" target="_blank" rel="noopener"><span class="yt"></span>Tour</a>
+        </div>
+      </div>
+    </article>
+    
+    <article class="card" data-k="House cleaning service">
+      <a class="shot" href="https://itzsharad.github.io/website-concepts/j-c-pro-cleaners-263/" target="_blank" rel="noopener" aria-label="Open the J&amp;C Pro Cleaners website">
+        <div class="bar"><i></i><i></i><i></i></div>
+        <img src="thumbs/j-c-pro-cleaners-263.jpg?v=1792870448" alt="Website design for J&amp;C Pro Cleaners" loading="lazy" width="960" height="600">
+        <div class="view"><span>View live site ↗</span></div>
+      </a>
+      <div class="meta">
+        <div><h3>J&amp;C Pro Cleaners</h3><p>House cleaning service · 🇺🇸 Los Angeles, CA, United States</p></div>
+        <div class="tags"><span class="tag style">Bold contemporary</span></div>
+        <div class="acts">
+          <a class="btn sec sm" href="https://itzsharad.github.io/website-concepts/j-c-pro-cleaners-263/" target="_blank" rel="noopener">View site ↗</a>
+          <a class="btn sec sm" href="https://youtu.be/2_hyx9fojC4" target="_blank" rel="noopener"><span class="yt"></span>Tour</a>
+        </div>
+      </div>
+    </article>
+    
+    <article class="card" data-k="Chiropractor">
+      <a class="shot" href="https://itzsharad.github.io/website-concepts/balmoral-chiropractic-centre-396/" target="_blank" rel="noopener" aria-label="Open the Balmoral Chiropractic Centre website">
+        <div class="bar"><i></i><i></i><i></i></div>
+        <img src="thumbs/balmoral-chiropractic-centre-396.jpg?v=1792870450" alt="Website design for Balmoral Chiropractic Centre" loading="lazy" width="960" height="600">
+        <div class="view"><span>View live site ↗</span></div>
+      </a>
+      <div class="meta">
+        <div><h3>Balmoral Chiropractic Centre</h3><p>Chiropractor · 🇸🇬 Singapore</p></div>
+        <div class="tags"><span class="tag style">Swiss modern</span></div>
+        <div class="acts">
+          <a class="btn sec sm" href="https://itzsharad.github.io/website-concepts/balmoral-chiropractic-centre-396/" target="_blank" rel="noopener">View site ↗</a>
+          
+        </div>
+      </div>
+    </article>
+    
+    <article class="card" data-k="Chiropractor">
+      <a class="shot" href="https://itzsharad.github.io/website-concepts/eden-street-back-pain-clinic-373/" target="_blank" rel="noopener" aria-label="Open the Eden Street Back Pain Clinic website">
+        <div class="bar"><i></i><i></i><i></i></div>
+        <img src="thumbs/eden-street-back-pain-clinic-373.jpg?v=1792870452" alt="Website design for Eden Street Back Pain Clinic" loading="lazy" width="960" height="600">
+        <div class="view"><span>View live site ↗</span></div>
+      </a>
+      <div class="meta">
+        <div><h3>Eden Street Back Pain Clinic</h3><p>Chiropractor · 🇬🇧 London, United Kingdom</p></div>
+        <div class="tags"><span class="tag style">Coastal light</span></div>
+        <div class="acts">
+          <a class="btn sec sm" href="https://itzsharad.github.io/website-concepts/eden-street-back-pain-clinic-373/" target="_blank" rel="noopener">View site ↗</a>
+          
+        </div>
+      </div>
+    </article>
+    
+    <article class="card" data-k="Chiropractor">
+      <a class="shot" href="https://itzsharad.github.io/website-concepts/family-chiropractic-394/" target="_blank" rel="noopener" aria-label="Open the Family Chiropractic website">
+        <div class="bar"><i></i><i></i><i></i></div>
+        <img src="thumbs/family-chiropractic-394.jpg?v=1792870454" alt="Website design for Family Chiropractic" loading="lazy" width="960" height="600">
+        <div class="view"><span>View live site ↗</span></div>
+      </a>
+      <div class="meta">
+        <div><h3>Family Chiropractic</h3><p>Chiropractor · 🇸🇬 Singapore</p></div>
+        <div class="tags"><span class="tag style">Warm boutique</span></div>
+        <div class="acts">
+          <a class="btn sec sm" href="https://itzsharad.github.io/website-concepts/family-chiropractic-394/" target="_blank" rel="noopener">View site ↗</a>
+          
+        </div>
+      </div>
+    </article>
+    
+    <article class="card" data-k="Chiropractor">
+      <a class="shot" href="https://itzsharad.github.io/website-concepts/chiro-london-326/" target="_blank" rel="noopener" aria-label="Open the Chiro London website">
+        <div class="bar"><i></i><i></i><i></i></div>
+        <img src="thumbs/chiro-london-326.jpg?v=1792870456" alt="Website design for Chiro London" loading="lazy" width="960" height="600">
+        <div class="view"><span>View live site ↗</span></div>
+      </a>
+      <div class="meta">
+        <div><h3>Chiro London</h3><p>Chiropractor · 🇬🇧 London, United Kingdom</p></div>
+        <div class="tags"><span class="tag style">Bold contemporary</span></div>
+        <div class="acts">
+          <a class="btn sec sm" href="https://itzsharad.github.io/website-concepts/chiro-london-326/" target="_blank" rel="noopener">View site ↗</a>
+          
+        </div>
+      </div>
+    </article>
+    
+    <article class="card" data-k="House cleaning service">
+      <a class="shot" href="https://itzsharad.github.io/website-concepts/shugar-soapworks-258/" target="_blank" rel="noopener" aria-label="Open the Shugar Soapworks website">
+        <div class="bar"><i></i><i></i><i></i></div>
+        <img src="thumbs/shugar-soapworks-258.jpg?v=1792870458" alt="Website design for Shugar Soapworks" loading="lazy" width="960" height="600">
+        <div class="view"><span>View live site ↗</span></div>
+      </a>
+      <div class="meta">
+        <div><h3>Shugar Soapworks</h3><p>House cleaning service · 🇺🇸 Los Angeles, CA, United States</p></div>
+        <div class="tags"><span class="tag style">Swiss modern</span></div>
+        <div class="acts">
+          <a class="btn sec sm" href="https://itzsharad.github.io/website-concepts/shugar-soapworks-258/" target="_blank" rel="noopener">View site ↗</a>
+          
+        </div>
+      </div>
+    </article>
+    
+    <article class="card" data-k="Chiropractor">
+      <a class="shot" href="https://itzsharad.github.io/website-concepts/ryan-woods-124/" target="_blank" rel="noopener" aria-label="Open the Ryan Woods website">
+        <div class="bar"><i></i><i></i><i></i></div>
+        <img src="thumbs/ryan-woods-124.jpg?v=1792870460" alt="Website design for Ryan Woods" loading="lazy" width="960" height="600">
+        <div class="view"><span>View live site ↗</span></div>
+      </a>
+      <div class="meta">
+        <div><h3>Ryan Woods</h3><p>Chiropractor · 🇺🇸 Austin, TX, United States</p></div>
+        <div class="tags"><span class="tag style">Coastal light</span></div>
+        <div class="acts">
+          <a class="btn sec sm" href="https://itzsharad.github.io/website-concepts/ryan-woods-124/" target="_blank" rel="noopener">View site ↗</a>
+          <a class="btn sec sm" href="https://youtu.be/ipCCOiFjX_k" target="_blank" rel="noopener"><span class="yt"></span>Tour</a>
+        </div>
+      </div>
+    </article>
+    
+    <article class="card" data-k="Chiropractor">
+      <a class="shot" href="https://itzsharad.github.io/website-concepts/cat-hill-chiropractic-clinic-343/" target="_blank" rel="noopener" aria-label="Open the Cat Hill Chiropractic Clinic website">
+        <div class="bar"><i></i><i></i><i></i></div>
+        <img src="thumbs/cat-hill-chiropractic-clinic-343.jpg?v=1792870462" alt="Website design for Cat Hill Chiropractic Clinic" loading="lazy" width="960" height="600">
+        <div class="view"><span>View live site ↗</span></div>
+      </a>
+      <div class="meta">
+        <div><h3>Cat Hill Chiropractic Clinic</h3><p>Chiropractor · 🇬🇧 London, United Kingdom</p></div>
+        <div class="tags"><span class="tag style">Warm boutique</span></div>
+        <div class="acts">
+          <a class="btn sec sm" href="https://itzsharad.github.io/website-concepts/cat-hill-chiropractic-clinic-343/" target="_blank" rel="noopener">View site ↗</a>
+          
+        </div>
+      </div>
+    </article>
+    
+    <article class="card" data-k="Chiropractor">
+      <a class="shot" href="https://itzsharad.github.io/website-concepts/cedar-park-chiropractic-acupuncture-97/" target="_blank" rel="noopener" aria-label="Open the Cedar Park Chiropractic &amp; Acupuncture website">
+        <div class="bar"><i></i><i></i><i></i></div>
+        <img src="thumbs/cedar-park-chiropractic-acupuncture-97.jpg?v=1792870465" alt="Website design for Cedar Park Chiropractic &amp; Acupuncture" loading="lazy" width="960" height="600">
+        <div class="view"><span>View live site ↗</span></div>
+      </a>
+      <div class="meta">
+        <div><h3>Cedar Park Chiropractic &amp; Acupuncture</h3><p>Chiropractor · 🇺🇸 Austin, TX, United States</p></div>
+        <div class="tags"><span class="tag style">Bold contemporary</span></div>
+        <div class="acts">
+          <a class="btn sec sm" href="https://itzsharad.github.io/website-concepts/cedar-park-chiropractic-acupuncture-97/" target="_blank" rel="noopener">View site ↗</a>
+          <a class="btn sec sm" href="https://youtu.be/LylCIDm002Q" target="_blank" rel="noopener"><span class="yt"></span>Tour</a>
+        </div>
+      </div>
+    </article>
+    
+    <article class="card" data-k="Chiropractor">
+      <a class="shot" href="https://itzsharad.github.io/website-concepts/shepperton-chiropractic-clinic-324/" target="_blank" rel="noopener" aria-label="Open the Shepperton Chiropractic Clinic website">
+        <div class="bar"><i></i><i></i><i></i></div>
+        <img src="thumbs/shepperton-chiropractic-clinic-324.jpg?v=1792870467" alt="Website design for Shepperton Chiropractic Clinic" loading="lazy" width="960" height="600">
+        <div class="view"><span>View live site ↗</span></div>
+      </a>
+      <div class="meta">
+        <div><h3>Shepperton Chiropractic Clinic</h3><p>Chiropractor · 🇬🇧 London, United Kingdom</p></div>
+        <div class="tags"><span class="tag style">Swiss modern</span></div>
+        <div class="acts">
+          <a class="btn sec sm" href="https://itzsharad.github.io/website-concepts/shepperton-chiropractic-clinic-324/" target="_blank" rel="noopener">View site ↗</a>
+          <a class="btn sec sm" href="https://youtu.be/y3mxSA86LAw" target="_blank" rel="noopener"><span class="yt"></span>Tour</a>
+        </div>
+      </div>
+    </article>
+    
+    <article class="card" data-k="Chiropractor">
+      <a class="shot" href="https://itzsharad.github.io/website-concepts/lifespring-chiropractic-95/" target="_blank" rel="noopener" aria-label="Open the Lifespring Chiropractic website">
+        <div class="bar"><i></i><i></i><i></i></div>
+        <img src="thumbs/lifespring-chiropractic-95.jpg?v=1792870469" alt="Website design for Lifespring Chiropractic" loading="lazy" width="960" height="600">
+        <div class="view"><span>View live site ↗</span></div>
+      </a>
+      <div class="meta">
+        <div><h3>Lifespring Chiropractic</h3><p>Chiropractor · 🇺🇸 Austin, TX, United States</p></div>
+        <div class="tags"><span class="tag style">Coastal light</span></div>
+        <div class="acts">
+          <a class="btn sec sm" href="https://itzsharad.github.io/website-concepts/lifespring-chiropractic-95/" target="_blank" rel="noopener">View site ↗</a>
+          <a class="btn sec sm" href="https://youtu.be/DDLlUEqJglA" target="_blank" rel="noopener"><span class="yt"></span>Tour</a>
+        </div>
+      </div>
+    </article>
+    
+    <article class="card" data-k="Dentist">
+      <a class="shot" href="https://itzsharad.github.io/website-concepts/serenity-dental-30/" target="_blank" rel="noopener" aria-label="Open the Serenity Dental website">
+        <div class="bar"><i></i><i></i><i></i></div>
+        <img src="thumbs/serenity-dental-30.jpg?v=1792870471" alt="Website design for Serenity Dental" loading="lazy" width="960" height="600">
+        <div class="view"><span>View live site ↗</span></div>
+      </a>
+      <div class="meta">
+        <div><h3>Serenity Dental</h3><p>Dentist · 🇺🇸 Austin, TX, United States</p></div>
+        <div class="tags"><span class="tag style">Bold contemporary</span></div>
+        <div class="acts">
+          <a class="btn sec sm" href="https://itzsharad.github.io/website-concepts/serenity-dental-30/" target="_blank" rel="noopener">View site ↗</a>
+          
+        </div>
+      </div>
+    </article>
+    
+    <article class="card" data-k="Chiropractor">
+      <a class="shot" href="https://itzsharad.github.io/website-concepts/chislehurst-chiropractic-clinic-288/" target="_blank" rel="noopener" aria-label="Open the Chislehurst Chiropractic Clinic website">
+        <div class="bar"><i></i><i></i><i></i></div>
+        <img src="thumbs/chislehurst-chiropractic-clinic-288.jpg?v=1792870473" alt="Website design for Chislehurst Chiropractic Clinic" loading="lazy" width="960" height="600">
+        <div class="view"><span>View live site ↗</span></div>
+      </a>
+      <div class="meta">
+        <div><h3>Chislehurst Chiropractic Clinic</h3><p>Chiropractor · 🇬🇧 London, United Kingdom</p></div>
+        <div class="tags"><span class="tag style">Swiss modern</span></div>
+        <div class="acts">
+          <a class="btn sec sm" href="https://itzsharad.github.io/website-concepts/chislehurst-chiropractic-clinic-288/" target="_blank" rel="noopener">View site ↗</a>
+          <a class="btn sec sm" href="https://youtu.be/W550hSPMiL0" target="_blank" rel="noopener"><span class="yt"></span>Tour</a>
+        </div>
+      </div>
+    </article>
+    
+    <article class="card" data-k="Remodeling company">
+      <a class="shot" href="https://itzsharad.github.io/website-concepts/sherwin-williams-212/" target="_blank" rel="noopener" aria-label="Open the Sherwin-Williams website">
+        <div class="bar"><i></i><i></i><i></i></div>
+        <img src="thumbs/sherwin-williams-212.jpg?v=1792870475" alt="Website design for Sherwin-Williams" loading="lazy" width="960" height="600">
+        <div class="view"><span>View live site ↗</span></div>
+      </a>
+      <div class="meta">
+        <div><h3>Sherwin-Williams</h3><p>Remodeling company · 🇺🇸 Austin, TX, United States</p></div>
+        <div class="tags"><span class="tag style">Architectural minimal</span></div>
+        <div class="acts">
+          <a class="btn sec sm" href="https://itzsharad.github.io/website-concepts/sherwin-williams-212/" target="_blank" rel="noopener">View site ↗</a>
+          <a class="btn sec sm" href="https://youtu.be/4XdqIHKOPTc" target="_blank" rel="noopener"><span class="yt"></span>Tour</a>
+        </div>
+      </div>
+    </article>
+    
+    <article class="card" data-k="Chiropractor">
+      <a class="shot" href="https://itzsharad.github.io/website-concepts/westlake-chiropractor-111/" target="_blank" rel="noopener" aria-label="Open the Westlake Chiropractor website">
+        <div class="bar"><i></i><i></i><i></i></div>
+        <img src="thumbs/westlake-chiropractor-111.jpg?v=1792870477" alt="Website design for Westlake Chiropractor" loading="lazy" width="960" height="600">
+        <div class="view"><span>View live site ↗</span></div>
+      </a>
+      <div class="meta">
+        <div><h3>Westlake Chiropractor</h3><p>Chiropractor · 🇺🇸 Austin, TX, United States</p></div>
+        <div class="tags"><span class="tag style">Warm boutique</span></div>
+        <div class="acts">
+          <a class="btn sec sm" href="https://itzsharad.github.io/website-concepts/westlake-chiropractor-111/" target="_blank" rel="noopener">View site ↗</a>
+          <a class="btn sec sm" href="https://youtu.be/5zN-yFs9wLo" target="_blank" rel="noopener"><span class="yt"></span>Tour</a>
+        </div>
+      </div>
+    </article>
+    
+    <article class="card" data-k="Moving company">
+      <a class="shot" href="https://itzsharad.github.io/website-concepts/the-goat-movers-153/" target="_blank" rel="noopener" aria-label="Open the The GOAT Movers website">
+        <div class="bar"><i></i><i></i><i></i></div>
+        <img src="thumbs/the-goat-movers-153.jpg?v=1792870479" alt="Website design for The GOAT Movers" loading="lazy" width="960" height="600">
+        <div class="view"><span>View live site ↗</span></div>
+      </a>
+      <div class="meta">
+        <div><h3>The GOAT Movers</h3><p>Moving company · 🇺🇸 Austin, TX, United States</p></div>
+        <div class="tags"><span class="tag style">Swiss modern</span></div>
+        <div class="acts">
+          <a class="btn sec sm" href="https://itzsharad.github.io/website-concepts/the-goat-movers-153/" target="_blank" rel="noopener">View site ↗</a>
+          <a class="btn sec sm" href="https://youtu.be/hNR9dF6XiiI" target="_blank" rel="noopener"><span class="yt"></span>Tour</a>
+        </div>
+      </div>
+    </article>
+    
+    <article class="card" data-k="Chiropractor">
+      <a class="shot" href="https://itzsharad.github.io/website-concepts/ramsey-chiropractic-136/" target="_blank" rel="noopener" aria-label="Open the Ramsey Chiropractic website">
+        <div class="bar"><i></i><i></i><i></i></div>
+        <img src="thumbs/ramsey-chiropractic-136.jpg?v=1792870481" alt="Website design for Ramsey Chiropractic" loading="lazy" width="960" height="600">
+        <div class="view"><span>View live site ↗</span></div>
+      </a>
+      <div class="meta">
+        <div><h3>Ramsey Chiropractic</h3><p>Chiropractor · 🇺🇸 Austin, TX, United States</p></div>
+        <div class="tags"><span class="tag style">Bold contemporary</span></div>
+        <div class="acts">
+          <a class="btn sec sm" href="https://itzsharad.github.io/website-concepts/ramsey-chiropractic-136/" target="_blank" rel="noopener">View site ↗</a>
+          <a class="btn sec sm" href="https://youtu.be/ZERUaw01GF0" target="_blank" rel="noopener"><span class="yt"></span>Tour</a>
+        </div>
+      </div>
+    </article>
+    
+    <article class="card" data-k="Chiropractor">
+      <a class="shot" href="https://itzsharad.github.io/website-concepts/airport-chiropractic-72/" target="_blank" rel="noopener" aria-label="Open the Airport Chiropractic website">
+        <div class="bar"><i></i><i></i><i></i></div>
+        <img src="thumbs/airport-chiropractic-72.jpg?v=1792870483" alt="Website design for Airport Chiropractic" loading="lazy" width="960" height="600">
+        <div class="view"><span>View live site ↗</span></div>
+      </a>
+      <div class="meta">
+        <div><h3>Airport Chiropractic</h3><p>Chiropractor · 🇺🇸 Austin, TX, United States</p></div>
+        <div class="tags"><span class="tag style">Coastal light</span></div>
+        <div class="acts">
+          <a class="btn sec sm" href="https://itzsharad.github.io/website-concepts/airport-chiropractic-72/" target="_blank" rel="noopener">View site ↗</a>
+          <a class="btn sec sm" href="https://youtu.be/Ip3kAMMm9hM" target="_blank" rel="noopener"><span class="yt"></span>Tour</a>
+        </div>
+      </div>
+    </article>
+    
+    <article class="card" data-k="Remodeling company">
+      <a class="shot" href="https://itzsharad.github.io/website-concepts/wilshire-homes-211/" target="_blank" rel="noopener" aria-label="Open the Wilshire Homes website">
+        <div class="bar"><i></i><i></i><i></i></div>
+        <img src="thumbs/wilshire-homes-211.jpg?v=1792870485" alt="Website design for Wilshire Homes" loading="lazy" width="960" height="600">
+        <div class="view"><span>View live site ↗</span></div>
+      </a>
+      <div class="meta">
+        <div><h3>Wilshire Homes</h3><p>Remodeling company · 🇺🇸 Austin, TX, United States</p></div>
+        <div class="tags"><span class="tag style">Architectural minimal</span></div>
+        <div class="acts">
+          <a class="btn sec sm" href="https://itzsharad.github.io/website-concepts/wilshire-homes-211/" target="_blank" rel="noopener">View site ↗</a>
+          <a class="btn sec sm" href="https://youtu.be/FeiUbWc4f3U" target="_blank" rel="noopener"><span class="yt"></span>Tour</a>
+        </div>
+      </div>
+    </article>
+    
+    <article class="card" data-k="Remodeling company">
+      <a class="shot" href="https://itzsharad.github.io/website-concepts/artcrete-designs-209/" target="_blank" rel="noopener" aria-label="Open the Artcrete Designs website">
+        <div class="bar"><i></i><i></i><i></i></div>
+        <img src="thumbs/artcrete-designs-209.jpg?v=1792870487" alt="Website design for Artcrete Designs" loading="lazy" width="960" height="600">
+        <div class="view"><span>View live site ↗</span></div>
+      </a>
+      <div class="meta">
+        <div><h3>Artcrete Designs</h3><p>Remodeling company · 🇺🇸 Austin, TX, United States</p></div>
+        <div class="tags"><span class="tag style">Warm boutique</span></div>
+        <div class="acts">
+          <a class="btn sec sm" href="https://itzsharad.github.io/website-concepts/artcrete-designs-209/" target="_blank" rel="noopener">View site ↗</a>
+          <a class="btn sec sm" href="https://youtu.be/2B2jHtPdKDY" target="_blank" rel="noopener"><span class="yt"></span>Tour</a>
+        </div>
+      </div>
+    </article>
+    
+    <article class="card" data-k="Remodeling company">
+      <a class="shot" href="https://itzsharad.github.io/website-concepts/kitchen-central-198/" target="_blank" rel="noopener" aria-label="Open the Kitchen Central website">
+        <div class="bar"><i></i><i></i><i></i></div>
+        <img src="thumbs/kitchen-central-198.jpg?v=1792870490" alt="Website design for Kitchen Central" loading="lazy" width="960" height="600">
+        <div class="view"><span>View live site ↗</span></div>
+      </a>
+      <div class="meta">
+        <div><h3>Kitchen Central</h3><p>Remodeling company · 🇺🇸 Austin, TX, United States</p></div>
+        <div class="tags"><span class="tag style">Editorial luxury</span></div>
+        <div class="acts">
+          <a class="btn sec sm" href="https://itzsharad.github.io/website-concepts/kitchen-central-198/" target="_blank" rel="noopener">View site ↗</a>
+          <a class="btn sec sm" href="https://youtu.be/iFjm4SDtY6I" target="_blank" rel="noopener"><span class="yt"></span>Tour</a>
+        </div>
+      </div>
+    </article>
+    
+    <article class="card" data-k="Chiropractor">
+      <a class="shot" href="https://itzsharad.github.io/website-concepts/austin-community-wellness-100/" target="_blank" rel="noopener" aria-label="Open the Austin Community Wellness website">
+        <div class="bar"><i></i><i></i><i></i></div>
+        <img src="thumbs/austin-community-wellness-100.jpg?v=1792870492" alt="Website design for Austin Community Wellness" loading="lazy" width="960" height="600">
+        <div class="view"><span>View live site ↗</span></div>
+      </a>
+      <div class="meta">
+        <div><h3>Austin Community Wellness</h3><p>Chiropractor · 🇺🇸 Austin, TX, United States</p></div>
+        <div class="tags"><span class="tag style">Coastal light</span></div>
+        <div class="acts">
+          <a class="btn sec sm" href="https://itzsharad.github.io/website-concepts/austin-community-wellness-100/" target="_blank" rel="noopener">View site ↗</a>
+          <a class="btn sec sm" href="https://youtu.be/1kjC4dk_R08" target="_blank" rel="noopener"><span class="yt"></span>Tour</a>
+        </div>
+      </div>
+    </article>
+    
+    <article class="card" data-k="Remodeling company">
+      <a class="shot" href="https://itzsharad.github.io/website-concepts/intertech-commercial-flooring-204/" target="_blank" rel="noopener" aria-label="Open the Intertech Commercial Flooring website">
+        <div class="bar"><i></i><i></i><i></i></div>
+        <img src="thumbs/intertech-commercial-flooring-204.jpg?v=1792870494" alt="Website design for Intertech Commercial Flooring" loading="lazy" width="960" height="600">
+        <div class="view"><span>View live site ↗</span></div>
+      </a>
+      <div class="meta">
+        <div><h3>Intertech Commercial Flooring</h3><p>Remodeling company · 🇺🇸 Austin, TX, United States</p></div>
+        <div class="tags"><span class="tag style">Heritage classic</span></div>
+        <div class="acts">
+          <a class="btn sec sm" href="https://itzsharad.github.io/website-concepts/intertech-commercial-flooring-204/" target="_blank" rel="noopener">View site ↗</a>
+          <a class="btn sec sm" href="https://youtu.be/GVrAJsAnwZs" target="_blank" rel="noopener"><span class="yt"></span>Tour</a>
+        </div>
+      </div>
+    </article>
+    
+    <article class="card" data-k="Moving company">
+      <a class="shot" href="https://itzsharad.github.io/website-concepts/1-guy-1-gal-movers-157/" target="_blank" rel="noopener" aria-label="Open the 1 Guy 1 Gal Movers website">
+        <div class="bar"><i></i><i></i><i></i></div>
+        <img src="thumbs/1-guy-1-gal-movers-157.jpg?v=1792870496" alt="Website design for 1 Guy 1 Gal Movers" loading="lazy" width="960" height="600">
+        <div class="view"><span>View live site ↗</span></div>
+      </a>
+      <div class="meta">
+        <div><h3>1 Guy 1 Gal Movers</h3><p>Moving company · 🇺🇸 Austin, TX, United States</p></div>
+        <div class="tags"><span class="tag style">Dark cinematic</span></div>
+        <div class="acts">
+          <a class="btn sec sm" href="https://itzsharad.github.io/website-concepts/1-guy-1-gal-movers-157/" target="_blank" rel="noopener">View site ↗</a>
+          <a class="btn sec sm" href="https://youtu.be/HajvD_fBFjw" target="_blank" rel="noopener"><span class="yt"></span>Tour</a>
+        </div>
+      </div>
+    </article>
+    
+    <article class="card" data-k="Chiropractor">
+      <a class="shot" href="https://itzsharad.github.io/website-concepts/connected-health-cedar-park-75/" target="_blank" rel="noopener" aria-label="Open the Connected Health Cedar Park website">
+        <div class="bar"><i></i><i></i><i></i></div>
+        <img src="thumbs/connected-health-cedar-park-75.jpg?v=1792870498" alt="Website design for Connected Health Cedar Park" loading="lazy" width="960" height="600">
+        <div class="view"><span>View live site ↗</span></div>
+      </a>
+      <div class="meta">
+        <div><h3>Connected Health Cedar Park</h3><p>Chiropractor · 🇺🇸 Austin, TX, United States</p></div>
+        <div class="tags"><span class="tag style">Coastal light</span></div>
+        <div class="acts">
+          <a class="btn sec sm" href="https://itzsharad.github.io/website-concepts/connected-health-cedar-park-75/" target="_blank" rel="noopener">View site ↗</a>
+          <a class="btn sec sm" href="https://youtu.be/hQxvNV_GMFM" target="_blank" rel="noopener"><span class="yt"></span>Tour</a>
+        </div>
+      </div>
+    </article>
+    
+    <article class="card" data-k="Dentist">
+      <a class="shot" href="https://itzsharad.github.io/website-concepts/austin-dental-26/" target="_blank" rel="noopener" aria-label="Open the Austin Dental website">
+        <div class="bar"><i></i><i></i><i></i></div>
+        <img src="thumbs/austin-dental-26.jpg?v=1792870500" alt="Website design for Austin Dental" loading="lazy" width="960" height="600">
+        <div class="view"><span>View live site ↗</span></div>
+      </a>
+      <div class="meta">
+        <div><h3>Austin Dental</h3><p>Dentist · 🇺🇸 Austin, TX, United States</p></div>
+        <div class="tags"><span class="tag style">Swiss modern</span></div>
+        <div class="acts">
+          <a class="btn sec sm" href="https://itzsharad.github.io/website-concepts/austin-dental-26/" target="_blank" rel="noopener">View site ↗</a>
+          <a class="btn sec sm" href="https://youtu.be/pGJOvhETnDc" target="_blank" rel="noopener"><span class="yt"></span>Tour</a>
+        </div>
+      </div>
+    </article>
+    
+    <article class="card" data-k="Chiropractor">
+      <a class="shot" href="https://itzsharad.github.io/website-concepts/river-city-wellness-82/" target="_blank" rel="noopener" aria-label="Open the River City Wellness website">
+        <div class="bar"><i></i><i></i><i></i></div>
+        <img src="thumbs/river-city-wellness-82.jpg?v=1792870502" alt="Website design for River City Wellness" loading="lazy" width="960" height="600">
+        <div class="view"><span>View live site ↗</span></div>
+      </a>
+      <div class="meta">
+        <div><h3>River City Wellness</h3><p>Chiropractor · 🇺🇸 Austin, TX, United States</p></div>
+        <div class="tags"><span class="tag style">Warm boutique</span></div>
+        <div class="acts">
+          <a class="btn sec sm" href="https://itzsharad.github.io/website-concepts/river-city-wellness-82/" target="_blank" rel="noopener">View site ↗</a>
+          <a class="btn sec sm" href="https://youtu.be/XCwP-tZPD4I" target="_blank" rel="noopener"><span class="yt"></span>Tour</a>
+        </div>
+      </div>
+    </article>
+    
+    <article class="card" data-k="Dentist">
+      <a class="shot" href="https://itzsharad.github.io/website-concepts/downtown-dental-design-23/" target="_blank" rel="noopener" aria-label="Open the Downtown Dental Design website">
+        <div class="bar"><i></i><i></i><i></i></div>
+        <img src="thumbs/downtown-dental-design-23.jpg?v=1792870504" alt="Website design for Downtown Dental Design" loading="lazy" width="960" height="600">
+        <div class="view"><span>View live site ↗</span></div>
+      </a>
+      <div class="meta">
+        <div><h3>Downtown Dental Design</h3><p>Dentist · 🇺🇸 Austin, TX, United States</p></div>
+        <div class="tags"><span class="tag style">Editorial luxury</span></div>
+        <div class="acts">
+          <a class="btn sec sm" href="https://itzsharad.github.io/website-concepts/downtown-dental-design-23/" target="_blank" rel="noopener">View site ↗</a>
+          <a class="btn sec sm" href="https://youtu.be/N97_iFMcHxY" target="_blank" rel="noopener"><span class="yt"></span>Tour</a>
+        </div>
+      </div>
+    </article>
+    
+    <article class="card" data-k="Dentist">
+      <a class="shot" href="https://itzsharad.github.io/website-concepts/access-dental-and-orthodontics-45/" target="_blank" rel="noopener" aria-label="Open the Access Dental and Orthodontics website">
+        <div class="bar"><i></i><i></i><i></i></div>
+        <img src="thumbs/access-dental-and-orthodontics-45.jpg?v=1792870507" alt="Website design for Access Dental and Orthodontics" loading="lazy" width="960" height="600">
+        <div class="view"><span>View live site ↗</span></div>
+      </a>
+      <div class="meta">
+        <div><h3>Access Dental and Orthodontics</h3><p>Dentist · 🇺🇸 Austin, TX, United States</p></div>
+        <div class="tags"><span class="tag style">Bold contemporary</span></div>
+        <div class="acts">
+          <a class="btn sec sm" href="https://itzsharad.github.io/website-concepts/access-dental-and-orthodontics-45/" target="_blank" rel="noopener">View site ↗</a>
+          <a class="btn sec sm" href="https://youtu.be/kKsnGfsIqIo" target="_blank" rel="noopener"><span class="yt"></span>Tour</a>
+        </div>
+      </div>
+    </article>
+    
+    <article class="card" data-k="Dentist">
+      <a class="shot" href="https://itzsharad.github.io/website-concepts/jester-village-dental-33/" target="_blank" rel="noopener" aria-label="Open the Jester Village Dental website">
+        <div class="bar"><i></i><i></i><i></i></div>
+        <img src="thumbs/jester-village-dental-33.jpg?v=1792870509" alt="Website design for Jester Village Dental" loading="lazy" width="960" height="600">
+        <div class="view"><span>View live site ↗</span></div>
+      </a>
+      <div class="meta">
+        <div><h3>Jester Village Dental</h3><p>Dentist · 🇺🇸 Austin, TX, United States</p></div>
+        <div class="tags"><span class="tag style">Swiss modern</span></div>
+        <div class="acts">
+          <a class="btn sec sm" href="https://itzsharad.github.io/website-concepts/jester-village-dental-33/" target="_blank" rel="noopener">View site ↗</a>
+          <a class="btn sec sm" href="https://youtu.be/Q9LCoC03Dxs" target="_blank" rel="noopener"><span class="yt"></span>Tour</a>
+        </div>
+      </div>
+    </article>
+    
+    <article class="card" data-k="Dentist">
+      <a class="shot" href="https://itzsharad.github.io/website-concepts/northwest-dental-associates-13/" target="_blank" rel="noopener" aria-label="Open the Northwest Dental Associates website">
+        <div class="bar"><i></i><i></i><i></i></div>
+        <img src="thumbs/northwest-dental-associates-13.jpg?v=1792870511" alt="Website design for Northwest Dental Associates" loading="lazy" width="960" height="600">
+        <div class="view"><span>View live site ↗</span></div>
+      </a>
+      <div class="meta">
+        <div><h3>Northwest Dental Associates</h3><p>Dentist · 🇺🇸 Austin, TX, United States</p></div>
+        <div class="tags"><span class="tag style">Warm boutique</span></div>
+        <div class="acts">
+          <a class="btn sec sm" href="https://itzsharad.github.io/website-concepts/northwest-dental-associates-13/" target="_blank" rel="noopener">View site ↗</a>
+          <a class="btn sec sm" href="https://youtu.be/iwqLcow6nSw" target="_blank" rel="noopener"><span class="yt"></span>Tour</a>
+        </div>
+      </div>
+    </article>
+    
+    <article class="card" data-k="Dentist">
+      <a class="shot" href="https://itzsharad.github.io/website-concepts/northwest-austin-dentists-orthodontics-12/" target="_blank" rel="noopener" aria-label="Open the Northwest Austin Dentists &amp; Orthodontics website">
+        <div class="bar"><i></i><i></i><i></i></div>
+        <img src="thumbs/northwest-austin-dentists-orthodontics-12.jpg?v=1792870513" alt="Website design for Northwest Austin Dentists &amp; Orthodontics" loading="lazy" width="960" height="600">
+        <div class="view"><span>View live site ↗</span></div>
+      </a>
+      <div class="meta">
+        <div><h3>Northwest Austin Dentists &amp; Orthodontics</h3><p>Dentist · 🇺🇸 Austin, TX, United States</p></div>
+        <div class="tags"></div>
+        <div class="acts">
+          <a class="btn sec sm" href="https://itzsharad.github.io/website-concepts/northwest-austin-dentists-orthodontics-12/" target="_blank" rel="noopener">View site ↗</a>
+          <a class="btn sec sm" href="https://youtu.be/DFR-jmLMGCs" target="_blank" rel="noopener"><span class="yt"></span>Tour</a>
         </div>
       </div>
     </article>
