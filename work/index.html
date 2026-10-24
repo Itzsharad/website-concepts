@@ -1,0 +1,352 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>webstudio | Website design portfolio</title>
+<meta name="description" content="12 premium website designs for local businesses by webstudio. See them live and watch the video tours.">
+<meta property="og:title" content="webstudio | Website design portfolio">
+<meta property="og:description" content="12 premium website designs for local businesses. Click any one to see it live.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://itzsharad.github.io/website-concepts/work/">
+<meta property="og:image" content="https://itzsharad.github.io/website-concepts/work/thumbs/lowe-s-193.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f5f8fd;--panel:#fff;--ink:#0d1a2e;--muted:#5b6b82;--edge:#e1e8f2;--ion:#2f62f0;--ion-soft:#e8efff;--gold:#b7791f}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+main{scroll-margin-top:80px}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 Geist,system-ui,-apple-system,Segoe UI,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1240px;margin:0 auto;padding:0 24px}
+header.top{position:sticky;top:0;z-index:20;background:rgba(245,248,253,.82);backdrop-filter:saturate(1.4) blur(14px);-webkit-backdrop-filter:saturate(1.4) blur(14px);border-bottom:1px solid rgba(225,232,242,.7)}
+header.top .wrap{display:flex;align-items:center;justify-content:space-between;height:64px;gap:16px}
+.logo{display:flex;align-items:center;gap:10px;font-weight:650;letter-spacing:-.01em}
+.logo i{width:30px;height:30px;border-radius:9px;background:linear-gradient(135deg,#5b8cff,#2f62f0 60%,#1d3fb8);box-shadow:0 4px 14px rgba(47,98,240,.35);display:block}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:44px;padding:0 20px;border-radius:999px;font-weight:600;font-size:15px;transition:transform .15s,box-shadow .2s,background .2s;white-space:nowrap}
+.btn.pri{background:var(--ion);color:#fff;box-shadow:0 8px 24px rgba(47,98,240,.28)}
+.btn.pri:hover{transform:translateY(-1px);box-shadow:0 12px 30px rgba(47,98,240,.36)}
+.btn.sec{background:#fff;border:1px solid var(--edge);color:var(--ink)}
+.btn.sec:hover{border-color:#c5d3ea}
+.btn.sm{height:38px;padding:0 16px;font-size:14px}
+.yt{width:20px;height:14px;border-radius:4px;background:#ff0033;display:inline-grid;place-items:center}
+.yt:after{content:"";border-left:6px solid #fff;border-top:4px solid transparent;border-bottom:4px solid transparent;margin-left:1px}
+.hero{position:relative;padding:88px 0 56px;overflow:hidden}
+.hero:before{content:"";position:absolute;inset:-40% -10% auto;height:620px;background:radial-gradient(closest-side,rgba(91,140,255,.22),transparent 70%),radial-gradient(closest-side at 80% 40%,rgba(120,200,255,.18),transparent 70%);pointer-events:none}
+.hero .wrap{position:relative;text-align:center}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;padding:6px 14px;border-radius:999px;background:#fff;border:1px solid var(--edge);font-size:13.5px;font-weight:500;color:var(--muted)}
+.eyebrow b{color:var(--ion)}
+h1{font-size:clamp(40px,6.4vw,76px);line-height:1.02;letter-spacing:-.035em;font-weight:650;margin:22px auto 18px;max-width:15ch}
+h1 em{font-family:"Instrument Serif",Georgia,serif;font-weight:400;font-style:italic;letter-spacing:-.01em;color:var(--ion)}
+.lead{font-size:19px;color:var(--muted);max-width:60ch;margin:0 auto 30px}
+.ctas{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--edge);border:1px solid var(--edge);border-radius:18px;overflow:hidden;max-width:640px;margin:48px auto 0}
+.stats div{background:#fff;padding:18px 12px}
+.stats b{display:block;font-size:30px;letter-spacing:-.03em;font-weight:650}
+.stats span{font-size:13.5px;color:var(--muted)}
+.filters{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin:8px 0 28px}
+.chip{height:38px;padding:0 16px;border-radius:999px;border:1px solid var(--edge);background:#fff;font:500 14px Geist,system-ui,sans-serif;color:var(--ink);cursor:pointer;transition:all .15s}
+.chip span{color:var(--muted);margin-left:4px}
+.chip:hover{border-color:#c5d3ea}
+.chip.on{background:var(--ink);border-color:var(--ink);color:#fff}
+.chip.on span{color:rgba(255,255,255,.6)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:28px;padding-bottom:40px}
+.card{display:flex;flex-direction:column;background:var(--panel);border:1px solid var(--edge);border-radius:20px;overflow:hidden;box-shadow:0 1px 2px rgba(13,26,46,.04),0 10px 30px -18px rgba(13,26,46,.25);transition:transform .25s cubic-bezier(.2,.7,.2,1),box-shadow .25s;opacity:0;transform:translateY(14px)}
+.card.in{opacity:1;transform:none}
+.card:hover{transform:translateY(-4px);box-shadow:0 2px 4px rgba(13,26,46,.04),0 24px 48px -20px rgba(13,26,46,.35)}
+.card[hidden]{display:none}
+.shot{position:relative;display:block;aspect-ratio:16/10;overflow:hidden;background:#eef2f8}
+.shot img{width:100%;height:100%;object-fit:cover;object-position:top;display:block;transition:transform .6s cubic-bezier(.2,.7,.2,1)}
+.card:hover .shot img{transform:scale(1.035)}
+.shot .bar{position:absolute;left:0;right:0;top:0;height:26px;background:rgba(255,255,255,.92);display:flex;align-items:center;gap:5px;padding:0 10px;border-bottom:1px solid rgba(0,0,0,.05)}
+.shot .bar i{width:7px;height:7px;border-radius:50%;background:#d6dde8}
+.shot img{padding-top:26px}
+.shot .view{position:absolute;inset:26px 0 0;display:grid;place-items:center;background:rgba(13,26,46,.0);opacity:0;transition:all .25s}
+.card:hover .view{opacity:1;background:rgba(13,26,46,.28)}
+.view span{background:#fff;color:var(--ink);font-weight:600;font-size:14px;padding:10px 18px;border-radius:999px;box-shadow:0 8px 24px rgba(0,0,0,.2)}
+.meta{padding:16px 18px 18px;display:flex;flex-direction:column;gap:12px;flex:1}
+.meta h3{margin:0;font-size:17px;font-weight:600;letter-spacing:-.01em;line-height:1.3}
+.meta p{margin:2px 0 0;color:var(--muted);font-size:14px}
+.tags{display:flex;gap:6px;flex-wrap:wrap}
+.tag{font-size:12.5px;font-weight:500;padding:3px 10px;border-radius:999px;background:var(--ion-soft);color:#2449b8}
+.tag.style{background:#f1f3f7;color:#4a5568}
+.tag.won{background:#fff4e0;color:var(--gold)}
+.acts{display:flex;gap:8px;margin-top:auto}
+.acts .btn{flex:1}
+.final{margin:40px 0 80px;padding:56px 32px;border-radius:28px;text-align:center;color:#fff;background:radial-gradient(120% 140% at 0% 0%,#5b8cff 0%,#2f62f0 45%,#1a3596 100%);box-shadow:0 30px 60px -30px rgba(47,98,240,.6)}
+.final h2{font-size:clamp(30px,4vw,46px);letter-spacing:-.03em;line-height:1.08;margin:0 0 12px;font-weight:650}
+.final h2 em{font-family:"Instrument Serif",Georgia,serif;font-weight:400}
+.final p{color:rgba(255,255,255,.82);max-width:54ch;margin:0 auto 26px;font-size:17px}
+.final .btn.pri{background:#fff;color:#1a3596;box-shadow:none}
+.final .btn.sec{background:rgba(255,255,255,.12);border-color:rgba(255,255,255,.3);color:#fff}
+footer{border-top:1px solid var(--edge);padding:28px 0 40px;color:var(--muted);font-size:13.5px}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.empty{text-align:center;color:var(--muted);padding:40px 0 80px}
+@media(max-width:640px){
+  .wrap{padding:0 16px}.hero{padding:56px 0 36px}.lead{font-size:17px}
+  .grid{grid-template-columns:1fr;gap:20px}.top .btn.sec{display:none}
+  .stats b{font-size:24px}.final{padding:40px 20px;border-radius:22px}
+}
+@media(prefers-reduced-motion:reduce){.card{opacity:1;transform:none;transition:none}.card:hover .shot img{transform:none}}
+</style>
+</head>
+<body>
+<header class="top"><div class="wrap">
+  <a class="logo" href="#top"><i></i>webstudio</a>
+  <div style="display:flex;gap:8px">
+    
+    <a class="btn pri sm" href="mailto:sharad.webstudio@gmail.com?subject=A%20website%20concept%20for%20my%20business">Get yours</a>
+  </div>
+</div></header>
+
+<section class="hero" id="top"><div class="wrap">
+  <span class="eyebrow"><b>●</b> 12 unique designs, each one made from scratch</span>
+  <h1>Websites that make local businesses <em>look the best in town.</em></h1>
+  <p class="lead">Every site below was designed for a real local business, using their own photos, services and reviews. Click any one to see it live on your phone.</p>
+  <div class="ctas">
+    <a class="btn pri" href="mailto:sharad.webstudio@gmail.com?subject=A%20website%20concept%20for%20my%20business">Get a free concept for your business</a>
+    
+  </div>
+  <div class="stats">
+    <div><b>12</b><span>unique designs</span></div>
+    <div><b>3</b><span>kinds of business</span></div>
+    <div><b>3</b><span>cities in 2 countries</span></div>
+  </div>
+</div></section>
+
+<main class="wrap" id="work">
+  
+  
+  <div class="filters" role="tablist" aria-label="Filter by kind of business">
+    <button class="chip on" data-k="">All<span>12</span></button>
+    <button class="chip" data-k="House cleaning service">House cleaning service<span>9</span></button><button class="chip" data-k="Real estate agent">Real estate agent<span>2</span></button><button class="chip" data-k="Remodeling company">Remodeling company<span>1</span></button>
+  </div>
+  
+  <div class="grid">
+    
+    <article class="card" data-k="Remodeling company">
+      <a class="shot" href="https://itzsharad.github.io/website-concepts/lowe-s-193/" target="_blank" rel="noopener" aria-label="Open the Lowe&#39;s website">
+        <div class="bar"><i></i><i></i><i></i></div>
+        <img src="thumbs/lowe-s-193.jpg?v=1792869058" alt="Website design for Lowe&#39;s" loading="eager" width="960" height="600">
+        <div class="view"><span>View live site ↗</span></div>
+      </a>
+      <div class="meta">
+        <div><h3>Lowe&#39;s</h3><p>Remodeling company · Austin, TX</p></div>
+        <div class="tags"><span class="tag won">★ Client</span><span class="tag style">Architectural minimal</span></div>
+        <div class="acts">
+          <a class="btn sec sm" href="https://itzsharad.github.io/website-concepts/lowe-s-193/" target="_blank" rel="noopener">View site ↗</a>
+          <a class="btn sec sm" href="https://youtu.be/gcIbV2fV7Ao" target="_blank" rel="noopener"><span class="yt"></span>Tour</a>
+        </div>
+      </div>
+    </article>
+    
+    <article class="card" data-k="Real estate agent">
+      <a class="shot" href="https://itzsharad.github.io/website-concepts/grant-s-real-estate-654/" target="_blank" rel="noopener" aria-label="Open the Grant&#39;s Real Estate website">
+        <div class="bar"><i></i><i></i><i></i></div>
+        <img src="thumbs/grant-s-real-estate-654.jpg?v=1792869061" alt="Website design for Grant&#39;s Real Estate" loading="eager" width="960" height="600">
+        <div class="view"><span>View live site ↗</span></div>
+      </a>
+      <div class="meta">
+        <div><h3>Grant&#39;s Real Estate</h3><p>Real estate agent · Melbourne, VIC, Australia</p></div>
+        <div class="tags"><span class="tag style">Heritage classic</span></div>
+        <div class="acts">
+          <a class="btn sec sm" href="https://itzsharad.github.io/website-concepts/grant-s-real-estate-654/" target="_blank" rel="noopener">View site ↗</a>
+          
+        </div>
+      </div>
+    </article>
+    
+    <article class="card" data-k="Real estate agent">
+      <a class="shot" href="https://itzsharad.github.io/website-concepts/waterfront-management-group-682/" target="_blank" rel="noopener" aria-label="Open the Waterfront Management Group website">
+        <div class="bar"><i></i><i></i><i></i></div>
+        <img src="thumbs/waterfront-management-group-682.jpg?v=1792869063" alt="Website design for Waterfront Management Group" loading="eager" width="960" height="600">
+        <div class="view"><span>View live site ↗</span></div>
+      </a>
+      <div class="meta">
+        <div><h3>Waterfront Management Group</h3><p>Real estate agent · Melbourne, VIC, Australia</p></div>
+        <div class="tags"><span class="tag style">Editorial luxury</span></div>
+        <div class="acts">
+          <a class="btn sec sm" href="https://itzsharad.github.io/website-concepts/waterfront-management-group-682/" target="_blank" rel="noopener">View site ↗</a>
+          
+        </div>
+      </div>
+    </article>
+    
+    <article class="card" data-k="House cleaning service">
+      <a class="shot" href="https://itzsharad.github.io/website-concepts/the-squeegee-crew-278/" target="_blank" rel="noopener" aria-label="Open the The Squeegee Crew website">
+        <div class="bar"><i></i><i></i><i></i></div>
+        <img src="thumbs/the-squeegee-crew-278.jpg?v=1792869065" alt="Website design for The Squeegee Crew" loading="eager" width="960" height="600">
+        <div class="view"><span>View live site ↗</span></div>
+      </a>
+      <div class="meta">
+        <div><h3>The Squeegee Crew</h3><p>House cleaning service · Los Angeles, CA</p></div>
+        <div class="tags"><span class="tag style">Coastal light</span></div>
+        <div class="acts">
+          <a class="btn sec sm" href="https://itzsharad.github.io/website-concepts/the-squeegee-crew-278/" target="_blank" rel="noopener">View site ↗</a>
+          
+        </div>
+      </div>
+    </article>
+    
+    <article class="card" data-k="House cleaning service">
+      <a class="shot" href="https://itzsharad.github.io/website-concepts/anderson-cleaning-solutions-277/" target="_blank" rel="noopener" aria-label="Open the Anderson cleaning solutions website">
+        <div class="bar"><i></i><i></i><i></i></div>
+        <img src="thumbs/anderson-cleaning-solutions-277.jpg?v=1792869067" alt="Website design for Anderson cleaning solutions" loading="eager" width="960" height="600">
+        <div class="view"><span>View live site ↗</span></div>
+      </a>
+      <div class="meta">
+        <div><h3>Anderson cleaning solutions</h3><p>House cleaning service · Los Angeles, CA</p></div>
+        <div class="tags"><span class="tag style">Swiss modern</span></div>
+        <div class="acts">
+          <a class="btn sec sm" href="https://itzsharad.github.io/website-concepts/anderson-cleaning-solutions-277/" target="_blank" rel="noopener">View site ↗</a>
+          
+        </div>
+      </div>
+    </article>
+    
+    <article class="card" data-k="House cleaning service">
+      <a class="shot" href="https://itzsharad.github.io/website-concepts/four-brothers-janitorial-services-275/" target="_blank" rel="noopener" aria-label="Open the Four Brothers Janitorial Services website">
+        <div class="bar"><i></i><i></i><i></i></div>
+        <img src="thumbs/four-brothers-janitorial-services-275.jpg?v=1792869069" alt="Website design for Four Brothers Janitorial Services" loading="eager" width="960" height="600">
+        <div class="view"><span>View live site ↗</span></div>
+      </a>
+      <div class="meta">
+        <div><h3>Four Brothers Janitorial Services</h3><p>House cleaning service · Los Angeles, CA</p></div>
+        <div class="tags"><span class="tag style">Bold contemporary</span></div>
+        <div class="acts">
+          <a class="btn sec sm" href="https://itzsharad.github.io/website-concepts/four-brothers-janitorial-services-275/" target="_blank" rel="noopener">View site ↗</a>
+          
+        </div>
+      </div>
+    </article>
+    
+    <article class="card" data-k="House cleaning service">
+      <a class="shot" href="https://itzsharad.github.io/website-concepts/maid-in-downtown-la-llc-273/" target="_blank" rel="noopener" aria-label="Open the Maid In Downtown La LLC website">
+        <div class="bar"><i></i><i></i><i></i></div>
+        <img src="thumbs/maid-in-downtown-la-llc-273.jpg?v=1792869071" alt="Website design for Maid In Downtown La LLC" loading="lazy" width="960" height="600">
+        <div class="view"><span>View live site ↗</span></div>
+      </a>
+      <div class="meta">
+        <div><h3>Maid In Downtown La LLC</h3><p>House cleaning service · Los Angeles, CA</p></div>
+        <div class="tags"><span class="tag style">Warm boutique</span></div>
+        <div class="acts">
+          <a class="btn sec sm" href="https://itzsharad.github.io/website-concepts/maid-in-downtown-la-llc-273/" target="_blank" rel="noopener">View site ↗</a>
+          
+        </div>
+      </div>
+    </article>
+    
+    <article class="card" data-k="House cleaning service">
+      <a class="shot" href="https://itzsharad.github.io/website-concepts/pronto-clean-271/" target="_blank" rel="noopener" aria-label="Open the Pronto Clean website">
+        <div class="bar"><i></i><i></i><i></i></div>
+        <img src="thumbs/pronto-clean-271.jpg?v=1792869073" alt="Website design for Pronto Clean" loading="lazy" width="960" height="600">
+        <div class="view"><span>View live site ↗</span></div>
+      </a>
+      <div class="meta">
+        <div><h3>Pronto Clean</h3><p>House cleaning service · Los Angeles, CA</p></div>
+        <div class="tags"><span class="tag style">Coastal light</span></div>
+        <div class="acts">
+          <a class="btn sec sm" href="https://itzsharad.github.io/website-concepts/pronto-clean-271/" target="_blank" rel="noopener">View site ↗</a>
+          
+        </div>
+      </div>
+    </article>
+    
+    <article class="card" data-k="House cleaning service">
+      <a class="shot" href="https://itzsharad.github.io/website-concepts/the-maid-s-clean-touch-266/" target="_blank" rel="noopener" aria-label="Open the The Maid&#39;s Clean Touch website">
+        <div class="bar"><i></i><i></i><i></i></div>
+        <img src="thumbs/the-maid-s-clean-touch-266.jpg?v=1792869076" alt="Website design for The Maid&#39;s Clean Touch" loading="lazy" width="960" height="600">
+        <div class="view"><span>View live site ↗</span></div>
+      </a>
+      <div class="meta">
+        <div><h3>The Maid&#39;s Clean Touch</h3><p>House cleaning service · Los Angeles, CA</p></div>
+        <div class="tags"><span class="tag style">Bold contemporary</span></div>
+        <div class="acts">
+          <a class="btn sec sm" href="https://itzsharad.github.io/website-concepts/the-maid-s-clean-touch-266/" target="_blank" rel="noopener">View site ↗</a>
+          
+        </div>
+      </div>
+    </article>
+    
+    <article class="card" data-k="House cleaning service">
+      <a class="shot" href="https://itzsharad.github.io/website-concepts/fusion-cleaning-services-270/" target="_blank" rel="noopener" aria-label="Open the Fusion Cleaning Services website">
+        <div class="bar"><i></i><i></i><i></i></div>
+        <img src="thumbs/fusion-cleaning-services-270.jpg?v=1792869078" alt="Website design for Fusion Cleaning Services" loading="lazy" width="960" height="600">
+        <div class="view"><span>View live site ↗</span></div>
+      </a>
+      <div class="meta">
+        <div><h3>Fusion Cleaning Services</h3><p>House cleaning service · Los Angeles, CA</p></div>
+        <div class="tags"><span class="tag style">Swiss modern</span></div>
+        <div class="acts">
+          <a class="btn sec sm" href="https://itzsharad.github.io/website-concepts/fusion-cleaning-services-270/" target="_blank" rel="noopener">View site ↗</a>
+          
+        </div>
+      </div>
+    </article>
+    
+    <article class="card" data-k="House cleaning service">
+      <a class="shot" href="https://itzsharad.github.io/website-concepts/quick-touch-cleaning-services-llc-260/" target="_blank" rel="noopener" aria-label="Open the Quick Touch Cleaning Services LLC website">
+        <div class="bar"><i></i><i></i><i></i></div>
+        <img src="thumbs/quick-touch-cleaning-services-llc-260.jpg?v=1792869080" alt="Website design for Quick Touch Cleaning Services LLC" loading="lazy" width="960" height="600">
+        <div class="view"><span>View live site ↗</span></div>
+      </a>
+      <div class="meta">
+        <div><h3>Quick Touch Cleaning Services LLC</h3><p>House cleaning service · Los Angeles, CA</p></div>
+        <div class="tags"><span class="tag style">Coastal light</span></div>
+        <div class="acts">
+          <a class="btn sec sm" href="https://itzsharad.github.io/website-concepts/quick-touch-cleaning-services-llc-260/" target="_blank" rel="noopener">View site ↗</a>
+          
+        </div>
+      </div>
+    </article>
+    
+    <article class="card" data-k="House cleaning service">
+      <a class="shot" href="https://itzsharad.github.io/website-concepts/calixfornia-professional-leather-261/" target="_blank" rel="noopener" aria-label="Open the Calixfornia Professional Leather website">
+        <div class="bar"><i></i><i></i><i></i></div>
+        <img src="thumbs/calixfornia-professional-leather-261.jpg?v=1792869082" alt="Website design for Calixfornia Professional Leather" loading="lazy" width="960" height="600">
+        <div class="view"><span>View live site ↗</span></div>
+      </a>
+      <div class="meta">
+        <div><h3>Calixfornia Professional Leather</h3><p>House cleaning service · Los Angeles, CA</p></div>
+        <div class="tags"><span class="tag style">Warm boutique</span></div>
+        <div class="acts">
+          <a class="btn sec sm" href="https://itzsharad.github.io/website-concepts/calixfornia-professional-leather-261/" target="_blank" rel="noopener">View site ↗</a>
+          
+        </div>
+      </div>
+    </article>
+    
+  </div>
+  
+
+  <section class="final">
+    <h2>Want one for <em>your</em> business?</h2>
+    <p>Tell me your business name and I'll design a concept for you, free. If you love it, we make it yours.</p>
+    <div class="ctas">
+      <a class="btn pri" href="mailto:sharad.webstudio@gmail.com?subject=A%20website%20concept%20for%20my%20business">Email sharad.webstudio@gmail.com</a>
+      
+    </div>
+  </section>
+</main>
+
+<footer><div class="wrap">
+  <span>© 2026 webstudio</span>
+  <span>Design concepts made for real businesses to show what their website could be. Marked "Client" when they hired us.</span>
+</div></footer>
+
+<script>
+(function(){
+  var cards=[].slice.call(document.querySelectorAll('.card'));
+  var io='IntersectionObserver' in window?new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{rootMargin:'0px 0px -40px 0px'}):null;
+  cards.forEach(function(c,i){c.style.transitionDelay=Math.min(i%3,2)*70+'ms';if(io)io.observe(c);else c.classList.add('in');});
+  setTimeout(function(){cards.forEach(function(c){c.classList.add('in');});},2500);
+  [].forEach.call(document.querySelectorAll('.chip'),function(b){b.addEventListener('click',function(){
+    [].forEach.call(document.querySelectorAll('.chip'),function(x){x.classList.toggle('on',x===b);});
+    var k=b.getAttribute('data-k');cards.forEach(function(c){c.hidden=!!k&&c.getAttribute('data-k')!==k;if(!c.hidden)c.classList.add('in');});
+  });});
+})();
+</script>
+</body>
+</html>
